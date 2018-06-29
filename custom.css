@@ -1,0 +1,82 @@
+
+.reveal .slides > section {
+    height: 100%;
+    top: -50%; /* -58% */
+    vertical-align: top;
+}
+
+div.reveal.slides {
+    height: 100%;
+    width: 100%;
+}
+
+.reveal .bgcred {
+    text-align: right;
+    font-size: 60% !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+p.subtitle {
+    font-size:35px;
+    font-weight:bold;
+    line-height:50%;
+}
+
+
+.reveal li {
+    font-size: 90%;
+    margin: 10px 0;
+}
+
+.reveal ul ul li {
+    font-size: 70%;
+}
+
+.reveal ul li ul li {
+    font-size: 90%;
+}
+
+
+div.smaller {
+    font-size: 80%
+}
+
+div.smaller2 {
+    font-size: 60%
+}
+
+
+img.center-fit {
+       padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+.reveal section img {
+    border: none;
+    box-shadow: none;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    text-transform: none;
+    font-variant: small-caps;
+}
+
+span.image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+span.bigimage {
+    height: 120%;
+    width: 120%;
+}

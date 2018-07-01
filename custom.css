@@ -38,6 +38,9 @@ p.subtitle {
     font-size: 90%;
 }
 
+.reveal .smaller {
+    font-size: 80%
+}
 
 div.smaller {
     font-size: 80%

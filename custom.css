@@ -1,3 +1,10 @@
+body {
+    background: url(assets/SgrB2N_background.png);
+    background-position:center;
+    background-size:1280px;
+    background-blend-mode: overlay;
+    background-color: rgb(255,255,255,0.7);
+}
 
 .reveal .slides > section {
     height: 100%;

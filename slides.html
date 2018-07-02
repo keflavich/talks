@@ -71,9 +71,9 @@
 
 <section>
     <!--<span class="image" style="background-image: url(assets/cluster_mass_vs_n_ostars.png); width:100%; height=100%;"> -->
-    <img src="assets/cluster_mass_vs_n_ostars.png" style="margin:0 0 0 0;
-    position: absolute;  display:block; margin-left: auto; margin-right:
-    auto;bottom: 100px; height:100%;">
+    <div class='sl-block' style='display:block; height: 1024px; left:0 px; top: 0px;'>
+        <img src="assets/cluster_mass_vs_n_ostars.png" style=''>
+    </div>
 </section>
 
 <section>
@@ -100,7 +100,7 @@
 </section>
 
 <section>
-    <h6>YMCs are the best local analogs of proto-Globular Clusters</h6>
+    <h6>YMCs are the best local analogs<br> of proto-Globular Clusters</h6>
         <ul>
             <li>
             and they're pretty good analogs <div class=smaller>(Bastian+
@@ -148,11 +148,13 @@
             invoking multiple epochs of star formation within the
             cluster", but most of these fail</div>
         </li>
+        <!--
         <li> YMCs lack MSPs, but have other features that may be related </li>
         <ul>
             <li> Extended Main Sequence Turnoffs (EMSTOs) - stellar evolution or multiple SF events? </li>
             <li> Split Main Sequence - cluster stars rotate more rapidly than field? </li>
         </ul>
+        -->
     </ul>
 </section>
 
@@ -190,17 +192,18 @@
 <section>
     <h6>How many are there?</h6>
     <ul>
+        <!-- \left(0.07^{+0.07}_{-0.03}\right) /  -->
         <li> SFR \(\times\) CFE: 
         <div align=center>\( \left(2~M_\odot~\mathrm{yr}^{-1}\right)
-                             \left(0.07^{+0.07}_{-0.03}\right) / 
+                             \left(0.03^{+0.03}_{-0.015}\right) / 
                              \left(M_{cl,10^4 M_\odot}\right)\)</p>
-        <div align=center>\(= 6-28~\mathrm{clusters~Myr}^{-1}\)  </p>
+        <div align=center>\(= 3-12~\mathrm{clusters~Myr}^{-1}\)  </p>
         <div style="font-size:20px">(Galactic CFE from 
             <a href="http://adsabs.harvard.edu/abs/2003ARA%26A..41...57L">Lada &amp; Lada 2003</a>,
             <a href="http://esoads.eso.org/abs/2010MNRAS.405..857G">Goddard+ 2010</a>,
             <a href="http://adsabs.harvard.edu/abs/2012MNRAS.426.3008K">Kruijssen 2012</a>)</div>
         </li>
-        <li>12-18 currently forming YMCs <div style='font-size:16px; display:inline'>(excluding CMZ)</div></li>
+        <li>Observed: 12-18 currently forming YMCs <div style='font-size:16px; display:inline'>(excluding CMZ)</div></li>
         <ul><li style="font-size:24px">Fewer (~2) if more conservative SFE ~10% is used</li>
         <div style='font-size:20px'> (<a href="http://adsabs.harvard.edu/abs/2012ApJ...758L..29G" target="_blank">Ginsburg+ 2012</a>,
                     Urquhart+ <a href="http://adsabs.harvard.edu/abs/2014MNRAS.437.1791U" target="_blank">2014a</a>,
@@ -210,7 +213,7 @@
                     <a href="http://adsabs.harvard.edu/abs/2017MNRAS.470.1462L">2017</a>
                     <a href="http://esoads.eso.org/abs/2017MNRAS.466..340C" target="_blank">Contreras+ 2017</a>) </div>
         </ul>
-        <li>Observable protocluster lifetime ~0.5-3 Myr
+        <li>Observable protocluster lifetime ~0.2-1 Myr
         </li>
                     
     </ul>
@@ -253,7 +256,7 @@
 <section data-id="688e275e4f4751d7bc0fc68ee3d68b82">
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fd2e732f3eb46152cc9857131e878116">
     <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-    <h2>Is star formation in high-mass clusters different?</h2>
+    <h2 style="word-break: keep-all; hyphens: none;">Is star formation in high-mass clusters different?</h2>
     </div>
     </div>
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="7b24eb3dce885998fa19c253a9f15bbf">
@@ -474,9 +477,12 @@
         <a href="http://adsabs.harvard.edu/abs/2016A%26A...595A..27G">Ginsburg+ 2016</a>,
         <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">2017</a>
     </div>
-    <div style="position:absolute; bottom: 300px; right: 0px; max-width:25%; text-align: left;" class=smaller2>
+    <div style="position:absolute; bottom: 250px; right: 0px; max-width:25%; text-align: left;" class=smaller2>
         Photoevaporation rate \(\dot{M}_{pe}< 0.001 \mathrm{~M}_\odot \mathrm{yr}^{-1}\) <br>
-        Star Formation Rate \(\dot{M}_{sf}\sim \epsilon_{ff} t_{ff} = \epsilon_{ff} 10^4 \mathrm{yr}\) <br>
+        Star Formation Rate \(\dot{M}_{sf}\sim \epsilon_{ff} M_{gas} / t_{ff} \)
+        \(=  2000 \mathrm{M}_\odot / 10^4 \mathrm{yr}\)
+        \(=0.2 \epsilon_{ff}\mathrm{M}_\odot \mathrm{yr}^{-1}\) <br>
+
         Even for \(\epsilon_{ff} = 0.01\), \(\dot{M}_{sf} > \dot{M}_{pe}\)
         <br><br>
         <div class=smaller>
@@ -550,6 +556,16 @@
 
 <section>
     <h6>Cluster Formation Efficiency revisited</h6>
+    <ul><li>What fraction of all stars form in bound clusters?</li>
+        <ul><li>Varies with environment, increasing toward higher density</li>
+            <li>More stars formed in higher density regions in the early universe,
+                so more in clusters</li>
+        </ul>
+        <li>We can measure this locally, given an appropriate change in environment</li>
+    </ul>
+    <span class=image style='height: 300px; background-position: center center; background-size: contain; background-image: url(assets/gc_fullres_6_small.jpg)'>
+        <!--<img src="assets/gc_fullres_6_small.jpg" style='max-width: 100%'>-->
+</span>
 </section>
 
 <!--
@@ -564,10 +580,6 @@
 
 <section>
     <h6>Sgr B2: Most massive cloud + protoclusters</h6>
-    <div class="sl-block" style="width: auto; height: auto; font-size: 30px; font-weight: normal">
-        Clustered and unclustered star formation occur together
-        (<a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018</a>)
-    </div>
     <div class="sl-block" data-block-type="image"
         style="margin-left:auto; margin-right: auto; width: 900px;">
         <div class="sl-block-content" style="z-index: 11;">
@@ -576,9 +588,14 @@
             </center> </p>
         </div>
     </div>
-    <div style='position: absolute; bottom: 180px; left: 50px; font-size: 22px; width:350px'>
-        Tightly bound cluster: \(\sigma_{1D} \sim 9-12~\mathrm{km~s}^{-1} < v_{esc} \sim 14~\mathrm{km~s}^{-1}\)
+    <div style='position: absolute; bottom: 130px; left: 70px; font-size: 22px; width:300px'>
+        Tightly bound cluster: \(\sigma_{1D} \sim 9-12~\mathrm{km~s}^{-1} \)
+        \(\sigma_{1D} < v_{esc} \sim 14~\mathrm{km~s}^{-1}\)
         from RRL LOS velocities
+    </div>
+    <div class="sl-block" style="width: auto; height: auto; font-size: 30px; font-weight: normal">
+        Clustered and unclustered star formation occur together
+        (<a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018</a>)
     </div>
 </section>
 
@@ -638,8 +655,8 @@
     <ul>
         <li>Within forming clusters, feedback from the most massive stars affects neighbors,
         suppressing fragmentation</li>
-        <li>Dynamical interactions are important in clusters, which means disk properties
-        are different (they're smaller)</li>
+        <!--<li>Dynamical interactions are important in clusters, which means disk properties
+        are different (they're smaller)</li>-->
 
     </ul>
 </section>

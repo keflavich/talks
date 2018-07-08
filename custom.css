@@ -133,14 +133,17 @@ span.bigimage {
 
 @keyframes panning {
   0% {
-    background-position: 0% 0%;
+    transform: translateY(0vh);
   }
   100% {
-    background-position: 0% 100%;
+    transform: translateY(-100vh);
   }
 }
 
 .animate {
+    overflow: visible;
+    will-change: transform;
+    transform: rotateZ(360deg);
     animation-name: panning;
     animation-duration: 30s;
     animation-iteration-count: 1;

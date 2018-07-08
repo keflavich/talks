@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>High mass star cluster formation</title>
+    <meta name="viewport"
+	  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+
+
+<section>
+    <h2> The compact mm sources of W51 and Sgr B2</h2>
+    <div> and what this suggests for analysis of ALMA-IMF
+    </div>
+
+    <div>
+    Adam Ginsburg
+</div>
+</section>
+
+<section>
+    <h2>Source Extraction</h2>
+    <div class=smaller>Two methods were explored in <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a> section 3.1.1:</div>
+    <ul><li> Dendrogram extraction:
+    </li>
+    <ul><li>Automated, reproducible </li>
+        <li>Problematic for extended structures we're not interested in (HII regions)</li>
+        <li>Difficult to use if noise varies (e.g., if bright sources produce noisy sub-fields)</li>
+    </ul>
+    <li>Hand extraction</li>
+    <ul><li>Mildly tedious, unreproducible (e.g., on simulations)</li>
+        <li>Reliable: sources are real if you say they are</li>
+        <li>Difficult to estimate completeness</li>
+    </ul>
+
+</ul>
+
+</section>
+
+<section>
+    <div>Hand-selected cores</div>
+    <img src="almaimf_assets/continuum_with_cores.png">
+</section>
+
+<section>
+    <div>Dendrogram-selected cores</div>
+    <img src="almaimf_assets/continuum_with_dendrocores.png">
+</section>
+
+<section>
+    <div>Hand-selected cores</div>
+    <img src="almaimf_assets/continuum_north_zoom_TB_cores.png">
+</section>
+
+<section>
+    <div>Dendrogram-selected cores</div>
+    <img src="almaimf_assets/continuum_north_zoom_TB_dendrocores.png">
+</section>
+
+<section>
+    <h2>Source Photometry (Section C.2)</h2>
+    <div align=left>Contour-based photometry is not great for core or protostar analysis:</div>
+    <ul><li>Can't compare contour-based to hand-extracted </li>
+        <li>Can't (shouldn't) use contours to extract from other wavelengths (e.g., free-free correction)</li>
+        <li>Contours require 'truncation correction' because they only go to
+        the specified noise threshold, but signal goes all the way down</li>
+    </ul>
+    <div align=left>So, we use circular apertures.</div>
+    <ul><li>Multiple apertures yield a radial profile</li>
+        <li>"Concentration" is a measure of source structure</li>
+    </ul>
+</section>
+
+<section>
+    <img src="almaimf_assets/concentrationparameter.png">
+</section>
+
+<section>
+    <h6>Free-free contamination measurement</h6>
+    <img src="almaimf_assets/mm_vs_cm_flux_0.4arcsec_apertures.png">
+</section>
+
+<section>
+    <h6> Temperature Inference </h6>
+    <div align=left>Interpolation of HiGal data does poorly; hot (~100-200K sources dominate)</div>
+    <div align=left>Fred will tell us about PPMAP later?</div>
+    <div align=left>Used line \(T_B\) to get lower-limit temperature:</div>
+    <ul><li>Assuming dust &amp; gas are mixed, \(T_{dust}\geq T_{B,max}\)
+        </li>
+        <li>For each source, extract spectrum across full band</li>
+        <li>Fits to each line for each source, bad ones rejected</li>
+    </ul>
+</section>
+
+<section>
+    <img src='almaimf_assets/ALMAmm37_linefits.png'>
+    <img src='almaimf_assets/ALMAmm32_linefits.png'>
+</section>
+
+<section>
+    Effect of adopting temperature peak
+    <img src="almaimf_assets/aperture_mass20K_vs_massTB.png">
+</section>
+
+<section>
+    Which species is dominant?
+    <img src="almaimf_assets/brightest_line_histogram.png">
+</section>
+
+<section>
+    <img src="almaimf_assets/ALMAmm32_overlaid_spectra_7m12m_hires.png">
+</section>
+
+<section>
+    <h6>Spatial and Spectral distribution</h6>
+    <img src="almaimf_assets/core_spatial_distribution.png">
+</section>
+
+<section>
+    <div>Sources are extended: What constitutes a 'core'?</div>
+    <img src="almaimf_assets/core_flux_histogram_apertureradius.png">
+</section>
+
+<section>
+    <h6>We  fit power-laws to the flux and mass distributions </h6>
+    <pre style='font-size: 14px'>
+Fit each aperture excluding free-free fluxes
+Powerlaw fit for apertures 0p2: 1.631315423503212+/-0.08083165707886612     xmin: 0.0064744025027009995    n: 61
+Powerlaw fit for apertures 0p4: 1.5658370824846624+/-0.07128877156346468     xmin: 0.011868132040355701    n: 63
+Powerlaw fit for apertures 0p6: 1.5529861072430189+/-0.07080261581763395     xmin: 0.01943433602461    n: 61
+Powerlaw fit for apertures 0p8: 1.9104050128602124+/-0.1785451125325736     xmin: 0.24321248022004    n: 26
+Powerlaw fit for apertures 1p0: 1.4623503245632266+/-0.06070957184993224     xmin: 0.026001245374699996    n: 58
+Powerlaw fit for apertures 1p5: 1.420579507665507+/-0.054754788083823426     xmin: 0.03052176796733    n: 59
+
+Fit each aperture excluding free-free MASSES, THEN starless-only also
+Powerlaw mass fit for apertures 0p2: 1.912047687552428+/-0.11975772845046809     xmin: 5.20167867846    n: 58
+Powerlaw mass fit for starless apertures 0p2: 2.6088696890146474+/-0.41540836745144233     xmin: 4.47311821623    n: 15
+Powerlaw mass fit for apertures 0p4: 1.815021606866669+/-0.10435282362110364     xmin: 10.2104888538    n: 61
+Powerlaw mass fit for starless apertures 0p4: 2.3926434280095217+/-0.359578986925739     xmin: 8.45440665685    n: 15
+Powerlaw mass fit for apertures 0p6: 1.7553097307339227+/-0.09670750130612725     xmin: 15.0538010421    n: 61
+Powerlaw mass fit for starless apertures 0p6: 2.8898077334723236+/-0.5050723618235171     xmin: 16.4954024498    n: 14
+Powerlaw mass fit for apertures 0p8: 1.785955620178369+/-0.11115090974796064     xmin: 29.1094782263    n: 50
+Powerlaw mass fit for starless apertures 0p8: 5.749488311948332+/-2.1240357447714393     xmin: 49.827658381    n: 5
+Powerlaw mass fit for apertures 1p0: 1.8731582232383897+/-0.13163355495886897     xmin: 51.7280690487    n: 44
+Powerlaw mass fit for starless apertures 1p0: 5.273575112776541+/-1.7446797339599336     xmin: 55.5714845757    n: 6
+Powerlaw mass fit for apertures 1p5: 2.7917077019490932+/-0.4479269254872733     xmin: 420.574512148    n: 16
+Powerlaw mass fit for starless apertures 1p5: 3.2306486231067537+/-0.7053930308535842     xmin: 47.5659895928    n: 10
+</pre>
+<ul><li>Flux slope is shallower for bigger apertures</li>
+<li>"Starless" much steeper than "starry"</li>
+<li>Mass slopes steeper than flux slopes</li>
+</ul>
+</section>
+
+<section>
+    <h6>Sgr B2: Direct to hand-ID</h6>
+    <ul><li>HII regions all over the place</li>
+        <li>Clearly dynamic-range limited; artifacts common</li>
+        <li>Measured fluxes, but did not try to infer masses</li>
+        <li>Slope -1.8 to -1.9 for non-HII-region sources</li>
+        <li>Could measure spectral indices in-band for brighter sources</li>
+    </ul>
+</section>
+
+<section
+    style="background: url(almaimf_assets/sgrb2_overview.png);
+    background-size:100%;
+    width:100vw;
+    left:-50vw;
+    position:absolute;
+    animation-name: panning;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    ">
+    <div style="color: white; position: absolute; bottom: 60px; width:400px; right:360px;"> </div>
+
+</section>
+
+      </div>
+    </div>
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.min.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: false,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+	    condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+	    condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+	    condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+	    callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+	    condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+	  { src: 'pdfimgs.js', async: true },
+	  { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>

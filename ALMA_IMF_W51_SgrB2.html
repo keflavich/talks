@@ -170,6 +170,40 @@ Powerlaw mass fit for starless apertures 1p5: 3.2306486231067537+/-0.70539303085
 </ul>
 </section>
 
+<section class=smaller>
+    <h6>Completeness Testing</h6>
+    <div class=smaller align=left>In the paper, I did not discuss completeness testing at all.  However, I have well-tested ideas of how to do this.</div>
+
+    <div class=smaller align=left><a href="https://github.com/keflavich/W51_ALMA_2013.1.00308.S/blob/master/analysis/synth_imaging_aquila.py">This code</a>,
+    and several related scripts, take Aquila and Perseus data, rescale them to 1mm at d=5 kpc, push them through the ALMA
+    simulator with the <em>exact</em> UV coverage of the observations, then extracts a dendrogram catalog from them.
+</div>
+
+<div class=smaller align=left> When I attempted this, the CASA process was buggy and unsatisfactory.
+Details are recorded in some blog posts:<br>
+<ul><li><a href="http://keflavich.github.io/blog/simulated-observations-of-perseus-in-w51.html">Simulating Perseus at W51</a></li>
+    <li><a href="http://keflavich.github.io/blog/casa-simulation.html">Simulating in CASA</a></li>
+</ul>
+</div>
+<div class=smaller align=left>I don't remember the conclusions, but I think they were that
+    we wouldn't see anything (or at least, not enough to characterize
+    completeness) from Aquila/Perseus at the distance of W51, which isn't
+    terribly surprising.
+
+</section>
+
+<section>
+    <h6>Completeness testing <em>usefully</em></h6>
+    <div>The framework I've set up will work (demo on next few slides)</div>
+    <div>To make this useful, we need more reasonable simulations to compare
+        against, e.g., hydro sims with PPP-identified cores, or synthetic IMFs&#x21FE;CMFs&#x21FE;images</div>
+</section>
+
+<section><h6>Perseus at W51, "no noise"</h6><img src="almaimf_assets/perseus_synth_noiseless_dendrosource_overlay.png"></section>
+<section><h6>Perseus at W51, CASA-imaged</h6><img src="almaimf_assets/perseus_synth_casa-observed_dendrosource_overlay.png"></section>
+<section><h6>Perseus at W51, CASA-imaged, pruned catalog</h6><img src="almaimf_assets/perseus_synth_casa-observed_pruneddendrosource_overlay.png"></section>
+<section><h6>Perseus at W51, "no noise"</h6><img src="almaimf_assets/perseus_synth_noiseless_dendrosource_overlay.png"></section>
+
 <section>
     <h6>Sgr B2: Direct to hand-ID</h6>
     <ul><li>HII regions all over the place</li>
@@ -180,17 +214,12 @@ Powerlaw mass fit for starless apertures 1p5: 3.2306486231067537+/-0.70539303085
     </ul>
 </section>
 
-<section
-    style="background: url(almaimf_assets/sgrb2_overview.png);
+<section class="to-animate"
+    style="background: url(almaimf_assets/sgrb2_overview.jpg);
     background-size:100%;
     width:100vw;
     left:-50vw;
     position:absolute;
-    animation-name: panning;
-    animation-duration: 5s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
     ">
     <div style="color: white; position: absolute; bottom: 60px; width:400px; right:360px;"> </div>
 
@@ -206,8 +235,11 @@ Powerlaw mass fit for starless apertures 1p5: 3.2306486231067537+/-0.70539303085
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <script src="fullscreen.js"> </script>
+<script src="animate.js"></script>
 
     <script>
+
+
       Reveal.initialize({
         controls: true,
         progress: false,
@@ -249,6 +281,8 @@ Powerlaw mass fit for starless apertures 1p5: 3.2306486231067537+/-0.70539303085
 	  { src: 'slideautostart.js', async: true },
         ],
       });
+
+
     </script>
   </body>
 </html>

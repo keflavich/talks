@@ -84,7 +84,10 @@ span.image {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    background-position-x: center;
 }
+
+
 
 span.bigimage {
     height: 120%;

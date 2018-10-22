@@ -1,9 +1,9 @@
 body {
-    background: url(assets/SgrB2N_background.png);
+    background-image: url(assets/SgrB2N_background.png);
     background-position:center;
     background-size:1280px;
     background-blend-mode: overlay;
-    background-color: rgb(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.7);
 }
 
 .reveal .slides > section {
@@ -55,6 +55,10 @@ div.smaller {
 
 div.smaller2 {
     font-size: 60%
+}
+
+div.smaller3 {
+    font-size: 40%
 }
 
 
@@ -151,4 +155,35 @@ span.bigimage {
     animation-iteration-count: 1;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
+}
+
+.reveal .bgcred {
+    text-align: right;
+    font-size: 60% !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.reveal .lcred {
+    text-align: left;
+    font-size: 55% !important;
+}
+
+.reveal .rcred {
+    text-align: right;
+    font-size: 55% !important;
+}
+
+a.darkbg {
+    color: rgb(0,200,200);
+}
+
+.reveal h1.darkbg ,
+.reveal h2.darkbg ,
+.reveal h3.darkbg ,
+.reveal h4.darkbg ,
+.reveal h5.darkbg ,
+.reveal h6.darkbg  {
+    color: white;
 }

@@ -12,6 +12,12 @@ body {
     vertical-align: top;
 }
 
+.reveal .slides > section section {
+    height: 100%;
+    top: 0%; /* -58% */
+    vertical-align: top;
+}
+
 div.reveal.slides {
     height: 100%;
     width: 100%;

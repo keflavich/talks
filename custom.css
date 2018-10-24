@@ -53,11 +53,11 @@ div.smaller {
     font-size: 80%
 }
 
-div.smaller2 {
+.reveal .smaller2 {
     font-size: 60%
 }
 
-div.smaller3 {
+.reveal .smaller3 {
     font-size: 40%
 }
 
@@ -168,6 +168,13 @@ span.bigimage {
 .reveal .lcred {
     text-align: left;
     font-size: 55% !important;
+}
+
+.reveal .llred {
+    text-align: left;
+    position: absolute;
+    bottom: 150px;
+    left: 100px;
 }
 
 .reveal .rcred {

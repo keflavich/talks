@@ -86,7 +86,7 @@ img.center-fit {
     font-variant: small-caps;
 }
 
-span.image {
+div.image,span.image {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;

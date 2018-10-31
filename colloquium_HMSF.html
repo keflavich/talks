@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="white.css" id="theme">
     <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script>
       document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
     </script>
@@ -33,7 +34,18 @@
             <br>
             <p class="footer">Adam Ginsburg</p>
             <p class="smaller footer">Jansky Fellow, NRAO Socorro</p>
-            <br>
+            <div class=smaller3> 
+                John Bally, Ashley Barnes, Nate Bastian, Cara Battersby,
+                Henrik Beuther, Crystal Brogan, Yanett Contreras, Joanna
+                Corby,  Jeremy Darling, Chris De Pree, Roberto Galván-Madrid,
+                Guido Garay, Jonathan Henshaw, Todd Hunter, J. M. Diederik
+                Kruijssen, Steven Longmore, Xing Lu, Fanyi Meng, Elisabeth A.C.
+                Mills,  Juergen Ott, Jaime E. Pineda, Álvaro Sánchez-Monge,
+                Peter Schilke, Anika Schmiedeke, Daniel Walker, David Wilner,
+                Leonardo Testi, Rowan Smith, Ke Wang, James Dale, Jeremy
+                Darling, Robert Loughnane, Nate Bastian, Erik Rosolowsky,
+                Ciriaco Goddi, Brett McGuire, Dick Plambeck, Melvyn Wright
+</div>
             <!--<div style='font-size:30px'>This presentation can be found at <a href="https://tinyurl.com/HMCFormationTTF18">https://tinyurl.com/HMCFormationTTF18</a></div>-->
     </div>
     </div>
@@ -117,6 +129,22 @@
 <section>
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>
     <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
+
+    <!--<div style="background-image: url('colloquium_assets/Purcell_Cartoon_LowMass.svg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                ">
+            </div>-->
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; position:relative; top:50%; bottom:50%; margin-top:17%; width:100%'>
+    <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell</a></div>
+
+    </span>
+    <div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2</a></div>
+</section>
+
+<section>
+    <span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>
+    <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
     </span>
     <div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2</a></div>
     <span class=image style="position: absolute; bottom: 200px; left: 288px; height: 50%; background-image: url(colloquium_assets/Taurus_IMF.png);">
@@ -128,45 +156,14 @@
 </section>
 
 <section>
-    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/imf_figure.png);'>
-        <h4 style="position: relative; top:5%; left: 12%;"> The stellar initial mass function (IMF) </h4>
-        <div class=smaller style="position: relative; top:8%; left: 45%; width:55%; color: maroon;"> Low-mass stars hold the mass </div>
-        <div class=smaller style="position: relative; top:15%; left: 60%; width:32%; color: rgb(60,100,200);"> High-mass stars make the light </div>
+    <span class=image style='background-position: center center; background-image: url(assets/ngc3603.jpg);'>
+    <h4 class=darkbg> Most stars form in denser regions </h4>
     </span>
-    <!-- Low-mass clouds are invisible on galactic scales -->
-</section>
-
-<section>
-    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/imf_figure.png);'>
-        <h4 style="position: relative; top:5%; left: 12%;"> The stellar initial mass function (IMF) </h4>
-        <div class=smaller style="position: relative; top:5%; left: 41%; width:55%;"> Stars are randomly sampled from this distribution </div>
-    </span>
-    <!-- Low-mass clouds are invisible on galactic scales -->
-</section>
-
-<!-- this slide just doesn't show what I want; I want a figure of M/L vs age, mass
-<section>
-    <h4>The IMF affects measurements of galaxies</h4>
-    <div style="margin-top:-40px;">
-        <img style="width:1000px; height:auto;" src="colloquium_assets/Conroy2013_fig4_bc.svg">
+    <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="http://hubblesite.org/image/3874">HST</a></div>
+    <div style="color:white; text-align: left; position: absolute; bottom: 100px; left:600px; max-width:300px;" class="smaller2">
+        NGC 3603 is a high-mass (10<sup style='font-size:50%'>4</sup> M<sub>&odot;</sub>) cluster
     </div>
-    <span class="smaller2 llred"> 
-        <a href="http://adsabs.harvard.edu/abs/2013ARA%26A..51..393C">Conroy 2013</a>
-    </span>
 </section>
--->
-
-
-
-<section>
-    <h4> The stellar IMF points to an important feature of high-mass clusters: they definitely have high-mass stars </h4>
-    <span class=image style='height:80%; position: absolute; top:120px; left:0px; background-position: center center; background-image: url(assets/cluster_mass_vs_n_ostars.png);'>
-        <div class='sl-block' style='display:block; height: 30%; position: relative; bottom:-50%; right:-30%;'>
-            <img src="colloquium_assets/imf_figure.png" style=''>
-        </div>
-    </span>
-</section>
-
 
 
 <!--
@@ -181,15 +178,6 @@
 </section>
 -->
 
-<section>
-    <span class=image style='background-position: center center; background-image: url(assets/ngc3603.jpg);'>
-    <h4 class=darkbg> Most stars form in denser regions </h4>
-    </span>
-    <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="http://hubblesite.org/image/3874">HST</a></div>
-    <div style="color:white; text-align: left; position: absolute; bottom: 100px; left:600px; max-width:300px;" class="smaller2">
-        NGC 3603 is a high-mass (10<sup style='font-size:50%'>4</sup> M<sub>&odot;</sub>) cluster
-    </div>
-</section>
 
 
 <section>
@@ -202,39 +190,34 @@
     </div>
 </section>
 
-<section>
-    <h4> Clustered feedback is more efficient </h4>
-    <div class="image" style="position:relative; width:1024px; height:768px;">
-        <img src="colloquium_assets/Gentry2016_fig14.svg" style="width:1024px">
-        <div style="position: absolute; bottom: 20%; left:10%;" class="smaller2">
-            <a href="http://adsabs.harvard.edu/abs/2017MNRAS.465.2471G">Gentry+ 2017</a>
-        </div>
-    </div>
-</section>
 </section>
 
 
 <section>
     <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small.jpg);'>
     <h4> Our own Galaxy's center, the CMZ, has denser gas than the Galactic average </h4>
+    <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
+    <div style="position: relative; bottom: -61%; left:-40%" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv181000266M">Mills+ 2018</a></div>
     </span>
-    <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664"></a></div>
+
 </section>
 <section>
     <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small_singlezoom_lines.jpg);'>
     <h4> Our own Galaxy's center, the CMZ, has denser gas than the Galactic average </h4>
+    <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
+    <div style="position: relative; bottom: -61%; left:-40%" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg+ 2018</a></div>
     </span>
-    <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664"></a></div>
 </section>
 <section>
     <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small_doublezoom.jpg);'>
     <h4> Our own Galaxy's center, the CMZ, has denser gas than the Galactic average </h4>
+    <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
+    <div style="position: relative; bottom: -61%; left:-40%" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg+ 2018</a></div>
     </span>
-    <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664"></a></div>
 </section>
 
 <section>
-    <h4> "Bound Cluster Fraction" verified higher in CMZ </h4>
+    <h4> The "Bound Cluster Fraction" is higher in the CMZ </h4>
     <div style="max-height:80%" class=image>
         <span class=image style='height:100%; background-image: url(colloquium_assets/GammaVsSigmaGas_withTheory.png);'>
             <div style="position: relative; bottom: -75%; left:15%" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg &amp; Kruijssen 2018</a></div>
@@ -247,7 +230,7 @@
     <h3> Summary so far: </h3>
     <div style="">
         <ul>
-            <li> More stars form in clusters at higher density
+            <li> At higher density, more stars form in clusters
             <li> Galaxies were denser in the past
             <li> Most stars formed when galaxies were denser
             <li> Most stars formed in or near high-mass clusters, in regions
@@ -257,26 +240,9 @@
     <br>
 
     <div class=smaller>
-    An as-yet unanswered question is: do most high-mass stars form in clusters?
+    <!--An as-yet unanswered question is: do most high-mass stars form in clusters?
     If the IMF is universal in time &amp; space, the answer is no, but there are hints
-    that high-mass stars preferentially form in high-mass clusters.
-    </div>
-</section>
-
-
-<section>
-    <h4> There is evidence for top-heavier mass functions in high-mass clusters </h4>
-    <div style='height:80%'>
-        <span class="image" style="position: relative; display:block; left:0%; bottom:0%; background-image: url(colloquium_assets/Hosek2018_fig17.svg); height:100%; width:70%; margin-right:60%;">
-            <div style="position: relative; bottom: -80%; left:-20%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018arXiv180802577H">Hosek+ 2018</a></div>
-        </span>
-
-        <div class='sl-block' style='display:block; height: 46%; position: relative; left: 32%; top: -100%;'>
-            <img src="colloquium_assets/Kroupa_imf_figure_log.png" style=''>
-        </div>
-        <div class='sl-block' style='display:block; height: 46%; position: relative; left: 32%; top: -100%;'>
-            <img src="colloquium_assets/KroupaTopHeavy_imf_figure_log.png" style=''>
-        </div>
+    that high-mass stars preferentially form in high-mass clusters.-->
     </div>
 </section>
 
@@ -291,12 +257,12 @@
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="7b24eb3dce885998fa19c253a9f15bbf">
     <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
     <ul>
-        <li>The IMF should depend on density, feedback <div style='font-size:24px'>(e.g., <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.1196J"
-                target="_blank">Jones &amp; Bate 2018</a>, \(M_c \propto \rho^{-1/5}\) )</div></li>
         <li>Feedback from one star affects many in clustered regions 
         <div style='font-size:24px; display:inline'>(<a href="http://adsabs.harvard.edu/abs/2016MNRAS.463.2553R">Rosen+ 2016</a>,
             <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>)</div></li>
-        <li>Total star formation efficiency is higher. SFE<sub>ff</sub> may be higher?
+        <li>The IMF should depend on density, feedback <div style='font-size:24px'>(e.g., <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.1196J"
+                target="_blank">Jones &amp; Bate 2018</a>, \(M_c \propto \rho^{-1/5}\) )</div></li>
+        <li>Total star formation efficiency is higher. <!--SFE<sub>ff</sub> may be higher?-->
         <div style='font-size:24px; '>
             (obs: <a href="http://adsabs.harvard.edu/abs/2016A%26A...595A..27G">Ginsburg+ 2016</a>,
             <a href="http://adsabs.harvard.edu/abs/2017IAUS..316..117G">Gouliermis &amp; Hony 2015</a>,
@@ -322,8 +288,46 @@
     </div>
 </section>
 
+
+<section>
+    <h4 style="display:inline-block; position: absolute; top:2%; width:60%; right:20%;"> Clustered feedback is more efficient </h4>
+    <div class="image" style="position:relative; top: 5%; width:1024px; height:768px;">
+        <img src="colloquium_assets/Gentry2016_fig14.svg" style="width:1024px">
+        <div style="position: absolute; bottom: 20%; left:10%;" class="smaller2">
+            <a href="http://adsabs.harvard.edu/abs/2017MNRAS.465.2471G">Gentry+ 2017</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <span class=image style='background-size: 100%;
+                             background-position: center center;
+                             background-image: url(colloquium_assets/1280px-M82_HST_ACS_2006-14-a-large_web.jpg);
+                             height:800px;
+                             margin-top:-30px;
+                             '>
+        <h4 class=darkbg style="display:inline-block; position: absolute; top:2%; width:60%; right:20%;"> Clustered feedback is more efficient </h4>
+        <div style="position: absolute; bottom: 10%; left:5%;" class="smaller2">
+            <a href="http://www.spacetelescope.org/images/heic0604a/">HST</a>
+        </div>
+    </span>
+</section>
+
+<section>
+    <!--<h4> The stellar IMF points to an important feature of high-mass clusters: they definitely have high-mass stars </h4>-->
+    <h4> High-mass star clusters always contain high-mass stars </h4>
+    <span class=image style='height:90%; position: relative; top:-2%; left:0px; background-position: center center; background-image: url(assets/cluster_mass_vs_n_ostars.png);'>
+        <div class='sl-block' style='display:block; height: 30%; position: relative; bottom:-50%; right:-30%;'>
+            <!--<img src="colloquium_assets/imf_figure.png" style=''>-->
+        </div>
+    </span>
+</section>
+
+
+
 <section style='background: white'>
     <h4> Cartoon of high- and low-mass star formation </h4>
+    <div class=smaller2> Main difference: massive stars affect their surroundings </div>
     <img src="colloquium_assets/Purcell_Cartoon_LowHighMass.svg">
     <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
         <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell</a>
@@ -332,30 +336,49 @@
 
 
 <section>
-    <h4> Massive young stars (MYSOs) affect their environment</h4>
+    <h4> Accreting massive young stars  affect their environment</h4>
     <span class="image" style="background-image: url(colloquium_assets/methanol_scalebar_e2e.png); width:80%">
         <div style="position: absolute; bottom: 130px; left:340px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
     </span>
 </section>
 
 <section>
-    <h4> Massive young stars (MYSOs) affect their environment</h4>
+    <h4> Accreting massive young stars  affect their environment</h4>
     <span class="image" style="background-image: url(colloquium_assets/outflows_over_methanol_e2e.png); width:80%">
         <div style="position: absolute; bottom: 130px; left:340px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
     </span>
     </span>
 </section>
 
+<section>
+    <h4> Accreting massive young stars  affect their environment</h4>
+    <span class="image" style="background-image: url(colloquium_assets/e2e_withzoom.png); width:80%">
+        <div style="position: absolute; bottom: 130px; left:340px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+    </span>
+    </span>
+</section>
 
 <section>
-    <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide.png); width:90%"> 
-        <div style="position: absolute; bottom: 100px; left:100px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+    <h4> Accreting massive young stars  affect their environment</h4>
+    <span class="image" style="background-image: url(colloquium_assets/W51e2_cycle3green_SiO_outflows_aplpy_zoom.png); width:78%">
+        <div style="position: absolute; bottom: 40px; left:140px" class="smaller2"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv180505364G">Goddi+ 2018</a></div>
+    </span>
     </span>
 </section>
 
 
 <section>
-    <h4> The Jeans mass, the characteristic fragmentation scale, is larger </h4>
+    <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide.png); width:100%; margin-top:-2%;"> 
+        <div style="position: relative; bottom: -85%; left:-27%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+    </span>
+</section>
+
+
+<section>
+    <h4> The characteristic fragmentation scale is larger </h4>
+    <div class=smaller> 
+        Jeans Mass M<sub class=smaller2>J</sub> = (π/6)c<sup class=smaller2>3</sup><sub style="margin-left:-10px" class=smaller2>s</sub>G<sup class=smaller2>−3/2</sup>ρ<sup class=smaller2>−1/2</sup>
+    </div>
     <span class="image" style="height:80%; background-image: url(colloquium_assets/azimuthalaverage_radial_mj_and_mbar_of_TCH3OH_massivecores.png); width:90%"> 
         <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
     </span>
@@ -374,12 +397,47 @@
 
 </section>
 
+<section style='background: white'>
+    <h4> More extreme: 'cooperative accretion' </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_ClusteredHMSF.svg">
+    <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
+        <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell</a>
+    </div>
+    <div class=smaller>
+        With enough high-mass stars forming concurrently, massive stars may prevent fragmentation entirely
+        and force all of the collapsing cloud onto the most massive gravitational sinks.  
+        <div class=smaller2><a href="http://adsabs.harvard.edu/abs/2007ARA%26A..45..481Z">Zinnecker & Yorke 2007</a>,
+            <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>
+    </div>
+
+</section>
+
+<section>
+    <h4> There is evidence for top-heavier mass functions in high-mass clusters </h4>
+    <div style='height:80%'>
+        <span class="image" style="position: relative; display:block; left:0%; bottom:0%; background-image: url(colloquium_assets/Hosek2018_fig17.svg); height:100%; width:70%; margin-right:60%;">
+            <div style="position: relative; bottom: -80%; left:-20%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018arXiv180802577H">Hosek+ 2018</a></div>
+        </span>
+
+        <div class='sl-block' style='display:block; height: 46%; position: relative; left: 32%; top: -100%;'>
+            <img src="colloquium_assets/Kroupa_imf_figure_log.png" style=''>
+        </div>
+        <div class='sl-block' style='display:block; height: 46%; position: relative; left: 32%; top: -100%;'>
+            <img src="colloquium_assets/KroupaTopHeavy_imf_figure_log.png" style=''>
+        </div>
+    </div>
+</section>
+
+
+
 <section>
     <h3> Summary part two: </h3>
     <div style="">
         <ul>
             <li> High mass stars heat their environment, preventing lower-mass stars from forming
             <li> The feedback from high-mass stars is exaggerated in denser regions
+            <li> By cooking their surroundings, high-mass stars help themselves form, and they may
+            help create their own siblings
         </ul>
     </div>
     <br>
@@ -390,22 +448,122 @@
 
 <section>
     <h4> Large scales again: <br>What governs the star formation rate? </h4>
-    <span class="image" style="height:80%; background-image: url(colloquium_assets/Kennicutt2012_Star3.svg); width:90%"> 
-        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
-    </span>
-
+    <div class=image style="height:80%">
+        <span class="image" style="height:100%; background-image: url(colloquium_assets/Kennicutt2012_Star3.svg); width:90%"> 
+            <div style="position: relative; bottom: -80%; left:10%" class="smaller2"><a href="http://esoads.eso.org/abs/2012ARA%26A..50..531K">Kennicutt &amp; Evans 2012</a></div>
+        </span>
+    </div>
 </section>
+
+<!-- Can I add something here about how the KS relation is used in simulations? -->
 
 <section>
     <h4> Local clouds led to the idea of a gas density threshold for star formation </h4>
     <span class="image" style="height:80%; background-image: url(colloquium_assets/Lada2010_NYSOs_vs_CloudMass_both.svg); width:90%"> 
+        <div style="position: relative; bottom: -72.5%; left:30%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2010ApJ...724..687L">Lada+ 2010</a></div>
+        <div style="position: relative; bottom: -75%; left:00%;" class=smaller>
+            Thresholds are used in simulations to say <br>"if gas reaches this density, turn it into stars" </div>
+    </span>
+</section>
+
+<section>
+    <div style='height:100%; width:100%;'>
+    <span class=image style='position:absolute; top:50%; left:50%;
+                             transform:translate(-50%,-50%);
+                             background-position: center center;
+                             width: 150%;
+                             background-image: url(colloquium_assets/Lada2017_fig1_California.png);'>
+    </span>
+        <h4 style="position: relative; color: white; top:0%; left: 0%;"> The California molecular cloud, a local example </h4>
+        <div class=smaller style="position: relative; color: white; max-width:90%; display:inline-block;"> In local clouds, Spitzer, Herschel, CSO Bolocam, and JCMT SCUBA are used to count protostars</div>
+        <div class=smaller style="position: relative; top:80%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2017arXiv170807847L">Lada+ 2017</a> </div>
+    <!-- Low-mass clouds are invisible on galactic scales -->
+    </div>
+</section>
+
+<section>
+    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/Lada2017_CaliNebBare.svg);'>
+        <h4 style="position: relative; top:-1%; left: 0%;"> The California molecular cloud with protostars </h4>
+        <div class=smaller style="position: relative; top:80%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2017arXiv170807847L">Lada+ 2017</a> </div>
+    </span>
+    <!-- Low-mass clouds are invisible on galactic scales -->
+</section>
+
+<section>
+    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/overview_figure_taper.png);'>
+        <h4 style="position: relative; top:5%; left: 12%; width:70%;"> ALMA enables protostar counting in <br>distant, massive clouds </h4>
+        <!--<div class=smaller style="position: relative; top:80%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018</a> </div>-->
+        <div class=smaller2 style="position: relative; top:60%; left: 45%; width:35%;"> Sgr B2: the most massive &amp; star-forming cloud in the Galaxy</div>
+    </span>
+    <!-- Low-mass clouds are invisible on galactic scales -->
+</section>
+
+<section>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuum_peak_DeepSouth_saturated.png);'>
+        <!--<h4 style="position: relative; top:5%; left: 12%; width:70%;"> ALMA enables protostar counting in distant, massive clouds </h4>-->
+        <!--<div class=smaller style="position: relative; top:80%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018</a> </div>-->
+    </span>
+    <!-- Low-mass clouds are invisible on galactic scales -->
+</section>
+
+<section>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/cores_on_continuum_peak_DeepSouth_saturated.png);'>
+        <!--<h4 style="position: relative; top:5%; left: 12%; width:70%;"> ALMA enables protostar counting in distant, massive clouds </h4>-->
+        <!--<div class=smaller style="position: relative; top:80%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018</a> </div>-->
+    </span>
+    <!-- Low-mass clouds are invisible on galactic scales -->
+</section>
+
+
+<section style="background: white;">
+    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14_labels.svg)"> 
         <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
     </span>
 </section>
+
 <section style="background: white;">
     <span class="image" style="background-image: url(colloquium_assets/EPOS2018_slide14.svg)"> 
         <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
     </span>
+</section>
+
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:100%; position: relative; top: -3%; background-position: center center; background-image: url(colloquium_assets/cores_on_SCUBA_column_saturated.png);'>
+        <h4 style="position: relative; top:5%; left: 0%; background-color: rgba(200,200,200,0.7); width:40%; display:inline-block;">Is there a threshold?</h4>
+        <!--<div class=smaller style="position: relative; top:80%; left: 35%;"> <a href="">Ginsburg+ 2018</a> </div>-->
+    </span>
+    </div>
+</section>
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/core_background_column_cdf.svg);'>
+        <h4 style="position: relative; top:-10%; left: 0%;"> Is there a threshold? </h4>
+        <!--<div class=smaller style="position: relative; top:80%; left: 35%;"> <a href="">Ginsburg+ 2018</a> </div>-->
+    </span>
+    </div>
+</section>
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/compare_brick_sgrb2_colPDF.svg);'>
+        <h4 style="position: relative; top:-10%; left: 0%;"> Column density within the CMZ </h4>
+        <!--<div class=smaller style="position: relative; top:80%; left: 35%;"> <a href="">Ginsburg+ 2018</a> </div>-->
+    </span>
+    </div>
+</section>
+
+<section>
+    <h4> SF Thresholds </h4>
+    <br>If star formation occurs above density thresholds, they are not universal.  
+    <br>But, clouds within the same environment may have a consistent threshold.
+    <br>
+    <br>Simulations using environmentally dependent thresholds are more likely correct.
+    <br>
+    <br>Star-counting measurements of star formation are now possible throughout the Galaxy.
+
 </section>
 
 <!--
@@ -416,14 +574,48 @@
 
     <div>Is this heating a necessary ingredient in high-mass SF?</div>
 </section>
+
+
 -->
+
+<section>
+    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/imf_figure.png);'>
+        <h4 style="position: relative; top:5%; left: 12%;"> The stellar initial mass function (IMF) </h4>
+        <div class=smaller style="position: relative; top:5%; left: 41%; width:55%;"> Stars are randomly sampled from this distribution </div>
+    </span>
+    <!-- Low-mass clouds are invisible on galactic scales -->
+</section>
 
 
 <section>
     <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/imf_figure.png);'>
-    <h4 style="position: absolute; top:53px; left: 306px;"> Back to the IMF: Where does it come from? </h4>
+        <h4 style="position: relative; top:5%; left: 12%;"> The stellar initial mass function (IMF) </h4>
+        <div class=smaller style="position: relative; top:8%; left: 45%; width:55%; color: maroon;"> Low-mass stars hold the mass </div>
+        <div class=smaller style="position: relative; top:15%; left: 60%; width:32%; color: rgb(60,100,200);"> High-mass stars make the light </div>
+    </span>
+    <!-- Low-mass clouds are invisible on galactic scales -->
+</section>
+
+<section>
+    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/imf_figure.png);'>
+    <h4 style="position: absolute; top:53px; left: 60%;"> What shapes the IMF? </h4>
     </span>
 </section>
+
+<!-- this slide just doesn't show what I want; I want a figure of M/L vs age, mass
+<section>
+    <h4>The IMF affects measurements of galaxies</h4>
+    <div style="margin-top:-40px;">
+        <img style="width:1000px; height:auto;" src="colloquium_assets/Conroy2013_fig4_bc.svg">
+    </div>
+    <span class="smaller2 llred"> 
+        <a href="http://adsabs.harvard.edu/abs/2013ARA%26A..51..393C">Conroy 2013</a>
+    </span>
+</section>
+-->
+
+
+
 
 
 <section>
@@ -457,8 +649,41 @@
 </section>
 
 
+
+<section>
+    <h4>Summary</h4>
+
+    <div class=left>
+    Stars form differently in high-density environments
+    <ul>
+        <li> More stars form in clusters
+        <li> More stars are affected by feedback from neighbors
+    </ul>
+    <br> The local neighborhood is not representative
+    <ul>
+        <li> ALMA enables detailed study of distant regions (Sgr B2, W51 so far)
+        <li> ALMA-IMF will provide large samples of clouds and protostellar cores,
+        bringing Galactic plane star formation studies into the resolution &amp;
+        sensitivity regime of recent local SF studies
+    </ul>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section>
+    Nothing beyond here
+</section>
+
+
+
 <section style='background:white;'>
-    <h4> First step: cataloging cores [Ex: Sgr B2]</h4>
+    <h4> Cataloging cores [Ex: Sgr B2]</h4>
     <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/cores_on_continuum_peak_MandN_nocores.svg);'>
         <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
     </span>
@@ -466,7 +691,7 @@
 
 <section style='background:white;'>
 <section style='background:white;'>
-    <h4> First step: cataloging cores [Ex: Sgr B2]</h4>
+    <h4> Cataloging cores [Ex: Sgr B2]</h4>
     <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/cores_on_continuum_peak_MandN_coloredcores.svg);'>
         <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
     </span>
@@ -487,7 +712,7 @@
 </section>
 
 <section>
-    <h4> Observed fluxes: would like these to be masses</h4>
+    <h4> 3mm Luminosity Function</h4>
     <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/core_peak_fluxdensity_coloredbyclass.png);'>
         <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
     </span>
@@ -495,7 +720,7 @@
 
 <section>
     <section>
-        <h4> Next step: Classifying them</h4>
+        <h4> Comparison to local clouds </h4>
         <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/core_peak_intensity_histogram_withHOPS.svg);'>
             <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
         </span>
@@ -507,11 +732,6 @@
         </span>
     </section>
 </section>
-
-<section>
-    beyond here, I haven't edited
-</section>
-
 
 
 

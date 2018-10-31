@@ -83,6 +83,7 @@ img.center-fit {
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
     text-transform: none;
+    font-family: 'Lato', sans-serif;
     font-variant: small-caps;
 }
 
@@ -200,3 +201,8 @@ a.darkbg {
 .reveal h6.darkbg  {
     color: white;
 }
+
+.reveal .left {
+    text-align: left;
+}
+

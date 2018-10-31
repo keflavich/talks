@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="483.78662"
+   height="243.78462"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="dendrograms.svg"
+   inkscape:export-filename="/Volumes/Macintosh HD/Users/tom/Dropbox/Code/development/dendrograms/dendrograms.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.5"
+     inkscape:cx="292.25065"
+     inkscape:cy="135.63738"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1717"
+     inkscape:window-height="1057"
+     inkscape:window-x="151"
+     inkscape:window-y="22"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-43.116461,-396.7078)">
+    <path
+       style="fill:#ffb380"
+       d="m 423.3794,589.05079 c -14.47797,-3.35762 -34.77526,-20.0128 -41.6888,-34.20824 -2.12786,-4.36907 -2.87184,-7.2515 -2.86504,-11.1 0.0129,-7.30402 4.21141,-16.45705 11.1464,-24.3 1.55059,-1.7536 5.12043,-5.22386 7.00744,-6.81197 6.15894,-5.18336 14.67204,-9.5076 21.4,-10.87013 4.61498,-0.93462 6.2142,-0.96263 11.6,-0.20318 12.18815,1.71866 20.72362,4.9943 26.73606,10.26047 7.0284,6.15602 10.58278,15.33422 10.58186,27.32481 -4e-4,5.04434 -0.73635,9.13307 -2.55598,14.2 -4.73097,13.17381 -16.01793,26.75122 -27.56194,33.15502 -5.14514,2.85417 -9.23749,3.61132 -13.8,2.55322 z"
+       id="path3096"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#d45500"
+       d="m 255.72592,539.16883 c -9.66463,-1.03501 -20.64112,-6.67193 -28.625,-14.7002 -5.77909,-5.81123 -8.88758,-11.37892 -9.29605,-16.65035 -0.25836,-3.33427 0.87521,-6.41216 3.77622,-10.25327 6.3877,-8.45767 21.2746,-17.49665 32.92444,-19.99094 7.72936,-1.6549 15.65447,1.35911 22.98122,8.74001 5.13187,5.1698 9.07065,12.29387 10.25622,18.5504 0.43195,2.27946 0.37144,6.74136 -0.1217,8.97447 -2.08076,9.42251 -7.76809,17.54904 -15.40177,22.00735 -4.70835,2.74983 -10.65518,3.94778 -16.49358,3.32253 z"
+       id="path3090"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#ffe6d5"
+       d="m 372.36722,638.81294 c -14.78107,-0.82707 -28.78041,-4.38288 -40.75,-10.35044 -1.925,-0.95973 -6.875,-3.66338 -11,-6.0081 -29.86093,-16.97349 -58.28955,-26.81443 -87,-30.11619 -14.75473,-1.69683 -51.11301,-1.55859 -75.25,0.2861 -5.3625,0.40984 -15.6,1.18766 -22.75,1.7285 -25.66235,1.94114 -42.745966,0.9894 -55.250006,-3.07802 -10.83703,-3.52516 -19.23548,-10.97833 -22.97977,-20.3933 -0.50067,-1.25891 -2.06032,-5.08688 -3.46589,-8.50659 -4.10779,-9.99409 -7.09254,-21.62661 -8.60396,-33.53235 -0.89002,-7.01079 -0.73673,-22.55069 0.29346,-29.75 3.53774,-24.72297 14.50953,-46.48012 33.23206,-65.89942 15.58368,-16.16364 32.855676,-26.14724 54.130406,-31.28859 11.96037,-2.8904 16.4616,-3.31446 34.8937,-3.28737 14.35147,0.0211 17.96059,0.18392 25.20408,1.13709 32.64044,4.29514 60.54997,11.32769 127.29592,32.07562 52.80839,16.41545 74.04142,22.74586 105.75,31.5283 36.7641,10.18268 44.94113,13.07738 64.29562,22.76093 11.03672,5.52196 17.83931,11.16505 23.54669,19.53316 11.98292,17.56925 14.86589,44.15891 7.13556,65.81135 -3.20016,8.96356 -7.43327,14.6158 -15.47787,20.66672 -33.97151,25.55243 -81.21807,44.55795 -115.5,46.46133 -2.75,0.15269 -6.35,0.34991 -8,0.43829 -1.65,0.0884 -6.0375,-0.009 -9.75,-0.21702 l 0,0 z m 59.54972,-49.17923 c 6.01581,-1.82593 12.50622,-6.35321 19.26543,-13.43828 12.19214,-12.77993 18.13109,-27.65582 16.66927,-41.7532 -1.48728,-14.34278 -7.12764,-22.87513 -18.79397,-28.4302 -7.52828,-3.58469 -18.94926,-5.96522 -26.44045,-5.51111 -23.23075,1.40822 -48.86483,29.56023 -44.01793,48.34163 1.90143,7.36792 6.4537,14.30962 14.75521,22.5 6.47479,6.38812 12.95647,11.10042 20.26272,14.73135 8.28371,4.1167 13.26955,5.08658 18.29972,3.55981 l 0,0 z M 265.36722,577.06234 c 29.94496,-5.25817 52.7474,-24.98605 60.64713,-52.46979 2.69906,-9.3902 3.07315,-12.27829 3.07631,-23.75 0.003,-10.38176 -0.0415,-10.86546 -1.29665,-14.12077 -3.67377,-9.52864 -10.7226,-16.54356 -22.92679,-22.8165 -19.62778,-10.08867 -50.94785,-16.79038 -96,-20.54159 -18.25815,-1.52024 -41.87189,-3.02114 -47.53179,-3.02114 -22.33777,0 -43.17202,8.13 -57.85517,22.57641 -5.406996,5.31981 -7.948826,8.90797 -11.325096,15.98703 -7.59062,15.91529 -9.16621,27.13152 -5.12312,36.47012 1.3143,3.03572 5.33602,7.937 9.29738,11.33075 7.834306,6.71173 13.189126,10.03546 27.219956,16.89539 43.81696,21.4229 74.03873,30.39442 115.31784,34.2328 6.74887,0.62755 20.87065,0.21578 26.5,-0.77271 l 0,0 z"
+       id="path3094"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#ffb380"
+       d="m 245.85092,577.43956 c -0.6875,-0.0554 -3.6125,-0.27384 -6.5,-0.48553 -30.41608,-2.22988 -60.6845,-9.77916 -90.875,-22.66522 -8.55513,-3.65154 -22.3957,-10.13285 -33.125,-15.51187 -9.05944,-4.54186 -20.399236,-13.35757 -24.837986,-19.30939 -1.72598,-2.31433 -3.67456,-6.27594 -4.28769,-8.71719 -1.64671,-6.5566 -0.30315,-14.88597 4.19918,-26.03281 3.86735,-9.57473 6.63283,-14.08552 12.169516,-19.84973 9.06547,-9.43803 21.33455,-16.63856 34.94171,-20.50671 7.62194,-2.16672 13.54707,-3.02373 22.06527,-3.19152 5.55309,-0.10939 7.90864,-0.009 21.125,0.90448 49.26861,3.40357 72.26921,6.36099 95.375,12.26335 20.90127,5.33921 35.04356,12.22187 43.75,21.29191 7.04078,7.33482 9.21532,14.16203 8.78716,27.58822 -0.16995,5.32942 -0.63071,9.51064 -1.55653,14.125 -5.3322,26.57603 -23.36692,47.06744 -49.10563,55.7948 -8.1357,2.75861 -16.43395,4.15525 -25.625,4.31284 -2.8875,0.0495 -5.8125,0.0447 -6.5,-0.0106 l 0,0 z m 18.27351,-37.73923 c 5.79536,-1.02901 10.70046,-3.71828 15.1542,-8.30845 7.12169,-7.33986 10.90404,-18.13264 9.3063,-26.5552 -2.06552,-10.88855 -10.47883,-21.74251 -20.42663,-26.35227 -6.55167,-3.03601 -11.53352,-3.03145 -20.05738,0.0184 -13.37323,4.78493 -26.54222,15.0416 -30.28794,23.58976 -0.6629,1.51281 -0.71206,1.84939 -0.71206,4.875 0,3.74494 0.38415,5.2315 2.29076,8.86469 1.69283,3.22582 3.66261,5.81412 6.95924,9.14451 7.80977,7.88973 17.93224,13.3071 27.75,14.85132 3.23635,0.50903 6.68469,0.46509 10.02351,-0.12774 l 0,0 z M 158.47592,527.44321 c 12.17222,-2.12277 26.96484,-12.26934 32.03939,-21.97651 2.63694,-5.04424 2.84318,-9.36167 0.70501,-14.75856 -3.95188,-9.97483 -15.68141,-22.20103 -26.1194,-27.22541 -4.16639,-2.00551 -5.27965,-2.25641 -10,-2.25366 -6.0775,0.004 -11.18091,1.27165 -17.51902,4.35317 -8.00059,3.8898 -15.48672,10.63188 -18.60465,16.75552 -1.74695,3.43102 -2.42051,7.83328 -1.7457,11.40963 2.57784,13.66203 20.22169,31.54901 33.36937,33.82919 0.825,0.14308 1.78125,0.30618 2.125,0.36244 0.8796,0.14398 3.25671,-0.061 5.75,-0.49581 z"
+       id="path3084"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#d45500"
+       d="m 149.54357,526.48406 c -5.93966,-1.55694 -12.1908,-5.52269 -18.3432,-11.63701 -7.43244,-7.38643 -11.79783,-14.60065 -13.23947,-21.8795 -0.5268,-2.65976 0.0721,-6.46973 1.49904,-9.53583 2.20957,-4.74786 7.50513,-10.40966 13.14098,-14.04978 9.21591,-5.95244 20.5258,-8.74668 27.75,-6.85595 7.57626,1.98287 18.7607,10.92254 25.3908,20.29474 6.48597,9.16846 7.59831,15.2932 4.02203,22.14597 -5.65494,10.83584 -22.70639,21.50981 -35.16283,22.01143 -2.34061,0.0943 -3.09349,0.0207 -5.05735,-0.49407 l 0,0 z"
+       id="path3080"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 56.333334,569.02884 c 0,0 -38,-71 20,-134 58.000006,-63 144.000006,-35 262.000006,2 118,37 113,29 155,50 42,21 38,83 18,101 -20,18 -117,79 -187,37 -70,-42 -119.11116,-32.78097 -147,-33 -36.99886,-0.29058 -108.000006,18 -121.000006,-23 z"
+       id="path2989"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssssssc"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 93.647034,476.37199 c -16.68613,34.57024 -7.97718,43.57949 16.878686,60.48528 32.26346,16.02082 73.888,37.58871 134.69849,40.99137 49.23076,2.75473 87.36456,-32.78768 83.69848,-83.89949 -3.35405,-46.76152 -114.92695,-49.67702 -161.20458,-53.19239 -41.27476,-2.53896 -67.37802,21.50481 -74.071076,35.61523 z"
+       id="path2991"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsscc"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 425.33334,500.52884 c -21.65583,0 -45.47961,22.81545 -47,42 -1.58055,19.94372 32.44541,46.79278 48.5,47.5 14.46208,0.63707 41.2873,-26.33716 41,-51 -0.34651,-29.74569 -21.01902,-36.31957 -42.5,-38.5 z"
+       id="path3021"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 259.33334,476.52884 c -13.5,0 -40.5,16 -42,29 -1.5,13 18.5,31.5 37.5,34 19,2.5 31,-12.5 33.5,-27 2.5,-14.5 -12.5,-35 -29,-36 z"
+       id="path3025"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 156.83334,461.52884 c -16.5,-1 -38.5,13.5 -39.5,28 -1,14.5 22,39 37.5,38 15.5,-1 37.5,-16.5 37.5,-30 0,-13.5 -23,-36 -35.5,-36 z"
+       id="path3023"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="318.33331"
+       y="606.02881"
+       id="text3898"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3900"
+         x="318.33331"
+         y="606.02881"
+         style="font-size:18px;font-family:helvetica;-inkscape-font-specification:helvetica">trunk</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3936"
+       y="555.02881"
+       x="169.33334"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:18px;font-family:helvetica;-inkscape-font-specification:helvetica"
+         y="555.02881"
+         x="169.33334"
+         id="tspan3938"
+         sodipodi:role="line">branch</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="227.33334"
+       y="513.02881"
+       id="text3944"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3946"
+         x="227.33334"
+         y="513.02881"
+         style="font-size:18px;font-family:helvetica;-inkscape-font-specification:helvetica">leaf 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="127.33334"
+       y="500.02884"
+       id="text3948"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3950"
+         x="127.33334"
+         y="500.02884"
+         style="font-size:18px;font-family:helvetica;-inkscape-font-specification:helvetica">leaf 1</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3956"
+       y="550.02881"
+       x="398.33331"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/tom/schematic_structure.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:18px;font-family:helvetica;-inkscape-font-specification:helvetica"
+         y="550.02881"
+         x="398.33331"
+         id="tspan3958"
+         sodipodi:role="line">leaf 3</tspan></text>
+  </g>
+</svg>

@@ -5,6 +5,13 @@ body {
     background-blend-mode: overlay;
     background-color: rgba(255,255,255,0.7);
 }
+body.orion {
+    background-image: url(assets_orion/orionbackground.png);
+    background-position:center;
+    background-size:1280px;
+    background-blend-mode: overlay;
+    background-color: rgba(255,255,255,0.9);
+}
 
 .reveal .slides > section {
     height: 100%;

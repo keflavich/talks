@@ -1,12 +1,15 @@
-body .slide_background {
+body.print-pdf,
+body .reveal .slide-background,
+body {
     background-image: url(assets/SgrB2N_background.png);
     background-position:center;
     background-size:1280px;
     background-blend-mode: overlay;
     background-color: rgba(255,255,255,0.7);
     background-repeat: no-repeat;
-    background-size: contain;
 }
+body.orion.print-pdf,
+body.orion,
 body.orion .slide-background {
     background-image: url(assets_orion/orionbackground.png);
     background-position:center;
@@ -14,12 +17,42 @@ body.orion .slide-background {
     background-color: rgba(255,255,255,0.9);
     background-repeat: no-repeat;
     background-size: contain;
+    max-height:768px;
 }
-.print-pdf .reveal .slide-background {
-    z-index: -1;
-    background-size: 100%;
+
+@media print {
+    .reveal .slides section {
+        min-height: 768px !important;
+        max-height: 100% !important;
+    }
+    div.image,span.image {
+        /* in print mode, spans/divs don't contain any non-floating
+         * material, so they end up not getting displayed at all.
+         * This forces them to be shown (though it might f up positioning)
+         */
+        position: absolute;
+    }
+    .print-pdf .reveal .slide-background {
+        z-index: -1;
+        /*background-size: 100%;*/
+        background-repeat: no-repeat;
+    }
+}
+
+div.image,span.image {
     background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-position-x: center;
+    -webkit-print-color-adjust: exact;
 }
+
+
+
 
 .reveal .slides > section {
     height: 100%;
@@ -99,17 +132,6 @@ img.center-fit {
     text-transform: none;
     font-family: 'Lato', sans-serif;
     font-variant: small-caps;
-}
-
-div.image,span.image {
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-    height:100%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    background-position-x: center;
 }
 
 

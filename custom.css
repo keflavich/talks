@@ -15,7 +15,6 @@ body.orion {
 
 .reveal .slides > section {
     height: 100%;
-    top: -50%; /* -58% */
     vertical-align: top;
 }
 

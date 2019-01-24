@@ -1177,9 +1177,9 @@
        transform="matrix(0.61983,0,0,0.61983,-67.239245,512.97808)"><text
          transform="scale(1,-1)"
          id="text31049"><tspan
-           style="font-size:10px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold"
-           x="0 2.48 7.2509999 10.83 13.608 18.969 23.149 27.978001 32.880001 41.341999 46.502998 51.912998 55.604 60.432999 64.124001 66.603996 72.335999 77.746002 80.524002 83.003998 87.042 89.82 95.230003 100.962 104.653 107.431 111.469 116.63 119.11 121.839 125.33 129.368 131.84801 140.31 142.78999 145.27 150.099 153.58"
-           y="0"
+           style="font-size:20px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold"
+           x="0"
+           y="5"
            sodipodi:role="line"
            id="tspan31051">iv) Fragmentation is not self-similar.</tspan></text>
 </g><g
@@ -1672,14 +1672,13 @@
            sodipodi:role="line"
            id="tspan31671">emerging IMF</tspan></text>
 <text
-         style="font-size:7.43796015px"
          y="-695.80615"
          x="69.380287"
          transform="scale(1,-1)"
          id="text31675"><tspan
-           style="font-size:6.19829988px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold"
-           x="69.380287 70.917465 73.135834 74.857727 79.815125 83.367981 85.655777 87.37767 90.370834 91.908005 93.44519 95.167068 98.023865 101.57674 104.04305 107.24197 109.74486 111.46674 114.4599 116.92621 120.12515 121.84703 123.37244 126.76848 129.23479 132.43373 134.9366 137.2244 140.42334 141.96053 143.4977 146.49086 149.08174 150.60715"
-           y="-695.80615"
+           style="font-size:11.5px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold"
+           x="69.380287"
+           y="-690"
            sodipodi:role="line"
            id="tspan31677">i) Not all cores are ‘prestellar’.</tspan></text>
 <text
@@ -1693,8 +1692,8 @@
            sodipodi:role="line"
            id="tspan40187"
            x="-131.02594"
-           y="-695.72314"
-           style="font-size:5.5999999px;font-weight:bold;-inkscape-font-specification:Bitstream Vera Sans Bold">0) &quot;Classical&quot; view</tspan></text>
+           y="-690.72314"
+           style="font-size:11px;font-weight:bold;-inkscape-font-specification:Bitstream Vera Sans Bold">0) &quot;Classical&quot; view</tspan></text>
 </g><g
        id="g31857" /><g
        id="g31889" /><g
@@ -1858,8 +1857,8 @@
              id="tspan31833"
              sodipodi:role="line"
              y="0"
-             x="0 2.48 4.96 8.5389996 11.317 18.568001 24.299999 28.278999 33.439999 36.217999 41.119999 45.098999 50.831001 58.380001 62.070999 67.481003 70.259003 72.738998 76.777 79.555 84.964996 90.696999 94.388 97.166 101.204 106.365 108.845 111.574 115.065 119.103 121.583 130.045 132.52499 135.005 139.834 143.315"
-             style="font-size:10px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold">ii) Core growth is not self-similar.</tspan></text>
+             x="0"
+             style="font-size:19px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold">ii) Core growth is not self-similar.</tspan></text>
 </g><path
          inkscape:connector-curvature="0"
          id="path31847"
@@ -2499,9 +2498,9 @@
          style="font-size:7.43796015px"><tspan
            id="tspan32511"
            sodipodi:role="line"
-           y="-468.31409"
-           x="71.103127 72.640305 74.177483 75.714661 77.933037 78.97435 82.866264 85.859421 88.45031 91.413094 92.950279 96.303558 99.341965 101.06385 103.56673 105.85452 108.84768 111.43856 113.16045 114.85197 118.40484 120.99573 126.24072 129.23389 131.52168 133.05885 136.61172 139.965 141.68689 144.88583 146.57735 149.8674 152.7242 154.26138 157.46033 160.8136 163.67039 166.63319 168.35507 170.57344 173.88458 177.20749 180.74548 182.96385"
-           style="font-size:6.19829988px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold">iii) Varying star formation effciency (SFE).</tspan></text>
+           y="-465"
+           x="71.103127"
+           style="font-size:11px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold">iii) Varying star formation efficiency (SFE).</tspan></text>
 <path
          inkscape:connector-curvature="0"
          id="path32547"
@@ -2931,8 +2930,8 @@
              id="tspan32859"
              sodipodi:role="line"
              y="0"
-             x="0 4.7709999 8.3500004 10.03 16.309 21.138 25.318001 30.098 32.577999 37.987999 42.889999 45.667999 50.828999 59.291 64.778999 69.940002 75.418999 80.898003 86.058998 91.538002 94.316002 99.794998 105.205 110.034 114.072 119.233 122.011 125.702 128.18201 136.644 141.80499 145.843 150.452 155.28101 157.761 162.922"
-             style="font-size:10px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold">v) Varying embedded phase timescale.</tspan></text>
+             x="0"
+             style="font-size:20px;font-variant:normal;font-weight:600;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:GillSans-SemiBold">v) Varying embedded phase timescale.</tspan></text>
 </g><path
          inkscape:connector-curvature="0"
          id="path32873"
@@ -3238,20 +3237,11 @@
            x="406.9989"
            y="-538.0766"><tspan
              style="font-size:10.14850044px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Myriad;-inkscape-font-specification:Myriad-Roman"
-             x="406.9989 415.21716 420.10873 424.12753 428.14633 430.29782 433.17999 441.33939 454.24829"
+             x="406.9989"
              y="-538.0766"
              sodipodi:role="line"
-             id="tspan29212">Mass (M )</tspan></text>
-<text
-           transform="scale(1,-1)"
-           id="text29214"
-           x="441.319"
-           y="-536.50958"><tspan
-             style="font-size:8.11880016px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Myriad;-inkscape-font-specification:Myriad-Roman"
-             x="441.319 444.53406 449.00751"
-             y="-536.50958"
-             sodipodi:role="line"
-             id="tspan29216">sun</tspan></text>
+             id="tspan29212">Mass (M<tspan dy="2">⊙</tspan><tspan dy="-2">)</tspan>
+             </tspan></text>
 </g><text
          y="-408.08243"
          x="464.90353"
@@ -3369,7 +3359,7 @@
            id="tspan29260"
            sodipodi:role="line"
            y="-507.32916"
-           x="528.12415 531.28723 541.92804"
+           x="528.12415"
            style="font-size:13.23478126999999915px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#f39019;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Myriad;-inkscape-font-specification:Myriad-Roman">IMF</tspan></text>
 <text
          y="-478.76239"
@@ -3380,6 +3370,6 @@
            id="tspan29264"
            sodipodi:role="line"
            y="-478.76239"
-           x="615.7475 625.06519 633.17975 644.42822"
+           x="610.7475"
            style="font-size:13.99058722999999915px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#164f86;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Myriad;-inkscape-font-specification:Myriad-Roman">DCMF</tspan></text>
 </g></g></svg>

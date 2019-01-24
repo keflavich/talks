@@ -8,6 +8,7 @@ body {
     background-color: rgba(255,255,255,0.7);
     background-repeat: no-repeat;
 }
+div.slides.orion section,
 body.orion.print-pdf,
 body.orion,
 body.orion .slide-background {
@@ -19,6 +20,7 @@ body.orion .slide-background {
     background-size: contain;
     max-height:768px;
 }
+
 
 @media print {
     .reveal .slides section {

@@ -67,7 +67,7 @@ div.image,span.image {
     vertical-align: top;
 }
 
-div.reveal.slides {
+div.reveal.slides,div.reveal.slides.orion {
     height: 100%;
     width: 100%;
 }

@@ -497,7 +497,7 @@
          x="695.4339"
          y="-222.38426"><tspan
            style="font-size:20px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans"
-           x="695.4339 710.47394 722.77393 730.99396 741.41394 752.41394 765.09393 777.39392 782.95392 789.3139 797.11395 809.83392 822.55396 831.75397"
+           x="695.4339"
            y="-222.38426"
            sodipodi:role="line"
            id="tspan23102">Herschel (25&quot;)</tspan></text>
@@ -511,7 +511,7 @@
          x="695.4339"
          y="-193.02489"><tspan
            style="font-size:20px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans"
-           x="695.4339 710.47394 722.77393 730.99396 741.41394 752.41394 765.09393 777.39392 782.95392 789.3139 797.11395 809.83392 822.55396 831.75397"
+           x="695.4339"
            y="-193.02489"
            sodipodi:role="line"
            id="tspan23108">Herschel (36&quot;)</tspan></text>
@@ -554,7 +554,7 @@
            transform="matrix(1,0,0,-1,132.42187,-2.453125)"
            id="text23130"><tspan
              style="font-size:14px;font-style:italic;font-variant:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans-Oblique"
-             x="0 10.527344 19.140625 24.896484 32.19043 39.887695 48.760742 57.374023"
+             x="0"
              y="0"
              sodipodi:role="line"
              id="tspan23132">Herschel</tspan></text>
@@ -562,7 +562,7 @@
            transform="matrix(1,0,0,-1,194.23242,0.828125)"
            id="text23134"><tspan
              style="font-size:20px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans"
-             x="0"
+             x="-9"
              y="0"
              id="tspan23136">)</tspan></text>
 </g><path
@@ -604,7 +604,7 @@
            transform="matrix(1,0,0,-1,131.8457,-2.453125)"
            id="text23158"><tspan
              style="font-size:14px;font-style:italic;font-variant:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans-Oblique"
-             x="0 10.527344 19.140625 24.896484 32.19043 39.887695 48.760742 57.374023"
+             x="0"
              y="0"
              sodipodi:role="line"
              id="tspan23160">Herschel</tspan></text>
@@ -612,7 +612,7 @@
            transform="matrix(1,0,0,-1,193.65625,0.828125)"
            id="text23162"><tspan
              style="font-size:20px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;-inkscape-font-specification:DejaVuSans"
-             x="0"
+             x="-9"
              y="0"
              id="tspan23164">)</tspan></text>
 </g><path

@@ -3,7 +3,7 @@ body .reveal .slide-background,
 body {
     background-image: url(assets/SgrB2N_background.png);
     background-position:center;
-    background-size:1280px;
+    background-size:100%;
     background-blend-mode: overlay;
     background-color: rgba(255,255,255,0.7);
     background-repeat: no-repeat;

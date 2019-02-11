@@ -41,6 +41,7 @@ body.orion .slide-background {
         z-index: -1;
         background-size: 120% !important;
         background-repeat: no-repeat;
+        background: none;
     }
 }
 

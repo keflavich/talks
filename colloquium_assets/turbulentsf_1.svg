@@ -1425,57 +1425,72 @@
            id="path43493" /></g></g><g
        id="g43523"><g
          id="g43525"
-         clip-path="url(#clipPath43527)"><g
-           id="g43579"
-           transform="translate(728.3182,183.243)"><text
-             transform="scale(1,-1)"
-             id="text43581"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:20;writing-mode:lr;-inkscape-font-specification:Helvetica-Light"
-               x="0 12.22 23.34 35.56 46.68 57.8 68.92 82.12 87.68 98.8 109.92 121.04 132.16 137.72 148.84 159.96 171.08 182.2 187.76 198.88 210 221.12 232.24"
-               y="0"
-               sodipodi:role="line"
-               id="tspan43583">Padoan+ 2002,2011,2014 </tspan></text>
-</g><g
-           id="g43585"
-           transform="translate(708.2582,159.243)"><text
-             transform="scale(1,-1)"
-             id="text43587"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:20;writing-mode:lr;-inkscape-font-specification:Helvetica-Light"
-               x="0 13.34 20 31.12 47.78 58.9 70.02 74.46 84.46 90.02 103.36 108.92 125.58 136.7 150.04 161.16 172.28 177.84 188.96 200.08 211.2 222.32 227.88 239 250.12 261.24 272.36"
-               y="0"
-               sodipodi:role="line"
-               id="tspan43589">Krumholz &amp; McKee 2005,2012 </tspan></text>
-</g><g
-           id="g43591"
-           transform="translate(728.2682,135.243)"><text
-             transform="scale(1,-1)"
-             id="text43593"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:20;writing-mode:lr;-inkscape-font-specification:Helvetica-Light"
-               x="0 11.12 22.24 34.46 45.58 52.24 58.9 70.02 75.58 86.7 92.26 105.6 111.16 124.5 128.94 140.06 150.06 160.06 171.18 182.3 187.86 198.98 210.1 221.22 232.34"
-               y="0"
-               sodipodi:role="line"
-               id="tspan43595">Federrath &amp; Klessen 2012 </tspan></text>
-</g><g
-           id="g43597"
-           transform="translate(717.1682,111.243)"><text
-             transform="scale(1,-1)"
-             id="text43599"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:20;writing-mode:lr;-inkscape-font-specification:Helvetica-Light"
-               x="0 14.44 25.56 36.68 47.8 58.92 71.14 82.26 86.7 91.14 102.26 107.82 121.16 126.72 141.16 152.28 163.4 175.62 182.28 186.72 197.84 204.5 210.06 221.18 232.3 243.42 254.54"
-               y="0"
-               sodipodi:role="line"
-               id="tspan43601">Hennebelle &amp; Chabrier 2011 </tspan></text>
-</g><g
-           id="g43603"
-           transform="translate(782.7482,87.24304)"><text
-             transform="scale(1,-1)"
-             id="text43605"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:20;writing-mode:lr;-inkscape-font-specification:Helvetica-Light"
-               x="0 14.44 25.56 37.78 47.78 52.22 63.34 73.34 78.9 90.02 101.14 112.26"
-               y="0"
-               sodipodi:role="line"
-               id="tspan43607">Hopkins 2013</tspan></text>
-</g><path
+         clip-path="url(#clipPath43527)"><path
            d="m 0.125,0.125 1023.75,0 0,767.75 -1023.75,0 0,-767.75 z"
            style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
-           id="path43621" /></g></g></g></svg>
+           id="path43621" /></g></g><g
+       id="g18960"
+       transform="translate(127.89928,-87.050847)"><text
+         transform="scale(1,-1)"
+         y="-290.79337"
+         id="text43581-7"
+         x="602.04626"
+         style="font-size:12px"><tspan
+           id="tspan43583-0"
+           sodipodi:role="line"
+           y="-290.79337"
+           x="602.04626 614.2663 625.38629 637.60626 648.72626 659.84625 670.96625 684.16626 689.72626 700.84625 711.96625 723.0863 734.2063 739.7663 750.88629 762.00629 773.12628 784.24628 789.80627 800.92627 812.04626 823.16626 834.28625"
+           style="font-size:20px;font-variant:normal;font-weight:300;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;-inkscape-font-specification:Helvetica-Light">Padoan+ 2002,2011,2014</tspan></text>
+<text
+         transform="scale(1,-1)"
+         sodipodi:linespacing="125%"
+         id="text18856"
+         y="-173.44864"
+         x="655.55853"
+         style="font-size:20px;font-style:normal;font-weight:300;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:helvetica;-inkscape-font-specification:helvetica"
+         xml:space="preserve"><tspan
+           y="-173.44864"
+           x="655.55853"
+           id="tspan18858"
+           sodipodi:role="line">Burkhart 2018</tspan></text>
+<g
+         transform="translate(581.98628,266.79337)"
+         id="g43585-0"><text
+           id="text43587-7"
+           transform="scale(1,-1)"><tspan
+             id="tspan43589-4"
+             sodipodi:role="line"
+             y="0"
+             x="0 13.34 20 31.120001 47.779999 58.900002 70.019997 74.459999 84.459999 90.019997 103.36 108.92 125.58 136.7 150.03999 161.16 172.28 177.84 188.96001 200.08 211.2 222.32001 227.88 239 250.12 261.23999 272.35999"
+             style="font-size:20px;font-variant:normal;font-weight:300;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;-inkscape-font-specification:Helvetica-Light">Krumholz &amp; McKee 2005,2012</tspan></text>
+</g><g
+         transform="translate(601.99628,242.79337)"
+         id="g43591-1"><text
+           id="text43593-3"
+           transform="scale(1,-1)"><tspan
+             id="tspan43595-5"
+             sodipodi:role="line"
+             y="0"
+             x="0 11.12 22.24 34.459999 45.580002 52.240002 58.900002 70.019997 75.580002 86.699997 92.260002 105.6 111.16 124.5 128.94 140.06 150.06 160.06 171.17999 182.3 187.86 198.98 210.10001 221.22 232.34"
+             style="font-size:20px;font-variant:normal;font-weight:300;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;-inkscape-font-specification:Helvetica-Light">Federrath &amp; Klessen 2012</tspan></text>
+</g><g
+         transform="translate(590.89628,218.79337)"
+         id="g43597-4"><text
+           id="text43599-1"
+           transform="scale(1,-1)"><tspan
+             id="tspan43601-1"
+             sodipodi:role="line"
+             y="0"
+             x="0 14.44 25.559999 36.68 47.799999 58.919998 71.139999 82.260002 86.699997 91.139999 102.26 107.82 121.16 126.72 141.16 152.28 163.39999 175.62 182.28 186.72 197.84 204.5 210.06 221.17999 232.3 243.42 254.53999"
+             style="font-size:20px;font-variant:normal;font-weight:300;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;-inkscape-font-specification:Helvetica-Light">Hennebelle &amp; Chabrier 2011</tspan></text>
+</g><g
+         transform="translate(656.47628,194.79341)"
+         id="g43603-3"><text
+           id="text43605-2"
+           transform="scale(1,-1)"><tspan
+             id="tspan43607-0"
+             sodipodi:role="line"
+             y="0"
+             x="0 14.44 25.559999 37.779999 47.779999 52.220001 63.34 73.339996 78.900002 90.019997 101.14 112.26"
+             style="font-size:20px;font-variant:normal;font-weight:300;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;-inkscape-font-specification:Helvetica-Light">Hopkins 2013</tspan></text>
+</g></g></g></svg>

@@ -44,12 +44,13 @@
                 Mills,  Juergen Ott, Jaime E. Pineda, Álvaro Sánchez-Monge,
                 Peter Schilke, Anika Schmiedeke, Daniel Walker, David Wilner,
                 Leonardo Testi, Rowan Smith, Ke Wang, James Dale, Jeremy
-                Darling, Robert Loughnane, Nate Bastian, Erik Rosolowsky,
-                Ciriaco Goddi, Brett McGuire, Dick Plambeck, Melvyn Wright</div>
-            <div class=smaller3> <b>Students:</b>
+                Darling, Robert Loughnane, Nate Bastian, Erik Rosolowsky, Eric
+                Koch, Ciriaco Goddi, Brett McGuire, Dick Plambeck, Melvyn
+                Wright</div>
+            <div class=smaller2> <b>Students:</b>
                 Anna McLeod, Connor McClellan, Justin Otter, Natalie Butterfield, Terry Melo, Virginie Montes
 </div>
-<div class=smaller3> Slides available at <a href="https://tinyurl.com/AG-UF2019Colloquium">tinyurl.com/AG-UF2019Colloquium</a> </div>
+<div class=smaller2> Slides available at <a href="https://tinyurl.com/AG-UF2019Colloquium">tinyurl.com/AG-UF2019Colloquium</a> </div>
 <!--<a href="https://keflavich.github.io/talks/colloquium_HMSF.html">https://keflavich.github.io/talks/colloquium_HMSF_orion.html</a></div>-->
             <!--<div style='font-size:30px'>This presentation can be found at <a href="https://tinyurl.com/HMCFormationTTF18">https://tinyurl.com/HMCFormationTTF18</a></div>-->
     </div>
@@ -58,12 +59,22 @@
 
 <section>
     <h3>Software</h3>
-    <img src="colloquium_assets/astropy_logo.svg" style="width: 600px" width=600px>
-    <img src="colloquium_assets/astroquery_logo.svg" style="width: 600px">
+    <a href='http://www.astropy.org/'><img src="colloquium_assets/astropy_logo.svg" style="width: 600px" width=600px></a>
+    <a href="http://astroquery.readthedocs.io/"><img src="colloquium_assets/astroquery_logo.svg" style="width: 600px"></a>
     <div>
-        <img src="colloquium_assets/radioastrotools_logo.svg" style="width:600px">
-        <img src="colloquium_assets/pyspeckit_logo.png" style="width:200px">
+        <a href="http://radio-astro-tools.github.io/"><img src="colloquium_assets/radioastrotools_logo.svg" style="width:600px"></a>
+        <a href="https://pyspeckit.readthedocs.io/"><img src="colloquium_assets/pyspeckit_logo.png" style="width:200px"></a>
     </div>
+    <aside class=notes>
+        <ul>
+            <li> These are software packages I'm a major contributor to or lead developer of.
+            <li> These tools are critical for every step of the research I'm showing
+            <li> Graduate students should learn these tools: they will make
+            grad school easier, and there is a lot of opportunity to contribute
+            and learn.
+            <li> Some students at UF - Billy Schap, for example - have used pyspeckit
+        </ul>
+    </aside>
 
 </section>
 
@@ -72,6 +83,13 @@
     <span class=image style='height:99%; margin:-40px 0px; background-position: center center; background-image: url(colloquium_assets/history_of_universe.png);'>
     </span>
     <div style="position: absolute; bottom: 90px; left:50px" class="smaller3"><a href="https://map.gsfc.nasa.gov/media/060915/index.html">NASA/WMAP</a></div>
+    <aside class=notes>
+        <ul>
+            <li> After the big bang, there was a brief dark period.
+            <li> After the dark ages, almost all of the light we see comes from star formation in galaxies.
+            <li> Galaxies are made of stars, the observable universe is made of galaxies
+        </ul>
+    </aside>
 </section>
 
 
@@ -81,6 +99,10 @@
     <div class=fragment style='visibility: visible'> The star formation rate, i.e., how much gas turns to stars </div>
     <div style='font-size: 120px'> L / M</div>
     <div class=fragment style='visibility: visible'> The light per unit mass, i.e., how stars and stellar populations turn matter into light </div>
+
+    <aside class=notes>
+        Just what's on the slides
+    </aside>
 </section>
 
 
@@ -97,8 +119,18 @@
     <div style="position: absolute; bottom: 50px; left:10px" class="smaller2"><a href="https://commons.wikimedia.org/wiki/File:Hertzsprung-Russel_StarData.png">ESO via Wikipedia</a></div>-->
     <div style="position: absolute; bottom: 140px; right:10px" class="smaller3">
         <a href="https://ui.adsabs.harvard.edu/?#abs/2012A%26A...537A.146E">Ekström+ 2012 models</a>,
-        <a href="http://www.vendian.org/mncharity/dir3/blackbody/parameters.html">vendian.org colors</a>
+        <a href="http://www.vendian.org/mncharity/dir3/blackbody/parameters.html">vendian.org colors</a>,
+        <a href="https://www.tinyurl.com/HR-figure">www.tinyurl.com/HR-figure</a>
       </div>
+    <aside class=notes>
+        <ul>
+            <li> describe the plots!
+            <li> Points are colored by an approximation of how they appear on the sky
+            <li> 100 msun stars produce about a million times the light of a 1 msun star
+            <li> 1 and lower Msun stars live as long as the universe
+            <li> URL links to script to make figures
+        </ul>
+    </aside>
 </section>
 
 
@@ -108,6 +140,14 @@
         <div class=smaller style="position: relative; top:5%; left: 41%; width:55%;"> Stars are randomly sampled from this distribution </div>
         <div style="position: relative; top: 71%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
     </span>
+    <aside class=notes>
+        <ul>
+            <li> Log-differential probability vs log mass
+            <li> Sample cluster of 1000 Msun
+            <li> Points are a real sampling from the IMF, shows what the curve means in practice
+            <li> URL links to script to make figures
+        </ul>
+    </aside>
 
     <!-- Low-mass clouds are invisible on galactic scales -->
 </section>
@@ -118,14 +158,28 @@
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_UV_matched_Herschel.jpg);'>
         <h4> Almost all of the light in star-forming galaxies is produced by high-mass stars</h4>
     </span>
-        <div style="position: absolute; bottom: 100px; left:190px" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
+        <div style="position: relative; bottom: 23%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
+    <aside class=notes>
+        <ul>
+            <li> UV image of M31, Andromeda, our closest massive neighbor
+            <li> Blue light is produced by high-mass stars
+            <li> (high-mass stars dominate anyway, but even more in UV)
+        </ul>
+    </aside>
 </section>
 
 <section>
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_XMM_HERSCHEL_display.jpg);'>
         <h4> The stars form in and from gas </h4>
     </span>
-        <div style="position: absolute; bottom: 100px; left:190px" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
+        <div style="position: relative; bottom: 23%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
+    <aside class=notes>
+        <ul>
+            <li> Herschel FIR dust image of M31
+            <li> Dust is closely correlated with blue starlight = young stars
+            <li> Dust traces gas, stars form where there is gas
+        </ul>
+    </aside>
 </section>
 
 
@@ -133,7 +187,13 @@
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/ESA_Herschel_Taurus_1280w.jpg);'>
     <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
     </span>
-    <div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="http://sci.esa.int/herschel/55944-taurus-molecular-cloud/">Herschel/Palmeirim+ 2013</a></div>
+    <div style="position: relative; bottom: 25%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="http://sci.esa.int/herschel/55944-taurus-molecular-cloud/">Herschel/Palmeirim+ 2013</a></div>
+    <aside class=notes>
+        <ul>
+            <li> Herschel FIR dust image of Taurus mol cld
+            <li> distance ~140 pc, local neighborhood
+        </ul>
+    </aside>
 </section>
 
 
@@ -141,12 +201,15 @@
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>
     <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
     </span>
-    <div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2</a></div>
+    <div style="position: relative; bottom: 23%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2, De Martin</a></div>
+    <aside class=notes>
+        <ul>
+            <li> NIR extinction map
+            <li> distance ~140 pc, local neighborhood
+        </ul>
+    </aside>
 </section>
 
-
-<!--**** somewhere here, discuss that most star formation occurs in "embedded clusters" LadaLada2003, even in local clouds,
-then emphasize that "big clusters" are way bigger-->
 
 <section>
     <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>-->
@@ -162,43 +225,122 @@ then emphasize that "big clusters" are way bigger-->
 
     </span>
     <!--<div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2</a></div>-->
+    <aside class=notes>
+        <ul>
+            <li> The next several slides will walk through this
+        </ul>
+    </aside>
 </section>
+
+<section data-transition='zoom-in fade-out'>
+    <h4> A molecular cloud fragments </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_CloudOnly_nofragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0%; margin-top:0%; width:100%'>
+    <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly_somefragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
+    <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
+    <aside class=notes>
+        <ul>
+            <li> We start with a relatively smooth molecular cloud
+            <li> Turbulence seeds overdensities
+            <li> Overdensities become gravitationally unstable and collapse: this is cloud fragmentation
+        </ul>
+    </aside>
+</section>
+
+<section data-transition='zoom-in fade-out'>
+    <h4> The core forms a central protostar </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass_CollapsingCore.svg" style='background: white; position:relative; top:0%; left:0%; bottom:0%; margin-top:0%; width:auto; height: 100%;'>
+</section>
+
+<section data-transition='fade'>
+    <h4> The protostar heats its parent core and forms a disk </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass_WarmCore.svg" style='background: white; position:relative; top:0%; left:0%; bottom:0%; margin-top:0%; width:auto; height: 90%;'>
+</section>
+
+<section data-transition='fade'>
+    <h4> It drives an outflow and consumes or blows out its core </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass_OutflowCorino.svg" style='background: white; position:relative; top:0%; left:0%; bottom:0%; margin-top:0%; width:auto; height: 90%;'>
+</section>
+
+<section data-transition='zoom-in none-out'>
+    <h4> Eventually, you end with just a star-disk system </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass_StarDisk.svg" style='background: white; position:relative; top:0%; left:0%; bottom:0%; margin-top:0%; width:auto; height: 85%;'>
+</section>
+
+<section>
+    <h4> Cartoon of low-mass star formation </h4>
+
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; position:relative; top:50%; bottom:50%; margin-top:17%; width:100%'>
+    <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
+
+    </span>
+</section>
+
+
+
 
 <section>
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>
     <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
     </span>
-    <div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2</a></div>
+    <div style="position: relative; bottom: 23%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2, De Martin</a></div>
     <span class=image style="position: absolute; bottom: 200px; left: 288px; height: 50%; background-image: url(colloquium_assets/Taurus_IMF.png);">
         <div class=smaller3 style="position: relative; right: -10%; bottom:-75%;"> <a href="http://adsabs.harvard.edu/abs/2002ApJ...580..317B">Briceño+ 2002</a></div>
     </span>
     <div class=smaller2 style="text-align:left; color: white; position: absolute; bottom: 477px; left: 100px; max-width: 400px;">
         They contain only low-mass stars and do not represent star formation in general
     </div>
+
+    <aside class=notes>
+        <ul>
+            <li> Local clouds like Taurus lack high-mass stars
+            <li> Plot shows a histogram of masses; stops at 1 Msun
+            <li> Within 0.5 kpc, there is only 1 star with more than 10 Msun currently forming
+        </ul>
+    </aside>
 </section>
 
 <section>
-    <span class=image style='margin-top:-2%; background-position: center center; background-image: url(assets/ngc3603.jpg);'>
+    <span class=image style='margin-top:-2%; background-position: center center; ;'>
+        <img src="colloquium_assets/NGC1333_Spitzer.jpg" style="width:100%; max-width:200%; max-height:unset; margin-top:-25%;">
+    </span>
+    <h4 class=darkbg style="position: absolute; top:0%; text-align: center; left: 20%; width:60%;"> Most stars form in denser regions </h4>
+    <div style="position: relative; bottom: 7%; left:2%; text-align: left;" class="smaller3"><a class=darkbg href="http://www.spitzer.caltech.edu/images/1523-ssc2005-24a1-NGC-1333-in-the-Infrared">Spitzer, Gutermuth</a></div>
+    <div style="color:white; text-align: right; position: relative; bottom: 16%; left:68%; max-width:300px;" class="smaller2">
+        NGC 1333, an embedded low-mass cluster
+    </div>
+    <div class="smaller darkbg" style="color:white; background:rgba(0.5, 0.5, 0.5, 0.1); position: absolute; left: 50%; width:48%; top: 10%; text-align: right; "> Lada &amp; Lada 2003: &gt;70% in embedded clusters </div>
+    <aside class=notes>
+        <ul>
+            <li> Lots of stars &amp; outflows in a small environment
+            <li> Still no massive (OB) stars
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <span class=image style='margin-top:-2%; background-position: center center; background-image: url(assets/ngc3603.jpg); background-size:120%'>
     <h4 class=darkbg> Most stars form in denser regions </h4>
     </span>
-    <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="http://hubblesite.org/image/3874">HST</a></div>
-    <div style="color:white; text-align: left; position: absolute; bottom: 100px; left:600px; max-width:300px;" class="smaller2">
+    <div style="background-color:rgba(0.5, 0.5, 0.5, 0.4); position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="http://hubblesite.org/image/3874">HST</a></div>
+    <div style="background-color:rgba(0.5, 0.5, 0.5, 0.4); color:white; text-align: center; position: absolute; bottom: 100px; left:600px; max-width:300px;" class="smaller2">
         NGC 3603 is a high-mass (10<sup style='font-size:50%'>4</sup> M<sub>&odot;</sub>) cluster
     </div>
+    <div class="smaller darkbg" style="color:white; background:rgba(0.5, 0.5, 0.5, 0.1); position: absolute; left: 58%; width:48%; top: 10%; text-align: center; ">
+        Lada &amp; Lada 2003:
+        <br>5-10% in bound clusters
+        <br>in our Galaxy
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Dozens of massive OB stars within &lt; 1 pc
+            <li> Dense, massive clusters like these are bound to their own
+            self-gravity, they last a long time, until they are destroyed by
+            dynamical interactions with molecular clouds
+        </ul>
+    </aside>
 </section>
 
 
-<!--
-<section>
-    <h4> What changes as we go to more massive, denser regions? </h4>
-    As you vary the cloud-scale environment, what changes on stellar scales?
-
-    In this talk, I will investigate several effects seen in Galactic
-    environments with higher gas densities and more stellar feedback,
-    and link them back to bigger pictures.
-
-</section>
--->
 
 
 
@@ -211,6 +353,14 @@ then emphasize that "big clusters" are way bigger-->
         <br>
         <a href="http://adsabs.harvard.edu/abs/2012MNRAS.426.3008K">Kruijssen 2012</a>
     </div>
+    <aside class=notes>
+        <ul>
+            <li> Y-axis is fraction of stars forming in <b>bound</b> clusters, the "cluster formation efficiency" (CFE)
+            <li> Milky Way point is the one w/large errors
+            <li> Star formation surface density on X-axis; closely correlated
+            to gas surface density (which we will sub in later)
+        </ul>
+    </aside>
 </section>
 
 </section>
@@ -223,6 +373,11 @@ then emphasize that "big clusters" are way bigger-->
             <div style="position: relative; font-size:30px; bottom:20%; left:25%; width: 60%; background-color: rgba(1,1,1,0.1)"> Most stars in most galaxies formed long ago </div>
         <div style="position: relative; top: -11%; left:-22%" class="smaller2"><a href="http://esoads.eso.org/abs/2014ARA%26A..52..415M">Madau 2014</a></div>
     </div>
+    <aside class=notes>
+        <ul>
+            <li> Peak of cosmic star formation was z~2
+        </ul>
+    </aside>
 </section>
 
 <section>
@@ -230,6 +385,11 @@ then emphasize that "big clusters" are way bigger-->
     <span class=image style='height:80%; background-position: center center; background-image: url(colloquium_assets/Conselice2014_fig.png);'>
      </span>
     <div style="position: relative; top: -4%; left:-25%" class="smaller2"><a href="http://esoads.eso.org/abs/2014ARA%26A..52..291C">Conselice 2014</a></div>
+    <aside class=notes>
+        <ul>
+            <li> Y-axis is normalized size
+        </ul>
+    </aside>
 </section>
 
 
@@ -238,13 +398,23 @@ then emphasize that "big clusters" are way bigger-->
     <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small.jpg);'>
     <h4> Our own Galaxy's center, the CMZ, has denser gas than the Galactic average </h4>
     <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
-    <div style="position: relative; bottom: -61%; left:-40%" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv181000266M">Mills+ 2018</a></div>
+    <div style="position: relative; bottom: -61%; left:-40%" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv181000266M">Mills, Ginsburg+ 2018</a></div>
     <div style="right:10%; margin-top:37%; text-align:right;" class=smaller2>
         <span style="color: orange;"> Cold Dust </span><br>
         <span style="color: rgb(200,60,255)"> Hot, ionized gas </span><br>
         <span style="color: turquoise;"> Hot dust/PAHs </span><br>
     </div>
     </span>
+    <aside class=notes>
+        <ul>
+            <li> Cold dust is where new stars will form
+            <li> Average molecular cloud densities about 1-2 orders of magnitude greater than in the Galactic disk
+            <li> Clouds are warmer and more turbulent than the disk
+            <li> Cloud conditions analogous to early universe [e.g., <a href="http://esoads.eso.org/abs/2013MNRAS.435.2598K">Kruijssen &amp; Longmore 2013</a>
+            <li> This is a "local"/"nearby" region where we can test theories that predict, e.g., higher
+            cluster formation efficiency at higher density
+        </ul>
+    </aside>
 
 </section>
 <section>
@@ -253,6 +423,13 @@ then emphasize that "big clusters" are way bigger-->
     <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
     <div style="position: relative; bottom: -61%; left:-40%" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg+ 2018</a></div>
     </span>
+    <aside class=notes>
+        <ul>
+            <li> Zoom-in to the Sgr B2 cloud:
+            <li> Most massive, actively star-forming cloud in the galaxy
+            <li> ALMA 3mm image showing mix of dust and free-free emission
+        </ul>
+    </aside>
 </section>
 <section>
     <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small_doublezoom.jpg);'>
@@ -260,6 +437,12 @@ then emphasize that "big clusters" are way bigger-->
     <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
     <div style="position: relative; bottom: -61%; left:-40%" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg+ 2018</a></div>
     </span>
+    <aside class=notes>
+        <ul>
+            <li> Each zoom reveals more sources.
+            <li> Most of the stars reside in bound proto-clusters
+        </ul>
+    </aside>
 </section>
 
 <section>
@@ -269,6 +452,15 @@ then emphasize that "big clusters" are way bigger-->
             <div style="position: relative; bottom: -77%; left:21%" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg &amp; Kruijssen 2018</a></div>
         </span>
     </div>
+    <aside class=notes>
+        <ul>
+            <li> X-axis is gas surface density, can be approximately treated as same as other plot
+            <li> Local model is blue dotted (depends on local mean density),
+            global model is red (depends on Galaxy scale height)
+            <li> CFE is clearly higher in denser regions in <i>our</i> Galaxy
+
+        </ul>
+    </aside>
 </section>
 
 

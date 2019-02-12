@@ -533,8 +533,8 @@
     <div style="">
         <ul>
             <li> High mass stars heat their environment, suppressing Jeans fragmentation and preventing lower-mass stars from forming
-            <li> The feedback from high-mass stars is exaggerated in denser regions
-            <li> By cooking their surroundings, high-mass stars help themselves form, and they may
+            <li class=fragment> The feedback from high-mass stars is exaggerated in denser regions
+            <li class=fragment> By cooking their surroundings, high-mass stars help themselves form, and they may
             help create their own siblings
         </ul>
     </div>
@@ -603,10 +603,10 @@
                              background-position: center center;
                              width: 150%;
                              background-image: url(colloquium_assets/Lada2017_fig1_California.png);'>
-    </span>
         <h4 style="position: relative; color: white; top:0%; left: 0%;"> The California molecular cloud, a local example </h4>
-        <div class=smaller style="position: relative; top:80%; left: 40%;"> <a href="http://adsabs.harvard.edu/abs/2017arXiv170807847L">Lada+ 2017</a> </div>
-        <div class=smaller style="position: relative; color: white; max-width:90%; display:inline-block;"> In local clouds, Spitzer, Herschel, CSO Bolocam, and JCMT SCUBA are used to count protostars</div>
+        <div class=smaller style="position: relative; top:80%; left: 25%;"> <a href="http://adsabs.harvard.edu/abs/2017arXiv170807847L">Lada+ 2017</a> </div>
+        <span class=smaller style="position: relative; color: white; width:60%; display:inline-block;"> In local clouds, Spitzer, Herschel, CSO Bolocam, and JCMT SCUBA are used to count protostars</span>
+    </span>
     <!-- Low-mass clouds are invisible on galactic scales -->
     </div>
 </section>
@@ -749,12 +749,16 @@
     </span>
 </section>
 -->
-<section>
+<section style="margin-top:280px">
+    <!--
     <div style="position:relative; height: 100%; width:100%; margin:-20px 0px;">
         <div style="margin:0; position:absolute; top:50%; left: 50%; -ms-transform: translate(-50%); transform: translate(-50%,-60%); width:100%;">
-            <h4> Future-looking projects:</h4>
-            ALMA-IMF and salts in Orion
         </div>
+    </div>
+    -->
+    <div>
+        <h4> Future-looking projects:</h4>
+        ALMA-IMF and salts in Orion
     </div>
 </section>
 
@@ -1020,6 +1024,16 @@
 <script src="fullscreen.js"> </script>
 
     <script>
+    var els = document.getElementsByTagName('section');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        // I still can't figure out how to get the background to fill the damned page
+        els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
+        els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");
+    }
+    </script>
+
+    <script>
       Reveal.initialize({
         controls: false,
         progress: false,
@@ -1045,6 +1059,7 @@
           mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
           config: 'TeX-AMS_SVG'
         },
+
 
         dependencies: [
           { src: 'reveal/lib/js/classList.js',

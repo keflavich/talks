@@ -1,12 +1,9 @@
 body.print-pdf,
 body .reveal .slide-background,
+body .reveal,
 body {
-    background-image: url(assets/SgrB2N_background.png);
-    background-position:center;
-    background-size:120%;
-    background-blend-mode: overlay;
-    background-color: rgba(255,255,255,0.7);
-    background-repeat: no-repeat;
+    data-background-image: "assets/SgrB2N_background.png";
+    data-background-opacity: 0.2;
 }
 body.print-pdf {
     background-size:120%;
@@ -39,9 +36,7 @@ body.orion .slide-background {
     }
     .print-pdf .reveal .slide-background {
         z-index: -1;
-        background-size: 120% !important;
-        background-repeat: no-repeat;
-        background: none;
+        background-color: white;
     }
 }
 

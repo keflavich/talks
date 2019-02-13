@@ -95,7 +95,7 @@
          transform="translate(88.275284,42.35625)"><text
            transform="matrix(1,0,0,-1,0,0.953125)"
            id="text23537"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -103,7 +103,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,8.609375)"
            id="text23541"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 8.90722656"
              y="0"
              sodipodi:role="line"
@@ -116,7 +116,7 @@
          transform="translate(300.91207,42.35625)"><text
            transform="matrix(1,0,0,-1,0,0.953125)"
            id="text23549"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -124,7 +124,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,8.609375)"
            id="text23553"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 8.90722656"
              y="0"
              sodipodi:role="line"
@@ -137,7 +137,7 @@
          transform="translate(513.54886,42.35625)"><text
            transform="matrix(1,0,0,-1,0,0.953125)"
            id="text23561"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -145,7 +145,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,8.609375)"
            id="text23565"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 8.90722656"
              y="0"
              sodipodi:role="line"
@@ -236,7 +236,7 @@
          transform="translate(235.23437,12.2)"><text
            transform="matrix(1,0,0,-1,0,0.34375)"
            id="text23625"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24px;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
              x="0 16.7578125 31.44140625 38.109375 53.3203125 76.69921875 91.91015625 99.5390625 118.01953125 132.78515625 147.99609375 160.5 167.16796875 176.578125 190.78125 198.41015625 207.7734375 225.7265625 235.08984375"
              y="0"
              sodipodi:role="line"
@@ -251,7 +251,7 @@
 <text
            transform="matrix(1,0,0,-1,264.71133,0.34375)"
            id="text23633"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24px;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
              x="0 9.36328125 16.9921875 30.1875"
              y="0"
              sodipodi:role="line"
@@ -266,7 +266,7 @@
 <text
            transform="matrix(1,0,0,-1,343.92891,0.34375)"
            id="text23641"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:24;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:24px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23643">]</tspan></text>
@@ -286,7 +286,7 @@
          transform="translate(34.434375,87.565579)"><text
            transform="matrix(1,0,0,-1,0,0.953125)"
            id="text23661"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -294,7 +294,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,8.609375)"
            id="text23665"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23667">0</tspan></text>
@@ -306,7 +306,7 @@
          transform="translate(34.434375,188.49864)"><text
            transform="matrix(1,0,0,-1,0,0.1390625)"
            id="text23673"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -314,7 +314,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,7.7953125)"
            id="text23677"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23679">1</tspan></text>
@@ -326,7 +326,7 @@
          transform="translate(34.434375,288.79107)"><text
            transform="matrix(1,0,0,-1,0,0.953125)"
            id="text23685"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -334,7 +334,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,8.609375)"
            id="text23689"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23691">2</tspan></text>
@@ -346,7 +346,7 @@
          transform="translate(34.434375,389.40381)"><text
            transform="matrix(1,0,0,-1,0,0.953125)"
            id="text23697"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -354,7 +354,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,8.609375)"
            id="text23701"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23703">3</tspan></text>
@@ -366,7 +366,7 @@
          transform="translate(34.434375,490.33687)"><text
            transform="matrix(1,0,0,-1,0,0.1390625)"
            id="text23709"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -374,7 +374,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,7.7953125)"
            id="text23713"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23715">4</tspan></text>
@@ -492,7 +492,7 @@
          id="path23789" /><text
          transform="matrix(0,1,1,0,25.434375,184.53031)"
          id="text23791"><tspan
-           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24px;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
            x="0 17.952 33.168 56.544 71.784 86.544 96.408 104.04 118.728 127.176 134.808 150.048 156.72 170.928 185.688 192.36"
            y="0"
            sodipodi:role="line"
@@ -530,7 +530,7 @@
          transform="translate(157.99677,519.87625)"><text
            transform="matrix(1,0,0,-1,0,0.1390625)"
            id="text23829"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -538,7 +538,7 @@
 <text
            transform="matrix(1,0,0,-1,37.371094,7.7953125)"
            id="text23833"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23835">1</tspan></text>
@@ -558,7 +558,7 @@
          transform="translate(376.13355,519.87625)"><text
            transform="matrix(1,0,0,-1,0,0.953125)"
            id="text23853"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -566,7 +566,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,8.609375)"
            id="text23857"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23859">0</tspan></text>
@@ -578,7 +578,7 @@
          transform="translate(588.77034,519.87625)"><text
            transform="matrix(1,0,0,-1,0,0.1390625)"
            id="text23865"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0 12.72460938"
              y="0"
              sodipodi:role="line"
@@ -586,7 +586,7 @@
 <text
            transform="matrix(1,0,0,-1,25.640625,7.7953125)"
            id="text23869"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:14px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23871">1</tspan></text>
@@ -670,7 +670,7 @@
          transform="translate(260.73437,539.72)"><text
            transform="matrix(1,0,0,-1,0,0.34375)"
            id="text23925"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24px;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
              x="0 16.7578125 31.44140625 38.109375 53.3203125 76.69921875 91.91015625 99.5390625 118.01953125 132.78515625 147.99609375 160.5 167.16796875 176.578125 190.78125 198.41015625 207.7734375 223.0078125 230.63671875 243.83203125"
              y="0"
              sodipodi:role="line"
@@ -685,7 +685,7 @@
 <text
            transform="matrix(1,0,0,-1,292.86211,0.34375)"
            id="text23933"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:24;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:24px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan23935">]</tspan></text>
@@ -715,7 +715,7 @@
          id="path23957" /><text
          transform="matrix(1,0,0,-1,754.03438,57.598438)"
          id="text23959"><tspan
-           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
            x="0 12.72 19.08"
            y="0"
            sodipodi:role="line"
@@ -726,7 +726,7 @@
          id="path23963" /><text
          transform="matrix(1,0,0,-1,754.03438,146.30244)"
          id="text23965"><tspan
-           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
            x="0 12.72 19.08"
            y="0"
            sodipodi:role="line"
@@ -737,7 +737,7 @@
          id="path23969" /><text
          transform="matrix(1,0,0,-1,754.03438,235.00644)"
          id="text23971"><tspan
-           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
            x="0 12.72 19.08"
            y="0"
            sodipodi:role="line"
@@ -748,7 +748,7 @@
          id="path23975" /><text
          transform="matrix(1,0,0,-1,754.03438,323.71044)"
          id="text23977"><tspan
-           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
            x="0 12.72 19.08"
            y="0"
            sodipodi:role="line"
@@ -759,7 +759,7 @@
          id="path23981" /><text
          transform="matrix(1,0,0,-1,754.03438,412.41444)"
          id="text23983"><tspan
-           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
            x="0 12.72 19.08"
            y="0"
            sodipodi:role="line"
@@ -770,7 +770,7 @@
          id="path23987" /><text
          transform="matrix(1,0,0,-1,754.03438,501.11844)"
          id="text23989"><tspan
-           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:20px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
            x="0 12.72 19.08"
            y="0"
            sodipodi:role="line"
@@ -780,7 +780,7 @@
          transform="matrix(0,1,-1,0,808.83125,61.46)"><text
            transform="matrix(1,0,0,-1,0,0.765625)"
            id="text23995"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Bitstream Vera Sans;font-variant:normal;font-weight:normal;font-size:24px;writing-mode:lr;-inkscape-font-specification:Bitstream Vera Sans"
              x="0 13.8046875 23.671875 38.37890625 51.57421875 60.984375 67.65234375 82.3359375 97.546875 105.17578125 119.859375 128.30859375 135.9375 151.171875 165.85546875 172.5234375 187.734375 197.14453125 204.7734375 217.27734375 231.9609375 247.171875 257.0390625 270.234375 285 297.50390625 305.1328125 320.3671875 335.1328125 341.80078125 356.484375 376.11328125 383.7421875 401.6953125 411.05859375"
              y="0"
              sodipodi:role="line"
@@ -795,7 +795,7 @@
 <text
            transform="matrix(1,0,0,-1,440.68008,0.765625)"
            id="text24003"><tspan
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:24;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DejaVuSans;font-variant:normal;font-weight:normal;font-size:24px;writing-mode:lr;-inkscape-font-specification:DejaVuSans"
              x="0"
              y="0"
              id="tspan24005">)</tspan></text>

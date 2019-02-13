@@ -1411,8 +1411,8 @@
            transform="translate(151.6807,662.7793)"><text
              transform="scale(1,-1)"
              id="text43475"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:bold;font-size:36;writing-mode:lr;-inkscape-font-specification:Helvetica-Bold"
-               x="0 11.988 33.9768 47.988 69.9768 91.9656 101.9664 121.9896 143.9784 155.9664 165.9672 189.9792 211.968"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:bold;font-size:36px;writing-mode:lr;-inkscape-font-specification:Helvetica-Bold"
+               x="0"
                y="0"
                sodipodi:role="line"
                id="tspan43477">turbulent SF </tspan></text>
@@ -1421,7 +1421,7 @@
            transform="translate(204.6611,619.7793)"><text
              transform="scale(1,-1)"
              id="text43481"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:bold;font-size:36;writing-mode:lr;-inkscape-font-specification:Helvetica-Bold"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:bold;font-size:36px;writing-mode:lr;-inkscape-font-specification:Helvetica-Bold"
                x="0 32.0112 54.0144 76.0176 96.0408"
                y="0"
                sodipodi:role="line"
@@ -1440,7 +1440,7 @@
            transform="translate(597.149,656.2798)"><text
              transform="scale(1,-1)"
              id="text43505"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:36;writing-mode:lr;-inkscape-font-specification:helvetica"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:36px;writing-mode:lr;-inkscape-font-specification:helvetica"
                x="0 16.704 36.72 48.708 70.704 90.72 98.712 118.728 138.744 158.76 178.776 188.784 210.78 222.12 242.136 264.132 284.148 304.164 324.18 342.18 352.188 372.204"
                y="0"
                sodipodi:role="line"
@@ -1450,7 +1450,7 @@
            transform="translate(608.903,613.2798)"><text
              transform="scale(1,-1)"
              id="text43511"><tspan
-               style="fill:#164f86;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:36;writing-mode:lr;-inkscape-font-specification:'Helvetica '"
+               style="fill:#164f86;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:36px;writing-mode:lr;-inkscape-font-specification:'Helvetica '"
                x="0 7.992 28.008 50.004 70.02 90.036 102.672 132.66 152.676 160.668 170.676 192.672 200.664 218.664 228.672 240.66 248.652 270.648 290.664 300.672 308.664 328.68"
                y="0"
                sodipodi:role="line"
@@ -1462,7 +1462,7 @@
            transform="translate(656.207,570.2798)"><text
              transform="scale(1,-1)"
              id="text43519"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:36;writing-mode:lr;-inkscape-font-specification:'Helvetica '"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:36px;writing-mode:lr;-inkscape-font-specification:'Helvetica '"
                x="0 20.016 30.024 40.032 62.028 82.044 100.044 110.052 132.048 152.064 172.08 190.08 198.072 208.08 216.072 236.088 254.088"
                y="0"
                sodipodi:role="line"
@@ -1474,7 +1474,7 @@
            id="g43531"
            transform="translate(663.0426,425.7798)"><text
              xml:space="preserve"
-             style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+             style="font-size:16px;font-style:normal;font-weight:300;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:helvetica"
              x="25.62615"
              y="-17.449228"
              id="text43653"
@@ -1487,7 +1487,7 @@
                style="text-anchor:start;text-align:start"><tspan
                  x="25.62615"
                  y="-17.449228"
-                 style="font-size:32px;text-align:start;text-anchor:start"
+                 style="font-size:36px;text-align:start;text-anchor:start"
                  id="tspan43657">High-density gas </tspan></tspan><tspan
                sodipodi:role="line"
                x="93.001152"
@@ -1496,7 +1496,7 @@
                style="text-anchor:start;text-align:start"><tspan
                  x="87.907402"
                  y="22.550772"
-                 style="font-size:32px;text-align:start;text-anchor:start"
+                 style="font-size:36px;text-align:start;text-anchor:start"
                  id="tspan43661">becomes </tspan></tspan><tspan
                sodipodi:role="line"
                x="50.001148"
@@ -1505,7 +1505,7 @@
                style="text-anchor:start;text-align:start"><tspan
                  x="44.907398"
                  y="62.55077"
-                 style="font-size:32px;text-align:start;text-anchor:start"
+                 style="font-size:36px;text-align:start;text-anchor:start"
                  id="tspan43665">gravitationally </tspan></tspan><tspan
                sodipodi:role="line"
                x="60.969898"
@@ -1514,7 +1514,7 @@
                style="text-anchor:start;text-align:start"><tspan
                  x="55.876148"
                  y="102.5508"
-                 style="font-size:32px;text-align:start;text-anchor:start"
+                 style="font-size:36px;text-align:start;text-anchor:start"
                  id="tspan43669">unstable and </tspan></tspan><tspan
                sodipodi:role="line"
                x="86.313652"
@@ -1523,14 +1523,14 @@
                style="text-anchor:start;text-align:start"><tspan
                  x="86.313652"
                  y="142.5508"
-                 style="font-size:32px;text-align:start;text-anchor:start"
+                 style="font-size:36px;text-align:start;text-anchor:start"
                  id="tspan43673">collapses</tspan></tspan></text>
 </g><g
            id="g43609"
            transform="matrix(0,1,-1,0,602.4665,131.12)"><text
              transform="scale(1,-1)"
              id="text43611"><tspan
-               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:20;writing-mode:lr;-inkscape-font-specification:Helvetica-Light"
+               style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:300;font-size:20px;writing-mode:lr;-inkscape-font-specification:Helvetica-Light"
                x="0 11.12 22.24 28.54 39.66 49.66 60.78 71.9 76.34 88.56 94.12"
                y="0"
                sodipodi:role="line"

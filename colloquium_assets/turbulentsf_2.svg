@@ -1402,7 +1402,7 @@
              transform="scale(1,-1)"
              id="text43475"><tspan
                style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:bold;font-size:36px;writing-mode:lr;-inkscape-font-specification:Helvetica-Bold"
-               x="0 11.988 33.9768 47.988 69.9768 91.9656 101.9664 121.9896 143.9784 155.9664 165.9672 189.9792 211.968"
+               x="0"
                y="0"
                sodipodi:role="line"
                id="tspan43477">turbulent SF </tspan></text>
@@ -1412,7 +1412,7 @@
              transform="scale(1,-1)"
              id="text43481"><tspan
                style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:helvetica;font-variant:normal;font-weight:bold;font-size:36px;writing-mode:lr;-inkscape-font-specification:Helvetica-Bold"
-               x="0 32.0112 54.0144 76.0176 96.0408"
+               x="0"
                y="0"
                sodipodi:role="line"
                id="tspan43483">model</tspan></text>

@@ -175,13 +175,7 @@ Future
 
     </section>
 
-    <section>
-        Watanabe+ 2017 compared M51 to W51
-        <div>
-            <a href="http://keflavich.github.io/blog/the-extragalactic-view-of-w51-at-220-and-290-ghz.html">W51 data</a>
-        </div>
-    </section>
-    
+
 </section>
 <!-- This zoomed-out view is readily accessible in nearby galaxies but is
     fairly rare in Galactic observations outside of a few select lines and
@@ -256,6 +250,21 @@ Future
 </section>
 
 <section>
+    <h6> Extragalacitc, molecular observations on pc scales</h6>
+    <ul>
+        <li> <a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1707.00937">Watanabe+ 2017</a> compared M51 to W51
+        <li> Galactic center datasets are available (<a
+            href="https://github.com/CentralMolecularZone/DataSets">https://github.com/CentralMolecularZone/DataSets</a>)
+        <ul>
+            <li><a href="http://adsabs.harvard.edu/abs/2018ApJ...868....7M">Mills+ 2018</a> did HC<sub>3</sub>N density measurements on pc scales
+            <li><a href="http://adsabs.harvard.edu/abs/2017ApJ...835...76M">Mills &amp; Battersby 2017</a> did chemical comparisons on 100 pc scales
+        </ul>
+        <li><a href="http://keflavich.github.io/blog/the-extragalactic-view-of-w51-at-220-and-290-ghz.html">W51 data</a> are available (from me, published &amp; unpublished on dataverse)
+        <li> Today, for most Galactic comparison datasets, you need to find a paper and contact the author
+    </ul>
+</section>
+
+<section>
     <div>ALMA surveys of Galactic and clusters are becoming common </div>
     <div class=smaller> These programs create mosaics and include total power
         data: they can be compared to parsec-resolution extragalactic
@@ -265,6 +274,7 @@ Future
         <li> W43, G10, G12, G328, G327, G333, G351, G353, G008 (ALMA-IMF)
         <li> W49 (Galvan-Madrid+)
     </ul>
+
     </div>
 </section>
 
@@ -302,8 +312,14 @@ Future
 </section>
 
 
+<section>
+    <h6> Example: W51</h6>
+    15% of the total continuum flux on \(\sim5\) pc scales comes from three proto-MYSO hot cores
+    <img src="colloquium_assets/rgb_overview_aplpy_withlabels.png" height=70%>
+</section>
 
 
+<!--
 <section>
     <h6>Cluster Formation Efficiency</h6>
     <ul><li>What fraction of all stars form in bound clusters?</li>
@@ -316,14 +332,12 @@ Future
             </ul>
         </ul>
         <li>We can measure this locally, given an appropriate change in environment
-            <!--<div class=smaller>Talks by Lu, Battersby, Walker, Zeng; posters by Butterfield, Callanan, Hatchfield, Henshaw-->
         </li>
-        
     </ul>
     <span class=image style='height: 300px; background-position: center center; background-size: contain; background-image: url(assets/gc_fullres_6_small.jpg)'>
-        <!--<img src="assets/gc_fullres_6_small.jpg" style='max-width: 100%'>-->
 </span>
 </section>
+-->
 
 
 <section>
@@ -353,10 +367,9 @@ Future
     <div class="sl-block" style="width: auto; height: auto; font-size: 26px; font-weight: normal">
         Collapse is morphologically obvious, but very difficult to measure:
         continuum is optically thick on ~1000 AU scales
-        (Schwörer, Ginsburg, Schilke+ in prep)
+        (Schwörer+, submitted)
     </div>
     <div class="sl-block" style="width: auto; height: auto; font-size: 26px; font-weight: normal">
-        Fragmentation appears suppressed
     </div>
     <div class="sl-block" data-block-type="image"
         style="margin-left:auto; margin-right: auto; width: 800px;">
@@ -371,11 +384,23 @@ Future
 </section>
 
 <section>
-    A closer look at Sgr B2 N
+    <h6>A closer look at Sgr B2 N</h6>
     <span class=image style='height:90%; background-image: url(colloquium_assets/Schworer2019_fig1.svg);'></span>
     <div class=smaller> CH<sub>3</sub>OCHO: red, C<sub>2</sub>H<sub>5</sub>CN: blue, 242 GHz continuum: green </div>
 </section>
 
+
+<section>
+    <h6>A closer look at Sgr B2 N</h6>
+    <div class=smaller> Schwörer+: Accretion along filaments</div>
+    <span class=image style='height:90%; background-image: url(colloquium_assets/Schworer2019_fig2.svg);'></span>
+</section>
+
+<section>
+    <h6>A closer look at Sgr B2 N</h6>
+    <div class=smaller> Schwörer+: Accretion along filaments: \(\sim0.1~\mathrm{M}_\odot \mathrm{yr}^{-1}\)</div>
+    <span class=image style='height:90%; background-image: url(colloquium_assets/Schworer2019_fig4.svg);'></span>
+</section>
 
 
 
@@ -491,6 +516,8 @@ Future
         <li>The link is likely in chemistry and excitation:
         <ul>
             <li> Molecular emission is more intense when feedback is less efficient </li>
+            <li> Non-CO molecular observations on pc scales are the common ground that
+                may allow extragalactic observations to pick out Galactic, ALMA-scale information</li>
         </ul>
         </li>
     </ul>
@@ -924,6 +951,16 @@ Future
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <script src="fullscreen.js"> </script>
+
+    <script>
+    var els = document.getElementsByTagName('section');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        // I still can't figure out how to get the background to fill the damned page
+        els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
+        els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");
+    }
+    </script>
 
     <script>
       Reveal.initialize({

@@ -13766,13 +13766,13 @@ lowpassfiltersd     =      False        #  Filter out the high spatial frequenci
 <span class="n">im_low</span> <span class="o">=</span> <span class="n">singledish_im</span>
 <span class="n">lowresscalefactor</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">replace_hires</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">highpassfilterSD</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">lowpassfilterSD</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">deconvSD</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">highresscalefactor</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">fftsum</span><span class="p">,</span> <span class="n">combo</span> <span class="o">=</span> <span class="n">fftmerge</span><span class="p">(</span><span class="n">kfft</span><span class="p">,</span> <span class="n">ikfft</span><span class="p">,</span> <span class="n">im_hi</span><span class="o">*</span><span class="n">highresscalefactor</span><span class="p">,</span>
                          <span class="n">im_low</span><span class="o">*</span><span class="n">lowresscalefactor</span><span class="p">,</span>
                          <span class="n">replace_hires</span><span class="o">=</span><span class="n">replace_hires</span><span class="p">,</span>
-                         <span class="n">highpassfilterSD</span><span class="o">=</span><span class="n">highpassfilterSD</span><span class="p">,</span>
+                         <span class="n">lowpassfilterSD</span><span class="o">=</span><span class="n">lowpassfilterSD</span><span class="p">,</span>
                          <span class="n">deconvSD</span><span class="o">=</span><span class="n">deconvSD</span><span class="p">,</span>
                         <span class="p">)</span>
 </pre></div>
@@ -13921,13 +13921,13 @@ lowpassfiltersd     =      False        #  Filter out the high spatial frequenci
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im_hi</span> <span class="o">=</span> <span class="n">im_interferometered</span><span class="o">.</span><span class="n">real</span>
 <span class="n">lowresscalefactor</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">replace_hires</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">highpassfilterSD</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">lowpassfilterSD</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">deconvSD</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">highresscalefactor</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">fftsum</span><span class="p">,</span> <span class="n">combo</span> <span class="o">=</span> <span class="n">fftmerge</span><span class="p">(</span><span class="n">kfft</span><span class="p">,</span> <span class="n">ikfft</span><span class="p">,</span> <span class="n">im_hi</span><span class="o">*</span><span class="n">highresscalefactor</span><span class="p">,</span>
                          <span class="n">im_low</span><span class="o">*</span><span class="n">lowresscalefactor</span><span class="p">,</span>
                          <span class="n">replace_hires</span><span class="o">=</span><span class="n">replace_hires</span><span class="p">,</span>
-                         <span class="n">highpassfilterSD</span><span class="o">=</span><span class="n">highpassfilterSD</span><span class="p">,</span>
+                         <span class="n">lowpassfilterSD</span><span class="o">=</span><span class="n">lowpassfilterSD</span><span class="p">,</span>
                          <span class="n">deconvSD</span><span class="o">=</span><span class="n">deconvSD</span><span class="p">,</span>
                         <span class="p">)</span>
 </pre></div>
@@ -14250,7 +14250,7 @@ lowpassfiltersd     =      False        #  Filter out the high spatial frequenci
 <span class="n">fftsum</span><span class="p">,</span> <span class="n">combo</span> <span class="o">=</span> <span class="n">fftmerge</span><span class="p">(</span><span class="n">kfft</span><span class="p">,</span> <span class="n">ikfft</span><span class="p">,</span> <span class="n">im_hi</span><span class="o">*</span><span class="n">highresscalefactor</span><span class="p">,</span>
                          <span class="n">im_low</span><span class="o">*</span><span class="n">lowresscalefactor</span><span class="p">,</span>
                          <span class="n">replace_hires</span><span class="o">=</span><span class="n">replace_hires</span><span class="p">,</span>
-                         <span class="n">highpassfilterSD</span><span class="o">=</span><span class="n">highpassfilterSD</span><span class="p">,</span>
+                         <span class="n">lowpassfilterSD</span><span class="o">=</span><span class="n">lowpassfilterSD</span><span class="p">,</span>
                          <span class="n">deconvSD</span><span class="o">=</span><span class="n">deconvSD</span><span class="p">,</span>
                         <span class="p">)</span>
 </pre></div>
@@ -14282,7 +14282,7 @@ lowpassfiltersd     =      False        #  Filter out the high spatial frequenci
 <span class="n">fftsum</span><span class="p">,</span> <span class="n">combo</span> <span class="o">=</span> <span class="n">fftmerge</span><span class="p">(</span><span class="n">kfft</span><span class="p">,</span> <span class="n">ikfft</span><span class="p">,</span> <span class="n">im_hi</span><span class="o">*</span><span class="n">highresscalefactor</span><span class="p">,</span>
                          <span class="n">im_low</span><span class="o">*</span><span class="n">lowresscalefactor</span><span class="p">,</span>
                          <span class="n">replace_hires</span><span class="o">=</span><span class="n">replace_hires</span><span class="p">,</span>
-                         <span class="n">highpassfilterSD</span><span class="o">=</span><span class="n">highpassfilterSD</span><span class="p">,</span>
+                         <span class="n">lowpassfilterSD</span><span class="o">=</span><span class="n">lowpassfilterSD</span><span class="p">,</span>
                          <span class="n">deconvSD</span><span class="o">=</span><span class="n">deconvSD</span><span class="p">,</span>
                         <span class="p">)</span>
 </pre></div>
@@ -14323,7 +14323,7 @@ lowpassfiltersd     =      False        #  Filter out the high spatial frequenci
 <span class="n">fftsum</span><span class="p">,</span> <span class="n">combo</span> <span class="o">=</span> <span class="n">fftmerge</span><span class="p">(</span><span class="n">kfft</span><span class="p">,</span> <span class="n">ikfft</span><span class="p">,</span> <span class="n">im_hi</span><span class="o">*</span><span class="n">highresscalefactor</span><span class="p">,</span>
                          <span class="n">noisy_sd</span><span class="o">*</span><span class="n">lowresscalefactor</span><span class="p">,</span>
                          <span class="n">replace_hires</span><span class="o">=</span><span class="n">replace_hires</span><span class="p">,</span>
-                         <span class="n">highpassfilterSD</span><span class="o">=</span><span class="n">highpassfilterSD</span><span class="p">,</span>
+                         <span class="n">lowpassfilterSD</span><span class="o">=</span><span class="n">lowpassfilterSD</span><span class="p">,</span>
                          <span class="n">deconvSD</span><span class="o">=</span><span class="n">deconvSD</span><span class="p">,</span>
                         <span class="p">)</span>
 </pre></div>
@@ -14366,7 +14366,7 @@ lowpassfiltersd     =      False        #  Filter out the high spatial frequenci
 <span class="n">fftsum</span><span class="p">,</span> <span class="n">combo</span> <span class="o">=</span> <span class="n">fftmerge</span><span class="p">(</span><span class="n">kfft</span><span class="p">,</span> <span class="n">ikfft</span><span class="p">,</span> <span class="n">noisy_intf</span><span class="o">*</span><span class="n">highresscalefactor</span><span class="p">,</span>
                          <span class="n">noisy_sd</span><span class="o">*</span><span class="n">lowresscalefactor</span><span class="p">,</span>
                          <span class="n">replace_hires</span><span class="o">=</span><span class="n">replace_hires</span><span class="p">,</span>
-                         <span class="n">highpassfilterSD</span><span class="o">=</span><span class="n">highpassfilterSD</span><span class="p">,</span>
+                         <span class="n">lowpassfilterSD</span><span class="o">=</span><span class="n">lowpassfilterSD</span><span class="p">,</span>
                          <span class="n">deconvSD</span><span class="o">=</span><span class="n">deconvSD</span><span class="p">,</span>
                         <span class="p">)</span>
 </pre></div>

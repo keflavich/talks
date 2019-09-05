@@ -2,7 +2,7 @@ body.print-pdf,
 body .reveal .slide-background,
 body .reveal,
 body {
-    data-background-image: "assets/SgrB2N_background.png";
+    data-background-image: "assets/SgrB2N_background.jpg";
     data-background-opacity: 0.2;
 }
 body.print-pdf {

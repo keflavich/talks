@@ -145,6 +145,7 @@
 
     </section>
 
+
     <section>
         <h4>High-mass stars produce light &amp; heavy elements<br> low-mass stars live practically forever</h4>
         <div style="float:left; width:50%;">
@@ -172,52 +173,58 @@
         </aside>
     </section>
 
-
     <section>
-        <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Andromeda_galaxy_UV_crop.jpg);'>-->
-        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_UV_matched_Herschel.jpg);'>
-            <h4> Almost all of the light in star-forming galaxies is produced by high-mass stars</h4>
-            <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
-        </span>
-        <aside class=notes>
-            <ul>
-                <li> UV image of M31, Andromeda, our closest massive neighbor
-                <li> Blue light is produced by high-mass stars
-                <li> (high-mass stars dominate anyway, but even more in UV)
-            </ul>
-        </aside>
+        The shape of the IMF changes L / M
+        <img src="FrontiersAssets/light_to_mass_vs_alpha.svg" style="height:80%">
     </section>
 
-    <section>
-        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_XMM_HERSCHEL_display.jpg);'>
-            <h4> The stars form in and from gas </h4>
-            <div style="position: relative; bottom: -67%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
-        </span>
-        <aside class=notes>
-            <ul>
-                <li> Herschel FIR dust image of M31
-                <li> Dust is closely correlated with blue starlight = young stars
-                <li> Dust traces gas, stars form where there is gas
-            </ul>
-        </aside>
-    </section>
 
 
 </section>
 
 
 <section>
-    <h2> Star Formation a little less oversimplified </h2>
-    <div style='font-size: 90px'>M&#x307;</div>
-    <!--<div style='font-size:40px; visibility: visible'> The star formation rate, i.e., how much gas turns to stars </div>-->
-    <div style='font-size: 90px'> L / M</div>
-    <!--<div style='font-size:40px; visibility: visible'> The light per unit mass, i.e., how stars and stellar populations turn matter into light </div>-->
-    <div style='font-size: 90px'> <a href="#clusterfraction">Location</a> </div>
-    <div class=fragment style='font-size:40px; visibility: visible'> In clusters?  Evenly distributed? </div>
+    <section>
+        <h2> Star Formation a little less oversimplified </h2>
+        <div style='font-size: 90px'>M&#x307;</div>
+        <!--<div style='font-size:40px; visibility: visible'> The star formation rate, i.e., how much gas turns to stars </div>-->
+        <div style='font-size: 90px'> L / M</div>
+        <!--<div style='font-size:40px; visibility: visible'> The light per unit mass, i.e., how stars and stellar populations turn matter into light </div>-->
+        <div style='font-size: 90px'> <a href="#clusterfraction">Location</a> </div>
+        <div class=fragment style='font-size:40px; visibility: visible'> In clusters?  Evenly distributed? </div>
 
-    <aside class=notes>
-        Just what's on the slides
-    </aside>
+        <aside class=notes>
+            Just what's on the slides
+        </aside>
+
+    </section>
+
+    <section>
+        All large stellar populations are approximately the same,
+        but small clusters vary
+        <img src="FrontiersAssets/light_to_mass_vs_mass.png">
+    </section>
+
+    <section>
+        <h4> Top-heavier mass functions in high-mass clusters </h4>
+        <div>
+            <img src="colloquium_assets/Hosek2018_fig17.svg" style="width:105%">
+            <div style="position: relative; bottom: 135px; left:-310px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018arXiv180802577H">Hosek+ 2018</a></div>
+        </div>
+        <div style="position: relative; top: -11%; left:35%" class="smaller3"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        <aside class=notes>
+            <ul>
+                <li> Observations of clusters support the idea that star formation
+                in the densest clusters is indeed different
+                <li> Right panels show IMFs with high-end slopes of 2.3 and 1.75
+                respectively; they show 1000-Msun clusters with different IMFs
+                <li> The lower-right plot extends out to 100 Msun stars, while the top
+                cut off around 30
+                <li> Plots are produced using <a href="https://github.com/keflavich/imf/blob/master/examples/imf_figure.py">IMF figure</a> code again
+            </ul>
+        </aside>
+    </section>
+
 
 </section>
 
@@ -716,18 +723,29 @@
 
 
 <section id=turbulence>
-    <h4> Turbulence </h4>
-    <div>
-    <a href="#turbulentmodels"> The current best theories of star formation in the ISM are
-        based on simulations of supersonic turbulence. </a>
-    </div>
+    <section>
+        <h4> Turbulence </h4>
+        <div>
+        <a href="#turbulentmodels"> The current best theories of star formation in the ISM are
+            based on simulations of supersonic turbulence. </a>
+        </div>
 
-    <div>
-        We still don't understand turbulence, but there are <a
-        href="http://turbustat.readthedocs.io">many useful ways</a> to measure
-    our ignorance.
-    </div>
+        <div>
+            We still don't understand turbulence, but there are <a
+            href="http://turbustat.readthedocs.io">many useful ways</a> to measure
+        our ignorance.
+        </div>
 
+    </section>
+
+    <section>
+        <h4>Each pixel in mm/radio data sets is a spectrum </h4>
+        <img src="FrontiersAssets/SCOUSECartoon.png">
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/SgrB2_HC3N_channelmaps.png">
+    </section>
 </section>
 
 
@@ -1504,6 +1522,44 @@
 
 </section>
 
+
+<section>
+    <section>
+        What kinds of clouds produce high-mass stars?
+    </section>
+
+    <section>
+        <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Andromeda_galaxy_UV_crop.jpg);'>-->
+        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_UV_matched_Herschel.jpg);'>
+            <h4> Almost all of the light in star-forming galaxies is produced by high-mass stars</h4>
+            <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> UV image of M31, Andromeda, our closest massive neighbor
+                <li> Blue light is produced by high-mass stars
+                <li> (high-mass stars dominate anyway, but even more in UV)
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_XMM_HERSCHEL_display.jpg);'>
+            <h4> The stars form in and from gas </h4>
+            <div style="position: relative; bottom: -67%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> Herschel FIR dust image of M31
+                <li> Dust is closely correlated with blue starlight = young stars
+                <li> Dust traces gas, stars form where there is gas
+            </ul>
+        </aside>
+    </section>
+
+</section>
+
+
 <section id=summaries>
     <section>
         <h3> Summary so far: </h3>
@@ -1584,7 +1640,7 @@
     <script>
     var els = document.getElementsByTagName('section');
     for (var i=0; i < els.length; i++) {
-        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        els[i].setAttribute("data-background-image", "FrontiersAssets/SgrB2N_background.jp2");
         // I still can't figure out how to get the background to fill the damned page
         els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
         els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");

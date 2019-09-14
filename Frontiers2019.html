@@ -45,6 +45,8 @@
     <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
         <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">How does the ISM control star formation?</h1>
     </div>
+    These slides are available at <a href="https://keflavich.github.io/talks/Frontiers2019.html">https://small.cat/cap</a>
+    for the next week, then from my talks page afterward.
     </div>
 </section>
 
@@ -145,6 +147,7 @@
 
     </section>
 
+
     <section>
         <h4>High-mass stars produce light &amp; heavy elements<br> low-mass stars live practically forever</h4>
         <div style="float:left; width:50%;">
@@ -172,52 +175,69 @@
         </aside>
     </section>
 
-
     <section>
-        <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Andromeda_galaxy_UV_crop.jpg);'>-->
-        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_UV_matched_Herschel.jpg);'>
-            <h4> Almost all of the light in star-forming galaxies is produced by high-mass stars</h4>
-            <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
-        </span>
-        <aside class=notes>
-            <ul>
-                <li> UV image of M31, Andromeda, our closest massive neighbor
-                <li> Blue light is produced by high-mass stars
-                <li> (high-mass stars dominate anyway, but even more in UV)
-            </ul>
-        </aside>
+        The shape of the IMF changes L / M
+        <img src="FrontiersAssets/light_to_mass_vs_alpha.svg" style="height:80%">
     </section>
 
-    <section>
-        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_XMM_HERSCHEL_display.jpg);'>
-            <h4> The stars form in and from gas </h4>
-            <div style="position: relative; bottom: -67%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
-        </span>
-        <aside class=notes>
-            <ul>
-                <li> Herschel FIR dust image of M31
-                <li> Dust is closely correlated with blue starlight = young stars
-                <li> Dust traces gas, stars form where there is gas
-            </ul>
-        </aside>
-    </section>
 
 
 </section>
 
 
 <section>
-    <h2> Star Formation a little less oversimplified </h2>
-    <div style='font-size: 90px'>M&#x307;</div>
-    <!--<div style='font-size:40px; visibility: visible'> The star formation rate, i.e., how much gas turns to stars </div>-->
-    <div style='font-size: 90px'> L / M</div>
-    <!--<div style='font-size:40px; visibility: visible'> The light per unit mass, i.e., how stars and stellar populations turn matter into light </div>-->
-    <div style='font-size: 90px'> <a href="#clusterfraction">Location</a> </div>
-    <div class=fragment style='font-size:40px; visibility: visible'> In clusters?  Evenly distributed? </div>
+    <section>
+        <h2> Star Formation a little less oversimplified </h2>
+        <div style='font-size: 90px'>M&#x307;</div>
+        <!--<div style='font-size:40px; visibility: visible'> The star formation rate, i.e., how much gas turns to stars </div>-->
+        <div style='font-size: 90px'> L / M</div>
+        <!--<div style='font-size:40px; visibility: visible'> The light per unit mass, i.e., how stars and stellar populations turn matter into light </div>-->
+        <div style='font-size: 90px'> <a href="#clusterfraction">Location</a> </div>
+        <div class=fragment style='font-size:40px; visibility: visible'> In clusters?  Evenly distributed? </div>
 
-    <aside class=notes>
-        Just what's on the slides
-    </aside>
+        <aside class=notes>
+            Just what's on the slides
+        </aside>
+
+    </section>
+
+    <section>
+        All large stellar populations are approximately the same,
+        but small clusters vary
+        <img src="FrontiersAssets/light_to_mass_vs_mass.png">
+    </section>
+
+    <section>
+        <h4> Top-heavier mass functions in high-mass clusters </h4>
+        <div>
+            <img src="colloquium_assets/Hosek2018_fig17.svg" style="width:105%">
+            <div style="position: relative; bottom: 135px; left:-310px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018arXiv180802577H">Hosek+ 2018</a></div>
+        </div>
+        <div style="position: relative; top: -11%; left:35%" class="smaller3"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        <aside class=notes>
+            <ul>
+                <li> Observations of clusters support the idea that star formation
+                in the densest clusters is indeed different
+                <li> Right panels show IMFs with high-end slopes of 2.3 and 1.75
+                respectively; they show 1000-Msun clusters with different IMFs
+                <li> The lower-right plot extends out to 100 Msun stars, while the top
+                cut off around 30
+                <li> Plots are produced using <a href="https://github.com/keflavich/imf/blob/master/examples/imf_figure.py">IMF figure</a> code again
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4 style="display:inline-block; position: absolute; top:2%; width:60%; right:20%;"> Clustered feedback is more efficient </h4>
+        <div class="image" style="position:relative; top: 5%; width:1024px; height:768px;">
+            <img src="colloquium_assets/Gentry2016_fig14.svg" style="width:1024px">
+            <div style="position: absolute; bottom: 20%; left:10%;" class="smaller2">
+                <a href="http://adsabs.harvard.edu/abs/2017MNRAS.465.2471G">Gentry+ 2017</a>
+            </div>
+        </div>
+    </section>
+
+
 
 </section>
 
@@ -343,7 +363,7 @@
 
 <section>
     <section>
-        A theoretically motivated approach to measuring the IMF
+        A theoretically motivated approach to measuring the proto-IMF
         <ol>
             <li> Assume an IMF and
                 a set of mass-dependent prestellar evolutionary tracks</li>
@@ -587,6 +607,16 @@
         </aside>
     </section>
 
+    <section>
+        <h4 style="display:inline-block; position: absolute; top:2%; width:60%; right:20%;"> Clustered feedback is more efficient </h4>
+        <div class="image" style="position:relative; top: 5%; width:1024px; height:768px;">
+            <img src="colloquium_assets/Gentry2016_fig14.svg" style="width:1024px">
+            <div style="position: absolute; bottom: 20%; left:10%;" class="smaller2">
+                <a href="http://adsabs.harvard.edu/abs/2017MNRAS.465.2471G">Gentry+ 2017</a>
+            </div>
+        </div>
+    </section>
+
 
 </section>
 
@@ -641,6 +671,10 @@
 
     </section>
 
+    <section style="background-color:black;">
+        <div style="color:white">Goal: get sponsored</div>
+        <img src="FrontiersAssets/logo-morton-salt.png" height=200px>
+    </section>
 
     <section>
         <h3> We can use salts to measure HMYSO masses </h3>
@@ -716,6 +750,7 @@
 
 
 <section id=turbulence>
+<<<<<<< HEAD
     <h4> Turbulence </h4>
     <div>
     <a href="#turbulentmodels"> The current best theories of star formation in the ISM are
@@ -729,24 +764,107 @@
     </div>
 
 </section>
+=======
+    <section>
+        <h4> Turbulence </h4>
+        <div>
+        <a href="#turbulentmodels"> The current best theories of star formation in the ISM are
+            based on simulations of supersonic turbulence. </a>
+        </div>
+
+        <div>
+            We still don't understand turbulence, but there are <a
+            href="http://turbustat.readthedocs.io">many useful ways</a> to measure
+        our ignorance.
+        </div>
+
+    </section>
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
+
+    <section>
+        <h4>Each pixel in mm/radio data sets is a spectrum </h4>
+        <img src="FrontiersAssets/SCOUSECartoon.png">
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/SgrB2_HC3N_channelmaps.png">
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/SgrB2_HC3N_channelmaps.png">
+    </section>
+
+    <section>
+        Aim is to measure turbulent statistics that are sensitive to the
+        physical parameters of clouds
+        <img src="FrontiersAssets/Koch2017_fig7b.png">
+    </section>
+</section>
+
+
+
+
+<section>
+    <section>
+        <h4> Other projects </h4>
+
+        I have other projects that are observationally motivated, but are either
+        more narrow or do not fit the overarching plan described earlier
+    </section>
+    <section>
+        <h4> The MUSTANG Galactic Plane Survey (MGPS90)</h4>
+        <img src="FrontiersAssets/mustang_w43.png">
+        Goal: Complete a Galactic plane survey at 10" resolution at 90 GHz (3
+        mm)
+        <aside class=notes>
+            <ul>
+                <li> 3mm is the nadir of galactic SEDs</li>
+                <li> Mix of dust, free-free emission </li>
+                <li> Best wavelength to hunt the youngest massive stars </li>
+            </ul>
+        </aside>
+
+    </section>
+
+    <section> 
+        <h4> Zooming in on high-mass protostars in W51</h4>
+
+        There are several connected projects on W51:
+        <ul>
+            <li> Ammonia Masers near W51 IRS2/North </li>
+            <li> ALMA high-resolution observations of W51 </li>
+            <li> VLA high-resolution observations of W51 </li>
+
+        </ul>
+        <br>
+        Can assemble SEDs and molecular spectra of dozens (hundreds?) of
+        protostars, use these to calibrate ALMA-IMF
+
+    </section> 
+    <section> 
+        <h4>A detailed breakdown of star formation in the Galactic Center: Sgr B2</h4>
+        <ul>
+            <li> High-resolution, multiwavelength observations of the Sgr B2 N and M clusters
+            <li> Deep (5-sigma sensitivity better than 1 solar mass) observations of Sgr B2 DS
+            <li> Map outflows and catalog protostars
+            <li> Measure turbulence through several lines
+            <li> Investigate CO absorption structures
+        </ul>
+    </section> 
+
+</section>
+
+
+
+<<<<<<< HEAD
+=======
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
 
 
 <section>
@@ -757,6 +875,7 @@
 
 
 
+<<<<<<< HEAD
 <section>
     <section>
         <h4> Other projects </h4>
@@ -781,6 +900,13 @@
 </section>
 
 
+=======
+
+
+
+
+
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
 
 
 
@@ -796,10 +922,79 @@
 
 
 
+<<<<<<< HEAD
 
 
+=======
+<section>
+    Beyond here are bonus slides
+</section>
+
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
 
 
+<section id=whatisacore>
+    <section>
+        <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>-->
+        <h4> Cartoon of low-mass star formation </h4>
+
+        <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
+        <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
+
+        </span>
+        <!--<div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2</a></div>-->
+        <aside class=notes>
+            <ul>
+                <li> The next several slides will walk through this
+            </ul>
+        </aside>
+    </section>
+
+<<<<<<< HEAD
+    <section>
+        <h4> A molecular cloud fragments </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_CloudOnly_nofragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0%; margin-top:0%; width:100%'>
+        <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly_somefragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
+        <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
+        <aside class=notes>
+            <ul>
+                <li> We start with a relatively smooth molecular cloud
+                <li> Turbulence seeds overdensities
+                <li> Overdensities become gravitationally unstable and collapse: this is cloud fragmentation
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> The core forms a central protostar </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_LowMass_CollapsingCore.svg" style='background: white; position:absolute; top:10%; left:13%; bottom:0%; margin-top:0%; width:auto; height: 100%;'>
+    </section>
+
+    <section>
+        <h4> The protostar heats its parent core and forms a disk </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_LowMass_WarmCore.svg" style='background: white; position:absolute; top:10%; left:16%; bottom:0%; margin-top:0%; width:auto; height: 90%;'>
+    </section>
+
+    <section>
+        <h4> It drives an outflow and consumes or blows out its core </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_LowMass_OutflowCorino.svg" style='background: white; position:absolute; top:10.2%; left:18%; bottom:0%; margin-top:0%; width:auto; height: 90%;'>
+    </section>
+
+    <section>
+        <h4> Eventually, you end with just a star-disk system </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_LowMass_StarDisk.svg" style='background: white; position:absolute; top:10%; left:11%; bottom:0%; margin-top:0%; width:auto; height: 85%;'>
+    </section>
+
+    <section>
+        <h4> Cartoon of low-mass star formation </h4>
+
+        <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
+        <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
+
+        </span>
+    </section>
+</section>
+=======
 <section id=whatisacore>
     <section>
         <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>-->
@@ -850,18 +1045,12 @@
         <h4> Eventually, you end with just a star-disk system </h4>
         <img src="colloquium_assets/Purcell_Cartoon_LowMass_StarDisk.svg" style='background: white; position:absolute; top:10%; left:11%; bottom:0%; margin-top:0%; width:auto; height: 85%;'>
     </section>
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
 
     <section>
         <h4> Cartoon of low-mass star formation </h4>
 
-        <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
-        <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
-
-        </span>
-    </section>
-</section>
-
-
+<<<<<<< HEAD
 
 
 
@@ -946,6 +1135,119 @@
                 <li> Destructive feedback from expanding HII regions: the massive stars produce UV light,
                 ionizing and evacuating the gas
                 <li> Right panel is by Anna McLeod using MUSE, done while she was a student at ESO
+=======
+        <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
+        <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
+
+        </span>
+    </section>
+</section>
+
+
+
+
+
+<section id=clustersdifferent>
+    <section data-id="688e275e4f4751d7bc0fc68ee3d68b82">
+        <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fd2e732f3eb46152cc9857131e878116">
+        <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+        <h2 style="word-break: keep-all; hyphens: none;">How is star formation in high-mass clusters different?</h2>
+        </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="7b24eb3dce885998fa19c253a9f15bbf">
+        <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+        <ul>
+            <li class=fragment>Feedback from one star affects many in clustered regions
+                <div style='font-size:24px; '>(<a href="http://adsabs.harvard.edu/abs/2016MNRAS.463.2553R">Rosen+ 2016</a>,
+                <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>)</div></li>
+            <li class=fragment>IMF depends on density, feedback, global conditions <div style='font-size:24px'>(e.g., <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.1196J"
+                    target="_blank">Jones &amp; Bate 2018</a>, <a href="http://esoads.eso.org/abs/2013MNRAS.436.2892N">Narayanan &amp; Dave 2012</a>)
+                </div></li>
+        </ul>
+        <ul class="fragment" style='display: block'>
+            <li class=smaller2>Total star formation efficiency is higher. <!--SFE<sub>ff</sub> may be higher?-->
+            <div style='font-size:24px; '>
+                (obs: <a href="http://adsabs.harvard.edu/abs/2016A%26A...595A..27G">Ginsburg+ 2016</a>,
+                <a href="http://adsabs.harvard.edu/abs/2017IAUS..316..117G">Gouliermis &amp; Hony 2015</a>,
+                sim:
+            <a href="http://adsabs.harvard.edu/abs/2018MNRAS.475.3511G">Grudić+ 2018</a>
+                )
+            </div>
+            </li>
+            <li class=smaller2> Collisions assemble the most massive stars?
+            <div style='font-size:24px; '>
+            (e.g., <a href="http://adsabs.harvard.edu/abs/2013MNRAS.430.1018F">Fujii+ &amp; PZ 2013</a>,
+            but see <a href="http://adsabs.harvard.edu/abs/2011MNRAS.410.2799M">Moeckel &amp; Clarke 2011</a>)
+            </div>
+            <ul><li class=smaller style="margin: 5px 0px;">
+                <div class>Interactions certainly affect disks (e.g., <a href="http://adsabs.harvard.edu/abs/2017A%26A...604A..91W">Wijnen+ 2017</a>,
+                    <a href="http://adsabs.harvard.edu/abs/2016ApJ...828...48V">Vincke+ 2016</a>, <a href="http://adsabs.harvard.edu/abs/2019arXiv190204652V">van Elteren+ 2019</a>)
+                </div>
+                </li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Just what the slides say
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
+            </ul>
+        </aside>
+    </section>
+
+<<<<<<< HEAD
+    <section>
+        <h4> Accreting massive young stars  affect their environment</h4>
+        <span class="image" style="background-image: url(colloquium_assets/methanol_scalebar_e2e.png); width:80%">
+            <div style="position: relative; top: 73%; left:-10%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> The classic picture is incomplete: HMYSOs have a big effect
+                *while* they are accreting too
+                <li> There is a HMYSO at the center (W51e2e)
+                <li> The surrounding greyscale circular hot core is seen in
+                methanol emission
+                <li> Data are from ALMA
+            </ul>
+        </aside>
+    </section>
+
+=======
+
+    <section style='background: white'>
+        <h4> Cartoon of high- and low-mass star formation </h4>
+        <div class=smaller2> Main difference: massive stars affect their surroundings </div>
+        <img src="colloquium_assets/Purcell_Cartoon_LowHighMass.svg" width=100%>
+        <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
+            <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> This is the 'classical' picture of HMSF; I'll riff on it later
+                <li> The key differences are the size of the feedback-affected region
+                and the type of feedback:
+                <li> The classical picture is that high-mass stars end star formation
+                once they hit the main sequence / stop accreting (which are the same thing)
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class=image style='background-position: center center; background-image: url(colloquium_assets/trapezium_and_m16.jpeg);'>
+            <h4> Classic HII region feedback:<br> O-stars clear out their environment</h4>
+        </span>
+        <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="https://en.wikipedia.org/wiki/Trapezium_Cluster#/media/File:Trapezium_cluster_optical_and_infrared_comparison.jpg">HST</a></div>
+        <div style="position: absolute; bottom: 100px; left:650px" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2015MNRAS.450.1057M">McLeod, Dale, Ginsburg et al 2015</a></div>
+        <div style="color:white; text-align: left; position: absolute; bottom: 100px; left:600px; max-width:300px;" class="smaller2">
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Destructive feedback from expanding HII regions: the massive stars produce UV light,
+                ionizing and evacuating the gas
+                <li> Right panel is by Anna McLeod using MUSE, done while she was a student at ESO
             </ul>
         </aside>
     </section>
@@ -967,6 +1269,7 @@
         </aside>
     </section>
 
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
     <section>
         <h4> Accreting massive young stars  affect their environment</h4>
         <span class="image" style="background-image: url(colloquium_assets/outflows_over_methanol_e2e.png); width:80%">
@@ -994,6 +1297,25 @@
             </ul>
         </aside>
     </section>
+<<<<<<< HEAD
+
+    <section>
+        <h4> Accreting massive young stars  affect their environment</h4>
+        <span class="image" style="background-image: url(colloquium_assets/W51e2_cycle3green_SiO_outflows_aplpy_zoom.png); height:90%;">
+            <div style="position: relative; top:92%; left:-19%;" class="smaller2"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv180505364G">Goddi, Ginsburg+ 2018</a></div>
+        </span>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> ...showing asymmetric accretion structures
+            </ul>
+        </aside>
+    </section>
+    -->
+
+    <section>
+        <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide.png); margin-top:-3%;">
+=======
 
     <section>
         <h4> Accreting massive young stars  affect their environment</h4>
@@ -1022,6 +1344,26 @@
     </section>
 
     <section>
+        <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide_withabundance.png); margin-top:-3%;">
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
+            <div style="position: relative; bottom: -85%; left:-27%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+<<<<<<< HEAD
+                <li> Radial profile of temperature around the source
+                <li> Typical molecular clouds have temperatures 5-25 K, compared to the 100-500 K here
+=======
+                <li> Methanol freezes onto grains, usually locked up in water ice:
+                it evaporates/desorbs at around 80-100 K
+                <li> (transition) What effect does this high temperature have?
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+<<<<<<< HEAD
         <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide_withabundance.png); margin-top:-3%;">
             <div style="position: relative; bottom: -85%; left:-27%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
         </span>
@@ -1060,6 +1402,33 @@
     </section>
 
 
+=======
+        <h3> The characteristic fragmentation scale </h3>
+
+        <br>
+        The Jeans Mass M<sub class=smaller2>J</sub> is the mass where gravity and thermal pressure are balanced.
+        <br>
+        <br>
+
+        <!--
+        M<sub class=smaller2>J</sub> = (π/6)c<sup class=smaller2>3</sup><sub style="margin-left:-10px" class=smaller2>s</sub>G<sup class=smaller2>−3/2</sup>ρ<sup class=smaller2>−1/2</sup>
+        <br> <br>
+        -->
+
+
+        M<sub class=smaller2>J</sub> &prop; T<sup class=smaller2>3/2</sup> ρ<sup class=smaller2>−1/2</sup>
+
+        <aside class=notes>
+            <ul>
+                <li> Higher density means greater gravity, leading to collapse and fragmentation
+                <li> Higher temperature means greater pressure, providing support
+                against gravitational collapse and suppressing it.
+            </ul>
+        </aside>
+    </section>
+
+
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
     <section>
         <h4> The characteristic fragmentation scale is larger </h4>
         <div class=smaller>
@@ -1491,6 +1860,47 @@
 
 </section>
 
+<<<<<<< HEAD
+=======
+
+<section>
+    <section>
+        What kinds of clouds produce high-mass stars?
+    </section>
+
+    <section>
+        <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Andromeda_galaxy_UV_crop.jpg);'>-->
+        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_UV_matched_Herschel.jpg);'>
+            <h4> Almost all of the light in star-forming galaxies is produced by high-mass stars</h4>
+            <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> UV image of M31, Andromeda, our closest massive neighbor
+                <li> Blue light is produced by high-mass stars
+                <li> (high-mass stars dominate anyway, but even more in UV)
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_XMM_HERSCHEL_display.jpg);'>
+            <h4> The stars form in and from gas </h4>
+            <div style="position: relative; bottom: -67%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> Herschel FIR dust image of M31
+                <li> Dust is closely correlated with blue starlight = young stars
+                <li> Dust traces gas, stars form where there is gas
+            </ul>
+        </aside>
+    </section>
+
+</section>
+
+
+>>>>>>> e728f719cb3d1832c6d469f27fefe894f0eac48a
 <section id=summaries>
     <section>
         <h3> Summary so far: </h3>
@@ -1571,7 +1981,7 @@
     <script>
     var els = document.getElementsByTagName('section');
     for (var i=0; i < els.length; i++) {
-        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.jpg");
         // I still can't figure out how to get the background to fill the damned page
         els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
         els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");

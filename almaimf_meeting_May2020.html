@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ALMA-IMF data reduction process</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body class=almaimf>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides almaimf">
+
+
+
+<section>
+
+    <h2 style=""> ALMA-IMF data update </h2>
+    <div style="">
+            <p class="footer">Adam Ginsburg</p>
+            <p class="smaller footer">Assistant Professor, University of Florida</p>
+            <div>
+            With the data reduction team:
+            Timea Csengeri, Roberto Galván-Madrid, Hongli Liu, Yohan Pouteau,
+            Andrés Guzman, Fernando Olguin, Fabien Louvet, Ana Lopez-Sepulcre,
+            Nichol Cunningham, Manuel Fernández, Tapas Baug
+            </div>
+            <div class=smaller2> 
+        </div>
+    <div class=smaller2> Slides available at <a href="https://keflavich.github.io/talks/almaimf_meeting.html">https://keflavich.github.io/talks/almaimf_meeting.html</a></div>
+    </div>
+
+
+    </span>
+    <aside class=notes>
+    </aside>
+</section>
+
+<section>
+    <h2> Very quick summary </h2>
+    <ul>
+        <li> Clean-continuum, self-calibrated, 12m-only data are ready for use </li>
+        <li> "Dirty" continuum (contains line contamination) and 7m+12m combined data
+            are mostly ready </li>
+        <li> Line data first-pass cubes are undergoing QA </li>
+    </ul>
+</section>
+
+
+<section>
+    <h2> Data Reduction Team: </h2>
+
+    <div style="float:left;">
+    <div class=smaller> Continuum Deliveries: </div>
+    <ul class=smaller2>
+        <li> Hongli Liu (G353) </li>
+        <li> Fabien Louvet (G12.80) </li>
+        <li> Timea Csengeri (G351.77, G328.25, G337.92) </li>
+        <li> Andrés Guzman (G10.62) </li>
+        <li> Roberto Galván-Madrid (G333.60)  </li>
+        <li> Fernando Olguin (G327, G338 B3) </li>
+        <li> Patricio Sanhueza (G338 B6) </li>
+        <li> Ana Lopez-Sepulcre (G008.67)</li>
+        <li> Nichol Cunningham (G008.67)</li>
+        <li> Yohan Pouteau (W43-MM1, W43-MM2, W43-MM3) </li>
+        <li> Adam Ginsburg (W51-E, W51-IRS2)  </li>
+    </ul>
+    </div>
+
+    <div style="float:right;">
+    <div class=smaller>
+    Line Inspection:
+    </div>
+    <ul class=smaller2>
+        <li>Manuel Fernández (N2H+) </li>
+        <li>Hongli Liu (12CO, C18O) </li>
+        <li>Roberto Galván-Madrid (H41&alpha;) </li>
+        <li>Tapas Baug (H2CO) </li>
+    </ul>
+    </div>
+
+</section>
+
+
+<section>
+    <h2> Self-Calibration</h2>
+    Before self-calibration, data suffer from severe dynamic range limitations.
+    <img src="almaimf_assets/W43-MM2_B6_12M_selfcal5_comparison.png">
+</section>
+
+<section>
+    <h2> Self-Calibration: process</h2>
+    <ul>
+        <li> Mosaic image created </li>
+        <li> Image is cleaned within a custom mask </li>
+        <li> Each pointing in the mosaic has gain solutions determined </li>
+        <li> Those pointings with S/N &gt; 5 for all antennae are kept and used to calibrate remainder</li>
+        <li> Repeat, each time cleaning more deeply </li>
+    </ul>
+</section>
+
+<section>
+    <h2> Self-Calibration: process</h2>
+    Image &nbsp;&nbsp;&nbsp; Residual &nbsp;&nbsp;&nbsp; Model
+    <img src="almaimf_assets/W51-E_B6_uid___A001_X1296_X213_continuum_merged_12M_robust0_selfcal_anim.gif">
+</section>
+
+<section>
+    <h2> Self-Calibration: effect</h2>
+    <img src="almaimf_assets/dynamic_range_improvement_selfcal.png">
+</section>
+
+<section>
+    <h2> Self-Calibration: Summary</h2>
+    <div class=smaller>
+    It works, and works well, but requires care in cleaning.
+
+    <br>
+    Substantial dynamic range improvements achieved for most fields.
+    </div>
+
+    <img src="almaimf_assets/datatable.png">
+</section>
+
+<section>
+    <h2> BSENS and Lines </h2>
+    We excluded lines to create "cleanest" continuum maps based on the default <code>findContinuum</code>
+    script in the pipeline.
+</section>
+
+<section>
+    <h2> Continuum Vs Lines </h2>
+    Continuum selection doesn't always work.  W51-E, for example, is a forest -
+    the peak spectrum shows emission lines <i>everywhere</i>
+    <img src="almaimf_assets/W51-E_12M_B6_spw1_robust0_lines.maxspec.png">
+</section>
+
+<section>
+    <h2> Continuum Vs Lines </h2>
+    Most regions are better behaved overall
+    <img src="almaimf_assets/G351.77_12M_B6_spw2_robust0.maxspec.png">
+</section>
+
+
+
+      </div>
+    </div>
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: false,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+        condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>

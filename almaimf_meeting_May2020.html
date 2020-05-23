@@ -32,17 +32,16 @@
     <h2 style=""> ALMA-IMF data update </h2>
     <div style="">
             <p class="footer">Adam Ginsburg</p>
-            <p class="smaller footer">Assistant Professor, University of Florida</p>
-            <div>
-            With the data reduction team:
+            For the data reduction team:
+            <div class=smaller>
             Timea Csengeri, Roberto Galván-Madrid, Hongli Liu, Yohan Pouteau,
             Andrés Guzman, Fernando Olguin, Fabien Louvet, Ana Lopez-Sepulcre,
             Nichol Cunningham, Manuel Fernández López, Tapas Baug
-            (Fred?)
             </div>
             <div class=smaller2> 
         </div>
-    <div class=smaller2> Slides available at <a href="https://keflavich.github.io/talks/almaimf_meeting_May2020.html">https://keflavich.github.io/talks/almaimf_meeting_May2020.html</a></div>
+    <div class=smaller3> Slides available at <a href="https://keflavich.github.io/talks/almaimf_meeting_May2020.html">https://keflavich.github.io/talks/almaimf_meeting_May2020.html</a>.
+        Use arrow keys to navigate.</div>
     </div>
 
 
@@ -55,9 +54,8 @@
     <h2> Very quick summary </h2>
     <ul>
         <li> Clean-continuum, self-calibrated, 12m-only data are ready for use </li>
-        <li> "Dirty" continuum (contains line contamination) 
-            are mostly ready </li>
-        <li> Some 7m+12m combined data 
+        <li> Best-sensitivity "bsens" continuum (contains line contamination) images are mostly ready </li>
+        <li> Some 7m+12m combined data are available, but most fields are not </li>
         <li> Line data first-pass cubes are undergoing QA </li>
     </ul>
 </section>
@@ -97,6 +95,22 @@
 
 </section>
 
+<section>
+    <h2> Data Team activity</h2>
+    We have substantially improved the data over what was delivered:
+    <ul>
+        <li> Assessed calibration (inspected weblogs, etc) </li>
+        <li> Corrected broken calibrations </li>
+        <li> Combined 12m configurations </li>
+        <li> Imaged with &amp; without line flagging </li>
+        <li> Combined 12m with 7m data </li>
+    </ul>
+    <br>
+    <div style='text-align: left;'>
+    Use the consortium products!
+    </div>
+    
+</section>
 
 <section>
     <h2> Self-Calibration</h2>
@@ -117,8 +131,9 @@
 
 <section>
     <h2> Self-Calibration: process</h2>
-    Image &nbsp;&nbsp;&nbsp; Residual &nbsp;&nbsp;&nbsp; Model
-    <img src="almaimf_assets/W51-E_B6_uid___A001_X1296_X213_continuum_merged_12M_robust0_selfcal_anim.gif">
+    <img style='max-height:80%;' src="almaimf_assets/G010.62_B3_uid___A001_X1296_X1e5_continuum_merged_bsens_12M_robust0_image_selfcal_anim.gif">
+    <!--Image &nbsp;&nbsp;&nbsp; Residual &nbsp;&nbsp;&nbsp; Model
+    <img src="almaimf_assets/W51-E_B6_uid___A001_X1296_X213_continuum_merged_12M_robust0_selfcal_anim.gif">-->
 </section>
 
 <section>
@@ -135,8 +150,31 @@
     Substantial dynamic range improvements achieved for most fields.
     </div>
 
-    <img src="almaimf_assets/datatable.png">
+    <!--<img src="almaimf_assets/datatable.png">-->
 </section>
+
+
+<section>
+    <h2> Data Quality figures </h2>
+    We rarely reached the requested noise level.
+    <img src="almaimf_assets/noise_excess.png">
+</section>
+
+
+<section>
+    <h2> Data Quality figures </h2>
+    <div class=smaller> We generally reached the target beam size to within ALMA-defined metrics</div>
+    <img src="almaimf_assets/beam_size_comparison.png">
+</section>
+
+<section>
+    <h2> Data Quality figures </h2>
+    <div> Most of our images have high dynamic range </div>
+    <img src="almaimf_assets/dynamic_range.png">
+</section>
+
+
+
 
 <section>
     <h2> BSENS and Lines </h2>
@@ -249,11 +287,24 @@
     <h2> Description of the Data</h2>
     Headers contain HISTORY entries describing the specific version of the
     pipeline (a git hash) and the imaging parameters used.
+    <div style='white-space: nowrap; text-align:left;'>
+    <code style='white-space: nowrap; text-align:left;'>
+DATE    = '2020-05-10T01:28:35.526000' <br>
+ORIGIN  = 'CASA 5.6.0-60' <br>
+GIT_VERS= 'a58df55 ' <br>
+GIT_DATE= '2020-05-06' <br>
+    </code>
+    </div>
 
 </section>
 <section>
     <h2> Description of the Data</h2>
-    <a href="https://bio.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/Feb2020/">https://bio.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/Feb2020/</a>
+    For <i>internal release</i>, the data are:
+    <ul>
+        <li> Link: <a href="https://bio.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/May2020/">https://bio.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/May2020/</a></li>
+        <li> Quicklooks link to QA Feedback site:
+        <a href="https://bio.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/May2020/quicklooks/">https://bio.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/May2020/quicklooks/</a></li>
+    </ul>
 </section>
 
       </div>

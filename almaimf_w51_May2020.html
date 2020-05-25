@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ALMA-IMF data reduction process</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body class=almaimf>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides almaimf">
+
+
+
+<section>
+
+    <h2 style=""> W51 </h2>
+    <div style="">
+            <p class="footer">Adam Ginsburg</p>
+            With contributions from students:
+            <div class=smaller>
+                <ul>
+                    <li> Desmond Jeff: PhD student
+                    <li> Theo Richardson: PhD student
+                    <li> Connor McClellan: REU 2018
+                    <li> Josh Machado: REU 2019
+                    <li> Danielle Bovie: REU 2020
+                </ul>
+            </div>
+            <div class=smaller2> 
+        </div>
+    <div class=smaller3> Slides available at <a href="https://keflavich.github.io/talks/">https://keflavich.github.io/talks/</a>.
+        Use arrow keys to navigate.</div>
+    </div>
+
+
+    </span>
+    <aside class=notes>
+    </aside>
+</section>
+
+<section>
+    <h2> Overview </h2>
+    <ul>
+        <li> </li>
+    </ul>
+</section>
+
+<section>
+    <h2> Temperature Measurement </h2>
+    <div class=smaller>
+    We used CH<sub class=smaller2>3</sub>OH rotational diagrams to measure hot core temperatures:
+    </div>
+    <img style='max-width:50%; float:left;' src="almaimf-w51-assets/ch3oh_temperature_map_e2.png">
+    <img style='max-width:50%; float:right;' src="almaimf-w51-assets/e2_CH3OH_LTE_temperature_radial_profile.png">
+    <br>
+    <div class=smaller>
+    Desmond Jeff is applying the same technique in Sgr B2 DS
+    </div>
+</section>
+
+<section>
+    <h2> Temperature Measurement </h2>
+    H<sub class=smaller2>2</sub>CO image quality was too poor in Cycle 2 data.
+
+    <div class=smaller>
+    Josh Machado fit NH<sub class=smaller2>3</sub> temperatures using VLA
+    C-config data from Cara Battersby:
+    </div>
+    <img style='max-width:50%; float:left;'  src="almaimf-w51-assets/w51_kinetic_temperature_histogram_nh3.png">
+    <img style='max-width:50%; float:right;' src="almaimf-w51-assets/w51_kinetic_temperature_map_nh3.png">
+</section>
+
+<section>
+    <h2> Temperature Measurement </h2>
+    <div class=smaller2>
+    Ammonia temperatures result in lower masses, and systematically different masses in different regimes,
+    than isothermal assumptions.
+    </div>
+    <div class=smaller3 style='float:left; text-align: right;'>
+        <br><br><br>
+ Dashed: 1-to-1<br>Dotted: M(NH<sub>3</sub>) = 0.25 M(20K)</span>
+    </div>
+
+        <img style='max-height:60%' src=almaimf-w51-assets/mass_vs_ammoniamass.png>
+
+    <div class=smaller2 style='padding-top:-100%'>
+    TODO: Compare NH<sub>3</sub>, H<sub>2</sub>CO, and PPMAP temperatures
+    </div>
+
+</section>
+
+<section>
+    <h2> High-resolution: What's in a core? </h2>
+    <div class=smaller>
+    Many cores are protostellar: they have hot, luminous stars inside.  We have long-baseline (0.03-0.05") data showing this:
+    </div>
+    <img src="almaimf-w51-assets/W51e_south_zoom.png">
+    <div class=smaller>
+    Danielle Bovie will cross-match the low- and high-resolution catalogues this summer
+    </div>
+
+</section>
+
+      </div>
+    </div>
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: false,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+        condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>

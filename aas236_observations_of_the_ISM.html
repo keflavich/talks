@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Surveys of the dense Galactic ISM with ALMA</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body class=almaimf>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides almaimf">
+
+
+
+<section>
+
+    <h2 style=""> Surveys of the dense Galactic ISM with ALMA </h2>
+    <div style="">
+            <p class="footer">Adam Ginsburg</p>
+            <!--
+            With contributions from students:
+            <div class=smaller>
+                <ul>
+                    <li> Desmond Jeff: PhD student
+                    <li> Theo Richardson: PhD student
+                    <li> Connor McClellan: REU 2018
+                    <li> Josh Machado: REU 2019
+                    <li> Danielle Bovie: REU 2020
+                </ul>
+            </div>
+            <div class=smaller2> 
+                And many coauthors on W51 papers, especially those also in
+                ALMA-IMF: Roberto Gálvan-Madrid, John Bally, Cara Battersby,
+                Erik Rosolowsky, Luke Maud
+        </div>
+            -->
+    <div class=smaller3> Slides available at <a
+            href="https://keflavich.github.io/talks/aas236_observations_of_the_ISM.html">https://keflavich.github.io/talks/aas236_observations_of_the_ISM.html</a>.
+        Use arrow keys to navigate.</div>
+    </div>
+
+
+    </span>
+    <aside class=notes>
+    </aside>
+</section>
+
+<section>
+    <h2> Brief admonition aimed at theorists </h2>
+    <div class=left> In the ISM:</div>
+    <ul>
+        <li> Mass is not observable 
+        <li> Age is not observable 
+        <li> Line-of-sight velocity is generally observable
+        <li> Gas temperature is sometimes kinda observable
+    </ul>
+    <br>
+    <div class=left> Don't compare theory mass, age to reported blindly</a>
+</section>
+
+<section>
+    <h3> Take mass measurements with a grain of salt </h3>
+    But,  kinematic mass measurements
+    from disk Keplerian curves are OK.
+    Orion's Source I has a central 15
+    M<sub class=smaller>&odot;</sub> star.  Accurate measurements 
+    of disk sources are good for calibration
+
+    <img style="max-height: 50%; float:left;" src="assets_orion/gems_saltdisk_composite.png">
+    <img style="max-height: 50%; float:right;" src="assets_orion/H2O_kepler_SeifriedPlot_0.1arcsec_robust-2.png">
+</section>
+
+<section>
+    <h2> Take mass measurements with a grain of salt </h2>
+    Measurements of mass and column density in molecular clouds 
+    are subject to factor of several <i>systematic</i> uncertainty
+
+</section>
+
+<section>
+    <h2> ALMA, VLA, GBT observations of Galactic HMSFRs</h2>
+
+    A few key surveys are ongoing or done:
+    <ul>
+        <li> ALMA-IMF: first data release this year
+        <li> CMZoom: Data paper, catalog paper submitted
+        <li> ALMAGAL: data acquisition ongoing [I'm not involved]
+        <li> ALMA-IMF analogues &amp; affiliates (NH<sub class=smaller>3</sub> followup)
+        <li> GAS: Greenbank Ammonia Survey (local clouds)
+        <li> KEYSTONE: Greenbank ammonia survey of more massive clouds
+    </ul>
+</section>
+
+<section>
+    <h2> Kinematics </h2>
+    <div class=smaller>
+    ALMA &amp; VLA surveys will provide detailed kinematics of the dense gas: N<sub
+        class=smaller>2</sub>H+, HC<sub class=smaller>3</sub>N, etc.
+    (<i>not</i> CO in our Galaxy).
+
+    <br>
+    Henshaw+2020: Velocity 'wiggles' pervade the ISM on all scales.
+    </div>
+    <img style='max-height:390px' src="aas236_assets/henshaw_wiggles.png">
+
+    <div class=smaller2> SCOUSE and other tools will make these measurements more common.<div>
+</section>
+
+
+<section>
+    <h3> Kinematics: New tools, new measurements </h3>
+    <div class=left><u>Semi-automated</u></div>
+    <ul class=left>
+        <li> Henshaw+ 2019: SCOUSE, <a href="https://github.com/jdhenshaw/scousepy">jdhenshaw/scousepy</a>
+    </ul>
+    <div class=left><u>Automatic, heuristic-based</u></div>
+    <ul class=left>
+        <li> Riener+ 2019: GaussPy+, <a href="https://github.com/mriener/gausspyplus">mriener/gausspyplus</a>
+        <li> Chen+ 2020: MUFASA, <a href="https://github.com/mcyc/mufasa">mcyc/mufasa</a>
+    </ul>
+    <div class=left><u>Automated – convolutional neural network (fast!)</u></div>
+    <ul class=left>
+        <li> Keown+ 2019: CLOVER, <a href="https://github.com/jakeown/astroclover ">jakeown/astroclover </a>
+    </ul>
+
+    <div class=left><u>Automated – Bayesian Monte Carlo</u></div>
+    <ul class=left>
+        <li> Sokolov+ 2020: pyspecnest, <a href="https://github.com/vlas-sokolov/pyspecnest">vlas-sokolov/pyspecnest</a>
+        <li> Svoboda+ in prep: NestFit, <a href="https://github.com/autocorr/nestfit">autocorr/nestfit</a>
+    </ul>
+</section>
+
+
+<section>
+    <h3> Kinematics and Temperature</h3>
+</section>
+
+
+<section>
+    <h2> ALMA-IMF: N<sub class=smaller>2</sub>H+, others </h2>
+    N<sub class=smaller>2</sub>H+ structures are clumpy, wispy, and
+    filamentary.
+    <img src='aas236_assets/almaimf_n2hp.png'>
+</section>
+
+
+      </div>
+    </div>
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: false,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+        condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>

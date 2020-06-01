@@ -241,6 +241,13 @@ a.darkbg {
 }
 
 .reveal .left {
-    text-align: left;
+  text-align: left;
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  display: table;
 }
 
+.reveal .right {
+    text-align: right;
+}

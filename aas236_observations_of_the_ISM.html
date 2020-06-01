@@ -61,7 +61,7 @@
 </section>
 
 <section>
-    <h2> Brief admonition aimed at theorists </h2>
+    <h2> Brief admonition </h2>
     <div class=left> In the ISM:</div>
     <ul>
         <li> Mass is not observable 
@@ -70,23 +70,24 @@
         <li> Gas temperature is sometimes kinda observable
     </ul>
     <br>
-    <div class=left> Don't compare theory mass, age to reported blindly</a>
+    <div class="smaller left"> Theorists: Don't compare theoretical mass &amp; age to reported, instead model observables</div>
+    <div class="smaller left"> Observers: We need to emphasize systematic errors appropriately</div>
 </section>
 
 <section>
     <h3> Take mass measurements with a grain of salt </h3>
-    But,  kinematic mass measurements
+    Star masses are measurable: kinematic mass measurements
     from disk Keplerian curves are OK.
     Orion's Source I has a central 15
     M<sub class=smaller>&odot;</sub> star.  Accurate measurements 
-    of disk sources are good for calibration
+    of disk sources are good for model calibration
 
     <img style="max-height: 50%; float:left;" src="assets_orion/gems_saltdisk_composite.png">
     <img style="max-height: 50%; float:right;" src="assets_orion/H2O_kepler_SeifriedPlot_0.1arcsec_robust-2.png">
 </section>
 
 <section>
-    <h2> Take mass measurements with a grain of salt </h2>
+    <h3> Take mass measurements with a grain of salt </h3>
     Measurements of mass and column density in molecular clouds 
     are subject to factor of several <i>systematic</i> uncertainty
 
@@ -98,9 +99,12 @@
     A few key surveys are ongoing or done:
     <ul>
         <li> ALMA-IMF: first data release this year
+        <li> ALMA-IMF analogues &amp; affiliates 
+            <ul>
+                <li> NH<sub class=smaller>3</sub> followup
+                <li> CMZ imaging surveys
+            </ul>
         <li> CMZoom: Data paper, catalog paper submitted
-        <li> ALMAGAL: data acquisition ongoing [I'm not involved]
-        <li> ALMA-IMF analogues &amp; affiliates (NH<sub class=smaller>3</sub> followup)
         <li> GAS: Greenbank Ammonia Survey (local clouds)
         <li> KEYSTONE: Greenbank ammonia survey of more massive clouds
     </ul>
@@ -129,13 +133,13 @@
         <ul class=left>
             <li> Henshaw+ 2019: SCOUSE, <a href="https://github.com/jdhenshaw/scousepy">jdhenshaw/scousepy</a>
         </ul>
-        <div class=left><u>Automatic, heuristic-based</u></div>
+        <div class=left><u>Automated - heuristic-based</u></div>
         <ul class=left>
             <li> Riener+ 2019: GaussPy+, <a href="https://github.com/mriener/gausspyplus">mriener/gausspyplus</a>
             <li> Chen+ 2020: MUFASA, <a href="https://github.com/mcyc/mufasa">mcyc/mufasa</a>
             <li> Marchal+ 2019: ROHSA, <a href="https://github.com/antoinemarchal/ROHSA">antoinemarchal/ROHSA</a>
         </ul>
-        <div class=left><u>Automated – convolutional neural network (fast!)</u></div>
+        <div class=left><u>Automated – convolutional neural network </u></div>
         <ul class=left>
             <li> Keown+ 2019: CLOVER, <a href="https://github.com/jakeown/astroclover ">jakeown/astroclover </a>
         </ul>
@@ -146,33 +150,7 @@
             <li> Sokolov+ 2020: pyspecnest, <a href="https://github.com/vlas-sokolov/pyspecnest">vlas-sokolov/pyspecnest</a>
             <li> Svoboda+ in prep: NestFit, <a href="https://github.com/autocorr/nestfit">autocorr/nestfit</a>
         </ul>
-        <div class=smaller2> Slide credit: Brian Svoboda<div>
-    </div>
-</section>
-
-
-<section>
-    <h3> Kinematics and <span style="color:navy">Temperature</span></h3>
-    HMSFRs are <span style="color:navy">warmer</span>, broader-lined than local clouds
-    <div>
-    <img style='max-width:50%; float:left;' src="aas236_assets/monr2_tem.png">
-    <img style='max-width:50%; float:right;' src="almaimf-w51-assets/w51_kinetic_temperature_map_nh3.png">
-    </div>
-    <div class=smaller style="clear: both;">
-    Svoboda+ in prep, Mon R2 (left); Machado+ in prep, W51 (right)
-    </div>
-</section>
-
-<section>
-    <h3> Kinematics and <span style="color:navy">Temperature</span></h3>
-    HMSFRs are <span style="color:navy">warmer</span>, broader-lined than local clouds
-    <div>
-    <img style='max-width:33%; float:left;' src="aas236_assets/GAS_nh3_temperatures.png">
-    <img style='max-width:33%; float:left;' src="aas236_assets/KEYSTONE_NH3_temperatures.png">
-    <img style='max-width:33%; float:right;' src="almaimf-w51-assets/w51_kinetic_temperature_histogram_nh3.png">
-    </div>
-    <div class=smaller2 style="clear: both;">
-    Friesen&amp;Pineda+ 2017 (left); Keown+ 2019 (middle); Machado+ in prep, W51 (right)
+        <div class="smaller2 right"> Slide credit: Brian Svoboda<div>
     </div>
 </section>
 
@@ -203,10 +181,86 @@
 
 
 <section>
+    <h3> Kinematics and <span style="color:navy">Temperature</span></h3>
+    HMSFRs are <span style="color:navy">warmer</span>, broader-lined than local clouds
+    <div>
+        <table>
+            <tr>
+                <td>
+    <img style='max-width:100%;' src="aas236_assets/MonR2_trot_plasma_to25k.png">
+                </td>
+                <td>
+    <img style='max-width:100%;' src="almaimf-w51-assets/w51_kinetic_temperature_map_nh3.png">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class=smaller style="clear: both;">
+    Svoboda+ in prep, Mon R2 (left); Machado+ in prep, W51 (right)
+    </div>
+</section>
+
+<section>
+    <h3> Kinematics and <span style="color:navy">Temperature</span></h3>
+    HMSFRs are <span style="color:navy">warmer</span>, broader-lined than local clouds
+    <div>
+        <table>
+            <tr>
+                <td>
+    <img style='max-width:100%;' src="aas236_assets/MonR2_trot_plasma_to140k.png">
+                </td>
+                <td>
+    <img style='max-width:100%;' src="almaimf-w51-assets/w51_kinetic_temperature_map_nh3.png">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class=smaller style="clear: both;">
+    Svoboda+ in prep, Mon R2 (left); Machado+ in prep, W51 (right)
+    </div>
+</section>
+
+<section>
+    <h3> Kinematics and <span style="color:navy">Temperature</span></h3>
+    HMSFRs are <span style="color:navy">warmer</span>, broader-lined than local clouds
+    <div>
+    <img style='max-width:33%; float:left;' src="aas236_assets/GAS_nh3_temperatures.png">
+    <img style='max-width:33%; float:left;' src="aas236_assets/KEYSTONE_NH3_temperatures.png">
+    <img style='max-width:33%; float:right;' src="almaimf-w51-assets/w51_kinetic_temperature_histogram_nh3.png">
+    </div>
+    <div class=smaller2 style="clear: both;">
+    Friesen&amp;Pineda+ 2017 (left); Keown+ 2019 (middle); Machado+ in prep, W51 (right)
+    </div>
+</section>
+
+
+
+<section>
     <h2> ALMA-IMF: N<sub class=smaller>2</sub>H+, others </h2>
     N<sub class=smaller>2</sub>H+ structures are clumpy, wispy, and
     filamentary.
     <img src='aas236_assets/almaimf_n2hp.png'>
+</section>
+
+<section>
+    <h3> ALMA-IMF: Link ISM to SF conditions </h3>
+    <div class=smaller>Temperature traces feedback in the densest gas and sets fragmentation scales</div>
+    <img style='max-width:50%; float:left;' src="almaimf-w51-assets/ch3oh_temperature_map_e2.png">
+    <img style='max-width:50%; float:right;' src="almaimf-w51-assets/e2_CH3OH_LTE_temperature_radial_profile.png">
+    <br>
+    <div class=smaller>
+    UF graduate student Desmond Jeff is extending this project
+    </div>
+</section>
+
+<section>
+    <div> </div>
+
+    <span class=image style='height:80%; background-image: url(colloquium_assets/HC3N_peaktp.png);'>
+    </span>
+    <div class=smaller></div>
+
+
 </section>
 
 

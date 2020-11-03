@@ -211,12 +211,28 @@ or centimeter counterparts.
             </aside>
 </section>
 
+<section>
+    <h4> MGPS-90 Pilot: Catalog Sources</h4>
+    <div style='max-height: 80%' class=image>
+        <span class=image style="background-image: url(mgps_assets/G31_overview_withRMStypes.png); height:100%" >
+    </div>
+    <aside class=notes>
+        RMS (Red MSX Source) classifications
+        (the HCHII candidate turned out to be a known evolved star)
+    </aside>
+</section>
+
 
 <section>
     <h4> MGPS-90 Pilot: Contaminants - PNe</h4>
     <div style='max-height: 80%' class=image>
         <span class=image style="background-image: url(mgps_assets/SED_plot_G29_G29.578-0.268.png); height:100%" >
     </div>
+    <aside class=notes>
+        PNe are contaminants: they can be detected at all wavelengths, producing free-free and dust emission.
+        Unexplored: can we learn something about their dust properites from the mm data points?
+        (G29.578-0.268)
+    </aside>
 </section>
 
 
@@ -225,6 +241,15 @@ or centimeter counterparts.
     <div style='max-height: 80%' class=image>
         <span class=image style="background-image: url(mgps_assets/SED_plot_G31_G30.944+0.035.png); height:100%" >
     </div>
+    <aside class=notes>
+        <ul>
+            <li> OH/IR stars are contaminants: they can be detected at millimeter
+             wavelengths because they make dust.  They don't have free-free!
+            <li> Unexplored (again): can we learn something about their dust properites from the mm data points?
+            <li> Should we be using this object as an ALMA calibrator?
+        </ul>
+        (G30.944+0.035)
+    </aside>
 </section>
 
 <section>
@@ -232,6 +257,10 @@ or centimeter counterparts.
     <div style='max-height: 80%' class=image>
         <span class=image style="background-image: url(mgps_assets/SED_plot_G12_G12.026-0.031.png); height:100%" >
     </div>
+    <aside class=notes>
+        If this is an optically-thick free-free emitter, it might be a HCHII region.
+        (G012.26-0.031)
+    </aside>
 </section>
 
 <section>
@@ -239,33 +268,48 @@ or centimeter counterparts.
     <div style='max-height: 80%' class=image>
         <span class=image style="background-image: url(mgps_assets/SED_plot_G34_G34.257+0.153.png); height:100%" >
     </div>
+    <aside class=notes>
+        A key test: do we recover known HCHII regions?
+
+        YES.  This one happens to be a well-known group of <i>several</i> HCHII regions clustered into one GBT
+        beam (which is expected).
+        (G34.257+0.153)
+    </aside>
 </section>
 
 <section>
     <h4> MGPS-90 Pilot: Lifetimes</h4>
     <ul>
         <li> t<sub class=smaller2>HCHII</sub> ~ 0.16-0.46 t<sub class=smaller2>UCHII</sub>;  How long is t<sub class=smaller2>UCHII</sub>?
-            <ul>
+            <ul class=fragment>
                 <li> Wood &amp; Churchwell 1989 created the "UCHII lifetime problem": there are
                     too many UCHII regions, so they must live longer than freely expanding
                     Strömgren spheres (t&lt;3x10<sup class=smaller2>4</sup> years)
                 <li> Recent surveys (CORNISH; Kalcheva+ 2018) show smaller numbers, implying shorter
                     UCHII lifetimes (t ~ 3x10<sup class=smaller2>4</sup> years)
             </ul>
-        <li> t<sub class=smaller2>HCHII</sub> ~ 5-15x10<sup class=smaller2>3</sup> years
-        <li> For a B0 proto-O-star to double its mass, going from 20<sub class=smaller2>⊙</sub> to 40<sub class=smaller2>⊙</sub>,
-            this implies accretion rates 2-5x10<sup class=smaller2>-3</sup> M<sub class=smaller2>⊙</sub> yr <sup class=smaller2>-1</sup>
-            <ul><li> These accretion rates are high but not totally implausible; still, ionized accretion is disfavored</li></ul>
+        <li class=fragment> t<sub class=smaller2>HCHII</sub> ~ 5-15x10<sup class=smaller2>3</sup> years
+        <li class=fragment> For a B0, proto-O-star to double its mass, from 20<sub class=smaller2>⊙</sub> to 40<sub class=smaller2>⊙</sub>,
+            an accretion rate 2-5x10<sup class=smaller2>-3</sup> M<sub class=smaller2>⊙</sub> yr <sup class=smaller2>-1</sup> is required
+            <ul class=fragment>
+                <li> These accretion rates are very high </li>
+                <li> Ionized accretion is probably not sustainable </li>
+            </ul>
     </ul>
 </section>
 
 <section>
     <h4> MGPS-90 Pilot: Dust or Hot Gas?</h4>
-    Most of the emission in these targets is free-free at 3mm
+    <div class=smaller>
+    Most of the extended emission in the pilot is free-free at 3mm
+    </div>
 
     <div style='max-height: 80%' class=image>
         <span class=image style="background-image: url(mgps_assets/mgpstable5.png); height:100%" >
     </div>
+    <aside class="notes">
+        Free-free fractions are &lt; 1/4
+    </aside>
 </section>
 
 <section>
@@ -277,6 +321,10 @@ or centimeter counterparts.
     <div style='max-height: 40%' class=image>
         <span class=image style="background-image: url(mgps_assets/G01_sgrb2_5panel.png); height:100%" >
     </div>
+    <aside class="notes">
+        870 is scaled using beta=1.5, 20cm is scaled assuming flat.
+        In the Galactic center, there's a lot of synchrotron emission.
+    </aside>
 </section>
 
 
@@ -289,6 +337,12 @@ or centimeter counterparts.
     <div style='max-height: 40%' class=image>
         <span class=image style="background-image: url(mgps_assets/G29_g29_5panel.png); height:100%" >
     </div>
+    <aside class="notes">
+        Negative features in the 3mm - 20cm image imply an excess of 20cm emission, which
+        hints at synchrotron emission within the HII regions.
+        Excesses in the 3mm "free-free" map (3mm minus dust) suggest the 20cm emission is optically thick.
+        <br> G012 = W33 (top), G29 (bottom)
+    </aside>
 </section>
 
 <section>
@@ -300,6 +354,9 @@ or centimeter counterparts.
     <div style='max-height: 40%' class=image>
         <span class=image style="background-image: url(mgps_assets/G34_g34_5panel.png); height:100%" >
     </div>
+    <aside class="notes">
+        W43 (top), G34 (bottom)
+    </aside>
 </section>
 
 <section>
@@ -311,6 +368,9 @@ or centimeter counterparts.
     <div style='max-height: 40%' class=image>
         <span class=image style="background-image: url(mgps_assets/G43_w49b_5panel.png); height:100%" >
     </div>
+    <aside class="notes">
+        W49A (top), W49B supernova remnant (bottom)
+    </aside>
 </section>
 
 <section>

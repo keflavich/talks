@@ -115,6 +115,12 @@ div.smaller {
     font-size: 40%
 }
 
+.reveal sup { 
+    font-size: 60%;
+}
+.reveal sub { 
+    font-size: 60%;
+}
 
 img.center-fit {
        padding: 0;

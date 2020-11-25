@@ -642,8 +642,13 @@
 </section>
 
 <section>
-    <img src="FrontiersAssets/d.jeff.jpeg" align=right style='max-height: 20%; position: relative;'>
-    <img src="FrontiersAssets/cores_on_continuum_peak_DeepestSouth_zoomin.png">
+    <div style="float:left; width:75%;">
+        <img src="FrontiersAssets/cores_on_continuum_peak_DeepestSouth_zoomin.png" style="width:80%;">
+    </div>
+    <div style="float:left; width:25%;">
+        <img src="FrontiersAssets/d.jeff.jpeg">
+        <span class="smaller" align=right style="position: relative; float: right;">Desmond Jeff: Hot Cores and YSOs in Sgr B2 DS </span>
+    </div>
 </section>
 
 <section id=sgrbhist>
@@ -778,19 +783,6 @@
     </aside>
 </section>
 
-<section id=summary_starcount>
-    <h4> Summary Part 3:  SF Thresholds &amp; Star Counts </h4>
-    <ul>
-        <li class=fragment>If star formation occurs above density thresholds, they are not universal.
-        <li class=fragment>Clouds within the CMZ appear to have a higher and
-        consistent threshold, so an environmentally-dependent threshold is
-        plausible.
-        <li class=fragment>We can rule out subclasses of turbulent theories and
-        measure their defining parameters
-        <li class=fragment>(proto)Star-counting measurements of star formation are now possible throughout the Galaxy.
-    </ul>
-
-</section>
 
 
 <!-- This slide doesn't look cool enough or say enough
@@ -826,10 +818,18 @@
 <section id=imf_flowchart>
     <h3> YSO modeling &rightarrow; luminosity functions </h3>
     <img src="colloquium_assets/flowchart.svg">
-    <span class=image style="background-image:url(FrontiersAssets/RobitailleGrid.png); margin-top:3%; max-height:40%;">
-        <img src="FrontiersAssets/TheoRichardson.png" align="right" style="float:right; max-height:50%; margin-right: 10%;">
-        <span style="float:left; max-width:20%;" class=smaller> NSF 2008101: "How are stellar masses set?" </span>
-    </span>
+    <div>
+        <div style="float: left; width:20%">
+            <span class=smaller> NSF 2008101: "How are stellar masses set?" </span>
+        </div>
+        <div style="float: left; width:60%">
+            <img src="FrontiersAssets/RobitailleGrid.png" style="width:80%">
+        </div>
+        <div style="float: left; width:20%">
+            <img src="FrontiersAssets/TheoRichardson.png" align="right" >
+            <span class=smaller> Theo Richardson</span>
+        <div style="float: left; width:25%">
+    </div>
     <aside class="notes">
         <ul>
             <li>Models are parametric</li>
@@ -864,33 +864,21 @@
 <section>
     <h4> How do we measure masses? </h4>
     On the top end, mass measurement is difficult: the cores are very thick, very confused, and the luminosity can be the sum of whole clusters.
+    <br>
 
     Dynamical mass measurements are the gold standard.
 </section>
 
-
-
 <section>
-    <h3> Summary part two: </h3>
-    <div style="">
-        <ul>
-            <li> High mass stars heat their environment, suppressing Jeans fragmentation and preventing lower-mass stars from forming
-            <li class=fragment> The feedback from high-mass stars is exaggerated in denser regions
-            <li class=fragment> By cooking their surroundings, high-mass stars help themselves form, and they may
-            help create their own siblings
-        </ul>
-    </div>
-    <br>
-
-    <div class=smaller>
-    </div>
-    <aside class=notes>
-        <ul>
-            <li> "help themselves form" - they don't let mass go to lower-mass
-            stars, so they get to eat everything.
-        </ul>
-    </aside>
+    <h4> Sometimes,  we can't measure dynamical masses </h4>
+    <ul>
+        <li><a href="https://ui.adsabs.harvard.edu/abs/2018arXiv180505364G/abstract">Goddi+ 2020: W51 HMYSOs are totally opaque</a>
+        <li><a href="https://ui.adsabs.harvard.edu/#abs/2018A%26A...614A.123P/abstract">Schworer+ 2019: Giant accretion flows into Sgr B2N at 0.16 Msun/yr</a>
+        <li><a href="https://ui.adsabs.harvard.edu/#abs/2019A&A...630A..73M/abstract">Meng+ 2019: Nonthermal emission in Sgr B2's HII regions</a>
+    </ul>
 </section>
+
+
 
 
 <section>
@@ -923,35 +911,37 @@
         <div class=fragment style="position: relative; left:-17%; top:28%; color:white;" class=smaller>Salt: NaCl</div>
         </span>
         <div style="position: relative; bottom: -90%; left:20%" class="smaller3"><a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a></div>
+
+        <aside class=notes>
+            <ul>
+                <li> Orion Source I lives at the center of the BN/KL explosion
+                <li> We observed the disk known as source I
+                <li> ...in salts!  NaCl and KCl
+                <li> We used that disk to measure the mass of the central source
+            </ul>
+        </aside>
     </section>
 
-    <aside class=notes>
-        <ul>
-            <li> Orion Source I lives at the center of the BN/KL explosion
-            <li> We observed the disk known as source I
-            <li> ...in salts!  NaCl and KCl
-            <li> We used that disk to measure the mass of the central source
-        </ul>
-    </aside>
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
+        <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
+        </span>
+    </section>
 
 </section>
 
-<section>
-    <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
-    <h2 style='text-align: left'> Temperature? </h2>
-    </span>
-</section>
-<section>
-    <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
-    <h2 style='text-align: left'> Temperature? </h2>
-    </span>
-</section>
-
-<section>
-    <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
-    <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
-    </span>
-</section>
 
 <section>
     <h4> Observing the Keplerian rotation profile of a disk is the most direct way to measure a protostar's mass </h4>
@@ -973,13 +963,28 @@
 
         <ul>
             <li class=fragment> NaCl, KCl are only in the disk, not the outflow <div class=smaller>(water traces both)</div>
-            <li class=fragment> NaCl is detected in at least one other HMYSO <div class=smaller>(Maud, Ginsburg+ in prep)</div>
+                <li class=fragment> NaCl is detected in at least two other HMYSOs 
+                    <div class=smaller>
+                        (<a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...900L...2T/abstract">Tanaka+ 2020</a>, 
+                        Maud+ in prep)</div>
             <li class=fragment> Salts are observable with ALMA, the JVLA, and the future ngVLA
             <li class=fragment> Future projects will involve observing and modeling salt disks to measure HMYSO masses
         </ul>
     </section>
+</section>
 
 
+<section id=e2ezoomin>
+    <h4> </h4>
+    <span class="image" style="background-image: url(colloquium_assets/W51e2_cycle3green_SiO_outflows_aplpy_zoom.png); height:90%;">
+        <div style="position: relative; top:92%; left:-19%;" class="smaller2"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv180505364G">Goddi, Ginsburg+ 2018</a></div>
+    </span>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> ...showing asymmetric accretion structures
+        </ul>
+    </aside>
 </section>
 
 
@@ -1187,19 +1192,6 @@
         </aside>
     </section>
 
-    <section id=e2ezoomin>
-        <h4> Accreting massive young stars  affect their environment</h4>
-        <span class="image" style="background-image: url(colloquium_assets/W51e2_cycle3green_SiO_outflows_aplpy_zoom.png); height:90%;">
-            <div style="position: relative; top:92%; left:-19%;" class="smaller2"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv180505364G">Goddi, Ginsburg+ 2018</a></div>
-        </span>
-        </span>
-        <aside class=notes>
-            <ul>
-                <li> ...showing asymmetric accretion structures
-            </ul>
-        </aside>
-    </section>
-
     <section>
         <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide.png); margin-top:-3%;">
             <div style="position: relative; bottom: -85%; left:-27%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
@@ -1383,7 +1375,41 @@
     </aside>
 </section>
 
+<section>
+    <h3> Summary part two: </h3>
+    <div style="">
+        <ul>
+            <li> High mass stars heat their environment, suppressing Jeans fragmentation and preventing lower-mass stars from forming
+            <li class=fragment> The feedback from high-mass stars is exaggerated in denser regions
+            <li class=fragment> By cooking their surroundings, high-mass stars help themselves form, and they may
+            help create their own siblings
+        </ul>
+    </div>
+    <br>
 
+    <div class=smaller>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> "help themselves form" - they don't let mass go to lower-mass
+            stars, so they get to eat everything.
+        </ul>
+    </aside>
+</section>
+
+<section id=summary_starcount>
+    <h4> Summary Part 3:  SF Thresholds &amp; Star Counts </h4>
+    <ul>
+        <li class=fragment>If star formation occurs above density thresholds, they are not universal.
+        <li class=fragment>Clouds within the CMZ appear to have a higher and
+        consistent threshold, so an environmentally-dependent threshold is
+        plausible.
+        <li class=fragment>We can rule out subclasses of turbulent theories and
+        measure their defining parameters
+        <li class=fragment>(proto)Star-counting measurements of star formation are now possible throughout the Galaxy.
+    </ul>
+
+</section>
 </div>
 </div>
 

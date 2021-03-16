@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ALMA-IMF Continuum Data Paper</title>
+    <meta name="viewport"
+	  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+
+
+<section>
+    <h2> The ALMA-IMF continuum data</h2>
+    <div> 
+    </div>
+
+    <div>
+    Adam Ginsburg, for the data reduction team
+</div>
+</section>
+
+<section>
+    <h2> Self-Calibration</h2>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G008.67_B3_12M_selfcal5_comparison.png">
+</section>
+
+<section>
+    <h2> BSENS self-calibrated </h2>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G008.67_B3_12M_bsens_selfcal5_comparison.png">
+</section>
+
+
+
+<section style="background: url(almaimf_assets/W51_quicklook_ds9.jpg); background-size: 100%; width: 100vw; left: -50vw;"> </section>
+<section style="background: url(almaimf_assets/W43_quicklook_ds9.jpg); background-size: 100%; width: 100vw; left: -50vw;"> </section>
+
+      </div>
+    </div>
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+<script src="animate.js"></script>
+
+    <script>
+
+
+      Reveal.initialize({
+        controls: true,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: false,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+	    condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+	    condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+	    condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+	    callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+	    condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+	  { src: 'pdfimgs.js', async: true },
+	  { src: 'slideautostart.js', async: true },
+        ],
+      });
+
+
+    </script>
+  </body>
+</html>

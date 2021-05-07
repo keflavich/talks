@@ -1,0 +1,356 @@
+
+/* ---- Ginsburg's Stylesheet ---- */
+
+/* Default Style */
+body, pre {
+	background-color: #111111;
+	color: #CCC;
+	font-style: normal;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size:16px;
+    line-height: 1.2;
+}
+
+
+li {
+    padding: 8px;
+    }
+
+.smallpad {
+    line-height: 0.5;
+    }
+
+li.nopad {
+    padding: 0px;
+}
+
+p + ul {
+    margin-top: -10px;
+}
+
+br + ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ul + br {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+table {
+    background-color: #323232;
+    border-style: inset outset outset inset;
+    border-width: 5;
+    border-color: #222222;
+    color: #CCC;
+    font-style: normal;
+   	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size:15px;
+    line-height: 1.2;
+}
+
+
+td {
+    background-color: #252525;
+    border-style: none;
+    border-width: 0.5;
+    color: #CCC;
+    font-style: normal;
+   	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size:15px;
+    line-height: 1.2;
+}
+
+p {
+    /* background-color: #090909; */
+    color: #CCC;
+    font-style: normal;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size:15px;
+    line-height: 1.2;
+}
+
+
+div {
+    background-color: #323232;
+    color: #CCC;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-size:15px;
+    line-height: 1.2;
+}
+
+div.smallheading {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-size:200%;
+    background-color: #252525;
+	color: #CCC;
+}
+
+div.body {
+	background-color: #111111;
+	color: #CCC;
+	font-style: normal;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size:16px;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+		font-size:25px;
+		text-align:center;
+}
+
+/* tt { color:yellow } */
+tt {color:#55ECA9}
+
+
+/* Link Style */
+a:link		{ color:#DDD; text-shadow: grey 0.0px 0.0px 2px  }
+a:visited	{ color:#DDD }
+/* a:visited	{ color:blue }*/
+a:active	{ color:#2288BB; text-shadow: none }
+a:hover		{ color:#2288BB }
+a {text-decoration: none; }
+
+.myname {
+    color: #9999FF;
+}
+
+/* http://stackoverflow.com/questions/8290447/remove-horizontal-spacing-when-using-positionrelative-in-navigation-bar */
+/* a.navbar { position:relative; left:-20px; right: 20px;} */
+a.navbar:link	 { color:#AAAAFF; text-shadow:none; padding: 5px 0px; white-space:nowrap; font-size:15px;}
+a.navbar:visited { color:#AAAAFF; text-shadow: #4444FF 0.0px 0.0px 2px}
+a.navbar:hover	 { color:#CCCCCC; background:#444488;  } /* font-weight: bold;} */
+a.navbar:active	 { color:grey; } /* font-weight: bold;} */
+a.navbar {padding:none; font-size:15px;}
+a.navbar:before {content:'['; display:inline; font-size:25pt; color:white; position:relative; left:-3px; top:3.5px}
+a.navbar:after {content:']'; display:inline; font-size:25pt; color:white; position:relative; right:-3px; top:3.5px}
+
+nav a:link    { color:#AAAAFF; text-decoration:none; 
+             padding: 5px 0; white-space:nowrap; font-size:15px;}
+nav a:visited { color:#AAAAFF; text-shadow: #4444FF 0.0px 0.0px 2px}
+nav a:hover   { color:#CCCCCC; background:#444488;  } 
+nav a:active  { color:grey; }
+nav li {padding:2px; font-size:15px; display:inline;}
+
+nav a:before {content:'['; display:inline; font-size:35px; position:relative; top:4px; left:-3px; color:white;}
+nav a:after {content:']'; display:inline; font-size:35px; position:relative; top:4px; right:-3px; color:white;}
+
+nav {text-align:center;} /* this doesn't work ARGH WHY NO CENTER?!?!?!? */
+/* nav ul {padding-left:-9px; left:-20px;} */
+nav ul {
+    padding: 0;
+}
+
+span.leftbraces { font-size:25pt; padding: 0px 0px; 
+    position:relative; right:-9px;  bottom:-3.75px;}
+span.rightbraces { font-size:25pt; padding: 0px 0px; 
+    position:relative; left:-9px;  bottom:-3.75px;}
+
+p.navbar {
+    /* background-color: #090909; */
+    color: white;
+    font-style: normal;
+    font-family: "Georgia";
+    font-size:   15px;
+    text-align:center;
+    padding-left: -10px;
+    
+}
+
+/*span.skipspace {position:relative; left:-20px; float:right;}*/
+span.skipspace {margin:-8px;}
+
+table.navbar { 
+    padding:0;
+    margin:0;
+    border:0;
+    cellspacing:0;
+    white-space:nowrap;
+    font-size:0px;
+    display:block;
+    }
+
+td.navbar { margin:-8px; }
+
+/* ASTR3520_site Link Style */
+a.astro:link		{ color:#66FF77; text-shadow: none }
+a.astro:visited	{ color:#44DDBB }
+/* a:visited	{ color:blue }*/
+a.astro:active	{ color:#3344DD }
+a.astro:hover		{ color:#3344FF }
+a.astro {text-decoration: none; }
+
+code {color:#66DD88}
+
+
+/* custom link styles */
+a.hidden:link		{ color:white; text-shadow: none }
+a.hidden:visited	{ color:white }
+a.hidden:hover		{ color:white }
+a.hidden:active		{ color:white }
+
+a.big:link		{ color:cyan;
+                          text-shadow: none;
+			  font-weight:bold ;
+			  font-size:30px ;}
+a.big:visited	{ color:cyan ;
+				font-weight:bold ;
+				font-size:30px ;}
+a.big:hover		{ color:#FF3300; 
+				font-weight:bold ;
+				font-size:30px ;}
+a.big:active	{ color:#FF3300; 
+				font-weight:bold ;
+				font-size:30px ;}
+a.big {text-decoration: underline;}				
+
+a.special:link {color:#FF6611; text-shadow:none;}
+a.special:visited {color:#FF6611}
+a.special:hover {color:#FF3322}
+a.special:active {color:#FF3322}
+
+a.offwhite:link		{ color:#DDDDDD;
+                          text-shadow: #999999 0px 0px 2px; }
+a.offwhite:visited	{ color:#DDDDDD ;}
+a.offwhite:hover		{ color:#FF3300;}
+a.offwhite:active	{ color:#FF3300; }
+
+a.norm:link		{ color:rgb(93, 201, 201) ; text-shadow: none; }
+a.norm:visited	{ color:rgb(93, 201, 201) ;}
+a.norm:hover		{ color:#FF3300;}
+a.norm:active	{ color:#FF3300; }
+/*a.norm {text-decoration: underline;}		*/
+
+/* Custom classes */
+.sidebar {
+    font-size: 15px;
+}
+
+.sectionHeader {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-indent: 125px;
+}
+
+.divider {
+    background-color: black;
+    width: 1px;
+}
+
+.divider2 {
+    background-color: black;
+}
+
+.white {
+    color: white;
+    font-style: italic;
+}
+
+.white2 {
+    color: white;
+}
+
+/* custom link styles */
+a.hidden:link		{ color:white; text-shadow:none }
+a.hidden:visited	{ color:white }
+a.hidden:hover		{ color:white }
+a.hidden:active		{ color:white }
+
+a.emph:tt {color:yellow}
+
+a.big:link		{ color:cyan ; text-shadow:none;
+				font-weight:bold ;
+				font-size:30px ;}
+a.big:visited	{ color:cyan ;
+				font-weight:bold ;
+				font-size:30px ;}
+a.big:hover		{ color:#FF3300; 
+				font-weight:bold ;
+				font-size:30px ;}
+a.big:active	{ color:#FF3300; 
+				font-weight:bold ;
+				font-size:30px ;}
+a.big {text-decoration: underline;}				
+
+
+/* Custom classes */
+.sidebar { font-size: 15px; }
+.sectionHeader {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-indent: 125px;
+}
+.divider {
+    background-color: black;
+    width: 1px;
+}
+.divider2 {    background-color: black;}
+.white {
+    color: white;
+    font-style: italic;
+}
+.white2 { color: white;}
+.hl-default { color: white;}
+.hl-code { color: white;}
+.hl-brackets { color: white;}
+.hl-comment { color: CornflowerBlue;}
+.hl-quotes { color: Darkred;}
+.hl-string { color: Red;}
+.hl-identifier { color: Cyan;}
+.hl-builtin { color: Teal;}
+.hl-idlbuiltin { color: Green;}
+.hl-reserved { color: SaddleBrown;
+/* color: #aa4444;*/}
+.hl-inlinedoc { color: Blue;}
+.hl-var { color: Darkblue;}
+.hl-url { color: Blue;}
+.hl-special { color: Navy;}
+.hl-number { color: LightBlue;}
+.hl-inlinetags { color: Blue;}
+.hl-main { background-color: Black;}
+.hl-gutter {
+    background-color: #999999;
+    color: White
+}
+.hl-table {
+    font-family: courier;
+    font-size: 12px;
+    border: solid 1px Lightgrey;
+}
+
+button { 
+    border-radius:6px;
+}
+.underline {text-decoration:underline}
+.bold {font-weight:bold}
+
+.paperheaders {
+    color:#DB90B4;
+    font-size: 105%;
+}
+.minorheaders{
+    margin: -40px;
+}
+.heading {
+    color: #B7B7EE;
+}
+
+ul.navbar {
+    background-color: #111;
+    height: 50px;
+    margin-bottom: -5px;
+}
+nav {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}

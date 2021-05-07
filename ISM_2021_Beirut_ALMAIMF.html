@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ALMA-IMF Continuum Data Paper</title>
+    <meta name="viewport"
+	  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+
+
+<section>
+    <h2> The ALMA-IMF <a href="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/">continuum data</a></h2>
+    <div> 
+    </div>
+
+    <div>
+    Adam Ginsburg, for the ALMA-IMF data reduction team:
+    <div class=smaller>
+Frédérique Motte <frederique.motte@univ-grenoble-alpes.fr>,
+Adam Ginsburg <adam.g.ginsburg@gmail.com>,
+Patricio Sanhueza <patricio.sanhueza@nao.ac.jp>,
+Fabien louvet <fabien.louvet@cea.fr>,
+Sylvain Bontemps <sylvain.bontemps@u-bordeaux.fr>,
+Csengeri Timea <timea.csengeri@u-bordeaux.fr>,
+Roberto Galván-Madrid <robertogalvanmadrid@gmail.com>,
+Fumitaka Nakamura <fumitaka.nakamura@nao.ac.jp>,
+Amelia Stutz <amelia.stutz@gmail.com>,
+Thomas Nony <nonyt@univ-grenoble-alpes.fr>,
+Ana Lopez-Sepulcre <lopez@iram.fr>,
+Tapas Baug <tapas.polo@gmail.com>,
+Nichol Cunningham <cunningham@iram.fr>,
+Manuel Fernandez Lopez <manferna@gmail.com>,
+Andres E Guzman <andres.guzman@nao.ac.jp>,
+Liu Hongli <hongliliu2012@gmail.com>,
+Luke Maud <Luke.Maud@eso.org>,
+Fernando Olguin <f.olguin.ch@gmail.com>,
+Yohan Pouteau <yohan.pouteau@univ-grenoble-alpes.fr>,
+Alison Towner <apmtowner@gmail.com>
+
+<div class=smaller2>
+And the consortium:
+Jonathan Braine <jonathan.braine@u-bordeaux.fr>,
+Edwige Chapillon <chapillon@iram.fr>,
+Huei-Ru Vivien Chen <hchen@phys.nthu.edu.tw>,
+Antoine Gusdorf <antoine.gusdorf@lra.ens.fr>,
+Natsuko Izumi <nizumi923@gmail.com>,
+Xing (Walker) Lu <xing.lu@nao.ac.jp>,
+Jordan Molet <jordan.molet@u-bordeaux.fr>,
+Brian Svoboda <brian.e.svoboda@gmail.com>,
+K. Tatematsu <k.tatematsu@nao.ac.jp>,
+Rodrigo (Hernan) Alvarez (Guitierrez) <rodralvarezz@gmail.com>,
+Mélanie Armante <melaniearmante@yahoo.fr>,
+John Bally <john.bally@colorado.edu>,
+Cara Battersby <cbattersby@gmail.com>,
+Mélisse Bonfand <melisse.bonfand-caldeira@u-bordeaux.fr>,
+Leonardo Bronfman ‎ <leo@das.uchile.cl>,
+Nathalie Brouillet <nathalie.brouillet@u-bordeaux.fr>,
+Gemma Busquet <busquet@ice.cat>,
+Jeff Desmond <d.jeff@ufl.edu>,
+Daniel Díaz <danidiaz@gmail.com>,
+James Di Francesco <james.difrancesco@nrc-cnrc.gc.ca>,
+Gilberto C. Gomez <g.gomez@irya.unam.mx>,
+Matthias Gonzalez <matthias.gonzalez@cea.fr>,
+Estrella Guzman <estreguzman@gmail.com>,
+Patrick Hennebelle <patrick.hennebelle@cea.fr>,
+Fabrice Herpin <fabrice.herpin@u-bordeaux.fr>,
+Alexander Howard <HowardAD1@cardiff.ac.uk>,
+Isabelle Joncour <isabelle.joncour@univ-grenoble-alpes.fr>,
+Bilal Ladjelate <ladjelate@iram.es>,
+Yueh-ning Lee <ynlee@ntnu.edu.tw>,
+Bertrand Le Floch <bertrand.lefloch@univ-grenoble-alpes.fr>,
+Pierre Lesaffre <pierre.lesaffre@lra.ens.fr>,
+Yuxin Lin <ylin@mpifr-bonn.mpg.de>,
+Ken Marsh <ken.marsh@astro.cf.ac.uk>,
+Anaelle Maury <anaelle.maury@cea.fr>,
+Sasha Men’shchikov <alexander.menshchikov@cea.fr>,
+Karl Menten <kmenten@mpifr-bonn.mpg.de>,
+Estelle Moraux <Estelle.Moraux@univ-grenoble-alpes.fr>,
+Lee Mundy <lgm@astro.umd.edu>,
+Quang Nguyen Luong <nguyeq12@mcmaster.ca>,
+Satoshi Ohashi <satoshi.ohashi@riken.jp>,
+Marc Pound <mpound@umd.edu>,
+Nicolas Reyes <nireyes@uchile.cl>,
+Theo Richardson <richardson.t@ufl.edu>,
+Pedro Ruben Rivera Ortiz <pedroruben.riveraortiz@univ-grenoble-alpes.fr>,
+Jean-Francois Robitaille <jean-francois.robitaille@univ-grenoble-alpes.fr>,
+Erik Rosolowsky <rosolowsky@ualberta.ca>,
+Takeshi Sakai <takeshi.sakai@uec.ac.jp>,
+Frédéric Schuller <schuller@mpifr-bonn.mpg.de>,
+Daniel Walker <danielwalker274@gmail.com>,
+Anthony Whitworth <anthony.whitworth@astro.cf.ac.uk>,
+Benjamin Wu <benwu.astro@gmail.com>,
+Friedrich Wyrowski <wyrowski@mpifr-bonn.mpg.de>
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+    <h2>ALMA-IMF Data Soon</h4>
+
+    <ul>
+        <li class=fragment> Continuum data paper in prep <span class=smaller2>(Ginsburg+, with big data reduction
+            team: Roberto Galvan-Madrid, Nichol Cunningham, Timea Csengeri,
+            Patricio Sanhueza, Fernando Olguin, Thomas Nony, Jordan Molet, Ana
+            Lopez, Yohan Pouteau, Andrez Guzman, Manuel Fernandez, Melisse
+            Bonfand)</span>
+            <ul class=fragment>
+                <li>Self-calibration (10-500% dynamic range improvement)</li>
+                <li>Mosaicing </li>
+                <li>Continuum selection </li>
+                <li>Method comparison </li>
+            </ul>
+        <li class=fragment> Survey overview paper in prep (Motte+)
+            <ul> <li> Sample selection (evolutionary stages), highlights </li> </ul>
+        <li class=fragment> Catalog paper in prep (Louvet+)
+            <ul> <li> ~1000 cores cataloged </ul>
+    </ul>
+</section>
+
+
+<section>
+    <div style="margin:auto; margin-top:10%">
+        <h4>ALMA-IMF data highlights</h4>
+        <div>
+            <div style="float:left; width:33%">
+                <img src="colloquium_assets/G010.62_B3_spw0_12M_n2hp.image.rgb.png">
+            </div>
+            <div style="float:left; width:33%">
+                <img src="colloquium_assets/W51-IRS2_B3_spw0_12M_n2hp.image.rgb.png">
+            </div>
+            <div style="float:left; width:33%">
+                <img src="colloquium_assets/G012.80_B3_spw0_12M_n2hp.image.rgb.png">
+            </div>
+        </div>
+    </div>
+        <aside class=notes>
+            Time for a brief mental break, just enjoy the photos
+            <ul>
+                <li> G012.62
+                <li> W51-IRS2
+                <li> G012.80
+            </ul>
+        </aside>
+</section>
+<section>
+    <img src="colloquium_assets/G010.62_B3_spw0_12M_n2hp.image.rgb.png">
+</section>
+<section>
+    <img src="colloquium_assets/G012.80_B3_spw0_12M_n2hp.image.rgb.png">
+</section>
+<section>
+    <section>
+        <img src="colloquium_assets/W51-IRS2_B3_spw0_12M_n2hp.image.rgb.png">
+    </section>
+    <section>
+        <img src="colloquium_assets/W51-IRS2_bsens_B3_B6_colorcomposite.png">
+    </section>
+</section>
+
+
+
+<section>
+    <h4> ALMA-IMF Early Results:<br> The CMF steepens with time?</h4>
+    <img style="max-height:75%" src="almaimf_assets/ALMAIMF_CMFs_March2021.png">
+    <div style="position: relative; top:-15%; left:-19%;" class=smaller> Louvet+, in prep </div>
+    <aside>
+        IRDC sample is from Sanhueza+ 2019 (ASHES)
+    </aside>
+</section>
+
+<section>
+    <section>
+        <h4> How do we measure masses? </h4>
+        <br>
+        <div align=left>
+        On the top end, mass measurement is difficult:
+        <br> <ul>
+            <li> cores are optically thick
+            <li> cores are confused &amp; blended
+            <li> there is unresolved temperature structure
+            <li> the measured luminosity can be the sum of whole (proto)clusters
+        </ul>
+        <br>
+
+        Dynamical mass measurements are the gold standard.
+        </div>
+    </section>
+
+    <section>
+        <h4> Sometimes,  we can't measure dynamical masses </h4>
+        <ul>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2018arXiv180505364G/abstract">Goddi+ 2020: W51 HMYSOs are totally opaque</a>
+            <li><a href="https://ui.adsabs.harvard.edu/#abs/2018A%26A...614A.123P/abstract">Schworer+ 2019: Giant accretion flows into Sgr B2N at 0.16 Msun/yr</a>
+            <li><a href="https://ui.adsabs.harvard.edu/#abs/2019A&A...630A..73M/abstract">Meng+ 2019: Nonthermal emission in Sgr B2's HII regions</a>
+        </ul>
+    </section>
+</section>
+
+<section>
+
+    <h4 style=""> From YSO counts to the IMF? </h4>
+
+    <div>
+        <img src="colloquium_assets/core_peak_fluxdensity_coloredbyclass.png" style='align:left; float:left; width:44%;'>
+        <img src="colloquium_assets/imf_figure.png" style='display:block; width:50%; align:right; float:right; background-position: center center;'>
+    </div>
+    <div style="text-align:center; float:left;" class=smaller>
+    How do we measure the CMF if the cores all have YSOs in them?
+    <!--
+        <div class=smaller>
+            Some CMF measurements in clusters have given us tantalizing hints of CMF variation, e.g., 
+            <a href="https://ui.adsabs.harvard.edu/abs/2018NatAs...2..478M/abstract">Motte+ 2018</a>,
+            <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...886..102S/abstract">Sanhueza+ 2019</a>
+        </div>
+    -->
+    </div>
+    <!--
+        <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
+        <div style="position: relative; top: 71%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+    -->
+</section>
+
+
+<section>
+    <section>
+    <h2> Self-Calibration (B3) </h2>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G008.67_B3_12M_selfcal5_comparison.png">
+    </section>
+
+<section>G010.62 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G010.62_B3_12M_selfcal9_comparison.png"></section>
+<section>G012.80 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G012.80_B3_12M_selfcal7_comparison.png"></section>
+<section>G327.29 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G327.29_B3_12M_selfcal2_comparison.png"></section>
+<section>G328.25 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G328.25_B3_12M_selfcal4_comparison.png"></section>
+<section>G333.60 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G333.60_B3_12M_selfcal6_comparison.png"></section>
+<section>G337.92 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G337.92_B3_12M_selfcal4_comparison.png"></section>
+<section>G338.93 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G338.93_B3_12M_selfcal3_comparison.png"></section>
+<section>G351.77 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G351.77_B3_12M_selfcal4_comparison.png"></section>
+<section>G353.41 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G353.41_B3_12M_selfcal6_comparison.png"></section>
+<section>W43-MM1 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM1_B3_12M_selfcal4_comparison.png"></section>
+<section>W43-MM2 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM2_B3_12M_selfcal4_comparison.png"></section>
+<section>W43-MM3 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM3_B3_12M_selfcal5_comparison.png"></section>
+<section>W51-E   <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W51-E_B3_12M_selfcal7_comparison.png"></section>
+<section>W51-IRS2<img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W51-IRS2_B3_12M_selfcal4_comparison.png"></section>
+
+</section>
+
+<section>
+    <section>
+    <h2> BSENS self-calibrated (B3) </h2>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G008.67_B3_12M_bsens_selfcal5_comparison.png">
+    </section>
+
+<section>G010.62 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G010.62_B3_12M_bsens_selfcal9_comparison.png"></section>
+<section>G012.80 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G012.80_B3_12M_bsens_selfcal7_comparison.png"></section>
+<section>G327.29 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G327.29_B3_12M_bsens_selfcal2_comparison.png"></section>
+<section>G328.25 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G328.25_B3_12M_bsens_selfcal4_comparison.png"></section>
+<section>G333.60 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G333.60_B3_12M_bsens_selfcal6_comparison.png"></section>
+<section>G337.92 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G337.92_B3_12M_bsens_selfcal4_comparison.png"></section>
+<section>G338.93 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G338.93_B3_12M_bsens_selfcal3_comparison.png"></section>
+<section>G351.77 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G351.77_B3_12M_bsens_selfcal4_comparison.png"></section>
+<section>G353.41 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G353.41_B3_12M_bsens_selfcal6_comparison.png"></section>
+<section>W43-MM1 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM1_B3_12M_bsens_selfcal4_comparison.png"></section>
+<section>W43-MM2 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM2_B3_12M_bsens_selfcal4_comparison.png"></section>
+<section>W43-MM3 <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM3_B3_12M_bsens_selfcal5_comparison.png"></section>
+<section>W51-E   <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W51-E_B3_12M_bsens_selfcal7_comparison.png"></section>
+<section>W51-IRS2<img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W51-IRS2_B3_12M_bsens_selfcal4_comparison.png"></section>
+</section>
+
+<section>
+    <section>
+    <h2> BSENS vs CLEANEST (B3) - G008</h2>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G008.67_B3_12M_bsens_vs_cleanest_comparison.png">
+    </section>
+
+    <section>G010.62 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G010.62_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>G012.80 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G012.80_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>G327.29 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G327.29_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>G328.25 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G328.25_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>G333.60 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G333.60_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>G337.92 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G337.92_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>G338.93 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G338.93_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>G351.77 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G351.77_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>G353.41 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G353.41_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>W43-MM1 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM1_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>W43-MM2 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM2_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>W43-MM3 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM3_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>W51-E   <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W51-E_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+    <section>W51-IRS2<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W51-IRS2_B3_12M_bsens_vs_cleanest_comparison.png"></section>
+
+</section>
+
+
+<section>
+    <section>
+    <h2 style="display:inline"> BSENS vs CLEANEST (B6) </h2>G008
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G008.67_B6_12M_bsens_vs_cleanest_comparison.png">
+    </section>
+
+<section>G010.62 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G010.62_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>G012.80 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G012.80_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>G327.29 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G327.29_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>G328.25 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G328.25_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>G333.60 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G333.60_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>G337.92 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G337.92_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>G338.93 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G338.93_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>G351.77 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G351.77_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>G353.41 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/G353.41_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>W43-MM1 <br> TBD - W43-MM1 is not reprocessed yet</section>
+<section>W43-MM2 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM2_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>W43-MM3 <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W43-MM3_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>W51-E   <br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W51-E_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+<section>W51-IRS2<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/February2021Release/comparison_images/W51-IRS2_B6_12M_bsens_vs_cleanest_comparison.png"></section>
+
+
+<section>
+    BSENS - Cleanest: G333 B6
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G333_bsens_diff_zoom_B6.png" style='max-height: 90%'>
+</section>
+
+<section>
+    BSENS - Cleanest: W51-IRS2 B3
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/W51IRS2_bsens_diff_zoom_B3.png" style='max-height: 90%'>
+</section>
+</section>
+
+
+
+
+<section>
+    <img src="almaimf_assets/selfcaltable.png">
+</section>
+
+<section>
+    <img src="almaimf_assets/selfcaltable_highlighted.png">
+</section>
+
+<section>
+<section>
+    Paper figures: table plots
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/beam_size_comparison.png">
+</section>
+
+<section>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/bsens_flux_change.png">
+</section>
+
+<section>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/bsens_rms_change.png">
+</section>
+
+<section>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/noise_excess.png">
+</section>
+
+<section>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/noise_excess_bsens.png">
+</section>
+
+<section>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/noise_excess_bsens_vs_selfcal.png">
+</section>
+
+<section>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/dynamic_range_improvement_selfcal.png">
+</section>
+<section>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/dynamic_range.png">
+</section>
+</section>
+
+
+<section>
+    <h2> Continuum Selection </h2>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/continuum_selection_fraction.png">
+</section>
+
+<section>
+    <img style='max-height:50%' src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/continuum_selection_regions_band3.png">
+    <img style='max-height:50%' src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/continuum_selection_regions_band6.png">
+</section>
+
+<section>
+    <section>
+        <h2 style="display: inline">Flux histograms</h2>: G008
+           <img style="max-height:60%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G008_B3B6_flux_histogram.png">
+           <div class="smaller">Outset: Histogram of all data.
+               <br>Inset: Zoom-in, with linear X-scale, near zero.
+               <br>Inset, sub: histogram minus Gaussian model.
+           </div>
+    </section>
+    <section>G10    <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G10_B3B6_flux_histogram.png"></section>
+    <section>G12    <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G12_B3B6_flux_histogram.png"></section>
+    <section>G327   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G327_B3B6_flux_histogram.png"></section>
+    <section>G328   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G328_B3B6_flux_histogram.png"></section>
+    <section>G333   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G333_B3B6_flux_histogram.png"></section>
+    <section>G337   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G337_B3B6_flux_histogram.png"></section>
+    <section>G338   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G338_B3B6_flux_histogram.png"></section>
+    <section>G351   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G351_B3B6_flux_histogram.png"></section>
+    <section>G353   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/G353_B3B6_flux_histogram.png"></section>
+    <section>W43MM2 <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/W43MM2_B3B6_flux_histogram.png"></section>
+    <section>W43MM3 <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/W43MM3_B3B6_flux_histogram.png"></section>
+    <section>W51-E  <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/W51-E_B3B6_flux_histogram.png"></section>
+    <section>W51IRS2<br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/flux_histograms/W51IRS2_B3B6_flux_histogram.png"></section>
+</section>
+
+
+
+
+<section>
+    <section>
+        <h2 style="display:inline">UV Histograms: Effective resolution, LAS</h2> G008 B3
+        <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G008.67_B3_uvhistogram.png"></section>
+    <section>G008.67 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G008.67_B6_uvhistogram.png"></section>
+    <section>G010.62 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G010.62_B3_uvhistogram.png"></section>
+    <section>G010.62 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G010.62_B6_uvhistogram.png"></section>
+    <section>G012.80 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G012.80_B3_uvhistogram.png"></section>
+    <section>G012.80 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G012.80_B6_uvhistogram.png"></section>
+    <section>G327.29 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G327.29_B3_uvhistogram.png"></section>
+    <section>G327.29 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G327.29_B6_uvhistogram.png"></section>
+    <section>G328.25 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G328.25_B3_uvhistogram.png"></section>
+    <section>G328.25 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G328.25_B6_uvhistogram.png"></section>
+    <section>G333.60 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G333.60_B3_uvhistogram.png"></section>
+    <section>G333.60 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G333.60_B6_uvhistogram.png"></section>
+    <section>G337.92 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G337.92_B3_uvhistogram.png"></section>
+    <section>G337.92 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G337.92_B6_uvhistogram.png"></section>
+    <section>G338.93 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G338.93_B3_uvhistogram.png"></section>
+    <section>G338.93 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G338.93_B6_uvhistogram.png"></section>
+    <section>G351.77 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G351.77_B3_uvhistogram.png"></section>
+    <section>G351.77 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G351.77_B6_uvhistogram.png"></section>
+    <section>G353.41 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G353.41_B3_uvhistogram.png"></section>
+    <section>G353.41 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/G353.41_B6_uvhistogram.png"></section>
+    <section>W43-MM1 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W43-MM1_B3_uvhistogram.png"></section>
+    <section>W43-MM2 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W43-MM2_B3_uvhistogram.png"></section>
+    <section>W43-MM2 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W43-MM2_B6_uvhistogram.png"></section>
+    <section>W43-MM3 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W43-MM3_B3_uvhistogram.png"></section>
+    <section>W43-MM3 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W43-MM3_B6_uvhistogram.png"></section>
+    <section>W51-E_B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W51-E_B3_uvhistogram.png"></section>
+    <section>W51-E_B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W51-E_B6_uvhistogram.png"></section>
+    <section>W51-IRS2_B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W51-IRS2_B3_uvhistogram.png"></section>
+    <section>W51-IRS2_B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/uvhistograms/W51-IRS2_B6_uvhistogram.png"></section>
+</section>
+
+<section>
+    <section>
+        <h2> Histogram of spectral index</h2>
+        G008<br>
+        <img style='max-height: 70%' src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G008_B3B6_alpha_histogram.png"></section>
+    <section>G10    <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G10_B3B6_alpha_histogram.png"></section>
+    <section>G12    <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G12_B3B6_alpha_histogram.png"></section>
+    <section>G327   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G327_B3B6_alpha_histogram.png"></section>
+    <section>G328   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G328_B3B6_alpha_histogram.png"></section>
+    <section>G333   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G333_B3B6_alpha_histogram.png"></section>
+    <section>G337   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G337_B3B6_alpha_histogram.png"></section>
+    <section>G338   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G338_B3B6_alpha_histogram.png"></section>
+    <section>G351   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G351_B3B6_alpha_histogram.png"></section>
+    <section>G353   <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/G353_B3B6_alpha_histogram.png"></section>
+    <section>W43MM2 <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/W43MM2_B3B6_alpha_histogram.png"></section>
+    <section>W43MM3 <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/W43MM3_B3B6_alpha_histogram.png"></section>
+    <section>W51-E  <br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/W51-E_B3B6_alpha_histogram.png"></section>
+    <section>W51IRS2<br><img style="max-height:90%" src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/spectralindex/W51IRS2_B3B6_alpha_histogram.png"></section>
+</section>
+
+<section>
+    <section>Robust Comparisons: G008.67 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G008.67_B3_uid___A001_X1296_X1c1_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G008.67 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G008.67_B6_uid___A001_X1296_X1b7_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G010.62 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G010.62_B3_uid___A001_X1296_X1e5_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G010.62 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G010.62_B6_uid___A001_X1296_X1db_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G012.80 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G012.80_B3_uid___A001_X1296_X1fb_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G012.80 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G012.80_B6_uid___A001_X1296_X1ef_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G327.29 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G327.29_B3_uid___A001_X1296_X17d_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G327.29 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G327.29_B6_uid___A001_X1296_X175_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G328.25 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G328.25_B3_uid___A001_X1296_X16d_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G328.25 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G328.25_B6_uid___A001_X1296_X163_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G333.60 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G333.60_B3_uid___A001_X1296_X1a3_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G333.60 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G333.60_B6_uid___A001_X1296_X19b_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G337.92 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G337.92_B3_uid___A001_X1296_X147_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G337.92 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G337.92_B6_uid___A001_X1296_X13b_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G338.93 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G338.93_B3_uid___A001_X1296_X159_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G338.93 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G338.93_B6_uid___A001_X1296_X14f_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G351.77 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G351.77_B3_uid___A001_X1296_X209_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G351.77 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G351.77_B6_uid___A001_X1296_X201_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G353.41 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G353.41_B3_uid___A001_X1296_X1d5_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: G353.41 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/G353.41_B6_uid___A001_X1296_X1c9_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W43-MM1 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W43-MM1_B3_uid___A001_X1296_X1af_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W43-MM2 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W43-MM2_B3_uid___A001_X1296_X11b_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W43-MM2 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W43-MM2_B6_uid___A001_X1296_X113_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W43-MM3 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W43-MM3_B3_uid___A001_X1296_X12f_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W43-MM3 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W43-MM3_B6_uid___A001_X1296_X129_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W51-E B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W51-E_B3_uid___A001_X1296_X10b_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W51-E B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W51-E_B6_uid___A001_X1296_X213_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W51-IRS2 B3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W51-IRS2_B3_uid___A001_X1296_X18f_continuum_merged_noise_and_beams_vs_robust.png"></section>
+    <section>Robust Comparisons: W51-IRS2 B6<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/robust_comparisons/W51-IRS2_B6_uid___A001_X1296_X187_continuum_merged_noise_and_beams_vs_robust.png"></section>
+</section>
+
+<section> 
+    <section>α map: G008<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G008_B3B6_spectral_index.png"></section>
+    <section>α map: G10<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G10_B3B6_spectral_index.png"></section>
+    <section>α map: G12<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G12_B3B6_spectral_index.png"></section>
+    <section>α map: G327<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G327_B3B6_spectral_index.png"></section>
+    <section>α map: G328<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G328_B3B6_spectral_index.png"></section>
+    <section>α map: G333<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G333_B3B6_spectral_index.png"></section>
+    <section>α map: G337<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G337_B3B6_spectral_index.png"></section>
+    <section>α map: G338<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G338_B3B6_spectral_index.png"></section>
+    <section>α map: G351<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G351_B3B6_spectral_index.png"></section>
+    <section>α map: G353<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/G353_B3B6_spectral_index.png"></section>
+    <section>α map: W43MM2<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/W43MM2_B3B6_spectral_index.png"></section>
+    <section>α map: W43MM3<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/W43MM3_B3B6_spectral_index.png"></section>
+    <section>α map: W51Ee2<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/W51Ee2_B3B6_spectral_index.png"></section>
+    <section>α map: W51Ee8<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/W51Ee8_B3B6_spectral_index.png"></section>
+    <section>α map: W51EIRS1<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/W51EIRS1_B3B6_spectral_index.png"></section>
+    <section>α map: W51IRS2<br><img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/W51IRS2_B3B6_spectral_index.png"></section>
+</section>
+<section>
+    <img src="https://data.rc.ufl.edu/secure/adamginsburg/ALMA-IMF/datapaper/figures/spindx_classification_summary.png">
+</section>
+
+
+      </div>
+    </div>
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+<script src="animate.js"></script>
+
+    <script>
+
+
+      Reveal.initialize({
+        controls: true,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: false,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+	    condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+	    condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+	    condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+	    callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+	    condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+	  { src: 'pdfimgs.js', async: true },
+	  { src: 'slideautostart.js', async: true },
+        ],
+      });
+
+
+    </script>
+  </body>
+</html>

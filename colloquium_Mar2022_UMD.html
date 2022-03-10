@@ -802,10 +802,32 @@ formation, including kinematic measurements using brinary disks.
 </section>
 
 <section>
-    <h4> ALMA-IMF:<br> The CMF is shallow (top-heavy)</h4>
-    <img style="max-height:75%" src="almaimf_assets/Pouteau2022_fig8_cmfs.png">
-    <div style="position: relative; top:0%; left:0%;" class=smaller> Pouteau+ 2022: W43-MM2/3 CMF<br>
-    Motte+ 2018 W43-MM1 CMF: &alpha;&gtrsim;-1</div>
+    <section>
+        <h4> ALMA-IMF:<br> The CMF is shallow (top-heavy)</h4>
+        <img style="max-height:75%" src="almaimf_assets/Pouteau2022_fig8_cmfs.png">
+        <div style="position: relative; top:0%; left:0%;" class=smaller> Pouteau+ 2022: W43-MM2/3 CMF<br>
+        Motte+ 2018 W43-MM1 CMF: &alpha;&gtrsim;-1</div>
+    </section>
+
+    <section>
+        <h4 class=smaller> Top-heavier IMFs are seen in high-mass clusters, <br> CMFs in protoclusters</h4>
+        <div>
+            <img src="colloquium_assets/Hosek2018_fig17.svg" style="width:105%">
+            <div style="position: relative; bottom: 135px; left:-310px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018arXiv180802577H">Hosek+ 2018</a></div>
+        </div>
+        <div style="position: relative; top: -11%; left:35%" class="smaller3"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        <aside class=notes>
+            <ul>
+                <li> Observations of clusters support the idea that star formation
+                in the densest clusters is indeed different
+                <li> Right panels show IMFs with high-end slopes of 2.3 and 1.75
+                respectively; they show 1000-Msun clusters with different IMFs
+                <li> The lower-right plot extends out to 100 Msun stars, while the top
+                cut off around 30
+                <li> Plots are produced using <a href="https://github.com/keflavich/imf/blob/master/examples/imf_figure.py">IMF figure</a> code again
+            </ul>
+        </aside>
+    </section>
 </section>
 
 <section>
@@ -818,6 +840,98 @@ formation, including kinematic measurements using brinary disks.
 </section>
 
 <section>
+    <div>
+        <br>
+        <h4>Mass measurements: Optically thin, isothermal dust</h4>
+        <br>
+        <br>
+
+        <div> T<sub>D</sub> estimated with PPMAP fits to Herschel data </div>
+        <br>
+        <div> Simple models assuming T<sub>D</sub> ~ M do not change CMF much </div>
+        <br>
+        <div> We can do better with YSO models and T<sub>G</sub> measurements</div>
+    </div>
+</section>
+
+
+<section>
+    <section id=imf_flowchart>
+        <h3> YSO modeling &rightarrow; luminosity functions </h3>
+        <img src="colloquium_assets/flowchart.svg">
+        <div>
+            <div style="float: left; width:20%">
+                <span class=smaller> NSF 2008101: "How are stellar masses set?" </span>
+            </div>
+            <div style="float: left; width:60%">
+                <img src="FrontiersAssets/RobitailleGrid.png" style="width:80%">
+            </div>
+            <div style="float: left; width:20%">
+                <img src="FrontiersAssets/TheoRichardson.png" align="right" >
+                <span class=smaller> Theo Richardson</span>
+            <div style="float: left; width:25%">
+        </div>
+        <aside class="notes">
+            <ul>
+                <li>Models are parametric</li>
+                <li>They do not necessarily represent reality</li>
+                <li>Their parameter space is limited</li>
+                <li>These models have a central temperature and luminosity, not a central mass: linking mass to luminosity requires prestellar evolutionary tracks</li>
+            </ul>
+        </aside>
+
+    </section>
+    <section>
+
+        <h4 style=""> From YSO counts to the IMF? </h4>
+
+        <div>
+            <img src="colloquium_assets/core_peak_fluxdensity_coloredbyclass.png" style='align:left; float:left; width:44%;'>
+            <img src="colloquium_assets/imf_figure.png" style='display:block; width:50%; align:right; float:right; background-position: center center;'>
+        </div>
+        <div style="text-align:center; float:left;" class=smaller>
+        How do we measure the CMF if the cores all have YSOs in them?
+        <!--
+            <div class=smaller>
+                Some CMF measurements in clusters have given us tantalizing hints of CMF variation, e.g., 
+                <a href="https://ui.adsabs.harvard.edu/abs/2018NatAs...2..478M/abstract">Motte+ 2018</a>,
+                <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...886..102S/abstract">Sanhueza+ 2019</a>
+            </div>
+        -->
+        </div>
+        <!--
+            <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
+            <div style="position: relative; top: 71%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        -->
+    </section>
+</section>
+
+<section>
+    <img style='float:left; width:28%' src="assets/Theo/metric_is_m=5.00.png">
+    <div style='width:40%; float:left'>
+    Mapping accretion histories
+    <br>
+    (left: IS, right: TC)
+    <br>
+    onto the Robitaille 2017 model grid
+    </div>
+    <div style="float:right; width:28%; ">
+        <img style='float:right' src="assets/Theo/metric_tc_m=5.00.png">
+    </div>
+</section>
+
+<section>
+    <img src="assets/SPICY/SPICY73673.png">
+</section>
+
+<section>
+    <h4> Temperature measurements with per-pixel rotation diagrams </h4>
+    <img src="assets/DesmondJeff_SgrB2DS_RotationDiagramCH3OH.png">
+    <br>
+    Jeff+ in prep (CH<sub>3</sub>OH), Wyrowski+ in prep (CH<sub>3</sub>CN)
+</section>
+
+<section>
     <div>Hot cores in ALMA-IMF: From rare objects to a population</div>
     <img src="almaimf_assets/Brouillet_W43MM1_cores.png">
     <div style="position: relative; top:-75%; left:75%; color:red; width:20%; background-color:white;" class=smaller2>
@@ -825,6 +939,17 @@ formation, including kinematic measurements using brinary disks.
         T<sub>D</sub>&gt;50 K<br> 
         T<sub>G</sub> &gtrsim;100K</div>
     <div style="position: relative; top:-35%; left:-25%;" class=smaller2> Brouillet+, in prep </div>
+</section>
+
+<section>
+    <br>
+    <h4>Hot core overview: A lot is coming</h4>
+    <br>
+    <ul>
+        <li> 11 HCs in W43-MM1 (Brouillet+ in prep)</li>
+        <li> ~60 HCs in ALMA-IMF sample from CH<sub>3</sub>OCHO (Bonfand+ in prep) </li>
+        <li> CH<sub>3</sub>CN temperature maps (Wyrowski+ in prep)</li>
+    </ul>
 </section>
 
 <section id=desmond_overview>
@@ -867,6 +992,11 @@ formation, including kinematic measurements using brinary disks.
 </section>
 
 <section>
+    Cores change states
+    <img src="assets/Offner2022_fig8_corestatechanges.png">
+</section>
+
+<section>
     CMF results from Yohan, Fab here
 
     Show and talk about these, then highlight some of the remaining problems:
@@ -902,42 +1032,15 @@ formation, including kinematic measurements using brinary disks.
 -->
 
 
-<section id=alma_counts_protostars>
-    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/overview_figure_taper.png);'>
-        <h4 style="white-space:nowrap; position: relative; top:5%; left: 12%; width:70%;"> ALMA enables protostar counting in <br>distant, massive clouds </h4>
-        <div class=smaller2 style="position: relative; top:60%; left: 45%; width:35%;"> Sgr B2: the most massive &amp; star-forming cloud in the Galaxy</div>
-        <div class=smaller2 style="position: relative; top:61%; left: 61%; text-align:right; width:19%; background-color:rgba(255,255,255,0.3);">
-            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
-    </span>
-    <aside class=notes>
-        <ul>
-            <li> An example of one of the clouds from the previous plots
-            <li> A column density map with the locations of protostars shown as red dots
-            <li> Protostars are identified in nearby clouds with IR telescopes like Spitzer and Herschel
-            <li> Column density measured with extinction or dust maps, resolution limited to 30" to a few arcminutes
-            <li> Protostars are counted and compared to the density they reside in
-        </ul>
-    </aside>
-</section>
-
-
 
 <section>
-    <h3> How do we learn about clustering?  The IMF? </h3>
-    <img class=fragment src="FrontiersAssets/Count_von_Count_kneeling.png" style="max-height:80%">
-    <ul>
-        <li class=fragment> Count objects:
-            <ul>
-        <li class=fragment> Cores are (sometimes) countable
-        <li class=fragment> Protostars are countable
-            </ul>
-    </ul>
+    <h4>The Central Molecular Zone of the Galaxy represents one extreme of star forming conditions in the Galaxy</h4>
+    <img src="assets/ppvii/rgb_v2_compressed.png">
 </section>
-
 
 <section>
     <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small.jpg);'>
-    <h4> Our own Galaxy's center, the CMZ, has denser gas than the Galactic average </h4>
+    <h4> Our Galaxy's center, the CMZ, has denser gas than the Galactic average </h4>
     <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
     <div style="text-align:left; position: relative; bottom: -61%; left:1%" class="smaller3">
         <a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv181000266M">Mills, Ginsburg+ 2018</a><span style="color:white">;</span>
@@ -1183,140 +1286,6 @@ formation, including kinematic measurements using brinary disks.
 -->
 
 
-<section>
-    <h3> YSO counts let us investigate thresholds </h3>
-    <h4 class=fragment> Local cloud studies support the idea of a gas density threshold for star formation </h4>
-    <span class=fragment>
-        <img src="colloquium_assets/Lada2010_NYSOsvsCloudMass.svg" width=49%>
-        <img src="colloquium_assets/Lada2010_NYSOsvsDenseCloudMass_fig4.svg" width=49%>
-        <div style="position: relative; text-align:right; left:-22px; top:-121px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2010ApJ...724..687L">Lada+ 2010</a></div>
-        <div style="position: relative; bottom: -75%; left:00%;" class=smaller>
-            Thresholds are used in simulations to say <br>"if gas reaches this density, turn it into stars" </div>
-    </span>
-    <aside class=notes>
-        <ul>
-            <li> Left: NYSOs vs total cloud mass
-            <li> Right: NYSOs vs cloud mass above a fixed density
-            <li> Correlation is tighter in the right plot - stars form in dense
-            gas
-        </ul>
-    </aside>
-</section>
-
-
-<section id=sgrb2vscalifornia1 style="background: white;">
-    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14_labels.svg)">
-        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
-        <div class=smaller2 style="position: relative; top:66%; left: 22%; width:20%; text-align: left; background-color:rgba(255,255,255,0.2)">
-            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
-    </span>
-    <div class=smaller style="position: absolute; left:70%; width:30%; top:2%;">
-        Compare YSO counts in Sgr B2 and the CMC
-    </div>
-    <aside class=notes>
-        <ul>
-            <li> Comparison of Sgr B2 to the California cloud on the same spatial scale
-            <li> Contours show different levels of column density and K-band extinction
-            <li> Lowest contour in Sgr B2 (green) is about an order of
-            magnitude above highest contour in CMC
-        </ul>
-    </aside>
-</section>
-
-<section id=sgrb2vscalifornia2 style="background: white;">
-    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14.svg)">
-        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
-        <div class=smaller2 style="position: relative; top:66%; left: 22%; width:20%; text-align: left; background-color:rgba(255,255,255,0.2)">
-            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
-    </span>
-    <aside class=notes>
-        <ul>
-            <li> Sgr B2 sources are high-mass (&gt;8 Msun, approx)
-            <li> They represent a population of sources
-            <li> CMC stars are individuals
-            <li> With ALMA, we can get down to the 0.5 Msun scale eventually;
-            future programs (i.e., ALMA-IMF) will do that
-        </ul>
-    </aside>
-</section>
-
-
-<section>
-    <div class=image style="height:100%">
-    <span class=image style='height:100%; position: relative; top: -3%; background-position: center center; background-image: url(colloquium_assets/cores_on_SCUBA_column_saturated.png);'>
-        <h4 style="white-space:nowrap; position: relative; top:5%; left: 0%; background-color: rgba(200,200,200,0.95); width:40%; display:inline-block;">Is there a threshold?</h4>
-        <div class=smaller2 style="position: relative; top:76%; left: 55%; text-align:right; background-color: rgba(240,240,240,0.6); width:20%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
-    </span>
-    </div>
-    <aside class=notes>
-        <ul>
-            <li> Sgr B2 sources reside mostly in the highest contours
-        </ul>
-    </aside>
-</section>
-
-<section>
-
-    <section>
-    <div class=image style="height:100%">
-    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/core_background_column_cdf_nolabel.svg);'>
-        <h4 style="position: relative; top:-10%; left: 0%;"> Is there a threshold? </h4>
-        <div class=smaller2 style="position: relative; top:85%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
-
-    </span>
-    </div>
-    <aside class=notes>
-        <ul>
-            <li> Y-axis shows the column density in which the protostars reside, i.e., about half of the protostars are in regions with column
-            density &gt; 10<sup>24</sup> cm<sup>-2</sup>
-            <li> Lada+ 2010 threshold is well below our lowest contour
-        </ul>
-    </aside>
-    </section>
-
-</section>
-
-
-<section>
-    <div class=image style="height:100%">
-    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/compare_brick_sgrb2_colPDF.svg);'>
-        <h4 style="position: relative; top:-10%; left: 0%;"> A threshold separates Sgr B2 from The Brick </h4>
-        <div class=smaller2 style="position: relative; top:83%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
-    </span>
-    </div>
-    <aside class=notes>
-        <ul>
-            <li> Dark curve shows the same cumulative background column density
-            distribution from the previous slide
-            <li> "The Brick" is a CMZ cloud with little star formation but
-            still "very high" density compared to local clouds (a few protostars
-            seen, and they reside in that very high end)
-            <li> Only a tiny fraction of The Brick's area has a column density
-            that overlaps with densities at which protostars form in Sgr B2
-            <li> The difference between the clouds is consistent with there being
-            a threshold that The Brick has not met, but Sgr B2 has
-        </ul>
-    </aside>
-</section>
-
-<section id=sgrb2_ds_1mm_withcores_brick>
-    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth_saturated.png);'>
-        <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
-        <div class=fragment style="position: absolute; width:70%; top:45%; left: 20%;">
-            <img src="colloquium_assets/Walker2021_brick_fig2.png">
-            <div class=smaller2 style="position: relative; top:-50%; left: 21%; margin-top:-13%;"> Walker+ 2021 </div>
-        </div>
-    </span>
-    <aside class=notes>
-        <ul>
-            <li> 1mm cores in Sgr B2 DS
-            <li> Compared to Dan Walker's
-        </ul>
-    </aside>
-</section>
-
-
-
 <!-- This slide doesn't look cool enough or say enough
 <section>
     <span class="image" style="background-image: url(colloquium_assets/rgb_overview_brightness.png); width:100%; margin-top:-2%;">
@@ -1371,77 +1340,6 @@ formation, including kinematic measurements using brinary disks.
             <li><a href="https://ui.adsabs.harvard.edu/#abs/2018A%26A...614A.123P/abstract">Schworer+ 2019: Giant accretion flows into Sgr B2N at 0.16 Msun/yr</a>
             <li><a href="https://ui.adsabs.harvard.edu/#abs/2019A&A...630A..73M/abstract">Meng+ 2019: Nonthermal emission in Sgr B2's HII regions</a>
         </ul>
-    </section>
-</section>
-
-<section>
-
-    <h4 style=""> From YSO counts to the IMF? </h4>
-
-    <div>
-        <img src="colloquium_assets/core_peak_fluxdensity_coloredbyclass.png" style='align:left; float:left; width:44%;'>
-        <img src="colloquium_assets/imf_figure.png" style='display:block; width:50%; align:right; float:right; background-position: center center;'>
-    </div>
-    <div style="text-align:center; float:left;" class=smaller>
-    How do we measure the CMF if the cores all have YSOs in them?
-    <!--
-        <div class=smaller>
-            Some CMF measurements in clusters have given us tantalizing hints of CMF variation, e.g., 
-            <a href="https://ui.adsabs.harvard.edu/abs/2018NatAs...2..478M/abstract">Motte+ 2018</a>,
-            <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...886..102S/abstract">Sanhueza+ 2019</a>
-        </div>
-    -->
-    </div>
-    <!--
-        <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
-        <div style="position: relative; top: 71%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
-    -->
-</section>
-
-<section>
-    <section id=imf_flowchart>
-        <h3> YSO modeling &rightarrow; luminosity functions </h3>
-        <img src="colloquium_assets/flowchart.svg">
-        <div>
-            <div style="float: left; width:20%">
-                <span class=smaller> NSF 2008101: "How are stellar masses set?" </span>
-            </div>
-            <div style="float: left; width:60%">
-                <img src="FrontiersAssets/RobitailleGrid.png" style="width:80%">
-            </div>
-            <div style="float: left; width:20%">
-                <img src="FrontiersAssets/TheoRichardson.png" align="right" >
-                <span class=smaller> Theo Richardson</span>
-            <div style="float: left; width:25%">
-        </div>
-        <aside class="notes">
-            <ul>
-                <li>Models are parametric</li>
-                <li>They do not necessarily represent reality</li>
-                <li>Their parameter space is limited</li>
-                <li>These models have a central temperature and luminosity, not a central mass: linking mass to luminosity requires prestellar evolutionary tracks</li>
-            </ul>
-        </aside>
-
-    </section>
-    <section>
-        <h4 class=smaller> Top-heavier IMFs are seen in high-mass clusters, <br> CMFs in protoclusters</h4>
-        <div>
-            <img src="colloquium_assets/Hosek2018_fig17.svg" style="width:105%">
-            <div style="position: relative; bottom: 135px; left:-310px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018arXiv180802577H">Hosek+ 2018</a></div>
-        </div>
-        <div style="position: relative; top: -11%; left:35%" class="smaller3"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
-        <aside class=notes>
-            <ul>
-                <li> Observations of clusters support the idea that star formation
-                in the densest clusters is indeed different
-                <li> Right panels show IMFs with high-end slopes of 2.3 and 1.75
-                respectively; they show 1000-Msun clusters with different IMFs
-                <li> The lower-right plot extends out to 100 Msun stars, while the top
-                cut off around 30
-                <li> Plots are produced using <a href="https://github.com/keflavich/imf/blob/master/examples/imf_figure.py">IMF figure</a> code again
-            </ul>
-        </aside>
     </section>
 </section>
 
@@ -2134,6 +2032,171 @@ formation, including kinematic measurements using brinary disks.
     <!-- Can I add something here about how the KS relation is used in simulations? -->
 </section>
 
+
+
+<section id=alma_counts_protostars>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/overview_figure_taper.png);'>
+        <h4 style="white-space:nowrap; position: relative; top:5%; left: 12%; width:70%;"> ALMA enables protostar counting in <br>distant, massive clouds </h4>
+        <div class=smaller2 style="position: relative; top:60%; left: 45%; width:35%;"> Sgr B2: the most massive &amp; star-forming cloud in the Galaxy</div>
+        <div class=smaller2 style="position: relative; top:61%; left: 61%; text-align:right; width:19%; background-color:rgba(255,255,255,0.3);">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> An example of one of the clouds from the previous plots
+            <li> A column density map with the locations of protostars shown as red dots
+            <li> Protostars are identified in nearby clouds with IR telescopes like Spitzer and Herschel
+            <li> Column density measured with extinction or dust maps, resolution limited to 30" to a few arcminutes
+            <li> Protostars are counted and compared to the density they reside in
+        </ul>
+    </aside>
+</section>
+
+
+
+<section>
+    <h3> How do we learn about clustering?  The IMF? </h3>
+    <img class=fragment src="FrontiersAssets/Count_von_Count_kneeling.png" style="max-height:80%">
+    <ul>
+        <li class=fragment> Count objects:
+            <ul>
+        <li class=fragment> Cores are (sometimes) countable
+        <li class=fragment> Protostars are countable
+            </ul>
+    </ul>
+</section>
+
+<section>
+    <h3> YSO counts let us investigate thresholds </h3>
+    <h4 class=fragment> Local cloud studies support the idea of a gas density threshold for star formation </h4>
+    <span class=fragment>
+        <img src="colloquium_assets/Lada2010_NYSOsvsCloudMass.svg" width=49%>
+        <img src="colloquium_assets/Lada2010_NYSOsvsDenseCloudMass_fig4.svg" width=49%>
+        <div style="position: relative; text-align:right; left:-22px; top:-121px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2010ApJ...724..687L">Lada+ 2010</a></div>
+        <div style="position: relative; bottom: -75%; left:00%;" class=smaller>
+            Thresholds are used in simulations to say <br>"if gas reaches this density, turn it into stars" </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Left: NYSOs vs total cloud mass
+            <li> Right: NYSOs vs cloud mass above a fixed density
+            <li> Correlation is tighter in the right plot - stars form in dense
+            gas
+        </ul>
+    </aside>
+</section>
+
+
+<section id=sgrb2vscalifornia1 style="background: white;">
+    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14_labels.svg)">
+        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
+        <div class=smaller2 style="position: relative; top:66%; left: 22%; width:20%; text-align: left; background-color:rgba(255,255,255,0.2)">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <div class=smaller style="position: absolute; left:70%; width:30%; top:2%;">
+        Compare YSO counts in Sgr B2 and the CMC
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Comparison of Sgr B2 to the California cloud on the same spatial scale
+            <li> Contours show different levels of column density and K-band extinction
+            <li> Lowest contour in Sgr B2 (green) is about an order of
+            magnitude above highest contour in CMC
+        </ul>
+    </aside>
+</section>
+
+<section id=sgrb2vscalifornia2 style="background: white;">
+    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14.svg)">
+        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
+        <div class=smaller2 style="position: relative; top:66%; left: 22%; width:20%; text-align: left; background-color:rgba(255,255,255,0.2)">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Sgr B2 sources are high-mass (&gt;8 Msun, approx)
+            <li> They represent a population of sources
+            <li> CMC stars are individuals
+            <li> With ALMA, we can get down to the 0.5 Msun scale eventually;
+            future programs (i.e., ALMA-IMF) will do that
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:100%; position: relative; top: -3%; background-position: center center; background-image: url(colloquium_assets/cores_on_SCUBA_column_saturated.png);'>
+        <h4 style="white-space:nowrap; position: relative; top:5%; left: 0%; background-color: rgba(200,200,200,0.95); width:40%; display:inline-block;">Is there a threshold?</h4>
+        <div class=smaller2 style="position: relative; top:76%; left: 55%; text-align:right; background-color: rgba(240,240,240,0.6); width:20%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Sgr B2 sources reside mostly in the highest contours
+        </ul>
+    </aside>
+</section>
+
+<section>
+
+    <section>
+    <div class=image style="height:100%">
+    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/core_background_column_cdf_nolabel.svg);'>
+        <h4 style="position: relative; top:-10%; left: 0%;"> Is there a threshold? </h4>
+        <div class=smaller2 style="position: relative; top:85%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Y-axis shows the column density in which the protostars reside, i.e., about half of the protostars are in regions with column
+            density &gt; 10<sup>24</sup> cm<sup>-2</sup>
+            <li> Lada+ 2010 threshold is well below our lowest contour
+        </ul>
+    </aside>
+    </section>
+
+</section>
+
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/compare_brick_sgrb2_colPDF.svg);'>
+        <h4 style="position: relative; top:-10%; left: 0%;"> A threshold separates Sgr B2 from The Brick </h4>
+        <div class=smaller2 style="position: relative; top:83%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Dark curve shows the same cumulative background column density
+            distribution from the previous slide
+            <li> "The Brick" is a CMZ cloud with little star formation but
+            still "very high" density compared to local clouds (a few protostars
+            seen, and they reside in that very high end)
+            <li> Only a tiny fraction of The Brick's area has a column density
+            that overlaps with densities at which protostars form in Sgr B2
+            <li> The difference between the clouds is consistent with there being
+            a threshold that The Brick has not met, but Sgr B2 has
+        </ul>
+    </aside>
+</section>
+
+<section id=sgrb2_ds_1mm_withcores_brick>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth_saturated.png);'>
+        <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
+        <div class=fragment style="position: absolute; width:70%; top:45%; left: 20%;">
+            <img src="colloquium_assets/Walker2021_brick_fig2.png">
+            <div class=smaller2 style="position: relative; top:-50%; left: 21%; margin-top:-13%;"> Walker+ 2021 </div>
+        </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> 1mm cores in Sgr B2 DS
+            <li> Compared to Dan Walker's
+        </ul>
+    </aside>
+</section>
 
 
 

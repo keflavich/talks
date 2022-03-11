@@ -261,8 +261,14 @@ a.darkbg {
 .flex-vert {
     display: flex;
     height: 100%;
-      justify-content: center;
-      align-items: center; 
+    align-items: center; 
+    justify-items: center;
+}
+.flex-vert-90 {
+    display: flex;
+    height: 90%;
+    align-items: center; 
+    justify-items: center;
 }
 .content-vert {
     margin: auto auto;

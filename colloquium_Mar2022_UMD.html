@@ -125,12 +125,11 @@ formation, including kinematic measurements using brinary disks.
         <li> Steeper IMF in richer SF regions
     </ul>
     <br>
-    <br> We have, and are building more, tools to measure YSO masses &amp; count YSOs
+    <br> We have, and are building more, tools to measure masses
     <ul class=smaller>
         <li> ALMA-IMF core catalogs with high-resolution followup &amp; modeling
         <li> Hot cores track the earliest stage of HMSF
         <li> Salt is a new tool to probe disks around high-mass stars
-        <li> CS masers may track YSO disks; they require rare conditions
     </ul>
 
     </div>
@@ -196,7 +195,7 @@ formation, including kinematic measurements using brinary disks.
 <section>
     <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/imf_figure.png);'>
         <h4 style="position: relative; top:5%; left: 12%;"> The stellar initial mass function (IMF) </h4>
-        <div class=smaller style="position: relative; top:5%; left: 41%; width:55%;"> Stars are randomly sampled from this distribution </div>
+        <div class=smaller style="position: relative; top:10%; left: 61%; width:35%;"> Stars are sampled from this distribution </div>
         <div style="position: relative; top: 71%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
     </span>
     <aside class=notes>
@@ -360,7 +359,11 @@ formation, including kinematic measurements using brinary disks.
         <h4 style=""> Most stars form in denser regions </h4>
         <div>
             <div style="float:left; width:60%">
-                <img src="colloquium_assets/OrionZoom.png" style="max-width:100%">
+                <div style="position: relative; width:600px; height:600px;">
+                    <img width=600px src="assets_orion/Orion_Overview.png" style="max-width:100%; position: absolute; top:0; left:0">
+                    <img width=600px class=fragment src="assets_orion/Orion_Overview_withsources.png" style="max-width:100%; position:absolute; top:0; left:0">
+                    <img width=600px class=fragment src="assets_orion/Orion_Overview_insets_B3_insetB7.png" style="max-width:100%; position:absolute; top:0; left:0">
+                </div>
             </div>
             <div style="float:right; width: 40%;" class=smaller>
                 <img src="FrontiersAssets/JustinOtter.jpg" style='max-width:50%' align='center'>
@@ -377,7 +380,6 @@ formation, including kinematic measurements using brinary disks.
             <div> N<sup>*</sup><sub>OMC</sub>(Otter+ 2021) = 1.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
             <div> N<sup>*</sup><sub>ONC</sub>(Otter+ 2021) = 0.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
             <div> N<sup>*</sup><sub>ONC</sub>(Hillenbrand+ 1998) = 0.2 x 10<sup>5</sup> pc<sup>-3</sup> </div>
-                
             </div>
         </div>
         <aside class=notes>
@@ -995,14 +997,17 @@ formation, including kinematic measurements using brinary disks.
 </section>
 
 <section>
-    <br>
-    <h4>Hot core overview: A lot is coming</h4>
-    <br>
-    <ul>
-        <li> 11 HCs in W43-MM1 (Brouillet+ in prep)</li>
-        <li> ~60 HCs in ALMA-IMF sample from CH<sub>3</sub>OCHO (Bonfand+ in prep) </li>
-        <li> CH<sub>3</sub>CN temperature maps (Wyrowski+ in prep)</li>
-    </ul>
+    <div class=flex-vert-90>
+        <div>
+        <h4>Hot core overview: A lot is coming</h4>
+        <br>
+        <ul>
+            <li> 11 HCs in W43-MM1 (Brouillet+ in prep)</li>
+            <li> ~60 HCs in ALMA-IMF sample from CH<sub>3</sub>OCHO (Bonfand+ in prep) </li>
+            <li> CH<sub>3</sub>CN temperature maps (Wyrowski+ in prep)</li>
+        </ul>
+        </div>
+    </div>
 </section>
 
 <section id=desmond_overview>
@@ -1476,14 +1481,9 @@ formation, including kinematic measurements using brinary disks.
 
 
 <section>
-    <h4 style="z-index:25; position: relative; color: white; top:0%; left: 0%; text-align:center;"> Salts in Orion </h4>
-    <span class=image style="background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-10%; margin-left:-20%; height:150%; width:150%">
+    <h4 style="z-index:25; position: relative; color: white; text-align:center;"> How can we measure masses of HMYSOs? </h4>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-10%; margin-left:-20%; height:150%; width:150%"></span>
 
-    <div style="position: relative; top:56%; left:-20%; display: inline-block;">
-        <div style="background-color:rgba(105,105,105,0.3); text-align:left;" class="smaller2"><a style="color:rgb(20,200,255)" href="http://adsabs.harvard.edu/abs/2018ApJ...860..119G">Ginsburg+ 2018c</a></div>
-        <div style="background-color:rgba(105,105,105,0.3); text-align:left;" class="smaller2"><a style="color:rgb(20,200,255)" href="http://adsabs.harvard.edu/abs/2019arXiv190104489G">Ginsburg+ 2019b</a></div>
-        <div style="background-color:rgba(105,105,105,0.3); text-align:left;" class="smaller2"><a style="color:rgb(20,200,255)" href="https://public.nrao.edu/news/2019-alma-salt-star/">Press Release on "ALMA salt star"</a></div>
-    </div>
     </span>
     <aside class=notes>
         <ul>
@@ -1546,6 +1546,89 @@ formation, including kinematic measurements using brinary disks.
         </aside>
     </section>
 
+</section>
+
+<section>
+    <h4> Brinary disks </h4>
+    <div class=fragment>
+        <div class=smaller>
+        The SrcI disk has gas-phase salt (NaCl, KCl) and water (H<sub>2</sub>O).
+        </div>
+        <div class="fragment smaller"> So it's brine. </div>
+        <div class="fragment smaller">
+            (blame Adam Leroy for this term)
+        </div>
+
+
+        <div style="padding-left:15%;  padding-right:0%;">
+            <img style="float:left; width:40%;" src="assets/G17_NaCl_mom0.png">
+            <img style="float:left; width:38.5%;" src="assets/SrcI_NaCl_mom0.png">
+        </div>
+
+
+        <div style="width:100%; display:block; position: absolute; bottom:20%;">
+            <div class=smaller style="">
+            IRAS16547A/B (<a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...900L...2T/abstract">Tanaka+ 2020</a>) 
+            have (unresolved) salt water disks
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section>
+    <h4> Brine lines measure dynamical mass </h4>
+    <br>
+    <div class=smaller>
+        <span style="float:center; text-align:center;"> NaCl v=1 J=18-17 </span>
+        <span style="float:right;"> Stack of v=[0,1] J<sub>u</sub>=18,17 </span>
+    </div>
+    <img style="width:65%; display:inline-block; float:left;" src="assets/SrcI_NaCl_PV_withKepler.png">
+    <img style="width:35%; display:inline-block; float:left;" src="assets/G17_NaCl_PV_stack_withKepler.png">
+    <br>
+    <div class=smaller>
+        <span style='color:red'> 15 M<sub>&odot;</sub> </span>
+        <span style='color:green'> 30 M<sub>&odot;</sub> </span>
+        <span style='color:blue'> 40 M<sub>&odot;</sub> </span>
+    </div>
+</section>
+
+<section>
+    <h4> What have we learned about brinaries?</h4>
+
+    <ul>
+        <li class=fragment> <span style='color:navy'>Somewhat rare?:</span> 4 known so far, ~10 examined
+            <ul><li> Y: SrcI, G17, IRAS16547, NGC6334I?
+                    <ul class=smaller><li>Ginsburg+ 2019, Maud+ in prep, Tanaka+ 2020</li></ul>
+                </li>
+                <li> N: I16523, I18089, G11, G5, W33, NGC6334IN, S255IR NIRS3
+                    <ul class=smaller><li>Sanhueza, Olguin, Ginsburg+ in prep</li></ul>
+                </li>
+            </ul>
+        </li>
+        <li class=fragment> <span style='color:darkgreen'>Coincide w/<b>line-poor</b> sources </span>
+            <ul> <li> Not hot cores; little mass reservoir?</li></ul>
+        </li>
+
+        <li class=fragment> <span style='color:darkred'>Trace reasonably <b> symmetric </b> disks</span> <span class=smaller>(in the two well-resolved cases)</span>
+    </ul>
+</section>
+
+<section>
+    <h4> Compare: G17 vs W33 </h4>
+
+    <img src="assets/G17_b6_h2onaclspec.png" style='height:40%; float:left; display: inline-block'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:navy'>G17: Brinary<hr style='max-width:60%'></div>
+        Hot (ionizing) photosphere.  Circular disk.
+    </span>
+    <div style='clear:left;'></div>
+
+    <img src="assets/W33_b6_h2onaclspec.png" style='height:40%; float:left'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:red'>W33: Not-Brinary<hr style='max-width:60%'></div>
+        Molecule rich, kinematically messy &amp; extended
+    <div style='clear:left;'></div>
 </section>
 
 
@@ -1634,44 +1717,31 @@ formation, including kinematic measurements using brinary disks.
 
 
 
-
-
 <section>
-    <h4>Summary</h4>
+    <h3>Summary</h3>
 
     <div class=left>
     <br> Most stars form in regions unlike the solar neighborhood
-    <ul>
+    <ul class=smaller>
         <li> Greater clustering, higher SF thresholds in denser clouds
-        <li> ALMA-IMF will expand the sample to match or exceed local clouds
+        <li> Steeper IMF in richer SF regions
     </ul>
-    <br> We have, and are building more, tools to measure MYSO masses
-    <ul>
+    <br>
+    <br> We have, and are building more, tools to measure masses
+    <ul class=smaller>
+        <li> ALMA-IMF core catalogs with high-resolution followup &amp; modeling
+        <li> Hot cores track the earliest stage of HMSF
         <li> Salt is a new tool to probe disks around high-mass stars
-        <li> CS masers may track YSO disks; they require rare conditions
     </ul>
 
     </div>
     <br>
 </section>
 
-<section>
-    Things I did not talk about today:
-    <ul>
-        <li> MUSTANG Galactic Plane Survey
-            <ul>
-                <li> HCHII regions are ~1/3 as abundant as UCHII
-            </ul>
-            <!--<li> Spectral line survey (B34567) of The Brick [WIP]-->
-        <li> Feedback, YSOs in W51
-            <ul>
-                <li> Massive (200-300 M<sub>&odot;</sub>), hot (200-600K) cores suppress fragmentation
-                <!--<li> Multidirectional accretion flows-->
-            </ul>
-            <!--<li> Accretion flows, outflows in Sgr B2-->
-        <li> Turbulence in Sgr B2 [WIP: student Madeline Hall]
-        <li> Gas temperatures in W51 [WIP: student Josh Machado]
-    </ul>
+<section id=sgrb2_insets_with_orion>
+    <a href="https://github.com/keflavich/SgrB2_ALMA_2015.1.00550.S/blob/master/analysis/ZoomInMatplotlibExample.ipynb">
+    <img src="./assets/SgrB2_insets_with_orion2.png">
+    </a>
 </section>
 
 

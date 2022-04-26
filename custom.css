@@ -122,6 +122,14 @@ div.smaller {
     font-size: 60%;
 }
 
+.reveal .rightcite {
+    position: relative;
+    top:-50%;
+    right:-80%;
+    max-width:20%;
+}
+
+
 img.center-fit {
        padding: 0;
     display: block;

@@ -253,6 +253,10 @@ by the dense OMC, are likelier to be truncated by external photoevaporation.
     <h4 style='z-index:5'> OMC disks are more massive </h4>
     <img style="z-index:-10; position: relative; top:-10%" src="assets/otterorion/KM_dust_mass_may21_onc_omc1.png">
 </section>
+<section>
+    <h4 style='z-index:5'> OMC disks are more massive (Like class 0 &amp; I)</h4>
+    <img style="z-index:-10; position: relative; top:-10%" src="assets/otterorion/KM_dust_mass_may21_onc_omc1_withtobin.png">
+</section>
 
 <section>
     <h4 style='z-index:5'> ONC and OMC disks are small </h4>
@@ -262,6 +266,11 @@ by the dense OMC, are likelier to be truncated by external photoevaporation.
 <section>
     <h4 style='z-index:5'> ONC and OMC disks are smaller </h4>
     <img style="z-index:-10; position: relative; top:-10%" src="assets/otterorion/KM_size_plot_may21_hwhm_omc1_onc_combined.png">
+</section>
+
+<section>
+    <h4 style='z-index:5'> ONC and OMC disks are smaller than Class 0 &amp; I</h4>
+    <img style="z-index:-10; position: relative; top:-10%" src="assets/otterorion/KM_size_plot_may21_hwhm_omc1_onc_combined_tobin.png">
 </section>
 
 
@@ -374,17 +383,17 @@ by the dense OMC, are likelier to be truncated by external photoevaporation.
         <h4> But are they frequent and close enough? </h4>
         Interactions on a scale <i>r</i> happen on a timescale $t \sim (n \sigma v_{disp})^{-1}$
         <div class=fragment>
-        $$ n \sim 10^{5-6} \mathrm{stars~pc}^{-3}$$
-        $$ v_{disp} \sim 3 \mathrm{km~s}^{-1}$$
+            $$ \color{darkgreen}{n \sim 10^{5-6} \mathrm{stars~pc}^{-3}}$$
+            $$ \color{darkblue}{v_{disp} \sim 3 \mathrm{km~s}^{-1}}$$
         </div>
 
         <div class="smaller fragment"> For interactions to push to $\sim30$ AU (the largest disk),
 
 
         $$ r= \sigma^{1/2} \sim 30 \mathrm{AU}
-        \left(\frac{t}{15 \mathrm{Myr}}\right)^{-1/2}
-        \left(\frac{n}{10^6 \mathrm{pc}^{-3}}\right)^{-1/2}
-        \left(\frac{v_{disp}}{3 \mathrm{km~s}^{-1}}\right)^{-1/2}$$
+        \left(\frac{t}{\color{red}{15 \mathrm{Myr}}}\right)^{-1/2}
+        \color{darkgreen}{\left(\frac{n}{10^6 \mathrm{pc}^{-3}}\right)^{-1/2}}
+        \color{darkblue}{\left(\frac{v_{disp}}{3 \mathrm{km~s}^{-1}}\right)^{-1/2}}$$
 
         (Breslau+ 2014: $R_{disc} \sim 0.28 r_{peri} \left(\frac{M_1}{M_2}\right)^{0.32}$)
         </div>
@@ -398,29 +407,20 @@ by the dense OMC, are likelier to be truncated by external photoevaporation.
 </section>
 
 
+
 <section>
-    <h4> Do the disks start small and grow later? </h4>
-    Viscous spreading could result in older disks being larger
-    <Br>
-
-
+    <h4> Face-on accretion &amp; ram pressure </h4>
+    <img src="orion_assets/Wijnen2017fig3.png">
     <div class=smaller>
-    It is possible that only the dust disks are smaller, but the gas disks are still big.
+    <a href="https://ui.adsabs.harvard.edu/abs/2016A%26A...594A..30W/abstract">Wijnen+2016</a>
+    and <a href="https://ui.adsabs.harvard.edu/abs/2017A%26A...604A..91W/abstract">2017a</a>,
+    <a href="https://ui.adsabs.harvard.edu/abs/2017A%26A...602A..52W/abstract">b</a> model: face-on accretion brings in low-$j$ material,
+    ram pressure strips loosely-bound material.
     <br>
-    <br>
-    However, all disk radii <span class=smaller>(Orion &amp; elsewhere)</span>
-    are computed based on dust mass, and there's (presently) no reason to think
-    different environments would preferentially push the dust in.
+    Bottom-right: not quite as dense as OMC, still too-big disks, but
+    not a bad match.
     </div>
 </section>
-
-<section>
-    Maybe the disks are intrinsically smaller in Orion (Caselli, Kuiper)
-
-    <Br>
-    If they're just young, still accreting, maybe they have not grown larger yet
-</section>
-
 
 <section>
     <h3>Dynamical ends to accretion</h3>
@@ -428,8 +428,8 @@ by the dense OMC, are likelier to be truncated by external photoevaporation.
     <div style='width:100%'>
         <div style='float:left; width:65%'>
             <img src="assets_orion/bally_dynamical_picture.svg">
-            <div style='position:relative; bottom:90px; right:-170px' class=smaller2>
-            <a href="http://adsabs.harvard.edu/abs/2017ApJ...837...60B">Bally+ 2017</a>
+            <div style='position:relative; bottom:90px; right:-170px' class=smaller3>
+                <a href="http://adsabs.harvard.edu/abs/2017ApJ...837...60B">Bally+ 2017</a>, <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...889..178B/abstract">2020</a>
             </div>
         </div>
 
@@ -441,7 +441,9 @@ by the dense OMC, are likelier to be truncated by external photoevaporation.
         </div>
         <br style="clear: left;" />
     </div>
+    <div style='clear:both'>
     The BN/I/x interaction is the poster case of accretion ended by dynamical interaction.
+    </div>
 </section>
 
 
@@ -465,6 +467,29 @@ by the dense OMC, are likelier to be truncated by external photoevaporation.
 
 
 
+
+<section>
+    <h4> Other speculations</h4>
+    <h4> Do the disks start small and grow later? </h4>
+    Viscous spreading could result in older disks being larger
+    <Br>
+
+
+    <div class=smaller>
+    It is possible that only the dust disks are smaller, but the gas disks are still big.
+    <br>
+    <br>
+    However, all disk radii <span class=smaller>(Orion &amp; elsewhere)</span>
+    are computed based on dust mass, and there's (presently) no reason to think
+    different environments would preferentially push the dust in.
+    </div>
+
+    Maybe the disks are intrinsically smaller in Orion (Caselli, Kuiper)
+
+    <Br>
+    If they're just young, still accreting, maybe they have not grown larger yet
+    (inconsistent w/Tobin results)
+</section>
 
 <!-- old
 <section>

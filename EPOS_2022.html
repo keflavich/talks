@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Disk Truncation in Orion</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+<section>
+  Slide 0 - <a href="https://github.com/hakimel/reveal.js/wiki/Keyboard-Shortcuts">Instructions</a>:
+  <ul>
+      <li> To move slides, use the arrow keys or swipe on your mobile device
+      <li> To go to full screen, press "f"
+      <li> To print as PDF, go to this URL: 
+          <a href="?print-pdf">?print-pdf</a>, then print <span class=smaller>(warning: may be slow and not work on all browsers)</span>.  <br>
+      <!--You can also download the PDF from <a href="https://www.dropbox.com/s/5itl9tkb6wljnbc/HMSFColloquium_Ginsburg_Morelia2019.pdf?dl=0">this link</a>-->
+      <li> To see an overview, press <span style="font-family: 'Courier New', monospace;">esc</span>
+
+  </ul>
+</section>
+
+<!--
+    Abstract:
+see also ~/Dropbox/talks/abstract_colloquium_umd_2022.txt
+
+Title: Dynamical, accretion, and photoevaporative truncation of disks living in dense clusters
+
+
+Many, probably most, stars formed in dense clusters. Such clusters are sites of
+more frequent close encounters and dynamical interactions. The poster case for
+a dynamical decay resulting in disk truncation is the high-mass (15 Msun)
+protostar Orion Source I. The cluster surrounding Source I, embedded deep
+within the Orion Molecular Cloud (OMC), is the densest in the local
+neighborhood, even denser than the Orion Nebula Cluster (ONC). More than half
+of the X-ray-detected young sources within the OMC have disks, and the disks
+are more massive than in other well-surveyed nearby regions, including the
+broader Orion cloud. However, the disks are smaller in both the OMC and ONC
+than those in other samples. This difference points toward physical mechanisms.
+Frequent dynamical interaction with other stars is not likely to explain the
+whole population at the observed density, but it plays some role. Instead,
+accretion-driven truncation, in which the disks are moving with respect to the
+surrounding cloud and sweeping up low-angular-momentum material, describes how
+small and massive disks are maintained. The ONC disks, which are not shielded
+by the dense OMC, are likelier to be truncated by external photoevaporation.
+-->
+
+<section data-id="9e1f37193271406fc72e974be0a8a3fe">
+    <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
+    <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+        <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">Dynamical, accretion, and photoevaporative truncation of disks living in dense clusters
+</h1>
+            <div class=smaller></div>
+            <p class="footer">Adam Ginsburg</p>
+            <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
+            <!--<div class=smaller3>
+                John Bally, Ashley Barnes, Nate Bastian, Cara Battersby,
+                Henrik Beuther, Crystal Brogan, Yanett Contreras, Joanna
+                Corby,  Jeremy Darling, Chris De Pree, Roberto Galván-Madrid,
+                Guido Garay, Jonathan Henshaw, Todd Hunter, J. M. Diederik
+                Kruijssen, Steven Longmore, Xing Lu, Fanyi Meng, Elisabeth A.C.
+                Mills,  Juergen Ott, Jaime E. Pineda, Álvaro Sánchez-Monge,
+                Peter Schilke, Anika Schmiedeke, Daniel Walker, David Wilner,
+                Leonardo Testi, Rowan Smith, Ke Wang, James Dale,  Robert
+                Loughnane,  Erik Rosolowsky, Eric Koch, Ciriaco
+                Goddi, Brett McGuire, Dick Plambeck, Melvyn
+                Wright</div>-->
+            <div class=smaller2>
+                with Justin Otter, John Bally, Nick Ballering, Ciriaco Goddi, Dick Plambeck, Melvyn Wright, and Josh Eisner
+            </div>
+    </div>
+
+    <div class=smaller2> Slides available at 
+    <a href="https://keflavich.github.io/talks/EPOS_2022.html">https://keflavich.github.io/talks/EPOS_2022.html</a>
+
+
+    </div>
+    </div>
+</section>
+
+
+<section>
+    <DIV style="height: 100%">
+        <h4> Opening Summary </h4>
+    <div style="float:left; width: 60%;">
+        <div style="position: relative; width:600px; height:600px;">
+        <ol>
+            <li> Most of the star systems in the OMC1 cluster are disk-bearing </li>
+            <li> Disks in OMC1 and the ONC are both <i> more massive </i> and <i> smaller </i> than in smaller SFRs </li>
+            <li> Photoevaporative feedback may affect ONC stars, but OMC must be either dynamically or accretion truncated </li>
+        </ul>
+        </div>
+
+    </div>
+    <div style="float:right; width: 40%;" class=smaller>
+        <img src="FrontiersAssets/JustinOtter.jpg" style='max-width:50%' align='center'>
+        <br>
+        <a href="https://ui.adsabs.harvard.edu/#abs/2021ApJ...923..221O/abstract"> Otter+ 2021</a>
+    </div>
+    </DIV>
+    <div style="clear:both; position: relative; top:-200px; color:darkred" >
+        Star formation in bound clusters is different<br> <span class=smaller>(at least for disks)</span>
+    </div>
+</section>
+
+<section>
+    <h4> The Orion Hot Core </h4>
+    <img src="assets_orion/HotCoreDisk_ZoomIn_artemisNH2.png">
+    <div class=smaller style="position: relative; top:-80%">
+        <a href="https://ui.adsabs.harvard.edu/abs/2021A%26A...651A..36S/abstract"> Schuller+ 2021 ARTEMIS data</a>
+    </div>
+</section>
+<section>
+    <h4> The Orion Hot Core </h4>
+    <img src="assets_orion/HotCoreDisk_ZoomIn_n2hp.png">
+    <div class=smaller style="position: relative; top:-80%">
+        <a href="https://ui.adsabs.harvard.edu/abs/2018A%26A...610A..77H/abstract"> Hacar+ 2018 N<sub>2</sub>H+</a>
+    </div>
+</section>
+
+<section><div>ONC+OMC: Gemini image</div><img style="height:90%" src="assets/otterorion/gemini_B3_nooverlay.png"> </section>
+<section><div>ONC+OMC: IR </div><img style="height:90%" src="assets/otterorion/gemini_B3_overlay_ir.png">
+    <div class="rightcite smaller2" style="color:green">
+        <a style="color:green" href="https://ui.adsabs.harvard.edu/abs/2002ApJ...573..366M/abstract"> Muench+ 2002</a><br>
+        <a style="color:green" href="https://ui.adsabs.harvard.edu/abs/2016A%26A...587A.153M/abstract">Meingast+ 2016</a></div></section>
+<section><div>ONC+OMC: IR + X-ray</div> <img style="height:90%" src="assets/otterorion/gemini_B3_overlay_ir_xray.png">
+    <div class="rightcite smaller2" style="color:cyan"><a style="color:cyan" href="https://ui.adsabs.harvard.edu/abs/2005ApJS..160..353G/abstract"> Getman+ 2005</a></div></section>
+<section><div>ONC+OMC: IR + X-ray + radio</div><img style="height:90%" src="assets/otterorion/gemini_B3_overlay_ir_xray_radio.png">
+    <div class="rightcite smaller2" style="color:orange"><a style="color:orange" href="https://ui.adsabs.harvard.edu/abs/2016ApJ...822...93F/abstract"> Forbrich+ 2016</a></div></section>
+<section><div>ONC+OMC: IR + X-ray + radio + mm</div><img style="height:90%" src="assets/otterorion/gemini_B3_overlay_ir_xray_radio_pastmm.png">
+    <div class="rightcite smaller2" style="color: blue">
+        <a style="color: blue" href="https://ui.adsabs.harvard.edu/abs/2016ApJ...826...16E/abstract"> Eisner+ 2016</a><br>
+        <a style="color: blue" href="https://ui.adsabs.harvard.edu/abs/2016ApJ...831..155S/abstract"> Sheehan+ 2016</a><br>
+        <a style="color: blue" href="https://ui.adsabs.harvard.edu/abs/2018ApJ...860...77E/abstract"> Eisner+ 2018</a><br>
+        <a style="color: blue" href="https://ui.adsabs.harvard.edu/abs/2021ApJ...923..221O/abstract"> Otter+ 2021</a>
+    </div></section>
+<section><div>ONC+OMC: IR + X-ray + radio + mm</div><img style="height:90%" src="assets/otterorion/gemini_B3_overlay_ir_xray_radio_pastmm_withNew.png">
+
+    <div class="rightcite smaller2" style="color: red">
+        <a style="color: red" href="https://ui.adsabs.harvard.edu/abs/2021ApJ...923..221O/abstract"> Otter+ 2021<br>(mm only!)</a>
+</section>
+<section><div>ONC+OMC: IR + X-ray + radio + mm</div><img style="height:90%" src="assets/otterorion/catalog_ir_xray_radio_pastmm_withNew.png"> 
+    <div class="rightcite smaller2" style="color: blue">
+        <a style="color:green" href="https://ui.adsabs.harvard.edu/abs/2002ApJ...573..366M/abstract"> Muench+ 2002</a><br>
+        <a style="color:green" href="https://ui.adsabs.harvard.edu/abs/2016A%26A...587A.153M/abstract">Meingast+ 2016</a><br>
+        <a style="color:orange" href="https://ui.adsabs.harvard.edu/abs/2016ApJ...822...93F/abstract"> Forbrich+ 2016</a><br>
+        <a style="color:cyan" href="https://ui.adsabs.harvard.edu/abs/2005ApJS..160..353G/abstract"> Getman+ 2005</a><br>
+        <a style="color: blue" href="https://ui.adsabs.harvard.edu/abs/2016ApJ...826...16E/abstract"> Eisner+ 2016</a><br>
+        <a style="color: blue" href="https://ui.adsabs.harvard.edu/abs/2016ApJ...831..155S/abstract"> Sheehan+ 2016</a><br>
+        <a style="color: blue" href="https://ui.adsabs.harvard.edu/abs/2018ApJ...860...77E/abstract"> Eisner+ 2018</a><br>
+        <a style="color: blue" href="https://ui.adsabs.harvard.edu/abs/2021ApJ...923..221O/abstract"> Otter+ 2021</a><br>
+        <a style="color: red" href="https://ui.adsabs.harvard.edu/abs/2021ApJ...923..221O/abstract"> Otter+ 2021</a>
+    </div></section>
+
+</section>
+<section><div>ONC+OMC: IR + X-ray + radio + mm</div><img style="height:90%" src="assets/otterorion/density_map_mergedIR.png"> 
+    <div class=smaller style="position: relative; top:-95%">
+        ONC in bottom-left, OMC in center
+        </div>
+</section>
+<section><div>ONC+OMC: <span style="color: red">IR</span> + X-ray + radio + mm</div><img style="height:90%" src="assets/otterorion/density_map_mergedIR_IR.png"> </section>
+<section><div>ONC+OMC: IR + <span style="color: green">X-ray</span> + radio + mm</div><img style="height:90%" src="assets/otterorion/density_map_mergedIR_xray.png"> </section>
+<section><div>ONC+OMC: IR + X-ray + <span style="color: red">radio</span> + mm</div><img style="height:90%" src="assets/otterorion/density_map_mergedIR_radio.png"> </section>
+<section><div>ONC+OMC: IR + X-ray + radio + <span style="color: darkred">mm</span></div><img style="height:90%" src="assets/otterorion/density_map_mergedIR_mm.png">
+
+    <div class=smaller style="position: relative; top:-95%">
+        mm-detected sources account for ~half of all stars
+        </div>
+</section>
+
+<section><div>Gas vs Stars</div><img style="height:90%" src="assets/otterorion/surface_density_map_joint_artemis_0.5msun.png">
+    <div class=smaller style="position: relative; top:-95%">
+        The <span style="color: green">OMC "Hot Core"</span> is dominated by stellar, not gas, mass
+        <div class=smaller>(&Sigma;* assumes $\lt M\gt = 0.3 M_\odot$, but SrcI + BN are 15,10 $M_\odot$) </div>
+        </div>
+</section>
+
+<section><div>ONC+OMC: IR + X-ray + radio + mm</div><img style="height:90%" src="assets/otterorion/gemini_B3_overlay_ir_xray_radio_pastmm_withNew.png"> </section>
+<section><div>ONC+OMC: mm</div><img style="height:90%" src="assets/otterorion/gemini_B3_overlay_newOnly_contours.png"></section>
+<section><div> OMC: mm</div><img style="height:90%" src="assets/otterorion/gemini_B3_overlay_newOnly_contours_zoom.png">
+    <div class=smaller style="position: relative; top:-95%">
+        The <span style="color: green">OMC "Hot Core"</span> is dominated by stellar, not gas, mass
+        (M<sub>gas</sub>&lt;20 M<sub>&odot;</sub>)</div>
+</section>
+<section><div> OMC: IR + X-ray + radio + mm</div><img style="height:90%" src="assets/otterorion/catalog_contours_zoom.png"> </section>
+<section><div> OMC: IR + X-ray + radio <span style="color:white">+ mm</span></div><img style="height:90%" src="assets/otterorion/catalog_contours_zoom_nomm.png"> </section>
+
+
+<section>
+    <section>
+        <h4 style=""> The OMC Cluster is dense &amp; full of disks </h4>
+        <div>
+            <div style="float:left; width:60%">
+                <div style="position: relative; width:600px; height:600px;">
+                    <img width=600px src="assets_orion/ONCCluster1.png" style="max-width:100%; position: absolute; top:0; left:0">
+                    <img width=600px class=fragment src="assets_orion/Orion_Overview.png" style="max-width:100%; position: absolute; top:0; left:0">
+                    <img width=600px class=fragment src="assets_orion/Orion_Overview_withsources.png" style="max-width:100%; position:absolute; top:0; left:0">
+                    <img width=600px class=fragment src="assets_orion/Orion_Overview_insets_B3_insetB7.png" style="max-width:100%; position:absolute; top:0; left:0">
+                </div>
+            </div>
+            <div style="float:right; width: 40%;" class=smaller2>
+                FOV: 0.07 pc (16000 AU)
+                <br> 72 YSOs
+                <br> one "hot core"
+                <br>
+                <br>
+            <div> N<sup>*</sup><sub>OMC</sub>(Otter+ 2021) = 1.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            <div> N<sup>*</sup><sub>ONC</sub>(Otter+ 2021) = 0.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            <div> N<sup>*</sup><sub>ONC</sub>(Hillenbrand+ 1998) = 0.2 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            </div>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Lots of stars &amp; outflows in a small environment
+                <li> Still no massive (OB) stars
+            </ul>
+        </aside>
+    </section>
+</section>
+
+<section>
+    <h4 style='float:left; width:40%'> The disks are (mostly) resolved </h4>
+    <div style="float:right; width:60%;">
+        <div style="width:600px; height:800px; position:relative;">
+            <img style="max-width:100%; position: absolute; top:0; left:0" src="assets/otterorion/b7_page1.png">
+            <img style="max-width:100%; position: absolute; top:0; left:0" class=fragment src="assets/otterorion/b7_page2.png">
+            <img style="max-width:100%; position: absolute; top:0; left:0" class=fragment src="assets/otterorion/b7_page3.png">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h4 style='z-index:5; position: relative;'> OMC disks are massive </h4>
+    <img style="z-index:0; position: relative; top:-100px" src="assets/otterorion/KM_dust_mass_may21_onc_omc1_only.png">
+</section>
+<section>
+    <h4 style='z-index:5; position: relative;'> OMC disks are more massive </h4>
+    <img style="z-index:0; position: relative; top:-100px" src="assets/otterorion/KM_dust_mass_may21_onc_omc1_soda.png">
+</section>
+<section>
+    <h4 style='z-index:5; position: relative;'> OMC disks are more massive (Like class 0 &amp; I)</h4>
+    <img style="z-index:0; position: relative; top:-100px" src="assets/otterorion/KM_dust_mass_may21_onc_omc1_withTobin_soda.png">
+</section>
+
+<section>
+    <h4 style='z-index:5; position: relative;'> ONC and OMC disks are small </h4>
+    <img style="z-index:0; position: relative; top:-100px" src="assets/otterorion/KM_size_plot_may21_hwhm_omc1_onc_only.png">
+</section>
+
+<section>
+    <h4 style='z-index:5; position: relative;'> ONC and OMC disks are smaller </h4>
+    <img style="z-index:0; position: relative; top:-100px" src="assets/otterorion/KM_size_plot_may21_hwhm_omc1_onc_combined.png">
+</section>
+
+<section>
+    <h4 style='z-index:5; position: relative;'> ONC and OMC disks are smaller than Class 0 &amp; I</h4>
+    <img style="z-index:0; position: relative; top:-100px" src="assets/otterorion/KM_size_plot_may21_hwhm_omc1_onc_combined_tobin.png">
+</section>
+
+
+<section>
+    <h4 style='z-index:5; position: relative;'> Scaling relations don't line up </h4>
+    <img style="z-index:0; position: relative; top:-100px" src="assets/otterorion/scaling_rels_scaledflux_onlyB3fit.png">
+</section>
+
+<section>
+    <h4> What shrinks disks in clusters? </h4>
+    <ul>
+        <li> Photoevaporation (e.g., the proplyds; McCullough+ 1995, Bally+ 1998)
+            (see also Haworth et al. 2018; Parker et al. 2021)</li>
+        <li> Dynamical interactions (e.g., Vincke &amp; Pfalzner 2016)</li>
+        <li> Face-on accretion (e.g., Wijnen+ 2017) </li>
+    </ul>
+</section>
+
+<section>
+    <h4> Truncation is not solely due to photoevaporation </h4>
+    OMC sources are shielded, so they don't get photoevaporated.
+    <img src="assets/otterorion/dist_theta1c_corrs.png">
+</section>
+
+<section>
+    <section>
+        <h3> At high stellar densities, <br>close encounters are frequent </h3>
+        <div style="width:100%; height:80%">
+            <div style='max-height:70%; max-width:45%; float:left; position:relative;'>
+                <div>
+                    <img src='orion_assets/winter2018fig7.png'>
+                    <div class=smaller3 style="position:absolute; bottom:50%; left:22%;">
+                        <a href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.478.2700W/abstract">Winter+ 2018</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class=smaller2> N<sup>*</sup><sub>OMC</sub> = 1.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+                <div class=smaller2> N<sup>*</sup><sub>ONC</sub> = 0.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+                <!--<div class=smaller2> N<sup>*</sup><sub>ONC</sub>(Hillenbrand+ 1998) = 0.2 x 10<sup>5</sup> pc<sup>-3</sup> </div>-->
+                <div style="float:left; width:55%">
+                    <img src="assets_orion/ONCOMC.png" style="max-width:100%">
+                </div>
+                <a class=smaller2 href="https://arxiv.org/abs/2109.14592">Otter+ 2021: arXiv 2109.14592</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h4 style=""> How dense are cluster-forming regions? </h4>
+        <div>
+            <div style="float:left; width:90%">
+                <img src="orion_assets/otter_gemini_b3_overlay.png" style="max-width:100%">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h4 style=""> OMC1 is denser than the ONC </h4>
+        <div>
+            <div style="float:left; width:90%">
+                <img src="orion_assets/otter_orion_density_map_npix64_5neighbor_3panel.png" style="max-width:100%">
+            </div>
+            <div> N<sup>*</sup><sub>OMC</sub>(Otter+ 2021) = 1.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            <div> N<sup>*</sup><sub>ONC</sub>(Otter+ 2021) = 0.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            <div> N<sup>*</sup><sub>ONC</sub>(Hillenbrand+ 1998) = 0.2 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <h4 style=""> Many new disks in the OMC </h4>
+        <div>
+            <div style="float:left; width:60%">
+                <img src="colloquium_assets/OrionZoom.png" style="max-width:100%">
+            </div>
+            <div style="float:right; width: 20%;" class=smaller>
+                <img src="FrontiersAssets/JustinOtter.jpg" style='max-height:20%' align='right'>
+                Otter+, resubmitted
+                <br>
+                <hr>
+                FOV: 0.07 pc (16000 AU)
+                <br> 72 YSOs
+                <br> One "hot core"
+            </div>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Lots of stars &amp; outflows in a small environment
+                <li> Still no massive (OB) stars
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4 style=""> Disk Gallery </h4>
+        <div>
+            <div style="float:left; width:90%">
+                <img src="orion_assets/otter_orion_b7_page3.png" style="max-width:100%">
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<section>
+    <section>
+        <div class=smaller>
+        <h4> But are they frequent and close enough? </h4>
+        Interactions on a scale $r=\sigma^{1/2}$ happen on a timescale $t \sim (n \sigma v_{disp})^{-1}$
+        <div class=fragment>
+            $$ \color{darkgreen}{n \sim 10^{5-6} \mathrm{stars~pc}^{-3}},
+             \color{darkblue}{v_{disp} \sim 3 \mathrm{km~s}^{-1}}$$
+        </div>
+        </div>
+
+        <div class="smaller fragment"> For interactions to push to $\sim30$ AU (the largest disk),
+
+
+        $$ r= \sigma^{1/2} \sim 30 \mathrm{AU}
+        \left(\frac{t}{\color{red}{15 \mathrm{Myr}}}\right)^{-1/2}
+        \color{darkgreen}{\left(\frac{n}{10^6 \mathrm{pc}^{-3}}\right)^{-1/2}}
+        \color{darkblue}{\left(\frac{v_{disp}}{3 \mathrm{km~s}^{-1}}\right)^{-1/2}}$$
+
+        $\color{red}{15 \mathrm{Myr}}$ is ~100x too long.
+        <br>
+        <br>
+
+        <div class=fragment>
+        Can squeeze this by a bit b/c disk is smaller than $r$; Breslau+ 2014: $R_{disc} \sim 0.28 r_{peri} \left(\frac{M_1}{M_2}\right)^{0.32}$
+        </div>
+        </div>
+    </section>
+    <section>
+        A different calculation of the same (bonus slide):
+        <div class=smaller>
+        $$ r= \sigma^{1/2} \sim 370 \mathrm{AU}
+        \left(\frac{t}{0.1 \mathrm{Myr}}\right)^{-1/2}
+        \left(\frac{n}{10^6 \mathrm{pc}^{-3}}\right)^{-1/2}
+        \left(\frac{v_{disp}}{3 \mathrm{km~s}^{-1}}\right)^{-1/2}$$
+        </div>
+    </section>
+</section>
+
+
+
+<section>
+    <h4> Face-on accretion &amp; ram pressure </h4>
+    <img src="orion_assets/Wijnen2017fig3.png">
+    <div class=smaller>
+    <a href="https://ui.adsabs.harvard.edu/abs/2016A%26A...594A..30W/abstract">Wijnen+2016</a>
+    and <a href="https://ui.adsabs.harvard.edu/abs/2017A%26A...604A..91W/abstract">2017a</a>,
+    <a href="https://ui.adsabs.harvard.edu/abs/2017A%26A...602A..52W/abstract">b</a> model: face-on accretion brings in low-$j$ material,
+    ram pressure strips loosely-bound material.
+    <br>
+    Bottom-right: not quite as dense as OMC, still too-big disks, but
+    not a bad match.
+    </div>
+</section>
+
+<section>
+    <h3>Dynamical ends to accretion</h3>
+
+    <div style='width:100%'>
+        <div style='float:left; width:65%'>
+            <img src="assets_orion/bally_dynamical_picture.svg">
+            <div style='position:relative; bottom:90px; right:-170px' class=smaller3>
+                <a href="http://adsabs.harvard.edu/abs/2017ApJ...837...60B">Bally+ 2017</a>, <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...889..178B/abstract">2020</a>
+            </div>
+        </div>
+
+        <div style='float:right; width:35%'>
+            <img src="assets_orion/Farias2018_fig1.svg">
+            <div class=smaller3 style='position:relative; bottom:90px; left:0px'>
+                <a href="http://adsabs.harvard.edu/abs/2018A%26A...612L...7F">Farias+ 2018</a>
+            </div>
+        </div>
+        <br style="clear: left;" />
+    </div>
+    <div style='clear:both'>
+    The BN/I/x interaction is the poster case of accretion ended by dynamical interaction.
+    </div>
+</section>
+
+
+<section>
+    <h4>Summary and Prospectives</h4>
+    <ul>
+        <li> Disks are smaller and more massive in the OMC
+            <ul> <li> and generally in more gas-rich regions? </li> </ul>
+        </li>
+        <li> Stellar dynamics are important to disk structure, but gas-disk interactions may be more important  </li>
+        <li> Dynamics in protocluster regions matter
+            <ul>
+                <li> This cycle marks a good time to start measuring proper motions with ALMA!</li>
+                <li> Multiplicity and offset hot cores are a sign of dynamical interactions (also good to examine with ALMA long baselines) </li>
+            </ul>
+        </li>
+        <li> We need JWST to measure the IR from protostars even in Orion
+
+    </ul>
+</section>
+
+
+
+
+<section>
+    <h4> Other speculations</h4>
+    <h4> Do the disks start small and grow later? </h4>
+    Viscous spreading could result in older disks being larger
+    <Br>
+
+
+    <div class=smaller>
+    It is possible that only the dust disks are smaller, but the gas disks are still big.
+    <br>
+    <br>
+    However, all disk radii <span class=smaller>(Orion &amp; elsewhere)</span>
+    are computed based on dust mass, and there's (presently) no reason to think
+    different environments would preferentially push the dust in.
+    </div>
+
+    Maybe the disks are intrinsically smaller in Orion (Caselli, Kuiper)
+
+    <Br>
+    If they're just young, still accreting, maybe they have not grown larger yet
+    (inconsistent w/Tobin results)
+</section>
+
+<!-- old
+<section>
+    <div> Evidence of disk truncation compared to low-mass SFRs in the embedded regions of Orion </div>
+    <div class=smaller style="z-order:5">(Justin Otter+, in prep)</div>
+
+    <img src="starformmapper_assets/scaling_rels_scaledflux.png" style="height:75%; min-height:450px; margin-top:0%;">
+
+    <aside class=notes>
+        <a href="http://adsabs.harvard.edu/abs/2018ApJ...865..157A">Andrews+ 2018</a> data are from Lupus
+    </aside>
+
+</section>
+-->
+<section>
+    <h4> The canonical hot core isn't </h4>
+    <img src="assets_orion/HotCoreDisk_ZoomIn.png">
+    (e.g., Zapata+ 2011)
+</section>
+
+<section>
+
+    <section>
+        <h4 style=""> Disk-bearing stars on Gemini </h4>
+        <div>
+            <div style="float:left; width:90%">
+                <img src="orion_assets/otter_gemini_b3_overlay.png" style="max-width:100%">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h4 style=""> OMC1 is denser than the ONC </h4>
+        <div>
+            <div style="float:left; width:90%">
+                <img src="orion_assets/otter_orion_density_map_npix64_5neighbor_3panel.png" style="max-width:100%">
+            </div>
+            <div> N<sup>*</sup><sub>OMC</sub>(Otter+ 2021) = 1.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            <div> N<sup>*</sup><sub>ONC</sub>(Otter+ 2021) = 0.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            <div> N<sup>*</sup><sub>ONC</sub>(Hillenbrand+ 1998) = 0.2 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+        </div>
+    </section>
+
+    <section>
+        <h4 style=""> Many new disks in the OMC </h4>
+        <div>
+            <div style="float:left; width:60%">
+                <img src="colloquium_assets/OrionZoom.png" style="max-width:100%">
+            </div>
+            <div style="float:right; width: 20%;" class=smaller>
+                <img src="FrontiersAssets/JustinOtter.jpg" style='max-height:20%' align='right'>
+                Otter+, resubmitted
+                <br>
+                <hr>
+                FOV: 0.07 pc (16000 AU)
+                <br> 72 YSOs
+                <br> One "hot core"
+            </div>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Lots of stars &amp; outflows in a small environment
+                <li> Still no massive (OB) stars
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4 style=""> Disk Gallery </h4>
+        <div>
+            <div style="float:left; width:90%">
+                <img src="orion_assets/otter_orion_b7_page3.png" style="max-width:100%">
+            </div>
+        </div>
+    </section>
+
+</section>
+<section>
+    <section style='background-color: black;'>
+        <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
+        </span>
+        <span class="image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
+        <h4 style="position: absolute; color: white; top:0%; left: 30%;"> Orion Source I<br>
+            <div>a disk around a 15 M<sub>&odot;</sub> YSO </div>
+            </h4>
+        </span>
+        <div style="color:white; background-color:rgba(0,0,0,0.5); text-align:right;
+            position:absolute; left:50%; top:20%; right:1%; max-width:50%" class="smaller fragment">
+            Material with v<sub>esc</sub> &lt; v<sub>ejected</sub> was lost.
+            <br>
+            <br>
+                v<sub>ejected</sub>  = 11.5 km/s = v<sub>esc</sub>(200 AU)
+            <br>
+            <br><span class=smaller>
+                Disk is oriented along the direction of motion: <span style='color:palegoldenrod'> probably re-oriented in ejection</span>
+            </span>
+            <br><br>
+            <div class=smaller>
+                M<sub>disk</sub> ~ 0.02 - 2  M<sub>&odot;</sub> &lt;&lt; M<sub>*</sub> <div class=smaller>(Plambeck+ 2016)</div>
+            </div>
+            <br>
+            <div> SrcI is leaving the hot core</div>
+        </div>
+        <div style="position: relative; bottom: -90%; left:20%" class="smaller3">
+            <a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a>
+
+        </div>
+
+        <aside class=notes>
+            <ul>
+                <li> Remaining material likely had less angular momentum in the direction of travel
+                <li> Orion Source I lives at the center of the BN/KL explosion
+                <li> We observed the disk known as source I
+                <li> ...in salts!  NaCl and KCl
+                <li> We used that disk to measure the mass of the central source
+            </ul>
+        </aside>
+    </section>
+
+
+
+    <section>
+        <div><img style="float:left; width:60%" src="orion_assets/tanaka_salts.png" ></div>
+        <div><img style="width:40%" src="assets_orion/NaCl_G17.png"></div>
+        <div>
+        Left: Tanaka+ 2020, pair of NaCl-bearing disks.
+        </div>
+        <br>
+        Right: G17, Maud+ 2020
+        <div>
+        </div>
+    </section>
+
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
+        <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
+        </span>
+    </section>
+
+    <section>
+        <h4> Observing the Keplerian rotation profile of a disk is the most direct way to measure a protostar's mass </h4>
+        <div class=smaller2>(we can only see the disk, not the star itself)</div>
+        <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png);  margin-top:0%; height:78%">
+        <aside class=notes>
+            <ul>
+                <li> Left is a model position-velocity diagram, right is the data
+                <li> Red curve traces the outermost position of orbits of point particles
+            </ul>
+        </aside>
+    </section>
+
+</section>
+
+
+
+
+    <section>
+        <h4> YSO disks in Orion </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(FrontiersAssets/otterysos_gems.png);'> </span>
+    </section>
+    <section>
+        <h4> YSO disks in Orion </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(FrontiersAssets/otteryso_zooms1.png);'> </span>
+    </section>
+    <section>
+        <h4> YSO disks in Orion </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(FrontiersAssets/otteryso_zooms2.png);'> </span>
+    </section>
+    <section>
+        <h4> YSO disks in Orion </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(FrontiersAssets/otteryso_zooms3.png);'> </span>
+    </section>
+    <section>
+        <h4> YSO disks in Orion </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(FrontiersAssets/otteryso_zooms4.png);'> </span>
+    </section>
+    <section>
+        <h4> YSO disks in Orion </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(FrontiersAssets/otteryso_zooms5.png);'> </span>
+    </section>
+
+    <section>
+        <h4> Inclinations are consistent with random </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(assets/otterorion/incl_hist.png);'> </span>
+    </section>
+
+    <section>
+        <h4> The disks are mostly optically thick </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(assets/otterorion/multi_SED_plot_E18.png);'> </span>
+    </section>
+
+    <section>
+        <h4> Flux &amp; size histograms </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(assets/otterorion/ONC_OMC1_sizeflux_hist.png);'> </span>
+    </section>
+
+    <section>
+        <h4> MST source separation: ONC vs OMC</h4>
+        <span class=image style='max-height:50%; max-width:49%; float:left; background-position: center center; background-image: url(assets/otterorion/separation_hist_ONC.png);'> </span>
+        <span class=image style='max-height:50%; max-width:49%; float:right; background-position: center center; background-image: url(assets/otterorion/separation_hist_OMC1.png);'> </span>
+    </section>
+
+    <section>
+        <h4> Band-to-band size comparison</h4>
+        <span class=image style='max-height:50%; max-width:49%; float:left; background-position: center center; background-image: url(assets/otterorion/size_comp_simple_B3B6.png);'> </span>
+        <span class=image style='max-height:50%; max-width:49%; float:right; background-position: center center; background-image: url(assets/otterorion/size_comp_simple_B6B7.png);'> </span>
+    </section>
+
+    <section>
+        <h4> Size vs Flux  </h4>
+        <div class=smaller>The new discoveries aren't all faint</div>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(assets/otterorion/size_flux_new_srcs.png);'> </span>
+    </section>
+
+    <section>
+        <h4> B3-B6 and B6-B7 spectral indices </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(assets/otterorion/alpha_hist_2panel.png);'> </span>
+    </section>
+
+    <section>
+        <h4> Spectral indices </h4>
+        <div class=smaller>Grey dashed: upper limits.  Grey circles: lower limits </div>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(assets/otterorion/alpha_hist.png);'> </span>
+    </section>
+
+
+
+
+<section><div>ONC: IR </div><img style="height:90%" src="assets/otterorion/catalog_contours_IRsample.png"></section>
+<section><div>ONC+OMC: IR+mm </div><img style="height:90%" src="assets/otterorion/catalog_contours_mmdet.png"></section>
+<section><div>OMC: mm </div><img style="height:90%" src="assets/otterorion/catalog_contours_mmdet_noIR.png"></section>
+
+<section><div>ONC: IR </div><img style="height:90%" src="assets/otterorion/catalog_contours_zoom_IRsample.png"></section>
+<section><div>OMC: IR+mm</div><img style="height:90%" src="assets/otterorion/catalog_contours_zoom_mmdet.png"></section>
+<section><div>OMC: mm </div><img style="height:90%" src="assets/otterorion/catalog_contours_zoom_mmdet_noIR.png"></section>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+    <script>
+    var els = document.getElementsByTagName('section');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        // I still can't figure out how to get the background to fill the damned page
+        els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
+        els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");
+    }
+    </script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: true,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+        pdfMaxPagesPerSlide: 1,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+        condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>
+
+

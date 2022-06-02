@@ -1,0 +1,2533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Salts</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+          <section>
+              Slide 0 - <a href="https://github.com/hakimel/reveal.js/wiki/Keyboard-Shortcuts">Instructions</a>:
+              <ul>
+                  <li> To move slides, use the arrow keys or swipe on your mobile device
+                  <li> To see the speaker notes, press "s"
+                  <li> To go to full screen, press "f"
+                  <li> To print as PDF, go to this URL: <a
+                      href="?print-pdf">?print-pdf</a>, then print.  <br>
+                  <!--You can also download the PDF from <a href="https://www.dropbox.com/s/5itl9tkb6wljnbc/HMSFColloquium_Ginsburg_Morelia2019.pdf?dl=0">this link</a>-->
+                  <li> To get a PDF with speaker notes, add <a
+                  href="?print-pdf&showNotes=true">?print-pdf&showNotes=true</a> to the URL.
+
+              </ul>
+          </section>
+
+<!--
+    Abstract:
+
+Title:"Accretion Disks Around HMYSOs: Brinaries!"
+
+Disks around young stars are the sites of planet formation and are becoming
+very well-understood.  By contrast, the disks around high mass stars have only
+recently been discovered and are poorly characterized at best.  High-mass stars
+are almost exclusively seen in high-order multiple systems, hinting that
+perhaps disks around massive stars could be the sites of companion formation.
+At the least, disk kinematics are a powerful tool for accurately measuring
+dynamical masses.  However, with ALMA, we are somewhat limited by the high
+optical depth of both the disks and envelopes around these stars.  The ngVLA
+provides access to longer wavelengths than ALMA, which will allow us to trace
+further into the disks around high-mass stars.  The key question that remains
+is: Are there any emission lines that will trace disk kinematics?  I will show
+that salt, NaCl and KCl, and water, H2O, emission traces disks in several cases
+already seen with ALMA, and I will discuss prospects for using the ngVLA to
+observe lower-frequency lines to obtain dynamical mass measurements at the true
+zero-age of high-mass stars.
+
+
+-->
+
+<section data-id="9e1f37193271406fc72e974be0a8a3fe">
+    <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
+    <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; padding-top:20%">
+        <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">Salt</h1>
+            <div class=smaller></div>
+            <p class="footer">Adam Ginsburg</p>
+            <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
+            <div class=smaller2> 
+</div>
+
+<div class=smaller2> Slides available at 
+<a href="https://keflavich.github.io/talks/salts_astrochem_May2022.html">https://keflavich.github.io/talks/salts_ngvla_june2022.html</a>
+
+</div>
+    </div>
+    </div>
+</section>
+
+<section>
+    <h3 style="z-index:25; position: relative; color: white; text-align:center;"> Summary </h3>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-12%; margin-left:-30%; height:150%; width:160%; zorder=-1"></span>
+
+    <div class=left style="position: relative; color: white">
+    <br> Salt is seen in disks around HMYSOs
+    <ul class=smaller>
+        <li> It is correlated with water.
+        <li> It is correlated with SiS.
+        <li> It is not seen in the outflow (but maybe at the interface between disk &amp; outflow)
+        <li> It is uncorrelated with COMs and ionized gas.
+        <li> Its excitation is weird.
+    </ul>
+    <br>
+
+    </div>
+    <br>
+</section>
+
+<section>
+    <h4> Salt (and water and SiS) questions </h4>
+    <ul>
+        <li> Where do we see salt?</li>
+        <li> Why isn't it ubiquitous? </li>
+        <li> Where does the salt come from?  </li>
+        <li> What excites it?  </li>
+        <li> Where else do we (should we) see it? </li>
+        <li> What other species might coincide with brine? </li>
+    </ul>
+</section>
+
+<section>
+    <div style='padding-top:20%'>
+    <h4> Where do we see salts? </h4>
+    <ul>
+        <li> (post)AGB star atmospheres <span class=smaller>(CRL2688, IRAS+10216, VY CMa, IK Tau)</span></li>
+        <li> Massive star disks (at least 6; this talk) </li>
+        <ul><li class=smaller2> aside: are there more HMYSO disks than evolved stars with salt now?</li></ul>
+        <li> Exoplanet atmospheres?  (hypothesized in hot jupiters) </li>
+    </ul>
+    </div>
+</section>
+
+
+<section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
+        </span>
+        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
+        <h4 style="position: absolute; color: white; top:0%; left: 30%;"> Orion Source I<br>
+            <div class=fragment>a disk around a 15 M<sub>&odot;</sub> YSO </div>
+            </h4>
+        <div class=fragment style="position: relative; left:-17%; top:28%; color:white;" class=smaller>Salt: NaCl</div>
+        </span>
+        <div style="position: relative; bottom: -90%; left:20%" class="smaller3"><a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a></div>
+
+        <aside class=notes>
+            <ul>
+                <li> Orion Source I lives at the center of the BN/KL explosion
+                <li> We observed the disk known as source I
+                <li> ...in salts!  NaCl and KCl
+                <li> We used that disk to measure the mass of the central source
+            </ul>
+        </aside>
+    </section>
+
+
+</section>
+
+<section>
+    <h4> Brinary disks: NaCl moment 0 images </h4>
+    <div>
+        <div style="padding-left:10%;  padding-right:0%; max-height:80%">
+            <img style="float:left; width:30%;" src="assets/salts/SrcI_NaCl_mom0_ticks.png">
+            <img style="float:left; width:30%;" src="assets/salts/G351disk1_NaCl_mom0_ticks.png">
+            <img style="float:left; width:30%;" src="assets/salts/G351disk2_NaCl_mom0_ticks.png">
+            <img style="float:left; width:30%; clear:left;" src="assets/salts/G17_NaCl_mom0_ticks.png">
+            <img style="float:left; width:30%;" src="assets/salts/I16547A_NaCl_mom0_ticks.png">
+            <img style="float:left; width:30%;" src="assets/salts/I16547B_NaCl_mom0_ticks.png">
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h4> Brine lines measure dynamical mass </h4>
+    <br>
+    <div class=smaller>
+        <span style="float:center; text-align:center;"> NaCl v=1 J=18-17 </span>
+        <span style="float:right;"> Stack of v=[0,1] J<sub>u</sub>=[18,17] </span>
+    <div style='position: relative; margin-bottom:-10%' class=smaller2> SrcI</diV>
+    </div>
+    <img style="width:65%; display:inline-block; float:left;" src="assets/SrcI_NaCl_PV_withKepler.png">
+    <img style="width:35%; display:inline-block; float:left;" src="assets/G17_NaCl_PV_stack_withKepler.png">
+    <br>
+    <div class=smaller>
+        <span style='color:red'> 15 M<sub>&odot;</sub> </span>
+        <span style='color:green'> 30 M<sub>&odot;</sub> </span>
+        <span style='color:blue'> 40 M<sub>&odot;</sub> </span>
+    </div>
+</section>
+
+<section>
+    <img style="max-width:45%; height:600px; display:inline-block; float:left;" src="assets/salts/G351mm1_naclPV_withcolorcurves.png">
+    <img style="max-width:45%; height:600px; display:inline-block; float:left;" src="assets/salts/G351mm2_naclPV_withcolorcurves.png">
+</section>
+
+<section>
+    <h4> What have we learned about brinaries?</h4>
+
+    <ul>
+        <li class=fragment> <span style='color:navy'>Somewhat rare?:</span> 6-8 known so far, ~15 HMYSO candidates examined
+            <ul><li> Y: SrcI, G17, IRAS16547 A and B, G351mm1 and mm2, W33A?, NGC6334I?
+                    <ul class=smaller><li>Ginsburg+ 2019, Ginsburg+ in prep, Tanaka+ 2020</li></ul>
+                </li>
+                <li> N: I16523, I18089, G11, G5, NGC6334IN, S255IR NIRS3, G333.23-0.06, I18162
+                </li>
+            </ul>
+        </li>
+        <li class=fragment> <span style='color:darkgreen'>Coincide w/<b>line-poor</b> sources </span>
+            <ul> 
+                <li> Not hot cores; little mass reservoir?</li>
+                <li> Or is the core resolved out?</li>
+            </ul>
+        </li>
+
+        <li class=fragment> <span style='color:darkred'>Trace reasonably <b> symmetric </b> disks</span> <span class=smaller>(in the well-resolved cases)</span>
+    </ul>
+</section>
+
+
+<section>
+    <h4> Compare: G17 vs GGD27 </h4>
+
+    <img src="assets/G17_b6_h2onaclspec.png" style='height:40%; float:left; display: inline-block'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:navy'>G17: Brinary<hr style='max-width:60%'></div>
+        Hot (ionizing) photosphere.  Circular disk.
+    </span>
+    <div style='clear:left;'></div>
+
+    <img src="assets/salts/color_labels_IRAS_181622048_spw1_stack.png" style='height:40%; float:left'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:red'>GGD27: Not-Brinary<hr style='max-width:60%'></div>
+        SO, CH<sub>3</sub>OH lines.  But line-poor!
+    <div style='clear:left;'></div>
+</section>
+
+
+<section>
+    <h4> Compare: G17 vs G11.92 </h4>
+
+    <img src="assets/G17_b6_h2onaclspec.png" style='height:40%; float:left; display: inline-block'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:navy'>G17: Brinary<hr style='max-width:60%'></div>
+        Hot (ionizing) photosphere.  Circular disk.
+    </span>
+    <div style='clear:left;'></div>
+
+    <img src="assets/salts/color_labels_G11.92-0.61_spw1_stack.png" style='height:40%; float:left'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:red'>G11.92: Not-Brinary<hr style='max-width:60%'></div>
+        Line-rich!<br>  Big, R=230-850 au (Ilee+ 2018)
+    <div style='clear:left;'></div>
+</section>
+
+<section>
+    detections
+    <div>
+        <img style='float:left; max-height: 20%; max-width:49%;' src="assets/salts/color_labels_G351_spw1_stack.png">
+        <img style='float:left; max-height: 20%; max-width:49%;' src="assets/salts/color_labels_NGC6334I_spw1_stack.png">
+        <img style='float:left; max-height: 20%; max-width:49%; clear:left;' src="assets/salts/color_labels_W33A.config8.spw1_5_stack.png">
+        <img style='float:left; max-height: 20%; max-width:49%;' src="assets/salts/color_labels_IRAS165474247_G343_spw1_stack.png">
+    </div>
+</section>
+
+
+<section>
+    nondetections
+    <div>
+    <img style='max-height:20%;max-width:49%;  float:left;' src="assets/salts/color_labels_G11.92-0.61_spw1_stack.png">
+    <img style='max-height:20%;max-width:49%;  float:left;' src="assets/salts/color_labels_G29_spw1_stack.png">
+    <img style='max-height:20%;max-width:49%;  float:left; clear:left;' src="assets/salts/color_labels_G333_spw1_stack.png">
+    <img style='max-height:20%;max-width:49%;  float:left;' src="assets/salts/color_labels_G335_spw1_stack.png">
+    </div>
+</section>
+<section>
+    <div>
+    <img style='max-height:20%; max-width:49%; float:left;' src="assets/salts/color_labels_G34_spw1_stack.png">
+    <img style='max-height:20%; max-width:49%; float:left;' src="assets/salts/color_labels_G5.89-0.37_spw1_stack.png">
+    <img style='max-height:20%; max-width:49%; float:left;clear:left;' src="assets/salts/color_labels_IRAS_165623959_spw1_stack.png">
+    <img style='max-height:20%; max-width:49%; float:left;' src="assets/salts/color_labels_IRAS_180891732_spw1_stack.png">
+    <img style='max-height:20%; max-width:49%; float:left; clear:left;' src="assets/salts/color_labels_IRAS_181622048_spw1_stack.png">
+    <img style='max-height:20%; max-width:49%; float:left;' src="assets/salts/color_labels_NGC_6334_I_N_spw1_stack.png">
+    </div>
+</section>
+
+
+<section>
+    <h4> What molecules correlate (in our sample of 16)?</h4>
+    <img style="max-height:80%" src="assets/salts/salt_water_so_sis_cross_correlation.png">
+</section>
+
+<section>
+    <h4> Resolution is a weak predictor of salt detection</h4>
+    <img style="max-height:80%" src='assets/salts/logistic_P_of_salt.png'>
+</section>
+
+
+<section class=center>
+    <div style='height: 100%'>
+        <div style="padding-top: 25%">
+        What excites salt emission?
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
+    <h2 style='text-align: left'> Temperature? </h2>
+    </span>
+</section>
+<section>
+    <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
+    <h2 style='text-align: left'> Temperature? </h2>
+    </span>
+</section>
+
+<section>
+    <div>
+    Compare VY CMa to Orion: better rotational-vibrational agreement in the old star
+    </div>
+    <div>
+    <img style="float:left; max-width:49%; padding-top:2%;" src="assets/salts/Kaminski2013_VYCMaRotationDiagramSalt.png">
+    <img style="float:left; max-width:49%" src="assets_orion/NaCl_rotational_diagrams.png">
+    </div>
+</section>
+
+<section>
+    <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
+    <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
+    </span>
+</section>
+
+<section>
+    <h4>When does salt enter the gas phase?</h4>
+
+    Depends on the binding energy of NaCl to grain surfaces.
+    <br>
+    <br>
+
+    <a
+        href="https://ui.adsabs.harvard.edu/abs/2016A%26A...592A..76D/abstract">Decin+
+        2016</a> suggest thermal desorption will remove all salt from grain
+    surfaces for $T_D > 100-300$ K, depending on assumed binding energy
+    <div class=smaller>(this range is consistent with VY CMa observations)</div>
+    <br>
+    If $T_D>300$ K is all that is required, why do we not see salts in hot cores?
+</section>
+
+<section>
+    <h4>When does salt enter the gas phase?</h4>
+    If $T_D>300$ K is all that is required, why do we not see salts in hot cores?
+    <img src="assets/DesmondJeff_SgrB2DS_hotcoremassvstemperature.png" style="max-height:70%">
+</section>
+
+<section>
+    <h4>When does salt enter the gas phase?</h4>
+
+    At atmospheric pressure: T~500-600K (Woitke+ 2018)
+    <br>
+    (no mention of SiS in these models)
+    <img style='max-height:75%' src="https://www.aanda.org/articles/aa/full_html/2018/06/aa32193-17/aa32193-17-fig7.jpg">
+</section>
+
+
+<section>
+    <div style="padding-top:15%">
+    <h4> Does salt have friends?</h4>
+    NaCl, KCl, SiS, and H<sub>2</sub>O coincide. <div class=smaller>(AlO is also present in Orion)</div>
+    <br>
+    What others might exist in these regions?  <br>FeS?  FeO?  LiCl?  HCl?
+    </div>
+</section>
+
+<section>
+    <h3 style="z-index:25; position: relative; color: white; text-align:center;"> Summary </h3>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-12%; margin-left:-30%; height:150%; width:160%; zorder=-1"></span>
+
+    <div class=left style="position: relative; color: white; margin-top:-5%">
+    <br> Salt is seen in disks around HMYSOs
+    <ul class=smaller>
+        <li> It is correlated with water and SiS.
+        <li> It is not seen in the outflow.
+        <li> It is uncorrelated with COMs and ionized gas.
+        <li> Its excitation is weird.
+    </ul>
+    <div class=smaller> Questions:</div>
+    <ul class=smaller>
+        <li> Where does the salt come from?  </li>
+        <li> What excites it?  </li>
+        <li> Why isn't it ubiquitous? </li>
+        <li> Where else do we (should we) see it? </li>
+        <li> What other species might be coincident? </li>
+    </ul>
+
+    </div>
+    <br>
+</section>
+
+
+
+<section>
+    <h4> Observing the Keplerian rotation profile of a disk is the most direct way to measure a protostar's mass </h4>
+    <div class=smaller2>(we can only see the disk, not the star itself)</div>
+    <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png);  margin-top:0%; height:78%">
+    <aside class=notes>
+        <ul>
+            <li> Left is a model position-velocity diagram, right is the data
+            <li> Red curve traces the outermost position of orbits of point particles
+        </ul>
+    </aside>
+</section>
+
+
+
+
+<section id=e2ezoomin>
+    <h4> W51 e2e: Too optically thick at 1mm to measure disk</h4>
+    <span class="image" style="background-image: url(colloquium_assets/W51e2_cycle3green_SiO_outflows_aplpy_zoom.png); height:85%;">
+        <div style="position: relative; top:92%; left:-23%;" class="smaller2"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv180505364G">Goddi+ 2020</a></div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> No emission lines from a disk were detected
+            <li> Continuum appears to be high optical depth in inner ~few hundred AU
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <section>
+        <h4> CS v=0 J=1-0 and v=0 J=2-1 masers may trace the disk? </h4>
+        <img src="colloquium_assets/W51e2e_sio_outflow_with_CS_contours.png" style='max-height:95%'>
+        <div style="position: relative; top:-90%; left:25%;" class="smaller2"><a class=darkbg href="http://adsabs.harvard.edu/abs/2019AJ....158..208G">Ginsburg+ 2019</a></div>
+        <div style="position: relative; top:-85%; left:25%; color:white" class="smaller2">M = 24<sub>-10</sub><sup style='margin-left:-20px'>+12</sup>M<sub>&odot;</sub>
+            <br> <i>if</i>
+        the masers trace a disk</div>
+        <aside class=notes>
+            <ul>
+                <li> If CS traces a disk (which requires assuming very, very hard),
+                    the implied mass is ~24 Msun, which is reasonable.
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <div>
+            <div style="float:left; width:50%">
+                <img src="colloquium_assets/vanderwaltfig10.png">
+            </div>
+            <div style="float:left; width:50%">
+                <h4> CS maser conditions</h4>
+                <a href="https://ui.adsabs.harvard.edu/#abs/2020arXiv201110420V/abstract">van der Walt+ 2020</a>
+                <ul class=smaller>
+                    <li> Top: CS J=1-0, Bottom: CS J=2-1 </li>
+                    <li> <span style="color:red">Red:</span> Consistent w/W51e2e observations </li>
+                    <li> Masers do not coexist; require different specific CS column <br>(N<sub>2-1</sub>=10<sup>15.6</sup>, N<sub>1-0</sub>10<sup>16.1</sup> cm<sup>-2</sup>)</li>
+                    <li> Require high abundance (X<sub class=smaller>CS</sub> &gt; 10<sup class=smaller2>-5</sup>) </li>
+                    <li> Hot (300-500 K), moderate-density (n~10<sup>5</sup> cm<sup>-3</sup>): Disk surface?  Or outflow cavity wall?
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<section>
+    What's next for salts?
+    <br>
+    Deep VLA observations of low-J lines in Orion
+    <span class=image
+        style="background-image:url(assets_orion/NaCl_and_KCl_Aij_vs_wavelength_logy_longwavelengths_with_observed.svg);
+        margin-top:-2%;
+        height:90%">
+    </span>
+        <!--<div style="margin-top:20%; margin-right:15%; margin-left:55%; width:40%;" class=smaller> Can we use these to measure inner disk kinematics? </div>-->
+        <!--<div style="width: 40%; margin-left:55%; margin-top:-55%;"> Many (ng)VLA-observable lines </div>-->
+</section>
+
+
+
+
+
+
+<section id=towner-sio>
+    <div> ALMA-IMF Line Data: SiO</div>
+    <div class=smaller2> Which sources are accreting YSOs?</div>
+    <div style="float:left; width:75%;">
+        <img src="almaimf_assets/TownerOutflows.png">
+    </div>
+    <div style="float:left; width:25%;">
+        <img src="FrontiersAssets/allisontowner.webp">
+        <span class="smaller" align=right style="position: relative; float: right;">
+            Allison Towner
+            <hr>
+            <div class=smaller align=left style='text-align:left'>
+                Resolved, structured SiO outflows
+            </div>
+            <hr>
+            <div class=smaller align=left style='text-align:left'>
+                5-60% of SiO at low-velocities:
+                <br>
+                Relic outflows?
+            </div>
+        </span>
+    </div>
+</section>
+
+<section>
+    <div> ALMA-IMF Line Data: CH<sub>3</sub>CN, CH<sub>3</sub>CCH</div>
+    <div class=smaller> Temperature measurements with per-pixel rotation diagrams </div>
+    <img src="assets/DesmondJeff_SgrB2DS_RotationDiagramCH3OH.png">
+    <br>
+    Jeff+ in prep (CH<sub>3</sub>OH), Wyrowski+ in prep (CH<sub>3</sub>CN)
+</section>
+
+<section>
+    <div>Hot cores in ALMA-IMF: From rare objects to a population</div>
+    <img src="almaimf_assets/Brouillet_W43MM1_cores.png">
+    <div style="position: relative; top:-75%; left:75%; color:red; width:20%; background-color:white;" class=smaller2>
+        Cores with line forests<br>
+        T<sub>D</sub>&gt;50 K<br> 
+        T<sub>G</sub> &gtrsim;100K</div>
+    <div style="position: relative; top:-35%; left:-25%;" class=smaller2> Brouillet+, in prep </div>
+    <div class=fragment style="position: relative; top:-70%; width:110%;"><img style='width:110%;' src="almaimf_assets/W43HCLineForest.png"></div>
+</section>
+
+<section>
+    <div class=flex-vert-90>
+    <div style="float: left; width:60%">
+        <img src="almaimf_assets/cores_vs_hotcores.png">
+    </div>
+        <div style="width:40%; float:right">
+            <h4>Hot core overview:<br> A lot is coming</h4>
+        <ul>
+            <li> 11 HCs in W43-MM1 <span class=smaller>(Brouillet+ in prep)</span></li>
+            <li> ~60-70 HCs in ALMA-IMF sample from CH<sub>3</sub>OCHO <span class=smaller style='color:darkred'>(Bonfand+ in prep; left)</span> </li>
+            <li> CH<sub>3</sub>CN temperature maps <span class=smaller>(Wyrowski+ in prep)</span></li>
+        </ul>
+        </div>
+    </div>
+</section>
+
+<section id=desmond_overview>
+    <div style='float:left'> Hot cores: Also in the Galactic center </div>
+    <div style="float:left; width:75%; margin-top:10%">
+        <!--<img src="FrontiersAssets/cores_on_continuum_peak_DeepestSouth_zoomin.png" style="width:80%;">-->
+        <!--<img src="FrontiersAssets/desmond_overview.png" style="width:99%;">-->
+        <img src="assets/DesmondJeff_SgrB2DS_20211203.png" style="width:99%;">
+    </div>
+    <div style="float:left; width:25%;">
+        <img style="width: 70%; height: 70%" src="FrontiersAssets/DesmondHeadshot.png">
+        <span class="smaller" align=right style="position: relative; float: right;">
+            Desmond Jeff:
+            <br><span style='color:darkgreen'> Ten hot cores in Sgr B2 DS</span>
+            <br> T<sub>G</sub> ~ 200-500 K
+            <br> M ~ 200 - 2900 M<sub>&odot;</sub>
+        </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Desmond is a 4th-year PhD student
+            <li> Focus on hot core temperature measurement &amp; YSO identification
+        </ul>
+    </aside>
+</section>
+
+
+
+
+
+
+
+
+<section>
+    <div style="float:left; width:75%;">
+        <img style="max-height:50%; width:80%" src="assets/cmz/brick_line_density.png">
+        <img style="max-height:50%; width:80%" src="colloquium_assets/Walker2021_brick_fig2.png">
+    </div>
+    <div style="float:left; width:25%;">
+        <img src="FrontiersAssets/bulatek-300x300.jpg">
+        <span class="smaller" align=right style="position: relative; float: right;">
+            Alyssa Bulatek: Physical Processes in the CMZ
+            <br>
+            <ul>
+                <li>CH<sub>3</sub>CN temperature maps</li>
+                <li>Line IDs &amp; abundances </li>
+
+            </ul>
+        </span>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section>
+    <h3>Summary</h3>
+
+    <div class=left>
+    <br> Most stars form in regions unlike the solar neighborhood
+    <ul class=smaller>
+        <li> Greater clustering, higher SF thresholds in denser clouds
+        <li> Shallower IMF in richer SF regions
+    </ul>
+    <br>
+    <br> We have, and are building more, tools to measure masses
+    <ul class=smaller>
+        <li> ALMA-IMF core catalogs with high-resolution followup &amp; modeling
+        <li> Hot cores track the earliest stage of HMSF
+        <li> Salt is a new tool to probe disks around high-mass stars
+    </ul>
+
+    </div>
+    <br>
+</section>
+
+<section id=sgrb2_insets_with_orion>
+    <a href="https://github.com/keflavich/SgrB2_ALMA_2015.1.00550.S/blob/master/analysis/ZoomInMatplotlibExample.ipynb">
+    <img src="./assets/SgrB2_insets_with_orion2.png">
+    </a>
+</section>
+
+
+<section>
+</section>
+
+<section>
+</section>
+
+
+
+<section>
+
+    <section> Salt backup slides </section>
+
+    <section>
+        <h2>Possible future uses for these lines?</h2>
+        <ul>
+            <li> Metallicity measurement in deeply embedded star-forming environments? (at least of Na, K, Cl)
+            <li> Disk kinematics of high-mass stars, which are otherwise unobservable (τ&gt;1 at mm wavelengths)
+            <li> Disk kinematic measurements at early stages?
+            <li> Probe dust destruction (and/or formation?) in outflows, disks?
+            <li> Probe radiation environment around HMYSOs?
+        </ul>
+    </section>
+
+    <section><span class=image style="background-image:url(assets_orion/NaCl_KCl.png); background-size:110%; margin-top:-2%; height:100%"></section>
+
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw1_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw1_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw1_robust0.5.png);  height:100%"></section>
+
+    <section>
+        <h2> Why do we see salt?</h2>
+        <ul>
+            <li> Previously, NaCl &amp; KCl only in AGB* atmospheres,
+            <br>associated with dust formation
+            <li> Most likely dust <i>destruction</i> here
+            <br> Dust destruction happens immediately as the outflow is launched?
+            <li> What about excitation?  We see vibrationally excited lines, which are <i>not</i> seen in AGB*s
+        </ul>
+    </section>
+
+    <section>
+        <h2>We do not have a viable model to explain these temperatures</h2>
+        <div>A strong non-blackbody radiation field from 25-40 µm <i>may</i> explain them.</div>
+        <div>Forsterite (MgSiO<sub>4</sub>) has some emission bands in that range. Maybe? </div>
+    </section>
+</section>
+
+<section>
+    <section> PASHION - backup </section>
+    <section>
+        <div style="margin:auto; margin-top:20%">
+        <h4> Looking forward: </h4>
+        <ul>
+            <li> PASHION: Paschen Alpha Survey of Hydrogen Ions
+            <li> JWST: Deep Pa&alpha;, Br&alpha;, and broadband imaging
+        </ul>
+        </div>
+    </section>
+
+
+
+    <section>
+        <img src="FrontiersAssets/MichaelFero.png" align=right style="max-height:20%">
+        <img src="FrontiersAssets/budaiev.jpg" align=right style="max-height:20%">
+        <img src="FrontiersAssets/bulatek-300x300.jpg" align=right style="max-height:20%">
+        <span class=image style='background-size: 1024px; background-position: center center; background-image: url(FrontiersAssets/PASHION_BallyGraphic.png);'>
+        <h4 style='background-color:rgb(240,240,240);'> PASHION: Paschen Alpha survey of the Galaxy </h4>
+        <div style="color:white; align:left; text-align:left; margin-left:2%;" class=smaller2>
+            Team:
+            <br>
+            <ul><li> John Bally (CU) </li>
+                <li> Elizabeth Lada, Steve Eikenberry (UF) </li>
+                <ul>
+                    <li> Students: Alyssa Bulatek, Michael Fero, Nazar Budaiev</li>
+                </ul>
+                <li> Lockheed Martin (Alison Nordt, Gopal Vasudevan) </li>
+                <li> Tony Hull (UNM) </li>
+                <li> York Space Systems </li>
+            </ul>
+        </div>
+        </span>
+    </section>
+
+    <section>
+        <h4> PASHION: H2RG with Lockheed electronics, three narrow-band filters, 2.5" resolution, 25' FOV </h4>
+        <img src="colloquium_assets/pashiondetector_hst_miris_filters.png" style='max-width:65%'>
+    </section>
+
+    <section>
+        <h4> A 24 cm dedicated survey telescope will be the most sensitive Galactic plane survey of ionized gas </h4>
+        <div>
+            <div style="float:left; width: 50%;"> <img src="colloquium_assets/radio_survey_comparison.png"> </div>
+            <div style="float:left; width: 50%;"> <img src="colloquium_assets/optical_survey_comparison.png"> </div>
+        </div>
+        <br>
+        <div style="float:left; width:100%;">
+        These are fiducial numbers for a 1-year mission performing a 100 square degree blind survey. An extended mission may be possible.
+        </div>
+    </section>
+
+
+    <section>
+        <h4> PASHION, and JWST, recombination line science </h4>
+        <div>
+            <div style="float:left; width: 50%;"> 
+                Accretion onto YSOs
+                <img src="colloquium_assets/accretion_rate_sensitivity.png"> </div>
+            <div style="float:left; width: 50%;">
+                HII regions
+                <img src="colloquium_assets/HII_region_sensitivity.png"> </div>
+        </div>
+        <br>
+        <div style="float:left; width:100%;">
+            Assuming typical A<sub>V</sub>~2 per kpc
+        </div>
+
+    </section>
+</section>
+
+<section id="feedback-in-clusters">
+
+
+    <section id=clustersdifferent data-id="688e275e4f4751d7bc0fc68ee3d68b82">
+        <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fd2e732f3eb46152cc9857131e878116">
+        <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+        <h2 style="word-break: keep-all; hyphens: none;">How is star formation in high-mass clusters different?</h2>
+        </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="7b24eb3dce885998fa19c253a9f15bbf">
+        <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+        <ul>
+            <li class=fragment>Feedback from one star affects many in clustered regions
+                <div style='font-size:24px; '>(<a href="http://adsabs.harvard.edu/abs/2016MNRAS.463.2553R">Rosen+ 2016</a>,
+                <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>)</div></li>
+            <li class=fragment>IMF depends on density, feedback, global conditions <div style='font-size:24px'>(e.g., <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.1196J"
+                    target="_blank">Jones &amp; Bate 2018</a>, <a href="http://esoads.eso.org/abs/2013MNRAS.436.2892N">Narayanan &amp; Dave 2012</a>)
+                </div></li>
+        </ul>
+        <ul class="fragment" style='display: block'>
+            <li class=smaller2>Total star formation efficiency is higher. <!--SFE<sub>ff</sub> may be higher?-->
+            <div style='font-size:24px; '>
+                (obs: <a href="http://adsabs.harvard.edu/abs/2016A%26A...595A..27G">Ginsburg+ 2016</a>,
+                <a href="http://adsabs.harvard.edu/abs/2017IAUS..316..117G">Gouliermis &amp; Hony 2015</a>,
+                sim:
+            <a href="http://adsabs.harvard.edu/abs/2018MNRAS.475.3511G">Grudić+ 2018</a>
+                )
+            </div>
+            </li>
+            <li class=smaller2> Collisions assemble the most massive stars?
+            <div style='font-size:24px; '>
+            (e.g., <a href="http://adsabs.harvard.edu/abs/2013MNRAS.430.1018F">Fujii+ &amp; PZ 2013</a>,
+            but see <a href="http://adsabs.harvard.edu/abs/2011MNRAS.410.2799M">Moeckel &amp; Clarke 2011</a>)
+            </div>
+            <ul><li class=smaller style="margin: 5px 0px;">
+                <div class>Interactions certainly affect disks (e.g., <a href="http://adsabs.harvard.edu/abs/2017A%26A...604A..91W">Wijnen+ 2017</a>,
+                    <a href="http://adsabs.harvard.edu/abs/2016ApJ...828...48V">Vincke+ 2016</a>, <a href="http://adsabs.harvard.edu/abs/2019arXiv190204652V">van Elteren+ 2019</a>)
+                </div>
+                </li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Just what the slides say
+            </ul>
+        </aside>
+    </section>
+
+
+    <section style='background: white'>
+        <h4> Cartoon of high- and low-mass star formation </h4>
+        <div class=smaller2> Main difference: massive stars affect their surroundings </div>
+        <img src="colloquium_assets/Purcell_Cartoon_LowHighMass.svg" width=100%>
+        <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
+            <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> This is the 'classical' picture of HMSF; I'll riff on it later
+                <li> The key differences are the size of the feedback-affected region
+                and the type of feedback:
+                <li> The classical picture is that high-mass stars end star formation
+                once they hit the main sequence / stop accreting (which are the same thing)
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class=image style='background-position: center center; background-image: url(colloquium_assets/trapezium_and_m16.jpeg);'>
+            <h4> Classic HII region feedback:<br> O-stars clear out their environment</h4>
+        </span>
+        <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="https://en.wikipedia.org/wiki/Trapezium_Cluster#/media/File:Trapezium_cluster_optical_and_infrared_comparison.jpg">HST</a></div>
+        <div style="position: absolute; bottom: 100px; left:650px" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2015MNRAS.450.1057M">McLeod, Dale, Ginsburg et al 2015</a></div>
+        <div style="color:white; text-align: left; position: absolute; bottom: 100px; left:600px; max-width:300px;" class="smaller2">
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Destructive feedback from expanding HII regions: the massive stars produce UV light,
+                ionizing and evacuating the gas
+                <li> Right panel is by Anna McLeod using MUSE, done while she was a student at ESO
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Accreting massive young stars  affect their environment</h4>
+        <span class="image" style="background-image: url(colloquium_assets/methanol_scalebar_e2e.png); width:80%">
+            <div style="position: relative; top: 73%; left:-10%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> The classic picture is incomplete: HMYSOs have a big effect
+                *while* they are accreting too
+                <li> There is a HMYSO at the center (W51e2e)
+                <li> The surrounding greyscale circular hot core is seen in
+                methanol emission
+                <li> Data are from ALMA
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Accreting massive young stars  affect their environment</h4>
+        <span class="image" style="background-image: url(colloquium_assets/outflows_over_methanol_e2e.png); width:80%">
+            <div style="position: relative; top: 73%; left:-10%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> The outflow points to the central accreting star
+                <li> The outflow implies the existence of a disk
+            </ul>
+        </aside>
+    </section>
+
+    <section id=e2ewithzoom>
+        <h4> Accreting massive young stars  affect their environment</h4>
+        <span class="image" style="background-image: url(colloquium_assets/e2e_withzoom.png); width:80%">
+            <div style="position: relative; top: 73%; left:-10%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> ALMA long-baseline data reveal this in more detail...
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide.png); margin-top:-3%;">
+            <div style="position: relative; bottom: -85%; left:-27%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> Radial profile of temperature around the source
+                <li> Typical molecular clouds have temperatures 5-25 K, compared to the 100-500 K here
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide_withabundance.png); margin-top:-3%;">
+            <div style="position: relative; bottom: -85%; left:-27%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> Methanol freezes onto grains, usually locked up in water ice:
+                it evaporates/desorbs at around 80-100 K
+                <li> (transition) What effect does this high temperature have?
+            </ul>
+        </aside>
+    </section>
+
+    <section id=characteristic_fragmentation_scale>
+        <h3> The characteristic fragmentation scale </h3>
+
+        <br>
+        The Jeans Mass M<sub class=smaller2>J</sub> is the mass where gravity and thermal pressure are balanced.
+        <br>
+        <br>
+
+        <!--
+        M<sub class=smaller2>J</sub> = (π/6)c<sup class=smaller2>3</sup><sub style="margin-left:-10px" class=smaller2>s</sub>G<sup class=smaller2>−3/2</sup>ρ<sup class=smaller2>−1/2</sup>
+        <br> <br>
+        -->
+
+
+        M<sub class=smaller2>J</sub> &prop; T<sup class=smaller2>3/2</sup> ρ<sup class=smaller2>−1/2</sup>
+
+        <aside class=notes>
+            <ul>
+                <li> Higher density means greater gravity, leading to collapse and fragmentation
+                <li> Higher temperature means greater pressure, providing support
+                against gravitational collapse and suppressing it.
+            </ul>
+        </aside>
+    </section>
+
+
+    <section>
+        <h4> The characteristic fragmentation scale is larger </h4>
+        <div class=smaller>
+            Jeans Mass <!--M<sub class=smaller2>J</sub> = (π/6)c<sup class=smaller2>3</sup><sub style="margin-left:-10px" class=smaller2>s</sub>G<sup class=smaller2>−3/2</sup>ρ<sup class=smaller2>−1/2</sup>-->
+        M<sub class=smaller2>J</sub> &prop; T<sup class=smaller2>3/2</sup> ρ<sup class=smaller2>−1/2</sup>
+        </div>
+        <span class="image" style="height:80%; background-image: url(colloquium_assets/azimuthalaverage_radial_mj_and_mbar_of_TCH3OH_massivecores.svg)">
+            <div style="position: relative; bottom: -95%; left:-28%" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> (describe plot)
+                <li> In the warm neighborhood of accreting massive stars, the Jeans mass is higher
+                <li> Despite the high density, the Jeans mass is 5-10 times greater than locally
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/JoshMachado.png" align="right" style="float:right; max-height:20%">
+        <h3> Feedback affects dense gas </h3>
+        <div class=smaller>ALMA + VLA + GBT together give multiple temperature probes on multiple scales.</div>
+        <div class=smaller> High-mass protoclusters are filled with gas warmed by feedback.</div>
+
+        <img style='max-width:50%; float:left;' src="aas236_assets/temperature_vs_r_NH3_and_CH3OH.png">
+        <img style='max-width:50%; float:right;' src="aas236_assets/temperature_vs_r_NH3_and_CH3OH_log.png">
+        <div class=smaller2><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>, Machado+ in prep</div>
+        <aside class=notes>
+            <ul>
+                <li> Floor temperature within 1 pc is ~30-40 K</li>
+                <li> Radial dependence indicates that the heating is internal
+                    feedback-driven (as opposed to external, from surrounding OB
+                    association)</li>
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/DanielleBovie.jpg" style='max-height:20%; height:100px; width:160px; object-fit:cover; object-position: 0% 23%;' align='right'>
+        <h4> YSO disk counts in W51 </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(FrontiersAssets/W51NorthTripleZoom.png);'> </span>
+    </section>
+
+    <section id=hmsf_cartoon style='background: white'>
+        <h4> The cartoon in the context of HMSF </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_SuppressedLMSF.svg">
+        <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
+            <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a>
+        </div>
+        <div class=smaller>
+            These high mass cores suppress low-mass star formation (LMSF) in their vicinity.
+            They reduce or prevent LMSF in the cores of stellar clusters.
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> The 'hot cores' contain a substantial fraction of the molecular cloud mass
+                <li> The densest regions are the most affected
+            </ul>
+        </aside>
+
+    </section>
+
+    <section id=cooperative style='background: white'>
+        <h4> More extreme: 'cooperative accretion' </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_ClusteredHMSF.svg">
+        <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
+            <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a>
+        </div>
+        <div class=smaller>
+            With enough high-mass stars forming concurrently, massive stars may prevent fragmentation entirely.
+            <br>
+
+            If they still have enough gravity to bind the gas, the remaining gas is
+            forced onto the most massive gravitational sinks.
+            <div class=smaller2><a href="http://adsabs.harvard.edu/abs/2007ARA%26A..45..481Z">Zinnecker & Yorke 2007</a>,
+                <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>
+            </div>
+        </div>
+
+        <aside class=notes>
+            <ul>
+                <li> High-mass stars can themselves form in a clustered fashion
+                <li> This is a speculative idea so far not backed up by simulation,
+                but it is a plausible way to obtain an overpopulation of very
+                massive stars at the cores of high-mass clusters
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/Derod_2.png" align=right style="max-height:20%; object-fit: cover; height:120px; width:150px; object-position: 0% 00%;">
+        <h4> Ammonia Masers </h4>
+        <!-- Derod Deal -->
+        <span class=image
+            style='background-size: 80%;
+                   background-image: url(FrontiersAssets/derodspectralanalysisglue.png);'>
+        </span>
+    </section>
+
+</section>
+
+<section id=sfr_turbulence>
+    <section>
+        <h4> Large scales again: <br>What governs the star formation rate? </h4>
+        <div class=image style="height:80%">
+            <span class="image" style="height:100%; background-image: url(colloquium_assets/Kennicutt2012_Star3.svg); width:90%">
+                <div style="position: relative; bottom: -80%; left:10%" class="smaller2"><a href="http://esoads.eso.org/abs/2012ARA%26A..50..531K">Kennicutt &amp; Evans 2012</a></div>
+            </span>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Kennicutt-Schmidt relation ties gas surface density and
+                stellar surface density
+                <li> Good correlation over several orders of magnitude, but the
+                scatter is substantial and important
+                <li> The timescales are 100 Myr to 10 Gyr and show the "depletion
+                scales", the time for the gas to fully convert to stars
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Turbulent ISM models </h4>
+        <div class=image style="height:85%">
+            <span class="image" style="height:100%; background-image: url(colloquium_assets/turbulentsf_1.svg)">
+            </span>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Turbulent models are the most popular and successful global
+                star formation models
+                <li> Probability of a density vs density
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Turbulent ISM models </h4>
+        <div class=image style="height:85%">
+            <span class="image" style="height:100%; background-image: url(colloquium_assets/turbulentsf_2.svg)">
+            </span>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Some of these authors describe a modified distribution
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Turbulent ISM models </h4>
+        <div class=image style="height:85%">
+            <span class="image" style="height:100%; background-image: url(colloquium_assets/turbulentsf.svg)">
+            </span>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Gas above the threshold density forms stars
+                <li> Continued turbulent driving repopulates that high density,
+                which gives the star formation rate
+            </ul>
+        </aside>
+    </section>
+
+
+    <section>
+        <img src="FrontiersAssets/MadelineHall.jpg" align=right style="max-height:20%">
+        <h4> Measuring Line Profiles </h4>
+        <span class=image style='background-size: 1024px; background-position: center center; background-image: url(FrontiersAssets/MadelineHallScouse.png);'>
+        SCOUSE uses pyspeckit for manual fits.  Gausspy+ is machine-learning trained.
+        We're exploring more automated approaches.
+        </span>
+
+    </section>
+    <!-- Can I add something here about how the KS relation is used in simulations? -->
+</section>
+
+
+
+<section id=alma_counts_protostars>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/overview_figure_taper.png);'>
+        <h4 style="white-space:nowrap; position: relative; top:5%; left: 12%; width:70%;"> ALMA enables protostar counting in <br>distant, massive clouds </h4>
+        <div class=smaller2 style="position: relative; top:60%; left: 45%; width:35%;"> Sgr B2: the most massive &amp; star-forming cloud in the Galaxy</div>
+        <div class=smaller2 style="position: relative; top:61%; left: 61%; text-align:right; width:19%; background-color:rgba(255,255,255,0.3);">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> An example of one of the clouds from the previous plots
+            <li> A column density map with the locations of protostars shown as red dots
+            <li> Protostars are identified in nearby clouds with IR telescopes like Spitzer and Herschel
+            <li> Column density measured with extinction or dust maps, resolution limited to 30" to a few arcminutes
+            <li> Protostars are counted and compared to the density they reside in
+        </ul>
+    </aside>
+</section>
+
+
+
+<section>
+    <h3> How do we learn about clustering?  The IMF? </h3>
+    <img class=fragment src="FrontiersAssets/Count_von_Count_kneeling.png" style="max-height:80%">
+    <ul>
+        <li class=fragment> Count objects:
+            <ul>
+        <li class=fragment> Cores are (sometimes) countable
+        <li class=fragment> Protostars are countable
+            </ul>
+    </ul>
+</section>
+
+<section>
+    <h3> YSO counts let us investigate thresholds </h3>
+    <h4 class=fragment> Local cloud studies support the idea of a gas density threshold for star formation </h4>
+    <span class=fragment>
+        <img src="colloquium_assets/Lada2010_NYSOsvsCloudMass.svg" width=49%>
+        <img src="colloquium_assets/Lada2010_NYSOsvsDenseCloudMass_fig4.svg" width=49%>
+        <div style="position: relative; text-align:right; left:-22px; top:-121px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2010ApJ...724..687L">Lada+ 2010</a></div>
+        <div style="position: relative; bottom: -75%; left:00%;" class=smaller>
+            Thresholds are used in simulations to say <br>"if gas reaches this density, turn it into stars" </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Left: NYSOs vs total cloud mass
+            <li> Right: NYSOs vs cloud mass above a fixed density
+            <li> Correlation is tighter in the right plot - stars form in dense
+            gas
+        </ul>
+    </aside>
+</section>
+
+
+<section id=sgrb2vscalifornia1 style="background: white;">
+    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14_labels.svg)">
+        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
+        <div class=smaller2 style="position: relative; top:66%; left: 22%; width:20%; text-align: left; background-color:rgba(255,255,255,0.2)">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <div class=smaller style="position: absolute; left:70%; width:30%; top:2%;">
+        Compare YSO counts in Sgr B2 and the CMC
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Comparison of Sgr B2 to the California cloud on the same spatial scale
+            <li> Contours show different levels of column density and K-band extinction
+            <li> Lowest contour in Sgr B2 (green) is about an order of
+            magnitude above highest contour in CMC
+        </ul>
+    </aside>
+</section>
+
+<section id=sgrb2vscalifornia2 style="background: white;">
+    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14.svg)">
+        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
+        <div class=smaller2 style="position: relative; top:66%; left: 22%; width:20%; text-align: left; background-color:rgba(255,255,255,0.2)">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Sgr B2 sources are high-mass (&gt;8 Msun, approx)
+            <li> They represent a population of sources
+            <li> CMC stars are individuals
+            <li> With ALMA, we can get down to the 0.5 Msun scale eventually;
+            future programs (i.e., ALMA-IMF) will do that
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:100%; position: relative; top: -3%; background-position: center center; background-image: url(colloquium_assets/cores_on_SCUBA_column_saturated.png);'>
+        <h4 style="white-space:nowrap; position: relative; top:5%; left: 0%; background-color: rgba(200,200,200,0.95); width:40%; display:inline-block;">Is there a threshold?</h4>
+        <div class=smaller2 style="position: relative; top:76%; left: 55%; text-align:right; background-color: rgba(240,240,240,0.6); width:20%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Sgr B2 sources reside mostly in the highest contours
+        </ul>
+    </aside>
+</section>
+
+<section>
+
+    <section>
+    <div class=image style="height:100%">
+    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/core_background_column_cdf_nolabel.svg);'>
+        <h4 style="position: relative; top:-10%; left: 0%;"> Is there a threshold? </h4>
+        <div class=smaller2 style="position: relative; top:85%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Y-axis shows the column density in which the protostars reside, i.e., about half of the protostars are in regions with column
+            density &gt; 10<sup>24</sup> cm<sup>-2</sup>
+            <li> Lada+ 2010 threshold is well below our lowest contour
+        </ul>
+    </aside>
+    </section>
+
+</section>
+
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/compare_brick_sgrb2_colPDF.svg);'>
+        <h4 style="position: relative; top:-10%; left: 0%;"> A threshold separates Sgr B2 from The Brick </h4>
+        <div class=smaller2 style="position: relative; top:83%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Dark curve shows the same cumulative background column density
+            distribution from the previous slide
+            <li> "The Brick" is a CMZ cloud with little star formation but
+            still "very high" density compared to local clouds (a few protostars
+            seen, and they reside in that very high end)
+            <li> Only a tiny fraction of The Brick's area has a column density
+            that overlaps with densities at which protostars form in Sgr B2
+            <li> The difference between the clouds is consistent with there being
+            a threshold that The Brick has not met, but Sgr B2 has
+        </ul>
+    </aside>
+</section>
+
+<section id=sgrb2_ds_1mm_withcores_brick>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth_saturated.png);'>
+        <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
+        <div class=fragment style="position: absolute; width:70%; top:45%; left: 20%;">
+            <img src="colloquium_assets/Walker2021_brick_fig2.png">
+            <div class=smaller2 style="position: relative; top:-50%; left: 21%; margin-top:-13%;"> Walker+ 2021 </div>
+        </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> 1mm cores in Sgr B2 DS
+            <li> Compared to Dan Walker's
+        </ul>
+    </aside>
+</section>
+
+
+<section id=sgrbhist>
+    <h4> 3mm Luminosity Function</h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/core_peak_fluxdensity_coloredbyclass.png);'>
+        <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> 3mm luminosity function - all sources are confirmed, high-confidence now
+            <li> Some are HII regions, most are unclassified
+            <li> 3LF is not an IMF
+        </ul>
+    </aside>
+</section>
+
+
+<section id=sgrb2hist_withorion>
+    <h4>What are the sources? </h4>
+    <span class=image style='height:80%; background-position: center center; background-image: url(colloquium_assets/core_peak_intensity_histogram_withHOPS.png);'>
+        <div style="position: absolute; bottom: 60px; left:90px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
+        <div style="position: absolute; bottom: 44%; left:58%; right:12%; align:right; width=10%;" class="smaller">At this sensitivity, all are M&gt;8<sub class=smaller2>&odot;</sub> YSOs</div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Compare to Herschel Orion Protostar Survey extrapolated to 3mm
+            <li> Most lumionus YSO in HOPS is 2000 Lsun; as long as Lsun ~ L3mm, loose implication is that
+                all Sgr B2 3mm YSOs are L&gt;10<sup>4</sup> Lsun, or &gt; 8 Msun ish
+        </ul>
+    </aside>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section data-id="9e1f37193271406fc72e974be0a8a3fe">
+    <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
+    <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+        <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">Star Formation and Mass Measurements in the Galaxy</h1>
+            <div class=smaller></div>
+            <p class="footer">Adam Ginsburg</p>
+            <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
+            <div class=smaller2> 
+                <ul>
+                    <li> Postdoc: Allison Towner
+                    <li> PhD: Desmond Jeff, Theo Richardson, Alyssa Bulatek, Nazar Budaiev, Savannah Gramze
+                    <li> REU: Sydney Petz
+                    <li> Undergrad: Derod Deal, Brice Tingle, Morgan Himes, Aden Dawson
+                </ul>
+</div>
+
+<div class=smaller2> Slides available at 
+<a href="https://keflavich.github.io/talks/salts_astrochem_May2022.html">https://keflavich.github.io/talks/salts_astrochem_May2022.html</a>
+
+</div>
+    </div>
+    </div>
+</section>
+
+<section>
+    <h3>Summary</h3>
+
+    <div class=left>
+    <br> Salt is seen in disks around HMYSOs
+    <ul class=smaller>
+        <li> It is correlated with water.
+        <li> It is correlated with SiS.
+        <li> It is not seen in the outflow (but maybe at the interface between disk &amp; outflow)
+        <li> It is uncorrelated with COMs and ionized gas.
+        <li> Its excitation is weird.
+    </ul>
+    <br>
+
+    </div>
+    <br>
+</section>
+
+
+
+<section>
+    <section>
+        <h4> How do we measure masses? </h4>
+        <br>
+        <div align=left>
+        On the top end, mass measurement is difficult:
+        <br> <ul>
+            <li> cores are optically thick
+            <li> cores are confused &amp; blended
+            <li> there is unresolved temperature structure
+            <li> the measured luminosity can be the sum of whole (proto)clusters
+        </ul>
+        <br>
+
+        Dynamical mass measurements are the gold standard.
+        </div>
+    </section>
+
+    <section>
+        <h4> Sometimes,  we can't measure dynamical masses </h4>
+        <ul>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2018arXiv180505364G/abstract">Goddi+ 2020: W51 HMYSOs are totally opaque</a>
+            <li><a href="https://ui.adsabs.harvard.edu/#abs/2018A%26A...614A.123P/abstract">Schworer+ 2019: Giant accretion flows into Sgr B2N at 0.16 Msun/yr</a>
+            <li><a href="https://ui.adsabs.harvard.edu/#abs/2019A&A...630A..73M/abstract">Meng+ 2019: Nonthermal emission in Sgr B2's HII regions</a>
+        </ul>
+    </section>
+</section>
+
+
+
+<section>
+    <h4 style="z-index:25; position: relative; color: white; text-align:center;"> How can we measure masses of HMYSOs? </h4>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-10%; margin-left:-20%; height:150%; width:150%"></span>
+
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Artists conception of a disk around a high-mass protostar
+            <li> There is an outflow
+            <li> Note the blue hazy inner ring
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
+        </span>
+        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
+        <h4 style="position: absolute; color: white; top:0%; left: 30%;"> Orion Source I<br>
+            <div class=fragment>a disk around a 15 M<sub>&odot;</sub> YSO </div>
+            </h4>
+        <div class=fragment style="position: relative; left:-17%; top:28%; color:white;" class=smaller>Salt: NaCl</div>
+        </span>
+        <div style="position: relative; bottom: -90%; left:20%" class="smaller3"><a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a></div>
+
+        <aside class=notes>
+            <ul>
+                <li> Orion Source I lives at the center of the BN/KL explosion
+                <li> We observed the disk known as source I
+                <li> ...in salts!  NaCl and KCl
+                <li> We used that disk to measure the mass of the central source
+            </ul>
+        </aside>
+    </section>
+
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
+        <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
+        </span>
+    </section>
+
+    <section>
+        <h4> Observing the Keplerian rotation profile of a disk is the most direct way to measure a protostar's mass </h4>
+        <div class=smaller2>(we can only see the disk, not the star itself)</div>
+        <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png);  margin-top:0%; height:78%">
+        <aside class=notes>
+            <ul>
+                <li> Left is a model position-velocity diagram, right is the data
+                <li> Red curve traces the outermost position of orbits of point particles
+            </ul>
+        </aside>
+    </section>
+
+</section>
+
+<section>
+    <h4> Brinary disks </h4>
+    <div class=fragment>
+        <div class=smaller>
+        The SrcI disk has gas-phase salt (NaCl, KCl) and water (H<sub>2</sub>O).
+        </div>
+        <div class="fragment smaller"> So it's brine. </div>
+        <div class="fragment smaller">
+            (blame Adam Leroy for this term)
+        </div>
+
+
+        <div style="padding-left:15%;  padding-right:0%;">
+            <img style="float:left; width:38.5%;" src="assets/SrcI_NaCl_mom0.png">
+            <img style="float:left; width:40%;" src="assets/G17_NaCl_mom0.png">
+        </div>
+
+
+        <div style="width:100%; display:block; position: absolute; bottom:20%;">
+            <div class=smaller style="">
+            IRAS16547A/B (<a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...900L...2T/abstract">Tanaka+ 2020</a>) 
+            have (unresolved) salt water disks
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section>
+    <h4> Brine lines measure dynamical mass </h4>
+    <br>
+    <div class=smaller>
+        <span style="float:center; text-align:center;"> NaCl v=1 J=18-17 </span>
+        <span style="float:right;"> Stack of v=[0,1] J<sub>u</sub>=[18,17] </span>
+    <div style='position: relative; margin-bottom:-10%' class=smaller2> SrcI</diV>
+    </div>
+    <img style="width:65%; display:inline-block; float:left;" src="assets/SrcI_NaCl_PV_withKepler.png">
+    <img style="width:35%; display:inline-block; float:left;" src="assets/G17_NaCl_PV_stack_withKepler.png">
+    <br>
+    <div class=smaller>
+        <span style='color:red'> 15 M<sub>&odot;</sub> </span>
+        <span style='color:green'> 30 M<sub>&odot;</sub> </span>
+        <span style='color:blue'> 40 M<sub>&odot;</sub> </span>
+    </div>
+</section>
+
+<section>
+    <h4> What have we learned about brinaries?</h4>
+
+    <ul>
+        <li class=fragment> <span style='color:navy'>Somewhat rare?:</span> 4 known so far, ~15 HMYSO candidates examined
+            <ul><li> Y: SrcI, G17, IRAS16547, NGC6334I?
+                    <ul class=smaller><li>Ginsburg+ 2019, Maud+ in prep, Tanaka+ 2020</li></ul>
+                </li>
+                <li> N: I16523, I18089, G11, G5, W33, NGC6334IN, S255IR NIRS3, G333.23-0.06, G351.77, I18162
+                    <ul class=smaller><li>Sanhueza, Olguin, Ginsburg+ in prep</li></ul>
+                </li>
+            </ul>
+        </li>
+        <li class=fragment> <span style='color:darkgreen'>Coincide w/<b>line-poor</b> sources </span>
+            <ul> <li> Not hot cores; little mass reservoir?</li></ul>
+        </li>
+
+        <li class=fragment> <span style='color:darkred'>Trace reasonably <b> symmetric </b> disks</span> <span class=smaller>(in the two well-resolved cases)</span>
+    </ul>
+</section>
+
+<section>
+    <h4> Compare: G17 vs W33 </h4>
+
+    <img src="assets/G17_b6_h2onaclspec.png" style='height:40%; float:left; display: inline-block'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:navy'>G17: Brinary<hr style='max-width:60%'></div>
+        Hot (ionizing) photosphere.  Circular disk.
+    </span>
+    <div style='clear:left;'></div>
+
+    <img src="assets/W33_b6_h2onaclspec.png" style='height:40%; float:left'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:red'>W33: Not-Brinary<hr style='max-width:60%'></div>
+        Molecule rich, kinematically messy &amp; extended
+    <div style='clear:left;'></div>
+</section>
+
+
+
+
+
+
+
+<section id=e2ezoomin>
+    <h4> W51 e2e: Too optically thick at 1mm to measure disk</h4>
+    <span class="image" style="background-image: url(colloquium_assets/W51e2_cycle3green_SiO_outflows_aplpy_zoom.png); height:85%;">
+        <div style="position: relative; top:92%; left:-23%;" class="smaller2"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv180505364G">Goddi+ 2020</a></div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> No emission lines from a disk were detected
+            <li> Continuum appears to be high optical depth in inner ~few hundred AU
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <section>
+        <h4> CS v=0 J=1-0 and v=0 J=2-1 masers may trace the disk? </h4>
+        <img src="colloquium_assets/W51e2e_sio_outflow_with_CS_contours.png" style='max-height:95%'>
+        <div style="position: relative; top:-90%; left:25%;" class="smaller2"><a class=darkbg href="http://adsabs.harvard.edu/abs/2019AJ....158..208G">Ginsburg+ 2019</a></div>
+        <div style="position: relative; top:-85%; left:25%; color:white" class="smaller2">M = 24<sub>-10</sub><sup style='margin-left:-20px'>+12</sup>M<sub>&odot;</sub>
+            <br> <i>if</i>
+        the masers trace a disk</div>
+        <aside class=notes>
+            <ul>
+                <li> If CS traces a disk (which requires assuming very, very hard),
+                    the implied mass is ~24 Msun, which is reasonable.
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <div>
+            <div style="float:left; width:50%">
+                <img src="colloquium_assets/vanderwaltfig10.png">
+            </div>
+            <div style="float:left; width:50%">
+                <h4> CS maser conditions</h4>
+                <a href="https://ui.adsabs.harvard.edu/#abs/2020arXiv201110420V/abstract">van der Walt+ 2020</a>
+                <ul class=smaller>
+                    <li> Top: CS J=1-0, Bottom: CS J=2-1 </li>
+                    <li> <span style="color:red">Red:</span> Consistent w/W51e2e observations </li>
+                    <li> Masers do not coexist; require different specific CS column <br>(N<sub>2-1</sub>=10<sup>15.6</sup>, N<sub>1-0</sub>10<sup>16.1</sup> cm<sup>-2</sup>)</li>
+                    <li> Require high abundance (X<sub class=smaller>CS</sub> &gt; 10<sup class=smaller2>-5</sup>) </li>
+                    <li> Hot (300-500 K), moderate-density (n~10<sup>5</sup> cm<sup>-3</sup>): Disk surface?  Or outflow cavity wall?
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<section>
+    What's next for salts?
+    <br>
+    Deep VLA observations of low-J lines in Orion
+    <span class=image
+        style="background-image:url(assets_orion/NaCl_and_KCl_Aij_vs_wavelength_logy_longwavelengths_with_observed.svg);
+        margin-top:-2%;
+        height:90%">
+    </span>
+        <!--<div style="margin-top:20%; margin-right:15%; margin-left:55%; width:40%;" class=smaller> Can we use these to measure inner disk kinematics? </div>-->
+        <!--<div style="width: 40%; margin-left:55%; margin-top:-55%;"> Many (ng)VLA-observable lines </div>-->
+</section>
+
+
+
+
+
+
+<section id=towner-sio>
+    <div> ALMA-IMF Line Data: SiO</div>
+    <div class=smaller2> Which sources are accreting YSOs?</div>
+    <div style="float:left; width:75%;">
+        <img src="almaimf_assets/TownerOutflows.png">
+    </div>
+    <div style="float:left; width:25%;">
+        <img src="FrontiersAssets/allisontowner.webp">
+        <span class="smaller" align=right style="position: relative; float: right;">
+            Allison Towner
+            <hr>
+            <div class=smaller align=left style='text-align:left'>
+                Resolved, structured SiO outflows
+            </div>
+            <hr>
+            <div class=smaller align=left style='text-align:left'>
+                5-60% of SiO at low-velocities:
+                <br>
+                Relic outflows?
+            </div>
+        </span>
+    </div>
+</section>
+
+<section>
+    <div> ALMA-IMF Line Data: CH<sub>3</sub>CN, CH<sub>3</sub>CCH</div>
+    <div class=smaller> Temperature measurements with per-pixel rotation diagrams </div>
+    <img src="assets/DesmondJeff_SgrB2DS_RotationDiagramCH3OH.png">
+    <br>
+    Jeff+ in prep (CH<sub>3</sub>OH), Wyrowski+ in prep (CH<sub>3</sub>CN)
+</section>
+
+<section>
+    <div>Hot cores in ALMA-IMF: From rare objects to a population</div>
+    <img src="almaimf_assets/Brouillet_W43MM1_cores.png">
+    <div style="position: relative; top:-75%; left:75%; color:red; width:20%; background-color:white;" class=smaller2>
+        Cores with line forests<br>
+        T<sub>D</sub>&gt;50 K<br> 
+        T<sub>G</sub> &gtrsim;100K</div>
+    <div style="position: relative; top:-35%; left:-25%;" class=smaller2> Brouillet+, in prep </div>
+    <div class=fragment style="position: relative; top:-70%; width:110%;"><img style='width:110%;' src="almaimf_assets/W43HCLineForest.png"></div>
+</section>
+
+<section>
+    <div class=flex-vert-90>
+    <div style="float: left; width:60%">
+        <img src="almaimf_assets/cores_vs_hotcores.png">
+    </div>
+        <div style="width:40%; float:right">
+            <h4>Hot core overview:<br> A lot is coming</h4>
+        <ul>
+            <li> 11 HCs in W43-MM1 <span class=smaller>(Brouillet+ in prep)</span></li>
+            <li> ~60-70 HCs in ALMA-IMF sample from CH<sub>3</sub>OCHO <span class=smaller style='color:darkred'>(Bonfand+ in prep; left)</span> </li>
+            <li> CH<sub>3</sub>CN temperature maps <span class=smaller>(Wyrowski+ in prep)</span></li>
+        </ul>
+        </div>
+    </div>
+</section>
+
+<section id=desmond_overview>
+    <div style='float:left'> Hot cores: Also in the Galactic center </div>
+    <div style="float:left; width:75%; margin-top:10%">
+        <!--<img src="FrontiersAssets/cores_on_continuum_peak_DeepestSouth_zoomin.png" style="width:80%;">-->
+        <!--<img src="FrontiersAssets/desmond_overview.png" style="width:99%;">-->
+        <img src="assets/DesmondJeff_SgrB2DS_20211203.png" style="width:99%;">
+    </div>
+    <div style="float:left; width:25%;">
+        <img style="width: 70%; height: 70%" src="FrontiersAssets/DesmondHeadshot.png">
+        <span class="smaller" align=right style="position: relative; float: right;">
+            Desmond Jeff:
+            <br><span style='color:darkgreen'> Ten hot cores in Sgr B2 DS</span>
+            <br> T<sub>G</sub> ~ 200-500 K
+            <br> M ~ 200 - 2900 M<sub>&odot;</sub>
+        </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Desmond is a 4th-year PhD student
+            <li> Focus on hot core temperature measurement &amp; YSO identification
+        </ul>
+    </aside>
+</section>
+
+
+
+
+
+
+
+
+<section>
+    <div style="float:left; width:75%;">
+        <img style="max-height:50%; width:80%" src="assets/cmz/brick_line_density.png">
+        <img style="max-height:50%; width:80%" src="colloquium_assets/Walker2021_brick_fig2.png">
+    </div>
+    <div style="float:left; width:25%;">
+        <img src="FrontiersAssets/bulatek-300x300.jpg">
+        <span class="smaller" align=right style="position: relative; float: right;">
+            Alyssa Bulatek: Physical Processes in the CMZ
+            <br>
+            <ul>
+                <li>CH<sub>3</sub>CN temperature maps</li>
+                <li>Line IDs &amp; abundances </li>
+
+            </ul>
+        </span>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section>
+    <h3>Summary</h3>
+
+    <div class=left>
+    <br> Most stars form in regions unlike the solar neighborhood
+    <ul class=smaller>
+        <li> Greater clustering, higher SF thresholds in denser clouds
+        <li> Shallower IMF in richer SF regions
+    </ul>
+    <br>
+    <br> We have, and are building more, tools to measure masses
+    <ul class=smaller>
+        <li> ALMA-IMF core catalogs with high-resolution followup &amp; modeling
+        <li> Hot cores track the earliest stage of HMSF
+        <li> Salt is a new tool to probe disks around high-mass stars
+    </ul>
+
+    </div>
+    <br>
+</section>
+
+<section id=sgrb2_insets_with_orion>
+    <a href="https://github.com/keflavich/SgrB2_ALMA_2015.1.00550.S/blob/master/analysis/ZoomInMatplotlibExample.ipynb">
+    <img src="./assets/SgrB2_insets_with_orion2.png">
+    </a>
+</section>
+
+
+<section>
+</section>
+
+<section>
+</section>
+
+
+
+<section>
+
+    <section> Salt backup slides </section>
+
+    <section>
+        <h2>Possible future uses for these lines?</h2>
+        <ul>
+            <li> Metallicity measurement in deeply embedded star-forming environments? (at least of Na, K, Cl)
+            <li> Disk kinematics of high-mass stars, which are otherwise unobservable (τ&gt;1 at mm wavelengths)
+            <li> Disk kinematic measurements at early stages?
+            <li> Probe dust destruction (and/or formation?) in outflows, disks?
+            <li> Probe radiation environment around HMYSOs?
+        </ul>
+    </section>
+
+    <section><span class=image style="background-image:url(assets_orion/NaCl_KCl.png); background-size:110%; margin-top:-2%; height:100%"></section>
+
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw1_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw1_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw1_robust0.5.png);  height:100%"></section>
+
+    <section>
+        <h2> Why do we see salt?</h2>
+        <ul>
+            <li> Previously, NaCl &amp; KCl only in AGB* atmospheres,
+            <br>associated with dust formation
+            <li> Most likely dust <i>destruction</i> here
+            <br> Dust destruction happens immediately as the outflow is launched?
+            <li> What about excitation?  We see vibrationally excited lines, which are <i>not</i> seen in AGB*s
+        </ul>
+    </section>
+
+    <section>
+        <h2>We do not have a viable model to explain these temperatures</h2>
+        <div>A strong non-blackbody radiation field from 25-40 µm <i>may</i> explain them.</div>
+        <div>Forsterite (MgSiO<sub>4</sub>) has some emission bands in that range. Maybe? </div>
+    </section>
+</section>
+
+<section>
+    <section> PASHION - backup </section>
+    <section>
+        <div style="margin:auto; margin-top:20%">
+        <h4> Looking forward: </h4>
+        <ul>
+            <li> PASHION: Paschen Alpha Survey of Hydrogen Ions
+            <li> JWST: Deep Pa&alpha;, Br&alpha;, and broadband imaging
+        </ul>
+        </div>
+    </section>
+
+
+
+    <section>
+        <img src="FrontiersAssets/MichaelFero.png" align=right style="max-height:20%">
+        <img src="FrontiersAssets/budaiev.jpg" align=right style="max-height:20%">
+        <img src="FrontiersAssets/bulatek-300x300.jpg" align=right style="max-height:20%">
+        <span class=image style='background-size: 1024px; background-position: center center; background-image: url(FrontiersAssets/PASHION_BallyGraphic.png);'>
+        <h4 style='background-color:rgb(240,240,240);'> PASHION: Paschen Alpha survey of the Galaxy </h4>
+        <div style="color:white; align:left; text-align:left; margin-left:2%;" class=smaller2>
+            Team:
+            <br>
+            <ul><li> John Bally (CU) </li>
+                <li> Elizabeth Lada, Steve Eikenberry (UF) </li>
+                <ul>
+                    <li> Students: Alyssa Bulatek, Michael Fero, Nazar Budaiev</li>
+                </ul>
+                <li> Lockheed Martin (Alison Nordt, Gopal Vasudevan) </li>
+                <li> Tony Hull (UNM) </li>
+                <li> York Space Systems </li>
+            </ul>
+        </div>
+        </span>
+    </section>
+
+    <section>
+        <h4> PASHION: H2RG with Lockheed electronics, three narrow-band filters, 2.5" resolution, 25' FOV </h4>
+        <img src="colloquium_assets/pashiondetector_hst_miris_filters.png" style='max-width:65%'>
+    </section>
+
+    <section>
+        <h4> A 24 cm dedicated survey telescope will be the most sensitive Galactic plane survey of ionized gas </h4>
+        <div>
+            <div style="float:left; width: 50%;"> <img src="colloquium_assets/radio_survey_comparison.png"> </div>
+            <div style="float:left; width: 50%;"> <img src="colloquium_assets/optical_survey_comparison.png"> </div>
+        </div>
+        <br>
+        <div style="float:left; width:100%;">
+        These are fiducial numbers for a 1-year mission performing a 100 square degree blind survey. An extended mission may be possible.
+        </div>
+    </section>
+
+
+    <section>
+        <h4> PASHION, and JWST, recombination line science </h4>
+        <div>
+            <div style="float:left; width: 50%;"> 
+                Accretion onto YSOs
+                <img src="colloquium_assets/accretion_rate_sensitivity.png"> </div>
+            <div style="float:left; width: 50%;">
+                HII regions
+                <img src="colloquium_assets/HII_region_sensitivity.png"> </div>
+        </div>
+        <br>
+        <div style="float:left; width:100%;">
+            Assuming typical A<sub>V</sub>~2 per kpc
+        </div>
+
+    </section>
+</section>
+
+<section id="feedback-in-clusters">
+
+
+    <section id=clustersdifferent data-id="688e275e4f4751d7bc0fc68ee3d68b82">
+        <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fd2e732f3eb46152cc9857131e878116">
+        <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+        <h2 style="word-break: keep-all; hyphens: none;">How is star formation in high-mass clusters different?</h2>
+        </div>
+        </div>
+        <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="7b24eb3dce885998fa19c253a9f15bbf">
+        <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+        <ul>
+            <li class=fragment>Feedback from one star affects many in clustered regions
+                <div style='font-size:24px; '>(<a href="http://adsabs.harvard.edu/abs/2016MNRAS.463.2553R">Rosen+ 2016</a>,
+                <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>)</div></li>
+            <li class=fragment>IMF depends on density, feedback, global conditions <div style='font-size:24px'>(e.g., <a href="http://adsabs.harvard.edu/abs/2018MNRAS.tmp.1196J"
+                    target="_blank">Jones &amp; Bate 2018</a>, <a href="http://esoads.eso.org/abs/2013MNRAS.436.2892N">Narayanan &amp; Dave 2012</a>)
+                </div></li>
+        </ul>
+        <ul class="fragment" style='display: block'>
+            <li class=smaller2>Total star formation efficiency is higher. <!--SFE<sub>ff</sub> may be higher?-->
+            <div style='font-size:24px; '>
+                (obs: <a href="http://adsabs.harvard.edu/abs/2016A%26A...595A..27G">Ginsburg+ 2016</a>,
+                <a href="http://adsabs.harvard.edu/abs/2017IAUS..316..117G">Gouliermis &amp; Hony 2015</a>,
+                sim:
+            <a href="http://adsabs.harvard.edu/abs/2018MNRAS.475.3511G">Grudić+ 2018</a>
+                )
+            </div>
+            </li>
+            <li class=smaller2> Collisions assemble the most massive stars?
+            <div style='font-size:24px; '>
+            (e.g., <a href="http://adsabs.harvard.edu/abs/2013MNRAS.430.1018F">Fujii+ &amp; PZ 2013</a>,
+            but see <a href="http://adsabs.harvard.edu/abs/2011MNRAS.410.2799M">Moeckel &amp; Clarke 2011</a>)
+            </div>
+            <ul><li class=smaller style="margin: 5px 0px;">
+                <div class>Interactions certainly affect disks (e.g., <a href="http://adsabs.harvard.edu/abs/2017A%26A...604A..91W">Wijnen+ 2017</a>,
+                    <a href="http://adsabs.harvard.edu/abs/2016ApJ...828...48V">Vincke+ 2016</a>, <a href="http://adsabs.harvard.edu/abs/2019arXiv190204652V">van Elteren+ 2019</a>)
+                </div>
+                </li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Just what the slides say
+            </ul>
+        </aside>
+    </section>
+
+
+    <section style='background: white'>
+        <h4> Cartoon of high- and low-mass star formation </h4>
+        <div class=smaller2> Main difference: massive stars affect their surroundings </div>
+        <img src="colloquium_assets/Purcell_Cartoon_LowHighMass.svg" width=100%>
+        <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
+            <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> This is the 'classical' picture of HMSF; I'll riff on it later
+                <li> The key differences are the size of the feedback-affected region
+                and the type of feedback:
+                <li> The classical picture is that high-mass stars end star formation
+                once they hit the main sequence / stop accreting (which are the same thing)
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class=image style='background-position: center center; background-image: url(colloquium_assets/trapezium_and_m16.jpeg);'>
+            <h4> Classic HII region feedback:<br> O-stars clear out their environment</h4>
+        </span>
+        <div style="position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="https://en.wikipedia.org/wiki/Trapezium_Cluster#/media/File:Trapezium_cluster_optical_and_infrared_comparison.jpg">HST</a></div>
+        <div style="position: absolute; bottom: 100px; left:650px" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2015MNRAS.450.1057M">McLeod, Dale, Ginsburg et al 2015</a></div>
+        <div style="color:white; text-align: left; position: absolute; bottom: 100px; left:600px; max-width:300px;" class="smaller2">
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Destructive feedback from expanding HII regions: the massive stars produce UV light,
+                ionizing and evacuating the gas
+                <li> Right panel is by Anna McLeod using MUSE, done while she was a student at ESO
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Accreting massive young stars  affect their environment</h4>
+        <span class="image" style="background-image: url(colloquium_assets/methanol_scalebar_e2e.png); width:80%">
+            <div style="position: relative; top: 73%; left:-10%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> The classic picture is incomplete: HMYSOs have a big effect
+                *while* they are accreting too
+                <li> There is a HMYSO at the center (W51e2e)
+                <li> The surrounding greyscale circular hot core is seen in
+                methanol emission
+                <li> Data are from ALMA
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Accreting massive young stars  affect their environment</h4>
+        <span class="image" style="background-image: url(colloquium_assets/outflows_over_methanol_e2e.png); width:80%">
+            <div style="position: relative; top: 73%; left:-10%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> The outflow points to the central accreting star
+                <li> The outflow implies the existence of a disk
+            </ul>
+        </aside>
+    </section>
+
+    <section id=e2ewithzoom>
+        <h4> Accreting massive young stars  affect their environment</h4>
+        <span class="image" style="background-image: url(colloquium_assets/e2e_withzoom.png); width:80%">
+            <div style="position: relative; top: 73%; left:-10%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> ALMA long-baseline data reveal this in more detail...
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide.png); margin-top:-3%;">
+            <div style="position: relative; bottom: -85%; left:-27%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> Radial profile of temperature around the source
+                <li> Typical molecular clouds have temperatures 5-25 K, compared to the 100-500 K here
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <span class="image" style="background-image: url(assets/W51e2TemperatureProfileSlide_withabundance.png); margin-top:-3%;">
+            <div style="position: relative; bottom: -85%; left:-27%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> Methanol freezes onto grains, usually locked up in water ice:
+                it evaporates/desorbs at around 80-100 K
+                <li> (transition) What effect does this high temperature have?
+            </ul>
+        </aside>
+    </section>
+
+    <section id=characteristic_fragmentation_scale>
+        <h3> The characteristic fragmentation scale </h3>
+
+        <br>
+        The Jeans Mass M<sub class=smaller2>J</sub> is the mass where gravity and thermal pressure are balanced.
+        <br>
+        <br>
+
+        <!--
+        M<sub class=smaller2>J</sub> = (π/6)c<sup class=smaller2>3</sup><sub style="margin-left:-10px" class=smaller2>s</sub>G<sup class=smaller2>−3/2</sup>ρ<sup class=smaller2>−1/2</sup>
+        <br> <br>
+        -->
+
+
+        M<sub class=smaller2>J</sub> &prop; T<sup class=smaller2>3/2</sup> ρ<sup class=smaller2>−1/2</sup>
+
+        <aside class=notes>
+            <ul>
+                <li> Higher density means greater gravity, leading to collapse and fragmentation
+                <li> Higher temperature means greater pressure, providing support
+                against gravitational collapse and suppressing it.
+            </ul>
+        </aside>
+    </section>
+
+
+    <section>
+        <h4> The characteristic fragmentation scale is larger </h4>
+        <div class=smaller>
+            Jeans Mass <!--M<sub class=smaller2>J</sub> = (π/6)c<sup class=smaller2>3</sup><sub style="margin-left:-10px" class=smaller2>s</sub>G<sup class=smaller2>−3/2</sup>ρ<sup class=smaller2>−1/2</sup>-->
+        M<sub class=smaller2>J</sub> &prop; T<sup class=smaller2>3/2</sup> ρ<sup class=smaller2>−1/2</sup>
+        </div>
+        <span class="image" style="height:80%; background-image: url(colloquium_assets/azimuthalaverage_radial_mj_and_mbar_of_TCH3OH_massivecores.svg)">
+            <div style="position: relative; bottom: -95%; left:-28%" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> (describe plot)
+                <li> In the warm neighborhood of accreting massive stars, the Jeans mass is higher
+                <li> Despite the high density, the Jeans mass is 5-10 times greater than locally
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/JoshMachado.png" align="right" style="float:right; max-height:20%">
+        <h3> Feedback affects dense gas </h3>
+        <div class=smaller>ALMA + VLA + GBT together give multiple temperature probes on multiple scales.</div>
+        <div class=smaller> High-mass protoclusters are filled with gas warmed by feedback.</div>
+
+        <img style='max-width:50%; float:left;' src="aas236_assets/temperature_vs_r_NH3_and_CH3OH.png">
+        <img style='max-width:50%; float:right;' src="aas236_assets/temperature_vs_r_NH3_and_CH3OH_log.png">
+        <div class=smaller2><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>, Machado+ in prep</div>
+        <aside class=notes>
+            <ul>
+                <li> Floor temperature within 1 pc is ~30-40 K</li>
+                <li> Radial dependence indicates that the heating is internal
+                    feedback-driven (as opposed to external, from surrounding OB
+                    association)</li>
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/DanielleBovie.jpg" style='max-height:20%; height:100px; width:160px; object-fit:cover; object-position: 0% 23%;' align='right'>
+        <h4> YSO disk counts in W51 </h4>
+        <span class=image style='max-height:80%; background-position: center center; background-image: url(FrontiersAssets/W51NorthTripleZoom.png);'> </span>
+    </section>
+
+    <section id=hmsf_cartoon style='background: white'>
+        <h4> The cartoon in the context of HMSF </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_SuppressedLMSF.svg">
+        <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
+            <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a>
+        </div>
+        <div class=smaller>
+            These high mass cores suppress low-mass star formation (LMSF) in their vicinity.
+            They reduce or prevent LMSF in the cores of stellar clusters.
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> The 'hot cores' contain a substantial fraction of the molecular cloud mass
+                <li> The densest regions are the most affected
+            </ul>
+        </aside>
+
+    </section>
+
+    <section id=cooperative style='background: white'>
+        <h4> More extreme: 'cooperative accretion' </h4>
+        <img src="colloquium_assets/Purcell_Cartoon_ClusteredHMSF.svg">
+        <div style="position: absolute; bottom: 50px; left:50px" class="smaller3">
+            <a href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a>
+        </div>
+        <div class=smaller>
+            With enough high-mass stars forming concurrently, massive stars may prevent fragmentation entirely.
+            <br>
+
+            If they still have enough gravity to bind the gas, the remaining gas is
+            forced onto the most massive gravitational sinks.
+            <div class=smaller2><a href="http://adsabs.harvard.edu/abs/2007ARA%26A..45..481Z">Zinnecker & Yorke 2007</a>,
+                <a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a>
+            </div>
+        </div>
+
+        <aside class=notes>
+            <ul>
+                <li> High-mass stars can themselves form in a clustered fashion
+                <li> This is a speculative idea so far not backed up by simulation,
+                but it is a plausible way to obtain an overpopulation of very
+                massive stars at the cores of high-mass clusters
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <img src="FrontiersAssets/Derod_2.png" align=right style="max-height:20%; object-fit: cover; height:120px; width:150px; object-position: 0% 00%;">
+        <h4> Ammonia Masers </h4>
+        <!-- Derod Deal -->
+        <span class=image
+            style='background-size: 80%;
+                   background-image: url(FrontiersAssets/derodspectralanalysisglue.png);'>
+        </span>
+    </section>
+
+</section>
+
+<section id=sfr_turbulence>
+    <section>
+        <h4> Large scales again: <br>What governs the star formation rate? </h4>
+        <div class=image style="height:80%">
+            <span class="image" style="height:100%; background-image: url(colloquium_assets/Kennicutt2012_Star3.svg); width:90%">
+                <div style="position: relative; bottom: -80%; left:10%" class="smaller2"><a href="http://esoads.eso.org/abs/2012ARA%26A..50..531K">Kennicutt &amp; Evans 2012</a></div>
+            </span>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Kennicutt-Schmidt relation ties gas surface density and
+                stellar surface density
+                <li> Good correlation over several orders of magnitude, but the
+                scatter is substantial and important
+                <li> The timescales are 100 Myr to 10 Gyr and show the "depletion
+                scales", the time for the gas to fully convert to stars
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Turbulent ISM models </h4>
+        <div class=image style="height:85%">
+            <span class="image" style="height:100%; background-image: url(colloquium_assets/turbulentsf_1.svg)">
+            </span>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Turbulent models are the most popular and successful global
+                star formation models
+                <li> Probability of a density vs density
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Turbulent ISM models </h4>
+        <div class=image style="height:85%">
+            <span class="image" style="height:100%; background-image: url(colloquium_assets/turbulentsf_2.svg)">
+            </span>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Some of these authors describe a modified distribution
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h4> Turbulent ISM models </h4>
+        <div class=image style="height:85%">
+            <span class="image" style="height:100%; background-image: url(colloquium_assets/turbulentsf.svg)">
+            </span>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Gas above the threshold density forms stars
+                <li> Continued turbulent driving repopulates that high density,
+                which gives the star formation rate
+            </ul>
+        </aside>
+    </section>
+
+
+    <section>
+        <img src="FrontiersAssets/MadelineHall.jpg" align=right style="max-height:20%">
+        <h4> Measuring Line Profiles </h4>
+        <span class=image style='background-size: 1024px; background-position: center center; background-image: url(FrontiersAssets/MadelineHallScouse.png);'>
+        SCOUSE uses pyspeckit for manual fits.  Gausspy+ is machine-learning trained.
+        We're exploring more automated approaches.
+        </span>
+
+    </section>
+    <!-- Can I add something here about how the KS relation is used in simulations? -->
+</section>
+
+
+
+<section id=alma_counts_protostars>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/overview_figure_taper.png);'>
+        <h4 style="white-space:nowrap; position: relative; top:5%; left: 12%; width:70%;"> ALMA enables protostar counting in <br>distant, massive clouds </h4>
+        <div class=smaller2 style="position: relative; top:60%; left: 45%; width:35%;"> Sgr B2: the most massive &amp; star-forming cloud in the Galaxy</div>
+        <div class=smaller2 style="position: relative; top:61%; left: 61%; text-align:right; width:19%; background-color:rgba(255,255,255,0.3);">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> An example of one of the clouds from the previous plots
+            <li> A column density map with the locations of protostars shown as red dots
+            <li> Protostars are identified in nearby clouds with IR telescopes like Spitzer and Herschel
+            <li> Column density measured with extinction or dust maps, resolution limited to 30" to a few arcminutes
+            <li> Protostars are counted and compared to the density they reside in
+        </ul>
+    </aside>
+</section>
+
+
+
+<section>
+    <h3> How do we learn about clustering?  The IMF? </h3>
+    <img class=fragment src="FrontiersAssets/Count_von_Count_kneeling.png" style="max-height:80%">
+    <ul>
+        <li class=fragment> Count objects:
+            <ul>
+        <li class=fragment> Cores are (sometimes) countable
+        <li class=fragment> Protostars are countable
+            </ul>
+    </ul>
+</section>
+
+<section>
+    <h3> YSO counts let us investigate thresholds </h3>
+    <h4 class=fragment> Local cloud studies support the idea of a gas density threshold for star formation </h4>
+    <span class=fragment>
+        <img src="colloquium_assets/Lada2010_NYSOsvsCloudMass.svg" width=49%>
+        <img src="colloquium_assets/Lada2010_NYSOsvsDenseCloudMass_fig4.svg" width=49%>
+        <div style="position: relative; text-align:right; left:-22px; top:-121px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2010ApJ...724..687L">Lada+ 2010</a></div>
+        <div style="position: relative; bottom: -75%; left:00%;" class=smaller>
+            Thresholds are used in simulations to say <br>"if gas reaches this density, turn it into stars" </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Left: NYSOs vs total cloud mass
+            <li> Right: NYSOs vs cloud mass above a fixed density
+            <li> Correlation is tighter in the right plot - stars form in dense
+            gas
+        </ul>
+    </aside>
+</section>
+
+
+<section id=sgrb2vscalifornia1 style="background: white;">
+    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14_labels.svg)">
+        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
+        <div class=smaller2 style="position: relative; top:66%; left: 22%; width:20%; text-align: left; background-color:rgba(255,255,255,0.2)">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <div class=smaller style="position: absolute; left:70%; width:30%; top:2%;">
+        Compare YSO counts in Sgr B2 and the CMC
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Comparison of Sgr B2 to the California cloud on the same spatial scale
+            <li> Contours show different levels of column density and K-band extinction
+            <li> Lowest contour in Sgr B2 (green) is about an order of
+            magnitude above highest contour in CMC
+        </ul>
+    </aside>
+</section>
+
+<section id=sgrb2vscalifornia2 style="background: white;">
+    <span class="image" style="background-image: url(colloquium_assets/EPOS2018_Slide14.svg)">
+        <div style="position: absolute; bottom: 60px; left:130px" class="smaller2"><a href=""></a></div>
+        <div class=smaller2 style="position: relative; top:66%; left: 22%; width:20%; text-align: left; background-color:rgba(255,255,255,0.2)">
+            <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Sgr B2 sources are high-mass (&gt;8 Msun, approx)
+            <li> They represent a population of sources
+            <li> CMC stars are individuals
+            <li> With ALMA, we can get down to the 0.5 Msun scale eventually;
+            future programs (i.e., ALMA-IMF) will do that
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:100%; position: relative; top: -3%; background-position: center center; background-image: url(colloquium_assets/cores_on_SCUBA_column_saturated.png);'>
+        <h4 style="white-space:nowrap; position: relative; top:5%; left: 0%; background-color: rgba(200,200,200,0.95); width:40%; display:inline-block;">Is there a threshold?</h4>
+        <div class=smaller2 style="position: relative; top:76%; left: 55%; text-align:right; background-color: rgba(240,240,240,0.6); width:20%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Sgr B2 sources reside mostly in the highest contours
+        </ul>
+    </aside>
+</section>
+
+<section>
+
+    <section>
+    <div class=image style="height:100%">
+    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/core_background_column_cdf_nolabel.svg);'>
+        <h4 style="position: relative; top:-10%; left: 0%;"> Is there a threshold? </h4>
+        <div class=smaller2 style="position: relative; top:85%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Y-axis shows the column density in which the protostars reside, i.e., about half of the protostars are in regions with column
+            density &gt; 10<sup>24</sup> cm<sup>-2</sup>
+            <li> Lada+ 2010 threshold is well below our lowest contour
+        </ul>
+    </aside>
+    </section>
+
+</section>
+
+
+<section>
+    <div class=image style="height:100%">
+    <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/compare_brick_sgrb2_colPDF.svg);'>
+        <h4 style="position: relative; top:-10%; left: 0%;"> A threshold separates Sgr B2 from The Brick </h4>
+        <div class=smaller2 style="position: relative; top:83%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Dark curve shows the same cumulative background column density
+            distribution from the previous slide
+            <li> "The Brick" is a CMZ cloud with little star formation but
+            still "very high" density compared to local clouds (a few protostars
+            seen, and they reside in that very high end)
+            <li> Only a tiny fraction of The Brick's area has a column density
+            that overlaps with densities at which protostars form in Sgr B2
+            <li> The difference between the clouds is consistent with there being
+            a threshold that The Brick has not met, but Sgr B2 has
+        </ul>
+    </aside>
+</section>
+
+<section id=sgrb2_ds_1mm_withcores_brick>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth_saturated.png);'>
+        <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
+        <div class=fragment style="position: absolute; width:70%; top:45%; left: 20%;">
+            <img src="colloquium_assets/Walker2021_brick_fig2.png">
+            <div class=smaller2 style="position: relative; top:-50%; left: 21%; margin-top:-13%;"> Walker+ 2021 </div>
+        </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> 1mm cores in Sgr B2 DS
+            <li> Compared to Dan Walker's
+        </ul>
+    </aside>
+</section>
+
+
+<section id=sgrbhist>
+    <h4> 3mm Luminosity Function</h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/core_peak_fluxdensity_coloredbyclass.png);'>
+        <div style="position: absolute; bottom: 60px; left:60px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> 3mm luminosity function - all sources are confirmed, high-confidence now
+            <li> Some are HII regions, most are unclassified
+            <li> 3LF is not an IMF
+        </ul>
+    </aside>
+</section>
+
+
+<section id=sgrb2hist_withorion>
+    <h4>What are the sources? </h4>
+    <span class=image style='height:80%; background-position: center center; background-image: url(colloquium_assets/core_peak_intensity_histogram_withHOPS.png);'>
+        <div style="position: absolute; bottom: 60px; left:90px" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
+        <div style="position: absolute; bottom: 44%; left:58%; right:12%; align:right; width=10%;" class="smaller">At this sensitivity, all are M&gt;8<sub class=smaller2>&odot;</sub> YSOs</div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Compare to Herschel Orion Protostar Survey extrapolated to 3mm
+            <li> Most lumionus YSO in HOPS is 2000 Lsun; as long as Lsun ~ L3mm, loose implication is that
+                all Sgr B2 3mm YSOs are L&gt;10<sup>4</sup> Lsun, or &gt; 8 Msun ish
+        </ul>
+    </aside>
+</section>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+    <script>
+    var els = document.getElementsByTagName('section');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        // I still can't figure out how to get the background to fill the damned page
+        els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
+        els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");
+    }
+    </script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: true,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+        pdfMaxPagesPerSlide: 1,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+        condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>
+

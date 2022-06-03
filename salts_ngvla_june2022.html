@@ -213,22 +213,6 @@ zero-age of high-mass stars.
 </section>
 
 
-<section>
-    <h4> Compare: G17 vs GGD27 </h4>
-
-    <img src="assets/G17_b6_h2onaclspec.png" style='height:40%; float:left; display: inline-block'>
-    <span class=smaller style='vertical-align:middle'>
-        <div style='color:navy'>G17: Brinary<hr style='max-width:60%'></div>
-        Hot (ionizing) photosphere.  Circular disk.
-    </span>
-    <div style='clear:left;'></div>
-
-    <img src="assets/salts/color_labels_IRAS_181622048_spw1_stack.png" style='height:40%; float:left'>
-    <span class=smaller style='vertical-align:middle'>
-        <div style='color:red'>GGD27: Not-Brinary<hr style='max-width:60%'></div>
-        SO, CH<sub>3</sub>OH lines.  But line-poor!
-    <div style='clear:left;'></div>
-</section>
 
 
 <section>
@@ -245,6 +229,23 @@ zero-age of high-mass stars.
     <span class=smaller style='vertical-align:middle'>
         <div style='color:red'>G11.92: Not-Brinary<hr style='max-width:60%'></div>
         Line-rich!<br>  Big, R=230-850 au (Ilee+ 2018)
+    <div style='clear:left;'></div>
+</section>
+
+<section>
+    <h4> Compare: G17 vs GGD27 </h4>
+
+    <img src="assets/G17_b6_h2onaclspec.png" style='height:40%; float:left; display: inline-block'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:navy'>G17: Brinary<hr style='max-width:60%'></div>
+        Hot (ionizing) photosphere.  Circular disk.
+    </span>
+    <div style='clear:left;'></div>
+
+    <img src="assets/salts/color_labels_IRAS_181622048_spw1_stack.png" style='height:40%; float:left'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:red'>GGD27: Not-Brinary<hr style='max-width:60%'></div>
+        SO, CH<sub>3</sub>OH lines.  But line-poor!
     <div style='clear:left;'></div>
 </section>
 
@@ -286,10 +287,41 @@ zero-age of high-mass stars.
 </section>
 
 <section>
-    <h4> Resolution is a weak predictor of salt detection</h4>
+    <h4> Resolution is a (weak) predictor of salt detection</h4>
     <img style="max-height:80%" src='assets/salts/logistic_P_of_salt.png'>
 </section>
 
+<section>
+    What will the ngVLA see?
+    <div style='display: grid';>
+        <img src="assets/salts/NaCl_LTE_SLEDs_N=1e14.png" style='grid-column:1; grid-row:1'>
+        <img src="assets/salts/NaCl_LTE_SLEDs_N=1e14_labeled.png" class=fragment style='grid-column:1; grid-row:1' >
+        <div class=smaller>
+            Current measurements give $T_{rot}\sim50-150$ K $\rightarrow\sim$few K for ngVLA.
+        </div>
+
+        <div class=smaller>
+        But, lines are vibrationally excited.
+        <br>
+
+        Cooler ($T\sim50? 10?$ K) gas may exist?
+        </div>
+    </div>
+</section>
+
+<section>
+    What will the ngVLA see?
+    <div style='display: grid';>
+    <img src="assets/salts/KCl_LTE_SLEDs_N=1e14_labeled.png" style='grid-column:1; grid-row:1'>
+    </div>
+</section>
+
+<section>
+    What will the ngVLA see?
+    <div style='display: grid';>
+    <img src="assets/salts/SiS_LTE_SLEDs_N=1e16_labeled.png" style='grid-column:1; grid-row:1'>
+    </div>
+</section>
 
 <section class=center>
     <div style='height: 100%'>
@@ -369,28 +401,35 @@ zero-age of high-mass stars.
 </section>
 
 <section>
-    <h3 style="z-index:25; position: relative; color: white; text-align:center;"> Summary </h3>
     <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-12%; margin-left:-30%; height:150%; width:160%; zorder=-1"></span>
 
-    <div class=left style="position: relative; color: white; margin-top:-5%">
-    <br> Salt is seen in disks around HMYSOs
+    <div class=left style="background-color:#0000004d; position: relative; color: white; margin-top:0%">
+    <h3 style="z-index:25; position: relative; color: white; text-align:center;"> Summary </h3>
+    Salt is seen in disks around HMYSOs
     <ul class=smaller>
         <li> It is correlated with water and SiS.
         <li> It is not seen in the outflow.
         <li> It is uncorrelated with COMs and ionized gas.
         <li> Its excitation is weird.
     </ul>
-    <div class=smaller> Questions:</div>
-    <ul class=smaller>
-        <li> Where does the salt come from?  </li>
-        <li> What excites it?  </li>
-        <li> Why isn't it ubiquitous? </li>
-        <li> Where else do we (should we) see it? </li>
-        <li> What other species might be coincident? </li>
-    </ul>
-
+        <div  class=smaller> Questions:
+            <br>
+            <ul class=smaller>
+                <li> Where does the salt come from?  
+                    <ul><li> What temperature regions?</li>
+                        <li> What radii?  Vertical scales</li>
+                    </ul>
+                </li>
+                <li> What excites it?
+                    <ul><li> Why is $T_{vib}\sim1000$ but $T_{rot}\sim100$ K?</li>
+                    </ul>
+                </li>
+                <li> Why isn't it ubiquitous? </li>
+                <li> Where else do we (should we) see it? </li>
+                <!--<li> What other species might be coincident? </li>-->
+            </ul>
+        </div>
     </div>
-    <br>
 </section>
 
 

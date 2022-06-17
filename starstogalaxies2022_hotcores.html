@@ -63,7 +63,8 @@ projects that led up to the ACES ALMA large program.
 <section data-id="9e1f37193271406fc72e974be0a8a3fe">
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
     <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
-        <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">Dynamical, accretion, and photoevaporative truncation of disks living in dense clusters
+        <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">
+            Hot Cores and the CMF
 </h1>
             <div class=smaller></div>
             <p class="footer">Adam Ginsburg</p>
@@ -88,7 +89,7 @@ projects that led up to the ACES ALMA large program.
     </div>
 
     <div class=smaller2> Slides available at 
-    <a href="https://keflavich.github.io/talks/EPOS_2022.html">https://keflavich.github.io/talks/starstogalaxies2022.html</a>
+    <a href="https://keflavich.github.io/talks/starstogalaxies2022_hotcores.html">https://keflavich.github.io/talks/starstogalaxies2022_hotcores.html</a>
 
 
     </div>
@@ -96,37 +97,111 @@ projects that led up to the ACES ALMA large program.
 </section>
 
 <section>
+    <h4> Meet my group </h4>
+    <table class=smaller>
+        <tr>
+            <td width=50%>
+                <img  style="float:right; max-height:150px;" src="https://astro.ufl.edu/files/2020/09/budaiev-1440x1440.jpg">
+                47 Nazar Budaiev: Protostars &amp; cores in Sgr B2
+            </td>
+            <td width=50%>
+                <img style="max-width: 200px; max-height: 150px; float:right;" src="FrontiersAssets/DesmondHeadshot.png">
+                54 Desmond Jeff: Hot Cores in Sgr B2 DS
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img style="max-width: 200px; max-height: 150px; float:right;" src="https://astro.ufl.edu/files/2019/08/IMG_2870-1440x1418.jpg">
+                61 Theo Richardson: YSO modeling
+            </td>
+            <td>
+                <img  style="float:right; max-height:150px" src="https://astro.ufl.edu/files/2021/10/Allison_Towner.jpg">
+                 64 Allison Towner (postdoc): SiO at low velocities
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img  style="float:right; max-height:150px" src="https://astro.ufl.edu/files/2020/09/bulatek-1440x1440.jpg">
+                 165 Alyssa Bulatek: Line tracers in The Brick
+            </td>
+            <td>
+                <img  style="float:right; max-height:150px" src="https://astro.ufl.edu/files/2021/09/gramze_savannah-e1632516487242-1440x1920.jpeg">
+                 169 Savannah Gramze: Overshooting and crashing gas along the Galactic bar
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    outline:
     Hot cores feed back onto their environments
 
     They suppress fragmentation by heating the gas
+
+    But that's probably not why the CMF is different
 </section>
 
+<section>
+    <h4> ALMA-IMF: $\sim800$ cores</h4>
+    <div class=smaller><a href="https://www.almaimf.com/data.html">www.almaimf.com/data.html</a></div>
+    <img style="max-height:75%" src="almaimf_assets/Pouteau2022_figd1_overviewimage.png">
+    <div style="position: relative; top:-8%; left:22%;" class=smaller2><a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220303276P/abstract">Pouteau+ 2022</a> W43-MM2/3<br>
+</section>
 
 <section>
-    <div>Hot cores in ALMA-IMF: From rare objects to a population</div>
+    <section>
+        <h4> ALMA-IMF:<br> The CMF is shallow (top-heavy) in HMSFRs</h4>
+        <img style="max-height:75%" src="almaimf_assets/Pouteau2022_fig8_cmfs.png">
+        <div style="position: relative; top:-22%; left:-15%;" class=smaller2><a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220303276P/abstract">Pouteau+ 2022</a> W43-MM2/3 CMF<br>
+            <a href="https://ui.adsabs.harvard.edu/abs/2018NatAs...2..478M/abstract">Motte+ 2018</a> W43-MM1 CMF: &alpha;&gtrsim;-1</div>
+    </section>
+
+    <section>
+        <h4 class=smaller> Top-heavier IMFs are seen in high-mass clusters, <br> CMFs in protoclusters</h4>
+        <div>
+            <img src="colloquium_assets/Hosek2018_fig17.svg" style="width:105%">
+            <div style="position: relative; bottom: 135px; left:-310px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018arXiv180802577H">Hosek+ 2018</a></div>
+        </div>
+        <div style="position: relative; top: -11%; left:35%" class="smaller3"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        <aside class=notes>
+            <ul>
+                <li> Observations of clusters support the idea that star formation
+                in the densest clusters is indeed different
+                <li> Right panels show IMFs with high-end slopes of 2.3 and 1.75
+                respectively; they show 1000-Msun clusters with different IMFs
+                <li> The lower-right plot extends out to 100 Msun stars, while the top
+                cut off around 30
+                <li> Plots are produced using <a href="https://github.com/keflavich/imf/blob/master/examples/imf_figure.py">IMF figure</a> code again
+            </ul>
+        </aside>
+    </section>
+</section>
+
+<section>
+    <div>Hot cores in ALMA-IMF: From rare objects to a population ($\sim50$)</div>
     <img src="almaimf_assets/Brouillet_W43MM1_cores.png">
     <div style="position: relative; top:-75%; left:75%; color:red; width:20%; background-color:white;" class=smaller2>
         Cores with line forests<br>
         T<sub>D</sub>&gt;50 K<br> 
         T<sub>G</sub> &gtrsim;100K</div>
-    <div style="position: relative; top:-35%; left:-25%;" class=smaller2> Brouillet+, in prep </div>
+    <div style="position: relative; top:-35%; left:-25%;" class=smaller2> Brouillet+, submitted prep </div>
     <div class=fragment style="position: relative; top:-70%; width:110%;"><img style='width:110%;' src="almaimf_assets/W43HCLineForest.png"></div>
 </section>
 
 <section>
-    <div class=flex-vert-90>
-    <div style="float: left; width:60%">
-        <img src="almaimf_assets/cores_vs_hotcores.png">
-    </div>
-        <div style="width:40%; float:right">
-            <h4>Hot core overview:<br> A lot is coming</h4>
-        <ul>
-            <li> 11 HCs in W43-MM1 <span class=smaller>(Brouillet+ in prep)</span></li>
-            <li> ~60-70 HCs in ALMA-IMF sample from CH<sub>3</sub>OCHO <span class=smaller style='color:darkred'>(Bonfand+ in prep; left)</span> </li>
-            <li> CH<sub>3</sub>CN temperature maps <span class=smaller>(Wyrowski+ in prep)</span></li>
-        </ul>
-        </div>
-    </div>
+    <h4> Hot cores are mostly small ($\lesssim5000$ AU) </h4>
+    <img src="almaimf_assets/almaimf_hotcore_radii.png">
+</section>
+
+
+<section>
+    <h4> Hot cores are generally the most massive cores </h4>
+    <img src="almaimf_assets/ALMA-IMF_hotcore_and_core_1mm_histogram.png">
+</section>
+
+<section>
+    <h4> HCs don't fragment in our data </h4>
+    There are no clear cases of another core existing with the radius (as seen in CH<sub>3</sub>OCHO) of a hot core.
 </section>
 
 <section id=desmond_overview>
@@ -151,6 +226,11 @@ projects that led up to the ACES ALMA large program.
             <li> Focus on hot core temperature measurement &amp; YSO identification
         </ul>
     </aside>
+</section>
+
+<section>
+    <h4>Hot cores in the CMZ are a bit hotter and more massive</h4>
+    <img src="assets/DesmondJeff_SgrB2DS_hotcoremassvstemperature.png" style="max-height:70%">
 </section>
 
 

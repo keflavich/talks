@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Salts</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+          <section>
+              Slide 0 - <a href="https://github.com/hakimel/reveal.js/wiki/Keyboard-Shortcuts">Instructions</a>:
+              <ul>
+                  <li> To move slides, use the arrow keys or swipe on your mobile device
+                  <li> To see the speaker notes, press "s"
+                  <li> To go to full screen, press "f"
+                  <li> To print as PDF, go to this URL: <a
+                      href="?print-pdf">?print-pdf</a>, then print.  <br>
+                  <!--You can also download the PDF from <a href="https://www.dropbox.com/s/5itl9tkb6wljnbc/HMSFColloquium_Ginsburg_Morelia2019.pdf?dl=0">this link</a>-->
+                  <li> To get a PDF with speaker notes, add <a
+                  href="?print-pdf&showNotes=true">?print-pdf&showNotes=true</a> to the URL.
+
+              </ul>
+          </section>
+
+<!--
+    Abstract:
+
+Title:"Accretion Disks Around HMYSOs: Brinaries!"
+
+Disks around young stars are the sites of planet formation and are becoming
+very well-understood.  By contrast, the disks around high mass stars have only
+recently been discovered and are poorly characterized at best.  High-mass stars
+are almost exclusively seen in high-order multiple systems, hinting that
+perhaps disks around massive stars could be the sites of companion formation.
+At the least, disk kinematics are a powerful tool for accurately measuring
+dynamical masses.  However, with ALMA, we are somewhat limited by the high
+optical depth of both the disks and envelopes around these stars.  The ngVLA
+provides access to longer wavelengths than ALMA, which will allow us to trace
+further into the disks around high-mass stars.  The key question that remains
+is: Are there any emission lines that will trace disk kinematics?  I will show
+that salt, NaCl and KCl, and water, H2O, emission traces disks in several cases
+already seen with ALMA, and I will discuss prospects for using the ngVLA to
+observe lower-frequency lines to obtain dynamical mass measurements at the true
+zero-age of high-mass stars.
+
+
+-->
+
+<section data-id="9e1f37193271406fc72e974be0a8a3fe">
+    <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
+    <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; padding-top:20%">
+        <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">Salt</h1>
+            <div class=smaller></div>
+            <p class="footer">Adam Ginsburg</p>
+            <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
+            <div class=smaller2> 
+                Brett McGuire, Patricio Sanhueza, Fernando Olguin, Luke Maud, Henrik Beuther, Kei Tanaka, Yichen Zhang, Ciriaco Goddi,
+                Richard Plambeck, Melvyn Wright, John Bally, Tomoya Hirota, Nick Indriolo
+</div>
+
+<div class=smaller2> Slides available at 
+<a href="https://keflavich.github.io/talks/salts_astrochem_May2022.html">https://keflavich.github.io/talks/salts_ngvla_june2022.html</a>
+
+</div>
+    </div>
+    </div>
+</section>
+
+<section>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-12%; margin-left:-30%; height:150%; width:160%; z-index=-1"></span>
+
+    <div style="padding-top: 10%">
+        <div class=left style="position: relative; color: white; background-color:#0000008e;">
+        <h3 style="z-index:25; position: relative; color: white; text-align:center;"> Summary </h3>
+         Salt is seen in disks around HMYSOs
+        <ul class=smaller>
+            <li> It is not detected in the ISM <span class=smaller2>(maybe Sgr B2)</span> </li>
+            <li> Salt is not seen in outflows <span class=smaller>(but maybe at the interface between disk &amp; outflow)</span></li>
+            <li> NaCl and KCl are correlated with water and SiS.</li>
+            <li> Salt is uncorrelated with COMs and ionized gas.
+            <li> Salt excitation is weird.
+            <li> There are many observable and useful transitions between 5 and 120 GHz
+        </ul>
+        <br>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-12%; margin-left:-30%; height:150%; width:160%; z-index=-1"></span>
+    <div style="padding-top: 10%">
+        <div class=left style="position: relative; color: white; background-color:#0000008e;">
+            <h3 style='text-align:center; position:relative; color:white;'> Salt (and water and SiS) questions </h3>
+            <ul>
+                <li> Where do we see salt?</li>
+                <li> Why isn't it ubiquitous? <span class=smaller>(it's not)</span></li>
+                <li> Where does the salt come from?  </li>
+                <li> What excites it?  </li>
+                <li> Where else do we (should we) see it? <span class=smaller2>Protoplanetary disks?  AGN?</span> </li>
+                <li> What other species might coincide with brine? </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-12%; margin-left:-30%; height:150%; width:160%; z-index:-1"></span>
+    <div style="padding-top: 12%">
+        <div style='position: relative; color: white; background-color:#0000008e;'>
+        <h3 style='color:white'> Where do we see salts? </h3>
+        <ul >
+            <li> Red supergiant atmospheres 
+                <ul class=smaller2><li>(CRL2688, IRAS+10216, VY CMa, IK Tau)</li></ul></li>
+            <li> Massive young star disks (at least 9; this talk) </li>
+            <ul><li class=smaller2> aside: there more HMYSO disks than evolved stars with reported salt now</li></ul>
+            <li> Exoplanet atmospheres?
+                <ul><li class=smaller2>(hypothesized in hot jupiter clouds) </li></ul>
+                    </li>
+        </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <section style='background-color:black; background-image:();' data-background-image:""  data-background-color='black'>
+        <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);
+            margin-top:-2%; height:100%; position: absolute; z-index:-1;">
+        </span>
+        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:-2%; height:100%; position: absolute; z-index:0">
+        <h4 style="position: absolute; color: white; top:0%; left: 30%; z-index:10"> Orion Source I<br>
+            <div class=fragment>a disk around a 15 M<sub>&odot;</sub> YSO </div>
+            </h4>
+        <div class=fragment style="position: absolute; top:28%; left:25%; color:white; z-index:10" class=smaller>Salt: NaCl</div>
+        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize_arrow.png);  height:100%; position: absolute; z-index:1;">
+        </span>
+        <div style="position: relative; bottom: -90%; left:20%; z-index: 10" class="smaller3"><a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a></div>
+
+        <aside class=notes>
+            <ul>
+                <li> Orion Source I lives at the center of the BN/KL explosion
+                <li> We observed the disk known as source I
+                <li> ...in salts!  NaCl and KCl
+                <li> We used that disk to measure the mass of the central source
+            </ul>
+        </aside>
+    </section>
+
+
+</section>
+
+<section>
+    <h4> Brinary disks: NaCl moment 0 images </h4>
+    <div>
+        <div style="padding-left:10%;  padding-right:0%; max-height:80%">
+            <img style="float:left; width:10%;" src="assets/salts/SrcI_NaCl_mom0_ticks.png">
+            <img style="float:left; width:22%;" src="assets/salts/G351disk1_NaCl_mom0_ticks.png">
+            <img style="float:left; width:22%;" src="assets/salts/G351disk2_NaCl_mom0_ticks.png">
+            <img style="float:left; width:18%;" src="assets/salts/G17_NaCl_mom0_ticks.png">
+            <img style="float:left; width:24%; clear:left;" src="assets/salts/I16547A_NaCl_mom0_ticks.png">
+            <img style="float:left; width:24%;" src="assets/salts/I16547B_NaCl_mom0_ticks.png">
+            <img style="float:left; width:30%;" src="assets/salts/NGC6334Imm1b_NaCl_mom0_ticks.png">
+            <img style="float:left; width:16%;" src="assets/salts/NGC6334Imm2b_NaCl_mom0_ticks.png">
+        </div>
+    </div>
+    <div class=smaller2 style="float:left; clear:left;">
+        Data from 
+        <a href="http://adsabs.harvard.edu/abs/2019AJ....158..208G">Ginsburg+ 2019</a>,
+        <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...621A.122B/abstract">Beuther+ 2019</a>,
+        <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...900L...2T/abstract">Tanaka+ 2020</a>,
+        <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...627L...6M/abstract">Maud+ 2019</a>,
+        Sanhueza+
+    </div>
+</section>
+
+
+<section>
+    <h4> Brine lines measure dynamical mass </h4>
+    <br>
+    <div class=smaller>
+        <span style="float:center; text-align:center;"> NaCl v=1 J=18-17 </span>
+        <span style="float:right;"> Stack of v=[0,1] J<sub>u</sub>=[18,17] </span>
+        <div style='position: relative; margin-bottom:-10%' class=smaller2> SrcI</div>
+    </div>
+    <br>
+    <div>
+        <img style="width:65%; display:inline-block; float:left;" src="assets/SrcI_NaCl_PV_withKepler.png">
+        <img style="width:35%; display:inline-block; float:left;" src="assets/G17_NaCl_PV_stack_withKepler.png">
+    </div>
+
+    <br>
+    <div class=smaller>
+        <span style='color:red'> 15 M<sub>&odot;</sub> </span>
+        <span style='color:green'> 30 M<sub>&odot;</sub> </span>
+        <span style='color:blue'> 40 M<sub>&odot;</sub> </span>
+    </div>
+    <div class=smaller2>
+        <a href="http://adsabs.harvard.edu/abs/2019AJ....158..208G">Ginsburg+ 2019</a>,
+        <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...627L...6M/abstract">Maud+ 2019</a>
+</section>
+
+<section>
+    <img style="max-width:45%; height:600px; display:inline-block; float:left;" src="assets/salts/G351mm1_naclPV_withcolorcurves.png">
+    <img style="max-width:45%; height:600px; display:inline-block; float:left;" src="assets/salts/G351mm2_naclPV_withcolorcurves.png">
+    <div>
+        <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...621A.122B/abstract">Beuther+ 2019</a>
+    </div>
+</section>
+
+<section>
+    <h4> What have we learned about brinaries?</h4>
+
+    <ul>
+        <li class=fragment> <span style='color:navy'>Reasonably <b>common</b>:</span> <span class=smaller2>~6-9 known so far, ~15 HMYSO candidates examined</span>
+            <ul class=smaller><li> Y: SrcI, G17, IRAS16547 A and B, G351mm1 and mm2, W33A?, NGC6334I?
+                    <ul class=smaller><li>Ginsburg+ 2019, Ginsburg+ in prep, Tanaka+ 2020</li></ul>
+                </li>
+                <li> N: I16523, I18089, G11, G5, NGC6334IN, S255IR NIRS3, G333.23-0.06, I18162
+                </li>
+            </ul>
+        </li>
+        <li class=fragment> <span style='color:darkgreen'>Coincide w/<b>line-poor</b> sources </span>
+            <ul> 
+                <li> Not hot cores; little mass reservoir?</li>
+                <li> Or is the core resolved out?</li>
+            </ul>
+        </li>
+
+        <li class=fragment> <span style='color:darkred'>Trace reasonably <b> symmetric </b> disks</span> <span class=smaller>(in the well-resolved cases)</span>
+    </ul>
+</section>
+
+
+
+
+<section>
+    <h4> Compare: G17 vs G11.92 </h4>
+
+    <img src="assets/G17_b6_h2onaclspec.png" style='height:40%; float:left; display: inline-block'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:navy'>G17: Brinary<hr style='max-width:60%'></div>
+        Hot (ionizing) photosphere.  Circular disk.
+    </span>
+    <div style='clear:left;'></div>
+
+    <img src="assets/salts/color_labels_G11.92-0.61_spw1_stack.png" style='height:40%; float:left'>
+    <span class=smaller style='vertical-align:middle'>
+        <div style='color:red'>G11.92: Not-Brinary<hr style='max-width:60%'></div>
+        Line-rich!<br>  Big, R=230-850 au (Ilee+ 2018)
+    <div style='clear:left;'></div>
+</section>
+
+<section>
+    <section>
+        <h4> Compare: G17 vs GGD27 </h4>
+
+        <img src="assets/G17_b6_h2onaclspec.png" style='height:40%; float:left; display: inline-block'>
+        <span class=smaller style='vertical-align:middle'>
+            <div style='color:navy'>G17: Brinary<hr style='max-width:60%'></div>
+            Hot (ionizing) photosphere.  Circular disk.
+        </span>
+        <div style='clear:left;'></div>
+
+        <img src="assets/salts/color_labels_GGD27_spw1_stack.png" style='height:40%; float:left'>
+        <span class=smaller style='vertical-align:middle'>
+            <div style='color:red'>GGD27: Not-Brinary<hr style='max-width:60%'></div>
+            SO, CH<sub>3</sub>OH lines.  But line-poor!
+        <div style='clear:left;'></div>
+    </section>
+
+    <section>
+        detections
+        <div>
+            <img style='float:left; max-height: 20%; max-width:49%;' src="assets/salts/color_labels_G351_spw1_stack.png">
+            <img style='float:left; max-height: 20%; max-width:49%;' src="assets/salts/color_labels_NGC6334I_spw1_stack.png">
+            <img style='float:left; max-height: 20%; max-width:49%; clear:left;' src="assets/salts/color_labels_W33A.config8.spw1_5_stack.png">
+            <img style='float:left; max-height: 20%; max-width:49%;' src="assets/salts/color_labels_IRAS165474247_G343_spw1_stack.png">
+        </div>
+    </section>
+
+
+    <section>
+        nondetections
+        <div>
+        <img style='max-height:20%;max-width:49%;  float:left;' src="assets/salts/color_labels_G11.92-0.61_spw1_stack.png">
+        <img style='max-height:20%;max-width:49%;  float:left;' src="assets/salts/color_labels_G29_spw1_stack.png">
+        <img style='max-height:20%;max-width:49%;  float:left; clear:left;' src="assets/salts/color_labels_G333_spw1_stack.png">
+        <img style='max-height:20%;max-width:49%;  float:left;' src="assets/salts/color_labels_G335_spw1_stack.png">
+        </div>
+    </section>
+    <section>
+        <div>
+        <img style='max-height:20%; max-width:49%; float:left;' src="assets/salts/color_labels_G34_spw1_stack.png">
+        <img style='max-height:20%; max-width:49%; float:left;' src="assets/salts/color_labels_G5.89-0.37_spw1_stack.png">
+        <img style='max-height:20%; max-width:49%; float:left;clear:left;' src="assets/salts/color_labels_IRAS_165623959_spw1_stack.png">
+        <img style='max-height:20%; max-width:49%; float:left;' src="assets/salts/color_labels_IRAS_180891732_spw1_stack.png">
+        <img style='max-height:20%; max-width:49%; float:left; clear:left;' src="assets/salts/color_labels_IRAS_181622048_spw1_stack.png">
+        <img style='max-height:20%; max-width:49%; float:left;' src="assets/salts/color_labels_NGC_6334_I_N_spw1_stack.png">
+        </div>
+    </section>
+</section>
+
+
+<section>
+    <h4> What molecules correlate (in our sample of 16)?</h4>
+    <img style="max-height:80%" src="assets/salts/salt_water_so_sis_cross_correlation.png">
+</section>
+
+<section>
+    <h4> Resolution is a (weak) predictor of salt detection</h4>
+    <img style="max-height:80%" src='assets/salts/logistic_P_of_salt.png'>
+</section>
+
+<section>
+    What will the ngVLA see?
+    <div style='display: grid';>
+        <img src="assets/salts/NaCl_LTE_SLEDs_N=1e14.png" style='grid-column:1; grid-row:1'>
+        <img src="assets/salts/NaCl_LTE_SLEDs_N=1e14_labeled.png" class=fragment style='grid-column:1; grid-row:1' >
+        <div class=smaller>
+            Current measurements give $T_{rot}\sim50-150$ K $\rightarrow\sim$few K for ngVLA.
+        </div>
+
+        <div class=smaller>
+            (but, $T_{vib}\sim1000$ K )
+        <br>
+
+        </div>
+    </div>
+</section>
+
+
+<section>
+    Non-LTE (RADEX) calculations ...
+    <img src="assets/salts/NaCl_nLTE_SLEDs_N=1e13_n=1e06_labeled.png">
+    <br>... hint that ngVLA-band lines may be brighter 
+    <br><span class=smaller>(if density is too low to populate higher states)</span>
+</section>
+
+<section>
+    What will the ngVLA see?
+    <div style='display: grid';>
+    <img src="assets/salts/KCl_LTE_SLEDs_N=1e14_labeled.png" style='grid-column:1; grid-row:1'>
+    </div>
+</section>
+
+<section>
+    What will the ngVLA see?
+    <div style='display: grid';>
+    <img src="assets/salts/SiS_LTE_SLEDs_N=1e16_labeled.png" style='grid-column:1; grid-row:1'>
+    </div>
+</section>
+
+<section class=center>
+    <div style='height: 100%'>
+        <div style="padding-top: 25%">
+        Open question: What excites salt emission?
+        </div>
+        <ul class=fragment>
+            <li> Key to make specific predictions of line brightness </li>
+            <li> Requires good models of disk vertical structure around high-mass stars </li>
+        </ul>
+    </div>
+</section>
+
+
+<section>
+    <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
+    <h4 style='text-align: left'> Why are rotational/vibrational temperatures different? </h4>
+    </span>
+</section>
+<section>
+    <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
+    <h4 style='text-align: left'> Why are rotational/vibrational temperatures different? </h4>
+    </span>
+</section>
+
+<section>
+    <section>
+        <div>
+            <h4> VY CMa vs Orion Src I</h4>
+            Both have $T_{vib}-T_{rot}$ disagreement
+            <br>It's worse in young sources
+        </div>
+        <div>
+        <img style="float:left; max-width:49%; padding-top:2%;" src="assets/salts/Kaminski2013_VYCMaRotationDiagramSalt.png">
+        <img style="float:left; max-width:49%" src="assets_orion/NaCl_rotational_diagrams.png">
+        <div style="text-align:left;">
+            <a href="https://ui.adsabs.harvard.edu/abs/2013ApJS..209...38K/abstract">Kaminski+ 2013</a>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
+        <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
+        </span>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h4>When does salt enter the gas phase?</h4>
+
+        Depends on the binding energy of NaCl to grain surfaces.
+        <br>
+        <br>
+
+        <a
+            href="https://ui.adsabs.harvard.edu/abs/2016A%26A...592A..76D/abstract">Decin+
+            2016</a> suggest thermal desorption will remove all salt from grain
+        surfaces for $T_D > 100-300$ K, depending on assumed binding energy
+        <div class=smaller>(this range is consistent with VY CMa observations)</div>
+        <br>
+        If $T_D>300$ K is all that is required, why do we not see salts in hot cores?
+        (see talk by Desmond Jeff)
+    </section>
+
+    <section>
+        <h4>When does salt enter the gas phase?</h4>
+        If $T_D>300$ K is all that is required, why do we not see salts in hot cores?
+        (see talk by Desmond Jeff)
+        <img src="assets/DesmondJeff_SgrB2DS_hotcoremassvstemperature.png" style="max-height:70%">
+    </section>
+</section>
+
+<section>
+    <h4>When does salt enter the gas phase?</h4>
+
+    At atmospheric pressure: T~500-600K <span class=smaller>(<a href="https://ui.adsabs.harvard.edu/abs/2018A%26A...614A...1W/abstract">Woitke+ 2018</a>)</span>
+    <br>
+    <img style='max-height:75%' src="https://www.aanda.org/articles/aa/full_html/2018/06/aa32193-17/aa32193-17-fig7.jpg">
+</section>
+
+<section>
+    <h4>Briny emission should occur in low-mass disks too</h4>
+    <br>
+    $T\gtrsim200$K &rightarrow; $r\lesssim 2$ au for L<sub>&odot;</sub> stars
+    <br>
+    <br>
+    But the gas temperature required for gas-phase salts could be anywhere
+    between  100 &lt; T &lt; 600  K.
+</section>
+
+<section>
+    <div style="padding-top:15%">
+    <h4> Does salt have friends?</h4>
+    NaCl, KCl, SiS, and H<sub>2</sub>O coincide. <div class=smaller>(AlO is also present in Orion)</div>
+    <br>
+    What others might exist in these regions?  <br>FeS?  FeO?  LiCl?  HCl? AlCl? AlOAlO?
+    </div>
+</section>
+
+<section>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-12%; margin-left:-30%; height:150%; width:160%; z-index:-1"></span>
+
+    <div class=left style="background-color:#0000008e; position: relative; color: white; margin-top:0%">
+    <h3 style="z-index:25; position: relative; color: white; text-align:center;"> Summary </h3>
+    Salt is seen in disks around HMYSOs
+    <ul class=smaller>
+        <li> NaCl and KCl are correlated with water and SiS.
+        <li> Salt is not seen in outflows or molecular clouds.
+        <li> It is uncorrelated with COMs and ionized gas.
+        <li> Its excitation is weird.
+        <li> There are many observable and useful transitions between 5 and 120 GHz
+    </ul>
+        <div  class=smaller> Questions:
+            <br>
+            <ul class=smaller>
+                <li> Where does the salt come from?  
+                    <ul><li> What temperature regions?</li>
+                        <li> What radii?  Vertical scales</li>
+                    </ul>
+                </li>
+                <li> What excites it?
+                    <ul><li> Why is $T_{vib}\sim1000$ but $T_{rot}\sim100$ K?</li>
+                    </ul>
+                </li>
+                <li> Why isn't it ubiquitous? </li>
+                <li> Where else do we (should we) see it? </li>
+                <!--<li> What other species might be coincident? </li>-->
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section>
+    What's next for salts?
+    <br>
+    Deep VLA observations of low-J lines in Orion
+    <span class=image
+        style="background-image:url(assets_orion/NaCl_and_KCl_Aij_vs_wavelength_logy_longwavelengths_with_observed.svg);
+        margin-top:-2%;
+        height:90%">
+    </span>
+        <!--<div style="margin-top:20%; margin-right:15%; margin-left:55%; width:40%;" class=smaller> Can we use these to measure inner disk kinematics? </div>-->
+        <!--<div style="width: 40%; margin-left:55%; margin-top:-55%;"> Many (ng)VLA-observable lines </div>-->
+</section>
+
+
+
+
+
+
+
+
+
+<section>
+
+    <section> Salt backup slides </section>
+
+    <section>
+        <h2>Possible future uses for these lines?</h2>
+        <ul>
+            <li> Metallicity measurement in deeply embedded star-forming environments? (at least of Na, K, Cl)
+            <li> Disk kinematics of high-mass stars, which are otherwise unobservable (τ&gt;1 at mm wavelengths)
+            <li> Disk kinematic measurements at early stages?
+            <li> Probe dust destruction (and/or formation?) in outflows, disks?
+            <li> Probe radiation environment around HMYSOs?
+        </ul>
+    </section>
+
+    <section><span class=image style="background-image:url(assets_orion/NaCl_KCl.png); background-size:110%; margin-top:-2%; height:100%"></section>
+
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw1_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B3_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B6_spw1_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw2_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw3_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw0_robust0.5.png);  height:100%"></section>
+    <section><span class=image style="background-image:url(assets_orion/color_labels_OrionSourceI_B7.lb_spw1_robust0.5.png);  height:100%"></section>
+
+    <section>
+        <h2> Why do we see salt?</h2>
+        <ul>
+            <li> Previously, NaCl &amp; KCl only in AGB* atmospheres,
+            <br>associated with dust formation
+            <li> Most likely dust <i>destruction</i> here
+            <br> Dust destruction happens immediately as the outflow is launched?
+            <li> What about excitation?  We see vibrationally excited lines, which are <i>not</i> seen in AGB*s
+        </ul>
+    </section>
+
+    <section>
+        <h2>We do not have a viable model to explain these temperatures</h2>
+        <div>A strong non-blackbody radiation field from 25-40 µm <i>may</i> explain them.</div>
+        <div>Forsterite (MgSiO<sub>4</sub>) has some emission bands in that range. Maybe? </div>
+    </section>
+</section>
+
+
+
+
+</div>
+</div>
+
+
+
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+    <script>
+    var els = document.getElementsByTagName('section');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        // I still can't figure out how to get the background to fill the damned page
+        els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
+        els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");
+    }
+    </script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: true,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+        pdfMaxPagesPerSlide: 1,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+        condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>
+

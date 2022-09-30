@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hot Cores and Feedback</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+<section>
+  Slide 0 - <a href="https://github.com/hakimel/reveal.js/wiki/Keyboard-Shortcuts">Instructions</a>:
+  <ul>
+      <li> To move slides, use the arrow keys or swipe on your mobile device
+      <li> To go to full screen, press "f"
+      <li> To print as PDF, go to this URL:
+          <a href="?print-pdf">?print-pdf</a>, then print <span class=smaller>(warning: may be slow and not work on all browsers)</span>.  <br>
+      <!--You can also download the PDF from <a href="https://www.dropbox.com/s/5itl9tkb6wljnbc/HMSFColloquium_Ginsburg_Morelia2019.pdf?dl=0">this link</a>-->
+      <li> To see an overview, press <span style="font-family: 'Courier New', monospace;">esc</span>
+
+  </ul>
+</section>
+
+<!--
+    Abstract:
+
+Title: Hot cores & outflows: the early stage of high-mass star feedback
+
+High mass stars begin nuclear burning while they are still accreting.
+While their late-phase feedback, in the form of HII regions and eventually
+supernovae, affects the surrounding ISM on large scales and regulates
+star formation, their early-phase feedback in the form of heating and
+outflows determines where and how many neighboring stars form.
+Feedback from high-mass forming stars regulates the IMF.
+I will discuss recent work on both hot cores and outflows in high-mass
+star-forming regions in Galactic disk and Galactic center environments.
+There is growing evidence that the stellar IMF is shallower (more top-heavy)
+in dense cluster environments, and I will describe how the presence
+of hot cores may drive this difference.
+My talk will include results from the ALMA-IMF large program and from
+projects that led up to the ACES ALMA large program.
+
+-->
+
+<section data-id="9e1f37193271406fc72e974be0a8a3fe">
+    <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
+    <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+        <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">
+            Hot Cores and the CMF
+</h1>
+            <div class=smaller></div>
+            <p class="footer">Adam Ginsburg</p>
+            <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
+            <!--<div class=smaller3>
+                John Bally, Ashley Barnes, Nate Bastian, Cara Battersby,
+                Henrik Beuther, Crystal Brogan, Yanett Contreras, Joanna
+                Corby,  Jeremy Darling, Chris De Pree, Roberto Galván-Madrid,
+                Guido Garay, Jonathan Henshaw, Todd Hunter, J. M. Diederik
+                Kruijssen, Steven Longmore, Xing Lu, Fanyi Meng, Elisabeth A.C.
+                Mills,  Juergen Ott, Jaime E. Pineda, Álvaro Sánchez-Monge,
+                Peter Schilke, Anika Schmiedeke, Daniel Walker, David Wilner,
+                Leonardo Testi, Rowan Smith, Ke Wang, James Dale,  Robert
+                Loughnane,  Erik Rosolowsky, Eric Koch, Ciriaco
+                Goddi, Brett McGuire, Dick Plambeck, Melvyn
+                Wright</div>-->
+            <div class=smaller2>
+                with the ALMA-IMF team (incl. Timea Csengeri, Melisse Bonfand, Thomas Nony), postdoc Allison Towner, and students
+                Desmond Jeff, Theo Richardson, Alyssa Bulatek, Nazar Budaiev,
+                and Savannah Gramze
+            </div>
+    </div>
+
+    <div class=smaller2> Slides available at
+    <a href="https://keflavich.github.io/talks/ascona2022_feedback.html">https://keflavich.github.io/talks/ascona2022_feedback_crs.html</a>
+
+
+    </div>
+    </div>
+</section>
+
+
+<section>
+    <h4> ALMA-IMF: $\sim800$ cores</h4>
+    <div class=smaller><a href="https://www.almaimf.com/data.html">www.almaimf.com/data.html</a></div>
+    <img style="max-height:75%" src="almaimf_assets/Pouteau2022_figd1_overviewimage.png">
+    <div style="position: relative; top:-8%; left:22%;" class=smaller2><a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220303276P/abstract">Pouteau+ 2022</a> W43-MM2/3<br>
+</section>
+
+<section>
+    <section>
+        <h4> ALMA-IMF:<br> The CMF is shallow (top-heavy) in HMSFRs</h4>
+        <img style="max-height:75%" src="almaimf_assets/Pouteau2022_fig8_cmfs.png">
+        <div style="position: relative; top:-22%; left:-15%;" class=smaller2><a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220303276P/abstract">Pouteau+ 2022</a> W43-MM2/3 CMF<br>
+            <a href="https://ui.adsabs.harvard.edu/abs/2018NatAs...2..478M/abstract">Motte+ 2018</a> W43-MM1 CMF: &alpha;&gtrsim;-1</div>
+    </section>
+
+    <section>
+        <h4 class=smaller> Top-heavier IMFs are seen in high-mass clusters, <br> CMFs in protoclusters</h4>
+        <div>
+            <img src="colloquium_assets/Hosek2018_fig17.svg" style="width:105%">
+            <div style="position: relative; bottom: 135px; left:-310px;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2018arXiv180802577H">Hosek+ 2018</a></div>
+        </div>
+        <div style="position: relative; top: -11%; left:35%" class="smaller3"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        <aside class=notes>
+            <ul>
+                <li> Observations of clusters support the idea that star formation
+                in the densest clusters is indeed different
+                <li> Right panels show IMFs with high-end slopes of 2.3 and 1.75
+                respectively; they show 1000-Msun clusters with different IMFs
+                <li> The lower-right plot extends out to 100 Msun stars, while the top
+                cut off around 30
+                <li> Plots are produced using <a href="https://github.com/keflavich/imf/blob/master/examples/imf_figure.py">IMF figure</a> code again
+            </ul>
+        </aside>
+    </section>
+</section>
+
+<section>
+    <div class=smaller>Hot cores in ALMA-IMF: From rare objects to a population ($\sim50$)</div>
+    <img style='max-height:90%' src="almaimf_assets/Brouillet_W43MM1_cores.png">
+    <div style="position: relative; top:-75%; left:75%; color:red; width:20%; background-color:white;" class=smaller2>
+        Cores with line forests<br>
+        T<sub>D</sub>&gt;50 K<br>
+        T<sub>G</sub> &gtrsim;100K</div>
+    <div style="position: relative; top:-30%; left:-25%;" class=smaller2> Brouillet+, resubmitted </div>
+    <div class=fragment style="position: relative; top:-70%; width:110%;">
+        <img style='width:110%;' src="almaimf_assets/W43HCLineForest.png">
+    </div>
+</section>
+
+<section>
+    <div class=small> Bonfand+ (last talk): CH<sub>3</sub>OCHO HC catalog ($T\gtrsim100$ K)</div>
+    <img style='float:left; max-height:85%' src="almaimf_assets/W51-E_1_allCH3OCHOmoments.png">
+    <div class=smaller style='margin-top:30%'> Many lines of CH<sub>3</sub>OCHO toward W51-E2
+</section>
+
+
+<section>
+    <section>
+        <h4> Hot cores are generally the most massive cores </h4>
+        <img src="almaimf_assets/ALMA-IMF_hotcore_and_core_1mm_histogram.png">
+    </section>
+
+    <section>
+        <h4> Hot cores are mostly small ($\lesssim5000$ AU) </h4>
+        <img src="almaimf_assets/almaimf_hotcore_radii.png">
+    </section>
+</section>
+
+<section>
+    <h5> The characteristic fragmentation scale is larger near HCs</h5>
+    <div class=smaller>
+        Jeans Mass <!--M<sub class=smaller2>J</sub> = (π/6)c<sup class=smaller2>3</sup><sub style="margin-left:-10px" class=smaller2>s</sub>G<sup class=smaller2>−3/2</sup>ρ<sup class=smaller2>−1/2</sup>-->
+    M<sub class=smaller2>J</sub> &prop; T<sup class=smaller2>3/2</sup> ρ<sup class=smaller2>−1/2</sup>
+    </div>
+    <span class="image" style="height:80%; background-image: url(colloquium_assets/azimuthalaverage_radial_mj_and_mbar_of_TCH3OH_massivecores.svg)">
+        <div style="position: relative; bottom: -95%; left:-28%" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> (describe plot)
+            <li> In the warm neighborhood of accreting massive stars, the Jeans mass is higher
+            <li> Despite the high density, the Jeans mass is 5-10 times greater than locally
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <table width=100%>
+        <tr><td width='30%'>
+    <div style="float: left;">
+        <h4> HCs don't fragment in our data </h4>
+        <div class=smaller2>
+        No clear cases of another core existing with the radius (as seen in CH<sub>3</sub>OCHO) of a hot core in ALMA-IMF data (2000 AU resolution).
+        <br>
+        Limited fragmentation at higher resolution.
+        </div>
+    </div>
+            </td>
+            <td width='70%' >
+                <div style="float:right; ">
+                    <img style='min-height:680px; height:auto; object-fit: cover;' src="almaimf_assets/W51-E_almaimf_lb_zoom_ch3ochocontour.png">
+                </div>
+            </td></tr></table>
+</section>
+<section>
+    <table width=100%>
+        <tr><td width='30%'>
+    <div style="float: left;">
+        <h4> HCs don't fragment in our data </h4>
+        <div class=smaller2>
+        No clear cases of another core existing with the radius (as seen in CH<sub>3</sub>OCHO) of a hot core in ALMA-IMF data (2000 AU resolution).
+        <br>
+        Limited fragmentation at higher resolution.
+        </div>
+    </div>
+            </td>
+            <td width='70%' >
+                <div style="float:right; ">
+                    <img style='min-height:500px; height:auto; object-fit: cover;' src="almaimf_assets/W51-IRS2_almaimf_lb_zoom_ch3ochocontour.png">
+                </div>
+            </td></tr></table>
+</section>
+
+<section id=desmond_overview>
+    <div style='float:left'> Hot cores in the Galactic center </div>
+    <div style="float:left; width:75%; margin-top:10%">
+        <!--<img src="FrontiersAssets/cores_on_continuum_peak_DeepestSouth_zoomin.png" style="width:80%;">-->
+        <!--<img src="FrontiersAssets/desmond_overview.png" style="width:99%;">-->
+        <img src="assets/DesmondJeff_SgrB2DS_20211203.png" style="width:99%;">
+    </div>
+    <div style="float:left; width:25%;">
+        <img style="width: 70%; height: 70%" src="FrontiersAssets/DesmondHeadshot.png">
+        <span class="smaller" align=right style="position: relative; float: right;">
+            Desmond Jeff:
+            <br><span style='color:darkgreen'> Ten hot cores in Sgr B2 DS</span>
+            <br> T<sub>G</sub> ~ 200-500 K
+            <br> M ~ 200 - 2900 M<sub>&odot;</sub>
+        </span>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> Desmond is a 4th-year PhD student
+            <li> Focus on hot core temperature measurement &amp; YSO identification
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <h4>Hot cores in the CMZ are a bit hotter and more massive</h4>
+    <img src="assets/DesmondJeff_SgrB2DS_hotcoremassvstemperature.png" style="max-height:70%">
+</section>
+
+<section>
+    <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small.jpg);'>
+    <h4> Our own Galaxy's center, the CMZ, has denser gas than the Galactic average </h4>
+    <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
+    <div style="text-align:left; position: relative; bottom: -61%; left:1%" class="smaller3">
+        <a class=darkbg href="http://adsabs.harvard.edu/abs/2018arXiv181000266M">Mills, Ginsburg+ 2018</a><span style="color:white">;</span>
+        <a class=darkbg href="http://esoads.eso.org/abs/2013MNRAS.435.2598K">Kruijssen &amp; Longmore 2013</a></div>
+    <div style="right:10%; margin-top:37%; text-align:right;" class=smaller2>
+        <span style="color: orange;"> Cold Dust </span><br>
+        <span style="color: rgb(200,60,255)"> Hot, ionized gas </span><br>
+        <span style="color: turquoise;"> Hot dust/PAHs </span><br>
+    </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Cold dust is where new stars will form
+            <li> Average molecular cloud densities about 1-2 orders of magnitude greater than in the Galactic disk
+            <li> Clouds are warmer and more turbulent than the disk
+            <li> Cloud conditions analogous to early universe [e.g., <a href="http://esoads.eso.org/abs/2013MNRAS.435.2598K">Kruijssen &amp; Longmore 2013</a>]
+            <li> This is a "local"/"nearby" region where we can test theories that predict, e.g., higher
+            cluster formation efficiency at higher density
+        </ul>
+    </aside>
+
+</section>
+<section>
+    <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small_singlezoom_lines.jpg);'>
+    <h4> The proto-Super Star Cluster Sgr B2 is forming in the CMZ </h4>
+    <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
+    <div style="position: relative; bottom: -61%; left:1%; text-align:left" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg+ 2018a</a></div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Zoom-in to the Sgr B2 cloud:
+            <li> Most massive, actively star-forming cloud in the galaxy: 10<sup>7</sup> M<sub>&odot;</sub>
+            <li> ALMA 3mm image showing mix of dust and free-free emission
+        </ul>
+    </aside>
+</section>
+<section>
+    <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small_doublezoom.jpg);'>
+    <h4> The proto-Super Star Cluster Sgr B2 is forming in the CMZ </h4>
+    <div style="position: relative; bottom: -60%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
+    <div style="position: relative; bottom: -61%; left:1%; text-align:left;" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg+ 2018a</a></div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Each zoom reveals more sources.
+            <li> Most of the stars reside in bound proto-clusters
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <h4> Sgr B2 N is rapidly accreting... </h4>
+    <img style="margin-top:-1%" src="colloquium_assets/Schworer2019_SgrB2NHotCore.png">
+    <div style="position: relative; top:-50%; left:30%;">
+        <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A...6S/abstract" class=smaller style="color:white">
+            Schwörer+ 2019
+        </a>
+        <div class=smaller style='color:white'>M(gas)=2000-4000 M<sub>&odot;</sub> </div>
+        <div class=smaller style='color:white'>M&#x307;(in)=0.16 M<sub>&odot;</sub> yr <sup>-1</sup> </div>
+    </div>
+</section>
+
+<section>
+    <h4> ...and driving a powerful outflow </h4>
+    <img style="margin-top:-1%" src="colloquium_assets/Schworer2021_SgrB2N_outflow.png">
+    <div style="position: relative; top:-50%; left:30%; color:white" class=smaller>
+        Schwörer+ 2021 (subm.)
+        <div style='color:white'>M&#x307;(out) =0.044 M<sub>&odot;</sub> yr <sup>-1</sup> </div>
+    </div>
+</section>
+
+<section>
+    <h2>SSCs are common in starburst nuclei and drive galactic outflows </h2>
+    <div style="width:50%; float:left" class=smaller>NGC 253 protoclusters <span class=smaller>(<a href="http://adsabs.harvard.edu/abs/2018ApJ...869..126L">Leroy+2018</a>)</span></div> 
+    <div style="width:50%; float:right" class=smaller>NGC 4945 protoclusters <span class=smaller>(<a href="http://adsabs.harvard.edu/abs/2018ApJ...869..126L">Emig+2020</a>)</span></div> 
+    <img style="max-width:23%;" src="colloquium_assets/Leroy2018_Forming_fig1.svg">
+    <img style="max-width:43%;" src="colloquium_assets/ngc4945_zoom_sgrb2_crop.png">
+    <img style="max-width:23%;" src="colloquium_assets/Emig_NGC4945_PaA.png">
+    </span>
+    <!--<div class=smaller style='position:relative; top: 20%'> 2 pc beam = 0.11" </div>-->
+
+    <aside class=notes>
+        <ul>
+            <li> no notes
+        </ul>
+    </aside>
+</section>
+
+
+
+<section id=sgrb2_ds_3mm>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuum_peak_DeepSouth_saturated.png);'>
+        <div class=smaller2 style="position: relative; top:95%; left: 21%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> A higher-resolution view of Sgr B2 Deep South
+        </ul>
+    </aside>
+</section>
+
+<section id=sgrb2_ds_3mm_withysos>
+    <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/cores_on_continuum_peak_DeepSouth_saturated.png);'>
+        <div class=smaller2 style="position: relative; top:95%; left: 21%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> We catalog the protostellar cores, shown in orange and red
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <img src="assets/Meng2019_Fig1_SgrB2overview.png">
+</section>
+
+<section>
+    <img src="assets/Meng2019_Fig5_SpectralIndexSgrB2.png">
+</section>
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+    <script>
+    var els = document.getElementsByTagName('section');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        // I still can't figure out how to get the background to fill the damned page
+        els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
+        els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");
+    }
+    </script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: true,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+        pdfMaxPagesPerSlide: 1,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+        condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>
+
+

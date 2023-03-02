@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ACES visualizations</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+
+<section>
+    <div style='width:1450px; margin-left:-220px'>
+    <img style='width:100%' src="https://www.dropbox.com/s/lzfygci3qlrqqm2/zoom_anim_cmz_linear_withACES_HI-CO-Dust_m0.35_combined.gif?raw=1"></img>
+    </div>
+</section>
+
+<section>
+    <div width=1100pxs style='width:1250px; margin-left:-155px'>
+        <img style='width:100%' src="https://www.dropbox.com/s/xcvlzozsot4ifpy/cmz_to_sgrb2_zoomier_combined_mar2.gif?raw=1"></img>
+    </div>
+</section>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- End of slides. -->
+
+<script src="reveal/lib/js/head.min.js"> </script>
+<script src="reveal/js/reveal.js"> </script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="fullscreen.js"> </script>
+
+<!--
+    Nested backgrounds end up darker than non-nested, which isn't good!
+    <script>
+    var els = document.getElementsByTagName('section');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("data-background-image", "assets/SgrB2N_background.png");
+        // I still can't figure out how to get the background to fill the damned page
+        els[i].setAttribute("data-background-opacity", window.location.search.match(/print-pdf/gi) ? "0.0" : "0.2");
+        els[i].setAttribute("data-background-size", window.location.search.match(/print-pdf/gi) ? "1280px 1024px" : "cover");
+    }
+    </script>
+    -->
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: true,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+        pdfMaxPagesPerSlide: 1,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+
+        dependencies: [
+          { src: 'reveal/lib/js/classList.js',
+        condition: function() { return !document.body.classList; }},
+          { src: 'reveal/plugin/markdown/marked.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/markdown/markdown.js',
+        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
+          { src: 'reveal/plugin/highlight/highlight.js', async: true,
+        callback: function() { hljs.initHighlightingOnLoad (); }},
+          { src: 'reveal/plugin/notes/notes.js', async: true,
+        condition: function() { return !!document.body.classList; }},
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>
+

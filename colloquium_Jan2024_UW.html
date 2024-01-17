@@ -73,7 +73,7 @@ Opening cartoon is incorrect:
 
 
 
-Star Formation and Mass Measurements in the Galaxy
+Star Formation in the Galaxy
 
 
 The most important factor deciding the fate of a star and its surroundings is
@@ -81,17 +81,33 @@ its initial mass.  The relative number of high- and low-mass stars decides how
 much light and mass escape from a population of stars.  This distribution, the
 stellar initial mass function, is often assumed to be universally invariant,
 though we have plenty of reason to believe it varies with environment.  I will
-present results from several ALMA programs that measure the mass distribution
-of pre- and proto-stellar objects at early phases.  Denser regions of our
-Galaxy, like its center, form more stars in clusters than do the outskirts
-where the Sun resides.  Core mass function measurements suggest that more
-intensely star-forming regions preferentially form high-mass stars.  However,
+present results from several ALMA programs that measure the mass distribution of
+pre- and proto-stellar objects at early phases.  Denser regions of our Galaxy,
+like its center, form more stars in clusters than do the outskirts where the Sun
+resides.  Core mass function measurements suggest that more intensely
+star-forming regions preferentially form high-mass stars.  However, the simplest
+models of core-to-star evolution fail.  Since stars grow through episodic accretion
+events while their envelopes continue to grow and interact, we have only snapshots
+of the star formation sequence.  I'll describe evidence of past dynamical events
+that we might hope to see in future time domain surveys.
+
+
+
+# old, not using:
+However,
 the measurements of individual young stars remain subject to large systematic
 uncertainties that make a direct interpretation of mass function measurements
-difficult.  I will outline our path to resolving these problems through
-dynamical mass measurements with brinary disks, high resolution ALMA and JWST
-observations, and population modeling.
-  
+difficult.  I will walk through some of the small advances we are making in the
+gas flows that assemble stars and clusters, measurements of YSOs and their
+multiplicity, and the role of astrochemistry and radiative transfer models in
+these advances.
+I'll highlight a few topics on which UW specialties, like large time domain
+surveys and N-body dynamical modeling, play a key role.
+
+*gas flow: Savannah
+*multiplicity: Nazar, Taehwa
+*variability: Theo
+*astrochemistry: Desmond, Alyssa
 
 
 
@@ -101,27 +117,26 @@ observations, and population modeling.
 <section data-id="9e1f37193271406fc72e974be0a8a3fe">
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
     <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
-        <h3 style="font-size:130%; word-break: keep-all; hyphens: none;">High-Mass Star Formation and Mass Measurement in the Galaxy</h3>
+        <h3 style="font-size:130%; word-break: keep-all; hyphens: none;">High-Mass Star Formation and Mass Flows in the Galaxy</h3>
             <div class=smaller></div>
             <p class="footer">Adam Ginsburg</p>
             <p class="smaller3 footer">Associate Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
-            <!--<div class=smaller3>
-                John Bally, Ashley Barnes, Nate Bastian, Cara Battersby,
-                Henrik Beuther, Crystal Brogan, Yanett Contreras, Joanna
-                Corby,  Jeremy Darling, Chris De Pree, Roberto Galván-Madrid,
-                Guido Garay, Jonathan Henshaw, Todd Hunter, J. M. Diederik
-                Kruijssen, Steven Longmore, Xing Lu, Fanyi Meng, Elisabeth A.C.
-                Mills,  Juergen Ott, Jaime E. Pineda, Álvaro Sánchez-Monge,
-                Peter Schilke, Anika Schmiedeke, Daniel Walker, David Wilner,
-                Leonardo Testi, Rowan Smith, Ke Wang, James Dale,  Robert
-                Loughnane,  Erik Rosolowsky, Eric Koch, Ciriaco
-                Goddi, Brett McGuire, Dick Plambeck, Melvyn
-                Wright</div>-->
+
             <div class=smaller2> 
                 <ul>
                     <li> Postdocs: Miriam Garcia Santa Maria (2024-), Allison Towner (2020-2023)
-                    <li> PhD: Desmond Jeff, Theo Richardson, Alyssa Bulatek, Nazar Budaiev, Savannah Gramze, Taehwa Yoo
-                    <li> Undergrad: Derod Deal, Brice Tingle, Morgan Himes, Aden Dawson, Brighten Jiang
+                        <img src="assets/nsf_logo.jpg" style="float:right; max-width:100px;">
+                    <li style="max-width:55%"> PhD: <span style='color:darkblue'>Desmond Jeff</span>, <span style='color:maroon'>Theo Richardson</span>,
+                         <span style='color:darkblue'>Alyssa Bulatek</span>,
+                          <span style='color:maroon'>Nazar Budaiev</span>,
+                          <span style='color:darkblue'>Savannah Gramze</span> ,
+                            <span style='color:maroon'>Taehwa Yoo</span>
+                    <li> Undergrad: <span style='color:darkgreen'>Derod Deal</span>,
+                                    <span style='color:darkblue'>Brice Tingle</span>,
+                                    <span style='color:darkgreen'>Morgan Himes</span>,
+                                    <span style='color:darkblue'>Aden Dawson</span>,
+                                    <span style='color:darkgreen'>Brighten Jiang</span>
+                    <li> Supported by the NSF: 2008101, 2206511, CAREER 2142300
                 </ul>
                  <div class=smaller> Collaborators:
                 John Bally, Ashley Barnes, Cara Battersby,
@@ -131,16 +146,17 @@ observations, and population modeling.
                 Mills,  Juergen Ott, Álvaro Sánchez-Monge,
                 Peter Schilke, Daniel Walker,   Erik Rosolowsky, Eric Koch, Ciriaco
                 Goddi, Brett McGuire, Dick Plambeck, Melvyn Wright,
+                Johan van der Walt,
                 Henrik Beuther, Kei Tanaka, Yichen Zhang,
                 the ALMA-IMF team (Timea Csengeri, Fabien Louvet,
                 Nichol Cunningham, Frederique Motte, Patricio Sanhueza, Thomas
                 Nony, Yohan Pouteau, Melisse Bonfand, Fernando Olguin, Sylvain Bontemps, and
-                many others)
+                many others), and the ACES team
                         </div>
 </div>
 
 <div class=smaller2> Slides available at 
-<a href="https://keflavich.github.io/talks/colloquium_March2023_Syracuse.html">https://keflavich.github.io/talks/colloquium_March2023_Syracuse.html</a> or keflavich.github.io/talks
+<a href="https://keflavich.github.io/talks/colloquium_Jan2024_UW.html">https://keflavich.github.io/talks/colloquium_Jan2024_UW.html</a> or keflavich.github.io/talks
 
 </div>
     </div>
@@ -724,6 +740,247 @@ observations, and population modeling.
 
 
 <section>
+    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_orion.png);'></span>
+</section>
+
+
+<section>
+    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_orion_RGB_labeled_orion.png);'></span>
+</section>
+
+<section>
+    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_oricloud_RGB_labeled_oricloud.png);'></span>
+</section>
+
+<section>
+    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(assets_orion/HI-CO-Dust_m0.35_oricloud-rezoom_RGB.png);'></span>
+    <span class=smaller2 style='position: absolute; margin-top:-650px; width:100%; display:block; text-align:center;'>
+        The Integral-Shaped filament has $\sim10^4$ M$_\odot$ of gas over $\sim$10 pc
+    </span>
+    <aside>
+        oricloud is 12CO, 13CO, and dust
+    </aside>
+</section>
+
+<section>
+    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(assets_orion/HI-CO-Dust_m0.35_oricloud-rezoom-trapezium_RGB.png);'></span>
+    <span class=smaller2 style='position: absolute; margin-top:-650px; width:100%; display:block; text-align:center;'>
+        The Orion Molecular Cloud is the closest (d$\sim400$ pc) site of high-mass star formation
+    </span>
+    <aside>
+        oricloud is 12CO, 13CO, and dust
+    </aside>
+</section>
+
+<section>
+    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_oricloud-rezoom-trapezium-ALMA_RGB.png);'></span>
+    <span class=smaller2 style='position: absolute; margin-top:-650px; width:100%; display:block; text-align:center;'>
+        BOOM!
+    </span>
+</section>
+
+<section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
+        </span>
+        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
+        <h4 style="position: absolute; color: white; top:0%; left: 30%;"> Orion Source I<br>
+            <div class=fragment>a disk around a 15 M<sub>&odot;</sub> YSO </div>
+            </h4>
+        <div class=fragment style="position: relative; left:-17%; top:28%; color:white;" class=smaller>Salt: NaCl</div>
+        </span>
+        <div style="position: relative; bottom: -90%; left:20%" class="smaller3"><a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a></div>
+
+        <aside class=notes>
+            <ul>
+                <li> Orion Source I lives at the center of the BN/KL explosion
+                <li> We observed the disk known as source I
+                <li> ...in salts!  NaCl and KCl
+                <li> We used that disk to measure the mass of the central source
+            </ul>
+        </aside>
+    </section>
+
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+
+    <section>
+        <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
+        <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
+        </span>
+    </section>
+
+    <section>
+        <h4> Observing the Keplerian rotation profile of a disk is the most direct way to measure a protostar's mass </h4>
+        <div class=smaller2>(we can only see the disk, not the star itself)</div>
+        <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png);  margin-top:0%; height:78%">
+        <aside class=notes>
+            <ul>
+                <li> Left is a model position-velocity diagram, right is the data
+                <li> Red curve traces the outermost position of orbits of point particles
+            </ul>
+        </aside>
+    </section>
+
+</section>
+
+
+<section>
+    <h4 style="z-index:25; position: relative; color: white; text-align:center;"> Salt is a tool to weigh HMYSOs </h4>
+    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-10%; margin-left:-20%; height:150%; width:150%; z-index: -30;"></span>
+    </span>
+    <span class=smaller2 style="color: white;
+    z-index: 10;
+    margin-top: 30px;
+    height: 25%;
+    width: 400px;
+    position: absolute;
+    margin-left: -550px;">
+        Keplerian orbits measure mass
+    </span>
+    <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png); z-index:10; margin-top:10%; height:25%; margin-left:-35%"> </span>
+    <span class=image style="background-image:url(assets_orion/NaCl_KCl.png); z-index:10; margin-top:20%; height:25%; margin-right:-35%"> </span>
+    <aside class=notes>
+        <ul>
+            <li> Artists conception of a disk around a high-mass protostar
+            <li> There is an outflow
+            <li> Note the blue hazy inner ring
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <section>
+        <h4> More Brinary disks </h4>
+        <div class=smaller2>
+            <a href="https://ui.adsabs.harvard.edu/#abs/2023ApJ...942...66G/abstract">Ginsburg+ 2023</a>: New sample
+        </div>
+        <img src="assets/salts/OverviewFigure_ProjectedToSameSize.png">
+        <img style='width:80%; margin-top:-3%' src="assets/salts/color_labels_G351.77_mm1_spw2_stack.png">
+    </section>
+<section>
+    <h4> Briny chemistry: </h4>
+    <div class=smaller>
+    Salts, SiS, SiO, and PN are seen together <span class=smaller>[but limited spectral coverage]</span>
+    </div>
+    <div class=flex-vert-80>
+    <img src="assets/salts/salt_water_so_sis_cross_correlation_redundant_saltfirst.png">
+    </div>
+</section>
+</section>
+
+<section>
+    <section>
+        <h4 style=""> The Orion Molecular Cloud Core is a dense cluster </h4>
+        <div>
+            <div style="float:left; width:60%">
+                <div style="position: relative; width:600px; height:600px;">
+                    <img width=600px src="assets_orion/ONCCluster1.png" style="max-width:100%; position: absolute; top:0; left:0">
+                    <img width=600px class=fragment src="assets_orion/Orion_Overview.png" style="max-width:100%; position: absolute; top:0; left:0">
+                    <img width=600px class=fragment src="assets_orion/Orion_Overview_withsources.png" style="max-width:100%; position:absolute; top:0; left:0">
+                    <img width=600px class=fragment src="assets_orion/Orion_Overview_insets_B3_insetB7.png" style="max-width:100%; position:absolute; top:0; left:0">
+                </div>
+            </div>
+            <div style="float:right; width: 40%;" class=smaller>
+                <img src="FrontiersAssets/JustinOtter.jpg" style='max-width:50%' align='center'>
+                <br>
+                <a href="https://ui.adsabs.harvard.edu/#abs/2021ApJ...923..221O/abstract"> Otter+ 2021</a>
+            </div>
+            <div style="float:right; width: 40%;" class=smaller2>
+                <hr>
+                FOV: 0.07 pc (16000 AU)
+                <br> 72 YSOs
+                <br> one "hot core"
+                <br>
+                <br>
+            <div> N<sup>*</sup><sub>OMC</sub>(Otter+ 2021) = 1.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            <div> N<sup>*</sup><sub>ONC</sub>(Otter+ 2021) = 0.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            <div> N<sup>*</sup><sub>ONC</sub>(Hillenbrand+ 1998) = 0.2 x 10<sup>5</sup> pc<sup>-3</sup> </div>
+            </div>
+        </div>
+        <aside class=notes>
+            <ul>
+                <li> Lots of stars &amp; outflows in a small environment
+                <li> Still no massive (OB) stars
+            </ul>
+        </aside>
+    </section>
+    <section>
+        <span class=image style='margin-top:-2%; background-position: center center; ;'>
+            <img src="colloquium_assets/NGC1333_Spitzer.jpg" style="width:100%; max-width:200%; max-height:unset; margin-top:-25%;">
+            <h4 class=darkbg style="position: absolute; top:2%; text-align: center; left: 20%; width:60%;"> Most stars form in denser regions </h4>
+            <div style="position: relative; bottom: 55%; left:5%; text-align: left;" class="smaller3"><a class=darkbg href="http://www.spitzer.caltech.edu/images/1523-ssc2005-24a1-NGC-1333-in-the-Infrared">Spitzer, Gutermuth</a></div>
+            <div style="color:white; text-align: right; position: relative; bottom: 65%; left:68%; max-width:300px;" class="smaller2">
+                NGC 1333, an embedded low-mass cluster
+            </div>
+            <div class="smaller darkbg" style="color:white; background:rgba(0.5, 0.5, 0.5, 0.1); position: absolute; left: 50%; width:48%; top: 10%; text-align: right; "> Lada &amp; Lada 2003: &gt;70% in embedded clusters </div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> Lots of stars &amp; outflows in a small environment
+                <li> Still no massive (OB) stars
+            </ul>
+        </aside>
+    </section>
+</section>
+
+<section>
+    <section>
+        <div class=smaller2> 500 years ago, four or more stars were in a multiple system</div>
+        <img src="assets_orion/Bally2011_SrcI_BN_x.jpeg" style='height:89%'>
+    </section>
+    <section>
+        <img src="assets_orion/Bally2020_DiskInteraction.jpeg">
+    </section>
+    <section>
+        <div class=smaller2> The old picture involved source n, but it's not moving fast enough</div>
+        <img src="assets_orion/Bally2011_SrcI_BN_n.jpg">
+    </section>
+</section>
+
+<section>
+    <h3 class=darkbg>Clusters are sites of interactions &amp; collisions</h3>
+
+    <div style='width:100%'>
+        <div style='float:left; width:65%'>
+            <img src="assets_orion/bally_dynamical_picture.svg">
+            <div style='position:relative; bottom:90px; right:-170px' class=smaller2>
+            <a href="http://adsabs.harvard.edu/abs/2017ApJ...837...60B">Bally+ 2017</a>
+            </div>
+        </div>
+
+        <div style='float:right; width:35%'>
+            <img src="assets_orion/Farias2018_fig1.svg">
+            <div class=smaller3 style='position:relative; bottom:90px; left:0px'>
+                <a href="http://adsabs.harvard.edu/abs/2018A%26A...612L...7F">Farias+ 2018</a>
+            </div>
+        </div>
+        <br style="clear: left;" />
+    </div>
+    <span class="darkbg smaller" style='color:white; background-color:rgba(0,0,0,0.75); width:30%;  float:left; margin-top:50px'>
+    The BN/I/x interaction is the poster case of accretion ended by dynamical interaction.
+    </span>
+    <span class="image darkbg" style="position:absolute; background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_ALMA_novelo_normed_small_contrast_bright2.png); background-size:1024px; height:1700px; margin-top:-800px; z-index:-1;">
+    </span>
+</section>
+
+
+<section>
     <h4> <br>
         The Inner Galaxy is where most stars form </h4>
     <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_zones.png);'></span>
@@ -782,7 +1039,7 @@ observations, and population modeling.
 <section>
     <div style="margin:auto; margin-top:10%">
         <h4>ALMA-IMF data highlights</h4>
-        <div class=smaller> Gas flows in N<sub>2</sub>H+ filaments</div>
+        <div class=smaller> Gas flows in N<sub>2</sub>H+ filaments (Álvarez-Gutiérrez+ in prep)</div>
         <div>
             <div style="float:left; width:33%">
                 <img src="colloquium_assets/G010.62_B3_spw0_12M_n2hp.image.rgb.png">
@@ -793,6 +1050,9 @@ observations, and population modeling.
             <div style="float:left; width:33%">
                 <img src="colloquium_assets/G012.80_B3_spw0_12M_n2hp.image.rgb.png">
             </div>
+        </div>
+        <div class="smaller">
+        Collapse is slower on larger scales, but fast enough to matter.
         </div>
     </div>
         <aside class=notes>
@@ -901,11 +1161,14 @@ observations, and population modeling.
 <section>
     <div style='font-size:90%'>
         <h4 class=smaller>ALMA-IMF: CMF measurement &amp; YSO counting</h4>
-        <ul class=smaller>
+        <ul class=smaller2>
             <li> <a href="https://ui.adsabs.harvard.edu/abs/2021arXiv211208183G/abstract">Continuum data paper</a>
             </li>
             <li> <a href="https://ui.adsabs.harvard.edu/abs/2021arXiv211208182M/abstract">Survey overview (Motte+ 2022)</a>
-            <li> <a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220303276P/abstract">Shallow CMF in W43-MM2/3 (Pouteau+ 2022)</a>
+            <li> <a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...674A..75N/abstract">Cores in W43 (Nony+ 2023)</a>
+
+            <li> <a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220303276P/abstract">Shallow CMF in W43-MM2/3 (Pouteau+ 2022)</a>,
+                <a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...674A..76P/abstract" class="norm">evolution (Pouteau+ 2023)</a>
                 <ul class=smaller> <li> CMF slope &alpha; &lesssim; 1 </li></ul>
                     </li>
             <li> <a href="https://ui.adsabs.harvard.edu/#abs/2022A%26A...665A.140B/abstract">8 Hot Cores in W43 (Brouillet+ 2022)</a> &amp; ~60 more (Bonfand+)
@@ -915,8 +1178,12 @@ observations, and population modeling.
             <li> <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...960...48T/abstract">SiO Outflow catalog  (Towner+ 2023)</a>
                 <ul class=smaller> <li> 320 SiO outflows cataloged </li></ul>
             </li>
-            <li> Catalog paper under review (Louvet+)
+            <li> Catalog paper (Louvet+ resubmitted)
                 <ul class=smaller> <li> ~1000 cores cataloged </li></ul>
+            <li> Hot Core catalog (Bonfand+ submitted)</li>
+            <li> Gas infall kinematics (Álvarez-Gutiérrez+ in prep)</li>
+            <li> Dust temperature / column maps with PPMAP (Dell Ova+ subm.)</li>
+            <li> H41&alpha; estimates of free-free emission (Galván-Madrid+ subm.)</li>
             </li>
         </ul>
         <div class=smaller2> <a href="https://www.almaimf.com">www.almaimf.com</a> </div>
@@ -994,10 +1261,11 @@ observations, and population modeling.
 <section>
     <section>
         <div class=flex-vert-90>
-            <div style="float:left; max-height:95%; max-width:75%; margin-top:-20%;">
-                <img style='max-height:800px' src="assets/Taehwa/overview_1.pn  g">
+            <div style="float:left; max-height:95%; max-width:73%; margin-top:-10%;">
+                <img style='max-height:800px' src="assets/Taehwa/overview_1.png">
             </div>
-            <div style="float:right; width: 25%; margin-top:20%;">
+            <div style="float:right; width: 50%; margin-top:0%;">
+                <div style=""> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
                 <h4>Some cores fragment, some disappear</h4>
                     <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
                 <div class="smaller2" style="height:150px; display:inline-block;">
@@ -1006,12 +1274,7 @@ observations, and population modeling.
 
             </div>
         </div>
-        <div style="position:relative">
-            <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-        </div>
 
-        <img style="margin-top:-280px; float:left; width:37%;" src="almaimf_assets/W51IRS2_multi_zooms_6.png">
-        <span class=image style='height:20%; width:37%; float:right; margin-top:-110px; margin-right:25%; background-position: bottom center; background-image: url(almaimf_assets/HI4PI_CO_Dust_innergal_withATLASGALOrangetransparent_zoomboxW51.png)'>
     </section>
 
     <section>
@@ -2036,246 +2299,6 @@ observations, and population modeling.
 
 
 
-
-<section>
-    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_orion.png);'></span>
-</section>
-
-
-<section>
-    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_orion_RGB_labeled_orion.png);'></span>
-</section>
-
-<section>
-    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_oricloud_RGB_labeled_oricloud.png);'></span>
-</section>
-
-<section>
-    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(assets_orion/HI-CO-Dust_m0.35_oricloud-rezoom_RGB.png);'></span>
-    <span class=smaller2 style='position: absolute; margin-top:-650px; width:100%; display:block; text-align:center;'>
-        The Integral-Shaped filament has $\sim10^4$ M$_\odot$ of gas over $\sim$10 pc
-    </span>
-    <aside>
-        oricloud is 12CO, 13CO, and dust
-    </aside>
-</section>
-
-<section>
-    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(assets_orion/HI-CO-Dust_m0.35_oricloud-rezoom-trapezium_RGB.png);'></span>
-    <span class=smaller2 style='position: absolute; margin-top:-650px; width:100%; display:block; text-align:center;'>
-        The Orion Molecular Cloud is the closest (d$\sim400$ pc) site of high-mass star formation
-    </span>
-    <aside>
-        oricloud is 12CO, 13CO, and dust
-    </aside>
-</section>
-
-<section>
-    <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_oricloud-rezoom-trapezium-ALMA_RGB.png);'></span>
-    <span class=smaller2 style='position: absolute; margin-top:-650px; width:100%; display:block; text-align:center;'>
-        BOOM!
-    </span>
-</section>
-
-<section>
-    <section>
-        <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
-        </span>
-        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:-2%; height:100%; position: absolute;">
-        <h4 style="position: absolute; color: white; top:0%; left: 30%;"> Orion Source I<br>
-            <div class=fragment>a disk around a 15 M<sub>&odot;</sub> YSO </div>
-            </h4>
-        <div class=fragment style="position: relative; left:-17%; top:28%; color:white;" class=smaller>Salt: NaCl</div>
-        </span>
-        <div style="position: relative; bottom: -90%; left:20%" class="smaller3"><a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a></div>
-
-        <aside class=notes>
-            <ul>
-                <li> Orion Source I lives at the center of the BN/KL explosion
-                <li> We observed the disk known as source I
-                <li> ...in salts!  NaCl and KCl
-                <li> We used that disk to measure the mass of the central source
-            </ul>
-        </aside>
-    </section>
-
-
-    <section>
-        <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
-        <h2 style='text-align: left'> Temperature? </h2>
-        </span>
-    </section>
-    <section>
-        <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
-        <h2 style='text-align: left'> Temperature? </h2>
-        </span>
-    </section>
-
-    <section>
-        <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
-        <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
-        </span>
-    </section>
-
-    <section>
-        <h4> Observing the Keplerian rotation profile of a disk is the most direct way to measure a protostar's mass </h4>
-        <div class=smaller2>(we can only see the disk, not the star itself)</div>
-        <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png);  margin-top:0%; height:78%">
-        <aside class=notes>
-            <ul>
-                <li> Left is a model position-velocity diagram, right is the data
-                <li> Red curve traces the outermost position of orbits of point particles
-            </ul>
-        </aside>
-    </section>
-
-</section>
-
-
-<section>
-    <h4 style="z-index:25; position: relative; color: white; text-align:center;"> Salt is a tool to weigh HMYSOs </h4>
-    <span class=image style="position: absolute; background-image:url(assets_orion/nrao19cb1_AI_V3_SD.png); margin-top:-10%; margin-left:-20%; height:150%; width:150%; z-index: -30;"></span>
-    </span>
-    <span class=smaller2 style="color: white;
-    z-index: 10;
-    margin-top: 30px;
-    height: 25%;
-    width: 400px;
-    position: absolute;
-    margin-left: -550px;">
-        Keplerian orbits measure mass
-    </span>
-    <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png); z-index:10; margin-top:10%; height:25%; margin-left:-35%"> </span>
-    <span class=image style="background-image:url(assets_orion/NaCl_KCl.png); z-index:10; margin-top:20%; height:25%; margin-right:-35%"> </span>
-    <aside class=notes>
-        <ul>
-            <li> Artists conception of a disk around a high-mass protostar
-            <li> There is an outflow
-            <li> Note the blue hazy inner ring
-        </ul>
-    </aside>
-</section>
-
-<section>
-    <section>
-        <h4> More Brinary disks </h4>
-        <div class=smaller2>
-            <a href="https://ui.adsabs.harvard.edu/#abs/2023ApJ...942...66G/abstract">Ginsburg+ 2023</a>: New sample
-        </div>
-        <img src="assets/salts/OverviewFigure_ProjectedToSameSize.png">
-        <img style='width:80%; margin-top:-3%' src="assets/salts/color_labels_G351.77_mm1_spw2_stack.png">
-    </section>
-<section>
-    <h4> Briny chemistry: </h4>
-    <div class=smaller>
-    Salts, SiS, SiO, and PN are seen together <span class=smaller>[but limited spectral coverage]</span>
-    </div>
-    <div class=flex-vert-80>
-    <img src="assets/salts/salt_water_so_sis_cross_correlation_redundant_saltfirst.png">
-    </div>
-</section>
-</section>
-
-<section>
-    <section>
-        <h4 style=""> The Orion Molecular Cloud Core is a dense cluster </h4>
-        <div>
-            <div style="float:left; width:60%">
-                <div style="position: relative; width:600px; height:600px;">
-                    <img width=600px src="assets_orion/ONCCluster1.png" style="max-width:100%; position: absolute; top:0; left:0">
-                    <img width=600px class=fragment src="assets_orion/Orion_Overview.png" style="max-width:100%; position: absolute; top:0; left:0">
-                    <img width=600px class=fragment src="assets_orion/Orion_Overview_withsources.png" style="max-width:100%; position:absolute; top:0; left:0">
-                    <img width=600px class=fragment src="assets_orion/Orion_Overview_insets_B3_insetB7.png" style="max-width:100%; position:absolute; top:0; left:0">
-                </div>
-            </div>
-            <div style="float:right; width: 40%;" class=smaller>
-                <img src="FrontiersAssets/JustinOtter.jpg" style='max-width:50%' align='center'>
-                <br>
-                <a href="https://ui.adsabs.harvard.edu/#abs/2021ApJ...923..221O/abstract"> Otter+ 2021</a>
-            </div>
-            <div style="float:right; width: 40%;" class=smaller2>
-                <hr>
-                FOV: 0.07 pc (16000 AU)
-                <br> 72 YSOs
-                <br> one "hot core"
-                <br>
-                <br>
-            <div> N<sup>*</sup><sub>OMC</sub>(Otter+ 2021) = 1.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
-            <div> N<sup>*</sup><sub>ONC</sub>(Otter+ 2021) = 0.6 x 10<sup>5</sup> pc<sup>-3</sup> </div>
-            <div> N<sup>*</sup><sub>ONC</sub>(Hillenbrand+ 1998) = 0.2 x 10<sup>5</sup> pc<sup>-3</sup> </div>
-            </div>
-        </div>
-        <aside class=notes>
-            <ul>
-                <li> Lots of stars &amp; outflows in a small environment
-                <li> Still no massive (OB) stars
-            </ul>
-        </aside>
-    </section>
-    <section>
-        <span class=image style='margin-top:-2%; background-position: center center; ;'>
-            <img src="colloquium_assets/NGC1333_Spitzer.jpg" style="width:100%; max-width:200%; max-height:unset; margin-top:-25%;">
-            <h4 class=darkbg style="position: absolute; top:2%; text-align: center; left: 20%; width:60%;"> Most stars form in denser regions </h4>
-            <div style="position: relative; bottom: 55%; left:5%; text-align: left;" class="smaller3"><a class=darkbg href="http://www.spitzer.caltech.edu/images/1523-ssc2005-24a1-NGC-1333-in-the-Infrared">Spitzer, Gutermuth</a></div>
-            <div style="color:white; text-align: right; position: relative; bottom: 65%; left:68%; max-width:300px;" class="smaller2">
-                NGC 1333, an embedded low-mass cluster
-            </div>
-            <div class="smaller darkbg" style="color:white; background:rgba(0.5, 0.5, 0.5, 0.1); position: absolute; left: 50%; width:48%; top: 10%; text-align: right; "> Lada &amp; Lada 2003: &gt;70% in embedded clusters </div>
-        </span>
-        <aside class=notes>
-            <ul>
-                <li> Lots of stars &amp; outflows in a small environment
-                <li> Still no massive (OB) stars
-            </ul>
-        </aside>
-    </section>
-</section>
-
-<section>
-    <section>
-        <div class=smaller2> 500 years ago, four or more stars were in a multiple system</div>
-        <img src="assets_orion/Bally2011_SrcI_BN_x.jpeg" style='height:89%'>
-    </section>
-    <section>
-        <img src="assets_orion/Bally2020_DiskInteraction.jpeg">
-    </section>
-    <section>
-        <div class=smaller2> The old picture involved source n, but it's not moving fast enough</div>
-        <img src="assets_orion/Bally2011_SrcI_BN_n.jpg">
-    </section>
-</section>
-
-<section>
-    <h3 class=darkbg>Clusters are sites of interactions &amp; collisions</h3>
-
-    <div style='width:100%'>
-        <div style='float:left; width:65%'>
-            <img src="assets_orion/bally_dynamical_picture.svg">
-            <div style='position:relative; bottom:90px; right:-170px' class=smaller2>
-            <a href="http://adsabs.harvard.edu/abs/2017ApJ...837...60B">Bally+ 2017</a>
-            </div>
-        </div>
-
-        <div style='float:right; width:35%'>
-            <img src="assets_orion/Farias2018_fig1.svg">
-            <div class=smaller3 style='position:relative; bottom:90px; left:0px'>
-                <a href="http://adsabs.harvard.edu/abs/2018A%26A...612L...7F">Farias+ 2018</a>
-            </div>
-        </div>
-        <br style="clear: left;" />
-    </div>
-    <span class="darkbg smaller" style='color:white; background-color:rgba(0,0,0,0.75); width:30%;  float:left; margin-top:50px'>
-    The BN/I/x interaction is the poster case of accretion ended by dynamical interaction.
-    </span>
-    <span class="image darkbg" style="position:absolute; background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_ALMA_novelo_normed_small_contrast_bright2.png); background-size:1024px; height:1700px; margin-top:-800px; z-index:-1;">
-    </span>
-</section>
 
 
 
@@ -3308,7 +3331,7 @@ observations, and population modeling.
 <section>
     <h4> ALMA-IMF:<br> The CMF is shallow, and steepens with time?</h4>
     <img style="max-height:75%" src="almaimf_assets/ALMAIMF_CMFs_September2022.png">
-    <div style="position: relative; top:-75%; left:25%;" class=smaller> Louvet+, in prep </div>
+    <div style="position: relative; top:-75%; left:25%;" class=smaller> Louvet+, subm </div>
     <aside>
         IRDC sample is from Sanhueza+ 2019 (ASHES)
     </aside>
@@ -3379,7 +3402,7 @@ observations, and population modeling.
         <h4> ALMA-IMF Key Results summary </h4>
         <ul>
             <li> Rich, science-ready data <span class=smaller3>(Ginsburg+ 2022, Cunningham+ 2023)</span></li>
-            <li> CMF is top-heavy in HMSFRs <span class=smaller3>(Pouteau+ 2022, Louvet+ 2023)</span></li>
+            <li> CMF is top-heavy in HMSFRs <span class=smaller3>(Pouteau+ 2022, Louvet+ 2024)</span></li>
             <li> Core fragmentation is not 1-to-1 [WIP] <span class=smaller3>(Budaiev+ (CMZ), Yoo+ (W51), Louvet+ (W43), ...) </span></li>
             <li> 10% of $M\gtrsim1\mathrm{~M}_\odot$ cores are hot cores <span class=smaller3>(Brouillet+ 2022, Bonfand+ 2023, Wyrowski+)</span></li>
             <li> Outflow feedback builds over time, sets initial conditions for many cores <span class=smaller3>(Nony+ 2022, Towner+ 2023)</span></li>

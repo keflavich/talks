@@ -265,11 +265,6 @@ Star Formation:
     <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_RGB.png);'></span>
 </section>
 
-<section id=sgrb2_insets_with_orion_opener>
-    <a href="https://github.com/keflavich/SgrB2_ALMA_2015.1.00550.S/blob/master/analysis/ZoomInMatplotlibExample.ipynb">
-    <img src="./assets/SgrB2_insets_with_orion2.png">
-    </a>
-</section>
 
 <section>
         <h4>Star formation drives the evolution of the universe</h4>
@@ -480,8 +475,8 @@ Star Formation:
 
 <section>
     <h4>The isolated cartoon is wrong in several ways</h4>
-    <div class=smaller>
-        Hot cores cook their neighbors.  Cores fragment.
+    <div class=smaller>Cores fragment.
+        Massive stars cook their neighbors in <a href="#desmond_overview" style='color:red'>hot cores</a>.  
     </div>
     <img src="colloquium_assets/Purcell_Cartoon_FragmentedCloudWithHotCore_AndFrag.svg">
 </section>
@@ -705,6 +700,9 @@ Star Formation:
         <div class=smaller2 style="position:relative; top:-10%; left:-20%; ">
             <a style="background-color:rgba(0,0,0,0.5)" href="https://arxiv.org/abs/2208.02233">Mowla+ 2022</a>
         </div>
+        <aside class=notes>
+            The galaxy is at z~1.38, these objects are already-evolved globular clusters that formed around z~7-11 (age we're seeing: 4 Gyr)
+        </aside>
     </section>
 
     <section>
@@ -791,8 +789,11 @@ Star Formation:
     <span class=smaller2 style='position: absolute; margin-top:-650px; width:100%; display:block; text-align:center;'>
         The Integral-Shaped filament has $\sim10^4$ M$_\odot$ of gas over $\sim$10 pc
     </span>
-    <aside>
+    <aside class=notes>
         oricloud is 12CO, 13CO, and dust
+
+        <br>left frame is ~15 deg;
+        <br>right frame is ~1 deg
     </aside>
 </section>
 
@@ -807,8 +808,10 @@ Star Formation:
         The Orion Molecular Cloud is the closest (d$\sim400$ pc) site of high-mass star formation
     </span>
 
-    <aside>
+    <aside class=notes>
         oricloud is 12CO, 13CO, and dust
+        <br>left frame is 1 deg;
+        <br>right frame is ~3 arcmin
     </aside>
 </section>
 
@@ -1395,10 +1398,11 @@ Star Formation:
      <span style='color:darkred'>YSO modeling</span> &rightarrow; luminosity functions </h5>
     <img style='margin-top:-10px' src="colloquium_assets/flowchart.svg">
     <div>
-        <div style="float: left; width:25%">
+        <div style="float: left; width:25%; line-height:24pt">
             <span class="smaller2"> Richardson, Ginsburg, Indebetouw, Robitaille 2024</span>
-            <br>
-            <span class="smaller3"> NSF 2008101: "How are stellar masses set?" </span>
+            <div style='line-height:12pt'> 
+                <span class="smaller3"> NSF 2008101: <br> "How are stellar masses set?" </span>
+            </div>
         </div>
         <div style="float: left; width:50%">
             <img src="FrontiersAssets/RobitailleGrid.png" style="width:80%">
@@ -1553,7 +1557,8 @@ Star Formation:
 
     <section>
         <span class=image style='background-size: 1024px; background-position: center center; background-image: url(assets/cmz/gc_fullres_6_small_withACES7m.png);'>
-        <h4 style='font-size:90%'> The CMZ: ACES </h4>
+        <h4 style='font-size:90%'> The CMZ: ACES  </h4>
+        <span class=smaller3><a href="https://www.adamgginsburg.com/ACES_tour.html">www.adamgginsburg.com/ACES_tour.html</a></span>
         <div style="position: relative; bottom: -67%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
         <div style="position: relative; bottom: -68%; left:1%; text-align:left" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg+ 2018a</a></div>
         </span>
@@ -1561,7 +1566,10 @@ Star Formation:
 
 <section>
     <section>
-        <h4 style='font-size:90%; position:absolute; color:white; left:40%; text-align:center'> The CMZ: ACES </h4>
+        <div style='position:absolute; color:white; left:40%; line-height:0pt;'>
+            <h4 style='font-size:90%; color:white; text-align:center'> The CMZ: ACES </h4>
+            <span class=smaller3><a href="https://www.adamgginsburg.com/ACES_tour.html">www.adamgginsburg.com/ACES_tour.html</a></span>
+        </div>
         <iframe class="wwt-embed"
                 src="https://web.wwtassets.org/embed/1/wwt/?tour=https://www.dropbox.com/scl/fi/g2dx8vfyeasdyfxztm1f6/ACES_Tour2.WTT%3Frlkey=iqpgw7iyc6sp35kp430kah98k%26dl=1"
                 allow="accelerometer; autoplay; clipboard-write; gyroscope"
@@ -1759,219 +1767,6 @@ Star Formation:
     </div>
 </section>
 
-<section>
-    <section id=sgrb2nm_zoom>
-        <img src="assets/cmz/sgrb2_zoom_NM.svg">
-        <div style="position: relative; top:-95%; width:50%; text-align: left" class=smaller>
-            <br>
-            We count individual YSOs
-            <br>
-            69 &rightarrow; 371 with higher resolution
-        (<a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>)
-        </div>
-
-    </section>
-
-
-
-    <section>
-        <section id=sgrb2_ds_3mm>
-            <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(assets/cmz/sgrb2_zoom_ds.svg);'>
-                <div class=smaller2 style="position: relative; top:92%; left: 21%;"> <a class=smaller href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a>
-                &rightarrow; <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>,
-                    <a class=smaller href="">Jeff+ 2024</a> </div>
-            </span>
-        </section>
-
-
-        <section id=sgrb2_ds_3mm_withysos>
-            <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/cores_on_continuum_peak_DeepSouth_saturated.png);'>
-                <div class=smaller2 style="position: relative; top:95%; left: 21%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
-            </span>
-            <aside class=notes>
-                <ul>
-                    <li> We catalog the protostellar cores, shown in orange and red
-                </ul>
-            </aside>
-        </section>
-
-        <section id=sgrb2_ds_3mm_sat>
-            <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuum_peak_DeepSouth_saturated.png);'>
-                <div class=smaller2 style="position: relative; top:95%; left: 21%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
-            </span>
-            <aside class=notes>
-                <ul>
-                    <li> A higher-resolution view of Sgr B2 Deep South
-                </ul>
-            </aside>
-        </section>
-        <section id=sgrb2_ds_1mm_light>
-            <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth.png);'>
-                <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
-            </span>
-            <aside class=notes>
-                <ul>
-                    <li> The 1mm version, at 0.1" resolution and ~0.3 Msun sensitivity
-                </ul>
-            </aside>
-        </section>
-
-        <section>
-            <section id=sgrb2_ds_1mm>
-                <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth_saturated.png);'>
-                    <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
-                </span>
-                <aside class=notes>
-                    <ul>
-                        <li> saturated more
-                    </ul>
-                </aside>
-            </section>
-
-            <section id=sgrb2_ds_1mm_withcores>
-                <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/cores_on_continuumds_peak_DeepSouth_saturated.png);'>
-                    <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
-                </span>
-                <aside class=notes>
-                    <ul>
-                        <li> The same 3mm cores shown on 1mm.
-                        <li> The 1mm reveal many more fainter cores we didn't see before
-                    </ul>
-                </aside>
-            </section>
-        </section>
-
-    </section>
-</section>
-
-
-
-
-
-
-
-
-<section id=nazar_sgrb2m>
-    <h4> Fragmentation: Some cores contain many stars </h4>
-    <div class=flex-vert-90>
-        <div>
-            <div style="float:left; width:75%;">
-                <img src="assets/Nazar/SgrB2_M_overview_no_zoom.png">
-            </div>
-            <div style="float:left; width:25%;">
-                <img src="FrontiersAssets/budaiev-300x300.jpg">
-                <span class="smaller" align=right style="position: relative; float: right;">
-                    Nazar Budaiev: YSOs in Sgr B2M
-                    <br>
-                    49 at 0.5" &rightarrow; <br> 169 at 0.05"
-                </span>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-750px; right:0px"> <img width=50px src="colloquium_assets/onecoremanystars_cartoon.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/aces_mark_sgrb2m.png">
-    </div>
-</section>
-<section>
-    <section id=nazar_sgrb2m_zoom>
-        <h4> Fragmentation: Some cores contain many stars </h4>
-        <div class=flex-vert-90>
-            <div>
-                <div style="float:left; width:75%;">
-                    <img src="assets/Nazar/SgrB2_M_overview.png">
-                </div>
-                <div style="float:left; width:25%;">
-                    <img src="FrontiersAssets/budaiev-300x300.jpg">
-                    <span class="smaller" align=right style="position: relative; float: right;">
-                        Nazar Budaiev: YSOs in Sgr B2M
-                        <br>
-                        49 at 0.5" &rightarrow; <br> 169 at 0.05"
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div style="position:relative">
-            <div style="position:absolute; top:-750px; right:0px"> <img width=50px src="colloquium_assets/onecoremanystars_cartoon.svg"> </div>
-        </div>
-        <div style="position: absolute; bottom:10px; right:-10px;">
-            <img width=350px src="assets/cmz/aces_mark_sgrb2m.png">
-        </div>
-    </section>
-
-
-    <section>
-        <h4> Sgr B2 N is rapidly accreting... </h4>
-        <img style="margin-top:-1%" src="colloquium_assets/Schworer2019_SgrB2NHotCore.png">
-        <div style="position: relative; top:-50%; left:30%;">
-            <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A...6S/abstract" class=smaller style="color:white">
-                Schwörer+ 2019
-            </a>
-            <div class=smaller style='color:white'>M(gas)=2000-4000 M<sub>&odot;</sub> </div>
-            <div class=smaller style='color:white'>M&#x307;(in)=0.16 M<sub>&odot;</sub> yr <sup>-1</sup> </div>
-        </div>
-    </section>
-
-    <section>
-        <h4> ...and driving a powerful outflow </h4>
-        <img style="margin-top:-1%" src="colloquium_assets/Schworer2021_SgrB2N_outflow.png">
-        <div style="position: relative; top:-50%; left:30%; color:white" class=smaller>
-            Schwörer+ 2021 (subm.)
-            <div style='color:white'>M&#x307;(out) =0.044 M<sub>&odot;</sub> yr <sup>-1</sup> </div>
-        </div>
-    </section>
-</section>
-
-<section id=nazar_sgrb2n>
-    <h4> Fragmentation: Some cores contain many stars </h4>
-    <div class=flex-vert-90>
-        <div>
-            <div style="float:left; width:75%;">
-                <img src="assets/Nazar/SgrB2_N_overview_no_zoom.png">
-            </div>
-            <div style="float:left; width:25%;">
-                <img src="FrontiersAssets/budaiev-300x300.jpg">
-                <span class="smaller" align=right style="position: relative; float: right;">
-                    Nazar Budaiev: Low-mass YSOs in Sgr B2N
-                    <br>
-                    26 at 0.5" &rightarrow; <br> 209 at 0.05"
-                </span>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-750px; right:0px"> <img width=50px src="colloquium_assets/onecoremanystars_cartoon.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/aces_mark_sgrb2n.png">
-    </div>
-</section>
-<section id=nazar_sgrb2n_zoom>
-    <h4> Fragmentation: Some cores contain many stars </h4>
-    <div class=flex-vert-90>
-        <div>
-            <div style="float:left; width:75%;">
-                <img src="assets/Nazar/SgrB2_N_overview.png">
-            </div>
-            <div style="float:left; width:25%;">
-                <img src="FrontiersAssets/budaiev-300x300.jpg">
-                <span class="smaller" align=right style="position: relative; float: right;">
-                    Nazar Budaiev: Low-mass YSOs in Sgr B2N
-                    <br>
-                    26 at 0.5" &rightarrow; <br> 209 at 0.05"
-                </span>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-750px; right:0px"> <img width=50px src="colloquium_assets/onecoremanystars_cartoon.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/aces_mark_sgrb2n.png">
-    </div>
-</section>
 
 <section>
     <div class=flex-vert-90>
@@ -1985,6 +1780,7 @@ Star Formation:
                     <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
                     At higher resolution, some cores contain clusters,
                     some are starless.
+        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
                 </div>
             </div>
         </div>
@@ -2009,6 +1805,7 @@ Star Formation:
                     <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
                     At higher resolution, some cores contain clusters,
                     some are starless.
+        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
                 </div>
             </div>
         </div>
@@ -2034,6 +1831,7 @@ Star Formation:
                     <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
                     At higher resolution, some cores contain clusters,
                     some are starless.
+        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
                 </div>
             </div>
         </div>
@@ -2059,6 +1857,7 @@ Star Formation:
                     <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
                     At higher resolution, some cores contain clusters,
                     some are starless.
+                <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
                 </div>
             </div>
         </div>
@@ -2071,31 +1870,6 @@ Star Formation:
     </div>
 </section>
 
-<section>
-    <div class=flex-vert-90>
-        <div style="float:left; max-height:95%">
-            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out_new.png">
-        </div>
-        <div style="float:right; width: 35%; margin-top:100px">
-            <h4>CFE<sub>CMZ</sub> &gt; CFE<sub>disk</sub> </h4>
-            <div>
-                <div class=smaller2>
-                    Many new sources!
-                    <br>
-                    <br>
-                    More stars form in clusters in the CMZ
-                </div>
-                    <img style="width:150px; float:center" src="FrontiersAssets/budaiev-300x300.jpg">
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/aces_mark_sgrb2mANDn.png">
-    </div>
-</section>
 
 
 
@@ -2113,7 +1887,6 @@ Star Formation:
     More massive stars,<br>more massive cores,<br>more stars in clusters
     <br>
 
-    
 
     <!--
     <div class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);  margin-top:-2%; width:30%; float:left;"></div>
@@ -2123,35 +1896,20 @@ Star Formation:
 </section>
 
 <section>
-Final segment:
-<br>
-Astrochemistry:
-<br> Hot Cores
-<br> Ices
-<br> Line Surveys
-</section>
-
-<section>
-    <h4> Hot Cores</h4>
-    <div class=smaller>
-    Hot cores are chemically rich sites of high-mass star formation.
-    <br> They are only found in the more distant disk & CMZ regions
+    <div style='background-image:url(https://www.adamgginsburg.com/brick/BrickJWST_merged_longwave_narrowband_lighter.png);
+    background-size: 100%;
+        height:50%; width: 100%;
+         color:"white"'>
+        <h2 style='color:white'>Final segment:</h2>
+        <span style='color:white'>
+        Astrochemistry:
+        <br> Hot Cores
+        <br> Ices
+        <br> Line Surveys
+        </span>
     </div>
-
-    <div class="image" style="height:75%; background-image: url(colloquium_assets/methanol_scalebar_e2e.png);" >
-        <div style="position: relative; top: 80%; left:-5%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
-    </div>
-</section>
-
-<section>
-    <h4> Hot Cores</h4>
-    <div class=smaller>
-    Hot cores are chemically rich sites of high-mass star formation.
-    <br> They are only found in the more distant disk & CMZ regions
-    </div>
-
-    <div class="image" style="height:75%; background-image: url(colloquium_assets/outflows_over_methanol_e2e.png);" >
-        <div style="position: relative; top: 80%; left:-5%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+    <div style='background-image:url(https://www.adamgginsburg.com/brick/BrickJWST_merged_longwave_narrowband_withstars.png);
+    background-size:100%; height:50%; width:100%;'>
     </div>
 </section>
 
@@ -2170,12 +1928,16 @@ Astrochemistry:
         </div>
         <div style="float:left; width:25%;" class=smaller>
             <img style="width: 70%; height: 70%" src="FrontiersAssets/DesmondHeadshot.png">
-            <span class="smaller2" align=right style="position: relative; float: right;">
+            <span class="smaller2" align=center style="position: relative; float: right; text-align:center">
                 <a href="https://arxiv.org/abs/2401.09749">Desmond Jeff+ 2024 <div class=smaller>(on arXiv last week)</div></a>
                 <br><span style='color:darkgreen'> Ten hot cores in Sgr B2 DS</span>
-                <br> T<sub>G</sub> ~ 200-500 K
-                <br> M ~ 200 - 2900 M<sub>&odot;</sub>
-                <br> ~5% of cores are hot cores
+                <br> <span class=smaller> outside the massive clusters</span>
+
+                <div style='text-align: center'> T<sub>G</sub> ~ 200-500 K
+                    <br> M ~ 200 - 2900 M<sub>&odot;</sub>
+                    <br><span class=smaller>(proto-O-stars / clusters)</span>
+                    <br> ~5% of cores are hot cores
+                </div>
             </span>
         </div>
         <div style="position: absolute; bottom:10px; right:-10px;">
@@ -2195,22 +1957,55 @@ Astrochemistry:
         </div>
         <div style="float:left; width:25%;">
             <img style="width: 70%; height: 70%" src="FrontiersAssets/DesmondHeadshot.png">
-            <span class="smaller" align=right style="position: relative; float: right;">
-                Desmond Jeff:
-                <br>
-                <br>
-                <div style='align:left' class=smaller> Now: Ten massive, hot cores in Sgr B2 DS</div>
-                <br>
-                <div style='align:left' class=smaller> Soon: ~100 &rightarrow; ~400 pre/protostellar cores</div>
+            <span class="smaller2" align=center style="position: relative; float: right;">
+                <a href="https://arxiv.org/abs/2401.09749">Desmond Jeff+ 2024 <div class=smaller>(on arXiv last week)</div></a>
             </span>
         </div>
     </section>
+    <section>
+        <h4> Hot Cores</h4>
+        <div class=smaller>
+        Hot cores are chemically rich sites of high-mass star formation.
+        <br> They are only found in the more distant disk & CMZ regions
+        </div>
+
+        <div class="image" style="height:75%; background-image: url(colloquium_assets/methanol_scalebar_e2e.png);" >
+            <div style="position: relative; top: 80%; left:-5%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </div>
+    </section>
+
+    <section>
+        <h4> Hot Cores</h4>
+        <div class=smaller>
+        Hot cores are chemically rich sites of high-mass star formation.
+        <br> They are only found in the more distant disk & CMZ regions
+        </div>
+
+        <div class="image" style="height:75%; background-image: url(colloquium_assets/outflows_over_methanol_e2e.png);" >
+            <div style="position: relative; top: 80%; left:-5%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
+        </div>
+    </section>
+
 </section>
 
 <section>
 The Brick is icy
+    <img src="https://www.adamgginsburg.com/brick/BrickJWST_merged_longwave_narrowband_withstars.png">
     <div style="position: absolute; bottom:10px; right:-10px;">
         <img width=350px src="assets/cmz/aces_mark_brick.png">
+    </div>
+    <div style="position: absolute; bottom:50px; left:10px;" class=smaller2>
+        <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...36G/abstract">Ginsburg+ 2023</a>
+    </div>
+</section>
+<section>
+The Brick is icy
+    <img src="https://www.adamgginsburg.com/brick/BrickJWST_merged_longwave_narrowband_lighter.png">
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/aces_mark_brick.png">
+    </div>
+    <div style="position: absolute; bottom:50px; left:10px;" class=smaller2>
+        <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...36G/abstract">Ginsburg+ 2023</a>
     </div>
 </section>
 
@@ -2303,15 +2098,7 @@ The Brick is icy
     JWST Bonus Slides
 </section>
 
-<section>
-    <img src="https://www.dropbox.com/s/7hk16l70pwwce9s/BrickJWST_RGB_405_466_410.png?raw=1">
-    JWST Bonus Slides
-</section>
 
-<section>
-    <img src="https://www.dropbox.com/s/3w3v7utouwnjp87/BrickJWST_merged_longwave_narrowband_rotated_lighter.png?raw=1">
-    JWST Bonus Slides
-</section>
 
 
 <section>
@@ -3191,7 +2978,9 @@ The Brick is icy
 
 <section id=sgrb2_ds_1mm_withcores_brick>
     <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth_saturated.png);'>
-        <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
+        <div class=smaller2 style="position: relative; top:95%; left: 21%;"> 
+                <a href="https://arxiv.org/abs/2401.09749">Desmond Jeff+ 2024 </a>
+            </div>
         <div class=fragment style="position: absolute; width:70%; top:45%; left: 20%;">
             <img src="colloquium_assets/Walker2021_brick_fig2.png">
             <div class=smaller2 style="position: relative; top:-50%; left: 21%; margin-top:-13%;"> Walker+ 2021 </div>
@@ -3539,19 +3328,274 @@ The Brick is icy
     <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/eso0932a_elliptical.png); background-size:1290px; margin-left:-103px; width:1200px'></span>
 </section>
 
+
+<section>
+    <h2> A deeper dive into Sgr B2 </h2>
+</section>
+
+
+
+
+
+
+
+
+
+<section>
+    <section id=sgrb2nm_zoom>
+        <img src="assets/cmz/sgrb2_zoom_NM.svg">
+        <div style="position: relative; top:-95%; width:50%; text-align: left" class=smaller>
+            <br>
+            We count individual YSOs
+            <br>
+            69 &rightarrow; 371 with higher resolution
+        (<a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>)
+        </div>
+
+    </section>
+
+
+
+</section>
+
+<section>
+    <section id=sgrb2_ds_3mm>
+        <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(assets/cmz/sgrb2_zoom_ds.svg);'>
+            <div class=smaller2 style="position: relative; top:92%; left: 21%;"> <a class=smaller href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a>
+            &rightarrow; <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>,
+                <a class=smaller href="">Jeff+ 2024</a> </div>
+        </span>
+    </section>
+
+
+    <section id=sgrb2_ds_3mm_withysos>
+        <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/cores_on_continuum_peak_DeepSouth_saturated.png);'>
+            <div class=smaller2 style="position: relative; top:95%; left: 21%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> We catalog the protostellar cores, shown in orange and red
+            </ul>
+        </aside>
+    </section>
+
+    <section id=sgrb2_ds_3mm_sat>
+        <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuum_peak_DeepSouth_saturated.png);'>
+            <div class=smaller2 style="position: relative; top:95%; left: 21%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> A higher-resolution view of Sgr B2 Deep South
+            </ul>
+        </aside>
+    </section>
+    <section id=sgrb2_ds_1mm_light>
+        <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth.png);'>
+            <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> The 1mm version, at 0.1" resolution and ~0.3 Msun sensitivity
+            </ul>
+        </aside>
+    </section>
+
+        <section id=sgrb2_ds_1mm>
+        <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/continuumds_peak_DeepSouth_saturated.png);'>
+            <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> saturated more
+            </ul>
+        </aside>
+    </section>
+
+    <section id=sgrb2_ds_1mm_withcores>
+        <span class=image style='height:100%; margin-top:-2%; background-position: center center; background-image: url(colloquium_assets/cores_on_continuumds_peak_DeepSouth_saturated.png);'>
+            <div class=smaller2 style="position: relative; top:95%; left: 21%;"> Jeff+, in prep </div>
+        </span>
+        <aside class=notes>
+            <ul>
+                <li> The same 3mm cores shown on 1mm.
+                <li> The 1mm reveal many more fainter cores we didn't see before
+            </ul>
+        </aside>
+    </section>
+
+</section>
+
+
+
+<section id=nazar_sgrb2m>
+    <h4> Fragmentation: Some cores contain many stars </h4>
+    <div class=flex-vert-90>
+        <div>
+            <div style="float:left; width:75%;">
+                <img src="assets/Nazar/SgrB2_M_overview_no_zoom.png">
+            </div>
+            <div style="float:left; width:25%;">
+                <img src="FrontiersAssets/budaiev-300x300.jpg">
+                <span class="smaller" align=right style="position: relative; float: right;">
+                    Nazar Budaiev: YSOs in Sgr B2M
+                    <br>
+                    49 at 0.5" &rightarrow; <br> 169 at 0.05"
+                </span>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative">
+        <div style="position:absolute; top:-750px; right:0px"> <img width=50px src="colloquium_assets/onecoremanystars_cartoon.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/aces_mark_sgrb2m.png">
+    </div>
+</section>
+
+
+
+
+
+<section>
+    <section id=nazar_sgrb2m_zoom>
+        <h4> Fragmentation: Some cores contain many stars </h4>
+        <div class=flex-vert-90>
+            <div>
+                <div style="float:left; width:75%;">
+                    <img src="assets/Nazar/SgrB2_M_overview.png">
+                </div>
+                <div style="float:left; width:25%;">
+                    <img src="FrontiersAssets/budaiev-300x300.jpg">
+                    <span class="smaller" align=right style="position: relative; float: right;">
+                        Nazar Budaiev: YSOs in Sgr B2M
+                        <br>
+                        49 at 0.5" &rightarrow; <br> 169 at 0.05"
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="position:relative">
+            <div style="position:absolute; top:-750px; right:0px"> <img width=50px src="colloquium_assets/onecoremanystars_cartoon.svg"> </div>
+        </div>
+        <div style="position: absolute; bottom:10px; right:-10px;">
+            <img width=350px src="assets/cmz/aces_mark_sgrb2m.png">
+        </div>
+    </section>
+
+
+    <section>
+        <h4> Sgr B2 N is rapidly accreting... </h4>
+        <img style="margin-top:-1%" src="colloquium_assets/Schworer2019_SgrB2NHotCore.png">
+        <div style="position: relative; top:-50%; left:30%;">
+            <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A...6S/abstract" class=smaller style="color:white">
+                Schwörer+ 2019
+            </a>
+            <div class=smaller style='color:white'>M(gas)=2000-4000 M<sub>&odot;</sub> </div>
+            <div class=smaller style='color:white'>M&#x307;(in)=0.16 M<sub>&odot;</sub> yr <sup>-1</sup> </div>
+        </div>
+    </section>
+
+    <section>
+        <h4> ...and driving a powerful outflow </h4>
+        <img style="margin-top:-1%" src="colloquium_assets/Schworer2021_SgrB2N_outflow.png">
+        <div style="position: relative; top:-50%; left:30%; color:white" class=smaller>
+            Schwörer+ 2021 (subm.)
+            <div style='color:white'>M&#x307;(out) =0.044 M<sub>&odot;</sub> yr <sup>-1</sup> </div>
+        </div>
+    </section>
+</section>
+
+<section id=nazar_sgrb2n>
+    <h4> Fragmentation: Some cores contain many stars </h4>
+    <div class=flex-vert-90>
+        <div>
+            <div style="float:left; width:75%;">
+                <img src="assets/Nazar/SgrB2_N_overview_no_zoom.png">
+            </div>
+            <div style="float:left; width:25%;">
+                <img src="FrontiersAssets/budaiev-300x300.jpg">
+                <span class="smaller" align=right style="position: relative; float: right;">
+                    Nazar Budaiev: Low-mass YSOs in Sgr B2N
+                    <br>
+                    26 at 0.5" &rightarrow; <br> 209 at 0.05"
+                </span>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative">
+        <div style="position:absolute; top:-750px; right:0px"> <img width=50px src="colloquium_assets/onecoremanystars_cartoon.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/aces_mark_sgrb2n.png">
+    </div>
+</section>
+
+<section id=nazar_sgrb2n_zoom>
+    <h4> Fragmentation: Some cores contain many stars </h4>
+    <div class=flex-vert-90>
+        <div>
+            <div style="float:left; width:75%;">
+                <img src="assets/Nazar/SgrB2_N_overview.png">
+            </div>
+            <div style="float:left; width:25%;">
+                <img src="FrontiersAssets/budaiev-300x300.jpg">
+                <span class="smaller" align=right style="position: relative; float: right;">
+                    Nazar Budaiev: Low-mass YSOs in Sgr B2N
+                    <br>
+                    26 at 0.5" &rightarrow; <br> 209 at 0.05"
+                </span>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative">
+        <div style="position:absolute; top:-750px; right:0px"> <img width=50px src="colloquium_assets/onecoremanystars_cartoon.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/aces_mark_sgrb2n.png">
+    </div>
+</section>
+
+
+<section>
+    <div class=flex-vert-90>
+        <div style="float:left; max-height:95%">
+            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out_new.png">
+        </div>
+        <div style="float:right; width: 35%; margin-top:100px">
+            <h4>CFE<sub>CMZ</sub> &gt; CFE<sub>disk</sub> </h4>
+            <div>
+                <div class=smaller2>
+                <a class=smaller2 href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+                <br>
+                    Many new sources!
+                    <br>
+                    More stars form in clusters in the CMZ
+                </div>
+                    <img style="width:150px; float:center" src="FrontiersAssets/budaiev-300x300.jpg">
+            </div>
+        </div>
+    </div>
+    <div style="position:relative">
+        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/aces_mark_sgrb2mANDn.png">
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- End of slides. -->

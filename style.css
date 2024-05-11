@@ -11,6 +11,10 @@ body, pre {
     line-height: 1.2;
 }
 
+.rotate {
+  transform: rotate(90deg) translateY(-100%);
+  transform-origin:top left;
+}
 
 li {
     padding: 8px;
@@ -358,3 +362,4 @@ nav {
     left: 0;
     bottom: 0;
 }
+

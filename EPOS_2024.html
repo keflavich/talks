@@ -192,25 +192,42 @@
 <section>
     <div class=image style="height:100%">
     <span class=image style='height:85%; position: relative; top: 10%; background-position: center center; background-image: url(colloquium_assets/compare_brick_sgrb2_colPDF.svg);'>
-        <h4 class=smaller style="position: relative; top:-10%; left: 0%;"> The Brick has lower column density than star-forming Sgr B2 </h4>
+        <div class=smaller style="position: relative; top:-10%; left: 0%;"> The Brick has lower column density than star-forming Sgr B2 
+        <div class=smaller2> but higher than nearly any cloud in the Galactic plane</div></div>
         <div class=smaller2 style="position: relative; top:83%; left: 35%;"> <a href="http://adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a> </div>
     </span>
     </div>
 </section>
 
 <section>
-    <div style="
-width: 150%;
-height: 35em;
-background: url(jwbrick/BrickJWST_merged_longwave_narrowband_lighter.png) no-repeat;
-transform: rotate(-90deg);
-background-size: 250%;
-background-position: 50% 50%;
-margin-top: -25%;
-margin-left: -25%;
-animation: backgroundScroll 40s ease-in-out 1s infinite; ">
+    <div class=smaller>T<sub>gas</sub> &gt; T<sub>dust</sub>.  Gas is heated by CRs &amp; turbulence </div>
+    <img style="max-height:90%" src="assets/Clark2013fig3_BrickPhaseDiagram.png">
+
+    <div style="position:relative; top:-80%; right:-25%;" class=smaller>
+        <a href="https://ui.adsabs.harvard.edu/abs/2013ApJ...768L..34C/abstract">Clark+ 2013</a>
     </div>
 </section>
+
+<section>
+    <div style='max-height:700px; float:left'>
+        <img style="max-height:700px;" src="assets/brick/Clark2013_Fig4_HeatingCooling.png">
+        <div style="position:absolute; top:40%; left:8%;" class=smaller2>
+            <a href="https://ui.adsabs.harvard.edu/abs/2013ApJ...768L..34C/abstract">Clark+ 2013</a>
+        </div>
+    </div>
+
+
+    <div class=smaller style="float:right;">
+        At high CRIR, CO fails as a coolant because <br><code>CO + He<sup>+</sup> → C<sup>+</sup> + O + He</code><br>
+        But, The Brick is a really weak emitter in C<sup>+</sup>
+        <br>
+
+        <img style='max-width:500px' src="assets/brick/PeakCPlus_with_Herschel_Brick.png">
+        <div style='position:relative; top:-450px; left:25%;' class=smaller2><a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...921...33H/abstract">Harris+ 2021 SOFIA</a></div>
+    </div>
+
+</section>
+
 
 <section>
 
@@ -232,6 +249,11 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 </section>
 
 
+<section>
+    Effect of CO (&amp; CO<sub>2</sub>) ice on JWST filters
+<img style='width:50%; float:left' src="jwbrick/F410N405N_StickSpectrum_withice.png">
+<img style='width:50%; float:right' src="jwbrick/F466N_StickSpectrum_withice.png">
+</section>
 
 
 <section>
@@ -260,6 +282,21 @@ The Brick is icy
         </div>
     </div>
 </section>
+
+<section>
+    <div style="
+width: 150%;
+height: 35em;
+background: url(jwbrick/BrickJWST_merged_longwave_narrowband_lighter.png) no-repeat;
+transform: rotate(-90deg);
+background-size: 250%;
+background-position: 50% 50%;
+margin-top: -25%;
+margin-left: -25%;
+animation: backgroundScroll 40s ease-in-out 1s infinite; ">
+    </div>
+</section>
+
 <section>
 <img src="jwbrick/ColorColorDiagrams_WithSourceMap_ALL.png">
 <aside class=notes> anticorrelation with extinction indicates ice absorption;
@@ -287,23 +324,28 @@ The Brick is icy
 </section>
 
 <section>
-    <img src="assets/Clark2013fig3_BrickPhaseDiagram.png">
-
-    <div style="position:relative; top:-85%; right:-25%;" class=smaller>
-        <a href="https://ui.adsabs.harvard.edu/abs/2013ApJ...768L..34C/abstract">Clark+ 2013</a>
-    </div>
+    <img src="assets/brick/BrickOnDustRidge_CO32_vs_ppmapdusttem.png">
 </section>
+
 
 
 <section>
 <img src="assets/brick/NCO_vs_AV_182-212_contour.png">
 </section>
+
 <section>
-<img src="jwbrick/F410N405N_StickSpectrum_withice.png">
+    Has JWST revealed new star formation?
+
+    <div class="fragment smaller">
+        Not yet.
+        <br>
+        Br&alpha; and Pa&alpha; excess sources exist, but they're uniformly distributed - not likely to be associated with star formation.
+
+    <div style='z-index:5' > <img style="position: absolute; top:-15%; left:20%; max-height:350%; max-width:350%; transform:rotate(90deg)" src="assets/brick/BrickJWST_1182p2221_405_200_187_withPaABrA.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> </div> </div>
+    <div class=fragment style='z-index:6' > <img style="position: absolute; top:-15%; left:20%; max-height:350%; max-width:350%; transform:rotate(90deg)" src="assets/brick/BrickJWST_1182p2221_405_200_187_withdustyBrA.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> </div> </div>
+    </div>
 </section>
-<section>
-<img src="jwbrick/F466N_StickSpectrum_withice.png">
-</section>
+
 
 <section>
     Summary
@@ -311,6 +353,7 @@ The Brick is icy
     <ul>
         <li> The Brick is (nearly) protostarless
         <li> Ice forms very readily in the GC environment
+        <li> Early freezeout, in addition to CRs, may limit gas cooling
     </ul>
 
     <img src="jwbrick/BrickJWST_merged_longwave_narrowband_lighter.png">

@@ -599,7 +599,9 @@ surveys and N-body dynamical modeling, play a key role.
 
 <section>
     <h3> Big Questions in Star Formation</h3>
-    <div class=smaller2> I'll highlight incremental progress toward answering <span style='color:navy'>some of these</span> </div>
+    <div class=smaller2> I'll highlight incremental progress toward answering <span style='color:navy'>some of these</span> 
+        <div class=smaller> spiced with a few intriguing discoveries</div>
+    </div>
     <br>
     <ul class=bigpad>
         <li style='color:navy'> How does the IMF vary, and what controls its variation? </li>
@@ -626,6 +628,7 @@ surveys and N-body dynamical modeling, play a key role.
 <section>
     <h4> To answer these questions,<br> we observe the gas &amp; dust where stars form: Orion </h4>
     <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_orion.png);'></span>
+    <!-- TODO: use IMF plot to indicate upper mass limit -->
 </section>
 
 
@@ -1139,7 +1142,7 @@ surveys and N-body dynamical modeling, play a key role.
                 </li>
                 <li> <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240718719L/abstract">Catalog paper (Louvet+ 2024)</a>
                     <ul class=smaller> <li> ~1000 cores cataloged, CMF steeper than IMF </li></ul>
-                <li> <a href="https://arxiv.org/abs/2404.07363">Gas infall kinematics (Álvarez-Gutiérrez+ 2024)</a></li>
+                    <li> <a href="https://arxiv.org/abs/2404.07363">Gas infall kinematics (Álvarez-Gutiérrez+ 2024)</a>, <span class=smaller>Garrido+, Koley+ in prep</span></li>
                 <li> <a href="https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.217D/abstract">Dust temperature / column maps with PPMAP (Dell Ova+ 2024)</a></li>
                 <li> <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240707359G/abstract">H41&alpha; estimates of free-free emission (Galván-Madrid+ 2024)</a></li>
                 </li>
@@ -1203,82 +1206,300 @@ surveys and N-body dynamical modeling, play a key role.
 <section>
     <section>
         <h4>ALMA-IMF "Core" Mass CDF</h4>
-        <div class=smaller> The CMF in protoclusters is shallower than the IMF 
-            <div class=smaller2 style='color:maroon'> but this result is and will remain controversial because of small numbers &amp; questions of how to go from flux to mass
+        <div class=smaller> The CMF in protoclusters is shallower than the IMF
+        </div>
+        <img style='width: 800px; max-height:75% margin-top:-50px; top:-50px' src="almaimf_assets/LouvetMassCDF_2024_nosubsets.png">
+        <div class=smaller2 style="position: relative; top:-70%; right:-20%"> Louvet+ 2024</div>
+    </section>
+</section>
+
+
+
+<section> 
+    <section>
+        <h5 style='margin-top:-10px'> How does the CMF become the IMF? </h5>
+
+            <span class=image style="z-index:-1; width:70%; top:10%; left:0%; position: absolute; background-image: url(assets/Theo/temp_v_flux.png);"></span>
+            <div class=smaller style='z-index:10'>
+        Many cores are protostellar - so there's a mass correction
+        <div>
+
+            <span class=image style="width:25%; top:50%; left:65%; position: absolute; background-image: url(colloquium_assets/hotterbrightcorescorrection.svg);"></span>
+
+            <div style="float: right; width:30%; line-height:12pt;">
+                <img style='width:80%' src="FrontiersAssets/TheoRichardson.png" align="center" >
+                <span class="smaller3"> <a href="https://arxiv.org/abs/2401.12810"> Richardson, Ginsburg, Indebetouw, Robitaille 2024 (2401.12810)</a></span>
+            </div>
+    </section>
+
+
+    <section id=imf_flowchart>
+        <h5 style='margin-top:-10px'> The path to better mass measurement: 
+            <br>
+         <span style='color:darkred'>YSO modeling</span> &rightarrow; luminosity functions </h5>
+        <img style='margin-top:-10px' src="colloquium_assets/flowchart.svg">
+        <div>
+            <div style="float: left; width:25%; line-height:24pt">
+                <span class="smaller2"> <a href="https://arxiv.org/abs/2401.12810"> Richardson, Ginsburg, Indebetouw, Robitaille 2024 (2401.12810)</a></span>
+                <div style='line-height:12pt'> 
+                    <span class="smaller3"> NSF 2008101: <br> "How are stellar masses set?" </span>
+                </div>
+            </div>
+            <div style="float: left; width:50%">
+                <img src="FrontiersAssets/RobitailleGrid.png" style="width:80%">
+            </div>
+            <div style="float: left; width:25%">
+                <img src="FrontiersAssets/TheoRichardson.png" align="right" >
+                <span class=smaller> Theo Richardson</span>
+        </div>
+        <aside class="notes">
+            <ul>
+                <li>Models are parametric</li>
+                <li>They do not necessarily represent reality</li>
+                <li>Their parameter space is limited</li>
+                <li>These models have a central temperature and luminosity, not a central mass: linking mass to luminosity requires prestellar evolutionary tracks</li>
+            </ul>
+        </aside>
+
+    </section>
+
+    <section id=imf_flowchart_2>
+            <span class=image style="width:50%; top:42%; left:25%; position: absolute; background-image: url(assets/Theo/temp_v_flux.png);"></span>
+
+            <span class=image style="width:25%; top:42%; left:0%; position: absolute; background-image: url(colloquium_assets/hotterbrightcorescorrection.svg);"></span>
+
+        <h5 style='margin-top:-10px'> The path to better mass measurement: 
+            <br>
+         <span style='color:darkred'>YSO modeling</span> &rightarrow; luminosity functions </h5>
+        <img style='margin-top:-10px' src="colloquium_assets/flowchart.svg">
+
+        <div>
+            <div style="float: left; width:20%; visibility:hidden;">
+                <span class=smaller> NSF 2008101: "How are stellar masses set?" </span>
+            </div>
+            <div style="float: left; width:60%; visibility:hidden;">
+                <img src="FrontiersAssets/RobitailleGrid.png" style="width:80%">
+            </div>
+            <div style="float: left; width:20%">
+                <img src="FrontiersAssets/TheoRichardson.png" align="right" >
+                <span class=smaller> Theo Richardson</span>
+            </div>
+        <aside class="notes">
+            <ul>
+                <li></li>
+            </ul>
+        </aside>
+
+    </section>
+</section>
+
+<section>
+    <section>
+        <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
+        <div class=flex-vert-90>
+            <div style="float:left; max-height:95%; max-width:73%; margin-top:-10%;">
+                <img style='max-width:500px; max-height: 700px' src="assets/Taehwa/overview_1.png">
+            </div>
+            <div style="float:right; width: 25%; margin-top:0%; left:75%; position: absolute;">
+                <div> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+                <h4>Some cores fragment, some disappear</h4>
+                    <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
+                    <br>
+                <div class="smaller2" style="height:150px; display:inline-block;">
+                    Taehwa Yoo+: fragmentation<br>toward W51 
+                </div>
+
             </div>
         </div>
-        <img style='width: 800px; max-height:75%' src="almaimf_assets/LouvetMassCDF_2024_nosubsets.png">
-        <div class=smaller2 style="position: relative; top:-70%; right:-25%"> Louvet+ 2024</div>
+
     </section>
     <section>
-        <h4>ALMA-IMF "Core" Mass CDF</h4>
-        <div class=smaller> The CMF in "quiescent" outer regions is (marginally) steeper than the "active" central regions</div>
-        <img style='width: 800px; max-height:75%' src="almaimf_assets/LouvetCMF_ActiveVsPassive.png">
-        <div class=smaller2 style="position: relative; top:-70%; right:-25%"> Louvet+ 2024</div>
+            <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
+        <h4> What's inside the cores? </h4>
+        <img src="almaimf-w51-assets/W51_IRS2_almaimf_parent.png" style='max-height:80%'>
     </section>
+    <section>
+            <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
+        <h4> What's inside the cores? </h4>
+        <img src="almaimf-w51-assets/W51_IRS2_almaimf_lb_zoom.png" style='max-height:80%'>
+    </section>
+    <section>
+            <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
+        <h4> What's inside the cores? </h4>
+        <img src="almaimf-w51-assets/W51_IRS2_almaimf_lb_rezoom.png" style='max-height:80%'>
+    </section>
+
+</section>
+
+
+<section>
+    <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
+    <div class=flex-vert-90>
+        <div style="float:left; max-height:95%; max-width:73%; margin-top:-10%;">
+            <img style='max-width:700px' src="assets/Taehwa/w51-irs2.png">
+        </div>
+        <div style="float:right; width: 25%; margin-top:0%; left:75%; position: absolute;">
+            <div> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+            <h4>Some cores fragment, some disappear</h4>
+                <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
+                <br>
+            <div class="smaller2" style="height:150px; display:inline-block;">
+                    Taehwa Yoo+: fragmentation<br>toward W51 
+            </div>
+
+        </div>
+    </div>
+
 </section>
 
 
 
-<section id=imf_flowchart>
-    <h5 style='margin-top:-10px'> The path to better mass measurement: 
-        <br>
-     <span style='color:darkred'>YSO modeling</span> &rightarrow; luminosity functions </h5>
-    <img style='margin-top:-10px' src="colloquium_assets/flowchart.svg">
-    <div>
-        <div style="float: left; width:25%; line-height:24pt">
-            <span class="smaller2"> <a href="https://arxiv.org/abs/2401.12810"> Richardson, Ginsburg, Indebetouw, Robitaille 2024 (2401.12810)</a></span>
-            <div style='line-height:12pt'> 
-                <span class="smaller3"> NSF 2008101: <br> "How are stellar masses set?" </span>
+<section>
+    <h4>Trend: More massive cores fragment more.</h4>
+    <img style="max-height:650px; " src="assets/Taehwa/frag_flux_20240429_upleft.png">
+    <div style="position: absolute; top:55%; right:38%;"> <img width=200px src="colloquium_assets/massivecoresfragmentmore.svg"> </div>
+    <div class=smaller style="float:right">
+        <br><br>Yoo+ in prep:
+        W51<br>
+        <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>:
+         Sgr B2
+    </div>
+    <aside class=notes>
+        This is the same effect you'd see with sensitivity limits; e.g., all cores have the same fragmentation rate, but you can only see the fragments in the most massive cores.
+    <img style="max-height:300px" src="assets/Nazar/flux_fragmentation_for_Adam.png"> 
+    <div class=smaller style="float:right">
+        <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+        <br> Sgr B2
+    </div>
+    </aside>
+</section>
+
+
+<section>
+    <div class=flex-vert-90>
+        <div style="float:left; max-height:95%">
+            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out_zoom.png">
+        </div>
+        <div style="float:right; width: 35%">
+            <h4>Some cores fragment, some disappear</h4>
+            <div>
+                <div class=smaller2>
+                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
+                    At higher resolution, some cores contain clusters,
+                    some are starless.
+                <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+                </div>
             </div>
         </div>
-        <div style="float: left; width:50%">
-            <img src="FrontiersAssets/RobitailleGrid.png" style="width:80%">
-        </div>
-        <div style="float: left; width:25%">
-            <img src="FrontiersAssets/TheoRichardson.png" align="right" >
-            <span class=smaller> Theo Richardson</span>
     </div>
-    <aside class="notes">
-        <ul>
-            <li>Models are parametric</li>
-            <li>They do not necessarily represent reality</li>
-            <li>Their parameter space is limited</li>
-            <li>These models have a central temperature and luminosity, not a central mass: linking mass to luminosity requires prestellar evolutionary tracks</li>
-        </ul>
-    </aside>
-
+    <div style="position:relative">
+        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
+    </div>
+</section>
+<section>
+    <div class=flex-vert-90>
+        <div style="float:left; max-height:95%">
+            <img style='max-height:800px' src="assets/Nazar/sources_per.png">
+        </div>
+        <div style="float:right; width: 35%">
+            <h4>Some cores fragment, some disappear</h4>
+            <div>
+                <div class=smaller2>
+                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
+                    At higher resolution, some cores contain clusters,
+                    some are starless.
+        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative">
+        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
+    </div>
 </section>
 
-<section id=imf_flowchart_2>
-        <span class=image style="width:50%; top:42%; left:25%; position: absolute; background-image: url(assets/Theo/temp_v_flux.png);"></span>
-
-        <span class=image style="width:25%; top:42%; left:0%; position: absolute; background-image: url(colloquium_assets/hotterbrightcorescorrection.svg);"></span>
-
-    <h5 style='margin-top:-10px'> The path to better mass measurement: 
-        <br>
-     <span style='color:darkred'>YSO modeling</span> &rightarrow; luminosity functions </h5>
-    <img style='margin-top:-10px' src="colloquium_assets/flowchart.svg">
-
-    <div>
-        <div style="float: left; width:20%; visibility:hidden;">
-            <span class=smaller> NSF 2008101: "How are stellar masses set?" </span>
+<section>
+    <div class=flex-vert-90>
+        <div style="float:left; max-height:95%">
+            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1.png">
         </div>
-        <div style="float: left; width:60%; visibility:hidden;">
-            <img src="FrontiersAssets/RobitailleGrid.png" style="width:80%">
+        <div style="float:right; width: 35%">
+            <h4>Some cores fragment, some disappear</h4>
+            <div>
+                <div class=smaller2>
+                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
+                    At higher resolution, some cores contain clusters,
+                    some are starless.
+        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+                </div>
+            </div>
         </div>
-        <div style="float: left; width:20%">
-            <img src="FrontiersAssets/TheoRichardson.png" align="right" >
-            <span class=smaller> Theo Richardson</span>
-        </div>
-    <aside class="notes">
-        <ul>
-            <li></li>
-        </ul>
-    </aside>
-
+    </div>
+    <div style="position:relative">
+        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
+    </div>
 </section>
 
+
+<section>
+    <div class=flex-vert-90>
+        <div style="float:left; max-height:95%">
+            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out.png">
+        </div>
+        <div style="float:right; width: 35%">
+            <h4>Some cores fragment, some disappear</h4>
+            <div>
+                <div class=smaller2>
+                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
+                    At higher resolution, some cores contain clusters,
+                    some are starless.
+        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative">
+        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
+    </div>
+</section>
+
+
+<section>
+    <div class=flex-vert-90>
+        <div style="float:left; max-height:95%">
+            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out_zoom.png">
+        </div>
+        <div style="float:right; width: 35%">
+            <h4>Some cores fragment, some disappear</h4>
+            <div>
+                <div class=smaller2>
+                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
+                    At higher resolution, some cores contain clusters,
+                    some are starless.
+                <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative">
+        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+    </div>
+    <div style="position: absolute; bottom:10px; right:-10px;">
+        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
+    </div>
+</section>
 
 
 
@@ -1395,113 +1616,6 @@ surveys and N-body dynamical modeling, play a key role.
         </span>
     </section>
 
-<section>
-    <section>
-        <div style='position:absolute; color:white; left:40%; line-height:0pt;'>
-            <h4 style='font-size:90%; color:white; text-align:center'> The CMZ: ACES </h4>
-            <span class=smaller3><a href="https://www.adamgginsburg.com/ACES_tour.html">www.adamgginsburg.com/ACES_tour.html</a></span>
-        </div>
-        <iframe class="wwt-embed"
-                src="https://web.wwtassets.org/embed/1/wwt/?tour=https://www.dropbox.com/scl/fi/g2dx8vfyeasdyfxztm1f6/ACES_Tour2.WTT%3Frlkey=iqpgw7iyc6sp35kp430kah98k%26dl=1"
-                allow="accelerometer; autoplay; clipboard-write; gyroscope"
-                allowfullscreen="" width="100%" height="100%" frameborder="0">
-        <p>Cannot display WorldWide Telescope because your browser does not support iframes.</p>
-        </iframe>
-    </section>
-    <section>
-        <span>
-        <img src="assets/cmz/ACES_logo_v1.png" style='max-width:8%; margin-left:-10%; display:inline; overflow:auto;'>
-        <h4 style='display:inline; vertical-align:top; max-width:80%;'> ACES: the ALMA survey of the CMZ</h4>
-        </span>
-        <img src="assets/cmz/gc_fullres_6_small_withACES7m_12minset.png">
-    </section>
-
-    <section>
-        <div style="display:flex; align-items: center;">
-            <img src="assets/cmz/ACES_logo_v1.png" style='float:left; max-width:35%'>
-            <h4>A brief summary &amp; progress report</h4>
-        </div>
-        <div style="display:flex; align-items: center; height:50%">
-            <ul>
-                <li style='margin-bottom: 25px'>3mm, 1.5", whole CMZ</li>
-                <li style='margin-bottom: 25px'>High spectral resolution (0.2 km/s) in HCO+ and HNCO</li>
-                <li style='margin-bottom: 25px'>Data products on their way!  100% observed, ~75% delivered</li>
-                <li style='margin-bottom: 25px'>Several pilot programs demonstrating expected results </li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <div class=flex-vert-90>
-            <div>
-                The CMZ at 3mm
-                <img style='width:100%' src="assets/cmz/MUSTANG_Planck.png">
-                <a class=smaller2 href="https://ui.adsabs.harvard.edu/abs/2020ApJS..248...24G/abstract">Ginsburg+ 2020</a>
-            </div>
-        </div>
-        <div class=smaller style="position: relative; top:-60%; left:70%; width: 25%">
-            <img style='width:90%; margin-top:-7%' src="assets/TENS_MUSTANG_Logo.png">
-            <div style="margin-top:10%">
-                To be observed Feb 2023, "TENS"
-                <br>
-                (GBT A-rank)
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class=flex-vert-90>
-            <div>
-                The CMZ at 3mm
-                <img style='width:100%' src="assets/cmz/MUSTANG_Planck.png">
-                <a class=smaller2 href="https://ui.adsabs.harvard.edu/abs/2020ApJS..248...24G/abstract">Ginsburg+ 2020</a>
-            </div>
-        </div>
-    </section>
-    <section>
-        <img src="assets/ACES_Hand.svg">
-    </section>
-
-
-    <section>
-        <div class=flex-vert-90>
-            <div>
-        The CMZ at 3mm
-        <img style='width:100%' src="assets/cmz/CARMA_8.png">
-        <a class=smaller2 href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.473.2899P/abstract">Pound &amp; Yusef-Zadeh 2018</a>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class=flex-vert-90>
-            <div>
-        The CMZ at 3mm
-        <img style='width:100%' src="assets/cmz/CARMA_23.png">
-        <a class=smaller2 href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.473.2899P/abstract">Pound &amp; Yusef-Zadeh 2018</a>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class=flex-vert-90>
-            <div>
-        The CMZ at 3mm
-        <img style='width:100%' src="assets/cmz/ACES_7m_20221106.png">
-        <span class=smaller2>ACES team, in prep</span>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class=flex-vert-90>
-            <div>
-        The CMZ at 3mm
-        <img style='width:100%' src="assets/cmz/ACES_12m_20221106.png">
-        <span class=smaller2>ACES team, in prep</span>
-            </div>
-        </div>
-    </section>
-</section>
 
 
 <section>
@@ -1694,253 +1808,9 @@ surveys and N-body dynamical modeling, play a key role.
 </section>
 
 
-<section>
-    <div class=flex-vert-90>
-        <div style="float:left; max-height:95%">
-            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out_zoom.png">
-        </div>
-        <div style="float:right; width: 35%">
-            <h4>Some cores fragment, some disappear</h4>
-            <div>
-                <div class=smaller2>
-                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
-                    At higher resolution, some cores contain clusters,
-                    some are starless.
-                <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
-    </div>
-</section>
-<section>
-    <div class=flex-vert-90>
-        <div style="float:left; max-height:95%">
-            <img style='max-height:800px' src="assets/Nazar/sources_per.png">
-        </div>
-        <div style="float:right; width: 35%">
-            <h4>Some cores fragment, some disappear</h4>
-            <div>
-                <div class=smaller2>
-                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
-                    At higher resolution, some cores contain clusters,
-                    some are starless.
-        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
-    </div>
-</section>
-
-<section>
-    <div class=flex-vert-90>
-        <div style="float:left; max-height:95%">
-            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1.png">
-        </div>
-        <div style="float:right; width: 35%">
-            <h4>Some cores fragment, some disappear</h4>
-            <div>
-                <div class=smaller2>
-                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
-                    At higher resolution, some cores contain clusters,
-                    some are starless.
-        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
-    </div>
-</section>
-
-
-<section>
-    <div class=flex-vert-90>
-        <div style="float:left; max-height:95%">
-            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out.png">
-        </div>
-        <div style="float:right; width: 35%">
-            <h4>Some cores fragment, some disappear</h4>
-            <div>
-                <div class=smaller2>
-                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
-                    At higher resolution, some cores contain clusters,
-                    some are starless.
-        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
-    </div>
-</section>
-
-
-<section>
-    <div class=flex-vert-90>
-        <div style="float:left; max-height:95%">
-            <img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out_zoom.png">
-        </div>
-        <div style="float:right; width: 35%">
-            <h4>Some cores fragment, some disappear</h4>
-            <div>
-                <div class=smaller2>
-                    <img style="width:150px; float:right" src="FrontiersAssets/budaiev-300x300.jpg">
-                    At higher resolution, some cores contain clusters,
-                    some are starless.
-                <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div style="position:relative">
-        <div style="position:absolute; top:-650px; right:80px"> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-    </div>
-    <div style="position: absolute; bottom:10px; right:-10px;">
-        <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
-    </div>
-</section>
-
-
-<section>
-    <section>
-        <img style="position: absolute; left:0%; top: 0%;" src="assets/Nazar/masers_on_continuum_compare_none.png">
-        <img style="position: absolute; left:0%; top: 0%;" class=fragment src="assets/Nazar/masers_on_continuum_compare_McGrath.png">
-        <img style="position: absolute; left:0%; top: 0%;" class=fragment src="assets/Nazar/masers_on_continuum_compare_Budaiev.png">
-        <img style="position: absolute; left:0%; top: 0%;" class=fragment src="assets/Nazar/masers_on_continuum_compare_both.png">
-        <div style="float:right; width: 20%">
-            <h4>What's next?</h4>
-            <div>
-                <div class=smaller2>
-                    <img style="width:150px; " src="FrontiersAssets/budaiev-300x300.jpg">
-                    <br>
-                    Nazar has cataloged 100s of <span style='color:red'>new masers</span> in Sgr B2 (VLA 18A-229)
-                </div>
-            </div>
-        </div>
-        <div style="position: absolute; bottom:10px; right:-10px;">
-            <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
-        </div>
-    </section>
-    <section>
-        A quick look at what's coming: Nazar has cataloged 100s of <span style='color:red'>new masers</span> in Sgr B2 (VLA 18A-229)<br>
-        <img src="assets/Nazar/NazarMasers2.jpeg" style='width: 300px;'>
-        <img src="assets/Nazar/NazarMasers4.jpeg" style='width: 300px;'>
-        <img src="assets/Nazar/NazarMasers5.jpeg" style='width: 300px;'>
-        <img src="assets/Nazar/NazarMasers1.jpeg" style='width: 300px;'>
-        <img src="assets/Nazar/NazarMasers6.jpeg" style='width: 300px;'>
-        <img src="assets/Nazar/NazarMasers3.jpeg" style='width: 300px;'>
-    </section>
-</section>
-
-
-<section>
-    <section>
-        <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
-        <div class=flex-vert-90>
-            <div style="float:left; max-height:95%; max-width:73%; margin-top:-10%;">
-                <img style='max-width:500px' src="assets/Taehwa/overview_1.png">
-            </div>
-            <div style="float:right; width: 50%; margin-top:0%;">
-                <div> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-                <h4>Some cores fragment, some disappear</h4>
-                    <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
-                <div class="smaller2" style="height:150px; display:inline-block;">
-                    Taehwa Yoo is measuring fragmentation<br>toward W51 
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-    <section>
-            <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
-        <h4> What's inside the cores? </h4>
-        <img src="almaimf-w51-assets/W51_IRS2_almaimf_parent.png" style='max-height:80%'>
-    </section>
-    <section>
-            <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
-        <h4> What's inside the cores? </h4>
-        <img src="almaimf-w51-assets/W51_IRS2_almaimf_lb_zoom.png" style='max-height:80%'>
-    </section>
-    <section>
-            <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
-        <h4> What's inside the cores? </h4>
-        <img src="almaimf-w51-assets/W51_IRS2_almaimf_lb_rezoom.png" style='max-height:80%'>
-    </section>
-
-</section>
-
-
-<section>
-    <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
-    <div class=flex-vert-90>
-        <div style="float:left; max-height:95%; max-width:73%; margin-top:-10%;">
-            <img style='max-width:500px' src="assets/Taehwa/w51-irs2.png">
-        </div>
-        <div style="float:right; width: 50%; margin-top:0%;">
-            <div> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-            <h4>Some cores fragment, some disappear</h4>
-                <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
-            <div class="smaller2" style="height:150px; display:inline-block;">
-                Taehwa Yoo is measuring fragmentation<br>toward W51 
-            </div>
-
-        </div>
-    </div>
-
-</section>
 
 
 
-<section>
-    <h4>Trend: More massive cores fragment more.</h4>
-    <img style="max-height:650px; " src="assets/Taehwa/frag_flux_20240429_upleft.png">
-    <div style="position: absolute; top:55%; right:38%;"> <img width=200px src="colloquium_assets/massivecoresfragmentmore.svg"> </div>
-    <div class=smaller style="float:right">
-        <br><br>Yoo+ in prep:
-        W51<br>
-        <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>:
-         Sgr B2
-    </div>
-    <aside class=notes>
-        This is the same effect you'd see with sensitivity limits; e.g., all cores have the same fragmentation rate, but you can only see the fragments in the most massive cores.
-    <img style="max-height:300px" src="assets/Nazar/flux_fragmentation_for_Adam.png"> 
-    <div class=smaller style="float:right">
-        <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
-        <br> Sgr B2
-    </div>
-    </aside>
-</section>
-
-
-<section id=derod>
-    <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
-    <h4 style="display:inline"> Ammonia Masers: </h4>
-    Derod Deal
-    <img src="FrontiersAssets/Derod_2.png" align=right style="max-height:10%; object-fit: cover; width:100px; object-position: 0% 00%;">
-    <br> VLA 19A-154
-    <img src="assets/Derod/W51_North_d2_ca3_v2.png" style="width:100%">
-</section>
 
 
 
@@ -3334,6 +3204,47 @@ The Brick is icy
         </ul>
         <img style="height:auto; width:80%" src="almaimf_assets/ALMAIMF_Team_Wide.png">
     </div>
+</section>
+
+
+<section>
+    <section>
+        <img style="position: absolute; left:0%; top: 0%;" src="assets/Nazar/masers_on_continuum_compare_none.png">
+        <img style="position: absolute; left:0%; top: 0%;" class=fragment src="assets/Nazar/masers_on_continuum_compare_McGrath.png">
+        <img style="position: absolute; left:0%; top: 0%;" class=fragment src="assets/Nazar/masers_on_continuum_compare_Budaiev.png">
+        <img style="position: absolute; left:0%; top: 0%;" class=fragment src="assets/Nazar/masers_on_continuum_compare_both.png">
+        <div style="float:right; width: 20%">
+            <h4>What's next?</h4>
+            <div>
+                <div class=smaller2>
+                    <img style="width:150px; " src="FrontiersAssets/budaiev-300x300.jpg">
+                    <br>
+                    Nazar has cataloged 100s of <span style='color:red'>new masers</span> in Sgr B2 (VLA 18A-229)
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom:10px; right:-10px;">
+            <img width=350px src="assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png">
+        </div>
+    </section>
+    <section>
+        A quick look at what's coming: Nazar has cataloged 100s of <span style='color:red'>new masers</span> in Sgr B2 (VLA 18A-229)<br>
+        <img src="assets/Nazar/NazarMasers2.jpeg" style='width: 300px;'>
+        <img src="assets/Nazar/NazarMasers4.jpeg" style='width: 300px;'>
+        <img src="assets/Nazar/NazarMasers5.jpeg" style='width: 300px;'>
+        <img src="assets/Nazar/NazarMasers1.jpeg" style='width: 300px;'>
+        <img src="assets/Nazar/NazarMasers6.jpeg" style='width: 300px;'>
+        <img src="assets/Nazar/NazarMasers3.jpeg" style='width: 300px;'>
+    </section>
+</section>
+
+<section id=derod>
+    <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
+    <h4 style="display:inline"> Ammonia Masers: </h4>
+    Derod Deal
+    <img src="FrontiersAssets/Derod_2.png" align=right style="max-height:10%; object-fit: cover; width:100px; object-position: 0% 00%;">
+    <br> VLA 19A-154
+    <img src="assets/Derod/W51_North_d2_ca3_v2.png" style="width:100%">
 </section>
 
 

@@ -11,17 +11,17 @@ _=hcp.plot(0,0,'.',color='gold',markersize=3,markeredgecolor='gold',markerfaceco
 
 # GC
 gcp.plot(0, 0, 'o', color='red', markersize=40, markerfacecolor='none', zorder=50, alpha=1, markeredgewidth=2, markeredgecolor='r')
-gcp.text(270, 3, 'Galactic Center', ha='center', color='white')
+gcp.text(270, 1.5, 'Galactic Center', ha='center', color='k')
 
 # wd 2
 hcp.plot(284, 4.03, 'o', color='red', markersize=10, markerfacecolor='none', zorder=50, alpha=1, markeredgewidth=2, markeredgecolor='r')
 hcp.text(278, 4.03, 'Wd 2', color='white', ha='center', va='bottom')
 # wd 1
 hcp.plot(339.54, 3.8, 'o', color='red', markersize=10, markerfacecolor='none', zorder=50, alpha=1, markeredgewidth=2, markeredgecolor='r')
-hcp.text(333, 3.8, 'Wd 1', color='white', ha='center', va='bottom')
+hcp.text(334, 3.6, 'Wd 1', color='white', ha='center', va='bottom')
 
 hcp.plot(291.6240, 6.9, 'o', color='red', markersize=10, markerfacecolor='none', zorder=50, alpha=1, markeredgewidth=2, markeredgecolor='r')
-hcp.text(284, 6.9, 'NGC 3603', color='white', ha='center', va='bottom')
+hcp.text(287, 6.9, 'NGC 3603', color='white', ha='center', va='bottom')
 
 hcp.plot(49.5, 5.1, 'o', color='green', markersize=10, markerfacecolor='none', zorder=50, alpha=1, markeredgewidth=2, markeredgecolor='green')
 hcp.text(54, 5.1, 'W51', color='white', ha='center', va='bottom')

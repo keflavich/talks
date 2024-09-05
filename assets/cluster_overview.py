@@ -6,8 +6,8 @@ mw_img_name = get_image()
 fig = pl.figure(figsize=(8,8), num=5)
 fig.clf()
 ax, ax_pixgrid, gcp, hcp, tr_gal, tr_helio = make_mw_plot(mw_img_name=mw_img_name)
-_=hcp.plot(0,0,'o',color='gold',markersize=10,markeredgecolor='gold',markerfacecolor='none',zorder=50,alpha=1,markeredgewidth=2)
-_=hcp.plot(0,0,'.',color='gold',markersize=3,markeredgecolor='gold',markerfacecolor='gold',zorder=50,alpha=1,markeredgewidth=2)
+hcp.plot(0,0,'o',color='gold',markersize=10,markeredgecolor='gold',markerfacecolor='none',zorder=50,alpha=1,markeredgewidth=2)
+hcp.plot(0,0,'.',color='gold',markersize=3,markeredgecolor='gold',markerfacecolor='gold',zorder=50,alpha=1,markeredgewidth=2)
 
 # GC
 gcp.plot(0, 0, 'o', color='red', markersize=40, markerfacecolor='none', zorder=50, alpha=1, markeredgewidth=2, markeredgecolor='r')
@@ -37,3 +37,21 @@ pl.draw()
 pl.savefig("galaxyoverview_clusters_and_protoclusters.png", bbox_inches='tight')
 ax.axis([-10, 10, -10, 10])
 pl.savefig("galaxyoverview_clusters_and_protoclusters_zoom.png", bbox_inches='tight')
+
+for elt in hcp.texts + gcp.texts + gcp.lines + hcp.lines:
+    elt.set_visible(False)
+
+hcp.plot(0,0,'o',color='gold',markersize=10,markeredgecolor='gold',markerfacecolor='none',zorder=50,alpha=1,markeredgewidth=2)
+hcp.plot(0,0,'.',color='gold',markersize=3,markeredgecolor='gold',markerfacecolor='gold',zorder=50,alpha=1,markeredgewidth=2)
+
+# ww, hh = 1, 1
+# rect = pl.matplotlib.patches.Rectangle([0-ww/2, 8.5-hh/2], ww, hh)
+# rect.set_edgecolor('red')
+# rect.set_facecolor('none')
+# ax.add_artist(rect)
+
+circ = pl.matplotlib.patches.Circle([0, 8.5], 1)
+circ.set_edgecolor('red')
+circ.set_facecolor((1, 0, 0, 0.25))
+ax.add_artist(circ)
+pl.savefig("galaxyoverview_local_kiloparsec.png", bbox_inches='tight', edgecolor='none', facecolor='none')

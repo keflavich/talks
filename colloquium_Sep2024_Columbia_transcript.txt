@@ -1,0 +1,57 @@
+
+Star formation drives the evolution of the universe.  At the beginning, the Big Bang gave us a brief moment of inflation, but everything that has grown since the cosmic microwave background has done so under gravity.  The galaxies we see over all of cosmic history are made of stars, and mostly we see the young ones.
+
+From the extragalactic observers' perspective, or the idealist theorists', star formation can be simplified into two variables: the star formation rate and light-to-mass ratio.  The star formation rate is simply the rate at which new stars form from gas, while the light-to-mass ratio is the sum over stellar populations.  Of course, the spectral properties of that light matter.
+
+Stars are relatively deterministic systems.  Once you know their mass, you know their temperature and luminosity both when they're born and over their whole lifetimes.  The Hertzsprung-Russell diagram, relating luminosity to temperature, yields a unique track for hydrogen-burning stars of a given metallicity.  The mass-temperature relation maps uniquely to the HR diagram at zero age, but it also tells you how long stars live.  Those with mass above ten solar masses live only a few tens of millions of years, but while they're alive, they outshine the integrated lower-mass populations.  The low-mass stars, those less massive than the sun, live longer than the current age of the universe.
+
+Since young, massive stars dominate the light, it's important to know how many there are.  The stellar Initial Mass Function is the distribution of those masses.  There are very few high-mass stars, but these stars nevertheless dominate the light production of stellar populations as long as they exist.  There are many low-mass stars.  Notably, the IMF cannot be universal across time, space, and scale - though it is nearly invariant under most current measurement techniques.
+
+We can break the IMF down a little further into those low-mass stars that store the mass forever but produce none of the light, the highest-mass stars that make all the light despite their small numbers, and an intermediate chunk that doesn't make all that much light but is respsonsible for most of the supernovae.  Those latter two groups populate the stellar graveyard and are likely the origin of all black holes and neutron stars, i.e., all LIGO sources so far.
+
+When we look at galaxies, we see that almost all of the light is produced by high mass stars when they're there.  M31, despite a modest overall star formation rate, produces UV light through its young stellar populations.  Those young stars form where there is gas (which we can see from the dust).
+[in the slides, I show GALEX and Herschel data.  Now there is an all-sky map showing where these images come from]
+
+Most of what we have learned about the process of star formation in detail comes from small local clouds like the Taurus molecular cloud.  In these nearby regions, we easily resolve individual star-forming systems.  We can even see them in the near-infrared, despite the extinction from the local clouds.
+[sldies show Taurus dust in emission & extinction, with both face-on and all-sky guiders]
+
+We generally hold in mind a cartoon picture of star formation, in which a molecular cloud forms an overdensity (a core) that collapses under gravity to form a protostar-disk-envelope system.  The protostar eventually eats or blows out its core, and we end up with a simple star-disk system where planets form that eventually becomes just a star system.
+
+That cartoon misses a few important points.  First, cores continue to fragment.  They tend not to form in isolation but in crowds, and those crowds often include nearby high-mass stars that can cook the surroundings.  On top of all that, the systems are dynamic - they move with respect to each other, and the stars move into and out of the gas.
+
+Part of the problem in our cartoon picture has come about because of where we've looked - we've been limited, until the last decade or so, to studying the details of star formation in local clouds.  These local clouds barely sample the IMF at all: they miss the stars that make light!
+
+Over the history of our universe, most stars have not formed in regions like today's solar neighborhood.  Instead, they formed in denser regions.  Many formed within dense, high-mass clusters.
+
+High-mass clusters aren't just places of local feedback, they're also qualitatively different sites of star formation.  There is good evidence that the most massive clusters in our Galaxy have top-heavy initial mass functions.  Clusters like these were more common back around cosmic noon, too.
+
+So we now get into some of the big questions: Are these top-heavy IMFs limited to clusters, like NGC 3603 and Wd1, which are pretty rare today and only account for ~5-10% of modern star formation? Or do top-heavier mass functions occur more broadly in more richly star-forming Galactic environments?
+
+These are the biggest questions I want to tackle: How does the IMF form?  What's the role of stellar clustering?
+
+I highlight a bunch of other open questions in star formation, but I won't be addressing them - this is just a dirty laundry list if anyone is wondering what we study and wants to help clean it up.
+
+Our laboratory is primarily our own Galaxy.  Only within this local 10-20 kpc bubble are we able to resolve star systems from one another, and sometimes even the multiples within them.
+
+The interesting places to look are the optically dark lanes - stars form in dusty regions, so we have to use longer wavelengths to observe the process.  The tools of choice to study gas and dust are extinction maps in the infrared and emission maps of gas and dust in the far-infrared, millimeter, and radio.
+
+
+Orion
+We start with the closest region of high-mass star formation: a region where the conditions are different from the low-mass local clouds, but where the feedback from high-mass stars actually matters.
+
+The Orion Molecular Cloud is a classic Giant Molecular Cloud that we have observed primarily in CO gas.
+
+It contains the Integral-Shaped Filament, a massive (10,000 Msun) structure with a length of 10 pc.
+
+It contains the Trapezium cluster and the M42 nebula, some of the best sights to see by eye in the sky, which lie just in front of the BN/KL nebula, the closest site of ongoing high-mass star formation.
+
+The BN/KL nebula consists of highly excited molecular emission and is the site of a recent explosion.
+
+The hot molecular hydrogen traces outflows that point back to a single origin, which is near the site of Source I.  This object is a disk around a high-mass (15 Msun) protostar, and we detect its kinematics in an emission line of NaCl, table salt.
+
+This is the first weird discovery: we found salt, and we definitely weren't expecting to.  Under normal conditions in the ISM, salt looks more like you're used to - it's a solid, not a gas.  It takes specific conditions (that we have yet to understand) to be in the gas phase, but the narrow range of physical parameters producing salt emission means that it's a useful tracer of disk kinematics.  In other molecular lines, like CO, the surrounding molecular cloud hides the disk.
+
+Salt is present in many high-mass disks.  We've done a small archival survey showing that it's at least not rare, though the sample of detected disks remains small.  My postdoc Miriam Garcia Santa-Maria will be working to expand the sample and better understand which stars and what conditions produce these disks.
+
+Zooming back out a moment to this young forming cluster, we focus on the Orion Molecular Cloud Core that coincides with the BN/KL nebula.  This region is the canonical test case for dense cluster properties, such as interactions between stars and disks.
+

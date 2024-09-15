@@ -144,9 +144,10 @@ img.thumbnail {
     max-height:40px;
 }
 img.thumbnail:hover, img.zoom:hover, span.zoom:hover {
-    max-width: 100%;
+    max-width: 100% !important;
     max-height:100% !important;
     width: 100% !important;
+    height: auto !important;
     position: absolute;
     left: 0;
     top: 0;

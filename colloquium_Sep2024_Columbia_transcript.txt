@@ -7,13 +7,13 @@ Stars are relatively deterministic systems.  Once you know their mass, you know 
 
 Since young, massive stars dominate the light, it's important to know how many there are.  The stellar Initial Mass Function is the distribution of those masses.  There are very few high-mass stars, but these stars nevertheless dominate the light production of stellar populations as long as they exist.  There are many low-mass stars.  Notably, the IMF cannot be universal across time, space, and scale - though it is nearly invariant under most current measurement techniques.
 
-We can break the IMF down a little further into those low-mass stars that store the mass forever but produce none of the light, the highest-mass stars that make all the light despite their small numbers, and an intermediate chunk that doesn't make all that much light but is respsonsible for most of the supernovae.  Those latter two groups populate the stellar graveyard and are likely the origin of all black holes and neutron stars, i.e., all LIGO sources so far.
+We can break the IMF down a little further into those low-mass stars that store the mass forever but produce none of the light, the highest-mass stars that make all the light despite their small numbers, and an intermediate chunk that doesn't make all that much light but is responsible for most of the supernovae.  Those latter two groups populate the stellar graveyard and are likely the origin of all black holes and neutron stars, i.e., all LIGO sources so far.
 
 When we look at galaxies, we see that almost all of the light is produced by high mass stars when they're there.  M31, despite a modest overall star formation rate, produces UV light through its young stellar populations.  Those young stars form where there is gas (which we can see from the dust).
 [in the slides, I show GALEX and Herschel data.  Now there is an all-sky map showing where these images come from]
 
 Most of what we have learned about the process of star formation in detail comes from small local clouds like the Taurus molecular cloud.  In these nearby regions, we easily resolve individual star-forming systems.  We can even see them in the near-infrared, despite the extinction from the local clouds.
-[sldies show Taurus dust in emission & extinction, with both face-on and all-sky guiders]
+[slides show Taurus dust in emission & extinction, with both face-on and all-sky guiders]
 
 We generally hold in mind a cartoon picture of star formation, in which a molecular cloud forms an overdensity (a core) that collapses under gravity to form a protostar-disk-envelope system.  The protostar eventually eats or blows out its core, and we end up with a simple star-disk system where planets form that eventually becomes just a star system.
 

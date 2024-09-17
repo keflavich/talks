@@ -153,6 +153,16 @@ img.thumbnail:hover, img.zoom:hover, span.zoom:hover {
     top: 0 !important;
     z-index: 10;
 }
+img.zoomtall:hover, span.zoomtall:hover {
+    max-width: 100% !important;
+    max-height:100% !important;
+    width: auto !important;
+    height: 100% !important;
+    position: absolute;
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 10;
+}
 
 .reveal section img {
     border: none;

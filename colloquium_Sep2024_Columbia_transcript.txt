@@ -55,3 +55,75 @@ Salt is present in many high-mass disks.  We've done a small archival survey sho
 
 Zooming back out a moment to this young forming cluster, we focus on the Orion Molecular Cloud Core that coincides with the BN/KL nebula.  This region is the canonical test case for dense cluster properties, such as interactions between stars and disks.
 
+The first image shows the region as seen in the infrared.  When we zoom in with ALMA, we see a number of small specks that are all small disks around YSOs.  Many of these YSOs are newly detected and not seen at any other wavelength, so the estimated density of the OMC and ONC clusters is a factor of a few higher than previously measured, and the OMC cluster is an order of magnitude denser.  This means that there's a lot of opportunity for stars to interact, and that's our interpretation of why the disks here are so small.
+
+Returning to the BN/KL explosion, we have evidence of one specific and important dynamical interaction.  The story behind the SrcI + BN + SrcX system that lies at the heart of the BN/KL nebula is that, 500 years ago, these stars coexisted in a non-hierarchical multiple system - i.e., a mini cluster.  That cluster wasn't dynamically stable, so there was an event in which some stars partnered up and the system broke apart.  The BN/KL explosion was the result.
+
+This interaction is the poster case for termination of accretion via dynamics.  All of these stars resided in a dense core before the interaction, and now they're all moving away at much greater than the escape speed - they're done growing.  This sort of interaction shows up in the highest-density cluster in the solar neighborhood, and the only site where new high-mass stars are forming, which implies that interactions like this must be commonplace.
+
+Indeed, as we zoom out to more distant regions, like the W51 young massive cluster-forming cloud, we see other signs of interaction that are only slightly less extreme.  In W51 North, the outflow appears to have changed direction by 50 degrees over roughly a hundred year period, which implies that some short-lived event completely changed the orientation of the accretion disk.  That short process dumped half a solar mass onto the central star in that short time.
+
+
+Inner Galaxy
+We now transition from the local neighborhood to the Galactic plane.  In our Galaxy, most star-forming regions occur within the solar circle and in the Galactic midplane.
+
+The ALMA-IMF large program set out to survey 15 regions, each a few parsecs across, in which high- and low-mass stars are forming together.  They are spread across the Galactic plane, at distance 2-6 kpc from the sun.
+
+A brief look at the data shows how rich the Galactic plane is and how much we zoom in with ALMA.
+The largest scale is all-sky.  The first zoom is roughly kiloparsec scale.  The second is roughly ten parsecs.  Third is about 1 parsec.  Final is about a tenth of a parsec.
+
+The ALMA-IMF data contain a wealth of kinematic information, i.e., we can see how the gas moves.  Analyzing the kinematics is challenging and time-consuming; we've made some progress, enough to say that collapse from large scales to small is fast enough to match a 'clump-fed accretion' scenario, but we're still very actively studying these data.  I pause here to show you a few cool visualizations made possible by the spectral data of the project.
+
+The ALMA-IMF project has published a lot of results already.  This list is meant to be accessed later, I won't go through it.
+
+Instead, I want to talk about the main question we set out to address: How does the initial mass function form from gas?  So I'll rewind to tell you the rough state-of-the-art.  For the last few decades, a 'classic' model has been popular, in which there is a fixed, finite core mass that maps one-to-one onto the stellar IMF.  This hypothesis was supported by early measurements of the "dense core mass function", and the idea of a core being an isolated, stable object was supported by measurements of Barnard 68.
+
+However, problems in that model have been recognized for a while, and there are a lot of different, entirely plausible, roads from the CMF to the IMF.  This summary plot from the Offner+ 2014 PPVI review conceptually illustrates some of them.  For example, if there are low-mass starless cores that never form stars, the peak of the CMF will be lower than the IMF.  If the core-to-star efficiency is mass dependent, the slope will change.
+
+We know already that the naive version doesn't work.
+
+ALMA-IMF provides some of the most definitive evidence against that model.  Over these fifteen high-mass star-forming regions, we observe that the core mass function is shallower than the stellar IMF.  This sample underwent a lot of vetting, cutting down from an original 1000 or so observed cores to only 330 that met several selection criteria.  We also did a series of completeness tests.
+
+But I want to put these observations in context - there has been an industry of measuring the CMF for the past decade.  There appear to be variations between clouds and environments, but still the method of extraction is the dominant uncertainty.  Also, the more distant and higher-mass regions suffer more from confusion.
+
+We have many measurements of the CMF.  Now, how does the CMF become the IMF?
+
+On the theory side, we need to better characterize the underlying observational systematics.  The mass we measure of dust cores depends on the temperature we assume.  While we have measured the temperature of the cores, those measurements are often not well-matched to the cores we're measuring.  We've been using radiative transfer models to determine how we can correct for unobserved, small-scale structures in the cores.  Theo Richardson's work expands the Robitaille 2017 model grid.  As a first result, we've measured the systematic variation in mass-weighted average temperature of protostellar cores, allowing us to apply a correction that steepens the CMF.
+
+We're also investigating observationally how the CMF becomes the IMF by looking at higher resolution.  In these examples from graduate student Taehwa Yoo's work, we have zoomed deep into the star-forming cores with ALMA.  As we go from 2000 AU scales, the scales of cores, to 200 AU scales, roughly the size of disks, we see diversity in the fragmentation.  Some cores fragment into protostars, some are resolved out.
+
+My student Nazar Budaiev has performed similar analysis in the most massive molecular cloud in the Galaxy, Sgr B2, with the same qualitative results - but over hundreds of more massive cores.  The spatial distribution of high-order multiple-fragments is more concentrated than that of single fragments - though we haven't examined why that is yet.
+
+Quantitatively, the trend with mass is what really counts.  More massive cores form more fragments!
+
+But if we look closely at those fragments, it turns out that more massive cores appear _less_ likely to form a bunch of equal-mass (small) fragments.
+
+So, summarizing, we've confirmed that at least several of the hypothetical scenarios that modify the CMF as it evolves to the IMF are occurring.
+
+
+We conclude our trip through the Galaxy in its center.
+
+Our CMZ contains a huge quantity of very dense gas, and about a tenth of the Galaxy's star formation despite comprising less than a percent of its volume.
+
+The conditions in the CMZ represent one extreme of what's possible in our Galaxy.  It is the densest, warmest, cosmic ray-iest, most magnetic, etc.  So it's a great place to ask, "Does star formation depend on environment?"
+
+Part of what drives the CMZ's unique features is that it is constantly being replenished by gas falling in along the bar.  We see features like 'velocity bridges' that provide evidence of cloud-cloud collisions, which occur when gas falls _past_ the CMZ and overshoots.
+
+We've been surveying the Galactic Center with many telescopes for many years.  The most recent census of star-forming 'clumps' with CMZOOM found around 300 objects and confirmed that most of the SF in the CMZ is in Sgr B2.  (it's at least half)
+
+The Sgr B2 complex is really big, boasting roughly a million solar masses of gas packed into 10 pc.  It contains two protoclusters with estimated stellar masses of greater than 10^4 solar masses.  These are Young Massive Cluster progenitors, things that will turn into Arches, Quintuplet, NGC 3603, Wd1, Wd2-like clusters.
+
+In the broader Sgr B2 complex, and by consequence in the CMZ as a whole, a large fraction of stars is forming in clusters: about a third, which is much greater than the 5-10% in the solar neighborhood.
+
+If we stitch that result with the earlier note that high-mass clusters appear to have systematically top-heavier IMFs, that implies that the CMZ - and perhaps all Galactic centers - sport top-heaver IMFs than Galactic disks.
+
+The newest survey, ACES, represents a huge advance in our view of the CMZ.  The first papers should be submitted this year; we _just_ finished processing all the continuum data.  I don't have any star formation related results to show from ACES, but I do have an enticing first result: the MUBLO.
+
+The MUBLO is the Millimeter Ultra Broad-Line Object.  Its properties:
+ * It is compact (smaller than the 2.4" ACES beam)
+ * It has broad, 160 km/s FWHM, CS and SO lines
+ * It is not detected in anything else - notably SiO, HCN, HNCO
+ * It is cold, both in dust temperature (<50K) and in gas temperature (14 K)
+ * It has no counterparts at other wavelengths - no infrared, no radio.
+
+So, what is it?  We've ruled out a lot of possibilities.  It could be an IMBH or a stellar merger remnant.

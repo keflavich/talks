@@ -149,8 +149,8 @@ img.thumbnail:hover, img.zoom:hover, span.zoom:hover {
     width: 100% !important;
     height: auto !important;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 0 !important;
+    top: 0 !important;
     z-index: 10;
 }
 

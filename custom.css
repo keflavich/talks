@@ -330,6 +330,15 @@ a.darkbg {
 100% { background-position: 50% 50% ; }
 }
 
+@keyframes backgroundScrollHorizontal {
+0%   { background-position: 50% 50% ; }
+33%  { background-position: 50% 1%  ; }
+40%  { background-position: 50% 1%  ; }
+66%  { background-position: 50% 95% ; }
+75%  { background-position: 50% 95% ; }
+100% { background-position: 50% 50% ; }
+}
+
 
 .bgtopzoom {
 width: 150%;

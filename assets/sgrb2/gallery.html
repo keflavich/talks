@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<head>
+  <meta charset="UTF-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"><!--  JQUERY  -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+    <title></title>
+    </head>
+
+
+
+<body>
+
+
+
+
+    <div class=header style='margin:auto; max-width:70%;'>
+        <center>
+        <h2> ACES mosaics </h2>
+        Click on the figures to open the gallery browser, then use the left and
+        right arrow keys to switch between them.
+        </center>
+    </div>
+
+
+    <br>
+
+    <div style="max-width:80%; margin: auto;">
+
+        <div class="row">
+
+
+
+        <script>
+var filenames = [];
+$.get('./', data => {
+        $(data).find("li > a").each(function(){
+            filenames.push($(this).attr("href"));
+            });
+        $(data).find("td > a").each(function(){
+            filenames.push($(this).attr("href"));
+            //$("body").append($(this).attr("href"));
+            //$("body").append(data)
+            });
+        //$("body").append(filenames);
+        var jj = 1;
+                filenames.forEach(function(entry, ii) {
+                    if (entry.match(/.png$/i))  {
+                        $("body").append('<div class="column">\n<img class="hover-shadow" style="width:100%" src="' + entry + '" onclick="openModal();currentSlide(' + jj + ')">\n</div>');
+                        jj += 1;
+                    }                     
+                });
+$("body").append(" </div>\n</div>\n ");
+
+        var stuff = "";
+        jj = 1;
+        filenames.forEach(function(entry, ii) {
+            if (entry.match(/.png$/i))  {
+                stuff += '<div class="mySlides">\n<div class="numbertext">' + jj + '</div>\n<img class="main" style="width:100%" src="' + entry + '">\n</div>';
+                jj += 1;
+            }
+        });
+
+stuff += '<!-- Next/previous controls -->\n'
+stuff += ' <a class="prev" onclick="plusSlides(-1)">&#10094;</a>\n <a class="next" onclick="plusSlides(1)">&#10095;</a>\n';
+stuff += '\n <!-- Caption text --> \n <div class="caption-container"> \n<p id="caption"></p>\n </div>\n '; 
+
+stuff += '<div class="thumbnails">\n';
+jj = 1;
+        filenames.forEach(function(entry, ii) {
+            if (entry.match(/.png$/i))  {
+                stuff += '<div class="thumbnail column">\n<img class="demo" alt="' + entry + '" src="' + entry + '" onclick="currentSlide(' + jj + ')">\n</div>';
+                jj += 1;
+            }
+        });
+stuff += "</div>\n";
+
+$("body").append('<div id="myModal" class="modal"> <span class="close cursor" onclick="closeModal()">&times;</span> <div class="modal-content">' + stuff + '</div> </div>');
+
+});
+
+
+</script>
+  </div>
+</div>
+
+
+</body>
+
+
+
+
+<script>
+
+
+    // Open the Modal
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    // Close the Modal
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      //var slides = $(".mySlides");
+      //var dots = $(".demo");
+      //var captionText = $("#caption");
+      //$("body").append("<h1>" + slides.length + "</h1>");
+      //$("body").append("<h1>" + dots.length + "</h1>");
+      //$("body").append("<h1>" + captionText.length + "</h1>");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+
+    document.addEventListener('keydown', moveSlide);
+
+    function moveSlide(e) {
+      // e stands for "event" - the event is the keypress 
+      // e.key means the key that was pressed
+
+      switch (e.key) {
+
+        // left arrow pressed
+        case "ArrowLeft":
+          plusSlides(-1);
+          break;
+          // up arrow pressed
+        case "ArrowRight":
+          plusSlides(1);
+          break;
+      }
+    };
+
+    var slideIndex = 1;
+
+    //$(document).load(showSlides(slideIndex));
+
+</script>
+
+
+</html>
+

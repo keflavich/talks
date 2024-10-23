@@ -5,8 +5,9 @@
     <title>Star formation in the Galaxy</title>
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <!-- Note: putting white.css after reveal.css results in bad formatting sometimes (white text on white background)-->
     <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/css/reveal.css">
     <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -199,7 +200,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
                             <span style='color:maroon'>Taehwa Yoo</span>
                     <li> Postbac: <span style='color:darkgreen'>Derod Deal</span>,
                                     <span style='color:darkblue'>Aden Dawson</span>
-                    <li> Supported by NSF 2008101, 2206511, CAREER 2142300, STSCI 1905, 2221, 3523, Astropy
+                    <li> Supported by NSF 2008101, 2206511, CAREER 2142300, STSCI 1905, 2221, 3523, 5365, 6151, Astropy
                 </ul>
                  <div class=smaller> Collaborators:
                 John Bally, Ashley Barnes, Cara Battersby,
@@ -269,7 +270,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
     <div style="float:right; width:50%;">
         <img src="colloquium_assets/HR_diagram.svg">
     </div>
-    <div class=smaller> Point color shows effective temperature, point size shows luminosity (left) and mass (right) </div>
+    <div class=smaller2> Point color shows effective temperature, point size shows luminosity (left) and mass (right) </div>
     <!--<img src="colloquium_assets/Hertzsprung-Russel_StarData.png">
     <div style="position: absolute; bottom: 50px; left:10px" class="smaller2"><a href="https://commons.wikimedia.org/wiki/File:Hertzsprung-Russel_StarData.png">ESO via Wikipedia</a></div>-->
     <div style="position: absolute; bottom: 140px; right:10px" class="smaller3">
@@ -294,7 +295,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
         <h4 style="position: relative; top:5%; left: 12%;"> The stellar initial mass function (IMF) </h4>
         <div class=smaller style="position: relative; top:10%; left: 61%; width:35%;"> Stars are sampled from this distribution
             <div class=smaller>(but it's not universal)<div class=smaller2><a href="https://ui.adsabs.harvard.edu/abs/2018PASA...35...39H/abstract">Hopkins 2018</a></div></div></div>
-        <div style="position: relative; top: 71%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        <div style="position: absolute; top: 91%; left:1%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
     </span>
     <aside class=notes>
         <ul>
@@ -310,7 +311,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 
 <section>
     <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/Kroupa_imf_figure_log_labeledfractions.svg);'>
-        <div style="position: relative; top: 91%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        <div style="position: absolute; top: 91%; left:1%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
     </span>
     <aside class=notes>
         <ul>
@@ -321,7 +322,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 
 <section>
     <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/Kroupa_imf_figure_log_labeledfractions.svg);'>
-        <div style="position: relative; top: 91%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+        <div style="position: absolute; top: 91%; left:1%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
     </span>
     <div style="position: absolute; width: 160px; left: 44.5%; top: 11.0%; background-color: white; font-size: 23px;"> High-mass stars populate the stellar graveyard </div>
     <img src="assets/GWTC-3_stellar-graveyard_diamond.jpg" style="max-width: 618px; rotate: 90deg; position: absolute; top: 165px; right: -103px; ">
@@ -409,7 +410,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 </section>
 
 <section>
-    <h4> A molecular cloud fragments  </h4>
+    <h4> A molecular cloud collapses and fragments  </h4>
     <img src="colloquium_assets/Purcell_Cartoon_CloudOnly_nofragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0%; margin-top:0%; width:100%'>
     <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly_somefragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
     <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
@@ -487,9 +488,11 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 
 <section>
     <img class=zoom style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_ngc3603.png'>
-    <span class=image style='margin-top:-2%; background-position: center center; background-image: url(assets/ngc3603.jpg); background-size:120%'>
-    <h4 class=darkbg> Most stars form in denser regions </h4>
+    <span class=image
+        style='margin-top:-35%; background-position: center center; background-image: url(assets/ngc3603.jpg);
+                height: 35em; background-size:100%; width:130%; margin-left: -13%;'>
     </span>
+    <h4 class=darkbg style='position:absolute; margin-top:0%; top:4%'> Most stars form in denser regions </h4>
     <div style="background-color:rgba(0.5, 0.5, 0.5, 0.4); position: absolute; bottom: 100px; left:100px" class="smaller3"><a class=darkbg href="http://hubblesite.org/image/3874">HST</a></div>
     <div style="background-color:rgba(0.5, 0.5, 0.5, 0.4); color:white; text-align: center; position: absolute; bottom: 150px; left:600px; max-width:250px;" class="smaller2">
         NGC 3603 is a high-mass (10<sup style='font-size:50%'>4</sup> M<sub class=smaller2>&odot;</sub>) cluster
@@ -702,13 +705,18 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 </section>
 
 <section>
-    <div style='position: absolute; height:100vh; width:100%; left:0px; top:0px'>
+        <div style='position: absolute; width: 210%; left:-65%; top: -55%; background-color:black'>
+            <img src="assets/Wd1_nircam_miri_composite.png" style="background-color:black; opacity:0.2">
+        </div>
+    <div class=darkbg style='position: absolute; height:100vh; width:100%; left:0px; top:0px'>
         <br>
         <br>
         <br>
         <br>
-        <div style='width:80%; margin:auto; '>
-            Goal: Measure number of stars at each mass
+        <div style='width:90%; margin:auto; '>
+            Goal: Measure number of forming stars at each mass
+            <br>
+            to answer: <em> How does the IMF form? </em>
             <br>
             <br>
             Tools: Light emission and absorption by dust and molecules
@@ -896,7 +904,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 </section>
 
 <section>
-    <h4><span style='color:navy'>Gas tracers of processes</span> [<span style='color:black'>classic</span> vs <span style='color:maroon'>reality</span>]</h4>
+    <h4><span style='color:navy'>Gas tracers of processes</span> (<span style='color:black'>classic</span> vs <span style='color:maroon'>reality</span>)</h4>
     <ul>
         <li style='color:black'> SiO: Shock Tracer [shocks destroy dust, release SiO]
             <div class=fragment style='max-height:100px; max-width:80%'>
@@ -1412,10 +1420,10 @@ The Brick is icy
     <ul>
         <li class=fragment> <span style='color:navy; font-weight:bold'>Neither common nor rare:</span> 10 known so far, &gt;23 HMYSO candidates examined
             <ul class=smaller><li> Y: SrcI, G17, IRAS16547, NGC6334I, G351.77, W33A
-                    <ul class=smaller><li>Ginsburg+ 2019, Tanaka+ 2020, Ginsburg+ 2022</li></ul>
+                    <ul class=smaller><li>Ginsburg+ 2019, Tanaka+ 2020, Ginsburg+ 2023</li></ul>
                 </li>
                 <li> N: I16523, I18089, G11, G5, NGC6334IN, S255IR NIRS3, G333.23-0.06, I18162
-                    <ul class=smaller><li>Ginsburg+ 2022</li></ul>
+                    <ul class=smaller><li>Ginsburg+ 2023</li></ul>
                 </li>
             </ul>
         </li>

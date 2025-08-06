@@ -5,9 +5,9 @@
     <title>Clouds to Discs 2021</title>
     <meta name="viewport"
 	  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="reveal/lib/reveal.css">
     <link rel="stylesheet" href="white.css" id="theme">
-    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="reveal/lib/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
     <script>
       document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
@@ -33,7 +33,7 @@
             <br>
             <p class="footer">Adam Ginsburg</p>
             <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
-            <div class=smaller2> 
+            <div class=smaller2>
                 <ul>
                     <li> Postdoc: Allison Towner
                     <li> PhD: Desmond Jeff, Theo Richardson, Alyssa Bulatek, Nazar Budaiev
@@ -63,7 +63,7 @@
 </div>
     </div>
     </div>
-    <aside class=notes> 
+    <aside class=notes>
 High-mass OB stars, those larger than about 10 solar masses, are the dominant
 sources of feedback wherever they exist.  One of the driving questions in
 star formation and studies of the initial mass function is what conditions allow
@@ -75,7 +75,7 @@ drive accretion, and either radiative feedback or dynamical ejection ends a
 massive star's growth.  I will support these arguments with examples from ALMA
 long-baseline observations of a range of high-mass star-forming regions, and
 I will highlight new tools ALMA provides to study these highly obscured objects.
-    </aside> 
+    </aside>
 </section>
 
 <section>
@@ -117,7 +117,7 @@ I will highlight new tools ALMA provides to study these highly obscured objects.
             <li> Mostly during the "stage 0" phase (Bourke talk)</li>
             <li> Largely through bursts? <br>Accretion bursts are an important mode to move gas from disk to star. </li>
 
-            <li> They are driven by: 
+            <li> They are driven by:
                 <ul>
                     <li> Asymmetric (non-axisymmetric) accretion flows </li>
                     <li> Dynamical interactions </li>
@@ -476,7 +476,7 @@ I will highlight new tools ALMA provides to study these highly obscured objects.
 
         <div style="width:100%; display:block; position: absolute; bottom:20%;">
             <div class=smaller style="">
-            IRAS16547A/B (<a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...900L...2T/abstract">Tanaka+ 2020</a>) 
+            IRAS16547A/B (<a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...900L...2T/abstract">Tanaka+ 2020</a>)
             have (unresolved) salt water disks
             </div>
         </div>
@@ -505,7 +505,7 @@ I will highlight new tools ALMA provides to study these highly obscured objects.
     <h4> What have we learned about brinaries?</h4>
 
     <ul>
-        <li class=fragment> Somewhat rare?: 4 known so far, ~10 examined 
+        <li class=fragment> Somewhat rare?: 4 known so far, ~10 examined
             <ul><li> Y: SrcI, G17, IRAS16547, NGC6334I?
                     <ul class=smaller><li>Ginsburg+ 2019, Maud+ in prep, Tanaka+ 2020</li></ul>
                 </li>
@@ -514,7 +514,7 @@ I will highlight new tools ALMA provides to study these highly obscured objects.
                 </li>
             </ul>
         </li>
-        <li class=fragment> Coincide w/<b>line-poor</b> sources 
+        <li class=fragment> Coincide w/<b>line-poor</b> sources
             <ul> <li> Not hot cores; little mass reservoir?</li></ul>
         </li>
 
@@ -578,8 +578,8 @@ I will highlight new tools ALMA provides to study these highly obscured objects.
 
     <!-- End of slides. -->
 
-<script src="reveal/lib/js/head.min.js"> </script>
-<script src="reveal/js/reveal.js"> </script>
+<script src="reveal/dist/reveal.js"> </script>
+<script src="reveal/plugin/highlight/highlight.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <script src="fullscreen.js"> </script>
@@ -613,17 +613,9 @@ I will highlight new tools ALMA provides to study these highly obscured objects.
           config: 'TeX-AMS_SVG'
         },
 
+        plugins: [ RevealHighlight ],
+
         dependencies: [
-          { src: 'reveal/lib/js/classList.js',
-	    condition: function() { return !document.body.classList; }},
-          { src: 'reveal/plugin/markdown/marked.js',
-	    condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/markdown/markdown.js',
-	    condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/highlight/highlight.js', async: true,
-	    callback: function() { hljs.initHighlightingOnLoad (); }},
-          { src: 'reveal/plugin/notes/notes.js', async: true,
-	    condition: function() { return !!document.body.classList; }},
           { src: 'mymath.js', async: true },
 	  { src: 'pdfimgs.js', async: true },
 	  { src: 'slideautostart.js', async: true },

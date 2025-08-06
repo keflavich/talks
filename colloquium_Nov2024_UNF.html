@@ -5,9 +5,9 @@
     <title>Star formation in the Galaxy</title>
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="reveal/css/reveal.css">
+    <link rel="stylesheet" href="reveal/lib/reveal.css">
     <link rel="stylesheet" href="white.css" id="theme">
-    <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="reveal/lib/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
@@ -3422,7 +3422,8 @@ The Brick is icy
     <!-- End of slides. -->
 
 <script src="reveal/lib/js/head.min.js"> </script>
-<script src="reveal/js/reveal.js"> </script>
+<script src="reveal/dist/reveal.js"> </script>
+<script src="reveal/plugin/highlight/highlight.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <script src="fullscreen.js"> </script>
@@ -3468,17 +3469,9 @@ The Brick is icy
         },
 
 
+        plugins: [ RevealHighlight ],
+
         dependencies: [
-          { src: 'reveal/lib/js/classList.js',
-        condition: function() { return !document.body.classList; }},
-          { src: 'reveal/plugin/markdown/marked.js',
-        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/markdown/markdown.js',
-        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/highlight/highlight.js', async: true,
-        callback: function() { hljs.initHighlightingOnLoad (); }},
-          { src: 'reveal/plugin/notes/notes.js', async: true,
-        condition: function() { return !!document.body.classList; }},
           { src: 'mymath.js', async: true },
       { src: 'pdfimgs.js', async: true },
       { src: 'slideautostart.js', async: true },

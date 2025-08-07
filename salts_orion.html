@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="reveal/lib/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <script>
-      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
-    </script>
     <!--[if lt IE 9]>
     <script src="reveal/lib/js/html5shiv.js">
     </script>
@@ -33,7 +30,7 @@
     <div style="position: relative; top:50%; color: white;">
             <p class="footer">Adam Ginsburg</p>
             <p class="smaller footer">Assistant Professor, University of Florida</p>
-            <div class=smaller2> 
+            <div class=smaller2>
                 Brett McGuire, John Bally, Ciriaco Goddi, Dick Plambeck, Melvyn Wright
         </div>
     <div class=smaller2> Slides available at <a href="https://keflavich.github.io/talks/salts_orion.html">https://keflavich.github.io/talks/salts_orion.html</a></div>
@@ -395,12 +392,9 @@
 
     <!-- End of slides. -->
 
-<script src="reveal/lib/js/head.min.js"> </script>
 <script src="reveal/dist/reveal.js"> </script>
 <script src="reveal/plugin/highlight/highlight.js"></script>
-<script src="pdfjs/compatibility.js"> </script>
-<script src="pdfjs/pdf.js"> </script>
-<script src="fullscreen.js"> </script>
+<script src="reveal/plugin/math/math.js"></script>
 
     <script>
       Reveal.initialize({
@@ -427,22 +421,8 @@
           mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
           config: 'TeX-AMS_SVG'
         },
+        plugins: [ RevealHighlight, RevealMath.KaTeX ],
 
-        dependencies: [
-          { src: 'reveal/lib/js/classList.js',
-        condition: function() { return !document.body.classList; }},
-          { src: 'reveal/plugin/markdown/marked.js',
-        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/markdown/markdown.js',
-        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/highlight/highlight.js', async: true,
-        callback: function() { hljs.initHighlightingOnLoad (); }},
-          { src: 'reveal/plugin/notes/notes.js', async: true,
-        condition: function() { return !!document.body.classList; }},
-          { src: 'mymath.js', async: true },
-      { src: 'pdfimgs.js', async: true },
-      { src: 'slideautostart.js', async: true },
-        ],
       });
     </script>
   </body>

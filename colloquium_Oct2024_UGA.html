@@ -13,9 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
 
-    <script>
-      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
-    </script>
+
     <!--[if lt IE 9]>
     <script src="reveal/lib/js/html5shiv.js">
     </script>
@@ -2112,7 +2110,7 @@ Temperature measurements show the volumes affected by feedback
 
 <script src="reveal/dist/reveal.js"> </script>
 <script src="reveal/plugin/highlight/highlight.js"></script>
-<script src="reveal/plugin/highlight/highlight.js"></script>
+<script src="reveal/plugin/math/math.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <!--
@@ -2160,17 +2158,9 @@ Temperature measurements show the volumes affected by feedback
         },
 
 
+        plugins: [ RevealHighlight, RevealMath.KaTeX ],
+
         dependencies: [
-          { src: 'reveal/lib/js/classList.js',
-        condition: function() { return !document.body.classList; }},
-          { src: 'reveal/plugin/markdown/marked.js',
-        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/markdown/markdown.js',
-        condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/highlight/highlight.js', async: true,
-        callback: function() { hljs.initHighlightingOnLoad (); }},
-          { src: 'reveal/plugin/notes/notes.js', async: true,
-        condition: function() { return !!document.body.classList; }},
           { src: 'mymath.js', async: true },
       { src: 'pdfimgs.js', async: true },
       { src: 'slideautostart.js', async: true },

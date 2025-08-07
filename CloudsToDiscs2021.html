@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="white.css" id="theme">
     <link rel="stylesheet" href="reveal/lib/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
-    <script>
-      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
-    </script>
+
     <!--[if lt IE 9]>
     <script src="reveal/lib/js/html5shiv.js">
     </script>
@@ -580,6 +578,7 @@ I will highlight new tools ALMA provides to study these highly obscured objects.
 
 <script src="reveal/dist/reveal.js"> </script>
 <script src="reveal/plugin/highlight/highlight.js"></script>
+<script src="reveal/plugin/math/math.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <script src="fullscreen.js"> </script>
@@ -613,7 +612,7 @@ I will highlight new tools ALMA provides to study these highly obscured objects.
           config: 'TeX-AMS_SVG'
         },
 
-        plugins: [ RevealHighlight ],
+        plugins: [ RevealHighlight, RevealMath.KaTeX ],
 
         dependencies: [
           { src: 'mymath.js', async: true },

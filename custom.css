@@ -21,6 +21,27 @@ body.orion .slide-background {
     max-height:1024px;
 }
 
+.fragment highlight {
+    color: black;
+    font-weight: bold;
+}
+.fragment fade-out {
+    color: grey;
+    font-weight: normal;
+}
+.fragment fade-in {
+    color: grey;
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.gray {
+    color: grey;
+}
+
 
 @media print {
     .reveal .slides section {

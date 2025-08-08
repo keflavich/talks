@@ -6,18 +6,16 @@
         Thermal and Chemical Feedback during the Early Stage of High-Mass Star Formation</title>
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="reveal/lib/reveal.css">
+    <link rel="stylesheet" href="reveal/lib/reveal.css" id="reveal-css">
     <link rel="stylesheet" href="white.css" id="theme">
-    <link rel="stylesheet" href="reveal/lib/zenburn.css">
+    <link rel="stylesheet" href="reveal/lib/zenburn.css" id="zenburn-css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
 
-    <!--[if lt IE 9]>
-    <script src="reveal/lib/js/html5shiv.js">
-    </script>
-    <![endif]-->
-    <script src="reveal/dist/reveal.js"> </script>
+    <!-- CSS Fallback Script -->
+    <script src="import-fallback.js"></script>
+
   </head>
 
   <body>
@@ -2660,12 +2658,12 @@ The Brick is icy
 
     <!-- End of slides. -->
 
-<script src="reveal/dist/reveal.js"> </script>
-<script src="reveal/plugin/highlight/highlight.js"></script>
+<script src="reveal/dist/reveal.js" onerror="loadFallbackScript('https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js', 'reveal-js-fallback-2')"> </script>
+<script src="reveal/plugin/highlight/highlight.js" onerror="loadFallbackScript('https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/highlight.js', 'highlight-js-fallback')"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <script src="reveal/fullscreen.js"> </script>
-<script src="reveal/plugin/math/math.js"></script>
+<script src="reveal/plugin/math/math.js" onerror="loadFallbackScript('https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/math/math.js', 'math-js-fallback')"></script>
 
 <!--
     Nested backgrounds end up darker than non-nested, which isn't good!

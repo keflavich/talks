@@ -215,6 +215,11 @@ img.zoomtall:hover, span.zoomtall:hover {
     font-variant: small-caps;
 }
 
+.reveal h4 {
+    font-weight: 598;
+    font-size: 0.9em;
+}
+
 
 
 span.bigimage {

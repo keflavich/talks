@@ -220,6 +220,18 @@ img.zoomtall:hover, span.zoomtall:hover {
     font-size: 0.9em;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
+  .centered-image { display:flex;justify-content:center;align-items:center;height:100vh; max-height:none !important; max-width:none !important; }
+  .zoomable-image { transition: transform 700ms ease; transform-origin: center center; max-height:none; max-width:none;
+        transform: scale(1);
+        transform-origin: center center;
+        transition: transform 700ms ease;
+      }
+  /* when the fragment becomes visible Reveal adds the .visible class */
+  .zoomable-image.fragment.visible { transform: scale(2); }
 
 
 span.bigimage {

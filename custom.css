@@ -30,6 +30,7 @@ body.orion .slide-background {
     font-weight: normal;
 }
 .fragment fade-in {
+	transition: all .5s ease;
     color: grey;
     font-weight: normal;
 }
@@ -68,17 +69,39 @@ body.orion .slide-background {
     rotate:var(--rotation);
     visibility: hidden;
     opacity: 0;
+    /* 'important' overrides data-auto-animate */
+    transition: rotate var(--transition-duration, 1s) ease-in-out !important;
 
     &.visible.current-fragment {
         visibility: visible;
         opacity: 1;
         rotate:var(--rotation);
-        transition: rotate 1s ease-in-out;
+        transition: rotate var(--transition-duration, 1s) ease-in-out !important;
     }
 
     &.visible {
         rotate:0deg;
-        transition: rotate 1s ease-in-out;
+        transition: rotate var(--transition-duration, 1s) ease-in-out !important;
+    }
+}
+
+.fragment.rotate-to {
+    rotate:var(--from-rotation);
+    visibility: hidden;
+    opacity: 0;
+    /* 'important' overrides data-auto-animate */
+    transition: rotate var(--transition-duration, 1s) ease-in-out !important;
+
+    &.visible.current-fragment {
+        visibility: visible;
+        opacity: 1;
+        rotate:var(--from-rotation);
+        transition: rotate var(--transition-duration, 1s) ease-in-out !important;
+    }
+
+    &.visible {
+        rotate:var(--to-rotation);
+        transition: rotate var(--transition-duration, 1s) ease-in-out !important;
     }
 }
 

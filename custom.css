@@ -53,6 +53,35 @@ body.orion .slide-background {
 	}
 }
 
+.fragment.rotate-out {
+    rotate: inherit;
+    visibility: inherit;
+    &.visible {
+        transition: rotate 1s ease-in-out;
+        transition-property: rotate;
+        rotate: 0deg;
+    }
+
+}
+
+.fragment.rotated {
+    rotate:var(--rotation);
+    visibility: hidden;
+    opacity: 0;
+
+    &.visible.current-fragment {
+        visibility: visible;
+        opacity: 1;
+        rotate:var(--rotation);
+        transition: rotate 1s ease-in-out;
+    }
+
+    &.visible {
+        rotate:0deg;
+        transition: rotate 1s ease-in-out;
+    }
+}
+
 .bold {
     font-weight: bold;
 }
@@ -233,6 +262,14 @@ img.zoomtall:hover, span.zoomtall:hover {
   /* when the fragment becomes visible Reveal adds the .visible class */
   .zoomable-image.fragment.visible { transform: scale(2); }
 
+
+.rotate {
+animation: spin 1.5s forwards;
+}
+@keyframes spin {
+    from { --spin-rotation: -147deg; }
+    to   { --spin-rotation: 0deg; }
+  }
 
 span.bigimage {
     height: 120%;

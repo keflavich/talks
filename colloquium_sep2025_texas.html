@@ -1401,7 +1401,7 @@ surveys and N-body dynamical modeling, play a key role.
 </section>
 
 <section>
-    <section>
+    <section data-auto-animate>
         <img style='position: absolute; width:200px; bottom: 10%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
         <img style='height:10%; bottom:0%; right:0%; position: absolute;' src='colloquium_assets/Offner2014_fig4_regrid_withX.svg'></span>
         <div class=flex-vert-90>
@@ -1423,6 +1423,12 @@ surveys and N-body dynamical modeling, play a key role.
                 </div>
 
             </div>
+
+        <!-- data-auto-animate didn't work here b/c I didn't set transform-origin:0px 0px, probably
+        <div style="position:absolute; max-height:7%; max-width:7%; width:7%; height:7%; margin-top:0%; left:80%; bottom:5%; text-align:center;"> <img style='max-width:700px; display:block; margin:0 auto;' src="assets/Taehwa/W51EB6_OneToOne_OneToZero_labeled.png"> </div>
+        <div style="position:absolute; max-height:5%; max-width:5%; width:5%; height:5%; margin-top:0%; left:80%; bottom:0%; text-align:center;"> <img style='max-width:700px; display:block; margin:0 auto;' src="assets/Taehwa/W51EB6_OneToMany_labeled.png"> </div>
+        -->
+
         </div>
         <aside class=notes>
             Green ellipses are HII regions.
@@ -1511,11 +1517,11 @@ surveys and N-body dynamical modeling, play a key role.
 
 
 <section>
-    <div class=smaller>Trend: More massive cores fragment more.</div>
-    <img style="max-height:650px; max-width:750px; " src="assets/Taehwa/frag_flux_20250808.png">
+    <h4>Trend: More massive cores fragment more.</h4>
+    <img style="max-height:650px; max-width:800px; " src="assets/Taehwa/frag_flux_20250808.png">
     <div style="position: absolute; top:55%; right:8%;"> <img width=200px src="colloquium_assets/massivecoresfragmentmore.svg"> </div>
-    <div class=smaller style="float:left">
-        <br><br>Yoo+ resub.:
+    <div class=smaller2 style="float:left">
+        <br><br>Yoo+ re$^4$sub.:
         W51<br>
         <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>:
          Sgr B2
@@ -1533,34 +1539,36 @@ surveys and N-body dynamical modeling, play a key role.
 </section>
 
 <section>
-    <div class=smaller>Suggestive Trend: More massive cores make more massive single stars</div>
-    <img style="max-height:650px; max-width:700px; width:70%; float:left;" src="assets/Taehwa/NfragVsMaxFlux_temperature3.png">
-    <div style="position: absolute; top:55%; right:8%; "> <img width=200px src="colloquium_assets/massivecoreshavemassivefragments.svg"> </div>
-    <div class=smaller2 style="float:right; width:30%;">
-        <br><br>Yoo+ resub.:
-        W51<br>
-        <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>:
-         Sgr B2
-        <br><br>
-        <div >
-        The number of detectable fragments goes up, but the mass gets more
-        concentrated into the most massive object.
+    <section  data-auto-animate>
+        <div class=smaller>Suggestive Trend: More massive cores make more massive single stars</div>
+        <img style="max-height:650px; max-width:700px; width:70%; float:left;" src="assets/Taehwa/NfragVsMaxFlux_temperature3.png">
+        <div style="position: absolute; top:55%; right:8%; "> <img width=200px src="colloquium_assets/massivecoreshavemassivefragments.svg"> </div>
+        <div class=smaller2 style="float:right; width:30%;">
+            <br><br>Yoo+ resub.:
+            W51<br>
+            <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>:
+            Sgr B2
+            <br><br>
+            <div >
+            The number of detectable fragments goes up, but the mass gets more
+            concentrated into the most massive object.
+            </div>
         </div>
-    </div>
-    <img style='height:10%; bottom:0%; right:0%; position: absolute;' src='colloquium_assets/Offner2014_fig4_regrid_withXandGreen.svg'></span>
-</section>
+        <img style='height:10%; bottom:0%; right:0%; position: absolute;' src='colloquium_assets/Offner2014_fig4_regrid_withXandGreen.svg'></span>
+    </section>
 
-<section data-auto-animate>
-    Fragmentation summary:
-    <ul>
-    <li> N(YSO) &gt; N(core)  <span class=smaller>[maybe obvious, but now empirical]
-    <li> More massive cores contain more fragments
-    <li> ...but more massive fragments dominate their cores more
-    <li> 20% of YSOs reside in hot cores: exposed to hot core chemistry even if they didn't form there
+    <section data-auto-animate>
+        Fragmentation summary:
+        <ul>
+        <li> N(YSO) &gt; N(core)  <span class=smaller>[maybe obvious, but now empirical]
+        <li> More massive cores contain more fragments
+        <li> ...but more massive fragments dominate their cores more
+        <li> 20% of YSOs reside in hot cores: exposed to hot core chemistry even if they didn't form there
 
-    </ul>
-    <br>
-    <img style='height:10%; bottom:0%; right:0%; position: absolute;' src='colloquium_assets/Offner2014_fig4_regrid_withXandGreen.svg'></span>
+        </ul>
+        <br>
+        <img style='height:10%; bottom:0%; right:0%; position: absolute;' src='colloquium_assets/Offner2014_fig4_regrid_withXandGreen.svg'></span>
+    </section>
 </section>
 
 
@@ -1918,36 +1926,120 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
         </div>
 </section>
 
-<section>
-    <div style="max-width: 53%;
-    height: 94%;
+
+<style>
+div.w51-parent-div {
+    width: 768px;
+    height: 768px;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    overflow: hidden;
+}
+img.w51-highlight {
+    transition: transform 0.5s ease-in-out;
+    max-width: none;
+    height: 750px;
+    max-height:none;
     float: left;
     overflow: clip;
-    width: 665px;
-    background-image: url(assets/Taehwa/w51jwst_highlights.png);
-    background-size: 100%;
-  " data-id=w51jwsthighlights>
-    </div>
-    <div style='float:right; max-width:30%;'> Interesting feature highlight reel
-        <br>
-    <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
-    </div>
-</section>
+    width: auto;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+img.w51-highlight-panel.fragment ~ .w51-parent-div .w51-highlight-panel  {
+    max-width: none;
+    max-height: none;
+    width: auto;
+    height: auto;
+    left: 0%;
+    top: 0%;
+    transform: scale(1.7);
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+}
+.fragment[data-step="1"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(38%, 37%);
+}
+.fragment[data-step="2"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(4%, 37%);
+}
+.fragment[data-step="3"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(-29%, 37%);
+}
+.fragment[data-step="4"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(-29%, 12%);
+}
+.fragment[data-step="5"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(4%, 12%);
+}
+.fragment[data-step="6"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(38%, 12%);
+}
+.fragment[data-step="7"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(38%, -12.5%);
+}
+.fragment[data-step="8"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(4%, -12.5%);
+}
+.fragment[data-step="9"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(-29%, -12.5%);
+}
+.fragment[data-step="10"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(-29%, -37.5%);
+}
+.fragment[data-step="11"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(4%, -37.5%);
+}
+.fragment[data-step="12"].visible ~ .w51-parent-div .w51-highlight-panel  {
+    transform: scale(4.1) translate(38%, -37.5%);
+}
+
+div.right20 {
+    width: 20%;
+    position:absolute;
+    right: 0px;
+    text-align: right;
+    top:20%;
+}
+
+</style>
+
 <section>
-    <img style='float:left; width:70%;' src='assets/Taehwa/w51jwst_highlights_paneld.png'>
-    <div style='float:right; max-width:30%;'> IRS2E is saturated at all wavelengths $\lambda >2 \mu\mathrm{m}$
+
+    <div style='float:right; max-width:20%;' class=smaller2> Interesting feature highlight reel
         <br>
-    <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
-    <img style='float:right; ' src='assets/Taehwa/w51_RGB_560_480_410_IRS2.png'>
+        <img style='float:center; width:20%; right:0px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
+    </div>
+
+    <div class="fragment fade-in-then-out smaller right20" data-step=1>Sharp dust filaments</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=2>The most extreme massive stars still forming (IRS2E saturates at all long wavelengths - it's a massive star with a hot disk)</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=3>Giant proplyds?  EGGs?</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=4> The HII region is criss-crossed by overdensities and dust lanes </div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=5> A sharp bar analogous to the Orion Bar</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=6>The extinction-producing layers seen at short wavelengths are not the ALMA star-forming gas: <span class=smaller>this hints at edge-on filamentary (or planar) structures</span></div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=7> A gigantic bow-shock-like bubble, far from the cluster</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=8> Objects classified as YSOs - they are massive stars lighting up leftover dust</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=9> Symmetric HII region</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=10> Symmetric HII region - but more embedded</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=11> Paintbrush-stroke filaments</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=12> HII regions with PAHs</div>
+    <div class="w51-parent-div">
+        <img src="assets/Taehwa/highlights_cutouts.png" data-id="w51jwsthighlights" class="w51-highlight w51-highlight-panel" >
     </div>
 </section>
+
+
 <section>
     <img style='float:left; width:70%;' src='assets/Taehwa/w51jwst_highlights_panelh.png'>
+    <img class=w51panel1 src='assets/Taehwa/w51jwst_highlights_panelh.png'>
     <div style='float:right; max-width:30%;' class=smaller> The extinction-producing layers seen at short wavelengths are not the ALMA star-forming gas: <div class=smaller>this hints at edge-on filamentary (or planar) structures</div>
         <br>
     <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
     </div>
 </section>
+
 
 
 

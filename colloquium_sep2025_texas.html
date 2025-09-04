@@ -182,7 +182,7 @@ surveys and N-body dynamical modeling, play a key role.
     <li> <a href="#hotcores">Hot Cores [in the GC &amp; disk]</a>
     <li> <a href="#MUBLO">The MUBLO</a>
     <li> <a href="#Orion">The Orion BN/KL Explosive Outflow</a>
-    <li> <a href="#YSOSEDModels">YSO SED models</a>
+    <li> <a href="#ysomodels">YSO SED models</a>
     <li> <a href="#SgrB2">Sgr B2</a>
     <li> <a href="#W51">W51</a>
 </ul>
@@ -454,7 +454,7 @@ surveys and N-body dynamical modeling, play a key role.
     </section>
 </section>
 
-<section>
+<section id=ysomodels>
 
     <section id=imf_flowchart>
         <h5 style='margin-top:0px'> The path to better mass measurement:
@@ -1342,8 +1342,9 @@ surveys and N-body dynamical modeling, play a key role.
                 <img style='width:80%' src="FrontiersAssets/TheoRichardson.png" align="center" >
                 <div class="smaller3"> <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961..188R/abstract"> Richardson, Ginsburg, Indebetouw, Robitaille 2024 </a></div>
             </div>
-        <div style="float:left; width:60%; position: absolute; bottom:10%; left:5%;" class=smaller>
+        <div style="float:left; width:60%; position: absolute; bottom:5%; left:5%;" class=smaller>
         Brighter cores are systematically warmer, therefore less massive for a fixed flux
+        <br><span class=smaller><i>however</i>, the correction depends on the underlying distribution</span>
         </div>
         <img style='height:10%; bottom:0%; right:0%; position: absolute;' src='colloquium_assets/Offner2014_fig4_regrid_withX.svg'></span>
     </section>
@@ -1367,6 +1368,39 @@ surveys and N-body dynamical modeling, play a key role.
 </section>
 
 <section>
+    <img style='height:10%; bottom:0%; right:0%; position: absolute;' src='colloquium_assets/Offner2014_fig4_regrid_withX.svg'></span>
+    <div class=flex-vert-90>
+
+        <div style="position:absolute; max-height:95%; max-width:75%; width:75%; height:65%; margin-top:0%; left:0%; top:2%; text-align:center;"> <img style='max-width:700px; display:block; margin:0 auto;' src="assets/Taehwa/W51EB6_OneToOne_OneToZero.png" > </div>
+        <div style="position:absolute; max-height:95%; max-width:75%; width:75%; height:65%; margin-top:0%; left:0%; top:2%; text-align:center;"> <img style='max-width:700px; display:block; margin:0 auto;' src="assets/Taehwa/W51EB6_OneToOne_labeled.png" class="fragment fade-in" data-fragment-index=1> </div>
+        <div style="position:absolute; max-height:95%; max-width:75%; width:75%; height:65%; margin-top:0%; left:0%; top:2%; text-align:center;"> <img style='max-width:700px; display:block; margin:0 auto;' src="assets/Taehwa/W51EB6_OneToOne_OneToZero_labeled.png" class="fragment fade-in" data-fragment-index=2> </div>
+
+        <div style="position:absolute; max-height:95%; max-width:75%; width:75%; height:35%; margin-top:0%; left:0%; bottom:0%; text-align:center;"> <img style='max-width:700px; display:block; margin:0 auto;' src="assets/Taehwa/W51EB6_OneToMany.png"> </div>
+        <div style="position:absolute; max-height:95%; max-width:75%; width:75%; height:35%; margin-top:0%; left:0%; bottom:0%; text-align:center;"> <img style='max-width:700px; display:block; margin:0 auto;' src="assets/Taehwa/W51EB6_OneToMany_labeled.png" class="fragment fade-in" data-fragment-index=3> </div>
+
+        <div style='position:absolute; top:0%; right:-2%; width:250px; text-align:center;' class=smaller> 2000 AU &rightarrow; 200 AU</div>
+        <div style="float:right; width: 30%; margin-top:0%; left:75%; position: absolute;">
+            <div> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
+            <div class=smaller2>(<span style='color:green'>no YSO</span>, <span style='color:red'> 1 YSO</span>, <span style='color:blue'> >1 YSO</span>) = (<span style='color:green'>25%</span>, <span style='color:red'>30%</span>, <span style='color:blue'>45%</span>) W51-E, (<span style='color:green'>53%</span>, <span style='color:red'>39%</span>, <span style='color:blue'>8%</span>) IRS2</div>
+            <!--<h4>Some cores fragment</h4>
+            <div class=smaller2> 15/20 (75%) in W51-E,<br> 41/87 (47%) in IRS2</div>
+            <h5>others disappear</h5>-->
+                <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
+                <br>
+            <div class="smaller2" style="height:150px; display:inline-block;">
+                    Taehwa Yoo+: fragmentation<br>toward W51
+            </div>
+
+        </div>
+    </div>
+    <aside class=notes>
+        Green ellipses are HII regions.
+        Arrows: cyan have alpha &gt; 1.7, green &lt; 1.7, yellow 1.3mm only, magenta 3 mm only
+    </aside>
+
+</section>
+
+<section>
     <section>
         <img style='position: absolute; width:200px; bottom: 10%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
         <img style='height:10%; bottom:0%; right:0%; position: absolute;' src='colloquium_assets/Offner2014_fig4_regrid_withX.svg'></span>
@@ -1378,7 +1412,7 @@ surveys and N-body dynamical modeling, play a key role.
             <div style='position:absolute; top:1%; right:1%; width:200px; text-align:center;' class="fragment fade-in" data-fragment-index=1> Fragments</div>
             <div style="float:right; width: 30%; margin-top:0%; left:75%; position: absolute;">
                 <div> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-                <div class=smaller2>(no YSO, 1 YSO, >1 YSO) = (25%, 30%, 45%) W51-E, (53%, 39%, 8%) IRS2</div>
+            <div class=smaller2>(<span style='color:green'>no YSO</span>, <span style='color:red'> 1 YSO</span>, <span style='color:blue'> >1 YSO</span>) = (<span style='color:green'>25%</span>, <span style='color:red'>30%</span>, <span style='color:blue'>45%</span>) W51-E, (<span style='color:green'>53%</span>, <span style='color:red'>39%</span>, <span style='color:blue'>8%</span>) IRS2</div>
                 <!--<h4>Some cores fragment</h4>
                 <div class=smaller2> 15/20 (75%) in W51-E,<br> 41/87 (47%) in IRS2</div>
                 <h5>others disappear</h5>-->
@@ -1430,7 +1464,7 @@ surveys and N-body dynamical modeling, play a key role.
         <div style='position:absolute; top:1%; right:1%; width:200px; text-align:center;' class="fragment fade-in" data-fragment-index=1> Fragments</div>
         <div style="float:right; width: 30%; margin-top:0%; left:75%; position: absolute;">
             <div> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-            <div class=smaller2>(no YSO, 1 YSO, >1 YSO) = (25%, 30%, 45%) W51-E, (53%, 39%, 8%) IRS2</div>
+            <div class=smaller2>(<span style='color:green'>no YSO</span>, <span style='color:red'> 1 YSO</span>, <span style='color:blue'> >1 YSO</span>) = (<span style='color:green'>25%</span>, <span style='color:red'>30%</span>, <span style='color:blue'>45%</span>) W51-E, (<span style='color:green'>53%</span>, <span style='color:red'>39%</span>, <span style='color:blue'>8%</span>) IRS2</div>
                 <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
                 <br>
             <div class="smaller2" style="height:150px; display:inline-block;">
@@ -1450,9 +1484,11 @@ surveys and N-body dynamical modeling, play a key role.
 
 <section>
     <div class=flex-vert-90>
+        <div style='position:absolute; top:0%; right:-2%; width:250px; text-align:center;' class=smaller> 5000 AU &rightarrow; 500 AU</div>
         <div style="width: 30%; left:75%; position: absolute;">
+
             <div> <img width=100px src="colloquium_assets/somecoresarestarless.svg"> </div>
-            <div class=smaller2>(no YSO, 1 YSO, >1 YSO) = 17%, 37%, 45% Sgr B2
+            <div class=smaller2>(<span style='color:green'>no YSO</span>, <span style='color:red'> 1 YSO</span>, <span style='color:blue'> >1 YSO</span>) = (<span style='color:green'>17%</span>, <span style='color:red'>37%</span>, <span style='color:blue'>45%</span>) Sgr B2
             ("cores" are bigger)</div>
                 <img style='float:center; width:150px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
                 <br>
@@ -1563,7 +1599,7 @@ surveys and N-body dynamical modeling, play a key role.
     <section>
         <h4> Super Star Cluster formation in the Galactic Center </h4>
         <!--<span class=image style='width:100%; margin-left:0%; margin-top:-10%; background-position: center center; background-image: url(https://www.dropbox.com/s/kieyt9a7x8lzp77/zoom_anim_cmz_linear_HI-CO-Dust_m0.35_withpause.gif?raw=1);'></span>-->
-        <video data-autoplay controls loop preload="metadata" type='video/mp4' style='width:97%; margin-top:7.5%; max-width:100%;max-height:100%;' src="https://www.dropbox.com/s/2897nxzbzgjq4e7/zoom_anim_cmz_linear_HI-CO-Dust_m0.35_withpause.mp4?raw=1#t=3,24"></video>
+        <video data-autoplay controls loop preload="metadata" type='video/mp4' style='width:97%; margin-top:7.5%; max-width:100%;max-height:100%;' src="https://www.dropbox.com/s/2897nxzbzgjq4e7/zoom_anim_cmz_linear_HI-CO-Dust_m0.35_withpause.mp4?raw=1"></video>
     </section>
 
 
@@ -1693,8 +1729,28 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section>
-<img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="height:100%; max-width:none; max-height:none; left:-20%; top:-2%; position:absolute">
+    <section>
+    <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="height:102%; max-width:none; max-height:none; left:-20%; top:-2%; position:absolute; background-color:black;">
+    </section>
+    <section id=sgrb2_rgbs>
+        <div style='z-index:0'> <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg);"                   src="assets/sgrb2/SgrB2_RGB_187-182-150.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F187N </span><span style="color:green;">F182M </span><span style="color:blue;">F150W </span></div> </div>
+        <div style='z-index:1' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-187-182.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F187N </span><span style="color:blue;">F182M </span></div> </div>
+        <!--<div style='z-index:2' class="fragment" > <img style="position: absolute; top:-120%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-300-360.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F300M </span><span style="color:blue;">F360M </span></div> </div>-->
+        <!--<div style='z-index:3' class="fragment" > <img style="position: absolute; top:-120%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-300-480.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F300M </span><span style="color:blue;">F480M </span></div> </div>-->
+        <div style='z-index:4' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_212-210-187.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F212N </span><span style="color:green;">F210M </span><span style="color:blue;">F187W </span></div> </div>
+        <div style='z-index:5' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_300-212-210.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F300M </span><span style="color:green;">F212N </span><span style="color:blue;">F210M </span></div> </div>
+        <div style='z-index:6' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_360-300-212.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F360M </span><span style="color:green;">F300M </span><span style="color:blue;">F212N </span></div> </div>
+        <!-- BROKEN: does not match others <div style='z-index:7' class="fragment" > <img style="position: absolute; top:0%; left:0%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_405-360-300.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F405N </span><span style="color:green;">F360M </span><span style="color:blue;">F300M </span></div> </div> -->
+        <div style='z-index:8' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_410-405-360.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F410M </span><span style="color:green;">F405N </span><span style="color:blue;">F360M </span></div> </div>
+        <div style='z-index:9' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_466-410-300.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F466N </span><span style="color:green;">F410M </span><span style="color:blue;">F300M </span></div> </div>
+        <div style='z-index:10' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_466-410-405.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F466N </span><span style="color:green;">F410M </span><span style="color:blue;">F405N </span></div> </div>
+        <!--<div style='z-index:11' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-300-210.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F300M </span><span style="color:blue;">F210M </span></div> </div>-->
+        <div style='z-index:12' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-410-360.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F410M </span><span style="color:blue;">F360M </span></div> </div>
+        <div style='z-index:13' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-466-410.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F466N </span><span style="color:blue;">F410M </span></div> </div>
+    </section>
 </section>
+
+
 
 <section id=miri_mosaic_scroll>
     <div style="
@@ -2228,23 +2284,6 @@ Beyond here are bonus slides, best accessed via the <a href="#index">index</a>
     <div style='background-image:url(jwbrick/BrickJWST_merged_longwave_narrowband_withstars.png);
     background-size:100%; height:50%; width:100%;'>
     </div>
-</section>
-
-<section>
-    <div style='z-index:0'> <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg);"                   src="assets/sgrb2/SgrB2_RGB_187-182-150.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F187N </span><span style="color:green;">F182M </span><span style="color:blue;">F150W </span></div> </div>
-    <div style='z-index:1' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_210-187-182.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F187N </span><span style="color:blue;">F182M </span></div> </div>
-    <!--<div style='z-index:2' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_210-300-360.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F300M </span><span style="color:blue;">F360M </span></div> </div>-->
-    <!--<div style='z-index:3' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_210-300-480.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F300M </span><span style="color:blue;">F480M </span></div> </div>-->
-    <div style='z-index:4' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_212-210-187.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F212N </span><span style="color:green;">F210M </span><span style="color:blue;">F187W </span></div> </div>
-    <div style='z-index:5' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_300-212-210.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F300M </span><span style="color:green;">F212N </span><span style="color:blue;">F210M </span></div> </div>
-    <div style='z-index:6' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_360-300-212.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F360M </span><span style="color:green;">F300M </span><span style="color:blue;">F212N </span></div> </div>
-    <!-- BROKEN: does not match others <div style='z-index:7' class="fragment" > <img style="position: absolute; top:-120%; left:0%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_405-360-300.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F405N </span><span style="color:green;">F360M </span><span style="color:blue;">F300M </span></div> </div> -->
-    <div style='z-index:8' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_410-405-360.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F410M </span><span style="color:green;">F405N </span><span style="color:blue;">F360M </span></div> </div>
-    <div style='z-index:9' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)"  src="assets/sgrb2/SgrB2_RGB_466-410-300.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F466N </span><span style="color:green;">F410M </span><span style="color:blue;">F300M </span></div> </div>
-    <div style='z-index:10' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)" src="assets/sgrb2/SgrB2_RGB_466-410-405.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F466N </span><span style="color:green;">F410M </span><span style="color:blue;">F405N </span></div> </div>
-    <!--<div style='z-index:11' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)" src="assets/sgrb2/SgrB2_RGB_480-300-210.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F300M </span><span style="color:blue;">F210M </span></div> </div>-->
-    <div style='z-index:12' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)" src="assets/sgrb2/SgrB2_RGB_480-410-360.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F410M </span><span style="color:blue;">F360M </span></div> </div>
-    <div style='z-index:13' class="fragment" > <img style="position: absolute; top:-120%; left:-120%; max-height:350%; max-width:350%; transform:rotate(90deg)" src="assets/sgrb2/SgrB2_RGB_480-466-410.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F466N </span><span style="color:blue;">F410M </span></div> </div>
 </section>
 
 
@@ -3837,72 +3876,70 @@ The Brick is icy
     </section>
 
     <section>
-        <section>
-            <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);  margin-top:0%; height:100%; position: absolute;">
-            </span>
-            <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:0%; height:100%; position: absolute;">
-            <h4 style="position: absolute; color: white; top:0%; left: 30%;"> Orion Source I<br>
-                <div class=fragment>a disk around a 15 M<sub>&odot;</sub> YSO </div>
-                </h4>
-            <div class=fragment style="position: relative; left:-17%; top:28%; color:white;" class=smaller>Salt: NaCl</div>
-            </span>
-            <div style="position: relative; bottom: -90%; left:20%" class="smaller3"><a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a></div>
+        <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);  margin-top:0%; height:100%; position: absolute;">
+        </span>
+        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:0%; height:100%; position: absolute;">
+        <h4 style="position: absolute; color: white; top:0%; left: 30%;"> Orion Source I<br>
+            <div class=fragment>a disk around a 15 M<sub>&odot;</sub> YSO </div>
+            </h4>
+        <div class=fragment style="position: relative; left:-17%; top:28%; color:white;" class=smaller>Salt: NaCl</div>
+        </span>
+        <div style="position: relative; bottom: -90%; left:20%" class="smaller3"><a class=darkbg href="https://www.gemini.edu/node/12343">Image: Ginsburg, NRAO</a></div>
 
-            <div style="position: absolute; right:0; top:10%; vertical-align: middle;">
-                <ul class=smaller3 style='text-align: right; list-style-type: none; vertical-align: middle;'>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240805114W/abstract">Wright+ 2024</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...945...14W/abstract">Wright+ 2023</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...924..107W/abstract">Wright+ 2022</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...889..155W/abstract">Wright+ 2020</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...889..178B/abstract">Bally+ 2020</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...872...54G/abstract">Ginsburg+ 2019</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...860..119G/abstract">Ginsburg+ 2018</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...857....7Y/abstract">Youngblood+ 2018</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...837...60B/abstract">Bally+ 2017</a>
-                <li><a href="https://ui.adsabs.harvard.edu/abs/2015A%26A...579A.130B/abstract">Bally+ 2015</a>
+        <div style="position: absolute; right:0; top:10%; vertical-align: middle;">
+            <ul class=smaller3 style='text-align: right; list-style-type: none; vertical-align: middle;'>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240805114W/abstract">Wright+ 2024</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...945...14W/abstract">Wright+ 2023</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...924..107W/abstract">Wright+ 2022</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...889..155W/abstract">Wright+ 2020</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...889..178B/abstract">Bally+ 2020</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...872...54G/abstract">Ginsburg+ 2019</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...860..119G/abstract">Ginsburg+ 2018</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...857....7Y/abstract">Youngblood+ 2018</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...837...60B/abstract">Bally+ 2017</a>
+            <li><a href="https://ui.adsabs.harvard.edu/abs/2015A%26A...579A.130B/abstract">Bally+ 2015</a>
 
-                </ul>
-            </div>
+            </ul>
+        </div>
 
-            <aside class=notes>
-                <ul>
-                    <li> Orion Source I lives at the center of the BN/KL explosion
-                    <li> We observed the disk known as source I
-                    <li> ...in salts!  NaCl and KCl
-                    <li> We used that disk to measure the mass of the central source
-                </ul>
-            </aside>
-        </section>
+        <aside class=notes>
+            <ul>
+                <li> Orion Source I lives at the center of the BN/KL explosion
+                <li> We observed the disk known as source I
+                <li> ...in salts!  NaCl and KCl
+                <li> We used that disk to measure the mass of the central source
+            </ul>
+        </aside>
+    </section>
 
 
-        <section>
-            <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
-            <h2 style='text-align: left'> Temperature? </h2>
-            </span>
-        </section>
-        <section>
-            <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
-            <h2 style='text-align: left'> Temperature? </h2>
-            </span>
-        </section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/NaCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/KCl_rotational_diagrams.png);  height:100%">
+        <h2 style='text-align: left'> Temperature? </h2>
+        </span>
+    </section>
 
-        <section>
-            <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
-            <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
-            </span>
-        </section>
+    <section>
+        <span class=image style="background-image:url(assets_orion/simulated_populations_with_wacky_radiation_field.svg);  height:100%">
+        <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
+        </span>
+    </section>
 
-        <section>
-            <h4> Observing the Keplerian rotation profile of a disk is the most direct way to measure a protostar's mass </h4>
-            <div class=smaller2>(we can only see the disk, not the star itself)</div>
-            <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png);  margin-top:0%; height:78%">
-            <aside class=notes>
-                <ul>
-                    <li> Left is a model position-velocity diagram, right is the data
-                    <li> Red curve traces the outermost position of orbits of point particles
-                </ul>
-            </aside>
-        </section>
+    <section>
+        <h4> Observing the Keplerian rotation profile of a disk is the most direct way to measure a protostar's mass </h4>
+        <div class=smaller2>(we can only see the disk, not the star itself)</div>
+        <span class=image style="background-image:url(assets_orion/Unknown_4_pp_pv_plots_fittedmodel_15msun_comparepv.png);  margin-top:0%; height:78%">
+        <aside class=notes>
+            <ul>
+                <li> Left is a model position-velocity diagram, right is the data
+                <li> Red curve traces the outermost position of orbits of point particles
+            </ul>
+        </aside>
 
     </section>
 
@@ -3931,7 +3968,6 @@ The Brick is icy
         </aside>
     </section>
 
-    <section>
         <section>
             <img class=zoom style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/salts/HI-CO-Dust_m0.35_RGB_labeled_saltdisks.png'>
             <img class=zoomtall style='position: absolute; width:200px; bottom: 20%; right:0; background: none;' src='assets/galaxyoverview_saltdisks.png'>
@@ -3952,9 +3988,7 @@ The Brick is icy
             <img src="assets/salts/salt_water_so_sis_cross_correlation_redundant_saltfirst.png">
             </div>
         </section>
-    </section>
 
-    <section>
         <section>
             <h4> The Orion Molecular Cloud Core is a dense cluster </h4>
             <div>
@@ -4017,9 +4051,7 @@ The Brick is icy
                 </ul>
             </aside>
         </section>
-    </section>
 
-    <section>
         <section>
             <div class=smaller2> 500 years ago, four or more stars were in a multiple system</div>
             <img src="assets_orion/Bally2011_SrcI_BN_x.jpeg" style='height:89%'>
@@ -4031,7 +4063,6 @@ The Brick is icy
             <div class=smaller2> The old picture involved source n, but it's not moving fast enough</div>
             <img src="assets_orion/Bally2011_SrcI_BN_n.jpg">
         </section>
-    </section>
 
     <section>
         <h3 class=darkbg>Clusters are sites of interactions &amp; collisions</h3>

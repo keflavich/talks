@@ -513,6 +513,17 @@ CO<sub>2</sub> ice is also detectable
 <section>
 <h4> looking forward </h4>
 <div class=smaller>
+We can do this in (a lot) of other clouds.
+<br>
+e.g., water ice in Sgr B2
+
+<img src="assets/Nazar/CCD_density_f182m_f300m_f150w_f210m.png" style='width:90%; position: relative; top:-70px; z-index:-5;'>
+</div>
+ </section>
+
+<section>
+<h4> looking forward </h4>
+<div class=smaller>
 There is potential to measure metallicity directly from photometry.
 <br>
 <br>
@@ -983,9 +994,11 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 <script src="reveal/dist/reveal.js"> </script>
 <script src="reveal/plugin/highlight/highlight.js"></script>
 <script src="reveal/plugin/math/math.js"></script>
+<script src="reveal/plugin/notes/notes.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <script src="fullscreen.js"> </script>
+
 
 <!--
     Nested backgrounds end up darker than non-nested, which isn't good!
@@ -1002,7 +1015,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 
     <script>
       Reveal.initialize({
-        controls: true,
+        controls: false,
         progress: false,
         history: true,
         center: false,
@@ -1028,7 +1041,7 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
         },
 
 
-        plugins: [ RevealHighlight, RevealMath.KaTeX ],
+        plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes ],
 
         dependencies: [
           { src: 'mymath.js', async: true },

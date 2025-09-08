@@ -4409,13 +4409,12 @@ The Brick is icy
 
     <!-- End of slides. -->
 
-<script src="reveal/lib/js/head.min.js"> </script>
 <script src="reveal/dist/reveal.js"> </script>
 <script src="reveal/plugin/highlight/highlight.js"></script>
 <script src="reveal/plugin/math/math.js"></script>
+<script src="reveal/plugin/notes/notes.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
-<script src="fullscreen.js"> </script>
 
 
     <script>
@@ -4446,7 +4445,7 @@ The Brick is icy
         },
 
 
-        plugins: [ RevealHighlight, RevealMath.KaTeX ],
+        plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes ],
 
         dependencies: [
           { src: 'mymath.js', async: true },

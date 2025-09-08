@@ -474,3 +474,7 @@ margin-left: -33%;
     font-size:2.2vw;
     width:100%;
 }
+
+.r-overlay {
+    z-index:101;
+}

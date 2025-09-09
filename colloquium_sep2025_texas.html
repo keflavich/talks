@@ -1828,9 +1828,18 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 <div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
 <div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
 </div>
-    <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">
+    <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
+    left: -50px;
+    top: 172px;
+    rotate: -4.5deg;
+    scale: 0.975;
+  '>
+    <!-- old version <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">-->
     <div style="position: absolute; bottom: 10%; left: 8%; z-index: 10; text-align: left;" class=smaller2>
         <span style="color:red">R=770</span><br> <span style="color:green">G=(480-[410-405])</span><br> <span style="color:blue">B=Brα</span>
+    </div>
+    <div style="position: absolute; bottom: 10%; right: 0%; z-index: 10; text-align: right; width:50%; color:rgb(2, 136, 136);" class=smaller2>
+        <span style='font-size:250%'>&#9632;</span> New HII regions
     </div>
 </section>
 
@@ -1839,6 +1848,9 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 
 <style>
+.fragment.sgrb2_sf_line[data-step=1] {
+    visibility:hidden;
+}
 .fragment.sgrb2_sf_line {
     rotate:0deg;
     visibility: visible;
@@ -1874,20 +1886,25 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 <section>
     <div style='text-align:left; width:80%;' class=smaller>There is an overall asymmetry in the star formation seen both in JWST (HII regions) and ALMA (embedded YSOs) <div style='text-align:left;'class=smaller> JWST shows the transition is sharp</div></div>
 
-    <img src="assets/Nazar/SgrB2_starformation_asymmetry.png" style="" class="fragment sgrb2_sf_line custom" data-fragment-index="1">
+    <img src="assets/Nazar/asymmetry.png" style="position: absolute; z-index:101; left: -1%;
+    margin-top: 0%;
+    top: 20.5%;
+    scale: 1.09;
+    rotate: -4.5deg;" class="fragment fade-out" data-fragment-index="1">
+    <img src="assets/Nazar/SgrB2_starformation_asymmetry.png" style="" class="fragment sgrb2_sf_line custom" data-fragment-index="2">
 
     <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden; z-index: 150;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
 
-    <div class="smaller fragment fade-out" data-fragment-index="1" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
-        What ALMA sees, JWST doesn't: 0/700 point source matches
+    <div class="smaller fragment fade-in-then-out" data-fragment-index="1" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
+        What ALMA sees, JWST doesn't: 3/700 point source matches
         <br> (HII regions, outflow cavities do match)
     </div>
-    <div class="fragment fade-in" data-fragment-index="1" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
+    <div class="fragment fade-in" data-fragment-index="2" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
         What does this mean in context?
         <br> TBD, but it hints at an ongoing compression event
     </div>
 
-    <img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="position:absolute; left:0%; top:20%; width:100%; max-width:100%; max-height:100%; z-index: 1; transition: all 1s ease-in-out; " class="fragment" data-fragment-index="1">
+    <img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="position:absolute; left:0%; top:20%; width:100%; max-width:100%; max-height:100%; z-index: 1; transition: all 1s ease-in-out; " class="fragment" data-fragment-index="2">
 </section>
 
 

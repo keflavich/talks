@@ -13,6 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
 
 
+
     <!--[if lt IE 9]>
     <script src="reveal/lib/js/html5shiv.js">
     </script>
@@ -388,6 +389,7 @@ surveys and N-body dynamical modeling, play a key role.
         <ul>
             <li> Herschel FIR dust image of Taurus mol cld
             <li> distance ~140 pc, local neighborhood
+            <li> say in words: (and simulations)
         </ul>
     </aside>
 </section>
@@ -484,7 +486,7 @@ surveys and N-body dynamical modeling, play a key role.
     <section>
         <h4>Cartoon &rightarrow; theory <br>
             What do we want from a star formation theory? </h4>
-        <div class=smaller style="text-align:left;">As observers, we want it to</div>
+        <div class="fragment smaller" style="text-align:left;">As observers, we want it to</div>
         <ul>
             <li class=fragment> Predict the appearance of young stellar objects (YSOs)
                 <ul> <li> SED &amp; morphological models </ul>
@@ -585,6 +587,7 @@ surveys and N-body dynamical modeling, play a key role.
         </div>
     <div>
         <div style="float: left; width:75%; line-height:24pt">
+            <span class=smaller2> Starting from Robitaille 2017 grid: </span>
             <ul class=smaller>
                 <li> Models now predict mm fluxes better
                 <li> Masses &amp; column densities calculated for each model
@@ -696,17 +699,20 @@ surveys and N-body dynamical modeling, play a key role.
                  Class is observationally defined.<br>
                  Stage is theoretical.<br>
                  <br>
-
+<span class=smaller>
  <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989...95R/abstract"> Richardson et al 2025 </a> takes a deep dive into the definition of Class 0/I and Stage 0/I
+</span>
 <br>
 <br>
-Stage 0 is when the star has &lt;50% of its final mass <span class=smaller>(most of the mass is still in the "core")</span>
+Stage 0: $M_*(t) < 0.5 M_{*,f}$ <br><span class=smaller2>(most of the mass is still in the core/envelope, but that's not part of the definition)</span>
 <br>
 <br>
-Stage I is when the star has &gt;50% of its final mass.
+Stage I: $M_*(t) > 0.5 M_{*,f}$
 <br>
 <br>
+<b>
 Class 0 is a poor proxy for Stage 0.
+</b>
 
 
 
@@ -1591,7 +1597,7 @@ Class 0 is a poor proxy for Stage 0.
         <div style="position:absolute; max-height:95%; max-width:73%; margin-top:0%; left:0%"><img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out_zoom.png"></div>
         <div class=fragment style="position:absolute; max-height:95%; max-width:73%; margin-top:0%; left:0%"><img style='max-height:800px; background-color:white;' src="assets/Nazar/sources_per.png"></div>
         <div class=fragment style="position:absolute; max-height:95%; max-width:73%; margin-top:0%; left:0%"><img style='max-height:800px; background-color:white;' src="assets/Nazar/sources_per_1to1.png"></div>
-        <div class=fragment style="position:absolute; max-height:95%; max-width:73%; margin-top:0%; left:0%"><img style='max-height:800px; background-color:white;' src="assets/Nazar/sources_per_1to1_resolved_out_zoom.png"></div>
+        <!--<div class=fragment style="position:absolute; max-height:95%; max-width:73%; margin-top:0%; left:0%"><img style='max-height:800px; background-color:white;' src="assets/Nazar/sources_per_1to1_resolved_out_zoom.png"></div>-->
         <div class=fragment style="position:absolute; max-height:95%; max-width:73%; margin-top:0%; left:0%; background-color:white;"><img style='max-height:800px' src="assets/Nazar/sources_per_1to1_resolved_out_new.png"></div>
     </div>
     <img style='position: absolute; width:200px; bottom: 10%; right:0; background: none;' src='assets/cmz/acesMUSTANG_mark_sgrb2mANDn.png'>
@@ -1671,7 +1677,7 @@ We aimed to measure the CMF with ALMA.
 
 <div style='max-width:none'>
 <img src="colloquium_assets/cmfpmfimf.svg" style="width:49%; position:relative;">
-<img src="assets/Theo/hr_Stage_almajwst.png" style="width:49%; margin-top:-12px; position: relative; z-index:-1;">
+<img src="assets/Theo/hr_Stage_3mm25um_biglabel.png" style="width:49%; margin-top:-12px; position: relative; z-index:-1;">
 <div class="smaller3" style='position: absolute; top: 59%; right: 10%;'> <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989...95R/abstract"> Richardson et al 2025 </a></div>
 <br>
 <div class=smaller style='width:50%; float:left'> (this cartoon is super wrong)</div>
@@ -1929,7 +1935,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 <section>
     <section>
-    <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="height:102%; max-width:none; max-height:none; left:-20%; top:-2%; position:absolute; background-color:black;">
+    <img src="assets/sgrb2/MIRI_tricolor_labels.png" style="height:102%; max-width:none; max-height:none; left:-20%; top:-2%; position:absolute; background-color:black; scale:1.2; translate:-130px -20px;">
     <div class="smaller darkbg" style='position:absolute; bottom:5%; right:5%; z-index: 30;'>MIRI image taken 2025-09-02</div>
     </section>
     <section id=sgrb2_rgbs>
@@ -2150,24 +2156,28 @@ div.right20 {
 <section>
 <h4>JWST - ALMA mismatches:</h4>
 <div class=smaller>
-In high-mass star-forming regions, JWST detects <b>only</b> later-stage objects
+    <span style="font-size:95%">
+In high-mass star-forming regions, JWST detects <span class=smaller3>(almost)</span> only later-stage YSOs
+    </span>
 <br>
 <span class=smaller>
 This is different from local clouds: the more massive cloud is responsible.
 <br>Consequence: YSO counts have environmentally different meanings
-<br> <span class=fragment>&rightarrow; we measure (recent) star formation history w/JWST</span>
+<br> <span class=fragment>&rightarrow; we measure (recent) star formation history w/JWST, <br> not ongoing, current star formation</span>
 <br>
-    <div>
-    <img src="assets/Theo/hr_Stage.png" style="width:60%; margin-top:-12px; margin-bottom:-25px; position: relative; z-index:-1;"><br>
-<div class="smaller2" style='position: absolute; top: 75%; right: 32%;'> <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989...95R/abstract"> Richardson et al 2025 </a></div>
+    <div style="overflow: hidden;">
+    <img src="assets/Theo/hr_Stage_3mm25um.png" style="width:60%; margin-top:-27px; margin-bottom:-25px; position: relative; z-index:-1;"><br>
+<div class="smaller2" style='position: relative; top: -70px; right: -12%;'> <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989...95R/abstract"> Richardson et al 2025 </a></div>
     </div>
-     "stage" here means "relative amount of leftover envelope"
 
 </span>
 </div>
 
 <aside class=notes>
     Minimal ALMA-JWST overlap points to a short phase with a substantial envelope plus a luminous central source...
+
+
+     "stage" here means "relative amount of leftover envelope"
 </aside>
 
 </section>
@@ -2180,10 +2190,13 @@ This is different from local clouds: the more massive cloud is responsible.
 <img style='width:125px; margin-top:0px; margin-bottom:-15px' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
 </div>
 
-<ul style='position: absolute; left: 0px; top:0px; width:75%; float:left;'>
-<li style='margin-bottom:2em;'> YSO model grid is testing accretion models
-<li style='margin-bottom:2em;'> Sgr B2 is forming &amp; fragmenting YSOs - asymmetrically
-<li style='margin-bottom:2em;'> W51 fragments are dominated by most massive
+<ul style='position: absolute; left: 0px; top:0px; width:75%; float:left; font-size:90%;'>
+<li style='margin-bottom:0.3em;'> YSO model grid is testing accretion models
+    <br> <span class=smaller2>Theo Richardson, 2024 &amp; 2025</span>
+<li style='margin-bottom:0.3em;'> Sgr B2 is forming &amp; fragmenting YSOs - asymmetrically.  Large-scale triggering.
+    <br> <span class=smaller2>Nazar Budaiev, 2024 &amp; 2025</span>
+<li style='margin-bottom:0.3em;'> W51 fragments are dominated by most massive.  Colorful feedback to be understood.
+    <br> <span class=smaller2>Taehwa Yoo, 2025</span>
 </ul>
 </section>
 
@@ -2222,13 +2235,18 @@ This is different from local clouds: the more massive cloud is responsible.
 <img class=fragment data-fragment-index="1" style="width:125px; margin-top:0px; margin-bottom:-15px" src="assets/metalice.png">
 </div>
 
-<ul style='position: absolute; left: 0px; top:0px; width:75%; float:left;'>
-<li style='margin-bottom:2em;'> YSO model grid is testing accretion models
-<li style='margin-bottom:2em;'> Sgr B2 is forming &amp; fragmenting YSOs - asymmetrically
-<li style='margin-bottom:2em;'> W51 fragments are dominated by most massive
-<li style='margin-bottom:2em;'> JWST measures ice abundance across the galaxy
-<li class=fragment data-fragment-index="1" style='margin-bottom:2em;'> We can measure metallicity with ice
+<ul style='position: absolute; left: 0px; top:0px; width:75%; float:left; font-size:90%;'>
+<li style='margin-bottom:0.3em;'> YSO model grid is testing accretion models
+    <br> <span class=smaller2>Theo Richardson, 2024 &amp; 2025</span>
+<li style='margin-bottom:0.3em;'> Sgr B2 is forming &amp; fragmenting YSOs - asymmetrically.  Large-scale triggering.
+    <br> <span class=smaller2>Nazar Budaiev, 2024 &amp; 2025</span>
+<li style='margin-bottom:0.3em;'> W51 fragments are dominated by most massive.  Colorful feedback to be understood.
+    <br> <span class=smaller2>Taehwa Yoo, 2025</span>
+<li style='margin-bottom:0.5em;'> JWST measures ice abundance across the galaxy.
+    <br> <span class=smaller2>Savannah Gramze, 2025</span>
+<li class=fragment data-fragment-index="1" style='margin-bottom:0.3em;'> We can measure metallicity with ice
 </ul>
+
 </section>
 
 
@@ -2236,12 +2254,13 @@ This is different from local clouds: the more massive cloud is responsible.
     <div style="
 width: 150%;
 height: 35em;
-background: url(assets/sgrb2/SGR-B2_MIRI_Mosaic.png) no-repeat;
+background: url(assets/sgrb2/MIRI_tricolor_labels.png) no-repeat;
 transform: rotate(0deg);
 background-size: 150%;
 background-position: 50% 50%;
-margin-top: -25%;
+margin-top: -30%;
 margin-left: -25%;
+background-color: black;
 animation: backgroundScroll 40s ease-in-out 1s infinite; ">
     </div>
 
@@ -4432,6 +4451,7 @@ The Brick is icy
 <script src="reveal/plugin/notes/notes.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js"></script>
 
 
     <script>
@@ -4462,7 +4482,7 @@ The Brick is icy
         },
 
 
-        plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes ],
+        plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes],
 
         dependencies: [
           { src: 'mymath.js', async: true },

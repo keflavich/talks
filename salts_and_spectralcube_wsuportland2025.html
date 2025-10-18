@@ -67,16 +67,17 @@ zero-age of high-mass stars.
             <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
             <div class=smaller2>
                 Brett McGuire, Patricio Sanhueza, Fernando Olguin, Luke Maud, Henrik Beuther, Kei Tanaka, Yichen Zhang, Ciriaco Goddi,
-                Richard Plambeck, Melvyn Wright, John Bally, Tomoya Hirota, Nick Indriolo
+                Richard Plambeck, Melvyn Wright, John Bally, Tomoya Hirota, Nick Indriolo, Miriam Garcia Santa-Maria
             </div>
 
     <div class=smaller2> Slides available at
     <a href="https://keflavich.github.io/talks/salts_and_spectralcube_wsuportland2025.html">https://keflavich.github.io/talks/salts_and_spectralcube_wsuportland2025.html</a>
-
     </div>
+    <div style='position: absolute; right:0%; bottom:0%; width:10%;' class=reveal-js-qrcode></div>
 </section>
 
 <section>
+<div style='position: absolute; left:0%; top:0%; width:10%;' class=reveal-js-qrcode></div>
     <h4> Stuff I want to do w/WSU &amp; ngVLA </h4>
     <ul>
     <li> Salt & other refractory element searches
@@ -88,6 +89,7 @@ zero-age of high-mass stars.
 </section>
 
 <section>
+<div style='position: absolute; left:0%; top:0%; width:10%;' class=reveal-js-qrcode></div>
 <h3>WSU/ngVLA = Big data</h3>
 
 
@@ -101,9 +103,11 @@ Probably can't afford to keep model, mask, residual, ... on disk (only cutouts)
 <br>
 Keep only .image or .image.fits, not both.
 <br> CARTA and astropy can both read either file type - no need for duplication!
+
 </section>
 
 <section>
+<div style='position: absolute; left:0%; bottom:0%; width:10%;' class=reveal-js-qrcode></div>
     <h3>
     Big data:
     ALMA cubes are already frequently bigger than memory in a single machine
@@ -116,6 +120,7 @@ Keep only .image or .image.fits, not both.
 </section>
 
 <section>
+<div style='position: absolute; left:0%; bottom:0%; width:10%;' class=reveal-js-qrcode></div>
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
 What do we do about bigger-than-memory?
 <ul class=smaller style='float:right;'>
@@ -129,10 +134,11 @@ What do we do about bigger-than-memory?
 </section>
 
 <section>
+<div style='position: absolute; right:0%; bottom:0%; width:9%;' class=reveal-js-qrcode></div>
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
     Example:
     <br>
-    <pre style='height:50%; width:80%'><code class="smaller2" style='text-align:left;''>
+    <pre style='height:50%; width:80%'><code class="smaller2 language-python" style='text-align:left;''>
         # Load data & change units
         from spectral_cube import SpectralCube
         cube = SpectralCube.read(‘the_biggest_cube_ever.image’)
@@ -147,10 +153,10 @@ What do we do about bigger-than-memory?
         max = cube.max(axis=0, how='slice')
     </code>
     </pre>
-    <div class="smaller fragment">
+    <div class="smaller fragment" style='text-align:left;'>
         Don't do this:
-        <pre style='width:27%; height:4em'>
-        <code class='smaller' style='color:r'> array = cube.filled_data[:] </code></pre>
+        <pre>
+        <code class='smaller language-python' style='display:inline-block; width:auto;'> array = cube.filled_data[:] </code></pre>
         It will load everything into memory and throw away everything useful about spectral-cube
     </div>
 
@@ -164,9 +170,12 @@ What do we do about bigger-than-memory?
     <div class=fragment style='font-size:90%'>
 Line sensitivity either stays flat <span class=smaller>(for widely-separated lines like CO)</span>
 <br> or requires stacking <span class=smaller>(e.g., methanol, SO, rare/complex molecules, salts)</span>
+<div style='position: absolute; right:0%; bottom:0%; width:10%;' class=reveal-js-qrcode></div>
 </section>
 
 <section>
+
+<div style='position: absolute; right:0%; top:0%; width:10%;' class=reveal-js-qrcode></div>
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
     <h3>Stacking <h5> [non-S/N optimally, but cheaply]</h5></h3>
 
@@ -188,6 +197,7 @@ Line sensitivity either stays flat <span class=smaller>(for widely-separated lin
 
 
 <section>
+<div style='position: absolute; right:0%; top:0%; width:10%;' class=reveal-js-qrcode></div>
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
     <h3>Stacking cubes </h3>
 
@@ -477,6 +487,16 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
 </section>
 
 <section>
+<h4> Salt non? detection in Sgr B2</h4>
+<div class=smaller>
+PRIMOS (GBT) detected NaCl 1-0 emission, NaCl 2-1 absorption in SgrB2N
+<br> VLA D detected neither; should have.
+</div>
+<img style='max-height:65%; position: absolute; top:25%; left:10%;' data-fragment-index=1 class='fragment fade-out' src='assets/salts/NaCl1-0_VLA_D_and_PRIMOS.png'>
+<img style='max-height:65%; position: absolute; top:25%; left:10%;' data-fragment-index=1 class='fragment' src='assets/salts/NaCl2-1_VLA_D_and_PRIMOS.png'>
+</section>
+
+<section>
     What will the ngVLA see?
     <div style='display: grid';>
         <img src="assets/salts/NaCl_LTE_SLEDs_N=1e14.png" style='grid-column:1; grid-row:1'>
@@ -492,6 +512,7 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
         </div>
     </div>
 </section>
+
 
 
 <section>
@@ -538,12 +559,6 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
     <h4 style='text-align: left'> Why are rotational/vibrational temperatures different? </h4>
     </span>
 </section>
-<section>
-    <h4 style='text-align: left'> Why are rotational/vibrational temperatures different? </h4>
-    Could be $\tau >> 1$.
-    <br>
-    Salts have high dipole moment.  Modest column can yield high $\tau$.
-</section>
 
 <section>
     <section>
@@ -566,6 +581,12 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
         <h2 style='text-align: right; background-color:white; width:50%; position: relative; left:50%;'> A contrived model </h2>
         </span>
     </section>
+</section>
+
+<section>
+    Optical depth could be important in disks
+    <img src="assets/salts/opticaldepth_vs_frequency_N=17.0_dV=7.0.png">
+    <div class=smaller> Kei Tanaka &amp; students showing $\tau>>1$ in both line and continuum (with scattering) might explain the disks</div>
 </section>
 
 <section>
@@ -738,12 +759,13 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
 
     <!-- End of slides. -->
 
-<script src="reveal/lib/js/head.min.js"> </script>
 <script src="reveal/dist/reveal.js"> </script>
 <script src="reveal/plugin/highlight/highlight.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
 <script src="fullscreen.js"> </script>
+<script src="reveal/plugin/math/math.js"></script>
+<script src="reveal/plugin/notes/notes.js"></script>
 
     <script>
     var els = document.getElementsByTagName('section');
@@ -781,6 +803,7 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
           mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
           config: 'TeX-AMS_SVG'
         },
+        plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes],
 
 
         dependencies: [
@@ -790,13 +813,13 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
         condition: function() { return !!document.querySelector ('[data-markdown]'); }},
           { src: 'reveal/plugin/markdown/markdown.js',
         condition: function() { return !!document.querySelector ('[data-markdown]'); }},
-          { src: 'reveal/plugin/highlight/highlight.js', async: true,
-        callback: function() { hljs.initHighlightingOnLoad (); }},
           { src: 'reveal/plugin/notes/notes.js', async: true,
         condition: function() { return !!document.body.classList; }},
           { src: 'mymath.js', async: true },
       { src: 'pdfimgs.js', async: true },
       { src: 'slideautostart.js', async: true },
+      { src: 'reveal/plugin/reveal.js-qrcode/qrcode.min.js'},
+      { src: 'reveal/plugin/reveal.js-qrcode/index.js'}
         ],
       });
     </script>

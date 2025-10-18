@@ -483,3 +483,7 @@ margin-left: -33%;
 .r-overlay {
     z-index:101;
 }
+
+.reveal pre {
+    box-shadow: none;
+}

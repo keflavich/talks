@@ -199,6 +199,11 @@ div.smaller {
     font-size: 80%
 }
 
+div.code {
+    text-align: left;
+    font-family: monospace;
+}
+
 .reveal .smaller2 {
     font-size: 60%
 }

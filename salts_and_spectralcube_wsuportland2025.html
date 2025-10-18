@@ -105,7 +105,7 @@ Keep only .image or .image.fits, not both.
 
 <section>
     <h3>
-    Big dat:
+    Big data:
     ALMA cubes are already frequently bigger than memory in a single machine
     </h3>
     How do we operate on them?
@@ -272,9 +272,9 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
 <section>
     <section style='background-color:black; background-image:();' data-background-image:""  data-background-color='black'>
         <span class=image style="background-image:url(assets_orion/Trapezium_GEMS_mosaic_redblueorange_normed_small_contrast_bright_fullsize.png);
-            margin-top:-2%; height:100%; position: absolute; z-index:-1;">
+            margin-top:0%; height:100%; position: absolute; z-index:-1;">
         </span>
-        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:-2%; height:100%; position: absolute; z-index:0">
+        <span class="fragment image" style="background-image:url(assets_orion/gems_saltdisk_composite_fullsize.png);  margin-top:0%; height:100%; position: absolute; z-index:0">
         <h4 style="position: absolute; color: white; top:0%; left: 30%; z-index:10"> Orion Source I<br>
             <div class=fragment>a disk around a 15 M<sub>&odot;</sub> YSO </div>
             </h4>
@@ -451,13 +451,15 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
 
 
 <section>
-    <h4> What molecules correlate (in our sample of 23)?</h4>
-    <img style="max-height:80%" src="assets/salts/salt_water_so_sis_cross_correlation_redundant_saltfirst.png">
-</section>
+    <section>
+        <h4> What molecules correlate (in our sample of 23)?</h4>
+        <img style="max-height:80%" src="assets/salts/salt_water_so_sis_cross_correlation_redundant_saltfirst.png">
+    </section>
 
-<section>
-    <h4> Resolution is a (weak) predictor of salt detection</h4>
-    <img style="max-height:80%" src='assets/salts/logistic_P_of_salt.png'>
+    <section>
+        <h4> Resolution is a (weak) predictor of salt detection</h4>
+        <img style="max-height:80%" src='assets/salts/logistic_P_of_salt.png'>
+    </section>
 </section>
 
 <section>
@@ -536,6 +538,12 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
     <h4 style='text-align: left'> Why are rotational/vibrational temperatures different? </h4>
     </span>
 </section>
+<section>
+    <h4 style='text-align: left'> Why are rotational/vibrational temperatures different? </h4>
+    Could be $\tau >> 1$.
+    <br>
+    Salts have high dipole moment.  Modest column can yield high $\tau$.
+</section>
 
 <section>
     <section>
@@ -575,7 +583,7 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
         <div class=smaller>(this range is consistent with VY CMa observations)</div>
         <br>
         If $T_D>300$ K is all that is required, why do we not see salts in hot cores?
-        (see talk by Desmond Jeff)
+
     </section>
 
     <section>
@@ -621,7 +629,7 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
     Salt is seen in disks around HMYSOs
     <ul class=smaller>
         <li> NaCl and KCl are correlated with water, SiS, and PN.
-        <li> Salt is not seen in outflows or molecular clouds.
+        <li> Salt is [mostly] not seen in outflows or molecular clouds.
         <li> It is uncorrelated with COMs and ionized gas.
         <li> Its excitation is weird.
         <li> There are many observable and useful transitions between 5 and 120 GHz

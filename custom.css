@@ -203,6 +203,9 @@ div.code {
     text-align: left;
     font-family: monospace;
 }
+.code {
+    font-family: monospace;
+}
 
 .reveal .smaller2 {
     font-size: 60%
@@ -486,4 +489,10 @@ margin-left: -33%;
 
 .reveal pre {
     box-shadow: none;
+    display: inline-block;
+    width: fit-content;       /* shrink to fit code width */
+    max-width: 100%;          /* don’t overflow slide */
+    margin: auto;             /* center if desired */
+    padding: 0em 0em;       /* optional: adjust */
+    white-space: pre;         /* disable line wrapping */
 }

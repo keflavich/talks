@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="white.css" id="theme">
     <link rel="stylesheet" href="reveal/lib/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link rel="stylesheet" href="plugin/highlight/github.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <script src="reveal/lib/js/html5shiv.js"> </script>
   </head>
@@ -66,8 +70,10 @@ zero-age of high-mass stars.
             <p class="footer">Adam Ginsburg</p>
             <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
             <div class=smaller2>
-                Brett McGuire, Patricio Sanhueza, Fernando Olguin, Luke Maud, Henrik Beuther, Kei Tanaka, Yichen Zhang, Ciriaco Goddi,
+                Salt team: Brett McGuire, Patricio Sanhueza, Fernando Olguin, Luke Maud, Henrik Beuther, Kei Tanaka, Yichen Zhang, Ciriaco Goddi,
                 Richard Plambeck, Melvyn Wright, John Bally, Tomoya Hirota, Nick Indriolo, Miriam Garcia Santa-Maria
+                <br>
+                radio-astro-tools team: Tom Robitaille, Eric Koch, Chris Beaumont, Adam Leroy, Erik Rosolowsky, Crystal Brogan, Todd Hunter, Sam Skillman, and John ZuHone
             </div>
 
     <div class=smaller2> Slides available at
@@ -80,12 +86,14 @@ zero-age of high-mass stars.
 <div style='position: absolute; left:0%; top:0%; width:10%;' class=reveal-js-qrcode></div>
     <h4> Stuff I want to do w/WSU &amp; ngVLA </h4>
     <ul>
-    <li> Salt & other refractory element searches
+    <li> Salt &amp; other refractory element searches
     <li> HMYSO disk kinematics
+    <li> Temperature measurements
     </ul>
     <br>
     <img style='float:left; max-width:25%' src="assets/salts/G351mm1_naclPV_withcolorcurves.png">
     <img style='float:right; max-width:75%' src="assets/salts/OverviewFigure_ProjectedToSameSize.png">
+    Refractory elements link ISM/CSM to meteoritics
 </section>
 
 <section>
@@ -109,14 +117,18 @@ Keep only .image or .image.fits, not both.
 <section>
 <div style='position: absolute; left:0%; bottom:0%; width:10%;' class=reveal-js-qrcode></div>
     <h3>
-    Big data:
+    Big data:<br>
     ALMA cubes are already frequently bigger than memory in a single machine
     </h3>
+    <div class=fragment>
     How do we operate on them?
     <br>
     <br>
+    </div>
+    <div class=fragment>
     Cut them up or operate in chunks
-    <img class=fragment style='width:75%;' src="./colloquium_assets/radioastrotools_logo.svg">
+    <img style='width:75%;' src="./colloquium_assets/radioastrotools_logo.svg">
+    </div>
 </section>
 
 <section>
@@ -125,9 +137,9 @@ Keep only .image or .image.fits, not both.
 What do we do about bigger-than-memory?
 <ul class=smaller style='float:right;'>
 <li class=fragment> Tasks need to be broken up among different smaller-than-memory processes - even some that normally can only be done on a single process (e.g., sorting / median).
-    <ul> <li class=fragment> spectral-cube and dask automate this </ul>
-<li class=fragment> Use lazy operation tools and not-in-memory (“memory mapped”) operations: with spectral-cube, you can perform operations on cubes of any size
-    <ul> <li class=fragment> but you have to be careful: there are things that load all your data in memory
+    <ul> <li class=fragment> <span class=code style='color:navy'>spectral-cube</span> and <span class=code style='color:navy'>dask</span> automate this </ul>
+<li class=fragment> Use lazy operations and not-in-memory (“memory mapped”) operations: with <span class=code style='color:navy'>spectral-cube</span>, you can operate on cubes of any size
+    <ul> <li class=fragment> but be careful: there are <span style='color:red'>bad operations</span> that load all data in memory
          <li class=fragment> ...and LLMs <i>love</i> them... </ul>
 <li class=fragment> Maybe most important: “cutouts” are cheap and very fast, enabling analysis of segmented data (segmentation is a different problem)
 </ul>
@@ -138,25 +150,23 @@ What do we do about bigger-than-memory?
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
     Example:
     <br>
-    <pre style='height:50%; width:80%'><code class="smaller2 language-python" style='text-align:left;''>
-        # Load data & change units
-        from spectral_cube import SpectralCube
-        cube = SpectralCube.read(‘the_biggest_cube_ever.image’)
-        vcube = cube.with_spectral_unit(u.km/u.s,
-                                        velocity_convention='radio',
-                                        rest_value=103.04045*u.GHz)
+    <pre style=''><code class="smaller2 language-python" style='text-align:left;'># Load data & change units
+from spectral_cube import SpectralCube
+cube = SpectralCube.read(‘the_biggest_cube_ever.image’)
+vcube = cube.with_spectral_unit(u.km/u.s,
+                                velocity_convention='radio',
+                                rest_value=103.04045*u.GHz)
 
-        # Measure moments of sub-cubes:
-        m0 = vcube.spectral_slab(-10*u.km/u.s, 10*u.km/u.s).moment0(axis=0)
+# Measure moments of sub-cubes:
+m0 = vcube.spectral_slab(-10*u.km/u.s, 10*u.km/u.s).moment0(axis=0)
 
-        # or the peak of the whole cube, no matter how big
-        max = cube.max(axis=0, how='slice')
-    </code>
-    </pre>
-    <div class="smaller fragment" style='text-align:left;'>
+# or the peak of the whole cube, no matter how big
+max = cube.max(axis=0, how='slice') </code> </pre>
+    <div class="smaller fragment" style='text-align:center;'>
         Don't do this:
-        <pre>
-        <code class='smaller language-python' style='display:inline-block; width:auto;'> array = cube.filled_data[:] </code></pre>
+        <br>
+        <pre><code class='smaller language-python' style='display:inline-block; width:auto;'> array = cube.filled_data[:] </code></pre>
+        <br>
         It will load everything into memory and throw away everything useful about spectral-cube
     </div>
 
@@ -170,6 +180,7 @@ What do we do about bigger-than-memory?
     <div class=fragment style='font-size:90%'>
 Line sensitivity either stays flat <span class=smaller>(for widely-separated lines like CO)</span>
 <br> or requires stacking <span class=smaller>(e.g., methanol, SO, rare/complex molecules, salts)</span>
+    </div>
 <div style='position: absolute; right:0%; bottom:0%; width:10%;' class=reveal-js-qrcode></div>
 </section>
 
@@ -179,10 +190,9 @@ Line sensitivity either stays flat <span class=smaller>(for widely-separated lin
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
     <h3>Stacking <h5> [non-S/N optimally, but cheaply]</h5></h3>
 
-    <div class="smaller code" style='text-align: left; font-family:monospace'>
-        from spectral_cube.cube_utils import stack_spectra <br>
-        stack_spectra(cube, velocity_surface)
-    </div>
+    <pre>
+    <code class="smaller code language-python" style='text-align: left; font-family:monospace; display:inline-block; white-space:pre'>from spectral_cube.cube_utils import stack_spectra
+stack_spectra(cube, velocity_surface)</code></pre>
     <div class=fragment>
     <img style='float:left; width:65%' src="./assets/salts/G17_stacking_vs_not_example.png">
     <div style='float:right; width:35%' class=smaller>
@@ -201,19 +211,21 @@ Line sensitivity either stays flat <span class=smaller>(for widely-separated lin
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
     <h3>Stacking cubes </h3>
 
-    <div class="smaller code" style='text-align: left; font-family:monospace'>
-        stack_cube(cube, linelist, vmin, vmax)</code>
-    </div>
+    <pre style='height:25px; margin-top:-10px;'><code class="smaller code language-python" style='text-align: left; font-family:monospace'>stack_cube(cube, linelist, vmin, vmax)</code> </pre>
 
-    <video data-autoplay loop preload="metadata" src="assets/salts/nostack_vs_stack.mov"></video>
+    <video data-autoplay loop preload="metadata" src="assets/salts/nostack_vs_stack.mov" style='margin-top:-35px;'></video>
 </section>
 
 <section>
-    <h5>cube-line-moment>
+    <h5>cube-line-moment:
     Bright-line-based templating
+    </h5>
+    <div class=smaller> Select/mask data in 3D using high S/N line as template</div>
 
-    <img style='height:280px; width:auto;' src="assets/ngc253_masking_hnc.png">
-    <img style='height:380px; width:auto;' src="assets/ngc253_pv_masking_example.png">
+    <div style='display: flex; flex-direction: column; height:70%; margin:0 auto;     justify-content: space-between;'>
+    <img style='flex:0.4; object-fit:contain; width:100%; max-height:27vh;' src="assets/ngc253_masking_hnc.png">
+    <img style='flex:0.6; object-fit:contain; width:100%; max-height:35vh;' src="assets/ngc253_pv_masking_example.png">
+    </div>
 
     <aside class=notes>
     is a powerful technique we should make more accessible (spectral-cube + cubelinemoments makes it more possible, but still not something a grad can do in a day)
@@ -326,7 +338,7 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
         <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...621A.122B/abstract">Beuther+ 2019</a>,
         <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...900L...2T/abstract">Tanaka+ 2020</a>,
         <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...627L...6M/abstract">Maud+ 2019</a>,
-        Sanhueza+
+        <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...909..199O/abstract">Olguin+ 2021</a>
     </div>
 </section>
 
@@ -359,8 +371,24 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
 <section>
     <img style="max-width:45%; height:600px; display:inline-block; float:left;" src="assets/salts/G351mm1_naclPV_withcolorcurves.png">
     <img style="max-width:45%; height:600px; display:inline-block; float:left;" src="assets/salts/G351mm2_naclPV_withcolorcurves.png">
-    <div>
-        <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...621A.122B/abstract">Beuther+ 2019</a>
+    <div class=smaller style='text-align:left;'>
+        <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...621A.122B/abstract">Beuther+ 2019</a>,
+        <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv251002937T/abstract">Tasa-Chaveli+ 2025</a>:<br>
+
+
+CaS in mm1,
+<div style='white-space:nowrap'> but no
+<div style="  display: inline-flex;
+position: relative;
+align-items: baseline; /* try center or baseline depending on your font */
+vertical-align: baseline;
+width: auto; margin-top:-1em;">
+  <span data-fragment-index=1 class="fragment fade-out" style="position:absolute; left:0; top:-1em; line-height:normal;">💰</span>
+  <span data-fragment-index=1 class="fragment" style="position:absolute; left:0; top:-1em; line-height:normal;">CaSH</span>
+</div>
+</div>
+
+
     </div>
 </section>
 
@@ -370,7 +398,7 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
     <ul>
         <li class=fragment> <span style='color:navy'>Reasonably <b>common</b>:</span> <span class=smaller2>~6-9 known so far, ~15 HMYSO candidates examined</span>
             <ul class=smaller><li> Y: SrcI, G17, IRAS16547 A and B, G351mm1 and mm2, W33A?, NGC6334I?
-                    <ul class=smaller><li>Ginsburg+ 2019, Ginsburg+ submitted, Tanaka+ 2020</li></ul>
+                    <ul class=smaller><li>Ginsburg+ 2019, Ginsburg+ 2023, Tanaka+ 2020</li></ul>
                 </li>
                 <li> N: I16523, I18089, G11, G5, NGC6334IN, S255IR NIRS3, G333.23-0.06, I18162
                 </li>

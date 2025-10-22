@@ -63,9 +63,9 @@ zero-age of high-mass stars.
 -->
 
 <section >
-        <h1 style="font-size:200%; word-break: keep-all; hyphens: none;">
+        <h2 style="word-break: keep-all; hyphens: none;">
             ALMA-WSU + ngVLA Wideband Era: How to contend with <s>longer acronyms</s> bigger data
-            </h1>
+            </h2>
             <div class=smaller></div>
             <p class="footer">Adam Ginsburg</p>
             <p class="smaller3 footer">Assistant Professor<br>Department of Astronomy<br>University of Florida, Gainesville</p>
@@ -84,16 +84,22 @@ zero-age of high-mass stars.
 
 <section>
 <div style='position: absolute; left:0%; top:0%; width:10%;' class=reveal-js-qrcode></div>
-    <h4> Stuff I want to do w/WSU &amp; ngVLA </h4>
+    <h4> Some stuff I want to do w/WSU &amp; ngVLA </h4>
     <ul>
     <li> Salt &amp; other refractory element searches
-    <li> HMYSO disk kinematics
+    <li> HMYSO disk kinematics [measure M$_*$]
     <li> Temperature measurements
     </ul>
     <br>
     <img style='float:left; max-width:25%' src="assets/salts/G351mm1_naclPV_withcolorcurves.png">
     <img style='float:right; max-width:75%' src="assets/salts/OverviewFigure_ProjectedToSameSize.png">
+    <br>
+    <br>
+    <div>
+    <aside class=notes>
     Refractory elements link ISM/CSM to meteoritics
+    </aside>
+    </div>
 </section>
 
 <section>
@@ -102,15 +108,18 @@ zero-age of high-mass stars.
 
 
 <br>
+Brief practical pointers:
+<div class=fragment>
 Don't duplicate data on disk
+    <div class=smaller>
+    Probably can't afford to keep model, mask, residual, etc. <br> on disk (only cutouts)
+    </div>
+</div>
 
 <br>
-<br>
-Probably can't afford to keep model, mask, residual, ... on disk (only cutouts)
-<br>
-<br>
-Keep only .image or .image.fits, not both.
-<br> CARTA and astropy can both read either file type - no need for duplication!
+<div class=fragment> Keep only .image or .image.fits, not both.
+<br> <div class=smaller>CARTA and astropy can both read either file type - no need for duplication!</div>
+</div>
 
 </section>
 
@@ -118,16 +127,37 @@ Keep only .image or .image.fits, not both.
 <div style='position: absolute; left:0%; bottom:0%; width:10%;' class=reveal-js-qrcode></div>
     <h3>
     Big data:<br>
-    ALMA cubes are already frequently bigger than memory in a single machine
+    ALMA cubes are already <span>(sometimes)</span> bigger than memory in a single machine
     </h3>
-    <div class=fragment>
-    How do we operate on them?
-    <br>
-    <br>
-    </div>
-    <div class=fragment>
-    Cut them up or operate in chunks
-    <img style='width:75%;' src="./colloquium_assets/radioastrotools_logo.svg">
+    <div style='position: relative'>
+
+        <div data-fragment-index=1 class='fragment fade-in-then-out' style='position: absolute; width:100%;'>
+            ACES:<br>
+            <pre>
+203G SO21_CubeMosaic.fits
+203G SiO21_CubeMosaic.fits
+203G HN13C_CubeMosaic.fits
+203G HC15N_CubeMosaic.fits
+203G H40a_CubeMosaic.fits
+203G H13COp_CubeMosaic.fits
+203G H13CN_CubeMosaic.fits
+474G HNCO_7m12mTP_CubeMosaic.fits
+474G HCOP_CubeMosaic.fits
+            </pre>
+        </div>
+
+
+        <div style='position: absolute; margin:auto; text-align:center; width:100%;'>
+            <div data-fragment-index=2 class=fragment >
+            How do we operate on them?
+            <br>
+            <br>
+            </div>
+            <div data-fragment-index=3 class=fragment>
+            Cut them up or operate in chunks
+            <img style='width:75%;' src="./colloquium_assets/radioastrotools_logo.svg">
+            </div>
+        </div>
     </div>
 </section>
 
@@ -136,7 +166,7 @@ Keep only .image or .image.fits, not both.
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
 What do we do about bigger-than-memory?
 <ul class=smaller style='float:right;'>
-<li class=fragment> Tasks need to be broken up among different smaller-than-memory processes - even some that normally can only be done on a single process (e.g., sorting / median).
+<li class=fragment> Tasks need to be broken up among different smaller-than-memory processes
     <ul> <li class=fragment> <span class=code style='color:navy'>spectral-cube</span> and <span class=code style='color:navy'>dask</span> automate this </ul>
 <li class=fragment> Use lazy operations and not-in-memory (“memory mapped”) operations: with <span class=code style='color:navy'>spectral-cube</span>, you can operate on cubes of any size
     <ul> <li class=fragment> but be careful: there are <span style='color:red'>bad operations</span> that load all data in memory
@@ -186,12 +216,12 @@ Line sensitivity either stays flat <span class=smaller>(for widely-separated lin
 
 <section>
 
-<div style='position: absolute; right:0%; top:0%; width:10%;' class=reveal-js-qrcode></div>
-    <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
-    <h3>Stacking <h5> [non-S/N optimally, but cheaply]</h5></h3>
+<img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
+<div style='position: absolute; right:0%; top:0%; width:8%;' class=reveal-js-qrcode></div>
+    <h3>Stacking <h5 class=smaller> [non-S/N optimally <span class=smaller>{see <a href="https://ui.adsabs.harvard.edu/abs/2021NatAs...5..188L/abstract">Loomis+ 2021</a>}</span>, but cheaply]</h5></h3>
 
     <pre>
-    <code class="smaller code language-python" style='text-align: left; font-family:monospace; display:inline-block; white-space:pre'>from spectral_cube.cube_utils import stack_spectra
+    <code class="smaller code language-python" style='text-align: left; font-family:monospace; display:inline-block; white-space:pre'>from spectral_cube.analysis_utilities import stack_spectra
 stack_spectra(cube, velocity_surface)</code></pre>
     <div class=fragment>
     <img style='float:left; width:65%' src="./assets/salts/G17_stacking_vs_not_example.png">
@@ -211,7 +241,8 @@ stack_spectra(cube, velocity_surface)</code></pre>
     <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
     <h3>Stacking cubes </h3>
 
-    <pre style='height:25px; margin-top:-10px;'><code class="smaller code language-python" style='text-align: left; font-family:monospace'>stack_cube(cube, linelist, vmin, vmax)</code> </pre>
+    <pre style='height:25px; margin-top:-10px;'><code class="smaller code language-python" style='text-align: left; font-family:monospace'>from spectral_cube.analysis_utilities import stack_cube
+stack_cube(cube, linelist, vmin, vmax)</code> </pre>
 
     <video data-autoplay loop preload="metadata" src="assets/salts/nostack_vs_stack.mov" style='margin-top:-35px;'></video>
 </section>
@@ -220,7 +251,9 @@ stack_spectra(cube, velocity_surface)</code></pre>
     <h5>cube-line-moment:
     Bright-line-based templating
     </h5>
-    <div class=smaller> Select/mask data in 3D using high S/N line as template</div>
+    <div class=smaller2> Select/mask data in 3D using high S/N line as template
+    <div class=smaller> analogous to <a href="https://github.com/richteague/bettermoments/">bettermoments</a> with <a href="https://github.com/richteague/keplerian_mask">keplerian_mask</a></div>
+    </div>
 
     <div style='display: flex; flex-direction: column; height:70%; margin:0 auto;     justify-content: space-between;'>
     <img style='flex:0.4; object-fit:contain; width:100%; max-height:27vh;' src="assets/ngc253_masking_hnc.png">
@@ -265,7 +298,7 @@ Huge bandwidth = many lines of many species.  Stacking cubes can open new discov
                 <li> Why isn't it ubiquitous? <span class=smaller>(it's not)</span></li>
                 <li> Where does the salt come from?  </li>
                 <li> What excites it?  </li>
-                <li> Where else do we (should we) see it? <span class=smaller2>Protoplanetary disks?  AGN?</span> </li>
+                <li> Where else do we (should we) see it? <span class=smaller2>Protoplanetary disks?  AGN? SNRs?</span> </li>
                 <li> What other species might coincide with brine? </li>
             </ul>
         </div>

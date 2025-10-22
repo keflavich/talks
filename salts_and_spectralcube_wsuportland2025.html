@@ -61,6 +61,11 @@ zero-age of high-mass stars.
 
 
 -->
+<section>
+Community tools
+<br>
+<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcREhwxNdEWKCCS5UkymcgNdMxfbVop9bNwSWxjc3LL1x-I7CYIwvlMgkZAcvJxZGiGbjXvOWDoOLCBR0dEAejYs4gFOU8mRe57QnEADXt1jyA">
+</section>
 
 <section >
         <h2 style="word-break: keep-all; hyphens: none;">
@@ -155,7 +160,7 @@ Don't duplicate data on disk
             </div>
             <div data-fragment-index=3 class=fragment>
             Cut them up or operate in chunks
-            <img style='width:75%;' src="./colloquium_assets/radioastrotools_logo.svg">
+            <img style='width:75%;' src="colloquium_assets/radioastrotools_logo.svg">
             </div>
         </div>
     </div>
@@ -163,7 +168,7 @@ Don't duplicate data on disk
 
 <section>
 <div style='position: absolute; left:0%; bottom:0%; width:10%;' class=reveal-js-qrcode></div>
-    <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
+    <img style='width:10%; float:left' src="colloquium_assets/radioastrotools_logo_notext.svg">
 What do we do about bigger-than-memory?
 <ul class=smaller style='float:right;'>
 <li class=fragment> Tasks need to be broken up among different smaller-than-memory processes
@@ -177,7 +182,7 @@ What do we do about bigger-than-memory?
 
 <section>
 <div style='position: absolute; right:0%; bottom:0%; width:9%;' class=reveal-js-qrcode></div>
-    <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
+    <img style='width:10%; float:left' src="colloquium_assets/radioastrotools_logo_notext.svg">
     Example:
     <br>
     <pre style=''><code class="smaller2 language-python" style='text-align:left;'># Load data & change units
@@ -218,7 +223,7 @@ Line sensitivity either stays flat <span class=smaller>(for widely-separated lin
 
 <img style='width:10%; float:left' src="./colloquium_assets/radioastrotools_logo_notext.svg">
 <div style='position: absolute; right:0%; top:0%; width:8%;' class=reveal-js-qrcode></div>
-    <h3>Stacking <h5 class=smaller> [non-S/N optimally <span class=smaller>{see <a href="https://ui.adsabs.harvard.edu/abs/2021NatAs...5..188L/abstract">Loomis+ 2021</a>}</span>, but cheaply]</h5></h3>
+    <h3>Stacking, like <a href="https://github.com/richteague/gofish">gofish</a> <h5 class=smaller> [non-S/N optimally <span class=smaller>{see <a href="https://ui.adsabs.harvard.edu/abs/2021NatAs...5..188L/abstract">Loomis+ 2021</a>}</span>, but cheaply]</h5></h3>
 
     <pre>
     <code class="smaller code language-python" style='text-align: left; font-family:monospace; display:inline-block; white-space:pre'>from spectral_cube.analysis_utilities import stack_spectra
@@ -264,6 +269,36 @@ stack_cube(cube, linelist, vmin, vmax)</code> </pre>
     is a powerful technique we should make more accessible (spectral-cube + cubelinemoments makes it more possible, but still not something a grad can do in a day)
 Huge bandwidth = many lines of many species.  Stacking cubes can open new discovery space, but will also inevitably introduce logical errors (“thinkos” not typos) by averaging regions with inhomogeneous physical conditions
     </aside>
+</section>
+
+
+<section>
+<h4> Getting your data </h4>
+
+<img src="colloquium_assets/astroquery_logo.svg" style='height:100px''>
+<ul>
+    <li> ALMA archive:
+https://astroquery.readthedocs.io/en/latest/alma/alma.html
+<ul> <li> not yet met need: partial cube download </ul>
+
+    <li> NRAO archive: Still a WIP!  Broken since the new archive came online
+
+    <li> Line databases: splatalogue, CDMS, JPLspec [broken], NIST
+    <li> Ice databases: almost lost to time, but <a href="https://github.com/keflavich/icemodels/">icemodels</a>
+</ul>
+
+
+</section>
+
+<section>
+<h4>Data reduction</h4>
+
+<ul>
+    <li> Not in this talk, but there is a lot of experience in and out of the room on constructing very large, very signal-rich cubes.
+    <li> Should we (we should) push for the observatory to produce cubes (i.e., advocate for observatory computing resources)
+    <li> ngVLA is probably going to be data access via 'data platforms' (e.g., as for Rubin, Roman, etc.)
+</ul>
+
 </section>
 
 

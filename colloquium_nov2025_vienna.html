@@ -82,7 +82,9 @@ What are the mass-determining rules in the Galaxy's richest environments?
 Determining stellar masses in the Galaxy's richest environments
 
 
-The most important factor deciding the fate of a star and its surroundings is its initial mass.  The relative number of high- and low-mass stars decides how much light and mass escape from a population of stars.  This distribution, the stellar initial mass function, is often assumed to be universally invariant, though we have plenty of reason to believe it varies with environment.  I will present results from ALMA observations, including large programs ALMA-IMF and ACES, that measure the mass distribution of pre- and proto-stellar objects at early phases.  Denser regions of our Galaxy, like its center, form more stars in clusters than do the outskirts where the Sun resides.  Core mass function measurements suggest that more intensely star-forming regions preferentially form high-mass stars.  However, the simplest models of core-to-star evolution fail, and I'll show how some have been ruled out using detailed observations of the massive cluster-forming regions W51 and Sgr B2.  I'll present a new theoretical framework based on linking radiative transfer models to protostellar accretion history models that we're using to interpret this transition.  Finally, I'll show how JWST is changing our view of young and forming massive clusters with a gallery of early results from several imaging programs.
+What sets stellar masses in the Galaxy's richest environments
+
+The most important factor deciding the fate of a star and its surroundings is its initial mass.  The relative number of high- and low-mass stars decides how much light and mass escape from a population of stars.  This distribution, the stellar initial mass function, is often assumed to be universally invariant, though we have plenty of reason to believe it varies with environment.  I will present results from ALMA observations, including large programs ALMA-IMF and ACES, that measure the mass distribution of pre- and proto-stellar objects at early phases.  Denser regions of our Galaxy, like its center, form more stars in clusters than do the outskirts where the Sun resides.  Core mass function measurements suggest that more intensely star-forming regions preferentially form high-mass stars.  However, the simplest models of core-to-star evolution fail, and I'll show how some have been ruled out using detailed observations of the massive cluster-forming regions W51 and Sgr B2.  I'll present a new theoretical framework based on linking radiative transfer models to protostellar accretion history models that we're using to interpret this transition.  Finally, I'll show how JWST is changing our view of young and forming massive clusters and their icy environments with a gallery of early results from several imaging programs.
 
 
 
@@ -145,8 +147,10 @@ surveys and N-body dynamical modeling, play a key role.
                           <span style='color:maroon'>Nazar Budaiev (2026)</span>,
                           <span style='color:darkblue'>Savannah Gramze (2027)</span>,
                             <span style='color:maroon'>Taehwa Yoo (2028)</span>
-                    <li> Undergrad: <span style='color:darkgreen'>Derod Deal</span>,
+                    <li> Postbac: <span style='color:darkgreen'>Derod Deal</span>,
                                     <span style='color:darkblue'>Aden Dawson</span>
+                    <li> Undergrad: <span style='color:darkgreen'>Antonio Daley</span>,
+                                    <span style='color:darkblue'>Ethan Bhula</span>
                     <li> Supported by NSF 2008101, 2206511, CAREER 2142300, STSCI 1905, 2221, 3523, 5365, 6151, Astropy
                 </ul>
                  <div class=smaller> Collaborators:
@@ -167,7 +171,7 @@ surveys and N-body dynamical modeling, play a key role.
 </div>
 
 <div style='font-size:50%'> Slides available at
-<a href="https://keflavich.github.io/talks/sciencetokyo_oct2025.html">https://keflavich.github.io/talks/sciencetokyo_oct2025.html</a> or from my webpage &rarr;talks
+<a href="https://keflavich.github.io/talks/colloquium_nov2025_vienna.html">https://keflavich.github.io/talks/colloquium_nov2025_vienna.html</a> or from my webpage &rarr;talks
 
 </div>
     </div>
@@ -201,264 +205,262 @@ surveys and N-body dynamical modeling, play a key role.
 
 
 <section>
+        <h4>Star formation drives the evolution of the universe</h4>
+    <span class=image style='height:99%; margin:-40px 0px; background-position: center center; background-image: url(colloquium_assets/history_of_universe.png);'>
+    </span>
+    <div style="position: absolute; bottom: 90px; left:50px" class="smaller3"><a href="https://map.gsfc.nasa.gov/media/060915/index.html">NASA/WMAP</a></div>
+    <aside class=notes>
+        <ul>
+            <li> After the big bang, there was a brief dark period.
+            <li> After the dark ages, almost all of the light we see comes from star formation in galaxies.
+            <li> Galaxies are made of stars, the observable universe is made of galaxies
+        </ul>
+    </aside>
+</section>
+
+
+
+<section>
+    <h2> Star Formation oversimplified </h2>
+    <div style='font-size: 120px'>M&#x307;</div>
+    <div class=fragment style='visibility: visible'> The star formation rate, i.e., how much gas turns to stars </div>
+    <div style='font-size: 120px'> L / M</div>
+    <div class=fragment style='visibility: visible'> The light per unit mass, i.e., how stars and stellar populations turn matter into light </div>
+
+    <aside class=notes>
+        Just what's on the slides
+    </aside>
+</section>
+
+
+<section>
+    <h4>High-mass stars produce photons &amp; heavy elements<br> low-mass stars live practically forever</h4>
+    <div style="float:left; width:50%;">
+        <img src="colloquium_assets/mass_lum_diagram.svg">
+    </div>
+    <div style="float:right; width:50%;">
+        <img src="colloquium_assets/HR_diagram.svg">
+    </div>
+    <div class=smaller> Point color shows effective temperature, point size shows luminosity (left) and mass (right) </div>
+    <!--<img src="colloquium_assets/Hertzsprung-Russel_StarData.png">
+    <div style="position: absolute; bottom: 50px; left:10px" class="smaller2"><a href="https://commons.wikimedia.org/wiki/File:Hertzsprung-Russel_StarData.png">ESO via Wikipedia</a></div>-->
+    <div style="position: absolute; bottom: 140px; right:10px" class="smaller3">
+        <a href="https://ui.adsabs.harvard.edu/?#abs/2012A%26A...537A.146E">Ekström+ 2012 models</a>,
+        <a href="http://www.vendian.org/mncharity/dir3/blackbody/parameters.html">vendian.org colors</a>,
+        <a href="https://www.tinyurl.com/HR-figure">www.tinyurl.com/HR-figure</a>
+    </div>
+    <aside class=notes>
+        <ul>
+            <li> describe the plots!
+            <li> Points are colored by an approximation of how they appear on the sky
+            <li> 100 msun stars produce about a million times the light of a 1 msun star
+            <li> 1 and lower Msun stars live as long as the universe
+            <li> URL links to script to make figures
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/imf_figure.png);'>
+        <h4 style="position: relative; top:5%; left: 12%;"> The stellar initial mass function (IMF) </h4>
+        <div class=smaller style="position: relative; top:10%; left: 61%; width:35%;"> Stars are sampled from this distribution
+            <div class=smaller>(but it's not universal)<div class=smaller2><a href="https://ui.adsabs.harvard.edu/abs/2018PASA...35...39H/abstract">Hopkins 2018</a></div></div></div>
+    </span>
+    <div style="position: relative; top: -11%; left:35%" class="smaller3"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+    <aside class=notes>
+        <ul>
+            <li> Log-differential probability vs log mass
+            <li> Sample cluster of 1000 Msun
+            <li> Points are a real sampling from the IMF, shows what the curve means in practice
+            <li> URL links to script to make figures
+            <li> The IMF is generally assumed to be universal in time and space
+            primarily because of the weakness of evidence of variation
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/Kroupa_imf_figure_log_labeledfractions.svg);'>
+        <div style="position: relative; top: 91%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+    </span>
+    <aside class=notes>
+        <ul>
+            <li> Sample cluster of 10000 Msun
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/Kroupa_imf_figure_log_labeledfractions.svg);'>
+        <div style="position: relative; top: 91%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
+    </span>
+    <div style="position: absolute; width: 160px; left: 44.5%; top: 8.9%; background-color: white; font-size: 23px;"> High-mass stars populate the stellar graveyard </div>
+    <img src="assets/GWTC-3_stellar-graveyard_diamond.jpg" style="max-width: 618px; rotate: 90deg; position: absolute; top: 144px; right: -103px; ">
+</section>
+
+
+<section>
+    <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Andromeda_galaxy_UV_crop.jpg);'>-->
+    <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_UV_matched_Herschel.jpg);'>
+        <h4> Almost all of the <span style='color:blue'>light</span> in star-forming galaxies is produced by high-mass stars</h4>
+        <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
+    </span>
+    <span class="image" style='position:absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_andromeda.png);'></span>
+    <aside class=notes>
+        <ul>
+            <li> UV image of M31, Andromeda, our closest massive neighbor
+            <li> Blue light is produced by high-mass stars
+            <li> (high-mass stars dominate anyway, but even more in UV)
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_XMM_HERSCHEL_display.jpg);'>
+        <h4> The stars form in and from <span style="color:maroon"> gas</span> <span class=smaller>(as traced by <span style="color:brown">dust</span>)</span> </h4>
+        <div style="position: relative; bottom: -67%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
+    </span>
+    <span class="image" style='position:absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_andromeda.png);'></span>
+    <aside class=notes>
+        <ul>
+            <li> Herschel FIR dust image of M31
+            <li> Dust is closely correlated with blue starlight = young stars
+            <li> Dust traces gas, stars form where there is gas
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <span class=image style='background-position: center center; background-image: url(colloquium_assets/ESA_Herschel_Taurus_1280w.jpg); max-width:125%'>
+    <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
+    <div style="position: relative; bottom: -59%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="http://sci.esa.int/herschel/55944-taurus-molecular-cloud/">Herschel/Palmeirim+ 2013</a></div>
+    </span>
+    <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
+    <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
+    <aside class=notes>
+        <ul>
+            <li> Herschel FIR dust image of Taurus mol cld
+            <li> distance ~140 pc, local neighborhood
+            <li> say in words: (and simulations)
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>
+    <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
+    <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2, De Martin</a></div>
+    </span>
+    <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
+    <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
+    <aside class=notes>
+        <ul>
+            <li> NIR extinction map
+            <li> distance ~140 pc, local neighborhood
+        </ul>
+    </aside>
+</section>
+
+
+<section>
+    <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>-->
+    <h4> Cartoon of isolated low-mass star formation </h4>
+
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
+    <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
+
+    </span>
+    <!--<div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2</a></div>-->
+    <aside class=notes>
+        <ul>
+            <li> The next several slides will walk through this
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <h4> A molecular cloud fragments  </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_CloudOnly_nofragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0%; margin-top:0%; width:100%'>
+    <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly_somefragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
+    <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
+    <aside class=notes>
+        <ul>
+            <li> We start with a relatively smooth molecular cloud
+            <li> Turbulence seeds overdensities
+            <li> Overdensities become gravitationally unstable and collapse: this is cloud fragmentation
+        </ul>
+    </aside>
+</section>
+
+<section>
+    <h4> The core forms a central protostar </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass_CollapsingCore.svg" style='background: white; position:absolute; top:10%; left:13%; bottom:0%; margin-top:0%; width:auto; height: 100%;'>
+</section>
+
+<section>
+    <h4> The protostar heats its parent core and forms a disk </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass_WarmCore.svg" style='background: white; position:absolute; top:10%; left:16%; bottom:0%; margin-top:0%; width:auto; height: 90%;'>
+</section>
+
+<section>
+    <h4> It drives an outflow and consumes <span class=smaller3> (or runs from or blows out)</span> its core </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass_OutflowCorino.svg" style='background: white; position:absolute; top:10.2%; left:18%; bottom:0%; margin-top:0%; width:auto; height: 90%;'>
+</section>
+
+<section>
+    <h4> Eventually, there is just a star-disk system </h4>
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass_StarDisk.svg" style='background: white; position:absolute; top:10%; left:11%; bottom:0%; margin-top:0%; width:auto; height: 85%;'>
+</section>
+
+<section>
+    <h4> Cartoon of isolated low-mass star formation </h4>
+
+    <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
+    <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
+
+    </span>
+</section>
+
+<section>
+    <h4>The isolated cartoon is wrong in several ways</h4>
+    <div class=smaller>Cores fragment.
+        Massive stars cook their neighbors in <a href="#desmond_overview" style='color:red'>hot cores</a>.
+        <br>
+        Cores continue to grow.
+        Protostars are flung out.
+    </div>
+    <img src="colloquium_assets/Purcell_Cartoon_FragmentedCloudWithHotCore_AndFrag.svg">
+</section>
+
+
+<section>
     <section>
-            <h4>Star formation drives the evolution of the universe</h4>
-        <span class=image style='height:99%; margin:-40px 0px; background-position: center center; background-image: url(colloquium_assets/history_of_universe.png);'>
-        </span>
-        <div style="position: absolute; bottom: 90px; left:50px" class="smaller3"><a href="https://map.gsfc.nasa.gov/media/060915/index.html">NASA/WMAP</a></div>
-        <aside class=notes>
-            <ul>
-                <li> After the big bang, there was a brief dark period.
-                <li> After the dark ages, almost all of the light we see comes from star formation in galaxies.
-                <li> Galaxies are made of stars, the observable universe is made of galaxies
-            </ul>
-        </aside>
-    </section>
-
-
-
-    <section>
-        <h2> Star Formation oversimplified </h2>
-        <div style='font-size: 120px'>M&#x307;</div>
-        <div class=fragment style='visibility: visible'> The star formation rate, i.e., how much gas turns to stars </div>
-        <div style='font-size: 120px'> L / M</div>
-        <div class=fragment style='visibility: visible'> The light per unit mass, i.e., how stars and stellar populations turn matter into light </div>
-
-        <aside class=notes>
-            Just what's on the slides
-        </aside>
-    </section>
-
-
-    <section>
-        <h4>High-mass stars produce photons &amp; heavy elements<br> low-mass stars live practically forever</h4>
-        <div style="float:left; width:50%;">
-            <img src="colloquium_assets/mass_lum_diagram.svg">
+        <h4>Cartoon &rightarrow; theory <br>
+            What do we want from a star formation theory? </h4>
+        <div class="fragment smaller" style="text-align:left;">As observers, we want it to</div>
+        <ul>
+            <li class=fragment> Predict the appearance of young stellar objects (YSOs)
+                <ul> <li> SED &amp; morphological models </ul>
+            <li class=fragment> Predict how common each type (or phase) of YSO is
+                <ul> <li>Accretion history, lifetime </ul>
+            <li class=fragment> ... and thereby let us infer the mass distribution and history of star formation from an observed sample
+                <ul> <li>IMF, SFH </ul>
+        </ul>
+        <div class=fragment>
+            It's not there yet.
         </div>
-        <div style="float:right; width:50%;">
-            <img src="colloquium_assets/HR_diagram.svg">
-        </div>
-        <div class=smaller> Point color shows effective temperature, point size shows luminosity (left) and mass (right) </div>
-        <!--<img src="colloquium_assets/Hertzsprung-Russel_StarData.png">
-        <div style="position: absolute; bottom: 50px; left:10px" class="smaller2"><a href="https://commons.wikimedia.org/wiki/File:Hertzsprung-Russel_StarData.png">ESO via Wikipedia</a></div>-->
-        <div style="position: absolute; bottom: 140px; right:10px" class="smaller3">
-            <a href="https://ui.adsabs.harvard.edu/?#abs/2012A%26A...537A.146E">Ekström+ 2012 models</a>,
-            <a href="http://www.vendian.org/mncharity/dir3/blackbody/parameters.html">vendian.org colors</a>,
-            <a href="https://www.tinyurl.com/HR-figure">www.tinyurl.com/HR-figure</a>
-        </div>
-        <aside class=notes>
-            <ul>
-                <li> describe the plots!
-                <li> Points are colored by an approximation of how they appear on the sky
-                <li> 100 msun stars produce about a million times the light of a 1 msun star
-                <li> 1 and lower Msun stars live as long as the universe
-                <li> URL links to script to make figures
-            </ul>
-        </aside>
     </section>
-
-
     <section>
-        <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/imf_figure.png);'>
-            <h4 style="position: relative; top:5%; left: 12%;"> The stellar initial mass function (IMF) </h4>
-            <div class=smaller style="position: relative; top:10%; left: 61%; width:35%;"> Stars are sampled from this distribution
-                <div class=smaller>(but it's not universal)<div class=smaller2><a href="https://ui.adsabs.harvard.edu/abs/2018PASA...35...39H/abstract">Hopkins 2018</a></div></div></div>
-        </span>
-        <div style="position: relative; top: -11%; left:35%" class="smaller3"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
-        <aside class=notes>
-            <ul>
-                <li> Log-differential probability vs log mass
-                <li> Sample cluster of 1000 Msun
-                <li> Points are a real sampling from the IMF, shows what the curve means in practice
-                <li> URL links to script to make figures
-                <li> The IMF is generally assumed to be universal in time and space
-                primarily because of the weakness of evidence of variation
-            </ul>
-        </aside>
-    </section>
-
-    <section>
-        <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/Kroupa_imf_figure_log_labeledfractions.svg);'>
-            <div style="position: relative; top: 91%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
-        </span>
-        <aside class=notes>
-            <ul>
-                <li> Sample cluster of 10000 Msun
-            </ul>
-        </aside>
-    </section>
-
-    <section>
-        <span class=image style='height:100%; background-position: center center; background-image: url(colloquium_assets/Kroupa_imf_figure_log_labeledfractions.svg);'>
-            <div style="position: relative; top: 91%; left:-31%" class="smaller2"><a href="https://tinyurl.com/IMF-figure">https://tinyurl.com/IMF-figure</a></div>
-        </span>
-        <div style="position: absolute; width: 160px; left: 44.5%; top: 8.9%; background-color: white; font-size: 23px;"> High-mass stars populate the stellar graveyard </div>
-        <img src="assets/GWTC-3_stellar-graveyard_diamond.jpg" style="max-width: 618px; rotate: 90deg; position: absolute; top: 144px; right: -103px; ">
-    </section>
-
-
-    <section>
-        <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Andromeda_galaxy_UV_crop.jpg);'>-->
-        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_UV_matched_Herschel.jpg);'>
-            <h4> Almost all of the <span style='color:blue'>light</span> in star-forming galaxies is produced by high-mass stars</h4>
-            <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
-        </span>
-        <span class="image" style='position:absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_andromeda.png);'></span>
-        <aside class=notes>
-            <ul>
-                <li> UV image of M31, Andromeda, our closest massive neighbor
-                <li> Blue light is produced by high-mass stars
-                <li> (high-mass stars dominate anyway, but even more in UV)
-            </ul>
-        </aside>
-    </section>
-
-    <section>
-        <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_XMM_HERSCHEL_display.jpg);'>
-            <h4> The stars form in and from <span style="color:maroon"> gas</span> <span class=smaller>(as traced by <span style="color:brown">dust</span>)</span> </h4>
-            <div style="position: relative; bottom: -67%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
-        </span>
-        <span class="image" style='position:absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_andromeda.png);'></span>
-        <aside class=notes>
-            <ul>
-                <li> Herschel FIR dust image of M31
-                <li> Dust is closely correlated with blue starlight = young stars
-                <li> Dust traces gas, stars form where there is gas
-            </ul>
-        </aside>
-    </section>
-
-
-    <section>
-        <span class=image style='background-position: center center; background-image: url(colloquium_assets/ESA_Herschel_Taurus_1280w.jpg); max-width:125%'>
-        <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
-        <div style="position: relative; bottom: -59%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="http://sci.esa.int/herschel/55944-taurus-molecular-cloud/">Herschel/Palmeirim+ 2013</a></div>
-        </span>
-        <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
-        <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
-        <aside class=notes>
-            <ul>
-                <li> Herschel FIR dust image of Taurus mol cld
-                <li> distance ~140 pc, local neighborhood
-                <li> say in words: (and simulations)
-            </ul>
-        </aside>
-    </section>
-
-
-    <section>
-        <span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>
-        <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
-        <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2, De Martin</a></div>
-        </span>
-        <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
-        <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
-        <aside class=notes>
-            <ul>
-                <li> NIR extinction map
-                <li> distance ~140 pc, local neighborhood
-            </ul>
-        </aside>
-    </section>
-
-
-    <section>
-        <!--<span class=image style='background-position: center center; background-image: url(colloquium_assets/Taurus_NIR_crop.png);'>-->
-        <h4> Cartoon of isolated low-mass star formation </h4>
-
-        <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
-        <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
-
-        </span>
-        <!--<div style="position: absolute; bottom: 200px; left:25px" class="smaller3"><a class=darkbg href="https://www.eso.org/public/images/eso1423c/">ESO/DSS2</a></div>-->
-        <aside class=notes>
-            <ul>
-                <li> The next several slides will walk through this
-            </ul>
-        </aside>
-    </section>
-
-    <section>
-        <h4> A molecular cloud fragments  </h4>
-        <img src="colloquium_assets/Purcell_Cartoon_CloudOnly_nofragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0%; margin-top:0%; width:100%'>
-        <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly_somefragments.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
-        <img class="fragment" src="colloquium_assets/Purcell_Cartoon_CloudOnly.svg" style='background: white; position:absolute; top:10%; left:0%; bottom:0; margin-top:0%; width:100%'>
-        <aside class=notes>
-            <ul>
-                <li> We start with a relatively smooth molecular cloud
-                <li> Turbulence seeds overdensities
-                <li> Overdensities become gravitationally unstable and collapse: this is cloud fragmentation
-            </ul>
-        </aside>
-    </section>
-
-    <section>
-        <h4> The core forms a central protostar </h4>
-        <img src="colloquium_assets/Purcell_Cartoon_LowMass_CollapsingCore.svg" style='background: white; position:absolute; top:10%; left:13%; bottom:0%; margin-top:0%; width:auto; height: 100%;'>
-    </section>
-
-    <section>
-        <h4> The protostar heats its parent core and forms a disk </h4>
-        <img src="colloquium_assets/Purcell_Cartoon_LowMass_WarmCore.svg" style='background: white; position:absolute; top:10%; left:16%; bottom:0%; margin-top:0%; width:auto; height: 90%;'>
-    </section>
-
-    <section>
-        <h4> It drives an outflow and consumes <span class=smaller3> (or runs from or blows out)</span> its core </h4>
-        <img src="colloquium_assets/Purcell_Cartoon_LowMass_OutflowCorino.svg" style='background: white; position:absolute; top:10.2%; left:18%; bottom:0%; margin-top:0%; width:auto; height: 90%;'>
-    </section>
-
-    <section>
-        <h4> Eventually, there is just a star-disk system </h4>
-        <img src="colloquium_assets/Purcell_Cartoon_LowMass_StarDisk.svg" style='background: white; position:absolute; top:10%; left:11%; bottom:0%; margin-top:0%; width:auto; height: 85%;'>
-    </section>
-
-    <section>
-        <h4> Cartoon of isolated low-mass star formation </h4>
-
-        <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
-        <div class="smaller3" style="text-align:right; margin-right:5%;"><a class=darkbg href="http://web.science.mq.edu.au/~cpurcell/public/index.php">original cartoon by Cormac Purcell, modified by AG</a></div>
-
-        </span>
-    </section>
-
-    <section>
-        <h4>The isolated cartoon is wrong in several ways</h4>
-        <div class=smaller>Cores fragment.
-            Massive stars cook their neighbors in <a href="#desmond_overview" style='color:red'>hot cores</a>.
-            <br>
-            Cores continue to grow.
-            Protostars are flung out.
-        </div>
-        <img src="colloquium_assets/Purcell_Cartoon_FragmentedCloudWithHotCore_AndFrag.svg">
-    </section>
-
-
-    <section>
-        <section>
-            <h4>Cartoon &rightarrow; theory <br>
-                What do we want from a star formation theory? </h4>
-            <div class="fragment smaller" style="text-align:left;">As observers, we want it to</div>
-            <ul>
-                <li class=fragment> Predict the appearance of young stellar objects (YSOs)
-                    <ul> <li> SED &amp; morphological models </ul>
-                <li class=fragment> Predict how common each type (or phase) of YSO is
-                    <ul> <li>Accretion history, lifetime </ul>
-                <li class=fragment> ... and thereby let us infer the mass distribution and history of star formation from an observed sample
-                    <ul> <li>IMF, SFH </ul>
-            </ul>
-            <div class=fragment>
-                It's not there yet.
-            </div>
-        </section>
-        <section>
-            <h4> What do we want from a star formation theory? </h4>
-            <div class=smaller style="text-align:center;">More broadly, we want it to predict</div>
-            <ul>
-                <li> $L_*(t, \vec{x})$
-                <li> $M_*(t, \vec{x})$
-                <li> $\dot{M}_*(t, \vec{x})$
-            </ul>
-        </section>
+        <h4> What do we want from a star formation theory? </h4>
+        <div class=smaller style="text-align:center;">More broadly, we want it to predict</div>
+        <ul>
+            <li> $L_*(t, \vec{x})$
+            <li> $M_*(t, \vec{x})$
+            <li> $\dot{M}_*(t, \vec{x})$
+        </ul>
     </section>
 </section>
 
@@ -1114,7 +1116,7 @@ surveys and N-body dynamical modeling, play a key role.
                 </li>
                 <li> <a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.194C/abstract">Line Data paper  (Cunningham+ 2023)</a></li>
                 <li> <a href="https://ui.adsabs.harvard.edu/abs/2023ApJS..269...55D/abstract">Single-dish combination (Díaz-González+ 2023)</a></li>
-                <li> <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...960...48T/abstract">SiO Outflow catalog  (Towner+ 2023)</a>
+                <li> <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...960...48T/abstract">SiO Outflow catalog  (Towner+ 2024)</a>
                     <ul class=smaller> <li> 320 SiO outflows cataloged </li></ul>
                 </li>
                 <li> <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240718719L/abstract">Catalog paper (Louvet+ 2024)</a>
@@ -1141,9 +1143,10 @@ surveys and N-body dynamical modeling, play a key role.
     <section>
         <div style="margin:auto; margin-top:10%">
             <h4>ALMA-IMF gas flows &rightarrow; Panta-Rei </h4>
-            <div class="smaller nowrap"> Gas flows in N<sub>2</sub>H+ filaments (<a href="https://ui.adsabs.harvard.edu/abs/2024A%26A...689A..74A/abstract">Álvarez-Gutiérrez+ 2024</a>,
-                <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...696A.202S/abstract">Sandoval-Garrido+ 2025</a>
-                )</div>
+            <div class="smaller nowrap"> Gas flows in N<sub>2</sub>H+ filaments <span class=smaller>(<a href="https://ui.adsabs.harvard.edu/abs/2024A%26A...689A..74A/abstract">Álvarez-Gutiérrez+ 2024</a>,
+                <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...696A.202S/abstract">Sandoval-Garrido+ 2025</a>,
+                <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv251003447S/abstract">Salinas+ 2025</a>
+            )</span></div>
             <div>
                 <div style="float:left; width:33%">
                     <img src="colloquium_assets/G010.62_B3_spw0_12M_n2hp.image.rgb.png">
@@ -1541,8 +1544,8 @@ surveys and N-body dynamical modeling, play a key role.
     <img style="max-height:650px; max-width:800px; " src="assets/Taehwa/frag_flux_20250808.png">
     <div style="position: absolute; top:55%; right:8%;"> <img width=200px src="colloquium_assets/massivecoresfragmentmore.svg"> </div>
     <div class=smaller2 style="float:left">
-        <br><br>Yoo+ acc.:
-        W51<br>
+        <br><br><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250906749Y/abstract">Yoo+ 2025:
+        W51</a><br>
         <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>:
          Sgr B2
     </div>
@@ -1564,8 +1567,8 @@ surveys and N-body dynamical modeling, play a key role.
         <img style="max-height:650px; max-width:700px; width:70%; float:left;" src="assets/Taehwa/NfragVsMaxFlux_temperature3.png">
         <div style="position: absolute; top:55%; right:8%; "> <img width=200px src="colloquium_assets/massivecoreshavemassivefragments.svg"> </div>
         <div class=smaller2 style="float:right; width:30%;">
-            <br><br>Yoo+ acc.:
-            W51<br>
+            <br><br><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250906749Y/abstract">Yoo+ 2025:
+            W51</a><br>
             <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>:
             Sgr B2
             <br><br>
@@ -1759,7 +1762,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section>
-<div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
+<div class=smaller>JWST found new HII regions: <br>the SFR is higher than estimated from radio
 <div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
 </div>
     <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
@@ -1853,7 +1856,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     </div>
     <img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="width:100%; max-width:100%; max-height:100%; position: absolute; left:0%; top:20%;" class="fragment fade-out" data-fragment-index="1">
     </span>
-    <div style='position:absolute; bottom:10%; left:10%; z-index: 30; background-color:rgba(255,255,255,0.5)' class=smaller2> First five data papers submitted July 2025.
+    <div style='position:absolute; bottom:10%; left:10%; z-index: 30; background-color:rgba(255,255,255,0.5)' class=smaller2> First five data papers submitted July 2025, refereed, resub in Nov 2025.
         <br> Six early result papers out: <a href="https://sites.google.com/view/aces-cmz/publications">https://sites.google.com/view/aces-cmz/publications</a>
     <div >Ask if you want to know more about the <span style='font-family:creepster'><a href="#MUBLO">MUBLO</a></span></div>
     </div>
@@ -1861,28 +1864,6 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 
-<section>
-    <section>
-    <img src="assets/sgrb2/MIRI_tricolor_labels.png" style="height:102%; max-width:none; max-height:none; left:-20%; top:-2%; position:absolute; background-color:black; scale:1.2; translate:-130px -20px;">
-    <div class="smaller darkbg" style='position:absolute; bottom:5%; right:5%; z-index: 30;'>MIRI image taken 2025-09-02</div>
-    </section>
-    <section id=sgrb2_rgbs>
-        <div style='z-index:0'> <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg);"                   src="assets/sgrb2/SgrB2_RGB_187-182-150.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F187N </span><span style="color:green;">F182M </span><span style="color:blue;">F150W </span></div> </div>
-        <div style='z-index:1' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-187-182.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F187N </span><span style="color:blue;">F182M </span></div> </div>
-        <!--<div style='z-index:2' class="fragment" > <img style="position: absolute; top:-120%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-300-360.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F300M </span><span style="color:blue;">F360M </span></div> </div>-->
-        <!--<div style='z-index:3' class="fragment" > <img style="position: absolute; top:-120%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-300-480.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F300M </span><span style="color:blue;">F480M </span></div> </div>-->
-        <div style='z-index:4' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_212-210-187.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F212N </span><span style="color:green;">F210M </span><span style="color:blue;">F187W </span></div> </div>
-        <div style='z-index:5' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_300-212-210.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F300M </span><span style="color:green;">F212N </span><span style="color:blue;">F210M </span></div> </div>
-        <div style='z-index:6' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_360-300-212.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F360M </span><span style="color:green;">F300M </span><span style="color:blue;">F212N </span></div> </div>
-        <!-- BROKEN: does not match others <div style='z-index:7' class="fragment" > <img style="position: absolute; top:0%; left:0%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_405-360-300.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F405N </span><span style="color:green;">F360M </span><span style="color:blue;">F300M </span></div> </div> -->
-        <div style='z-index:8' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_410-405-360.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F410M </span><span style="color:green;">F405N </span><span style="color:blue;">F360M </span></div> </div>
-        <div style='z-index:9' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_466-410-300.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F466N </span><span style="color:green;">F410M </span><span style="color:blue;">F300M </span></div> </div>
-        <div style='z-index:10' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_466-410-405.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F466N </span><span style="color:green;">F410M </span><span style="color:blue;">F405N </span></div> </div>
-        <!--<div style='z-index:11' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-300-210.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F300M </span><span style="color:blue;">F210M </span></div> </div>-->
-        <div style='z-index:12' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-410-360.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F410M </span><span style="color:blue;">F360M </span></div> </div>
-        <div style='z-index:13' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-466-410.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F466N </span><span style="color:blue;">F410M </span></div> </div>
-    </section>
-</section>
 
 
 
@@ -1961,17 +1942,32 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         <br>
         <img style='float:center; width:150px; right:0px; margin-top:0%; margin:auto; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Taehwa/taehwa_yoo_f2022_uf_astro.jpeg">
     </div>
+    <div style='position: absolute; bottom:5%; right:0%; text-align: right; float:right;' class=smaller3>
+        <img src="assets/w51_tour_qr.png" style='width:25%; float:right;'>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style='float:right; width:25%'>
+            <a href="https://starformation.astro.ufl.edu/Aladin_tours/w51_tour.html">
+                starformation.astro.ufl.edu/Aladin_tours/w51_tour.html
+            </a>
+        </div>
+    </div>
 
-    <div class="fragment fade-in-then-out smaller right20" data-step=1>Sharp dust filaments</div>
-    <div class="fragment fade-in-then-out smaller right20" data-step=2>The most extreme massive stars still forming (IRS2E saturates at all long wavelengths - it's a massive star with a hot disk)</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=1>Sharp dust filaments <span class=smaller> (low column density)</span></div>
+    <div class="fragment fade-in-then-out smaller2 right20" data-step=2 style='text-align:left;'>The most extreme massive stars still forming. 
+        <br>IRS2E saturates at long wavelengths - it's a massive star with a hot disk</div>
     <div class="fragment fade-in-then-out smaller right20" data-step=3>Giant proplyds?  EGGs?</div>
     <div class="fragment fade-in-then-out smaller right20" data-step=4> The HII region is criss-crossed by overdensities and dust lanes </div>
     <div class="fragment fade-in-then-out smaller right20" data-step=5> A sharp bar analogous to the Orion Bar</div>
-    <div class="fragment fade-in-then-out smaller right20" data-step=6>The extinction-producing layers seen at short wavelengths are not the ALMA star-forming gas: <span class=smaller>this hints at edge-on filamentary (or planar) structures</span></div>
+    <div class="fragment fade-in-then-out smaller2 right20" data-step=6 style='text-align: left'>The extinction-producing layers seen at short wavelengths are not the ALMA star-forming gas: <span class=smaller>this hints at edge-on filamentary (or planar) structures</span></div>
     <div class="fragment fade-in-then-out smaller right20" data-step=7> A gigantic bow-shock-like bubble, far from the cluster</div>
-    <div class="fragment fade-in-then-out smaller right20" data-step=8> Objects classified as YSOs - they are massive stars lighting up leftover dust</div>
+    <div class="fragment fade-in-then-out smaller2 right20" data-step=8 style='text-align: left'> Objects classified as YSOs w/Spitzer - they are massive stars lighting up leftover dust</div>
     <div class="fragment fade-in-then-out smaller right20" data-step=9> Symmetric HII region</div>
-    <div class="fragment fade-in-then-out smaller right20" data-step=10> Symmetric HII region - but more embedded</div>
+    <div class="fragment fade-in-then-out smaller right20" data-step=10 style='text-align: left'> Symmetric HII region - but more embedded</div>
     <div class="fragment fade-in-then-out smaller right20" data-step=11> Paintbrush-stroke filaments</div>
     <div class="fragment fade-in-then-out smaller right20" data-step=12> HII regions with PAHs</div>
     <div class="w51-parent-div">
@@ -2111,9 +2107,6 @@ This is different from local clouds: the more massive cloud is responsible.
 </section>
 
 
-<section>
-<img src="assets/Taehwa/W51_CMD_space.png">
-</section>
 
 
 
@@ -5267,7 +5260,32 @@ Class 0 is a poor proxy for Stage 0.
 <img src="assets/Theo/is_classcomp_lowlum.png" style="width:43%; margin-top:-22px; position: relative; z-index:-1;">
 </section>
 
+<section>
+    <section>
+    <img src="assets/sgrb2/MIRI_tricolor_labels.png" style="height:102%; max-width:none; max-height:none; left:-20%; top:-2%; position:absolute; background-color:black; scale:1.2; translate:-130px -20px;">
+    <div class="smaller darkbg" style='position:absolute; bottom:5%; right:5%; z-index: 30;'>MIRI image taken 2025-09-02</div>
+    </section>
+    <section id=sgrb2_rgbs>
+        <div style='z-index:0'> <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg);"                   src="assets/sgrb2/SgrB2_RGB_187-182-150.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F187N </span><span style="color:green;">F182M </span><span style="color:blue;">F150W </span></div> </div>
+        <div style='z-index:1' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-187-182.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F187N </span><span style="color:blue;">F182M </span></div> </div>
+        <!--<div style='z-index:2' class="fragment" > <img style="position: absolute; top:-120%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-300-360.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F300M </span><span style="color:blue;">F360M </span></div> </div>-->
+        <!--<div style='z-index:3' class="fragment" > <img style="position: absolute; top:-120%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_210-300-480.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F210M </span><span style="color:green;">F300M </span><span style="color:blue;">F480M </span></div> </div>-->
+        <div style='z-index:4' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_212-210-187.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F212N </span><span style="color:green;">F210M </span><span style="color:blue;">F187W </span></div> </div>
+        <div style='z-index:5' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_300-212-210.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F300M </span><span style="color:green;">F212N </span><span style="color:blue;">F210M </span></div> </div>
+        <div style='z-index:6' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_360-300-212.png"><div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);">  <span style="color:red;">F360M </span><span style="color:green;">F300M </span><span style="color:blue;">F212N </span></div> </div>
+        <!-- BROKEN: does not match others <div style='z-index:7' class="fragment" > <img style="position: absolute; top:0%; left:0%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_405-360-300.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F405N </span><span style="color:green;">F360M </span><span style="color:blue;">F300M </span></div> </div> -->
+        <div style='z-index:8' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_410-405-360.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F410M </span><span style="color:green;">F405N </span><span style="color:blue;">F360M </span></div> </div>
+        <div style='z-index:9' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)"  src="assets/sgrb2/SgrB2_RGB_466-410-300.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F466N </span><span style="color:green;">F410M </span><span style="color:blue;">F300M </span></div> </div>
+        <div style='z-index:10' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_466-410-405.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F466N </span><span style="color:green;">F410M </span><span style="color:blue;">F405N </span></div> </div>
+        <!--<div style='z-index:11' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-300-210.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F300M </span><span style="color:blue;">F210M </span></div> </div>-->
+        <div style='z-index:12' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-410-360.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F410M </span><span style="color:blue;">F360M </span></div> </div>
+        <div style='z-index:13' class="fragment" > <img style="position: absolute; top:0%; left:-20%; max-height:350%; max-width:350%; transform:rotate(0deg)" src="assets/sgrb2/SgrB2_RGB_480-466-410.png"> <div style="position: absolute; top:0%; left:0%; background-color:rgba(255,255,255,0.5);"> <span style="color:red;">F480M </span><span style="color:green;">F466N </span><span style="color:blue;">F410M </span></div> </div>
+    </section>
+</section>
 
+<section>
+<img src="assets/Taehwa/W51_CMD_space.png">
+</section>
 
 </div>
 </div>

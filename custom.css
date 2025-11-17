@@ -85,6 +85,26 @@ body.orion .slide-background {
     }
 }
 
+.fragment.scale-to {
+    rotate:var(--from-scale);
+    visibility: hidden;
+    opacity: 0;
+    /* 'important' overrides data-auto-animate */
+    transition: scale var(--transition-duration, 1s) ease-in-out !important;
+
+    &.visible.current-fragment {
+        visibility: visible;
+        opacity: 1;
+        rotate:var(--to-scale);
+        transition: scale var(--transition-duration, 1s) ease-in-out !important;
+    }
+
+    &.visible {
+        rotate:var(--to-scale);
+        transition: scale var(--transition-duration, 1s) ease-in-out !important;
+    }
+}
+
 .fragment.rotate-to {
     rotate:var(--from-rotation);
     visibility: hidden;

@@ -327,6 +327,8 @@ If $Z_{GC} = 2.5 Z_\odot$, the CO ice fraction goes back to normal ($\sim10-20$%
 
 <section data-auto-animate data-background-color="#000000">
     <img src="assets/cmz/meerkat_spitzer_ash.png" data-id=cmzmap data-auto-animate-target="cmz-map" class="cmz-map">
+    <div style='position: absolute'>
+    </div>
 </section>
 
 <section data-auto-animate data-background-color="#000000">
@@ -1185,17 +1187,33 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
         ],
       });
 
-      // Forward-only data-autoslide. We detect direction by comparing
-      // slide indices in slidechanged — works for ANY trigger (key, click,
-      // autoslide itself, programmatic jump). Use the explicit-override
-      // form Reveal.toggleAutoSlide(true|false): the no-arg form just
-      // flips, which silently inverts state on the first slidechange.
+      // Forward-only data-autoslide. Detect direction via index comparison
+      // in slidechanged; on backward arrival, *strip* the data-autoslide
+      // attribute from the new current slide (stashing its value) so
+      // reveal's cueAutoSlide has nothing to schedule. On forward arrival,
+      // restore the stashed value. We have to strip rather than just call
+      // toggleAutoSlide(false) because slides like the data-autoslide=1
+      // transition stage are too short for the pause to win the race.
       let lastIdx = null;
       Reveal.on('slidechanged', function () {
         const idx = Reveal.getIndices().h;
         const goingBackward = lastIdx !== null && idx < lastIdx;
         lastIdx = idx;
-        Reveal.toggleAutoSlide(!goingBackward);
+        const slide = Reveal.getCurrentSlide();
+        if (!slide) return;
+        if (goingBackward) {
+          if (slide.hasAttribute('data-autoslide')) {
+            slide.dataset.autoslideStashed = slide.getAttribute('data-autoslide');
+            slide.removeAttribute('data-autoslide');
+          }
+          Reveal.toggleAutoSlide(false);
+        } else {
+          if (slide.dataset.autoslideStashed) {
+            slide.setAttribute('data-autoslide', slide.dataset.autoslideStashed);
+            delete slide.dataset.autoslideStashed;
+          }
+          Reveal.toggleAutoSlide(true);
+        }
       });
     </script>
   </body>

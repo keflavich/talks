@@ -311,8 +311,69 @@ If $Z_{GC} = 2.5 Z_\odot$, the CO ice fraction goes back to normal ($\sim10-20$%
 
 
 
-<section>
+
+<style>
+.reveal section img.cmz-map {
+    position: absolute;
+    width: 159%;
+    max-width: 500%;
+    max-height: 500%;
+    margin-left: -68%;
+    margin-top:-10%;
+}
+.reveal section img.cmz-map.cmz-map-zoom { width: 335%; margin-left: -166%; }
+.reveal section img.cmz-map.cmz-map-reset { width: 135%; margin-left: -66%; margin-top: 0%; }
+</style>
+
+<section data-auto-animate data-background-color="#000000">
+    <img src="assets/cmz/meerkat_spitzer_ash.png" data-id=cmzmap data-auto-animate-target="cmz-map" class="cmz-map">
 </section>
+
+<section data-auto-animate data-background-color="#000000">
+    <img src="assets/cmz/aces_on_meerkat_spitzer_ash.png" data-id=cmzmap data-auto-animate-target="cmz-map" class="cmz-map">
+</section>
+
+<section data-auto-animate data-background-color="#000000">
+    <img src="assets/cmz/jwst_on_aces-on_meerkat_spitzer_ash.png" data-id=cmzmap data-auto-animate-target="cmz-map" class="cmz-map" >
+</section>
+
+<section data-auto-animate data-background-color="#000000">
+    <img src="assets/cmz/jwstgcs_on_aces-on_meerkat_spitzer_ash.png" data-id=cmzmap data-auto-animate-target="cmz-map" class="cmz-map">
+</section>
+
+<section data-auto-animate data-background-color="#000000">
+    <img src="assets/cmz/roman_jwstgcs_on_aces-on_meerkat_spitzer_ash.png" data-id=cmzmap data-auto-animate-target="cmz-map" class="cmz-map" >
+</section>
+
+<style>
+.reveal section img.cmz-map-zoom { 
+  width: 612.5%;
+  margin-left: -259.5%;
+  max-width: 5000%;
+  max-height: 5000%;
+  margin-top: -139.5%;
+  position: absolute;
+}
+.reveal section img.cmz-map-zoom-out { 
+  width: 163.5%;
+  margin-left: -73.5%;
+  max-width: 5000%;
+  max-height: 5000%;
+  margin-top: -11.5%;
+  position: absolute;
+}
+</style>
+
+<section data-auto-animate data-autoslide="1" data-background-color="#000000">
+    <img src="assets/cmz/roman_jwstgcs_on_aces-on_meerkat_spitzer_ash.png" data-id=cmzmap data-auto-animate-target="cmz-map" class="cmz-map" >
+    <img src="assets/cmz/romanzoomout_jwstgcs_on_aces-on_meerkat_spitzer_ash.png" data-id=cmzmap-two data-auto-animate-target="cmz-map" class="cmz-map-zoom" >
+</section>
+
+<section data-auto-animate data-background-color="#000000">
+    <img src="assets/cmz/romanzoomout_jwstgcs_on_aces-on_meerkat_spitzer_ash.png" data-id=cmzmap-two data-auto-animate-target="cmz-map" class="cmz-map-zoom-out" >
+</section>
+
+
 
 
 <section>
@@ -1119,9 +1180,22 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
 
         dependencies: [
           { src: 'mymath.js', async: true },
-      { src: 'pdfimgs.js', async: true },
-      { src: 'slideautostart.js', async: true },
+          { src: 'pdfimgs.js', async: true },
+          { src: 'slideautostart.js', async: true },
         ],
+      });
+
+      // Forward-only data-autoslide. We detect direction by comparing
+      // slide indices in slidechanged — works for ANY trigger (key, click,
+      // autoslide itself, programmatic jump). Use the explicit-override
+      // form Reveal.toggleAutoSlide(true|false): the no-arg form just
+      // flips, which silently inverts state on the first slidechange.
+      let lastIdx = null;
+      Reveal.on('slidechanged', function () {
+        const idx = Reveal.getIndices().h;
+        const goingBackward = lastIdx !== null && idx < lastIdx;
+        lastIdx = idx;
+        Reveal.toggleAutoSlide(!goingBackward);
       });
     </script>
   </body>

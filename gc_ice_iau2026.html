@@ -58,6 +58,12 @@
 <!--
 Abstract:
 
+Ice, dust, and metallicity in the Galactic Center
+
+The Galactic Center (GC) is known to host a population of metal-rich stars, and there are several measurements of gas-phase metals that hint at, but do not specifically measure, the metallicity of CMZ gas.  With JWST, we are now able to map and measure ices across the dark clouds of the Central Molecular Zone (CMZ), which has not previously been possible - prior infrared observatories lacked the resolution and sensitivity.  We have measured the column density of CO ice toward several GC molecular clouds, including the Brick, and shown that the CO ice abundance is remarkably, surprisingly high.  The CO ice abundance directly implies a higher gas-phase metallicity, since there is more carbon in CO ice than total carbon at Solar metallicity.  These measurements also imply that the gas-to-dust ratio is lower in the GC, which changes our estimates of the total mass in clouds.  I will put this new measurement in context by highlighting the newly published ACES maps of the CMZ.
+
+
+
 Ice and Metal in the Galactic Center
 
 JWST's suite of filters includes several that specifically target ice features, especially CO and water.  We have imaged several clouds in the Galactic Center using the CO filter and found that CO ice is extremely widespread and far more abundant than expected.  Drilling deep on this idea, we found evidence through photometry alone that there are peculiar ices in the Galactic center, and we show that the ice abundance can be used to measure (or at least constrain) the total metallicity of the dense star-forming material.  The high ice abundance may also indicate a wildly different cosmic ray ionization rate than we have previously assumed, but this remains a work in progress.  In this talk, I will cover the detailed modeling of contributions to JWST's filters, showing that we can rule out gas-phase contribution to the narrow filters and how laboratory measurements are used to estimate the ice abundance.  I'll show the CO ice column density maps we've made for several clouds with 2" resolution.  SPHEREX will be able to perform similar measurements on nearby clouds, but it will never match JWST's resolution and will likely be confusion-limited in the Galactic Center.  Finally, I'll highlight the remaining uncertainties and how we will address them with forthcoming planned spectroscopic observations.
@@ -75,7 +81,10 @@ JWST's suite of filters includes several that specifically target ice features, 
             <div class="footer">Adam Ginsburg </div>
             <div class="smaller3 footer">University of Florida, Gainesville</div>
 
-                        <img src="assets/nsf_logo.jpg" style="float:right; max-width:100px;">
+                        <div style='float:right; width:201px; margin-top:-50px;'>
+                            <img src="assets/nsf_logo.jpg" style="float:right; max-width:100px; height:100px">
+                            <img src="assets/stsci_pri_combo_mark_white_bkgd.png" style="float:right; max-width:80px; max-height:80px; margin-top:25px">
+                        </div>
             <div class=smaller2>
                  <div class=smaller>
                      Savannah Gramze, Nazar Budaiev, Brandt Gaches, Ash Barnes, Cara Battersby Alyssa Bulatek,  Jonny Henshaw, Desmond Jeff, Xing "Walker" Lu, Betsy Mills, Dan Walker,  Matt Ashby
@@ -85,8 +94,8 @@ JWST's suite of filters includes several that specifically target ice features, 
                         </div>
 </div>
 
-<div style='font-size:50%'> Slides available at
-<a href="https://keflavich.github.io/talks/gc_ice_2025.html">https://keflavich.github.io/talks/gc_ice_2025.html</a> or from my webpage &rarr;talks
+<div style='font-size:50%'> Slides at
+<a href="https://keflavich.github.io/talks/gc_ice_iau2026.html">https://keflavich.github.io/talks/gc_ice_iau2026.html</a> or my webpage &rarr;talks
 
 </div>
     </div>
@@ -96,35 +105,215 @@ JWST's suite of filters includes several that specifically target ice features, 
 
 </section>
 
+<section>
+The Brick is icy
+    <img src="jwbrick/BrickJWST_merged_longwave_narrowband_withstars.png">
+    <div style="position: absolute; bottom:0px; right:-10px; z-index:-1;">
+        <img width=350px src="assets/cmz/acesMUSTANG_mark_brick.png">
+    </div>
+    <div style="position: absolute; bottom:50px; left:10px;" class=smaller2>
+        <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...36G/abstract">Ginsburg+ 2023</a>
+        <div class=smaller>
+            <a href="https://cosmicds.github.io/minids/jwst-brick/">https://cosmicds.github.io/minids/jwst-brick/</a>
+        </div>
+    </div>
+    <div class=smaller style="float:left">
+        <span style='color:turquoise'>F466N</span>
+        <span style='color:rgb(185,130,50)'>F405N</span>
+    </div>
+</section>
+<section>
+The Brick is icy
+    <img src="jwbrick/BrickJWST_merged_longwave_narrowband_lighter.png">
+    <div style="position: absolute; bottom:0px; right:-10px; z-index:-1;">
+        <img width=350px src="assets/cmz/acesMUSTANG_mark_brick.png">
+    </div>
+    <div style="position: absolute; bottom:50px; left:10px;" class=smaller2>
+        <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...36G/abstract">Ginsburg+ 2023</a>
+        <div class=smaller>
+            <a href="https://cosmicds.github.io/minids/jwst-brick/">https://cosmicds.github.io/minids/jwst-brick/</a>
+        </div>
+    </div>
+    <div class=smaller style="float:left">
+        <span style='color:turquoise'>F466N</span>
+        <span style='color:rgb(185,130,50)'>F405N</span>
+    </div>
+</section>
 
 <!-- slide 1 -->
 <section>
-The role of ice in the ISM
+We compare to a foreground cloud:
+<img src='assets/Savannah/overview_filament.png' style='max-height:85%;'>
+</section>
 
-    <div style="display: flex; width: 100%;">
-        <div style="width: 50%; margin-right: 2%; box-sizing: border-box; float:left;">
-        Enemy:
-        </div>
-        <div style="width: 50%; margin-right: 2%; box-sizing: border-box; float:right;">
-        Friend:
-        </div>
+<section id=cloudc data-auto-animate>
+    <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
+    <div style='position:absolute;'> The dust ridge: Cloud B/C/D</div>
+    <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
+</section>
+<section id=cloudc1 data-auto-animate>
+    <div style='position: absolute'>
+    ... and a foreground cloud in front
     </div>
+    <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
+    <div style="border: 10px solid red; position: absolute; width: 300px; height: 150px; top: 246px !important; left: 706px !important; /*! z-index: -100; */">
+    </div>
+    <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
+</section>
+<section id=cloudc2 data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+    <div class="smaller fragment fade-out" data-fragment-index="1" style="color:white; z-index: 5;background-color: #00000078;position: absolute;margin-left: 20%;width: 60%;">We measure ice via stellar absorption
+        <br>
+    </div>
+    <div class="smaller fragment fade-in" data-fragment-index="1" style="color:white; z-index: 5;background-color: #00000078;position: absolute;margin-left: 20%;width: 60%;">There are clear environmental differences
+        <br>
+    </div>
+    <img style="width:457%; max-width:500%; max-height:500%; margin-left: -348%;margin-top: -43%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
+    <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
 
-<div style="display: flex; width: 100%;">
-    <ul style="width: 50%; margin-right: 2%; box-sizing: border-box;">
-        <li>Nice molecules like CO freeze out</li>
-        <li>They make extinction curves weird</li>
-        <li>Grow grains, making dust harder to model</li>
-    </ul>
-    <ul style="width: 50%; margin-left: 2%; box-sizing: border-box;">
-        <li>Delivers water and other good stuff to planets</li>
-        <li>Ices facilitate chemistry, making good stuff like CH<sub>2</sub>CH<sub>3</sub>OH</li>
-        <li>Can be used to measure metallicity?</li>
-    </ul>
+
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" class="fragment" style="position:absolute; left:0px; height:85%; top:7%" data-fragment-index="1">
+<div class="smaller3 fragment" data-fragment-index="1" style="position:relative; top:456px; right:-493px; width:25%"> <ul><li>Smith+ 2025: 27 data points </li></ul></div>
+<!--
+<img src="assets/brick/abundance_vs_metallicity.png" class="fragment" data-fragment-index="2" style='position: absolute; right:10px; top:25px; width:60%;'>
+-->
+</section>
+
+
+
+<section data-auto-animate>
+<div style='float:left;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+<div class="smaller2" style="position:absolute; bottom:270px; left:397px; width:61%"> <ul><li>Smith+ 2025: 27 data points </li></ul></div>
+</div>
+</section>
+
+<section data-auto-animate>
+<div>
+<div style='float:left; width:50%;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+
+</div>
+<div style='float:right; width:50%;'>
+    <img src="ice_assets/standard_carbon_distribution.png" style="max-height:85%;">
+</div>
 </div>
 
+<br>
+<div class=smaller style='width:100%;'>
+Standard assumed carbon breakdown, roughly.
+</div>
+</section>
+
+<section >
+<div style='float:left; width:50%;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+
+</div>
+<div style='float:right; width:50%;'>
+    <img src="ice_assets/standard_carbon_distribution_exploded.png" style="max-height:85%;">
+</div>
+<div class=smaller style='width:100%;'>
+Standard assumed carbon breakdown, roughly.
+</div>
+</section>
+
+<section >
+<div style='float:left; width:50%;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+</div>
+<div style='float:right; width:50%;'>
+    <img src="ice_assets/standard_carbon_distribution_exploded_h2.png" style="max-height:85%;">
+</div>
+<div class=smaller style='width:100%;'>
+Standard assumed carbon breakdown, roughly.
+</div>
+</section>
+
+<section >
+<div style='float:left; width:50%;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+</div>
+<div style='float:right; width:50%;'>
+    <img src="ice_assets/standard_carbon_distribution_exploded_h2_ice.png" style="max-height:85%;">
+</div>
+<div class=smaller style='width:100%;'>
+Standard assumed carbon breakdown, roughly.<br>
+The Smith+ 2025 measurements hint at nearly 100% of CO in ice
+</div>
+</section>
+
+<section >
+<div style='float:left; width:50%;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+</div>
+<div style='float:right; width:50%;'>
+    <img src="ice_assets/standard_carbon_distribution_exploded_h2_with_GC_CO_levels.png" style="max-height:85%;">
+</div>
+<div class=smaller style='width:100%;'>
+With measured GC CO ice column, the fraction of carbon in CO ice becomes uncomfortably large...
+</div>
+</section>
+
+<section >
+<div style='float:left; width:50%;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+</div>
+<div style='float:right; width:50%;'>
+    <img src="ice_assets/standard_carbon_distribution_exploded_h2_with_higher_GC_CO_levels.png" style="max-height:85%;">
+</div>
+<div class=smaller style='width:100%;'>
+With measured GC CO ice column, the fraction of carbon in CO ice becomes uncomfortably large... <br>or even exceeds the total budget
+</div>
+</section>
+
+<section >
+<div style='float:left; width:50%;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+</div>
+<div style='float:right; width:50%;'>
+    <br>
+    <br>
+    <img src="ice_assets/pacman.gif" style="max-height:85%;">
+</div>
+<div class=smaller style='width:100%;'>
+With measured GC CO ice column, the fraction of carbon in CO ice becomes uncomfortably large... <br>or even exceeds the total budget
+</div>
+</section>
+
+
+<section >
+<div style='float:left; width:50%;'>
+<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
+
+</div>
+<div style='float:right; width:50%;'>
+    <img src="ice_assets/standard_carbon_distribution_exploded_h2_gc.png" style="max-height:85%;">
+</div>
+<div class=smaller2 style='width:100%;'>
+If $Z_{GC} = 2.5 Z_\odot$, the CO ice fraction goes back to normal ($\sim10-20$%).
+<div class=smaller>
+(but some lines-of-sight still have $\sim$double that CO ice...)
+</div>
+</div>
 
 </section>
+
+<section>
+     There is more CO ice in the inner galaxy <div class=smaller>(and two points make a line...)</div>
+     <img src="ice_assets/abundance_vs_rgal.png" style='max-height:82%'>
+</section>
+<section>
+     CO ice abundance is correlated with metallicity
+     <img src="ice_assets/abundance_vs_metallicity.png" style='max-height:92%'>
+</section>
+
+
+
+
+
+<section>
+</section>
+
 
 <section>
     <div class=smaller>The CMZ is one extreme of star forming conditions in the Galaxy</div>
@@ -163,41 +352,6 @@ The role of ice in the ISM
 
 
 <section><img src="assets/brick/Spitzer_InsetZooms2.png"></section>
-
-<section>
-The Brick is icy
-    <img src="jwbrick/BrickJWST_merged_longwave_narrowband_withstars.png">
-    <div style="position: absolute; bottom:0px; right:-10px; z-index:-1;">
-        <img width=350px src="assets/cmz/acesMUSTANG_mark_brick.png">
-    </div>
-    <div style="position: absolute; bottom:50px; left:10px;" class=smaller2>
-        <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...36G/abstract">Ginsburg+ 2023</a>
-        <div class=smaller>
-            <a href="https://cosmicds.github.io/minids/jwst-brick/">https://cosmicds.github.io/minids/jwst-brick/</a>
-        </div>
-    </div>
-    <div class=smaller style="float:left">
-        <span style='color:turquoise'>F466N</span>
-        <span style='color:rgb(185,130,50)'>F405N</span>
-    </div>
-</section>
-<section>
-The Brick is icy
-    <img src="jwbrick/BrickJWST_merged_longwave_narrowband_lighter.png">
-    <div style="position: absolute; bottom:0px; right:-10px; z-index:-1;">
-        <img width=350px src="assets/cmz/acesMUSTANG_mark_brick.png">
-    </div>
-    <div style="position: absolute; bottom:50px; left:10px;" class=smaller2>
-        <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...36G/abstract">Ginsburg+ 2023</a>
-        <div class=smaller>
-            <a href="https://cosmicds.github.io/minids/jwst-brick/">https://cosmicds.github.io/minids/jwst-brick/</a>
-        </div>
-    </div>
-    <div class=smaller style="float:left">
-        <span style='color:turquoise'>F466N</span>
-        <span style='color:rgb(185,130,50)'>F405N</span>
-    </div>
-</section>
 
 <section>
     <div class=smaller>1-2 mag excess extinction (A<sub>4.66&mu;m</sub>) at A<sub>V</sub>~60-90</div>
@@ -331,189 +485,13 @@ If we adopt those ice models, we can infer the CO ice column density
 
 
 
-<section>
-    We're jumping to another cloud for a moment...
-<img src='assets/Savannah/overview_filament.png' style='max-height:85%;'>
-</section>
 
-<section id=cloudc data-auto-animate>
-    <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
-    <div style='position:absolute;'> The Galactic Center Dust ridge is also icy...</div>
-    <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
-</section>
-<section id=cloudc1 data-auto-animate>
-    <div style='position: absolute'>
-    ... and has a foreground cloud in front
-    </div>
-    <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
-    <div style="border: 10px solid red; position: absolute; width: 300px; height: 150px; top: 246px !important; left: 706px !important; /*! z-index: -100; */">
-    </div>
-    <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
-</section>
-<section id=cloudc2 data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-    <div class="smaller fragment fade-out" data-fragment-index="1" style="color:white; z-index: 5;background-color: #00000078;position: absolute;margin-left: 20%;width: 60%;">We measure ice via stellar absorption
-        <br>
-    </div>
-    <div class="smaller fragment fade-in" data-fragment-index="1" style="color:white; z-index: 5;background-color: #00000078;position: absolute;margin-left: 20%;width: 60%;">There are clear environmental differences
-        <br>
-    </div>
-    <img style="width:457%; max-width:500%; max-height:500%; margin-left: -348%;margin-top: -43%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
-    <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
-
-
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" class="fragment" style="position:absolute; left:0px; height:85%; top:7%" data-fragment-index="1">
-<div class="smaller3 fragment" data-fragment-index="1" style="position:relative; top:456px; right:-493px; width:25%"> <ul><li>Smith+ 2025: 27 data points </li></ul></div>
-<!--
-<img src="assets/brick/abundance_vs_metallicity.png" class="fragment" data-fragment-index="2" style='position: absolute; right:10px; top:30px; width:60%;'>
--->
-</section>
-
-<section>
-    This is a clearly star-forming cloud, but only moderately so (it's an IRDC)
-    <img src='assets/Savannah/jwst_zoom_filament_rgb_SiO.png' style='max-height:85%;'>
-</section>
-<section>
-    <div>
-        Column density maps - of H$_2$ and CO ice
-    </div>
-    <img src='assets/Savannah/3kpccloud_column_density.png' style='max-height:85%; float:left; max-width:49%;'>
-    <img src='assets/Savannah/3kpccloud_co_ice_column_density_map.png' style='max-height:85%; float:right; max-width:49%;'>
-</section>
-
-
-<section>
-    <div style="position:absolute; width:35%; top:40%; left:0px; background-color:rgba(255,255,255,0.8);" class=smaller2>
-    Both CO column <emph>and abundance</emph> are rising with column density
-    </div>
-    <img src="ice_assets/icecolumn_map_CO.png" style='max-height:48%; margin:0px 0px 0px 0px;'>
-    <img src="ice_assets/icecolumn_map_CO_abundance.png" style='max-height:48%; margin:0px 0px 0px 0px;'>
-</section>
 
 <section>
     Abundance is rising with column density
     <img src="ice_assets/boxplot_abundance_vs_logNH2_with_fit.png" style='max-height:85%;'>
 </section>
 
-<section data-auto-animate>
-<div style='float:left;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-<div class="smaller2" style="position:absolute; bottom:270px; left:397px; width:61%"> <ul><li>Smith+ 2025: 27 data points </li></ul></div>
-</div>
-</section>
-
-<section data-auto-animate>
-<div>
-<div style='float:left; width:50%;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-
-</div>
-<div style='float:right; width:50%;'>
-    <img src="ice_assets/standard_carbon_distribution.png" style="max-height:85%;">
-</div>
-</div>
-
-<br>
-<div class=smaller style='width:100%;'>
-Standard assumed carbon breakdown, roughly.
-</div>
-</section>
-
-<section >
-<div style='float:left; width:50%;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-
-</div>
-<div style='float:right; width:50%;'>
-    <img src="ice_assets/standard_carbon_distribution_exploded.png" style="max-height:85%;">
-</div>
-<div class=smaller style='width:100%;'>
-Standard assumed carbon breakdown, roughly.
-</div>
-</section>
-
-<section >
-<div style='float:left; width:50%;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-</div>
-<div style='float:right; width:50%;'>
-    <img src="ice_assets/standard_carbon_distribution_exploded_h2.png" style="max-height:85%;">
-</div>
-<div class=smaller style='width:100%;'>
-Standard assumed carbon breakdown, roughly.
-</div>
-</section>
-
-<section >
-<div style='float:left; width:50%;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-</div>
-<div style='float:right; width:50%;'>
-    <img src="ice_assets/standard_carbon_distribution_exploded_h2_ice.png" style="max-height:85%;">
-</div>
-<div class=smaller style='width:100%;'>
-Standard assumed carbon breakdown, roughly.<br>
-The Smith+ 2025 measurements hint at nearly 100% of CO in ice
-</div>
-</section>
-
-<section >
-<div style='float:left; width:50%;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-</div>
-<div style='float:right; width:50%;'>
-    <img src="ice_assets/standard_carbon_distribution_exploded_h2_with_GC_CO_levels.png" style="max-height:85%;">
-</div>
-<div class=smaller style='width:100%;'>
-With measured GC CO ice column, the fraction of carbon in CO ice becomes uncomfortably large...
-</div>
-</section>
-
-<section >
-<div style='float:left; width:50%;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-</div>
-<div style='float:right; width:50%;'>
-    <img src="ice_assets/standard_carbon_distribution_exploded_h2_with_higher_GC_CO_levels.png" style="max-height:85%;">
-</div>
-<div class=smaller style='width:100%;'>
-With measured GC CO ice column, the fraction of carbon in CO ice becomes uncomfortably large... <br>or even exceeds the total budget
-</div>
-</section>
-
-<section >
-<div style='float:left; width:50%;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-</div>
-<div style='float:right; width:50%;'>
-    <br>
-    <br>
-    <img src="ice_assets/pacman.gif" style="max-height:85%;">
-</div>
-<div class=smaller style='width:100%;'>
-With measured GC CO ice column, the fraction of carbon in CO ice becomes uncomfortably large... <br>or even exceeds the total budget
-</div>
-</section>
-
-
-<section >
-<div style='float:left; width:50%;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-
-</div>
-<div style='float:right; width:50%;'>
-    <img src="ice_assets/standard_carbon_distribution_exploded_h2_gc.png" style="max-height:85%;">
-</div>
-<div class=smaller2 style='width:100%;'>
-If $Z_{GC} = 2.5 Z_\odot$, the CO ice fraction goes back to normal ($\sim10-20$%).
-<div class=smaller>
-(but some lines-of-sight still have $\sim$double that CO ice...)
-</div>
-</div>
-
-</section>
-
-<section> <img src="ice_assets/abundance_vs_rgal.png"> </section>
-<section> <img src="ice_assets/abundance_vs_metallicity.png"> </section>
 
 
 <section>
@@ -1053,8 +1031,30 @@ animation: backgroundScroll 40s ease-in-out 1s infinite; ">
     <p>Cannot display WorldWide Telescope because your browser does not support iframes.</p>
     </iframe>
     <div class=smaller2 style="position:absolute; bottom:5%; right:5%">
-        <a href="https://keflavich.github.io/talks/gc_ice_2025.html">keflavich.github.io/talks/gc_ice_2025.html</a>
+        <a href="https://keflavich.github.io/talks/gc_ice_iau2026.html">keflavich.github.io/talks/gc_ice_iau2026.html</a>
     </div>
+</section>
+
+
+<section>
+    This is a clearly star-forming cloud, but only moderately so (it's an IRDC)
+    <img src='assets/Savannah/jwst_zoom_filament_rgb_SiO.png' style='max-height:85%;'>
+</section>
+<section>
+    <div>
+        Column density maps - of H$_2$ and CO ice
+    </div>
+    <img src='assets/Savannah/3kpccloud_column_density.png' style='max-height:85%; float:left; max-width:49%;'>
+    <img src='assets/Savannah/3kpccloud_co_ice_column_density_map.png' style='max-height:85%; float:right; max-width:49%;'>
+</section>
+
+
+<section>
+    <div style="position:absolute; width:35%; top:40%; left:0px; background-color:rgba(255,255,255,0.8);" class=smaller2>
+    Both CO column <emph>and abundance</emph> are rising with column density
+    </div>
+    <img src="ice_assets/icecolumn_map_CO.png" style='max-height:48%; margin:0px 0px 0px 0px;'>
+    <img src="ice_assets/icecolumn_map_CO_abundance.png" style='max-height:48%; margin:0px 0px 0px 0px;'>
 </section>
 
 

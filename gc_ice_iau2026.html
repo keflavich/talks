@@ -92,17 +92,21 @@ JWST's suite of filters includes several that specifically target ice features, 
                      Supported by the NSF: 2008101, 2206511, CAREER 2142300, STSCI grants 1905, 2221
                      </div>
                         </div>
-</div>
+    </div>
 
-<div style='font-size:50%'> Slides at
-<a href="https://keflavich.github.io/talks/gc_ice_iau2026.html">https://keflavich.github.io/talks/gc_ice_iau2026.html</a> or my webpage &rarr;talks
-
-</div>
+    <div style='font-size:50%'> Slides at
+    <a href="https://keflavich.github.io/talks/gc_ice_iau2026.html">https://keflavich.github.io/talks/gc_ice_iau2026.html</a> or my webpage &rarr;talks
+    </div>
     </div>
     </div>
 
     <img src="jwbrick/BrickJWST_merged_longwave_narrowband_withstars.png">
 
+</section>
+
+<section>
+There is a Galactic metallicity gradient, but the inner ~3 kpc are poorly constrained
+    <img src="assets/cmz/galacticmetallicity.png" style='max-height:85%;'>
 </section>
 
 <section>
@@ -140,14 +144,29 @@ The Brick is icy
     </div>
 </section>
 
-<!-- slide 1 -->
-<section>
-We compare to a foreground cloud:
+
+<section data-auto-animate>
+Compare to a foreground cloud:
 <img src='assets/Savannah/overview_filament.png' style='max-height:85%;'>
+<img style="width: 20.5% !important;
+  max-width: 200%;
+  left: 37.4%;
+  top: 5.67%;
+  position: absolute !important;
+  --rotation: 31.5deg;
+  transform-origin: 0px 0px;
+  "
+   src="assets/Savannah/cloudc_tricolor.png"
+   data-auto-animate-target="cloudc_tricolor"
+   data-fragment-index="1"
+    class="fragment rotated">
+    <div class="fragment" data-fragment-index="2" data-autoslide="1000">
+    </div>
 </section>
 
+
 <section id=cloudc data-auto-animate>
-    <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
+    <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;  --transition-duration: 2.5s; --transition: ease-in-out;"  data-auto-animate-target=cloudc_tricolor src="assets/Savannah/cloudc_tricolor.png">
     <div style='position:absolute;'> The dust ridge: Cloud B/C/D</div>
     <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
@@ -160,7 +179,7 @@ We compare to a foreground cloud:
     </div>
     <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
-<section id=cloudc2 data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+<section id=cloudc2 data-auto-animate data-auto-animate-easing="ease-in-out">
     <div class="smaller fragment fade-out" data-fragment-index="1" style="color:white; z-index: 5;background-color: #00000078;position: absolute;margin-left: 20%;width: 60%;">We measure ice via stellar absorption
         <br>
     </div>
@@ -180,12 +199,6 @@ We compare to a foreground cloud:
 
 
 
-<section data-auto-animate>
-<div style='float:left;'>
-<img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:relative;">
-<div class="smaller2" style="position:absolute; bottom:270px; left:397px; width:61%"> <ul><li>Smith+ 2025: 27 data points </li></ul></div>
-</div>
-</section>
 
 <section data-auto-animate>
 <div>
@@ -366,7 +379,7 @@ If $Z_{GC} = 2.5 Z_\odot$, the CO ice fraction goes back to normal ($\sim10-20$%
 }
 </style>
 
-<section data-auto-animate data-autoslide="1" data-background-color="#000000">
+<section data-auto-animate data-autoslide="1" data-background-color="#000000" data-auto-animate-unmatched="false">
     <img src="assets/cmz/roman_jwstgcs_on_aces-on_meerkat_spitzer_ash.png" data-id=cmzmap data-auto-animate-target="cmz-map" class="cmz-map" >
     <img src="assets/cmz/romanzoomout_jwstgcs_on_aces-on_meerkat_spitzer_ash.png" data-id=cmzmap-two data-auto-animate-target="cmz-map" class="cmz-map-zoom" >
 </section>

@@ -94,6 +94,7 @@ We find that 20% of YSOs in the two targeted massive star-forming regions, two o
                           <span style='color:darkblue'>Savannah Gramze</span>,
                             <span style='color:maroon'>Taehwa Yoo</span>
                     <li> Postbac: <span style='color:darkblue'>Aden Dawson</span>
+                        <li> Undergrad: Antonio Daley, Ethan Bhula, Ani Vijarayaman, Avery Lacon, Laya Damaraju, Prashant Sikhdar, Giovanna Guida
                     <li> Supported by NSF 2008101, 2206511, CAREER 2142300, STSCI 1905, 2221, 3523, 5365, 6151, Astropy
                 </ul>
 </div>
@@ -106,43 +107,273 @@ We find that 20% of YSOs in the two targeted massive star-forming regions, two o
     </div>
 </section>
 
+
 <!-- ============================================================
-     ALMA-IMF vs Sgr B2 core comparison (Budaiev, Daley)
-     spectral-index "color-magnitude" diagrams + luminosity histograms
+     ACES intro / overview (borrowed from colloquium_nov2025_vienna.html)
+     funnel: Galaxy -> CMZ -> Sgr B2 -> the ACES survey
      ============================================================ -->
+
+<section>
+    <h4 class=smaller>The Central Molecular Zone (CMZ) is one extreme of star-forming conditions in the Galaxy</h4>
+    <img src="assets/ppvii/rgb_v2_compressed.png" style='transform: scale(2.2);'>
+    <div style="position:relative; top:-2%" class=smaller2> <a href="https://ui.adsabs.harvard.edu/abs/2023ASPC..534...83H/abstract">PPVII review: Henshaw, <b>Barnes</b>, Battersby, Ginsburg, Sormani, Walker</a> </div>
+</section>
+
+<section data-auto-animate>
+    <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small.jpg);'>
+    <h4 style='font-size:90%'> The CMZ </h4>
+    <span class=smaller> $\sim10^8$ M$_\odot$ of gas in $\sim200$ pc, 10% of Galactic star formation </span>
+    <div style="position: relative; bottom: -57%; left:-40%" class="smaller3"><a class=darkbg href="http://images.nrao.edu/664">Image: NRAO, Ginsburg</a></div>
+    <div style="position: relative; bottom: -58%; left:1%; text-align:left" class="smaller3"><a class=darkbg href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">Ginsburg+ 2018a</a></div>
+    </span>
+
+    <div class="fragment smaller2 darkbg" style="position: absolute; top: 20%; left: 15%; width: 50%;" data-fragment-index="1">
+       $>\frac{1}{3}$ of CMZ SF is in bound clusters (3-8$\times$ local)
+    </div>
+
+    <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width: 6%; position: absolute; top: 54.1516%; left: 43.3009%; --rotation:-147deg; z-index: 100; margin: 0px; transform-origin: 0px 0px; --transition-duration: 0.8s; " class="fragment rotated" data-fragment-index="2">
+    <div class="smaller2 fragment darkbg" data-fragment-index="2" style="position: absolute; top: 65%; left: 15%; width: 50%;">
+        $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
+    </div>
+</section>
+
+<section id=ACES>
+    <img src="assets/cmz/ACES_logo_v1.png" style="float:left; max-height:130px; position:relative; z-index: 31;" >
+    <h4 style="font-size:90%; background-color:white; z-index:30; width:100%; margin-left:auto; margin-right:0; text-align:center; display:block; position:relative;"> The CMZ: ACES (the ALMA CMZ Exploration Survey) </h4>
+    <div style='width:60%; margin-left:30%' class="smaller2 fragment fade-out" data-fragment-index="1">
+         The first complete survey of the CMZ with 2.4" resolution between ~2 microns and 10 cm.<span class=smaller> (previous best was ~15") </span>
+     <br>
+        <a href="https://sites.google.com/view/aces-cmz/home">https://sites.google.com/view/aces-cmz/home</a>
+    </div>
+    <img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="width:100%; max-width:100%; max-height:100%; position: absolute; left:0%; top:20%;" class="fragment fade-out" data-fragment-index="1">
+    <div style='position:absolute; bottom:10%; left:10%; z-index: 30; background-color:rgba(255,255,255,0.5)' class=smaller2> First five data papers refereed (resubmitted Nov 2025); six early-result papers out:
+        <br><a href="https://sites.google.com/view/aces-cmz/publications">https://sites.google.com/view/aces-cmz/publications</a>
+    </div>
+    <video class=fragment data-fragment-index="1" data-autoplay controls loop preload="metadata" style='max-width:70%; position:absolute; top:0%; left:15%; z-index:25;' src="https://www.dropbox.com/scl/fi/qojbmia883v0wt7cedv50/pan_anim_ACES.mp4?rlkey=8vsaui2bfhtwwa3xhfsdqu1np&raw=1"></video>
+</section>
+
+
+<!-- ============================================================
+     ACES: first results (summary of the first ~10 ACES papers)
+     Data series I-VI + early-science highlights.
+     Figures: arXiv papers (assets/aces/) + MUBLO github + existing decks.
+     ============================================================ -->
+<section id=acesresults>
+
+    <section>
+        <img src="assets/cmz/ACES_logo_v1.png" style="max-height:120px;">
+        <h3 style="font-size:110%">ACES: the first results</h3>
+        <div class=smaller2>The survey overview, four data-release papers, and a wave of early-science results &mdash; the first ~10 ACES papers (2024&ndash;2026)</div>
+        <div class=smaller3>Publications: <a href="https://sites.google.com/view/aces-cmz/publications">sites.google.com/view/aces-cmz/publications</a></div>
+    </section>
+
+    <!-- I: Overview -->
+    <section>
+        <h4 style='font-size:90%'>I. The survey: a contiguous ALMA view of the inner ~200 pc</h4>
+        <img src="assets/aces/aces_I_overview.png" style="max-height:76%; max-width:100%;">
+        <div class=smaller2>~2&Prime; (~0.07 pc) Band-3 mosaic of the whole CMZ; spatial dynamic range ~10<sup>3.5</sup> links 100-pc gas flows to protostellar cores.</div>
+        <div class=smaller3>ACES I (Overview), Longmore+ 2026 &mdash; <a href="https://arxiv.org/abs/2602.20340">arXiv:2602.20340</a></div>
+    </section>
+
+    <!-- II: continuum -->
+    <section>
+        <h4 style='font-size:90%'>II. CMZ-wide 3 mm continuum</h4>
+        <img src="assets/aces/aces_II_continuum.png" style="max-height:94%; max-width:60%; background-color:white;">
+        <div class=smaller2>A contiguous 3 mm continuum mosaic (dust + free-free) across the CMZ; catalog of compact sources forthcoming (Wallace+).</div>
+        <div class=smaller3>ACES II (3 mm continuum), Ginsburg+ 2026 &mdash; <a href="https://arxiv.org/abs/2602.20240">arXiv:2602.20240</a></div>
+        <div class=smaller3><a href="https://starformation.astro.ufl.edu/Aladin_tours/ACES_EarlyResults.html"> Aladin tour</a></div>
+    </section>
+
+    <!-- III: HNCO/HCO+ kinematics -->
+    <section>
+        <h4 style='font-size:90%'>III. Gas kinematics at 0.2 km/s: a resolution leap</h4>
+        <img src="assets/aces/aces_III_kinematics.png" style="max-height:84%; max-width:100%; float:left;">
+        <div style="float:right; max-width: 50%">
+            <div class=smaller2>HNCO &amp; HCO<sup>+</sup> resolve CMZ-wide motions (~15&Prime; Mopra &rarr; ~2&Prime; ACES); ubiquitous parsec-scale linear HCO<sup>+</sup> absorption features.</div>
+            <div class=smaller3>ACES III (HNCO/HCO+), Walker+ 2026 &mdash; <a href="https://arxiv.org/abs/2602.20276">arXiv:2602.20276</a></div>
+            <div class=smaller3><a href="https://starformation.astro.ufl.edu/Aladin_tours/ACES_EarlyResults.html"> Aladin tour</a></div>
+        </div>
+    </section>
+
+    <!-- IV: SiO/SO isotopologues -->
+    <section>
+        <h4 style='font-size:90%'>IV. Shock tracers &amp; isotopologues at 1.7 km/s</h4>
+        <img src="assets/aces/aces_IV_sio.png" style="max-height:74%; max-width:100%;">
+        <div class=smaller2>SiO, SO, H<sup>13</sup>CO<sup>+</sup>, H<sup>13</sup>CN, HN<sup>13</sup>C, HC<sup>15</sup>N maps.</div>
+        <div class=smaller2>Evaluation of image combination methods (feather is fine)</div>
+        <div class=smaller3>ACES IV (intermediate-width windows), Lu+ 2026 &mdash; <a href="https://arxiv.org/abs/2602.20445">arXiv:2602.20445</a></div>
+            <div class=smaller3><a href="https://starformation.astro.ufl.edu/Aladin_tours/ACES_EarlyResults.html"> Aladin tour</a></div>
+    </section>
+
+    <!-- V: broad windows / many lines -->
+    <section>
+        <h4 style='font-size:90%'>V. A rich spectrum: COMs and ionized gas</h4>
+        <img src="assets/aces/aces_V_lines.png" style="max-height:74%; max-width:100%; background-color:white;">
+        <div class=smaller2>The broad windows (CS, SO, CH<sub>3</sub>CHO, HC<sub>3</sub>N, H40&alpha;) capture dozens of lines &mdash; complex molecules plus the H40&alpha; recombination line tracing ionized gas.</div>
+        <div class=smaller3>ACES V (broad windows), Hsieh+ 2026 &mdash; <a href="https://arxiv.org/abs/2603.00863">arXiv:2603.00863</a></div>
+            <div class=smaller3><a href="https://starformation.astro.ufl.edu/Aladin_tours/ACES_EarlyResults.html"> Aladin tour</a></div>
+    </section>
+
+    <!-- VI: filaments -->
+    <section>
+        <h4 style='font-size:90%'>VI. The CMZ is highly filamentary</h4>
+        <img src="assets/aces/aces_VI_filaments.png" style="max-height:76%; max-width:100%; float:left;">
+        <div style="float:right; max-width: 40%">
+        <div class=smaller2>ACES resolves a population of small-scale filaments threading the entire CMZ &mdash; a new census of these structures.</div>
+        <div class=smaller3>ACES VI (filamentary CMZ), Battersby+ 2026 &mdash; <a href="https://arxiv.org/abs/2602.20262">arXiv:2602.20262</a></div>
+            <div class=smaller3><a href="https://starformation.astro.ufl.edu/Aladin_tours/ACES_EarlyResults.html"> Aladin tour</a></div>
+        </div>
+    </section>
+
+    <!-- early science: MUBLO -->
+    <section>
+        <h4 style='font-size:90%'>The MUBLO: a millimeter ultra-broad-line object</h4>
+        <img src="https://raw.githubusercontent.com/ACES-CMZ/MUBLO/main/G0.025-0.073/png_figures/MUSTANG3mmContext_withlabel.png" style="max-height:74%; max-width:100%; background-color:white;">
+        <div class=smaller2>A bright, very broad-line (~160 km/s), cold, dusty mm source with no IR/radio counterpart and no SiO &mdash; still unexplained.</div>
+        <div class=smaller3>Ginsburg+ 2024, ApJL 968, L11 &mdash; <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...968L..11G/abstract">2024ApJ...968L..11G</a></div>
+    </section>
+
+    <!-- early science: M0.8-0.2 ring -->
+    <section>
+        <h4 style='font-size:90%'>The M0.8&ndash;0.2 ring: a hypernova remnant?</h4>
+        <img src="assets/aces/aces_ring_nonhebel.png" style="max-height:74%; max-width:100%;">
+        <div class=smaller2>A ~10<sup>6</sup> M<sub>&odot;</sub> expanding shell (~20 km/s, &gt;10<sup>51</sup> erg) &mdash; most plausibly carved by a single high-energy hypernova.</div>
+        <div class=smaller3>Nonhebel+ 2024 &mdash; <a href="https://arxiv.org/abs/2409.12185">arXiv:2409.12185</a>
+        <span class=smaller>but recall <a href="https://en.wikipedia.org/wiki/Betteridge%27s_law_of_headlines">Betteridge's law of headlines</a></span>
+</div>
+    </section>
+
+    <!-- early science: Sofue eccentric circum-nuclear flow -->
+    <section>
+        <h4 style='font-size:90%'>An eccentric circum-nuclear gas flow around Sgr A*</h4>
+        <img src="assets/aces/aces_sofue_lv.png" style="max-height:74%; max-width:100%;">
+        <div class=smaller2>CS(2&ndash;1) draws an elliptical track in the longitude&ndash;velocity diagram &mdash; an eccentric orbit of dense gas in the inner ~10 pc.</div>
+        <div class=smaller3>Sofue 2025 &mdash; <a href="https://arxiv.org/abs/2506.11553">arXiv:2506.11553</a></div>
+    </section>
+
+    <!-- early science: Pare magnetic fields in filaments -->
+    <section>
+        <h4 style='font-size:90%'>Magnetic fields support the large filaments</h4>
+        <img src="assets/aces/aces_pare_bfield.png" style="max-height:74%; max-width:100%;">
+        <div class=smaller2>Comparing HNCO filaments to SOFIA/JCMT polarization: many filaments sit in magnetically dominated environments that resist collapse.</div>
+        <div class=smaller3>Par&eacute;+ 2025 &mdash; <a href="https://arxiv.org/abs/2511.18029">arXiv:2511.18029</a></div>
+    </section>
+
+</section>
+
+<section>
+        <img src="assets/Nazar/antoniodaley/3mm_area_coverage.png" style="max-height:100%; background-color:white">
+</section>
+
+<section>
+    <section>
+        <div class=smaller>3 mm core luminosity functions</div>
+        <div style="position:relative; width:100%; height:80%;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_3mm_1.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_3mm_2.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_3mm_3.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_3mm_4.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+        </div>
+        <img style='position:absolute; width:130px; top:-3%; right:-11%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:120px; right:-11%; background: transparent; object-fit: contain;' src="assets/Nazar/antoniodaley/antoniodaley_prof_headshot.png">
+
+    </section>
+    <section>
+        <div class=smaller>Distance-normalized 3 mm luminosities </div>
+        <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_3mm_peak_flux.png" style="max-height:78%; background-color:white">
+    </section>
+
+    <section>
+        <div class=smaller>3 mm luminosities, now including HII regions in the Sgr B2 sample</div>
+        <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_3mm_HII_included.png" style="max-height:78%; background-color:white">
+    </section>
+
+    <section>
+        <div class=smaller>3 mm luminosities, Sgr B2 split into its sub-regions (N+M vs DS)</div>
+        <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_3mm_histogram_catalog_breakdown.png" style="max-height:78%; background-color:white">
+    </section>
+
+    <section>
+        <div class=smaller>3 mm luminosities by sub-region, HII regions included</div>
+        <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_3mm_histogram_catalog_breakdown_HII_included.png" style="max-height:78%; background-color:white">
+    </section>
+</section>
+
+
+
+<section>
+        <img src="assets/Nazar/antoniodaley/1mm_area_coverage.png" style="max-height:100%; background-color:white">
+</section>
+
+
+<section>
+    <!-- 1mm luminosity function, survey by survey -->
+    <section>
+        <div class=smaller>1 mm core luminosity functions</div>
+        <div style="position:relative; width:100%; height:80%;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_hist_1.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_hist_2.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_hist_3.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_hist_4.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+            <img class=fragment src="assets/Nazar/buildup_lumfunc_hist_5.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+        </div>
+        <img style='position:absolute; width:130px; top:-3%; right:-11%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:120px; right:-11%; background: transparent; object-fit: contain;' src="assets/Nazar/antoniodaley/antoniodaley_prof_headshot.png">
+    </section>
+    <section>
+        <div class=smaller>Distance-normalized 1 mm luminosities</div>
+        <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_1mm_peak_flux.png" style="max-height:78%; background-color:white">
+    </section>
+
+    <section>
+        <div class=smaller>1 mm luminosities, including HII regions in the Sgr B2 sample</div>
+        <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_1mm_peak_flux_HII_included.png" style="max-height:78%; background-color:white">
+    </section>
+
+    <section>
+        <div class=smaller>1 mm luminosities, Sgr B2 split into its sub-regions (DS vs N+M)</div>
+        <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_peak_flux_1mm_catalog_breakdown.png" style="max-height:78%; background-color:white">
+    </section>
+
+    <section>
+        <div class=smaller>1 mm luminosities by sub-region, HII regions included</div>
+        <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_peak_flux_1mm_catalog_breakdown_HII_included.png" style="max-height:78%; background-color:white">
+    </section>
+</section>
+
 
 <!-- Sgr B2 Band 3 (3mm) color-magnitude build-up -->
 <section>
     <section>
-        <div class=smaller>Sgr B2 "color&ndash;magnitude": 3 mm peak flux vs spectral index (&alpha; between 3 mm and 1 mm)</div>
+        <div class=smaller>Sgr B2 "color&ndash;magnitude": <div class=smaller>3 mm peak flux vs spectral index (&alpha; between 3 mm and 1 mm)</div></div>
         <img src="assets/Nazar/B3_fig_talk0.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
         <div class=smaller3>Budaiev+ (in prep); the axes we'll populate with cores</div>
     </section>
     <section>
-        <div class=smaller>Sensitivity limits: nothing fainter than the dashed/solid floors can be detected</div>
+        <div class=smaller>Sensitivity limits </div>
         <img src="assets/Nazar/B3_fig_talk1.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
-        <div class=smaller>Dust model tracks (20/50/100 K) and the optically-thin dust limit (&alpha;=3.7) bound where dust cores should land</div>
+        <div class=smaller>Dust model tracks (20/50/100 K) </div>
         <img src="assets/Nazar/B3_fig_talk2.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
-        <div class=smaller>The detected cores: most cluster near &alpha;&sim;2&ndash;3.5, consistent with (partly optically thick) dust</div>
+        <div class=smaller>Dust cores (some thick)</div>
         <img src="assets/Nazar/B3_fig_talk3.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
-        <div class=smaller>Upper limits fill in the faint end</div>
+        <div class=smaller>...and HII regions</div>
         <img src="assets/Nazar/B3_fig_talk4.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
-        <div class=smaller>The flat-spectrum (&alpha;&sim;0) sources are HII regions &mdash; known, candidate, and newly identified</div>
+        <div class=smaller>Upper limits at 1mm</div>
         <img src="assets/Nazar/B3_fig_talk5.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
 </section>
 
@@ -151,32 +382,32 @@ We find that 20% of YSOs in the two targeted massive star-forming regions, two o
     <section>
         <div class=smaller>Same diagram for 1 mm peak flux</div>
         <img src="assets/Nazar/B6_fig_talk0.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
         <div class=smaller>Sensitivity floors at 1 mm</div>
         <img src="assets/Nazar/B6_fig_talk1.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
         <div class=smaller>Dust tracks and the optically-thin limit</div>
         <img src="assets/Nazar/B6_fig_talk2.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
         <div class=smaller>The 1 mm-detected cores</div>
         <img src="assets/Nazar/B6_fig_talk3.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
-        <div class=smaller>Upper limits</div>
+        <div class=smaller>HII regions</div>
         <img src="assets/Nazar/B6_fig_talk4.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
     <section>
-        <div class=smaller>Full 1 mm color&ndash;magnitude diagram with HII regions identified</div>
+        <div class=smaller>3mm upper limits</div>
         <img src="assets/Nazar/B6_fig_talk5.png" style="max-height:78%; background-color:white">
-        <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     </section>
 </section>
 
@@ -187,195 +418,43 @@ We find that 20% of YSOs in the two targeted massive star-forming regions, two o
     <div class=smaller3>ALMA-IMF cores: spectral index (1 vs 3 mm) vs peak flux; vertical lines mark free-free (&alpha;=&minus;0.1), optically-thick (&alpha;=2) and optically-thin (&alpha;=3.7) dust</div>
 </section>
 
-<section>
-    <div class=smaller>ALMA-IMF vs Sgr B2 cores share the same region of color&ndash;magnitude space</div>
-    <img src="assets/Nazar/almaimf_vs_sgrb2_matched_resolution.png" style="max-height:80%; background-color:white">
-    <div class=smaller3>Sgr B2 (DS+N+M, red) vs ALMA-IMF (blue)</div>
-</section>
-
-<!-- ============================================================
-     Distance-normalized luminosity histograms (Antonio Daley)
-     Sgr B2 vs ALMA-IMF
-     ============================================================ -->
-
-<section>
-    <div class=smaller>Distance-normalized 3 mm luminosities (F<sub>&nu;</sub>d&sup2;): Sgr B2 cores peak at lower luminosity than ALMA-IMF, but the bright tails overlap</div>
-    <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_3mm_peak_flux.png" style="max-height:78%; background-color:white">
-    <div class=smaller3>Daley, Budaiev, Ginsburg (in prep)</div>
-</section>
-
-<section>
-    <div class=smaller>3 mm luminosities, now including HII regions in the Sgr B2 sample</div>
-    <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_3mm_HII_included.png" style="max-height:78%; background-color:white">
-    <div class=smaller3>Daley, Budaiev, Ginsburg (in prep)</div>
-</section>
-
-<section>
-    <div class=smaller>3 mm luminosities, Sgr B2 split into its sub-regions (N+M vs DS)</div>
-    <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_3mm_histogram_catalog_breakdown.png" style="max-height:78%; background-color:white">
-    <div class=smaller3>Daley, Budaiev, Ginsburg (in prep)</div>
-</section>
-
-<section>
-    <div class=smaller>3 mm luminosities by sub-region, HII regions included</div>
-    <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_3mm_histogram_catalog_breakdown_HII_included.png" style="max-height:78%; background-color:white">
-    <div class=smaller3>Daley, Budaiev, Ginsburg (in prep)</div>
-</section>
-
-<section>
-    <div class=smaller>Distance-normalized 1 mm luminosities: the Sgr B2 and ALMA-IMF distributions are strikingly similar</div>
-    <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_1mm_peak_flux.png" style="max-height:78%; background-color:white">
-    <div class=smaller3>Daley, Budaiev, Ginsburg (in prep)</div>
-</section>
-
-<section>
-    <div class=smaller>1 mm luminosities, including HII regions in the Sgr B2 sample</div>
-    <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_1mm_peak_flux_HII_included.png" style="max-height:78%; background-color:white">
-    <div class=smaller3>Daley, Budaiev, Ginsburg (in prep)</div>
-</section>
-
-<section>
-    <div class=smaller>1 mm luminosities, Sgr B2 split into its sub-regions (DS vs N+M)</div>
-    <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_peak_flux_1mm_catalog_breakdown.png" style="max-height:78%; background-color:white">
-    <div class=smaller3>Daley, Budaiev, Ginsburg (in prep)</div>
-</section>
-
-<section>
-    <div class=smaller>1 mm luminosities by sub-region, HII regions included</div>
-    <img src="assets/Nazar/antoniodaley/SgrB2_vs_ALMA-IMF_histogram_peak_flux_1mm_catalog_breakdown_HII_included.png" style="max-height:78%; background-color:white">
-    <div class=smaller3>Daley, Budaiev, Ginsburg (in prep)</div>
-</section>
-
-
-<!-- ============================================================
-     Build sequences (Budaiev): add survey after survey to each diagnostic
-     ============================================================ -->
-
 <!-- Color-magnitude build: Sgr B2 N+M -> ALMA-IMF -> DUET (Xu+2025) -> Yoo W51-N -->
 <section id=cmd_buildup>
-    <div class=smaller>Distance-corrected color&ndash;magnitude (spectral index vs flux), adding one survey at a time: Sgr B2 (N+M) &rarr; ALMA-IMF &rarr; DUET (Xu+2025) &rarr; W51-N (Yoo)</div>
+    <div class=smaller>Multi dataset CMD</div>
     <div style="position:relative; width:100%; height:80%;">
         <img src="assets/Nazar/cmd_buildup_1.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
         <img class=fragment src="assets/Nazar/cmd_buildup_2.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
         <img class=fragment src="assets/Nazar/cmd_buildup_3.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
         <img class=fragment src="assets/Nazar/cmd_buildup_4.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
+        <img class=fragment src="assets/Nazar/cmd_buildup_5.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
     </div>
-    <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+    <img style='position:absolute; width:130px; top:-3%; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:130px; top:120px; right:-10%; background: transparent; object-fit: contain;' src="assets/Nazar/antoniodaley/antoniodaley_prof_headshot.png">
     <div class=smaller3>Budaiev, Yoo, Ginsburg (in prep)</div>
 </section>
 
-<!-- Clustering: nearest-neighbour separations, survey by survey -->
-<section>
-    <div class=smaller>Core clustering: nearest-neighbour separations, adding ALMA-IMF, Sgr B2 (N+M), Lu+2020 CMZ, DUET cores &amp; subclusters, Lu+2019 cm</div>
-    <div style="position:relative; width:100%; height:80%;">
-        <img src="assets/Nazar/buildup_clustering_1.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_clustering_2.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_clustering_3.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_clustering_4.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_clustering_5.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-    </div>
-    <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
-    <div class=smaller3>Budaiev, Ginsburg (in prep); Sgr B2 cores are the most tightly clustered (median ~2600 AU)</div>
-</section>
-
-<!-- 1mm luminosity function, survey by survey -->
-<section>
-    <div class=smaller>1 mm core luminosity functions, building up the survey comparison</div>
-    <div style="position:relative; width:100%; height:80%;">
-        <img src="assets/Nazar/buildup_lumfunc_hist_1.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_lumfunc_hist_2.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_lumfunc_hist_3.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_lumfunc_hist_4.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-    </div>
-    <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
-    <div class=smaller3>Budaiev, Ginsburg (in prep)</div>
-</section>
-
-<!-- Cumulative luminosity (mass proxy) CDFs, survey by survey -->
-<section>
-    <div class=smaller>Cumulative 1 mm luminosity distributions N(&gt;S d&sup2;), a mass proxy, across surveys</div>
-    <div style="position:relative; width:100%; height:80%;">
-        <img src="assets/Nazar/buildup_massfunction_1.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_massfunction_2.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_massfunction_3.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-        <img class=fragment src="assets/Nazar/buildup_massfunction_4.png" style="position:absolute; top:0; left:50%; transform:translateX(-50%); max-height:100%; max-width:100%; background-color:white;">
-    </div>
-    <img style='position:absolute; width:130px; top:-3%; right:1%; background: transparent; object-fit: contain;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
-    <div class=smaller3>Budaiev, Ginsburg (in prep)</div>
-</section>
 
 
 <section>
-    <h4>Massive star clusters are detected in other galaxies, resolved in ours </h4>
-    <div style="width:50%; float:left" class=smaller>NGC 253 protoclusters <span class=smaller>(<a href="http://adsabs.harvard.edu/abs/2018ApJ...869..126L">Leroy+2018</a>)</span></div>
-    <div style="width:50%; float:right" class=smaller>NGC 4945 protoclusters <span class=smaller>(<a href="http://adsabs.harvard.edu/abs/2018ApJ...869..126L">Emig+2020</a>)</span></div>
-    <img style="max-width:23%;" src="colloquium_assets/Leroy2018_Forming_fig1.svg">
-    <img style="max-width:43%;" src="colloquium_assets/ngc4945_zoom_sgrb2_crop.png">
-    <img style="max-width:23%;" src="colloquium_assets/Emig_NGC4945_PaA.png">
-    </span>
-    <!--<div class=smaller style='position:relative; top: 20%'> 2 pc beam = 0.11" </div>-->
-
-    <aside class=notes>
-        <ul>
-            <li> no notes
-        </ul>
-    </aside>
 </section>
 
 
 
+
+
+
 <section>
-    <section>
-        <img class=zoom style='position: absolute; width:200px; bottom:5%; right:0; ' src='assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_smacs0723.png'>
-        <h4 class=oneline>Proto-clusters were common in the early universe</h4>
-        <div>
-            <img style='max-height:80%; max-width:50%; float:left' src="colloquium_assets/webb-smacs-small.png">
-            <div class=smaller2 style="position:absolute; top:70%; left:0%; ">
-                <a style="background-color:rgba(0,0,0,0.5)" href="https://arxiv.org/abs/2208.02233">Mowla+ 2022</a>
-            </div>
-        </div>
-        <div>
-            <img style='max-height:80%; max-width:50%;; float:right' src="assets/sunburst_arc_clusters_reddit.png">
-            <div class=smaller2 style="position:absolute; top:65%; left: 75%; ">
-                <a style="background-color:rgba(0,0,0,0.5)" href="https://ui.adsabs.harvard.edu/abs/2024A%26A...690A.269R/abstract">Rivera-Thorsen+ 2024</a>
-            </div>
-        </div>
-        <aside class=notes>
-            The galaxy is at z~1.38, these objects are already-evolved globular clusters that formed around z~7-11 (age we're seeing: 4 Gyr)
-            (roughly 13-14 minutes to this point)
-        </aside>
-    </section>
-
-    <section>
-        <div style="padding-top:30%; padding-bottom:30%">
-        Two ALMA large programs probe these conditions:
-        <div> <a href="https://www.almaimf.com/">ALMA-IMF</a></div>
-        <div> <a href="https://github.com/ACES-CMZ">ACES</a> </div>
-        </div>
-    </section>
-
-    <section>
-        <div class=container-vert>  <div class=content-vert>
-
-            <div> <a href="https://www.almaimf.com/">ALMA-IMF</a>:
-                <ul>
-                    <li> 15 High-mass protoclusters probing young (few stars) to old (blowing out gas) </li>
-                    <li> Two ALMA bands looking at cold gas &amp; dust</li>
-                    <li> Data published, analysis ongoing </li>
-                </ul>
-            </div>
-            <div> <a href="https://sites.google.com/view/aces-cmz/home">ACES</a>:
-                <ul>
-                    <li> The whole Galactic Center, with low-SF and high-SF clouds </li>
-                    <li> One ALMA band, biggest mosaic made. </li>
-                    <li> Data all delivered, mostly reduced </li>
-                </ul>
-            </div>
-        </div></div>
-    </section>
-
-
 </section>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -456,223 +535,8 @@ We find that 20% of YSOs in the two targeted massive star-forming regions, two o
     </div>
 </section>
 
-<section>
-    <h4> Hot Cores</h4>
-    <div class=smaller>
-    Hot cores are chemically rich sites of high-mass star formation.
-    <br> Accretion is ongoing
-    </div>
-
-    <div class="image" style="height:75%; background-image: url(colloquium_assets/outflows_over_methanol_e2e.png);" >
-        <div style="position: relative; top: 80%; left:-5%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
-    </div>
-</section>
-
-<section>
-    <div class=flex-vert-90>
-    <div style="float: left; width:55%">
-        <!--<img src="almaimf_assets/cores_vs_hotcores.png">-->
-        <img src="almaimf_assets/Bonfand2024_fig13c_CH3OCHO_masses.png">
-        <div class=smaller>all MYSOs make hot cores</div>
-    </div>
-        <div style="width:45%; float:right">
-            <h4>Hot cores:</h4>
-        <ul>
-
-            <li> 76 HCs in ALMA-IMF sample from CH<sub>3</sub>OCHO <span class=smaller2 style='color:darkred'>(<a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240215023B/abstract">Bonfand+ 2024</a>; left, <a href="https://ui.adsabs.harvard.edu/abs/2022A%26A...665A.140B/abstract">Brouillet+ 2022</a>)</span> </li>
-            <li> ~10% of ALMA-IMF continuum cores are within hot cores
-            <li> 60 from ALMA-ATOMS (<a href="https://ui.adsabs.harvard.edu/abs/2022MNRAS.511.3463Q/exportcitation">Qin+ 2022</a>)
-            <li> &gt; 15 in Sgr B2 (<a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...962...48J/abstract">Jeff+ 2024</a>, <a href="https://ui.adsabs.harvard.edu/abs/2017A%26A...604A..60B/abstract">Bonfand+ 2017</a>)
-
-        </ul>
-        </div>
-    </div>
-</section>
 
 
-<section>
-    My story of high-mass star formation:
-    <ul>
-    <li class="fragment current-visible semi-fade-out">
-              They start as normal-ish looking seeds: <br><i>there is no massive prestellar core.</i>
-              <br>  <span class=smaller>[ALMA-IMF, ALMA-ATOMS, ALMAGAL all confirm this]</span>
-
-    <li class="fragment current-visible semi-fade-out"> They accrete for some time, during which their core must be replenished </li>
-    <li class="fragment current-visible semi-fade-out"> They have a disk most of this time, but it is not a "classic" T Tauri disk, it's small and constantly changing directions: <b>accretion is chaotic</b> </li>
-    <li class="fragment current-visible semi-fade-out"> Massive YSOs spend most of their accretion mass (maybe time) luminous, cooking their surroundings: <b>all MYSOs make hot cores</b> </li>
-    </ul>
-</section>
-
-
-<section>
-Theo Richardson's models turn this story into predictions
-<img style='width:50%; float:left;' src='assets/Theo/acc_rates.png'>
-<img style='width:50%; float:right;' src='assets/Theo/annotated_bincomp.png'>
-
-<br>
-<br>
-<div style='width:75%; text-align:center; float:left;'>
-<div class="smaller3" style='text-align:left;'> <a href="https://arxiv.org/abs/2401.12810"> Richardson, Ginsburg, Indebetouw, Robitaille 2024 (2401.12810)</a></div>
-<div class="smaller3" style='text-align:left;'> <a href="https://arxiv.org/abs/2507.16944 "> Richardson, Ginsburg, Rosolowsky, Peltonen, Indebetouw 2025 (2507.16944)</a></div>
-</div>
-
-            <div style="float: right; width:25%">
-                <img src="FrontiersAssets/TheoRichardson.png" align="right" >
-                <span class=smaller> Theo Richardson</span>
-        </div>
-</section>
-
-<section>
-    <div class=smaller>
-Including source count and flux predictions spanning whole clusters
-    </div>
-<img style='max-height:85%;' src="assets/Theo/ah_large_flux_3_0.5.png">
-<div class=smaller style='position:absolute; bottom:0; right:0;'> Richardson+ in prep </div>
-<div class=smaller style='position:absolute; bottom:0; left:0;'> See Josh Peltonen's talk next... </div>
-</section>
-
-<section>
-    My story of high-mass star formation:
-    <ul>
-    <li class=bold>
-              They start as normal-ish looking seeds: <br>
-              <i>there is no massive prestellar core.</i>
-              <br>  <span class=smaller>[ALMA-IMF, ALMA-ATOMS, ALMAGAL all confirm this]</span>
-
-    <li class=gray> They accrete for some time, during which their core must be replenished </li>
-    <li class=gray> They have a disk most of this time, but it is not a "classic" T Tauri disk, it's small and constantly changing directions: <b>accretion is chaotic</b> </li>
-    <li class=gray> Massive YSOs spend most of their accretion mass (maybe time) luminous, cooking their surroundings: <b>all MYSOs make hot cores</b> </li>
-    </ul>
-</section>
-
-
-<section>
-    No massive starless cores in ALMAGAL or ALMA-IMF
-
-    <div style="position: relative; float:left; width:50%; height:60%" class=smaller>
-        <img style='width:100%; float:left;' src="almaimf_assets/LouvetMassCDF_2024_nosubsets.png">
-
-        <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240718719L/abstract"> Louvet+ 2024 ALMA-IMF </a>
-     </div>
-
-    <div style='width:50%; float:right; height:60%'>
-        <img style='width:100%; float:right' src="assets/ALMAGAL_core_masses_Coletta2025fig15.png">
-
-        <a class=smaller href="https://ui.adsabs.harvard.edu/abs/2025A%26A...696A.151C/abstract"> Coletta+ 2025 ALMAGAL </a>
-    </div>
-
-    <div style='width:100%' class=smaller>
-        (stuff above $\sim10 \mathrm{~M}_\odot$ is protostellar)
-    </div>
-
-</section>
-
-<section>
-    My story of high-mass star formation:
-    <ul>
-    <li class="gray">
-              They start as normal-ish looking seeds: <i> there is no massive prestellar core.</i>
-              <br> <span class=smaller>  [ALMA-IMF, ALMA-ATOMS, ALMAGAL all confirm this]</span>
-
-    <li class="bold"> They accrete for some time, during which their core must be replenished </li>
-    <li class="gray"> They have a disk most of this time, but it is not a "classic" T Tauri disk, it's small and constantly changing directions: <b>accretion is chaotic</b> </li>
-    <li class="gray"> Massive YSOs spend most of their accretion mass (maybe time) luminous, cooking their surroundings: <b>all MYSOs make hot cores</b> </li>
-    </ul>
-</section>
-
-<section>
-    <h4> Massive, hot cores exist</h4>
-    <div class=smaller>
-    MYSOs do have cores, those cores must grow in parallel
-    <br> ~200 $\mathrm{~M}_\odot$ hot core
-    </div>
-
-    <div class="image" style="height:75%; background-image: url(colloquium_assets/outflows_over_methanol_e2e.png);" >
-        <div style="position: relative; top: 80%; left:-5%;" class="smaller2"><a href="http://adsabs.harvard.edu/abs/2017ApJ...842...92G">Ginsburg+ 2017</a></div>
-    </div>
-</section>
-
-
-<section>
-    My story of high-mass star formation:
-    <ul>
-    <li class="gray">
-              They start as normal-ish looking seeds: <i> there is no massive prestellar core.</i>
-              <br> <span class=smaller>  [ALMA-IMF, ALMA-ATOMS, ALMAGAL all confirm this]</span>
-
-    <li class="gray"> They accrete for some time, during which their core must be replenished </li>
-    <li class="bold"> They have a disk most of this time, but it is not a "classic" T Tauri disk, it's small and constantly changing directions: <b>accretion is chaotic</b> </li>
-    <li class="gray"> Massive YSOs spend most of their accretion mass (maybe time) luminous, cooking their surroundings: <b>all MYSOs make hot cores</b> </li>
-    </ul>
-</section>
-
-<section>
-        <img style='position: absolute; width:200px; bottom: 5%; right:0; background: none;' src='assets/HI-CO-Dust_m0.35_RGB_labeled_W51.png'>
-    <div style="float: left; max-width:70%; position:relative;">
-        <img src="colloquium_assets/goddi2020_outfloww51irs2.png">
-        <div class=smaller2 style='position:absolute; bottom:10%; right:10%; color: white;'>
-            <a style='color:white' href="https://ui.adsabs.harvard.edu/abs/2020ApJ...905...25G/abstract">Goddi+ 2020</a>
-        </div>
-    </div>
-    <div style='float: left; width:30%;'>
-        <div class=smaller>  Chaotic accretion in another ~200 M$_\odot$ hot core </div>
-        <br>
-        <div class="smaller2" style="position: relative; float: right; text-align:center;">
-            The outflow (&amp; disk) around W51 North changed direction by ~50 deg
-            in &lt; 100 years.
-        </div>
-        <div class="smaller2" style="position: relative; float: right; text-align:center;">
-        <br>
-        0.25-0.5 M<sub>&odot;</sub> accreted
-        <br>
-        <br>
-        We don't know the frequency of these events; they are likely bright transients,
-        but most often heavily dust-obscured
-        </div>
-    </div>
-</section>
-
-<section>
-    <h5>DIHCA: Digging into the Interior of Hot Cores with ALMA</h5>
-    <div style="float:left; width:65%;">
-        <img src="assets/Olguin2025_DIHCAkinematics_PV.png" style="height:280px;">
-        <img src="assets/Olguin2025_DIHCAkinematics_mom1.png" style="height:350px;">
-    </div>
-    <div class=smaller style="float:right; width:35%; margin-top:10%;">
-        Olguin+ 2025/in prep: kinematic mass measurements of 31 objects with $M>8 M_\odot$
-        (see his poster)
-        <br>
-        <br>
-        The 'disks' are messy.
-    </div>
-</section>
-
-<section data-auto-animate>
-    My story of high-mass star formation:
-    <ul>
-   <li class="gray">
-              They start as normal-ish looking seeds: <i> there is no massive prestellar core.</i>
-              <br> <span class=smaller>  [ALMA-IMF, ALMA-ATOMS, ALMAGAL all confirm this]</span>
-
-    <li class="gray"> They accrete for some time, during which their core must be replenished </li>
-    <li class="gray"> They have a disk most of this time, but it is not a "classic" T Tauri disk, it's small and constantly changing directions: <b>accretion is chaotic</b> </li>
-    <li class="bold"> Massive YSOs spend most of their accretion mass (maybe time) luminous, <span style='color:red'> cooking their surroundings</span>: all MYSOs make hot cores </li>
-    </ul>
-</section>
-
-<section data-auto-animate>
-    <ul>
-    <li class="bold"> Massive YSOs spend most of their accretion mass (maybe time) luminous, <span style='color:red'> cooking their surroundings</span>: all MYSOs make hot cores </li>
-    </ul>
-    <div class=fragment>
-    <br>
-    Many stars in clusters form from cooked gas.
-    <br>
-    <br>
-    Cooking may suppress further fragmentation.
-    <!-- not well-framed... -->
-    </div>
-</section>
 
 
 <section>
@@ -787,8 +651,8 @@ Including source count and flux predictions spanning whole clusters
     <img style="max-height:650px; max-width:750px; " src="assets/Taehwa/frag_flux_20250808.png">
     <div style="position: absolute; top:55%; right:8%;"> <img width=200px src="colloquium_assets/massivecoresfragmentmore.svg"> </div>
     <div class=smaller style="float:left">
-        <br><br>Yoo+ resub.:
-        W51<br>
+        <br><br><a href="https://ui.adsabs.harvard.edu/abs/2026AJ....171..208Y/abstract"> Yoo+ 2026:
+        W51</a><br>
         <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>:
          Sgr B2
     </div>
@@ -819,62 +683,6 @@ Including source count and flux predictions spanning whole clusters
     </div>
 </section>
 
-<section>
-    Fragmentation summary:
-    <ul>
-    <li> N(YSO) &gt; N(core)  <span class=smaller>[maybe obvious, but now empirical]
-    <li> More massive cores contain more fragments
-    <li> ...but more massive fragments dominate their cores more
-    <li> 20% of YSOs reside in hot cores: exposed to hot core chemistry even if they didn't form there
-
-    </ul>
-    <br>
-    <div style="margin-top:2em; text-align:left;" class=smaller> See also Qiuyi Luo's poster on multiplicity: similar data, but different analysis</div>
-</section>
-
-
-
-<section>
-    My story of high-mass star formation:
-    <ul>
-    <li >
-              They start as normal-ish looking seeds: <br>
-              <i>there is no massive prestellar core.</i>
-              <br>  <span class=smaller>[ALMA-IMF, ALMA-ATOMS, ALMAGAL all confirm this]</span>
-
-    <li > They accrete for some time, during which their core must be replenished </li>
-    <li > They have a disk most of this time, but it is not a "classic" T Tauri disk, it's small and constantly changing directions: <b>accretion is chaotic</b> </li>
-    <li > Massive YSOs spend most of their accretion mass (maybe time) luminous, cooking their surroundings: <b>all MYSOs make hot cores</b> </li>
-    </ul>
-</section>
-
-<section>
-
-<div class=smaller style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 60vh;">
-    <div style="margin-bottom: 2em;">Results so far have been <span class=smaller2> (mostly)</span> published and well-digested.</div>
-    <div style="margin-bottom: 2em;">Now for some fresh JWST results, starting with pictures</div>
-</div>
-
- <aside class=notes>
-    <ul>
-    <li> * JWST and ALMA detect different things
-    <li> &rightarrow; exgal: phases traced by different wavelengths are very very likely spatially distinct
-    <li>JWST spots some PAH-bright, ALMA/VLA-dark HII regions
-    <li>&rightarrow; again exgal, worry about B-star contributions to PAHs
-
-    <li>&rightarrow; the joint ALMA/JWST detections are mostly HII regions
-
-    <li>&rightarrow; in sgr b2, there's little sign of JWST-detected SF
-
-    <li>&rightarrow; in W51, there's a lot (outflow cavities, extremely red stars)
-
-    <li> but it's early days and we haven't fully understood this; Sgr B2 has a lot more stars
-
-    <li> Savannah clouds...
-    </ul>
-</aside>
-
-</section>
 
 
 

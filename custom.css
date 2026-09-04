@@ -172,6 +172,36 @@ div.image,span.image {
     vertical-align: top;
 }
 
+/* Reveal's print view (?print-pdf) moves every slide into a `.pdf-page`
+   wrapper, so the `.reveal .slides > section` rule above -- a direct-child
+   selector -- stops matching and sections lose their explicit height.  The
+   `min-height: 768px` in the @media print block below does NOT substitute:
+   min-height does not make a height "definite", so percentage-height children
+   (.flex-vert*, span.bigimage, img.center-fit, inline height:N%) resolve
+   against `auto`, collapse to 0, and their figures print at natural size and
+   misaligned.  Restoring an explicit height makes those percentages resolve
+   exactly as they do on screen.
+
+   Both `html.reveal-print` and `.pdf-page` are created only by reveal's print
+   view, so this rule cannot affect normal presentation rendering. */
+html.reveal-print .reveal .slides .pdf-page > section {
+    height: 100%;
+}
+
+/* With the height above restored, `div.image`/`span.image` size themselves
+   correctly from `height: 100%` again, so the `position: absolute` workaround
+   in the @media print block below is no longer needed here -- and it is
+   actively harmful: taking the image out of flow collapses the space it
+   should occupy, so following siblings positioned with a percentage offset
+   (e.g. `top: -11%`) shift up and can be clipped off the page.  Putting these
+   back in normal flow makes printed slides lay out exactly like screen ones.
+   Still scoped to reveal's print view, so screen rendering is untouched, and
+   the plain (non-?print-pdf) print path keeps the old workaround. */
+html.reveal-print .reveal .slides .pdf-page > section div.image,
+html.reveal-print .reveal .slides .pdf-page > section span.image {
+    position: static;
+}
+
 .reveal .slides > section section {
     height: 100%;
     top: 0%; /* -58% */

@@ -370,7 +370,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     position: absolute; margin: 0; background: none;
     max-width: none; max-height: none;
     transform-origin: 0px 0px;
-    visibility: visible; opacity: 1;
+    visibility: visible; opacity: var(--o0, 1);
     left: var(--l0); top: var(--t0); rotate: var(--r0); scale: var(--s0);
     transition: all var(--transition-duration, 1.2s) ease-in-out !important;
 }
@@ -379,7 +379,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
    zoom forward on return.  .visible persists, so coming back from #cloudc it is
    already zoomed and stepping back plays the shrink in reverse. */
 .reveal section img.cmzzoom.visible {
-    left: var(--l1); top: var(--t1); rotate: var(--r1); scale: var(--s1);
+    left: var(--l1); top: var(--t1); rotate: var(--r1); scale: var(--s1); opacity: var(--o1, 1);
 }
 </style>
 
@@ -503,38 +503,68 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
 
-<!-- What's coming soon.  Every layer is rendered on the SAME ACES/MUSTANG WCS grid
-     (11120x4080 / 4), so they stack 1:1 with no transform and nothing moves between
-     slides -- no screenshots, no per-slide composites.
-     Background: Spitzer/GLIMPSE360 via hips2fits.
-     JWST NIRCam/MIRI = GO 10678 Galactic Center Treasury Survey footprints, and Roman =
-     RGPS GC time-domain + GBTDS tiles, both from roman_footprint_rotatable.html
-     (pysiaf SCA geometry, per-pointing galactic PA). -->
+<!-- What's coming soon.  Every layer is rendered onto the SAME WCS grid
+     (l -1.55..1.70, b +-0.688, 4"/px) by a local HiPS renderer, so they stack 1:1 with no
+     transform -- no screenshots, no per-slide composites.  Displayed 2400px wide and centred,
+     so the image overflows the 1024x768 canvas on all sides and fills ultrawide screens.
+     Layers: Spitzer/GLIMPSE360 -> Ash rgb_final_uncropped_noalpha -> ACES/MUSTANG ->
+     JWST today (jwst_nir_hips) -> GO 10678 NIRCam / MIRI footprints -> Roman (zoomed out). -->
+<section id=soon-spitzer>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">The Galactic Center in the mid-infrared (Spitzer/GLIMPSE)</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
+</section>
+
+<section id=soon-ash>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;and in the radio</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
+</section>
+
+<section id=soon-aces>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;with ACES + MUSTANG on top</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
+</section>
+
 <section id=soon-jwst-today>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">What&rsquo;s coming: the Galactic Center in the next few years</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:1;" src="assets/cmz/glimpse360_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:2;" src="assets/cmz/jwst_nir_hips_on_ACESgrid.png">
-    <div class=smaller3 style="position:absolute; bottom:6%; left:12px; z-index:9;">JWST today</div>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">What JWST has observed so far</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
 </section>
 
 <section id=soon-nircam>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">The JWST Galactic Center Treasury Survey (GO 10678) &mdash; NIRCam</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:1;" src="assets/cmz/glimpse360_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:2;" src="assets/cmz/jwst_nir_hips_on_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:3;" src="assets/cmz/fp_jwst_nircam_ACESgrid.png">
-    <div class=smaller3 style="position:absolute; bottom:6%; left:12px; z-index:9;"><span style="color:#ffaa00">&#9632; JWST NIRCam (GO 10678)</span> &nbsp; <span style="color:#ff66cc">&#9632; JWST MIRI</span> &nbsp; <span style="color:#50b4ff">&#9632; Roman WFI</span></div>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">The JWST Galactic Center Treasury Survey (GO 10678) &mdash; NIRCam</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:5;" src="assets/cmz/fp_nircam_fullbleed.png">
+    <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#cc7a00">&#9632; JWST NIRCam (GO 10678)</span></div>
 </section>
 
 <section id=soon-miri>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">&hellip;and MIRI</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:1;" src="assets/cmz/glimpse360_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:2;" src="assets/cmz/jwst_nir_hips_on_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:3;" src="assets/cmz/fp_jwst_nircam_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:4;" src="assets/cmz/fp_jwst_miri_ACESgrid.png">
-    <div class=smaller3 style="position:absolute; bottom:6%; left:12px; z-index:9;"><span style="color:#ffaa00">&#9632; JWST NIRCam (GO 10678)</span> &nbsp; <span style="color:#ff66cc">&#9632; JWST MIRI</span> &nbsp; <span style="color:#50b4ff">&#9632; Roman WFI</span></div>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;and the same survey with MIRI</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:5;" src="assets/cmz/fp_miri_fullbleed.png">
+    <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#cc3399">&#9632; JWST MIRI (GO 10678)</span></div>
 </section>
 
 <section id=soon-roman>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">&hellip;and Roman will cover all of it</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:1;" src="assets/cmz/glimpse360_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:2;" src="assets/cmz/jwst_nir_hips_on_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:3;" src="assets/cmz/fp_jwst_nircam_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:4;" src="assets/cmz/fp_jwst_miri_ACESgrid.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:5;" src="assets/cmz/fp_roman_ACESgrid.png">
-    <div class=smaller3 style="position:absolute; bottom:6%; left:12px; z-index:9;"><span style="color:#ffaa00">&#9632; JWST NIRCam (GO 10678)</span> &nbsp; <span style="color:#ff66cc">&#9632; JWST MIRI</span> &nbsp; <span style="color:#50b4ff">&#9632; Roman WFI</span></div>
+    <div class="smaller2 fragment fade-out" data-fragment-index="2" style="z-index:20; position:absolute; top:10px; left:14px; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">Roman covers all of it &mdash; and far beyond</div>
+    <div class="smaller2 fragment fade-in" data-fragment-index="2" style="z-index:21; position:absolute; top:10px; left:14px; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">The Galactic Center at 1.28&nbsp;GHz (MeerKAT)</div>
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/wide_spitzer.jpg"
+         style="width:2400.00px; z-index:1; --l0:-2183.38px; --t0:-756.66px; --r0:0deg; --s0:2.246154; --l1:-688.00px; --t1:-123.83px; --r1:0deg; --s1:1.000000;">
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/wide_spitzer_ash.jpg"
+         style="width:2400.00px; z-index:2; --l0:-2183.38px; --t0:-756.66px; --r0:0deg; --s0:2.246154; --l1:-688.00px; --t1:-123.83px; --r1:0deg; --s1:1.000000; --o0:1; --o1:0;">
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/fp_roman_wide.png"
+         style="width:2400.00px; z-index:3; --l0:-2183.38px; --t0:-756.66px; --r0:0deg; --s0:2.246154; --l1:-688.00px; --t1:-123.83px; --r1:0deg; --s1:1.000000;">
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/bg_spitzer_fullbleed.jpg"
+         style="width:2400.00px; z-index:4; --l0:-688.00px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:-22.25px; --t1:157.91px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/layer_ashrgb_fullbleed.jpg"
+         style="width:2243.28px; z-index:5; --l0:-531.28px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:47.53px; --t1:157.91px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/layer_acesmustang_fullbleed.png"
+         style="width:2400.00px; z-index:6; --l0:-688.00px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:-22.25px; --t1:157.91px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/fp_roman_fullbleed.png"
+         style="width:2400.00px; z-index:7; --l0:-688.00px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:-22.25px; --t1:157.91px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
+    <img class="fragment custom cmzzoom" data-fragment-index="2" src="assets/cmz/wide_meerkat_on_spitzer.jpg"
+         style="width:2400.00px; z-index:8; --l0:-688.00px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:-688.00px; --t1:-123.83px; --r1:0deg; --s1:1.000000; --o0:0; --o1:1;">
+    <div class="smaller3 fragment fade-out" data-fragment-index="2" style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
+        <span style="color:#0a2878">&#9633; Roman GC hourly-cadence</span> &nbsp; <span style="color:#783a00">&#9633; Roman GBTDS</span> &nbsp; <span style="color:#444">PA 90.6&deg; (spring window)</span>
+    </div>
 </section>
 
-<!-- Roman proper-motion tomography, seeded from Roman GO 19008 (~/Dropbox/proposals/roman/cycle1/cmz_fuz) -->
 <section id=roman-tomo-why>
     <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">Why Roman: proper motions give us the third dimension</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:40px; top:110px; width:560px;" src="assets/roman/faceongalaxywithFUZ5.png">

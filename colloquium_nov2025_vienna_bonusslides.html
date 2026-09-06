@@ -1,4 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Star formation in the Galaxy &mdash; bonus slides</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/lib/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
 
+
+
+    <!--[if lt IE 9]>
+    <script src="reveal/lib/js/html5shiv.js">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
 <section id=iceicebaby>
 The Brick is icy
     <img src="jwbrick/BrickJWST_merged_longwave_narrowband_withstars.png">
@@ -3111,3 +3137,58 @@ Class 0 is a poor proxy for Stage 0.
 <section>
 <img src="assets/Taehwa/W51_CMD_space.png">
 </section>
+
+      </div>
+</div>
+
+
+    <!-- End of slides. -->
+
+<script src="reveal/dist/reveal.js"> </script>
+<script src="reveal/plugin/highlight/highlight.js"></script>
+<script src="reveal/plugin/math/math.js"></script>
+<script src="reveal/plugin/notes/notes.js"></script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js"></script>
+
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: true,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+        pdfMaxPagesPerSlide: 1,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          //mathjax: 'mathjax/MathJax.js',
+          //config: 'TeX-AMS_HTML-full',
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+
+        plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes],
+
+        dependencies: [
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>

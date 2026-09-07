@@ -41,91 +41,16 @@
               </ul>
           </section>
 
-          <section style='background-color:black'>
-              <div style='width:1500px; margin-left:-220px; height:1500px; margin-top:-200px; background-color:black; position: absolute; z-index:-1'>
-              </div>
-              <div style='width:1450px; margin-left:-220px; z-index:10'>
-                  <!--<img style='width:100%' src="https://www.dropbox.com/s/lzfygci3qlrqqm2/zoom_anim_cmz_linear_withACES_HI-CO-Dust_m0.35_combined.gif?raw=1"></img>-->
-                  <!--<video data-autoplay controls loop preload="metadata" style='width:100%' src="https://www.dropbox.com/s/u3ez0mhu1e00nrn/zoom_anim_cmz_linear_withACES_HI-CO-Dust_m0.35_combined.mp4?raw=1"></video>-->
-                <video data-autoplay controls loop preload="metadata" style='height: 100%' src="https://www.dropbox.com/scl/fi/zmlyawi2jdu8kxhe3zc9g/zoom_anim_cmz_linear_withACES_HI-CO-Dust_m0.35_combined_frommp4_withpause.mp4?rlkey=jg4rraggt4pq33fcyis402ps1&st=zphqo1l8&raw=1"></video>
-              </div>
-          </section>
 
 <!--
 
-STORYBOARD:
-How do stars form?  How does star formation change across the universe?
-In other words, how does it  change with environment?
 
-The most important stars are massive stars.
-They are the rarest, and they are the most likely to exhibit significant
-environmental differences.
-
-When we study star formation, the key question is then:
-How massive is the forming star?
-
-We will take a visual tour through the Galaxy to explore environmental
-differences in the stellar mass function and stellar clustering.
-
-
-
-Opening cartoon is incorrect:
-  * doesn't account for high-mass star formation
-  * doesn't account for fragmentation within the cores
-  * doesn't account for accumulated mass
-
-
-
-
-What are the mass-determining rules in the Galaxy's richest environments?
-
-Determining stellar masses in the Galaxy's richest environments
-
-
-The most important factor deciding the fate of a star and its surroundings is its initial mass.  The relative number of high- and low-mass stars decides how much light and mass escape from a population of stars.  This distribution, the stellar initial mass function, is often assumed to be universally invariant, though we have plenty of reason to believe it varies with environment.  I will present results from ALMA observations, including large programs ALMA-IMF and ACES, that measure the mass distribution of pre- and proto-stellar objects at early phases.  Denser regions of our Galaxy, like its center, form more stars in clusters than do the outskirts where the Sun resides.  Core mass function measurements suggest that more intensely star-forming regions preferentially form high-mass stars.  However, the simplest models of core-to-star evolution fail, and I'll show how some have been ruled out using detailed observations of the massive cluster-forming regions W51 and Sgr B2.  I'll present a new theoretical framework based on linking radiative transfer models to protostellar accretion history models that we're using to interpret this transition.  Finally, I'll show how JWST is changing our view of young and forming massive clusters with a gallery of early results from several imaging programs.
-
-
-
-I'll present these results
-within a visual tour through the Galaxy at infrared and radio wavelengths,
-covering local regions, the Galactic plane, and the Galactic Center.  I'll mix
-in some surprising discoveries we've made in these projects, including salts in
-protostellar disks and the millimeter ultra-broadline object (MUBLO).
-
-
-
-
-# old, not using:
-However,
-the measurements of individual young stars remain subject to large systematic
-uncertainties that make a direct interpretation of mass function measurements
-difficult.  I will walk through some of the small advances we are making in the
-gas flows that assemble stars and clusters, measurements of YSOs and their
-multiplicity, and the role of astrochemistry and radiative transfer models in
-these advances.
-I'll highlight a few topics on which UW specialties, like large time domain
-surveys and N-body dynamical modeling, play a key role.
-
-*gas flow: Savannah
-*multiplicity: Nazar, Taehwa
-*variability: Theo
-*astrochemistry: Desmond, Alyssa
-
-
-<section>
-    We still don't know how stars actually get their mass.
-
-    <br>
-    <br>
-    It falls from far away to the tiny point that is the star, but from what direction?  How fast?  When?
-
-    <br>
-    <br>
-    Angular momentum adds most of the complication.
-</section>
 
 
 -->
+<section>
+    Part 1: We see star formation in the CMZ
+</section>
 
 <section data-id="9e1f37193271406fc72e974be0a8a3fe">
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
@@ -205,10 +130,14 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 
 <section>
-    <section data-auto-animate class=darkbg data-background-color="black">
+    <section data-auto-animate class=darkbg data-background-color="black" id=sgrb2_nircam_on_meerkat>
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:5%; margin-left:-51%; ">
-        <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position: absolute; top: 36.0315% !important;
-  left: 21.8887% !important; height: 100%; max-width: 62%; max-height: 33.5%; --rotation:-4.5deg; transform-origin: 0px 0px; --transition-duration: 0.5s;" class="fragment rotated" data-fragment-index="1">
+        <!-- pose measured by registering SGR-B2_MIRI_Mosaic.png against NIRCAMSgrB2_on_MEERKAT.png
+             (patch cross-correlation, 60 patches, residual rms 2.2 x 2.7 NIRCam px = 0.9 screen px,
+             ncc 0.869): mosaic->NIRCam is a similarity with rotation -3.3589 deg and scale 0.708935,
+             i.e. 1.14 deg clockwise of the -4.5 deg that was here, and 0.57% smaller. -->
+        <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position: absolute; top: 35.02102% !important;
+  left: 22.15423% !important; height: 100%; max-width: 62%; max-height: 33.30926%; --rotation:-3.3589deg; transform-origin: 0px 0px; --transition-duration: 0.5s;" class="fragment rotated" data-fragment-index="1">
         <div style='position: absolute; font-size: 70%;' >
         Sgr B2 with JWST/<span style="display:inline-block; position:relative; vertical-align:top; width:auto; min-width:3.5em;">
             <span class="fragment fade-out" data-fragment-index="1" style="position:absolute; left:0; top:0; width:100%;">NIRCam</span>
@@ -228,64 +157,43 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:500%; max-width:1000%; max-height:1000%;position: absolute;top: -1200px;left: -2620px;">
     </section>
 </section>
-<section data-auto-animate data-background-color="black">
+<section data-auto-animate data-background-color="black" id=sgrb2n_miri>
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:10%; margin-left:-50%; opacity:0.0; rotate:0deg; ">
-<img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.37%; left:-76.2877%;height: 100%;max-width: 200%;max-height: 200%;">
+<img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.34375%; left:-71.289%;height: 100.8%;max-width: 200%;max-height: 200%;">
         <div style='position: absolute; bottom:0px; right:100px; ' class="smaller darkbg">
         MIRI reveals deeply embedded gas
         </div>
     <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
-<img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position: absolute; top: 46.0367% !important; left: 57.4883% !important; height: 22%; max-width: 54%; max-height: 90%;" class=fragment data-auto-animate-target="sgrb2nmiriwithalma">
+<!-- follows the background: when SGR-B2_MIRI_Mosaic.png was re-framed to fill the canvas, this
+             panel had to move with it to stay on the same patch of sky (mosaic px 1953.1, 530.0). -->
+<img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position: absolute; top: 46.4479% !important; left: 63.5615% !important; height: 22.1745%; max-width: 54%; max-height: 90%;" class=fragment data-auto-animate-target="sgrb2nmiriwithalma">
 </section>
 
-<section data-auto-animate data-background-color="black">
-<img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.37%; left:-76.2877%;height: 100%;max-width: 200%;max-height: 200%; opacity:0.0;">
-<img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position:absolute; top:-2%; left:7%;height: 100%;max-width: 200%;max-height: 200%;" data-id="sgrb2nmiriwithalma">
-        <div style='position: absolute; bottom:80px; right:100px; color:white; background-color:rgba(0,0,0,0.5); z-index:100' class=smaller>
-        MIRI 25 micron shows the outflow: <br> first IR light from within Sgr B2 N
+<section>
+    <section data-auto-animate data-background-color="black" id=sgrb2n_miri_outflow>
+    <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.34375%; left:-71.289%;height: 100.8%;max-width: 200%;max-height: 200%; opacity:0.0;">
+    <img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position:absolute; top:-2%; left:7%;height: 100%;max-width: 200%;max-height: 200%;" data-id="sgrb2nmiriwithalma">
+            <div style='position: absolute; bottom:80px; right:100px; color:white; background-color:rgba(0,0,0,0.5); z-index:100' class=smaller>
+            MIRI 25 micron shows the outflow: <br> first IR light from within Sgr B2 N
+            </div>
+    <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+    <img src="assets/Nazar/N_Miri_ALMAcont_and_outflow.png" style="clip-path: inset(5% 15% 11% 11%); position: absolute; top: 11.08% !important; left: 7.92% !important; max-width: 77%; " class="fragment ">
+    </section>
+    <section>
+        <h6>Sgr B2 N Accretion + Outflow</h6>
+        <img src='assets/Nazar/SgrB2N_SiO_outflow_withmaser_noaxislabels.png' style="width:50%; float:left;">
+        <div style="position:absolute; top:69px; left:0; width:50%; text-align:center; color:white; background-color:rgba(0,0,0,0.5); z-index:100; white-space:nowrap; overflow:hidden;">
+            <span style="display:inline-block; max-width:100%; font-size:63%; vertical-align:middle;">
+                <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989...52B/abstract" class=darkbg>Budaiev+ 2025</a>: H$_2$O masers &amp; SiO outflow
+            </span>
         </div>
-<img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
-<img src="assets/Nazar/N_Miri_ALMAcont_and_outflow.png" style="clip-path: inset(5% 15% 11% 11%); position: absolute; top: 11.08% !important; left: 7.92% !important; max-width: 77%; --to-rotation:-100deg" class="fragment rotate-to">
-<div class=fragment placeholder-for-fadeout-animation></div>
+        <div style="float:right; width:50%;">
+            <div class=smaller> <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A...6S">Schwörer+ 2019</a>: Accretion along filaments: \(\sim0.1~\mathrm{M}_\odot \mathrm{yr}^{-1}\)</div>
+            <img src='colloquium_assets/Schworer2019_fig2.svg' style="object-fit: cover; object-position: left; width: 200%; max-width: none; height: auto; clip-path: inset(0 50% 0 0);">
+            <img src='colloquium_assets/Schworer2019_fig4.svg' style="object-fit: cover; object-position: top; width: 100%; max-width: none; height: auto; clip-path: inset(0 0 50% 0);">
+        </div>
+    </section>
 </section>
-
-<section>
-    <h6>Sgr B2 N Accretion + Outflow</h6>
-    <img src='assets/Nazar/SgrB2N_SiO_outflow_withmaser_noaxislabels.png' style="width:50%; float:left;">
-    <div style="position:absolute; top:69px; left:0; width:50%; text-align:center; color:white; background-color:rgba(0,0,0,0.5); z-index:100; white-space:nowrap; overflow:hidden;">
-        <span style="display:inline-block; max-width:100%; font-size:63%; vertical-align:middle;">
-            <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...989...52B/abstract" class=darkbg>Budaiev+ 2025</a>: H$_2$O masers &amp; SiO outflow
-        </span>
-    </div>
-    <div style="float:right; width:50%;">
-        <div class=smaller> <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...628A...6S">Schwörer+ 2019</a>: Accretion along filaments: \(\sim0.1~\mathrm{M}_\odot \mathrm{yr}^{-1}\)</div>
-        <img src='colloquium_assets/Schworer2019_fig2.svg' style="object-fit: cover; object-position: left; width: 200%; max-width: none; height: auto; clip-path: inset(0 50% 0 0);">
-        <img src='colloquium_assets/Schworer2019_fig4.svg' style="object-fit: cover; object-position: top; width: 100%; max-width: none; height: auto; clip-path: inset(0 0 50% 0);">
-    </div>
-</section>
-
-<section>
-<div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
-<div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
-</div>
-    <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
-    left: -50px;
-    top: 172px;
-    rotate: -4.5deg;
-    scale: 0.975;
-  '>
-    <!-- old version <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">-->
-    <div style="position: absolute; bottom: 10%; left: 8%; z-index: 10; text-align: left;" class=smaller2>
-        <span style="color:red">R=770</span><br> <span style="color:green">G=(480-[410-405])</span><br> <span style="color:blue">B=Brα</span>
-    </div>
-    <div style="position: absolute; bottom: 10%; right: 0%; z-index: 10; text-align: right; width:50%; color:rgb(2, 136, 136);" class=smaller2>
-        <span style='font-size:250%'>&#9632;</span> New HII regions
-    </div>
-</section>
-
-
-
-
 
 <style>
 .fragment.sgrb2_sf_line[data-step=1] {
@@ -329,29 +237,56 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
      subtracted NIRCam RGB) and SgrB2_DS_alma_inferno_hips (1.3 mm continuum), all rendered
      locally onto a common RA/Dec TAN grid so the white boxes and the panels register exactly. -->
 <!-- Zoom + rotate from the Sgr B2 MIRI overview into the Deep South field.
-     The start state is the whole mosaic fitted to the page (1024x450.8, letterboxed on black);
-     the end state zooms 2.38x and rotates -93.3 deg into the DS field.  SGR-B2_MIRI_Mosaic.png
-     carries no AVM, so
+     Four states: it arrives on #sgrb2n_miri_outflow's framing (the SgrB2N MIRI+ALMA panel, held in
+     place and fading out over the first move), zooms back out to #sgrb2n_miri's framing, then to the
+     whole mosaic fitted to the page (1024x450.8, letterboxed on black), then 2.38x further in and
+     rotated -93.3 deg into the DS field.  The first two poses come from the same panel image being
+     shown full-screen on #sgrb2n_miri_outflow and as a 4.51x-smaller inset on #sgrb2n_miri, which
+     fixes the zoom-out factor exactly.  SGR-B2_MIRI_Mosaic.png carries no AVM, so
      the end state was measured rather than guessed: the mosaic was registered against
      SgrB2_RGB_2550-1280-770.png (which does carry AVM; ncc 0.95) and miri_fullfov.jpg against
      the same reference (ncc 0.93); the composed mosaic->fullfov map reproduces the DS frame at
      ncc 0.996, so the mosaic itself lands on #sgrb2ds-overview's framing and no cross-fade to
      miri_fullfov.jpg is needed (mean level 83.7 vs 83.0, mean |diff| 2.5/255 -- a cross-fade only
      ghosted the stars on the way in and left the sharp copy sitting on top on the way back). -->
-<section id=sgrb2ds-zoomin data-background-color="black">
+<style>
+/* #sgrb2ds-zoomin has four states; an element can only carry one data-fragment-index, so the
+   third and fourth are driven by marker fragments through :has(), as with .sgrb2-zoomback.
+   These two rules must stay in this order: at the dive step both markers are visible. */
+#sgrb2ds-zoomin:has(.sgrb2ds-wide.visible) img.cmzzoom.visible {
+    left: var(--l2); top: var(--t2); rotate: var(--r2); scale: var(--s2);
+}
+#sgrb2ds-zoomin:has(.sgrb2ds-dive.visible) img.cmzzoom.visible {
+    left: var(--l3); top: var(--t3); rotate: var(--r3); scale: var(--s3);
+}
+</style>
+<section id=sgrb2ds-zoomin data-background-color="black" style="overflow:hidden;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png"
-         style="width:1744.307px; height:768px; z-index:1;
-                --l0:0px;      --t0:158.585px; --r0:0deg;       --s0:0.587055;
-                --l1:42.957px; --t1:857.038px; --r1:-93.298deg; --s1:1.3969;
+         style="width:1758.339px; height:774.144px; z-index:1;
+                --l0:-6155.517px; --t0:-1690.228px; --r0:0deg;       --s0:4.509685; --o0:0;
+                --l1:-729.98px;   --t1:-3px;        --r1:0deg;       --s1:1;        --o1:1;
+                --l2:0px;         --t2:158.582px;   --r2:0deg;       --s2:0.582361;
+                --l3:42.957px;    --t3:857.038px;   --r3:-93.298deg; --s3:1.385788;
                 --transition-duration:1.8s;">
+    <!-- the panel from #sgrb2n_miri_outflow, held at exactly its pose there, riding the first
+         zoom-out down to the inset pose it occupies on #sgrb2n_miri while it fades away. -->
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png"
+         style="width:902.162px; height:768px; z-index:2;
+                --l0:71.68px;  --t0:-0.36px;  --r0:0deg; --s0:1;        --o0:1;
+                --l1:650.87px; --t1:371.72px; --r1:0deg; --s1:0.221745; --o1:0;
+                --l2:650.87px; --t2:371.72px; --r2:0deg; --s2:0.221745;
+                --l3:650.87px; --t3:371.72px; --r3:0deg; --s3:0.221745;
+                --transition-duration:1.8s;">
+    <div class="fragment sgrb2ds-wide" data-fragment-index="2"></div>
+    <div class="fragment sgrb2ds-dive" data-fragment-index="3"></div>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 &mdash; JWST/MIRI (NASA, ESA, CSA, STScI)</div>
 </section>
 
-<section id=sgrb2ds-overview>
+<section id=sgrb2ds-overview data-background-color="black">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; JWST/MIRI (NASA, ESA, CSA, STScI)</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_all.png">
-    <div class=smaller3 style="position:absolute; bottom:12px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Three fields, a few arcseconds each</div>
+    <div class=smaller3 style="position:absolute; bottom:12px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Three sites of star formation</div>
 </section>
 
 <section id=sgrb2ds-f1 data-background-color="black">
@@ -366,7 +301,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
          style="width:350px; height:350px; z-index:11; --l0:168.9px; --t0:230.4px; --r0:0deg; --s0:0.138980; --l1:652px; --t1:406px; --r1:0deg; --s1:1;">
     <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f1_sio.png"
          style="width:350px; height:350px; z-index:13; --l0:168.9px; --t0:230.4px; --r0:0deg; --s0:0.138980; --l1:652px; --t1:406px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">JWST NIRCam, continuum-subtracted</div>
+    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <span style='color:red'>F480M</span></div>
     <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:732px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum</div>
     <div class="fragment sgrb2-contours-on" data-fragment-index="2"></div>
     <div class="smaller3 fragment fade-in" data-fragment-index="2" style="position:absolute; left:14px; bottom:14px; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;">white: ALMA SiO 5&ndash;4 &mdash; outflows trace back to the mm sources</div>
@@ -385,7 +320,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
          style="width:350px; height:350px; z-index:11; --l0:133.3px; --t0:303.9px; --r0:0deg; --s0:0.160684; --l1:652px; --t1:406px; --r1:0deg; --s1:1;">
     <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f2_sio.png"
          style="width:350px; height:350px; z-index:13; --l0:133.3px; --t0:303.9px; --r0:0deg; --s0:0.160684; --l1:652px; --t1:406px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">JWST NIRCam, continuum-subtracted</div>
+    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <span style='color:red'>F480M</span></div>
     <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:732px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum</div>
     <div class="fragment sgrb2-contours-on" data-fragment-index="2"></div>
     <div class="smaller3 fragment fade-in" data-fragment-index="2" style="position:absolute; left:14px; bottom:14px; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;">white: ALMA SiO 5&ndash;4 &mdash; outflows trace back to the mm sources</div>
@@ -404,36 +339,66 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
          style="width:350px; height:350px; z-index:11; --l0:93.1px; --t0:621.5px; --r0:0deg; --s0:0.228037; --l1:652px; --t1:406px; --r1:0deg; --s1:1;">
     <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f3_sio.png"
          style="width:350px; height:350px; z-index:13; --l0:93.1px; --t0:621.5px; --r0:0deg; --s0:0.228037; --l1:652px; --t1:406px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">JWST NIRCam, continuum-subtracted</div>
+    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <span style='color:red'>F480M</span></div>
     <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:732px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum</div>
     <div class="fragment sgrb2-contours-on" data-fragment-index="2"></div>
     <div class="smaller3 fragment fade-in" data-fragment-index="2" style="position:absolute; left:14px; bottom:14px; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;">white: ALMA SiO 5&ndash;4 &mdash; outflows trace back to the mm sources</div>
     <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
 </section>
 
-<section id=sgrb2-to-cmz>
-    <div style='text-align:left; width:80%;' class=smaller>There is an overall asymmetry in the star formation seen both in JWST (HII regions) and ALMA (embedded YSOs) <div style='text-align:left;'class=smaller> JWST shows the transition is sharp</div></div>
+<section>
+    <section id=sgrb2-to-cmz>
+        <div style='text-align:left; width:80%;' class=smaller>There is an overall asymmetry in the star formation seen both in JWST (HII regions) and ALMA (embedded YSOs) <div style='text-align:left;'class=smaller> JWST shows the transition is sharp</div></div>
 
-    <img src="assets/Nazar/asymmetry.png" style="position: absolute; z-index:101; left: -1%;
-    margin-top: 0%;
-    top: 20.5%;
-    scale: 1.09;
-    rotate: -4.5deg;" class="fragment fade-out" data-fragment-index="1">
-    <img src="assets/Nazar/SgrB2_starformation_asymmetry.png" style="" class="fragment sgrb2_sf_line custom" data-fragment-index="2">
+        <img src="assets/Nazar/asymmetry.png" style="position: absolute; z-index:101; left: -1%;
+        margin-top: 0%;
+        top: 20.5%;
+        scale: 1.09;
+        rotate: -4.5deg;" class="fragment fade-out" data-fragment-index="1">
+        <img src="assets/Nazar/SgrB2_starformation_asymmetry.png" style="" class="fragment sgrb2_sf_line custom" data-fragment-index="2">
 
-    <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden; z-index: 150;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+        <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden; z-index: 150;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
 
-    <div class="smaller fragment fade-in-then-out" data-fragment-index="1" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
-        What ALMA sees, JWST doesn't: 3/700 point source matches
-        <br> (HII regions, outflow cavities do match)
+        <div class="smaller fragment fade-in-then-out" data-fragment-index="1" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
+            What ALMA sees, JWST doesn't: 3/700 point source matches
+            <br> (HII regions, outflow cavities do match)
+        </div>
+        <div class="fragment fade-in" data-fragment-index="2" style='position:absolute; bottom:6%; left:10%; z-index: 150;'>
+            <ul>
+                <li> Star formation is ongoing
+                <li>  infrared SF tracers are separated from mm
+                <li>   asymmetry hints at an ongoing compression event
+            </ul>
+        </div>
+
+        <img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="position:absolute; left:0%; top:20%; width:100%; max-width:100%; max-height:100%; z-index: 1; transition: all 1s ease-in-out; " class="fragment" data-fragment-index="2">
+    </section>
+
+
+
+
+    <section>
+    <div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
+    <div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
     </div>
-    <div class="fragment fade-in" data-fragment-index="2" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
-        What does this mean in context?
-        <br> TBD, but it hints at an ongoing compression event
-    </div>
-
-    <img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="position:absolute; left:0%; top:20%; width:100%; max-width:100%; max-height:100%; z-index: 1; transition: all 1s ease-in-out; " class="fragment" data-fragment-index="2">
+        <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
+        left: -50px;
+        top: 172px;
+        rotate: -4.5deg;
+        scale: 0.975;
+      '>
+        <!-- old version <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">-->
+        <div style="position: absolute; bottom: 10%; left: 8%; z-index: 10; text-align: left;" class=smaller2>
+            <span style="color:red">R=770</span><br> <span style="color:green">G=(480-[410-405])</span><br> <span style="color:blue">B=Brα</span>
+        </div>
+        <div style="position: absolute; bottom: 10%; right: 0%; z-index: 10; text-align: right; width:50%; color:rgb(2, 136, 136);" class=smaller2>
+            <span style='font-size:250%'>&#9632;</span> New HII regions
+        </div>
+    </section>
 </section>
+
+
+
 
 
 
@@ -584,7 +549,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img data-id="ccd-overlay" src="assets/Savannah/icevar_ccd_cloudD_overlay.png"
          style="position:absolute; left:20px; top:22px; width:300px; opacity:0.5;">
     <div data-id="cvtitle" style="position:absolute; left:372px; top:30px; width:635px; text-align:left; font-size:27px; line-height:1.45;">
-        Slope changes imply chemical differences
+        Slope changes imply chemical differences between clouds <i>within</i> the CMZ
         <div style="margin-top:20px;">CO/Water ratio?</div>
         <div style="margin-top:20px;">OCN<sup>&minus;</sup> / Ammonium salt abundance?</div>
         <div style="margin-top:20px;">TBD: Ashby+ NIRSPEC 6927</div>

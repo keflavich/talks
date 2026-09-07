@@ -164,9 +164,12 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         MIRI reveals deeply embedded gas
         </div>
     <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
-<!-- follows the background: when SGR-B2_MIRI_Mosaic.png was re-framed to fill the canvas, this
-             panel had to move with it to stay on the same patch of sky (mosaic px 1953.1, 530.0). -->
-<img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position: absolute; top: 46.4479% !important; left: 63.5615% !important; height: 22.1745%; max-width: 54%; max-height: 90%;" class=fragment data-auto-animate-target="sgrb2nmiriwithalma">
+<!-- placed by registering SgrB2N_MIRI_with_ALMA.png against SGR-B2_MIRI_Mosaic.png rather than
+             by eye (rotation/scale/offset search over the panel's plot area, data-region ncc 0.862):
+             panel px -> mosaic px is scale 0.084532, rotation -1.133 deg, panel (0,0) at mosaic
+             (1954.37, 517.92).  The old placement was unrotated and ~2% small, which is what made
+             the stars jump when this fragment came in. -->
+<img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position: absolute; top: 45.33289% !important; left: 63.64298% !important; height: 22.62888%; max-width: 54%; max-height: 90%; rotate: -1.133deg; transform-origin: 0px 0px;" class=fragment data-auto-animate-target="sgrb2nmiriwithalma">
 </section>
 
 <section>
@@ -212,7 +215,10 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     /* 'important' overrides data-auto-animate */
     transition: all var(--transition-duration, 1s) ease-in-out !important;
 
-    &.visible.current-fragment {
+    /* keyed on .visible, NOT .visible.current-fragment: reveal drops .current-fragment when the
+       slide is left, so the shrink reset itself off-screen and replayed forwards (big -> small)
+       on the way back instead of holding small and unwinding to big on the previous step. */
+    &.visible {
         visibility: visible;
         opacity: 1;
         rotate:-150deg;
@@ -220,11 +226,6 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         top:51.29%;
         margin-top:0%;
         scale:0.065;
-        z-index: 100;
-        transition: all var(--transition-duration, 1s) ease-in-out !important;
-    }
-
-    &.visible {
         z-index: 100;
         transition: all var(--transition-duration, 1s) ease-in-out !important;
     }
@@ -242,7 +243,8 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
      whole mosaic fitted to the page (1024x450.8, letterboxed on black), then 2.38x further in and
      rotated -93.3 deg into the DS field.  The first two poses come from the same panel image being
      shown full-screen on #sgrb2n_miri_outflow and as a 4.51x-smaller inset on #sgrb2n_miri, which
-     fixes the zoom-out factor exactly.  SGR-B2_MIRI_Mosaic.png carries no AVM, so
+     fixes the zoom-out factor exactly (4.419, with the 1.133 deg between the panel and the mosaic
+     unwinding over the same move).  SGR-B2_MIRI_Mosaic.png carries no AVM, so
      the end state was measured rather than guessed: the mosaic was registered against
      SgrB2_RGB_2550-1280-770.png (which does carry AVM; ncc 0.95) and miri_fullfov.jpg against
      the same reference (ncc 0.93); the composed mosaic->fullfov map reproduces the DS frame at
@@ -263,8 +265,8 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 <section id=sgrb2ds-zoomin data-background-color="black" style="overflow:hidden;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png"
          style="width:1758.339px; height:774.144px; z-index:1;
-                --l0:-6155.517px; --t0:-1690.228px; --r0:0deg;       --s0:4.509685; --o0:0;
-                --l1:-729.98px;   --t1:-3px;        --r1:0deg;       --s1:1;        --o1:1;
+                --l0:-6003.391px; --t0:-1737.807px; --r0:1.1317deg;  --s0:4.419132; --o0:0;
+                --l1:-729.999px;  --t1:-3px;        --r1:0deg;       --s1:1;        --o1:1;
                 --l2:0px;         --t2:158.582px;   --r2:0deg;       --s2:0.582361;
                 --l3:42.957px;    --t3:857.038px;   --r3:-93.298deg; --s3:1.385788;
                 --transition-duration:1.8s;">
@@ -272,10 +274,10 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
          zoom-out down to the inset pose it occupies on #sgrb2n_miri while it fades away. -->
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png"
          style="width:902.162px; height:768px; z-index:2;
-                --l0:71.68px;  --t0:-0.36px;  --r0:0deg; --s0:1;        --o0:1;
-                --l1:650.87px; --t1:371.72px; --r1:0deg; --s1:0.221745; --o1:0;
-                --l2:650.87px; --t2:371.72px; --r2:0deg; --s2:0.221745;
-                --l3:650.87px; --t3:371.72px; --r3:0deg; --s3:0.221745;
+                --l0:71.68px;   --t0:-0.36px;   --r0:0deg;       --s0:1;        --o0:1;
+                --l1:651.704px; --t1:363.157px; --r1:-1.133deg;  --s1:0.226289; --o1:0;
+                --l2:651.704px; --t2:363.157px; --r2:-1.133deg;  --s2:0.226289;
+                --l3:651.704px; --t3:363.157px; --r3:-1.133deg;  --s3:0.226289;
                 --transition-duration:1.8s;">
     <div class="fragment sgrb2ds-wide" data-fragment-index="2"></div>
     <div class="fragment sgrb2ds-dive" data-fragment-index="3"></div>

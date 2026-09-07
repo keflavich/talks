@@ -207,8 +207,8 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 <section>
     <section data-auto-animate class=darkbg data-background-color="black">
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:5%; margin-left:-51%; ">
-        <img src="assets/sgrb2/SGR-B2_MIRI_draft.png" style="position: absolute; top: 33.1127% !important;
-  left: 49.7041% !important; height: 100%; max-width: 49%; max-height: 33.5%; --rotation:-4.5deg; transform-origin: 0px 0px; --transition-duration: 0.5s;" class="fragment rotated" data-fragment-index="1">
+        <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position: absolute; top: 36.0315% !important;
+  left: 21.8887% !important; height: 100%; max-width: 62%; max-height: 33.5%; --rotation:-4.5deg; transform-origin: 0px 0px; --transition-duration: 0.5s;" class="fragment rotated" data-fragment-index="1">
         <div style='position: absolute; font-size: 70%;' >
         Sgr B2 with JWST/<span style="display:inline-block; position:relative; vertical-align:top; width:auto; min-width:3.5em;">
             <span class="fragment fade-out" data-fragment-index="1" style="position:absolute; left:0; top:0; width:100%;">NIRCam</span>
@@ -230,7 +230,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 <section data-auto-animate data-background-color="black">
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:10%; margin-left:-50%; opacity:0.0; rotate:0deg; ">
-<img src="assets/sgrb2/SGR-B2_MIRI_draft.png" style="position:absolute; top:-2%; left:7%;height: 100%;max-width: 200%;max-height: 200%;">
+<img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.37%; left:-76.2877%;height: 100%;max-width: 200%;max-height: 200%;">
         <div style='position: absolute; bottom:0px; right:100px; ' class="smaller darkbg">
         MIRI reveals deeply embedded gas
         </div>
@@ -239,7 +239,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section data-auto-animate data-background-color="black">
-<img src="assets/sgrb2/SGR-B2_MIRI_draft.png" style="position:absolute; top:-2%; left:7%;height: 100%;max-width: 200%;max-height: 200%; opacity:0.0;">
+<img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.37%; left:-76.2877%;height: 100%;max-width: 200%;max-height: 200%; opacity:0.0;">
 <img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position:absolute; top:-2%; left:7%;height: 100%;max-width: 200%;max-height: 200%;" data-id="sgrb2nmiriwithalma">
         <div style='position: absolute; bottom:80px; right:100px; color:white; background-color:rgba(0,0,0,0.5); z-index:100' class=smaller>
         MIRI 25 micron shows the outflow: <br> first IR light from within Sgr B2 N
@@ -328,6 +328,25 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
      Background: SgrB2_MIRI_pressrelease_hips; panels: SgrB2_DS_jwst_rgb_hips (continuum-
      subtracted NIRCam RGB) and SgrB2_DS_alma_inferno_hips (1.3 mm continuum), all rendered
      locally onto a common RA/Dec TAN grid so the white boxes and the panels register exactly. -->
+<!-- Zoom + rotate from the Sgr B2 MIRI overview into the Deep South field.
+     The start state is the whole mosaic fitted to the page (1024x450.8, letterboxed on black);
+     the end state zooms 2.38x and rotates -93.3 deg into the DS field.  SGR-B2_MIRI_Mosaic.png
+     carries no AVM, so
+     the end state was measured rather than guessed: the mosaic was registered against
+     SgrB2_RGB_2550-1280-770.png (which does carry AVM; ncc 0.95) and miri_fullfov.jpg against
+     the same reference (ncc 0.93); the composed mosaic->fullfov map reproduces the DS frame at
+     ncc 0.996, so the mosaic itself lands on #sgrb2ds-overview's framing and no cross-fade to
+     miri_fullfov.jpg is needed (mean level 83.7 vs 83.0, mean |diff| 2.5/255 -- a cross-fade only
+     ghosted the stars on the way in and left the sharp copy sitting on top on the way back). -->
+<section id=sgrb2ds-zoomin data-background-color="black">
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png"
+         style="width:1744.307px; height:768px; z-index:1;
+                --l0:0px;      --t0:158.585px; --r0:0deg;       --s0:0.587055;
+                --l1:42.957px; --t1:857.038px; --r1:-93.298deg; --s1:1.3969;
+                --transition-duration:1.8s;">
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 &mdash; JWST/MIRI (NASA, ESA, CSA, STScI)</div>
+</section>
+
 <section id=sgrb2ds-overview>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; JWST/MIRI (NASA, ESA, CSA, STScI)</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
@@ -335,7 +354,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class=smaller3 style="position:absolute; bottom:12px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Three fields, a few arcseconds each</div>
 </section>
 
-<section id=sgrb2ds-f1>
+<section id=sgrb2ds-f1 data-background-color="black">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; Field 1 (5.5&Prime;)</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_hi1.png">
@@ -354,7 +373,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
 </section>
 
-<section id=sgrb2ds-f2>
+<section id=sgrb2ds-f2 data-background-color="black">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; Field 2 (6.4&Prime;)</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_hi2.png">
@@ -373,7 +392,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
 </section>
 
-<section id=sgrb2ds-f3>
+<section id=sgrb2ds-f3 data-background-color="black">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; Field 3 (9.0&Prime;)</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_hi3.png">

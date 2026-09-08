@@ -9,6 +9,34 @@
     <link rel="stylesheet" href="white.css" id="theme">
     <link rel="stylesheet" href="reveal/lib/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <style id="deck-dark">
+    /* Whole deck on black.  white.css is a light theme and every slide in here is tuned to it,
+       so this flips the ground and the default ink rather than swapping the theme out. */
+    html, body, .reveal-viewport { background: #000 !important; }
+    .reveal { color: #ececec; }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 { color: #fff; }
+    .reveal a { color: rgb(0,200,200); }
+    .reveal a:hover { color: rgb(140,255,255); }
+    .reveal .controls { color: #999; }
+    .reveal .progress { color: rgb(0,200,200); }
+    /* the theme tints every image with 12% white: invisible on white, a grey box on black */
+    .reveal section img { background: none; }
+    /* the light "pill" captions keep their light ground so their dark swatch colours still read.
+       Matched on the inline background they already carry, so no slide markup had to change. */
+    .reveal [style*="rgba(255,255,255,0.72)"],
+    .reveal [style*="rgba(255,255,255,0.80)"] { color: #111; }
+    /* hues picked for a white ground: lightened so they read on black without changing which
+       colour means what (RGB channel keys, and the by-cohort colouring on the title slide) */
+    .reveal [style*="color:darkblue"] { color: #7fa8ff !important; }
+    .reveal [style*="color:maroon"]   { color: #ff9a8a !important; }
+    .reveal [style*="color:red"]      { color: #ff6b6b !important; }
+    .reveal [style*="color:blue"]     { color: #7fa8ff !important; }
+    .reveal [style*="color:green"]    { color: #62d962 !important; }
+    /* keep exported PDFs black too (custom.css forces the print background white) */
+    .print-pdf .reveal .slide-background,
+    html.reveal-print .reveal .slide-background { background-color: #000 !important; }
+    html.reveal-print, html.reveal-print body { background: #000 !important; }
+    </style>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
 
@@ -68,14 +96,16 @@ Observations of nearby star-forming regions provide the empirical foundation for
             <div class="smaller3 footer">Waldo W. Neikirk Associate Professor <br>Department of Astronomy<br>University of Florida, Gainesville </div>
 
             <div class=smaller2>
+                        <div style='float:right; max-width: 25%'>
+                        <img src="assets/nsf_logo.jpg" style="float:right; max-width:80px;">
+                        <img src="assets/STSCI_logo.jpg" style="float:right; max-width:80px;">
+                        <img src="colloquium_assets/astropy_logo_notext.svg" style="float:right; max-width:80px;">
+                        </div>
                 <ul>
                     <li style="max-width:70%"> Postdocs: <span style='color:maroon'>Nazar Budaiev (2026-)</span>,
                         <span style='color:maroon'>Theo Richardson (2025-2026)</span>,
                         Miriam Garcia Santa Maria (2024-2025), Allison Towner (2020-2023)
-                        <img src="assets/nsf_logo.jpg" style="float:right; max-width:80px;">
-                        <img src="assets/STSCI_logo.jpg" style="float:right; max-width:80px;">
-                        <img src="colloquium_assets/astropy_logo_notext.svg" style="float:right; max-width:80px;">
-                    <li style="max-width:70%"> PhD: <span style='color:darkblue'>Desmond Jeff (2025)</span>, <span style='color:maroon'>Theo Richardson (2025)</span>,
+                    <li style="max-width:75%"> PhD: <span style='color:darkblue'>Desmond Jeff (2025)</span>, <span style='color:maroon'>Theo Richardson (2025)</span>,
                          <span style='color:darkblue'>Alyssa Bulatek (2026)</span>,
                           <span style='color:maroon'>Nazar Budaiev (2026)</span>,
                           <span style='color:darkblue'>Savannah Gramze (2027)</span>,
@@ -491,24 +521,6 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 
 
-<section>
-<div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
-<div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
-</div>
-    <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
-    left: -50px;
-    top: 172px;
-    rotate: -4.5deg;
-    scale: 0.975;
-  '>
-    <!-- old version <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">-->
-    <div style="position: absolute; bottom: 10%; left: 8%; z-index: 10; text-align: left;" class=smaller2>
-        <span style="color:red">R=770</span><br> <span style="color:green">G=(480-[410-405])</span><br> <span style="color:blue">B=Brα</span>
-    </div>
-    <div style="position: absolute; bottom: 10%; right: 0%; z-index: 10; text-align: right; width:50%; color:rgb(2, 136, 136);" class=smaller2>
-        <span style='font-size:250%'>&#9632;</span> New HII regions
-    </div>
-</section>
 
 
 
@@ -609,7 +621,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div data-id="lbl-d" style="position:absolute; left:257px; top:183px; background:#1f3fd0; color:white; font-weight:bold; font-size:26px; padding:0 10px; border-radius:4px;">D</div>
     <div data-id="lbl-c" style="position:absolute; left:427px; top:160px; background:#cc1111; color:white; font-weight:bold; font-size:26px; padding:0 10px; border-radius:4px;">C</div>
     <div data-id="lbl-a" style="position:absolute; left:344px; top:455px; background:#1f3fd0; color:white; font-weight:bold; font-size:26px; padding:0 10px; border-radius:4px;">A</div>
-    <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#333;">Gramze+ (subm 2026)</div>
+    <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
@@ -631,7 +643,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
       <line x1="163" y1="232" x2="298" y2="345" stroke="#2222cc" stroke-width="2.5" marker-end="url(#ahb)"/>
       <line x1="735" y1="232" x2="565" y2="349" stroke="#000"    stroke-width="2.5" marker-end="url(#ahk)"/>
     </svg>
-    <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#333;">Gramze+ (subm 2026)</div>
+    <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
@@ -651,7 +663,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
       <line x1="163" y1="232" x2="298" y2="345" stroke="#2222cc" stroke-width="2.5" marker-end="url(#ahb)"/>
       <line x1="735" y1="232" x2="565" y2="349" stroke="#000"    stroke-width="2.5" marker-end="url(#ahk)"/>
     </svg>
-    <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#333;">Gramze+ (subm 2026)</div>
+    <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
@@ -671,7 +683,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
          style="position:absolute; left:25px; top:275px; width:370px;">
     <img data-id="map-cd" src="assets/Savannah/icevar_avslope_cloudCD.png"
          style="position:absolute; left:440px; top:275px; width:486px;">
-    <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#333;">Gramze+ (subm 2026)</div>
+    <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
 
@@ -842,7 +854,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         Orbital models disagree about what is in front of what &mdash;
         and the gas kinematics alone cannot settle it.
     </div>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#333;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
 </section>
 
 <section id=roman-tomo-how>
@@ -855,7 +867,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
             <li> Map enough stars and you can invert A<sub>V</sub> &rarr; <i>d</i> </li>
         </ul>
     </div>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#333;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
 </section>
 
 <section id=roman-tomo-inversion>
@@ -866,7 +878,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         Observed density ~500 stars pc<sup>&minus;2</sup> at m<sub>K</sub>&lt;19
         gives ~10&ndash;20 pc &mdash; vs ~100 pc today.
     </div>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#333;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
 </section>
 
 <section id=roman-tomo-when>
@@ -882,15 +894,33 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         </ul>
     </div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:640px; top:400px; width:340px;" src="assets/roman/propermotionmap.png">
-    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#333;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
 </section>
-
-
-
 
 
 <section>
 </section>
+
+<section>
+<div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
+<div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
+</div>
+    <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
+    left: -50px;
+    top: 172px;
+    rotate: -4.5deg;
+    scale: 0.975;
+  '>
+    <!-- old version <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">-->
+    <div style="position: absolute; bottom: 10%; left: 8%; z-index: 10; text-align: left;" class=smaller2>
+        <span style="color:red">R=770</span><br> <span style="color:green">G=(480-[410-405])</span><br> <span style="color:blue">B=Brα</span>
+    </div>
+    <div style="position: absolute; bottom: 10%; right: 0%; z-index: 10; text-align: right; width:50%; color:rgb(0,214,214);" class=smaller2>
+        <span style='font-size:250%'>&#9632;</span> New HII regions
+    </div>
+</section>
+
+
 
 </div>
 </div>

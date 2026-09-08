@@ -636,20 +636,26 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         Ice is everywhere
         <div style="margin-top:26px;">But it's different between clouds</div>
     </div>
-    <img data-id="ccd-three" src="assets/Savannah/f466vsav_threeclouds.png" style="position:absolute; left:708px; top:30px; width:300px;">
+    <div data-id="lbl-fil" style="position:absolute; left:710px; top:4px; color:#d8d8d8; font-size:22px;">3 kpc filament</div>
+    <img data-id="ccd-fil" src="assets/Savannah/f466vsav_3kpcfilament.png" style="position:absolute; left:708px; top:30px; width:300px;">
     <img data-id="map-cd" src="assets/Savannah/icevar_dustridge_cloudCD.png" style="position:absolute; left:72px; top:245px; width:880px;">
     <!-- left 42% of the Brick map is clipped away to make room for the Brick Head panel; the green
          region it points at is at 0.571..0.673 of the image width, so it stays visible. -->
-    <img data-id="map-a" src="assets/Savannah/icevar_dustridge_cloudA.png" style="position:absolute; left:72px; top:458px; width:880px; clip-path:inset(0 0 0 36%);">
-    <div data-id="lbl-brickhead" style="position:absolute; left:18px; top:440px; color:#ff6b6b; font-size:22px;">Brick Head</div>
-    <img data-id="ccd-brickhead" src="assets/Savannah/f466vsav_brickhead.png" style="position:absolute; left:16px; top:466px; width:300px;">
+    <img data-id="map-a" src="assets/Savannah/icevar_dustridge_cloudA.png" style="position:absolute; left:72px; top:458px; width:880px; clip-path:inset(0 0 0 28.6%);">
+    <div data-id="bh-plate" style="position:absolute; left:8px; top:474px; width:316px; height:258px; background:rgba(255,255,255,0.9); border-radius:6px;"></div>
+    <div data-id="lbl-brickhead" style="position:absolute; left:20px; top:476px; color:#0a7a0a; font-size:22px;">Brick Head</div>
+    <img data-id="ccd-brickhead" src="assets/Savannah/f466vsav_brickhead.png" style="position:absolute; left:16px; top:508px; width:300px; margin:0;">
     <svg data-id="arrows" style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none;" viewBox="0 0 1024 768">
       <defs>
         <marker id="ahb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#6fa8ff"/></marker>
         <marker id="ahg" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3fc46a"/></marker>
+        <marker id="ahk" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#000"/></marker>
       </defs>
       <line x1="170" y1="254" x2="298" y2="345" stroke="#6fa8ff" stroke-width="2.5" marker-end="url(#ahb)"/>
       <line x1="322" y1="570" x2="612" y2="558" stroke="#3fc46a" stroke-width="2.5" marker-end="url(#ahg)"/>
+      <!-- starts just inside the map so a black arrow stays visible; the panel bottom is y 263,
+           the map top is y 260 (it carries the theme 15px margin). -->
+      <line x1="716" y1="270" x2="565" y2="349" stroke="#000" stroke-width="2.5" marker-end="url(#ahk)"/>
     </svg>
     <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     
@@ -665,10 +671,10 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <svg data-id="arrows" style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none;" viewBox="0 0 1024 768">
       <defs>
         <marker id="ahb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#6fa8ff"/></marker>
-        <marker id="ahk" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dcdcdc"/></marker>
+        <marker id="ahk" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#000"/></marker>
       </defs>
       <line x1="163" y1="232" x2="298" y2="345" stroke="#6fa8ff" stroke-width="2.5" marker-end="url(#ahb)"/>
-      <line x1="735" y1="232" x2="565" y2="349" stroke="#dcdcdc" stroke-width="2.5" marker-end="url(#ahk)"/>
+      <line x1="730" y1="266" x2="565" y2="349" stroke="#000" stroke-width="2.5" marker-end="url(#ahk)"/>
     </svg>
     <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     

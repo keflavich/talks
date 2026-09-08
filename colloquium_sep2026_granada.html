@@ -418,64 +418,96 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
 </section>
 
-<section>
-    <section id=sgrb2-to-cmz>
-        <div style='text-align:left; width:80%;' class=smaller>There is an overall asymmetry in the star formation seen both in JWST (HII regions) and ALMA (embedded YSOs) <div style='text-align:left;'class=smaller> JWST shows the transition is sharp</div></div>
+<!-- Full-frame MIRI in the same sky framing as asymmetry.png on #sgrb2-to-cmz, so the two
+     frames register.  The mapping was solved from asymmetry.png's own ALMA markers: the 140
+     yellow blobs were fitted to continuum_photometry_forpub.ecsv by ICP (133 matched, rms
+     4.5px, 9.891 px/arcsec), giving that figure a WCS; the MIRI mosaic was then tied to it
+     (ncc 0.80).  NOTE: SgrB2_RGB_2550-1280-770.png is stored 180 deg from its own AVM (as are
+     SgrB2_RGB_480-405-187_scaled, ArchesQuintuplet and Quintuplet), which is corrected here.
+     Overlays are drawn in mosaic pixel space and carry the same left/top/size/rotate, so they
+     track the image exactly.  Squares are 25 mosaic px = 2.77", matching the figure's. -->
+<style>
+/* the excess-source markers stay up for two builds, then hand over to the density contours;
+   keyed on .visible (not .current-fragment) so it survives leaving and re-entering the slide. */
+#sgrb2-miri-catalogs:has(.f480-to-contour.visible) .f480pts { opacity: 0; visibility: hidden; }
+</style>
+<section id=sgrb2-miri-catalogs data-background-color="black">
+    <div class="smaller darkbg" style="position:absolute; top:8px; left:14px; width:80%; text-align:left; z-index:20;">Sgr B2 with JWST/MIRI: where is the star formation?</div>
+    <!-- left/top are 1.586px left and 6.503px down from the overlays: the press-release MIRI mosaic
+         has a 2.44" astrometric offset from the NIRCam frame the catalogs are on, measured by
+         phase-correlating it against asymmetry.png over 32 tiles (median -7.54,+22.92 asym px,
+         MAD 1.8/0.6, no position gradient -- a pure shift).  Shifting the image, not the markers,
+         puts both the sources and the MIRI features where sgrb2-to-cmz has them. -->
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:93.654px; top:233.683px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:1;" src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png">
+    <img class="fragment f480pts" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:2;" src="assets/Nazar/overlay_f480m_excess.png">
+    <img class="fragment" data-fragment-index="2" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:3;" src="assets/Nazar/overlay_alma_yso.png">
+    <div class="smaller3 fragment fade-in f480pts" data-fragment-index="1" style="position:absolute; left:14px; bottom:44px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9711;</span> JWST 4.8&mu;m excess sources (Budaiev+ 2026)</div>
+    <div class="smaller3 fragment fade-in" data-fragment-index="2" style="position:absolute; left:14px; bottom:14px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#fff100">&#9632;</span> ALMA 3&nbsp;mm continuum sources (Ginsburg+ 2018)</div>
+    <!-- last build: the individual excess sources retire and hand over to their surface density
+         (f480m_excess_density_20260907.fits, EXCESS_FRACTION, 4 arcsec/px), contoured at levels
+         2 3 4 5 6 on the mosaic pixel grid so it carries the same left/top/size/rotate as the
+         point overlays and tracks them exactly. -->
+    <img class="fragment" data-fragment-index="3" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:4;" src="assets/Nazar/overlay_f480m_contour.png">
+    <div class="fragment f480-to-contour" data-fragment-index="3"></div>
+    <div class="smaller3 fragment fade-in" data-fragment-index="3" style="position:absolute; left:14px; bottom:44px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9473;</span> JWST 4.8&mu;m excess source density</div>
+</section>
 
-        <img src="assets/Nazar/asymmetry.png" style="position: absolute; z-index:101; left: -1%;
-        margin-top: 0%;
-        top: 20.5%;
-        scale: 1.09;
-        rotate: -4.5deg;" class="fragment fade-out" data-fragment-index="1">
-        <img src="assets/Nazar/SgrB2_starformation_asymmetry.png" style="" class="fragment sgrb2_sf_line custom" data-fragment-index="2">
+<section id=sgrb2-to-cmz>
+    <div style='text-align:left; width:80%;' class=smaller>There is an overall asymmetry in the star formation seen both in JWST (HII regions) and ALMA (embedded YSOs) <div style='text-align:left;'class=smaller> JWST shows the transition is sharp</div></div>
 
-        <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden; z-index: 150;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
-        <div class=smaller3 style="position:absolute; top:188px; right:1%; width:150px; text-align:center; z-index:151;"><a href="https://ui.adsabs.harvard.edu/abs/2026AJ....172...51B/abstract" class=darkbg style="background:rgba(0,0,0,0.55); padding:1px 6px; border-radius:3px;">Budaiev+ 2026</a></div>
+    <img src="assets/Nazar/asymmetry.png" style="position: absolute; z-index:101; left: -1%;
+    margin-top: 0%;
+    top: 20.5%;
+    scale: 1.09;
+    rotate: -4.5deg;" class="fragment fade-out" data-fragment-index="1">
+    <img src="assets/Nazar/SgrB2_starformation_asymmetry.png" style="" class="fragment sgrb2_sf_line custom" data-fragment-index="2">
 
-        <div class="smaller fragment fade-in-then-out" data-fragment-index="1" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
-            What ALMA sees, JWST doesn't: 3/700 point source matches
-            <br> (HII regions, outflow cavities do match)
-        </div>
-        <div class="fragment fade-in" data-fragment-index="2" style='position:absolute; bottom:6%; left:10%; z-index: 150;'>
-            <ul>
-                <li> Star formation is ongoing
-                <li>  infrared SF tracers are separated from mm
-                <li>   asymmetry hints at an ongoing compression event
-            </ul>
-        </div>
+    <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden; z-index: 150;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
+    <div class=smaller3 style="position:absolute; top:188px; right:1%; width:150px; text-align:center; z-index:151;"><a href="https://ui.adsabs.harvard.edu/abs/2026AJ....172...51B/abstract" class=darkbg style="background:rgba(0,0,0,0.55); padding:1px 6px; border-radius:3px;">Budaiev+ 2026</a></div>
 
-        <img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="position:absolute; left:0%; top:20%; width:100%; max-width:100%; max-height:100%; z-index: 1; transition: all 1s ease-in-out; " class="fragment" data-fragment-index="2">
-
-        <aside class=notes>
-            <ul>
-                <li> We have a census of where ongoing star formation is in Sgr B2 from ALMA - it is at least as much as the rest of the CMZ 
-                <li> It shows a remarkable linear structure, which strongly hints at a dynamical driver, such as stream collision from inflow along the bar
-            </ul>
-        </aside>
-
-    </section>
-
-
-
-
-    <section>
-    <div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
-    <div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
+    <div class="smaller fragment fade-in-then-out" data-fragment-index="1" style='position:absolute; bottom:7%; left:10%; z-index: 150;'>
+        What ALMA sees, JWST doesn't: 3/700 point source matches
+        <br> (HII regions, outflow cavities do match)
     </div>
-        <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
-        left: -50px;
-        top: 172px;
-        rotate: -4.5deg;
-        scale: 0.975;
-      '>
-        <!-- old version <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">-->
-        <div style="position: absolute; bottom: 10%; left: 8%; z-index: 10; text-align: left;" class=smaller2>
-            <span style="color:red">R=770</span><br> <span style="color:green">G=(480-[410-405])</span><br> <span style="color:blue">B=Brα</span>
-        </div>
-        <div style="position: absolute; bottom: 10%; right: 0%; z-index: 10; text-align: right; width:50%; color:rgb(2, 136, 136);" class=smaller2>
-            <span style='font-size:250%'>&#9632;</span> New HII regions
-        </div>
-    </section>
+    <div class="fragment fade-in" data-fragment-index="2" style='position:absolute; bottom:6%; left:10%; z-index: 150;'>
+        <ul>
+            <li> Star formation is ongoing
+            <li>  infrared SF tracers are separated from mm
+            <li>   asymmetry hints at an ongoing compression event
+        </ul>
+    </div>
+
+    <img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="position:absolute; left:0%; top:20%; width:100%; max-width:100%; max-height:100%; z-index: 1; transition: all 1s ease-in-out; " class="fragment" data-fragment-index="2">
+
+    <aside class=notes>
+        <ul>
+            <li> We have a census of where ongoing star formation is in Sgr B2 from ALMA - it is at least as much as the rest of the CMZ 
+            <li> It shows a remarkable linear structure, which strongly hints at a dynamical driver, such as stream collision from inflow along the bar
+        </ul>
+    </aside>
+
+</section>
+
+
+
+
+<section>
+<div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
+<div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
+</div>
+    <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
+    left: -50px;
+    top: 172px;
+    rotate: -4.5deg;
+    scale: 0.975;
+  '>
+    <!-- old version <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">-->
+    <div style="position: absolute; bottom: 10%; left: 8%; z-index: 10; text-align: left;" class=smaller2>
+        <span style="color:red">R=770</span><br> <span style="color:green">G=(480-[410-405])</span><br> <span style="color:blue">B=Brα</span>
+    </div>
+    <div style="position: absolute; bottom: 10%; right: 0%; z-index: 10; text-align: right; width:50%; color:rgb(2, 136, 136);" class=smaller2>
+        <span style='font-size:250%'>&#9632;</span> New HII regions
+    </div>
 </section>
 
 

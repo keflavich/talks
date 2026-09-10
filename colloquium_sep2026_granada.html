@@ -54,6 +54,41 @@
     <div class="reveal">
       <div class="slides">
 
+<!-- ============================ PLACEHOLDER - NOT PART OF THE TALK ============================
+     data-visibility="hidden" removes this from the deck entirely: reveal will not show it, count
+     it, or let you arrow into it, so it cannot be presented by accident.  To read it rendered,
+     change hidden -> uncounted temporarily.
+
+     This is a MIRROR, not a thesis: it is the one-paragraph version of what the deck as it
+     currently stands actually says, written from the slide order, not from what you intended.
+     Compare it against the intent and change whichever one is wrong.
+
+     Where the deck as built diverges from what its own opening promises:
+       * the title says "star AND PLANET formation" -- there is no planet-formation content left
+         in the deck (placeholder-ice-planets moved to granada_bonus.html and was never filled).
+       * the title says "across cosmic time" -- nothing in the deck leaves the Galactic Centre;
+         there is no extragalactic or high-redshift comparison.
+       * "richest environmentS" (plural) -- only the CMZ is shown; no Orion / W51 / local
+         comparison to establish what "rich" is being measured against.
+       * slide 2 announces "Part 1: We see star formation in the CMZ" -- there is no Part 2.
+       * the STORYBOARD comment frames the whole talk on the IMF and massive stars ("how massive
+         is the forming star?").  The IMF is never shown or mentioned in the current slides.
+     ========================================================================================= -->
+<section id="placeholder-opener-mirror" data-visibility="hidden">
+    <div style="position:absolute; top:10px; left:0; width:100%; text-align:center; color:#ff6b6b; font-size:24px; letter-spacing:2px;">PLACEHOLDER &mdash; NOT PART OF THE TALK</div>
+    <div style="position:absolute; top:150px; left:70px; width:884px; text-align:left; font-size:30px; line-height:1.45;">
+        With JWST, ALMA and the VLA we can now resolve individual forming stars, their outflows and
+        even their ice chemistry across the Milky Way&rsquo;s Central Molecular Zone &mdash; and the
+        clouds there turn out not to be alike.
+        <div style="margin-top:34px;">
+        That census still covers only a small fraction of the CMZ; the JWST Treasury survey and Roman
+        will finish it and, for the first time, place these clouds in three dimensions.
+        </div>
+    </div>
+    <div class=smaller3 style="position:absolute; bottom:14px; left:70px; color:#cfcfcf;">What the audience will actually hear, read off the slide order &mdash; see the comment above for where this differs from the intended narrative.</div>
+</section>
+
+
           <section>
               Slide 0 - <a href="https://github.com/hakimel/reveal.js/wiki/Keyboard-Shortcuts">Instructions</a>:
               <ul>
@@ -84,9 +119,6 @@ Observations of nearby star-forming regions provide the empirical foundation for
 
 
 -->
-<section>
-    Part 1: We see star formation in the CMZ
-</section>
 
 <section data-id="9e1f37193271406fc72e974be0a8a3fe">
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
@@ -113,9 +145,14 @@ Observations of nearby star-forming regions provide the empirical foundation for
                           <span style='color:maroon'>Nazar Budaiev (2026)</span>,
                           <span style='color:darkblue'>Savannah Gramze (2027)</span>,
                             <span style='color:maroon'>Taehwa Yoo (2028)</span>
-                    <li> Undergrad/postbac: <span style='color:darkgreen'>Derod Deal</span>,
+                    <li> Undergrad/postbac:
+                        <span style='color:lightgreen'>Derod Deal</span>,
                         <span style='color:darkblue'>Aden Dawson</span>,
-                        Ethan Bhula, Mario Antonio Daley, Prashant Sikhdar, Avery Lacon, Laya Damaraju
+                        <span style='color:lightgreen'>Ethan Bhula</span>,
+                        <span style='color:darkblue'>Mario Antonio Daley</span>,
+                        <span style='color:lightgreen'>Prashant Sikhdar</span>,
+                        <span style='color:darkblue'>Avery Lacon</span>,
+                        <span style='color:lightgreen'>Laya Damaraju</span>
                     <li> Supported by NSF 2008101, 2206511, CAREER 2142300, STSCI 1905, 2221, 3523, 5365, 6151, 10662, 10678, Roman 19008, 19012, Astropy
                 </ul>
 </div>
@@ -126,6 +163,25 @@ Observations of nearby star-forming regions provide the empirical foundation for
 </div>
     </div>
     </div>
+</section>
+
+
+<section id=transition_from_steve>
+
+    <ul>
+        <li> Part 1: We see star formation in the CMZ, but it's different.
+
+        <li> Part 2: CMZ clouds are icier and dustier
+
+        <li> Part 3: Future: JWST-GC, Roman
+    </ul>
+
+    <aside class=notes>
+        
+    Steve told you all about the CMZ as an extreme physics laboratory: it has density, UV, and turbulence like cosmic noon star-forming galaxies.
+    <br>
+    <br>I'm going to tell you that the CMZ's SF laws, and its chemistry, are quite different from the solar neighborhood.
+    </aside>
 </section>
 
 
@@ -432,9 +488,9 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
 </section>
 
-<section id=sgrb2ds-f3 data-background-color="black">
+<section id=sgrb2ds-f3 data-background-color="black" data-auto-animate>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; DS9, a hot core, along a thin filament</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
+    <img data-id="ds-frame" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_hi3.png">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2ds/f3_jwst.jpg"
          style="width:350px; height:350px; z-index:10; --l0:93.1px; --t0:621.5px; --r0:0deg; --s0:0.228037; --l1:652px; --t1:26px; --r1:0deg; --s1:1;">
@@ -464,13 +520,19 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
    keyed on .visible (not .current-fragment) so it survives leaving and re-entering the slide. */
 #sgrb2-miri-catalogs:has(.f480-to-contour.visible) .f480pts { opacity: 0; visibility: hidden; }
 </style>
-<section id=sgrb2-miri-catalogs data-background-color="black">
+<section id=sgrb2-miri-catalogs data-background-color="black" data-auto-animate>
     <div class="smaller darkbg" style="position:absolute; top:8px; left:14px; width:80%; text-align:left; z-index:20;">Sgr B2 with JWST/MIRI: where is the star formation?</div>
     <!-- left/top are 1.586px left and 6.503px down from the overlays: the press-release MIRI mosaic
          has a 2.44" astrometric offset from the NIRCam frame the catalogs are on, measured by
          phase-correlating it against asymmetry.png over 32 tiles (median -7.54,+22.92 asym px,
          MAD 1.8/0.6, no position gradient -- a pure shift).  Shifting the image, not the markers,
          puts both the sources and the MIRI features where sgrb2-to-cmz has them. -->
+    <!-- auto-animate partner for #sgrb2ds-f3: the Deep South frame flies from full-screen back to
+         the patch of the mosaic it was cut from, and fades out as it lands.  Pose is the composition
+         of #sgrb2ds-zoomin's state-3 pose (where the mosaic coincides with miri_fullfov.jpg) with
+         this slide's mosaic pose: scale 0.310175, rotate +89.965 deg.  Checked: the frame centre
+         lands on mosaic px (455,505) = Deep South, to 0.2px. -->
+    <img data-id="ds-frame" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:359.662px; top:220.100px; width:317.606px; height:238.205px; rotate:89.965deg; transform-origin:0px 0px; opacity:0; z-index:5;" src="assets/sgrb2ds/miri_fullfov.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:93.654px; top:233.683px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:1;" src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png">
     <img class="fragment f480pts" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:2;" src="assets/Nazar/overlay_f480m_excess.png">
     <img class="fragment" data-fragment-index="2" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:3;" src="assets/Nazar/overlay_alma_yso.png">
@@ -857,6 +919,13 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     STOP HERE
 </section>
 
+<!-- TODO: add a simulation movie here, before the tomography case.
+     Purpose: show how little we actually know about the dust structure of the inner Galaxy --
+     let the movie make the 3D structure obvious in a way the projected maps cannot, so that the
+     "we see the CMZ in projection / orbital models disagree about what is in front of what"
+     point on #roman-tomo-why lands as a real gap rather than a caveat.
+     Then link it straight to Roman: proper motions + variability -> the line-of-sight inversion
+     on #roman-tomo-inversion is the measurement that closes that gap. -->
 <section id=roman-tomo-why>
     <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">Why Roman: proper motions give us the third dimension</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:40px; top:110px; width:560px;" src="assets/roman/faceongalaxywithFUZ5.png">

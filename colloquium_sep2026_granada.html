@@ -184,6 +184,43 @@ Observations of nearby star-forming regions provide the empirical foundation for
     </aside>
 </section>
 
+<!-- Cosmic-noon framing for Steve's hand-off.  Adam's own Madau & Dickinson 2014 figure
+     (colloquium_assets/Madau2014_plot.svg -- vector, the same file 24 other decks use), on a white
+     card because the deck runs on black and the SVG is black ink on transparent.
+     The z = 1-3 band and the arrow targets are placed from the SVG's own tick positions, measured
+     in the browser: redshift ticks sit at x fractions 0.17939 / 0.43204 / 0.57905 / 0.68318 ...
+     and log(psi) = -0.4 .. -2.4 runs linearly from y fraction 0.13781 to 0.87525.  So the band is
+     exactly z=1 to z=3 and the two arrows leave from log(psi) = -1.2 and -1.6.
+     NOTE: there is no HL Tau image anywhere in this repo (checked every deck and asset dir), so the
+     disc inset uses assets_orion/ballering2025_edgeondisk.png; swap in HL Tau if you find it. -->
+<section id=cosmic-noon-discs>
+    <div style="position:absolute; left:12px; top:8px; width:1000px; height:752px; background:#fff; border-radius:6px;"></div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12.0px; top:16.6px; width:1000.0px; height:734.9px;" src="colloquium_assets/Madau2014_plot.svg">
+
+    <svg style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none;" viewBox="0 0 1024 768">
+      <defs><marker id="ahmad" markerWidth="10" markerHeight="10" refX="8" refY="3.2" orient="auto"><path d="M0,0 L0,6.4 L9,3.2 z" fill="#111"/></marker></defs>
+      <rect x="444.0" y="101.1" width="251.1" height="573.2" fill="rgba(247,193,74,0.45)"/>
+      <line x1="308" y1="334.6" x2="478" y2="334.6" stroke="#111" stroke-width="4" marker-end="url(#ahmad)"/>
+      <line x1="308" y1="443.0" x2="478" y2="443.0" stroke="#111" stroke-width="4" marker-end="url(#ahmad)"/>
+    </svg>
+
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:190px; top:284.6px; width:100px; height:100px; object-fit:cover;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Barnard_68.jpg/1920px-Barnard_68.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:190px; top:393.0px; width:100px; height:100px; object-fit:cover;" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/HL_Tau_protoplanetary_disk.jpg">
+
+    <div style="position:absolute; left:520px; top:330px; color:#111; font-size:86px; line-height:1;">?</div>
+    <div style="position:absolute; left:452px; top:470px; width:236px; color:#111; font-size:26px; line-height:1.3; text-align:center;">What happens to<br>proto-stellar discs<br>in these extreme<br>environments?</div>
+    <div style="position:absolute; left:34px; top:20px; color:#111; font-size:22px;">Madau &amp; Dickinson 2014</div>
+
+    <aside class=notes>
+        <ul>
+            <li> Most of the stars in the universe formed at cosmic noon, z ~ 1-3
+            <li> Those conditions -- density, UV field, turbulence -- are what the CMZ reproduces locally
+            <li> So: what happens to the discs, and to the planets, under those conditions?
+        </ul>
+    </aside>
+</section>
+
+
 
 
 <section id=sgrb2>
@@ -488,9 +525,9 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
 </section>
 
-<section id=sgrb2ds-f3 data-background-color="black" data-auto-animate>
+<section id=sgrb2ds-f3 data-background-color="black">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; DS9, a hot core, along a thin filament</div>
-    <img data-id="ds-frame" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_hi3.png">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2ds/f3_jwst.jpg"
          style="width:350px; height:350px; z-index:10; --l0:93.1px; --t0:621.5px; --r0:0deg; --s0:0.228037; --l1:652px; --t1:26px; --r1:0deg; --s1:1;">
@@ -520,31 +557,33 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
    keyed on .visible (not .current-fragment) so it survives leaving and re-entering the slide. */
 #sgrb2-miri-catalogs:has(.f480-to-contour.visible) .f480pts { opacity: 0; visibility: hidden; }
 </style>
-<section id=sgrb2-miri-catalogs data-background-color="black" data-auto-animate>
+<section id=sgrb2-miri-catalogs data-background-color="black">
     <div class="smaller darkbg" style="position:absolute; top:8px; left:14px; width:80%; text-align:left; z-index:20;">Sgr B2 with JWST/MIRI: where is the star formation?</div>
     <!-- left/top are 1.586px left and 6.503px down from the overlays: the press-release MIRI mosaic
          has a 2.44" astrometric offset from the NIRCam frame the catalogs are on, measured by
          phase-correlating it against asymmetry.png over 32 tiles (median -7.54,+22.92 asym px,
          MAD 1.8/0.6, no position gradient -- a pure shift).  Shifting the image, not the markers,
          puts both the sources and the MIRI features where sgrb2-to-cmz has them. -->
-    <!-- auto-animate partner for #sgrb2ds-f3: the Deep South frame flies from full-screen back to
-         the patch of the mosaic it was cut from, and fades out as it lands.  Pose is the composition
-         of #sgrb2ds-zoomin's state-3 pose (where the mosaic coincides with miri_fullfov.jpg) with
-         this slide's mosaic pose: scale 0.310175, rotate +89.965 deg.  Checked: the frame centre
-         lands on mosaic px (455,505) = Deep South, to 0.2px. -->
-    <img data-id="ds-frame" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:359.662px; top:220.100px; width:317.606px; height:238.205px; rotate:89.965deg; transform-origin:0px 0px; opacity:0; z-index:5;" src="assets/sgrb2ds/miri_fullfov.jpg">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:93.654px; top:233.683px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:1;" src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png">
-    <img class="fragment f480pts" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:2;" src="assets/Nazar/overlay_f480m_excess.png">
-    <img class="fragment" data-fragment-index="2" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:3;" src="assets/Nazar/overlay_alma_yso.png">
-    <div class="smaller3 fragment fade-in f480pts" data-fragment-index="1" style="position:absolute; left:14px; bottom:44px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9711;</span> JWST 4.8&mu;m excess sources (Budaiev+ 2026)</div>
-    <div class="smaller3 fragment fade-in" data-fragment-index="2" style="position:absolute; left:14px; bottom:14px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#fff100">&#9632;</span> ALMA 3&nbsp;mm continuum sources (Ginsburg+ 2018)</div>
+        <!-- arrives on #sgrb2ds-f3's framing and unwinds #sgrb2ds-zoomin's dive: state 0 is that
+         slide's state-3 pose (left 43+0.268, top 857+0.669, -93.298deg, 0.9797255 screen px per
+         mosaic px) re-expressed for this element's intrinsic size -- scale 0.9797255/0.3038813
+         = 3.22404 -- so it is the same image moving, not a cross-fade. -->
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png"
+         style="width:755.75px; height:332.75px; z-index:1;
+                --l0:43.268px; --t0:857.669px; --r0:-93.298deg; --s0:3.224040;
+                --l1:93.654px; --t1:233.683px; --r1:-3.333deg;  --s1:1;
+                --transition-duration:1.6s;">
+    <img class="fragment f480pts" data-fragment-index="2" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:2;" src="assets/Nazar/overlay_f480m_excess.png">
+    <img class="fragment" data-fragment-index="3" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:3;" src="assets/Nazar/overlay_alma_yso.png">
+    <div class="smaller3 fragment fade-in f480pts" data-fragment-index="2" style="position:absolute; left:14px; bottom:44px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9711;</span> JWST 4.8&mu;m excess sources (Budaiev+ 2026)</div>
+    <div class="smaller3 fragment fade-in" data-fragment-index="3" style="position:absolute; left:14px; bottom:14px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#fff100">&#9632;</span> ALMA 3&nbsp;mm continuum sources (Ginsburg+ 2018)</div>
     <!-- last build: the individual excess sources retire and hand over to their surface density
          (f480m_excess_density_20260907.fits, EXCESS_FRACTION, 4 arcsec/px), contoured at levels
          2 3 4 5 6 on the mosaic pixel grid so it carries the same left/top/size/rotate as the
          point overlays and tracks them exactly. -->
-    <img class="fragment" data-fragment-index="3" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:4;" src="assets/Nazar/overlay_f480m_contour.png">
-    <div class="fragment f480-to-contour" data-fragment-index="3"></div>
-    <div class="smaller3 fragment fade-in" data-fragment-index="3" style="position:absolute; left:14px; bottom:44px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9473;</span> JWST 4.8&mu;m excess source density</div>
+    <img class="fragment" data-fragment-index="4" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:4;" src="assets/Nazar/overlay_f480m_contour.png">
+    <div class="fragment f480-to-contour" data-fragment-index="4"></div>
+    <div class="smaller3 fragment fade-in" data-fragment-index="4" style="position:absolute; left:14px; bottom:44px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9473;</span> JWST 4.8&mu;m excess source density</div>
 </section>
 
 <section id=sgrb2-to-cmz>
@@ -849,6 +888,49 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400px; z-index:6;" src="assets/cmz/box_sgrc.png">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:126.9px; top:268.1px; width:707.6px; height:285.9px; rotate:-149.92deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_sgrc.jpg">
 </section>
+
+<!-- Single-cloud SF relation with the CMZ on top.  Built by
+     colloquium_assets/make_sf_relation_figure.py -- rerun that to rebuild as data arrive; the
+     CMZ_CLOUDS table at the top of the script is the only thing to edit, and every row carries
+     its own derivation.  Local relation: Pokhrel+ 2021 Fig. 2a, tracks digitised by colour-key
+     into colloquium_assets/pokhrel2021_tracks.csv (10 of 12 clouds; Orion-A and Mon R2 are drawn
+     in black/grey and cannot be separated from the axes).  Fit: slope 2.00, intercept -4.11,
+     +/-1 and 2 sigma at 0.30 dex, fitted only below 676 Msun/pc^2 -- every CMZ point is an
+     extrapolation, which is the point of the slide. -->
+<section id=sf-relation-sgrb2>
+    <div style="position:absolute; left:52px; top:56px; width:920px; height:700px; background:#fff; border-radius:6px;"></div>
+    <div style="position:absolute; left:0px; top:10px; width:1024px; text-align:center; color:#fff; font-size:34px;">Star formation in the CMZ does not follow the local relation</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:62px; top:64px; width:900px; height:675px;" src="colloquium_assets/sf_relation_cmz.png">
+
+    <aside class=notes>
+        <ul>
+            <li> Nearby clouds all follow one relation, Sigma_SFR ~ Sigma_gas^2.0, with a uniform efficiency per free-fall time (eps_ff ~ 0.026)
+            <li> <b>Say the caveat out loud:</b> Pokhrel+ fitted this only below 676 Msun/pc^2 (their N(H2) &lt; 3e22 cut), and their own Fig. 3 shows eps_ff <i>declining</i> above ~1000. Every CMZ point here is 1&ndash;2 dex beyond the calibration &mdash; pure extrapolation, exactly as I said about Gutermuth in the 2018 paper
+            <li> The bands are cloud-to-cloud scatter: 0.30 dex, so 2 sigma = 0.60 dex
+        </ul>
+        <p><b>Where each CMZ point comes from &mdash; all three limits drawn as generously as the data allow, so the gap is not overstated:</b></p>
+        <ul>
+            <li> <b>Sgr B2 (Ginsburg+ 2018) &mdash; the whole Fig. 17a point cloud, not one point.</b>
+                Fig. 17a plots Sigma_* vs Sigma_gas, so the whole panel is divided by an age to get Sigma_SFR. 556 points digitised straight out of the paper's raster.
+                Age = 0.5 Myr is used: it matches Pokhrel's t_PS so both axes mean the same thing, and it is <i>more</i> conservative than the paper's own 0.74 Myr (a shorter age raises the rate).
+                Median (log Sigma_gas, log Sigma_SFR) = (3.81, 2.08); the relation predicts 3.52, so <b>1.44 dex below</b>.
+                <b>Age sensitivity, all still below:</b> 1 Myr &rarr; 1.74 dex below; 0.5 Myr &rarr; 1.44; 0.1 Myr (the extreme) &rarr; 0.74 dex below, still outside 2 sigma. So the conclusion does not depend on the age.
+                Axis calibration was checked against the figure's own Gutermuth alpha=1 model lines: at Sigma_gas = 1e4 the t = 0.74 and 0.01 Myr curves are predicted at page rows 678 and 989 and found at 677 and 993.
+                Caveats to own: Fig. 17a assumes 95 Msun per source (21.8 Msun mean x 23% IMF sampling), the sample misses Class II sources so the stellar mass may be underestimated by up to 2x, and the right-hand column of saturated-Herschel lower limits is excluded from the cloud drawn here.
+            <li> <b>The Brick (Walker+ 2021), log Sigma_gas = 3.60, limit log Sigma_SFR &lt; 2.08; relation predicts 3.09, so 1.02 dex below &mdash; still outside 2 sigma.</b>
+                Sigma_gas: 7e3 Msun within R = 19" = 0.746 pc (Sec 3.4.1), matched to the ALMA field, A = 1.75 pc^2.
+                Walker+ quote <i>no</i> SFR and no limit, so this is ours: every Table 3 core at its 22 K mass, counting source 1 whole (64.2 Msun) rather than split, = 104 Msun; times a core-to-star efficiency of <b>1.0</b> &mdash; every gram of core gas becomes a star; divided by Pokhrel's own t_PS = 0.5 Myr and by 1.75 pc^2 &rarr; 119 Msun/pc^2/Myr.
+                The fiducial (44 Msun, efficiency 0.3) is 15, another 0.9 dex lower. So the honest statement is "at least a factor of ten below, and probably a hundred".
+            <li> <b>Cloud E/F (Barnes+ 2019), log Sigma_gas = 3.73, limit log Sigma_SFR &lt; 2.73; relation predicts 3.35, so 0.62 dex below &mdash; only just outside 2 sigma. This is the weak one.</b>
+                Sigma_gas: proto-cluster e, 2993 Msun in R_eff = 0.42 pc (Table 5), A = 0.554 pc^2.
+                Barnes+ give no SFR, no limit, and no counted protostellar mass &mdash; the only star formation signature in either cloud is the H2O and Class II CH3OH masers at the south of E/F.
+                The limit uses their most generous sentence: the core region "could be up to ~600 Msun" and is "capable of forming one or several high-mass stars (assuming a typical star formation efficiency for a core of ~25 per cent)". Taking 600 x 0.25 = 150 Msun as if it had <i>already</i> formed, / 0.5 Myr / 0.554 pc^2 &rarr; 541.
+                <b>Do not oversell this one:</b> push the core efficiency to 1.0 and the limit reaches the relation, so Cloud E/F alone rules nothing out. It needs a counted value &mdash; Lu+ 2019.
+        </ul>
+        <p>Rebuild: <tt>python3 colloquium_assets/make_sf_relation_figure.py</tt>. Edit CMZ_CLOUDS at the top of that file and rerun; it prints this provenance and the dex-below-relation for every point. Local tracks are digitised from Pokhrel+ Fig. 2a (10 of 12 clouds; Orion-A and Mon R2 are black/grey and cannot be separated from the axes).</p>
+    </aside>
+</section>
+
 
 <section id=cmz-now-summary>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">We know stars are forming in the CMZ, but we've measured only a small portion</div>

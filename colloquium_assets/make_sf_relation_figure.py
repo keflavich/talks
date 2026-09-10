@@ -60,6 +60,10 @@ PROTOSTELLAR_LIFETIME_MYR = 0.5     # Pokhrel's t_PS, reused for the CMZ so the 
 SGRB2_AGE_MYR = 0.5
 CORE_TO_STAR_EFFICIENCY = 0.3       # Ginsburg+2018 Eq. 3 "star formation efficiency of a core"
 
+# N(H2) [cm^-2] -> Sigma_gas [Msun/pc^2] with mu = 2.8 amu (the convention Ginsburg, Barnes and
+# Walker all use).  Pokhrel's 2 m_H N(H2)/X with X = 0.71 agrees with this to 1%.
+N_H2_TO_SIGMA = 2.2419e-20
+
 # ----------------------------------------------------------------------------------------
 # CMZ clouds.  ADD ROWS HERE AS DATA ARRIVE.
 #   sigma_gas / sigma_sfr are linear (not log).  Set limit=True for an upper limit.
@@ -70,38 +74,72 @@ CORE_TO_STAR_EFFICIENCY = 0.3       # Ginsburg+2018 Eq. 3 "star formation effici
 CMZ_CLOUDS = [
     dict(
         name="The Brick",
-        sigma_gas=4.0e3,
-        sigma_sfr=119.0, sigma_sfr_lo=None, sigma_sfr_hi=None,
+        sigma_gas=5.1e3, sigma_gas_lo=1.0e23 * 2.2419e-20, sigma_gas_hi=6.4e23 * 2.2419e-20,
+        sigma_sfr=10.6, sigma_sfr_lo=None, sigma_sfr_hi=None,
         limit=True, colour="#1f77b4", marker="v", size=230, label_offset=(-16, -34), label_ha="right",
         ref="Walker+ 2021",
-        note=("Sigma_gas: 7e3 Msun within R = 19 arcsec = 0.746 pc (Sec 3.4.1), matched to the "
-              "ALMA field the sources sit in -> 4.0e3 Msun/pc^2 over A = 1.75 pc^2.  "
-              "Sigma_SFR: DERIVED -- Walker+ quote no SFR and no limit.  Drawn as generously as the "
-              "data allow, so the point is not overstated: ALL Table 3 cores at their 22 K masses, "
-              "counting source 1 whole (64.2 Msun) rather than split into 1a+1b, = 104 Msun; times a "
-              "core-to-star efficiency of 1.0, i.e. every gram of core gas becomes a star; divided by "
-              "Pokhrel's own t_PS = 0.5 Myr (required, or the y axis means something different) and "
-              "by 1.75 pc^2 -> 119 Msun/pc^2/Myr.  "
-              "The fiducial value (44 Msun of cores, efficiency 0.3) is 15 Msun/pc^2/Myr, 0.9 dex lower."),
+        note=("CLOUD-SCALE aperture, to match how Pokhrel measure (all the protostars in a cloud "
+              "against all the gas above a contour) and so that the Brick and Cloud E/F are "
+              "comparable to each other.  "
+              "Sigma_gas: >1e5 Msun within R = 2-3 pc (Sec 1, quoting Immer+2012, Longmore+2012, "
+              "Walker+2015); R = 2.5 pc -> A = 19.6 pc^2 -> 5.1e3 Msun/pc^2.  "
+              "Sigma_SFR: DERIVED -- Walker+ quote no SFR and no limit.  Generous ceiling on the "
+              "STELLAR content: every Table 3 core at its 22 K mass, source 1 counted whole "
+              "(64.2 Msun) rather than split, = 104 Msun of core GAS, times a core-to-star "
+              "efficiency of 1.0 -- i.e. every gram already a star.  / 0.5 Myr / 19.6 pc^2 "
+              "-> 10.6 Msun/pc^2/Myr.  "
+              "Horizontal bar: the range of column the cloud actually covers, from the CMZoom "
+              "threshold N(H2) = 1e23 cm^-2 (Walker+ 2018 Sec 2.1: 'designed to target all regions "
+              "within the CMZ that lie above a column density threshold of ~1e23 cm^-2') up to the "
+              "densest structure in the cloud, the maser core -- 72 Msun in R = 0.04 pc "
+              "(Rathborne+ 2015 via Walker+ 2021 Sec 4.2) = 1.4e4 Msun/pc^2 = 6.4e23 cm^-2.  "
+              "These cores are genuinely protostellar: 9 of 18 drive SiO outflows.  "
+              "If instead you use the 19-arcsec ALMA field alone (7e3 Msun, 1.75 pc^2) the point "
+              "moves to (4.0e3, 119) -- same cloud, aperture ten times smaller.  Fiducial "
+              "efficiency 0.3 on the 44 Msun low-temperature core sum gives 1.3 here.  "
+              "CROSS-CHECK (Tang+ 2021, MNRAS 505, 2392, Fig. 10 -- one uniform AzTEC+Herschel "
+              "dust-SED N(H2) map of the whole CMZ, so the Brick and Cloud E/F are measured the "
+              "same way): reading the map in matched R = 2.4 pc apertures gives mean lg N(H2) = "
+              "22.90 for the Brick against 23.03/23.01 for clouds e/f.  Cloud E/F is the denser "
+              "of the two by ~0.13 dex, which is the same ordering the Walker+ 2018 masses give "
+              "(5.1e3 vs 6.0e3), and by a slightly larger margin -- so the separation plotted "
+              "here is the conservative one."),
     ),
     dict(
         name="Cloud E/F",
-        sigma_gas=5.4e3,
-        sigma_sfr=541.0, sigma_sfr_lo=None, sigma_sfr_hi=None,
-        limit=True, colour="#2ca02c", marker="v", size=230, label_offset=(20, 26),
-        ref="Barnes+ 2019",
-        note=("Sigma_gas: proto-cluster e, M = 2993 Msun in R_eff = 0.42 pc (Table 5) -> "
-              "5.4e3 Msun/pc^2 over A = pi*0.42^2 = 0.554 pc^2.  "
-              "Sigma_SFR: DERIVED -- Barnes+ give no SFR, no limit, and no counted protostellar mass; "
-              "the only star formation signature in either cloud is the H2O and Class II CH3OH masers "
-              "at the south of E/F.  Drawn from their own most generous statement: the core region "
-              "'could be up to ~600 Msun' and is 'capable of forming one or several high-mass stars "
-              "(assuming a typical star formation efficiency for a core of ~25 per cent)'.  Taking that "
-              "600 Msun x 0.25 = 150 Msun as if it had ALREADY formed, / 0.5 Myr / 0.554 pc^2 -> "
-              "541 Msun/pc^2/Myr.  "
-              "This is the weakest of the three points: push the core efficiency to 1.0 and the limit "
-              "reaches the extrapolated relation, so Cloud E/F on its own does not yet rule anything "
-              "out.  Replace with a counted value when we have one -- Lu+ 2019 is the obvious source."),
+        sigma_gas=6.03e3, sigma_gas_lo=1.0e23 * 2.2419e-20, sigma_gas_hi=3.7e24 * 2.2419e-20,
+        sigma_sfr=1.96, sigma_sfr_lo=None, sigma_sfr_hi=None,
+        limit=True, colour="#2ca02c", marker="v", size=230, label_offset=(18, 22),
+        ref="Barnes+ 2019, Walker+ 2018",
+        note=("Sigma_gas: from Walker+ 2018 Table 1, which tabulates the dust ridge clouds on a "
+              "consistent footing (values from Walker+ 2015).  Cloud e: 11.2e4 Msun, R = 2.4 pc; "
+              "cloud f: 7.3e4 Msun, R = 2.0 pc.  Barnes+ treat e and f as one cloud, so combined: "
+              "1.85e5 Msun over 30.7 pc^2 -> 6.0e3 Msun/pc^2.  "
+              "The Immer+ 2012 column of the same table (15.3e4/4.5 pc, 7.2e4/2.7 pc) gives "
+              "2.6e3 instead, so treat the horizontal position as good to a factor of ~2.  "
+              "NOT used: Barnes' intro prose '~1e5 Msun, radii of ~1 pc'.  Multiplied together "
+              "those give 3.2e4 Msun/pc^2, five to thirteen times too high -- they are "
+              "order-of-magnitude statements, and Barnes never tabulate a cloud-scale mass or "
+              "radius.  That error put Cloud E/F to the right of most of Sgr B2, which is wrong: "
+              "it should sit at lower column density than most of the Sgr B2 cloud.  "
+              "Sigma_SFR: ceiling set by what is OBSERVED.  No HII regions, no protostellar "
+              "source catalogue; the only star formation signature in either cloud is an H2O plus "
+              "Class II CH3OH maser pair at one spot in the south.  A Class II methanol maser marks "
+              "a high-mass protostar, so allow one such star plus companions, <= 30 Msun -- "
+              "generous, and bounded above by the Brick's ENTIRE counted protostellar content "
+              "(104 Msun in 18 cores), since E/F shows strictly less.  / 0.5 Myr / 30.7 pc^2 "
+              "-> 2.0 Msun/pc^2/Myr.  "
+              "Horizontal bar: from the same 1e23 cm^-2 threshold up to the peak column Barnes+ "
+              "measure, 3.7e24 cm^-2 towards the south of Cloud E/F (Sec 3.1) = 8.3e4 Msun/pc^2.  "
+              "The bar is drawn flat, at the cloud-averaged limit.  A contour-by-contour treatment "
+              "would tilt it upward to the right (smaller area at higher contour), the way Pokhrel's "
+              "clouds are curves rather than points -- so the flat bar is the conservative rendering "
+              "at the high-column end.  "
+              "NOT used: Barnes' 'core region could be up to ~600 Msun ... capable of forming one "
+              "or several high-mass stars (~25 per cent)'.  That 150 Msun is star formation "
+              "potential, not stars that exist -- these cores are starless.  "
+              "See the Brick entry for the Tang+ 2021 cross-check that puts Cloud E/F above the "
+              "Brick in column density on a single uniform map."),
     ),
     # dict(name="Clouds C & D", ... ),   # Gramze+ in prep
     # dict(name="Sgr C", ... ),          # Crowe+ 2023, Lu+ 2021
@@ -252,7 +290,16 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0)):
     ax.contourf(gx_, gy_, z, levels=lv + [z.max()], colors=["#d62728", "#b01d1e"], alpha=0.20, zorder=6)
     ax.contour(gx_, gy_, z, levels=lv, colors="#8c1416", linewidths=1.6, zorder=6)
     ax.scatter(sg, ssfr, s=3, c="#8c1416", alpha=0.35, lw=0, zorder=6)
-    ax.annotate("Sgr B2\nGinsburg+ 2018\n(Fig. 17a / %.1f Myr)" % SGRB2_AGE_MYR,
+    # cloud-averaged Sgr B2: the SAME kind of measurement as the two limits, so the comparison
+    # at fixed Sigma_gas is like for like (the blob above is resolved on 0.25 pc cells).
+    ax.scatter([np.log10(6667.0)], [np.log10(216.0)], s=300, marker="*",
+               facecolors="none", edgecolors="#8c1416", linewidths=2.2, zorder=9)
+    ax.plot([np.log10(6667.0)] * 2, [np.log10(156.0), np.log10(276.0)],
+            color="#8c1416", lw=2.4, zorder=9)
+    ax.annotate("Sgr B2, cloud-averaged", (np.log10(6667.0) + 0.06, np.log10(216.0)),
+                ha="left", va="center", fontsize=11, color="#8c1416", zorder=9,
+                bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=1.6))
+    ax.annotate("Sgr B2\nGinsburg+ 2018", #(Fig. 17a / %.1f Myr)" % SGRB2_AGE_MYR,
                 (4.30, 3.30), ha="center", fontsize=13, color="#a11d1f", fontweight="bold",
                 zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
 
@@ -260,6 +307,12 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0)):
         gx, gy = np.log10(c["sigma_gas"]), np.log10(c["sigma_sfr"])
         ax.scatter([gx], [gy], s=c["size"], marker=c["marker"], c=c["colour"],
                    edgecolors="k", linewidths=1.2, zorder=8)
+        if c.get("sigma_gas_lo"):
+            ax.plot([np.log10(c["sigma_gas_lo"]), np.log10(c["sigma_gas_hi"])], [gy, gy],
+                    color=c["colour"], lw=3.4, solid_capstyle="butt", zorder=7)
+            for e in ("sigma_gas_lo", "sigma_gas_hi"):
+                ax.plot([np.log10(c[e])] * 2, [gy - 0.07, gy + 0.07],
+                        color=c["colour"], lw=3.4, zorder=7)
         if c["limit"]:
             ax.annotate("", xy=(gx, gy - 0.42), xytext=(gx, gy - 0.06),
                         arrowprops=dict(arrowstyle="-|>", color=c["colour"], lw=2.4), zorder=8)
@@ -297,6 +350,8 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0)):
     print("    median (log Sgas, log Ssfr) = (%.2f, %.2f); relation predicts %.2f -> %.2f dex below"
           % (med_g, med_s, POKHREL_SLOPE * med_g + POKHREL_INTERCEPT,
              POKHREL_SLOPE * med_g + POKHREL_INTERCEPT - med_s))
+    print("    cloud-averaged, for comparison with the two limits: 1.5e6 Msun and "
+          "SFR 0.035-0.062 Msun/yr over the 15x15 pc field -> (3.82, 2.19-2.44)")
     for age in (1.0, 0.5, 0.1):
         m = np.median(sstar - np.log10(age))
         print("      age %.2f Myr -> median log Ssfr %.2f, %.2f dex below the relation"

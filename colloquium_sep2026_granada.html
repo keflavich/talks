@@ -211,11 +211,18 @@ Observations of nearby star-forming regions provide the empirical foundation for
     <div style="position:absolute; left:359px; top:452px; width:186px; color:#111; font-size:26px; line-height:1.3; text-align:center;">What happens to<br>proto-stellar discs<br>in these extreme<br>environments?</div>
     <!-- the empty top-right of the Madau plot (high z, low SFR density) is real whitespace, so the
          two "what happens to discs" graphics live there.  There is no Moeckel figure anywhere in
-         this repo -- Bally+ 2020's disc-interaction panel is the closest thing we have. -->
+         this repo -- Bally+ 2020's disc-interaction panel is the closest thing we have, so the
+         IMAGE is Bally's but the ARGUMENT is not: accretion-driven truncation is Wijnen, Pols,
+         Pelupessy & Portegies Zwart (Nijmegen/Leiden) -- face-on accretion adds ISM material with
+         no azimuthal angular momentum, so the disc contracts to conserve it (Wijnen+ 2016, A&A;
+         Wijnen+ 2017, A&A 604, A91, which also treats ram-pressure stripping).  It reaches the
+         observations through Otter, Ginsburg, Ballering, Bally+ 2021 (ApJ 923, 221), whose OMC1
+         discs are shielded from the Trapezium and so must be truncated some other way.  The
+         earlier version of the same idea is Moeckel & Throop 2009, ApJ 707, 268. -->
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:812px; top:120px; width:188px; height:141px;" src="assets/orion_proplyds_heic0917aa.webp">
     <div style="position:absolute; left:812px; top:266px; width:188px; text-align:center; color:#111; font-size:15px; line-height:1.2;">Proplyds: discs photoevaporated<br><span style="font-size:13px;">HST / Orion (NASA, ESA)</span></div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:812px; top:330px; width:188px; height:144px;" src="assets_orion/Bally2020_DiskInteraction.jpeg">
-    <div style="position:absolute; left:812px; top:479px; width:188px; text-align:center; color:#111; font-size:15px; line-height:1.2;">Accretion-driven truncation<br><span style="font-size:13px;">Bally+ 2020</span></div>
+    <div style="position:absolute; left:812px; top:479px; width:188px; text-align:center; color:#111; font-size:15px; line-height:1.2;">Accretion-driven truncation<br><span style="font-size:13px;"><a href="https://ui.adsabs.harvard.edu/abs/2017A%26A...604A..91W/abstract">Wijnen+ 2017</a>; <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...923..221O/abstract">Otter+ 2021</a></span><br><span style="font-size:11px; color:#555;">figure: Bally+ 2020</span></div>
     <div style="position:absolute; left:34px; top:20px; color:#111; font-size:22px;">Madau &amp; Dickinson 2014</div>
 
     <aside class=notes>
@@ -223,6 +230,14 @@ Observations of nearby star-forming regions provide the empirical foundation for
             <li> Most of the stars in the universe formed at cosmic noon, z ~ 1-3
             <li> Those conditions -- density, UV field, turbulence -- are what the CMZ reproduces locally
             <li> So: what happens to the discs, and to the planets, under those conditions?
+            <li> <b>Credit the truncation argument correctly:</b> the mechanism is <b>Wijnen+ 2016, 2017</b>
+                (Pols, Pelupessy, Portegies Zwart &mdash; Nijmegen/Leiden): face-on accretion of ISM material
+                carrying no azimuthal angular momentum shrinks the disc; ram-pressure stripping removes the rest.
+                It shows up in the observations via <b>Otter+ 2021</b> (Otter, Ginsburg, Ballering, Bally+) &mdash;
+                the OMC1 discs are embedded, hidden from the Trapezium's UV, and still small, so photoevaporation
+                cannot be what truncated them.  <b>Moeckel &amp; Throop 2009</b> (Bondi&ndash;Hoyle&ndash;Lyttleton
+                accretion onto a protoplanetary disc) made essentially the same argument a decade earlier, as did Bally.
+                The picture on the slide is Bally+ 2020's; the physics is not his.
         </ul>
     </aside>
 </section>
@@ -246,6 +261,15 @@ Observations of nearby star-forming regions provide the empirical foundation for
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width: 6%; position: absolute; top: 54.1516%; left: 43.3009%; --rotation:-147deg; z-index: 100; margin: 0px; transform-origin: 0px 0px; --transition-duration: 0.8s; " class="fragment rotated" data-fragment-index="2">
         <div class="smaller2 fragment darkbg" data-fragment-index="2" style="position: absolute; top: 65%; left: 15%; width: 50%;">
 $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
+            <!-- ADS links use the arXiv-identifier form: every one of these IDs was checked against
+                 the paper itself, whereas a hand-written bibcode is a silent 404 if a digit is off. -->
+            <div class=smaller3 style="margin-top:4px; line-height:1.35;">
+                <a class=darkbg href="https://ui.adsabs.harvard.edu/abs/arXiv:1704.03572/abstract">Barnes+ 2017</a>,
+                <a class=darkbg href="https://ui.adsabs.harvard.edu/abs/arXiv:2312.09284/abstract">Hatchfield+ 2024</a>,
+                <a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2018ApJ...853..171G/abstract">Ginsburg+ 2018b</a>,
+                <a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+
+            </div>
         </div>
         <div class=fragment></div>
         <aside class=notes>
@@ -253,6 +277,21 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
                 <li> Zoom-in to the Sgr B2 cloud:
                 <li> Most massive, actively star-forming cloud in the galaxy: 10<sup>7</sup> M<sub>&odot;</sub>
                 <li> ALMA 3mm image showing mix of dust and free-free emission
+                <li> <b>Where the ~50% comes from, if anyone asks:</b>
+                    <ul>
+                        <li> <b>Barnes+ 2017</b> (MNRAS, "Star formation rates and efficiencies in the Galactic Centre"):
+                            CMZ total SFR = 0.09 &plusmn; 0.02 M<sub>&odot;</sub>/yr averaged over IR-luminosity, YSO-counting
+                            and free-free methods; their Sgr B2 entry is 0.005 M<sub>&odot;</sub>/yr from the IR, rising to
+                            <b>0.045</b> when the embedded stellar mass is taken from VLA+WMAP instead &mdash; i.e. half the CMZ total.
+                        <li> <b>Hatchfield+ 2024</b> (CMZoom IV): "we find a total SFR (excluding the CND) of ~0.05 M<sub>&odot;</sub>/yr,
+                            <i>the majority of which</i> is due to the estimate of the SFR of Sgr B2 (~0.036 M<sub>&odot;</sub>/yr)" &mdash;
+                            that is ~70%, so 50% is the conservative statement.
+                        <li> <b>Ginsburg+ 2018b</b> ("Distributed star formation throughout the Galactic Center cloud Sgr B2")
+                            is where the 0.036 M<sub>&odot;</sub>/yr itself comes from &mdash; it is the number Hatchfield adopts.
+                        <li> So the two independent totals (0.09 and 0.05) bracket the answer and both put Sgr B2 at half or more.
+                            The honest caveat is that Sgr B2's SFR depends on how you count embedded stellar mass; the IR-only
+                            route gives ~10x less.
+                    </ul>
             </ul>
         </aside>
     </section>
@@ -335,7 +374,8 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.34375%; left:-71.289%;height: 100.8%;max-width: 200%;max-height: 200%; opacity:0.0;">
     <img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position:absolute; top:-2%; left:7%;height: 100%;max-width: 200%;max-height: 200%;" data-id="sgrb2nmiriwithalma">
             <div style='position: absolute; bottom:80px; right:100px; color:white; background-color:rgba(0,0,0,0.5); z-index:100' class=smaller>
-            MIRI 25 micron shows the outflow: <br> first IR light from within Sgr B2 N
+            MIRI 25 micron shows the outflow: <br> first IR light from within Sgr B2 N;
+            <br> $\dot{M} \sim 10^{-1} \mathrm{M}_\odot \mathrm{~yr}^{-1}$, $M_{cl} \sim 10^4 \mathrm{M}_\odot$
             </div>
     <img style='position:absolute; width:150px; top:-35%; right:1%; background: transparent; height: 100%; object-fit: contain; overflow: hidden;' src="assets/Nazar/Nazar_Budaiev_cropped.jpg">
     <div class=smaller3 style="position:absolute; top:188px; right:1%; width:150px; text-align:center; z-index:151;"><a href="https://ui.adsabs.harvard.edu/abs/2026AJ....172...51B/abstract" class=darkbg style="background:rgba(0,0,0,0.55); padding:1px 6px; border-radius:3px;">Budaiev+ 2026</a></div>
@@ -457,8 +497,8 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class="fragment sgrb2ds-dive" data-fragment-index="3"></div>
     <!-- fade-in-then-out (reveal's "visible only while current") so it clears when the next caption
          arrives, instead of both stacking in the same corner. -->
-    <div class="fragment fade-in-then-out smaller2" data-fragment-index="2" style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Embedded is reddest, and there are many HII regions</div>
-    <div class="fragment smaller2" data-fragment-index="3" style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">The dark swath is where dust hides ongoing SF</div>
+    <div class="fragment fade-in-then-out smaller2" data-fragment-index="2" style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Massive clusters account for 40-50% of the star formation</div>
+    <div class="fragment smaller2" data-fragment-index="3" style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">A dark, dusty swath hides ongoing unclustered SF</div>
 
         <aside class=notes>
             <ul>
@@ -680,7 +720,9 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 <section id=cmz-wide>
     <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">Zooming back out to the Galactic Center as seen by ACES....</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px;" src="assets/cmz/MUSTANG_12m_feather_noaxes.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
 </section>
 
 <!-- All JWST NIR coverage, rendered from the HiPS at
@@ -688,9 +730,152 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
      onto the ACES/MUSTANG WCS grid downsampled 4x, so it overlays 1:1 with no transform. -->
 <section id=cmz-jwst>
     <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">JWST has observed much of the Galactic Center</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:1;" src="assets/cmz/MUSTANG_12m_feather_noaxes.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:2;" src="assets/cmz/jwst_nir_hips_on_ACESgrid.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:168.59px; width:1024px; z-index:4;" src="assets/cmz/jwst_nir_hips_on_ACESgrid.png">
 </section>
+
+
+<!-- What's coming soon.  Every layer is rendered onto the SAME WCS grid
+     (l -1.55..1.70, b +-0.688, 4"/px) by a local HiPS renderer, so they stack 1:1 with no
+     transform -- no screenshots, no per-slide composites.  Displayed 2400px wide and centred,
+     so the image overflows the 1024x768 canvas on all sides and fills ultrawide screens.
+     Layers: Spitzer/GLIMPSE360 -> Ash rgb_final_uncropped_noalpha -> ACES/MUSTANG ->
+     JWST today (jwst_nir_hips) -> GO 10678 NIRCam / MIRI footprints -> Roman (zoomed out). -->
+<section id=soon-spitzer data-visibility="hidden">
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">The Galactic Center in the mid-infrared (Spitzer/GLIMPSE)</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
+</section>
+
+<section id=soon-ash data-visibility="hidden">
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;and in the radio</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
+</section>
+
+<section id=soon-aces data-visibility="hidden">
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;with ACES + MUSTANG on top</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
+</section>
+
+<section id=soon-jwst-today>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">What JWST has observed so far</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
+</section>
+
+<!-- Cloud-by-cloud tour, on #soon-jwst-today's layer stack at exactly its position (left -688) on
+     every slide, so the map never shifts through the sequence.  Each green outline is that field's
+     real footprint -- a thin, square-cornered quadrilateral traced from the image's own AVM onto
+     the full-bleed grid -- and the panel beside it is the SAME rectangle magnified: it carries the
+     field's position angle on the map (rotate:), so panel edges and box edges are the same edges
+     and every zoom is shown in the Galactic frame whatever roll it was observed at.
+     Source orientation was checked against jwst_today_fullbleed.png (ncc, 0 vs 180 deg): Sgr B2,
+     Arches and Quintuplet are stored 180 deg from their own AVM and are un-rotated here.
+     Sgr C sits at l=-0.6, at the right edge of this framing, so its box runs off the canvas. -->
+<section id=clouds-sgrb2>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Sgr B2: &gt;500 YSOs w/ALMA<br>~100 HII regions JWST+ALMA+VLA
+        <div style="font-size:72%; margin-top:2px;">Ginsburg+ 2018, Jeff+ 2024, Budaiev+ 2024, 2025, 2026, Daley+ in prep</div>
+    </div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_sgrb2.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:292.84px; top:227.87px; width:601.91px; height:267.2px; rotate:31.23deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_sgrb2.jpg">
+</section>
+
+<section id=clouds-cloudef>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Cloud E/F: 1? YSO
+        <div style="font-size:72%; margin-top:2px;">Houghton, Esteve, Gutermuth, Longmore, Huard, Kauffmann subm.</div>
+    </div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_cloudef.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:412.52px; top:187.38px; width:480.52px; height:348.27px; rotate:29.68deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_cloudef.jpg">
+</section>
+
+<section id=clouds-cloudcd>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Clouds C &amp; D: one small &ldquo;cluster&rdquo; of 5&ndash;10 YSOs each
+        <div style="font-size:72%; margin-top:2px;">Gramze+ in prep</div>
+    </div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_cloudcd.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:591.82px; top:106.04px; width:200.94px; height:510.78px; rotate:-58.69deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_cloudcd.jpg">
+</section>
+
+<section id=clouds-brick>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">The Brick: about 10 YSOs, one above 5 M$_\odot$
+        <div style="font-size:72%; margin-top:2px;">Walker+ 2021</div>
+    </div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_brick.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:638.15px; top:141.5px; width:179.84px; height:439.94px; rotate:-58.66deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_brick.jpg">
+</section>
+
+<section id=clouds-arqu>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Quintuplet &amp; Arches: few-Myr old, &gt;10$^4$ M$_\odot$ clusters
+        <div style="font-size:72%; margin-top:2px;">Hosek+ 2019</div>
+    </div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_arqu.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:119.55px; top:157.84px; width:278.42px; height:126.33px; rotate:33.68deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_arches.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:114.97px; top:431.32px; width:287.49px; height:130.46px; rotate:34.46deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_quint.jpg">
+</section>
+
+<section id=clouds-sgrc>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Sgr C: ~5 IR&ndash;ALMA matched YSOs,<br>~40 inferred from outflows
+        <div style="font-size:72%; margin-top:2px;">Crowe+ 2023, Lu+ 2021</div>
+    </div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_sgrc.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:166.24px; top:233.17px; width:635.31px; height:256.69px; rotate:-149.92deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_sgrc.jpg">
+</section>
+
+<!-- Single-cloud SF relation with the CMZ on top.  Built by
+     colloquium_assets/make_sf_relation_figure.py -- rerun that to rebuild as data arrive; the
+     CMZ_CLOUDS table at the top of the script is the only thing to edit, and every row carries
+     its own derivation.  Local relation: Pokhrel+ 2021 Fig. 2a, tracks digitised by colour-key
+     into colloquium_assets/pokhrel2021_tracks.csv (10 of 12 clouds; Orion-A and Mon R2 are drawn
+     in black/grey and cannot be separated from the axes).  Fit: slope 2.00, intercept -4.11,
+     +/-1 and 2 sigma at 0.30 dex, fitted only below 676 Msun/pc^2 -- every CMZ point is an
+     extrapolation, which is the point of the slide. -->
+<section id=sf-relation-sgrb2>
+    <div style="position:absolute; left:52px; top:56px; width:920px; height:700px; background:#fff; border-radius:6px;"></div>
+    <div style="position:absolute; left:0px; top:10px; width:1024px; text-align:center; color:#fff; font-size:34px;">Star formation in the CMZ does not follow the local relation</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:62px; top:64px; width:900px; height:675px;" src="colloquium_assets/sf_relation_cmz.png">
+
+    <aside class=notes>
+        <ul>
+            <li> Nearby clouds all follow one relation, Sigma_SFR ~ Sigma_gas^2.0, with a uniform efficiency per free-fall time (eps_ff ~ 0.026)
+            <li> <b>Say the caveat out loud:</b> Pokhrel+ fitted this only below 676 Msun/pc^2 (their N(H2) &lt; 3e22 cut), and their own Fig. 3 shows eps_ff <i>declining</i> above ~1000. Every CMZ point here is 1&ndash;2 dex beyond the calibration &mdash; pure extrapolation, exactly as I said about Gutermuth in the 2018 paper
+            <li> The bands are cloud-to-cloud scatter: 0.30 dex, so 2 sigma = 0.60 dex
+        </ul>
+        <p><b>Where each CMZ point comes from &mdash; all three limits drawn as generously as the data allow, so the gap is not overstated:</b></p>
+        <ul>
+            <li> <b>Sgr B2 (Ginsburg+ 2018) &mdash; the whole Fig. 17a point cloud, not one point.</b>
+                Fig. 17a plots Sigma_* vs Sigma_gas, so the whole panel is divided by an age to get Sigma_SFR. 556 points digitised straight out of the paper's raster.
+                Age = 0.5 Myr is used: it matches Pokhrel's t_PS so both axes mean the same thing, and it is <i>more</i> conservative than the paper's own 0.74 Myr (a shorter age raises the rate).
+                Median (log Sigma_gas, log Sigma_SFR) = (3.81, 2.08); the relation predicts 3.52, so <b>1.44 dex below</b>.
+                <b>Age sensitivity, all still below:</b> 1 Myr &rarr; 1.74 dex below; 0.5 Myr &rarr; 1.44; 0.1 Myr (the extreme) &rarr; 0.74 dex below, still outside 2 sigma. So the conclusion does not depend on the age.
+                Axis calibration was checked against the figure's own Gutermuth alpha=1 model lines: at Sigma_gas = 1e4 the t = 0.74 and 0.01 Myr curves are predicted at page rows 678 and 989 and found at 677 and 993.
+                Caveats to own: Fig. 17a assumes 95 Msun per source (21.8 Msun mean x 23% IMF sampling), the sample misses Class II sources so the stellar mass may be underestimated by up to 2x, and the right-hand column of saturated-Herschel lower limits is excluded from the cloud drawn here.
+            <li> <b>The Brick (Walker+ 2021), log Sigma_gas = 3.71, limit log Sigma_SFR &lt; 1.03 &mdash; 2.28 dex below the relation, and ~1.3 dex below Sgr B2 at the same gas surface density.</b>
+                Cloud-scale aperture, to match how Pokhrel measure and so the two limits are comparable: &gt;1e5 Msun within R = 2&ndash;3 pc (Sec 1); R = 2.5 pc &rarr; 19.6 pc^2 &rarr; 5.1e3 Msun/pc^2.
+                Walker+ quote <i>no</i> SFR and no limit, so the ceiling is ours and deliberately generous: every Table 3 core at its 22 K mass, source 1 counted whole (64.2 Msun) not split, = 104 Msun of core <i>gas</i>, times a core-to-star efficiency of <b>1.0</b> &mdash; every gram already a star &mdash; / 0.5 Myr / 19.6 pc^2 &rarr; 10.6.
+                These cores really are protostellar: 9 of 18 drive SiO outflows. Using the 19" ALMA field alone instead (7e3 Msun, 1.75 pc^2) moves it to (4.0e3, 119) &mdash; same cloud, aperture ten times smaller.
+            <li> <b>Cloud E/F (Barnes+ 2019 + Walker+ 2018), log Sigma_gas = 3.78, limit log Sigma_SFR &lt; 0.29 &mdash; 3.16 dex below the relation, ~2 dex below Sgr B2.</b>
+                Sigma_gas from <b>Walker+ 2018 Table 1</b>, which tabulates the dust ridge on a consistent footing: cloud e = 11.2e4 Msun in R = 2.4 pc, cloud f = 7.3e4 Msun in R = 2.0 pc; Barnes treat them as one cloud, so 1.85e5 Msun over 30.7 pc^2 = 6.0e3 Msun/pc^2. The Immer+ 2012 column of the same table gives 2.6e3, so the horizontal position is good to a factor of ~2.
+                The ceiling is set by what is <i>observed</i>: no HII regions, no protostellar source catalogue, and the only star formation signature in either cloud is one H2O + Class II CH3OH maser pair in the south. A Class II methanol maser marks a high-mass protostar, so allow one plus companions, &le; 30 Msun &mdash; generous, and bounded above by the Brick's <i>entire</i> counted protostellar content (104 Msun in 18 cores), since E/F shows strictly less. / 0.5 Myr / 30.7 pc^2 &rarr; 2.0.
+            <li> <b>The horizontal bars</b> are the range of column density each cloud actually covers: from the CMZoom threshold N(H2) = 1e23 cm^-2 (Walker+ 2018 Sec 2.1, "designed to target all regions within the CMZ that lie above a column density threshold of ~1e23 cm^-2") = 2.2e3 Msun/pc^2, up to the densest structure in each cloud &mdash; the Brick's maser core, 72 Msun in R = 0.04 pc (Rathborne+ 2015 via Walker+ 2021) = 1.4e4 = 6.4e23 cm^-2; and Cloud E/F's peak column, 3.7e24 cm^-2 (Barnes+ 2019 Sec 3.1) = 8.3e4.
+                The bars are drawn flat, at the cloud-averaged limit. A contour-by-contour treatment would tilt them upward to the right, since the area shrinks at higher contour &mdash; that is why Pokhrel's clouds are curves, not points. So flat is the conservative rendering at the high-column end.
+            <li> <b>Cross-check on which of the two is denser (Tang+ 2021, MNRAS 505, 2392, Fig. 10):</b>
+                their AzTEC+<i>Herschel</i> dust-SED fit gives one uniform N(H2) map of the whole CMZ at 7", so the Brick and Cloud E/F are measured the <i>same way</i>.
+                Reading that map in matched R = 2.4 pc apertures: mean lg N(H2) = 22.90 for the Brick, 23.03 for cloud e and 23.01 for cloud f. <b>Cloud E/F is the denser of the two, by ~0.13 dex (~40%).</b>
+                That is the same ordering the Walker+ 2018 masses give (5.1e3 vs 6.0e3 Msun/pc^2, 0.07 dex), and by a slightly larger margin &mdash; so the separation plotted here is the conservative one. Both clouds saturate Tang's 10^23.4 colour scale over a few per cent of their area, so these are means, not peaks.
+            <li> <b>Two things I got wrong first, in case they come up:</b>
+                (i) I first took Sigma_gas from Barnes' intro prose, "~1e5 Msun, radii of ~1 pc". Multiplied together those give 3.2e4 Msun/pc^2, five to thirteen times too high, and put E/F to the <i>right</i> of most of Sgr B2. They are order-of-magnitude statements; Barnes never tabulate a cloud-scale mass or radius. Walker+ 2018 Table 1 is the number to use.
+                (ii) I first set the E/F ceiling from Barnes' "the core region could be up to ~600 Msun ... capable of forming one or several high-mass stars (~25 per cent efficiency)". That 150 Msun is star formation <i>potential</i>, not stars that exist &mdash; those cores are starless &mdash; and treating it as already formed put the limit inside the Sgr B2 cloud.
+        </ul>
+        <p>Rebuild: <tt>python3 colloquium_assets/make_sf_relation_figure.py</tt>. Edit CMZ_CLOUDS at the top of that file and rerun; it prints this provenance and the dex-below-relation for every point. Local tracks are digitised from Pokhrel+ Fig. 2a (10 of 12 clouds; Orion-A and Mon R2 are black/grey and cannot be separated from the axes).</p>
+    </aside>
+</section>
+
 
 <section id=cmz-cloudc>
     <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">JWST has observed the CMZ dust ridge</div>
@@ -806,151 +991,12 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
 
-<!-- What's coming soon.  Every layer is rendered onto the SAME WCS grid
-     (l -1.55..1.70, b +-0.688, 4"/px) by a local HiPS renderer, so they stack 1:1 with no
-     transform -- no screenshots, no per-slide composites.  Displayed 2400px wide and centred,
-     so the image overflows the 1024x768 canvas on all sides and fills ultrawide screens.
-     Layers: Spitzer/GLIMPSE360 -> Ash rgb_final_uncropped_noalpha -> ACES/MUSTANG ->
-     JWST today (jwst_nir_hips) -> GO 10678 NIRCam / MIRI footprints -> Roman (zoomed out). -->
-<section id=soon-spitzer>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">The Galactic Center in the mid-infrared (Spitzer/GLIMPSE)</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
-</section>
-
-<section id=soon-ash>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;and in the radio</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
-</section>
-
-<section id=soon-aces>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;with ACES + MUSTANG on top</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
-</section>
-
-<section id=soon-jwst-today>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">What JWST has observed so far</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
-</section>
-
-<!-- Cloud-by-cloud tour, on #soon-jwst-today's layer stack at exactly its position (left -688) on
-     every slide, so the map never shifts through the sequence.  Each green outline is that field's
-     real footprint -- a thin, square-cornered quadrilateral traced from the image's own AVM onto
-     the full-bleed grid -- and the panel beside it is the SAME rectangle magnified: it carries the
-     field's position angle on the map (rotate:), so panel edges and box edges are the same edges
-     and every zoom is shown in the Galactic frame whatever roll it was observed at.
-     Source orientation was checked against jwst_today_fullbleed.png (ncc, 0 vs 180 deg): Sgr B2,
-     Arches and Quintuplet are stored 180 deg from their own AVM and are un-rotated here.
-     Sgr C sits at l=-0.6, at the right edge of this framing, so its box runs off the canvas. -->
-<section id=clouds-sgrb2>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Sgr B2: &gt;500 YSOs w/ALMA<br>~100 HII regions JWST+ALMA+VLA
-        <div style="font-size:72%; margin-top:2px;">Ginsburg+ 2018, Jeff+ 2024, Budaiev+ 2024, 2025, 2026, Daley+ in prep</div>
-    </div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400px; z-index:6;" src="assets/cmz/box_sgrb2.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:267.9px; top:262.2px; width:670.4px; height:297.6px; rotate:31.23deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_sgrb2.jpg">
-</section>
-
-<section id=clouds-cloudef>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Cloud E/F: 1? YSO
-        <div style="font-size:72%; margin-top:2px;">Houghton, Esteve, Gutermuth, Longmore, Huard, Kauffmann subm.</div>
-    </div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400px; z-index:6;" src="assets/cmz/box_cloudef.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:401.2px; top:217.1px; width:535.2px; height:387.9px; rotate:29.68deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_cloudef.jpg">
-</section>
-
-<section id=clouds-cloudcd>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Clouds C &amp; D: one small &ldquo;cluster&rdquo; of 5&ndash;10 YSOs each
-        <div style="font-size:72%; margin-top:2px;">Gramze+ in prep</div>
-    </div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400px; z-index:6;" src="assets/cmz/box_cloudcd.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:600.9px; top:126.5px; width:223.8px; height:568.9px; rotate:-58.69deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_cloudcd.jpg">
-</section>
-
-<section id=clouds-brick>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">The Brick: about 10 YSOs, one above 5 M$_\odot$
-        <div style="font-size:72%; margin-top:2px;">Walker+ 2021</div>
-    </div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400px; z-index:6;" src="assets/cmz/box_brick.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:652.5px; top:166.0px; width:200.3px; height:490.0px; rotate:-58.66deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_brick.jpg">
-</section>
-
-<section id=clouds-arqu>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Quintuplet &amp; Arches: few-Myr old, &gt;10$^4$ M$_\odot$ clusters
-        <div style="font-size:72%; margin-top:2px;">Hosek+ 2019</div>
-    </div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400px; z-index:6;" src="assets/cmz/box_arqu.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:74.9px; top:184.2px; width:310.1px; height:140.7px; rotate:33.68deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_arches.jpg">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:69.8px; top:488.8px; width:320.2px; height:145.3px; rotate:34.46deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_quint.jpg">
-</section>
-
-<section id=clouds-sgrc>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Sgr C: ~5 IR&ndash;ALMA matched YSOs,<br>~40 inferred from outflows
-        <div style="font-size:72%; margin-top:2px;">Crowe+ 2023, Lu+ 2021</div>
-    </div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400.00px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.00px; top:-123.8px; width:2400px; z-index:6;" src="assets/cmz/box_sgrc.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:126.9px; top:268.1px; width:707.6px; height:285.9px; rotate:-149.92deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_sgrc.jpg">
-</section>
-
-<!-- Single-cloud SF relation with the CMZ on top.  Built by
-     colloquium_assets/make_sf_relation_figure.py -- rerun that to rebuild as data arrive; the
-     CMZ_CLOUDS table at the top of the script is the only thing to edit, and every row carries
-     its own derivation.  Local relation: Pokhrel+ 2021 Fig. 2a, tracks digitised by colour-key
-     into colloquium_assets/pokhrel2021_tracks.csv (10 of 12 clouds; Orion-A and Mon R2 are drawn
-     in black/grey and cannot be separated from the axes).  Fit: slope 2.00, intercept -4.11,
-     +/-1 and 2 sigma at 0.30 dex, fitted only below 676 Msun/pc^2 -- every CMZ point is an
-     extrapolation, which is the point of the slide. -->
-<section id=sf-relation-sgrb2>
-    <div style="position:absolute; left:52px; top:56px; width:920px; height:700px; background:#fff; border-radius:6px;"></div>
-    <div style="position:absolute; left:0px; top:10px; width:1024px; text-align:center; color:#fff; font-size:34px;">Star formation in the CMZ does not follow the local relation</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:62px; top:64px; width:900px; height:675px;" src="colloquium_assets/sf_relation_cmz.png">
-
-    <aside class=notes>
-        <ul>
-            <li> Nearby clouds all follow one relation, Sigma_SFR ~ Sigma_gas^2.0, with a uniform efficiency per free-fall time (eps_ff ~ 0.026)
-            <li> <b>Say the caveat out loud:</b> Pokhrel+ fitted this only below 676 Msun/pc^2 (their N(H2) &lt; 3e22 cut), and their own Fig. 3 shows eps_ff <i>declining</i> above ~1000. Every CMZ point here is 1&ndash;2 dex beyond the calibration &mdash; pure extrapolation, exactly as I said about Gutermuth in the 2018 paper
-            <li> The bands are cloud-to-cloud scatter: 0.30 dex, so 2 sigma = 0.60 dex
-        </ul>
-        <p><b>Where each CMZ point comes from &mdash; all three limits drawn as generously as the data allow, so the gap is not overstated:</b></p>
-        <ul>
-            <li> <b>Sgr B2 (Ginsburg+ 2018) &mdash; the whole Fig. 17a point cloud, not one point.</b>
-                Fig. 17a plots Sigma_* vs Sigma_gas, so the whole panel is divided by an age to get Sigma_SFR. 556 points digitised straight out of the paper's raster.
-                Age = 0.5 Myr is used: it matches Pokhrel's t_PS so both axes mean the same thing, and it is <i>more</i> conservative than the paper's own 0.74 Myr (a shorter age raises the rate).
-                Median (log Sigma_gas, log Sigma_SFR) = (3.81, 2.08); the relation predicts 3.52, so <b>1.44 dex below</b>.
-                <b>Age sensitivity, all still below:</b> 1 Myr &rarr; 1.74 dex below; 0.5 Myr &rarr; 1.44; 0.1 Myr (the extreme) &rarr; 0.74 dex below, still outside 2 sigma. So the conclusion does not depend on the age.
-                Axis calibration was checked against the figure's own Gutermuth alpha=1 model lines: at Sigma_gas = 1e4 the t = 0.74 and 0.01 Myr curves are predicted at page rows 678 and 989 and found at 677 and 993.
-                Caveats to own: Fig. 17a assumes 95 Msun per source (21.8 Msun mean x 23% IMF sampling), the sample misses Class II sources so the stellar mass may be underestimated by up to 2x, and the right-hand column of saturated-Herschel lower limits is excluded from the cloud drawn here.
-            <li> <b>The Brick (Walker+ 2021), log Sigma_gas = 3.71, limit log Sigma_SFR &lt; 1.03 &mdash; 2.28 dex below the relation, and ~1.3 dex below Sgr B2 at the same gas surface density.</b>
-                Cloud-scale aperture, to match how Pokhrel measure and so the two limits are comparable: &gt;1e5 Msun within R = 2&ndash;3 pc (Sec 1); R = 2.5 pc &rarr; 19.6 pc^2 &rarr; 5.1e3 Msun/pc^2.
-                Walker+ quote <i>no</i> SFR and no limit, so the ceiling is ours and deliberately generous: every Table 3 core at its 22 K mass, source 1 counted whole (64.2 Msun) not split, = 104 Msun of core <i>gas</i>, times a core-to-star efficiency of <b>1.0</b> &mdash; every gram already a star &mdash; / 0.5 Myr / 19.6 pc^2 &rarr; 10.6.
-                These cores really are protostellar: 9 of 18 drive SiO outflows. Using the 19" ALMA field alone instead (7e3 Msun, 1.75 pc^2) moves it to (4.0e3, 119) &mdash; same cloud, aperture ten times smaller.
-            <li> <b>Cloud E/F (Barnes+ 2019 + Walker+ 2018), log Sigma_gas = 3.78, limit log Sigma_SFR &lt; 0.29 &mdash; 3.16 dex below the relation, ~2 dex below Sgr B2.</b>
-                Sigma_gas from <b>Walker+ 2018 Table 1</b>, which tabulates the dust ridge on a consistent footing: cloud e = 11.2e4 Msun in R = 2.4 pc, cloud f = 7.3e4 Msun in R = 2.0 pc; Barnes treat them as one cloud, so 1.85e5 Msun over 30.7 pc^2 = 6.0e3 Msun/pc^2. The Immer+ 2012 column of the same table gives 2.6e3, so the horizontal position is good to a factor of ~2.
-                The ceiling is set by what is <i>observed</i>: no HII regions, no protostellar source catalogue, and the only star formation signature in either cloud is one H2O + Class II CH3OH maser pair in the south. A Class II methanol maser marks a high-mass protostar, so allow one plus companions, &le; 30 Msun &mdash; generous, and bounded above by the Brick's <i>entire</i> counted protostellar content (104 Msun in 18 cores), since E/F shows strictly less. / 0.5 Myr / 30.7 pc^2 &rarr; 2.0.
-            <li> <b>The horizontal bars</b> are the range of column density each cloud actually covers: from the CMZoom threshold N(H2) = 1e23 cm^-2 (Walker+ 2018 Sec 2.1, "designed to target all regions within the CMZ that lie above a column density threshold of ~1e23 cm^-2") = 2.2e3 Msun/pc^2, up to the densest structure in each cloud &mdash; the Brick's maser core, 72 Msun in R = 0.04 pc (Rathborne+ 2015 via Walker+ 2021) = 1.4e4 = 6.4e23 cm^-2; and Cloud E/F's peak column, 3.7e24 cm^-2 (Barnes+ 2019 Sec 3.1) = 8.3e4.
-                The bars are drawn flat, at the cloud-averaged limit. A contour-by-contour treatment would tilt them upward to the right, since the area shrinks at higher contour &mdash; that is why Pokhrel's clouds are curves, not points. So flat is the conservative rendering at the high-column end.
-            <li> <b>Cross-check on which of the two is denser (Tang+ 2021, MNRAS 505, 2392, Fig. 10):</b>
-                their AzTEC+<i>Herschel</i> dust-SED fit gives one uniform N(H2) map of the whole CMZ at 7", so the Brick and Cloud E/F are measured the <i>same way</i>.
-                Reading that map in matched R = 2.4 pc apertures: mean lg N(H2) = 22.90 for the Brick, 23.03 for cloud e and 23.01 for cloud f. <b>Cloud E/F is the denser of the two, by ~0.13 dex (~40%).</b>
-                That is the same ordering the Walker+ 2018 masses give (5.1e3 vs 6.0e3 Msun/pc^2, 0.07 dex), and by a slightly larger margin &mdash; so the separation plotted here is the conservative one. Both clouds saturate Tang's 10^23.4 colour scale over a few per cent of their area, so these are means, not peaks.
-            <li> <b>Two things I got wrong first, in case they come up:</b>
-                (i) I first took Sigma_gas from Barnes' intro prose, "~1e5 Msun, radii of ~1 pc". Multiplied together those give 3.2e4 Msun/pc^2, five to thirteen times too high, and put E/F to the <i>right</i> of most of Sgr B2. They are order-of-magnitude statements; Barnes never tabulate a cloud-scale mass or radius. Walker+ 2018 Table 1 is the number to use.
-                (ii) I first set the E/F ceiling from Barnes' "the core region could be up to ~600 Msun ... capable of forming one or several high-mass stars (~25 per cent efficiency)". That 150 Msun is star formation <i>potential</i>, not stars that exist &mdash; those cores are starless &mdash; and treating it as already formed put the limit inside the Sgr B2 cloud.
-        </ul>
-        <p>Rebuild: <tt>python3 colloquium_assets/make_sf_relation_figure.py</tt>. Edit CMZ_CLOUDS at the top of that file and rerun; it prints this provenance and the dex-below-relation for every point. Local tracks are digitised from Pokhrel+ Fig. 2a (10 of 12 clouds; Orion-A and Mon R2 are black/grey and cannot be separated from the axes).</p>
-    </aside>
-</section>
-
 
 <section id=cmz-now-summary>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">We know stars are forming in the CMZ, but we've measured only a small portion</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
 </section>
 
 
@@ -963,7 +1009,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
             <li style='margin-bottom:2px; margin-top:2px;'> YSO candidates
         </ul>
     </div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:5;" src="assets/cmz/fp_nircam_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:5;" src="assets/cmz/fp_nircam_fullbleed.png">
     <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#cc7a00">&#9632; JWST NIRCam (GO 10678)</span></div>
 </section>
 
@@ -976,7 +1022,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         </ul>
     </div>
 
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-531.28px; top:-123.8px; width:2243.28px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-688.0px; top:-123.8px; width:2400px; z-index:5;" src="assets/cmz/fp_miri_fullbleed.png">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:5;" src="assets/cmz/fp_miri_fullbleed.png">
     <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#cc3399">&#9632; JWST MIRI (GO 10678)</span></div>
 </section>
 
@@ -992,20 +1038,26 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     </div>
 
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/wide_spitzer.jpg"
-         style="width:2400.00px; z-index:1; --l0:-2183.38px; --t0:-756.66px; --r0:0deg; --s0:2.246154; --l1:-688.00px; --t1:-123.83px; --r1:0deg; --s1:1.000000;">
+         style="width:2154.82px; z-index:1; --l0:-1908.02px; --t0:-686.9px; --r0:0deg; --s0:2.246154; --l1:-565.41px; --t1:-118.72px; --r1:0deg; --s1:1.000000;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/wide_spitzer_ash.jpg"
-         style="width:2400.00px; z-index:2; --l0:-2183.38px; --t0:-756.66px; --r0:0deg; --s0:2.246154; --l1:-688.00px; --t1:-123.83px; --r1:0deg; --s1:1.000000; --o0:1; --o1:0;">
+         style="width:2154.82px; z-index:2; --l0:-1908.02px; --t0:-686.9px; --r0:0deg; --s0:2.246154; --l1:-565.41px; --t1:-118.72px; --r1:0deg; --s1:1.000000; --o0:1; --o1:0;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/fp_roman_wide.png"
-         style="width:2400.00px; z-index:3; --l0:-2183.38px; --t0:-756.66px; --r0:0deg; --s0:2.246154; --l1:-688.00px; --t1:-123.83px; --r1:0deg; --s1:1.000000;">
+         style="width:2154.82px; z-index:3; --l0:-1908.02px; --t0:-686.9px; --r0:0deg; --s0:2.246154; --l1:-565.41px; --t1:-118.72px; --r1:0deg; --s1:1.000000;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/bg_spitzer_fullbleed.jpg"
-         style="width:2400.00px; z-index:4; --l0:-688.00px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:-22.25px; --t1:157.91px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
+         style="width:2154.82px; z-index:4; --l0:-565.41px; --t0:-118.72px; --r0:0deg; --s0:1.000000; --l1:32.33px; --t1:134.24px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/layer_ashrgb_fullbleed.jpg"
-         style="width:2243.28px; z-index:5; --l0:-531.28px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:47.53px; --t1:157.91px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
+         style="width:2014.11px; z-index:5; --l0:-424.7px; --t0:-118.72px; --r0:0deg; --s0:1.000000; --l1:94.98px; --t1:134.24px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/layer_acesmustang_fullbleed.png"
-         style="width:2400.00px; z-index:6; --l0:-688.00px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:-22.25px; --t1:157.91px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
+         style="width:2154.82px; z-index:6; --l0:-565.41px; --t0:-118.72px; --r0:0deg; --s0:1.000000; --l1:32.33px; --t1:134.24px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/fp_roman_fullbleed.png"
-         style="width:2400.00px; z-index:7; --l0:-688.00px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:-22.25px; --t1:157.91px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
-         style="width:2400.00px; z-index:8; --l0:-688.00px; --t0:-123.83px; --r0:0deg; --s0:1.000000; --l1:-688.00px; --t1:-123.83px; --r1:0deg; --s1:1.000000; --o0:0; --o1:1;">
+         style="width:2154.82px; z-index:7; --l0:-565.41px; --t0:-118.72px; --r0:0deg; --s0:1.000000; --l1:32.33px; --t1:134.24px; --r1:0deg; --s1:0.445205; --o0:1; --o1:0;">
+    <!-- BROKEN: the <img class="fragment custom cmzzoom" ... src="..."> opening tag for this
+         layer is missing, so the style= line below was rendering as literal text on the slide.
+         Commented out rather than guessed at -- restore it with the right src (a Roman
+         footprint layer: it fades IN at the end state and holds the fullbleed framing).
+    <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/cmz/???.png"
+         style="width:2154.82px; z-index:8; --l0:-565.41px; --t0:-118.72px; --r0:0deg; --s0:1.000000; --l1:-565.41px; --t1:-118.72px; --r1:0deg; --s1:1.000000; --o0:0; --o1:1;">
+    -->
     <div class="smaller3" data-fragment-index="1" style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
         <span style="color:#0a2878">&#9633; Roman GC hourly-cadence</span> &nbsp; <span style="color:#783a00">&#9633; Roman GBTDS</span> &nbsp; <span style="color:#444">PA 90.6&deg; (spring window)</span>
     </div>
@@ -1015,7 +1067,79 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     STOP HERE
 </section>
 
-<!-- TODO: add a simulation movie here, before the tomography case.
+<!-- ===== Cometary hypothesis (bonus, after STOP HERE) =====
+     Figure: assets/rivilla_cloudstolife.png (V. M. Rivilla).  TODO: add the exact reference.
+     The highlight boxes are given in the figure's OWN pixel space (2740x1560) mapped onto the
+     canvas by scale 990/2740 = 0.361314 plus the image's left/top, so they track the artwork
+     exactly and survive any resize of the image as long as those three numbers change together. -->
+<section id=cometary-hypothesis>
+    <div style="position:absolute; left:0; top:8px; width:1024px; text-align:center; color:#fff; font-size:29px;">The cometary hypothesis: the molecules for life are built in the cloud</div>
+    <div style="position:absolute; left:12px; top:62px; width:1000px; height:582px; background:#fff; border-radius:6px;"></div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:17px; top:70px; width:990px; height:563.7px;" src="assets/rivilla_cloudstolife.png">
+
+    <svg style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none; z-index:10;" viewBox="0 0 1024 768">
+      <rect class="fragment fade-in" data-fragment-index="1" x="48.5"  y="84.0"  width="182.0" height="97.0"  rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
+      <rect class="fragment fade-in" data-fragment-index="2" x="125.4" y="151.3" width="200.5" height="157.2" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
+      <rect class="fragment fade-in" data-fragment-index="3" x="363.9" y="97.1"  width="211.3" height="195.1" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
+      <rect class="fragment fade-in" data-fragment-index="4" x="577.5" y="155.5" width="103.0" height="163.0" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
+      <rect class="fragment fade-in" data-fragment-index="4" x="793.8" y="86.3"  width="101.2" height="135.5" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
+    </svg>
+
+    <div class="fragment fade-in-then-out" data-fragment-index="1" style="position:absolute; left:0; top:664px; width:1024px; text-align:center; color:#fff; font-size:25px;">Complex organics form on icy grains in cold molecular clouds</div>
+    <div class="fragment fade-in-then-out" data-fragment-index="2" style="position:absolute; left:0; top:664px; width:1024px; text-align:center; color:#fff; font-size:25px;">&hellip;and survive the collapse into the protoplanetary disc</div>
+    <div class="fragment fade-in-then-out" data-fragment-index="3" style="position:absolute; left:0; top:664px; width:1024px; text-align:center; color:#fff; font-size:25px;">&hellip;where they are locked into comets and asteroids</div>
+    <div class="fragment fade-in" data-fragment-index="4" style="position:absolute; left:0; top:664px; width:1024px; text-align:center; color:#fff; font-size:25px;">&hellip;which deliver them, already made, to a young planet</div>
+
+    <div class=smaller3 style="position:absolute; bottom:6px; right:12px; color:#cfcfcf;">Figure: V. M. Rivilla</div>
+
+    <aside class=notes>
+        <ul>
+            <li> The claim is not that life starts in space &mdash; it is that the <i>starting inventory</i> does
+            <li> Amino acids, nucleobases, sugars: found in meteorites (Murchison), sampled directly at Ryugu and Bennu, and their precursors are detected in the gas and ice of molecular clouds
+            <li> So the chemistry a planet inherits is set long before the planet exists &mdash; in the cloud
+            <li> Which raises the obvious question for this talk: is that inventory the same in every cloud?
+        </ul>
+    </aside>
+</section>
+
+<section id=cometary-hypothesis-cmz>
+    <div style="position:absolute; left:0; top:8px; width:1024px; text-align:center; color:#fff; font-size:29px;">&hellip;but the first link is not the same in every cloud</div>
+
+    <!-- the same figure, same scale, clipped by the wrapper to its top row so it reads as a
+         callback rather than a new graphic -->
+    <div style="position:absolute; left:12px; top:56px; width:1000px; height:238px; overflow:hidden; background:#fff; border-radius:6px;">
+        <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:5px; top:2px; width:990px; height:563.7px;" src="assets/rivilla_cloudstolife.png">
+    </div>
+    <svg style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none; z-index:10;" viewBox="0 0 1024 768">
+      <rect x="53.1" y="74.3" width="274.6" height="218" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
+    </svg>
+
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:34px; top:318px; width:430px;" src="assets/Savannah/f466vsav_threeclouds.png">
+
+    <div style="position:absolute; left:500px; top:322px; width:496px; text-align:left; color:#fff; font-size:24px; line-height:1.45;">
+        Ice is everywhere in the CMZ &mdash; but its composition is <b>not the same from cloud to cloud</b>.
+        <div style="margin-top:22px;">Different CO/H<sub>2</sub>O, different OCN<sup>&minus;</sup>: a different mix of simple precursors goes into the disc.</div>
+        <div style="margin-top:22px;">If the CMZ is our local stand-in for cosmic-noon conditions, then the inventory delivered to planets there is <b>not</b> the Solar-neighbourhood one.</div>
+    </div>
+
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
+    <div class=smaller3 style="position:absolute; bottom:6px; right:12px; color:#cfcfcf;">Figure: V. M. Rivilla</div>
+
+    <aside class=notes>
+        <ul>
+            <li> This is the payoff for the disc question I asked at the start (#cosmic-noon-discs)
+            <li> We cannot yet measure discs or comets in the CMZ &mdash; but we <i>can</i> measure the ice that feeds them, and it already varies
+            <li> Honest caveat: variation in the ice does not by itself prove variation in the delivered prebiotic inventory. It shows the first link in Rivilla's chain is environment-dependent, which is the part nobody had measured
+            <li> Sets up the JWST-GC Treasury ice survey as the way to do this cloud by cloud across the whole CMZ
+        </ul>
+    </aside>
+</section>
+
+
+<!-- The simulation movie this TODO asked for now exists and is in the deck as #cmz-3d-movie,
+     at the END of the tomography block rather than here.  If you want it to do the job described
+     below -- make the projection gap land before the case is made -- move that section up to here.
+     TODO (superseded, kept for the rationale): add a simulation movie here, before the tomography case.
      Purpose: show how little we actually know about the dust structure of the inner Galaxy --
      let the movie make the 3D structure obvious in a way the projected maps cannot, so that the
      "we see the CMZ in projection / orbital models disagree about what is in front of what"
@@ -1072,6 +1196,61 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:640px; top:400px; width:340px;" src="assets/roman/propermotionmap.png">
     <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
 </section>
+
+<!-- ===== The method paper, and what a 3D CMZ actually looks like =====
+     Vasini, Sormani, Sanders, Ginsburg, Battersby et al. 2026, arXiv:2609.10782 (submitted A&A,
+     2026-09-09).  Figures cropped from the arXiv PDF at 300 dpi:
+       colloquium_assets/Vasini2026_fig1_pm_vs_distance.png       (their Fig. 1)
+       colloquium_assets/Vasini2026_fig7_mock_vs_reconstructed.png (their Fig. 7, Hydrosim)
+     Numbers below are quoted from Sec. 2 and Sec. 5 of that paper -- do not round them further. -->
+<section id=roman-tomo-method>
+    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">The method exists, and it works on mock data</div>
+
+    <div style="position:absolute; left:87px; top:40px; width:850px; height:401px; background:#fff; border-radius:6px;"></div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:92px; top:45px; width:840px; height:391px;" src="colloquium_assets/Vasini2026_fig7_mock_vs_reconstructed.png">
+
+    <div style="position:absolute; left:12px; top:452px; width:270px; height:186px; background:#fff; border-radius:6px;"></div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:17px; top:457px; width:260px; height:176px;" src="colloquium_assets/Vasini2026_fig1_pm_vs_distance.png">
+
+    <div style="position:absolute; left:298px; top:450px; width:714px; text-align:left; color:#fff; font-size:19px; line-height:1.35;">
+        The nuclear stellar disc rotates: near side toward positive longitude, far side toward negative &mdash; a
+        <b>~5 mas/yr</b> difference against ~1 mas/yr scatter. A proper motion therefore places a star on the near or
+        the far side, and its extinction measures the dust in front of it.
+        <div style="margin-top:14px;">Proper motions + extinctions &rarr; a <b>non-parametric</b> 3D dust map, with no orbital model assumed.</div>
+        <div style="margin-top:14px;"><b>~100 stars per 10&times;10 pc beam &rarr; 20 pc resolution; &gtrsim;1000 &rarr; 4&ndash;8 pc.</b>
+        GALACTICNUCLEUS+HST already gives ~25 stars pc<sup>&minus;2</sup>, VIRAC2 ~50, JWST GO 10678 ~150 after one epoch and ~1500 after two.</div>
+    </div>
+
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;"><a href="https://arxiv.org/abs/2609.10782" class=darkbg>Vasini, Sormani, Sanders, Ginsburg, Battersby+ 2026</a> (arXiv:2609.10782)</div>
+
+    <aside class=notes>
+        <ul>
+            <li> This is the companion to the previous three slides: they make the case, this is the machinery, and it is on the arXiv as of two days ago
+            <li> Big panel is their Fig. 7: a hydrodynamical-simulation CMZ (left) and what the method recovers from mock stars (right), on the longitude&ndash;line-of-sight plane. The ring, its near/far asymmetry and the individual clumps all come back
+            <li> Inset is their Fig. 1: the rotation curve of the NSD in proper motion. Near side +2.5, far side &minus;2.5 mas/yr &mdash; that split IS the distance information
+            <li> The requirement is modest: ~1&ndash;10 stars pc<sup>&minus;2</sup>. Existing surveys already clear it; the paper names Roman GO 19008 among the programmes that will deliver it
+            <li> Honest caveat: this is a proof of concept on mocks. Before real data they still need the nuclear stellar cluster and the bar added, velocity errors, and a real selection function
+        </ul>
+    </aside>
+</section>
+
+<!-- Closing visual for the tomography thread.  2032x1114 (1.824:1), 11 s, 13 fps; autoplays via
+     slideautostart.js (class="slideautostart"), and loops so it keeps running if you talk over it. -->
+<section id=cmz-3d-movie>
+    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">In a simulation we know the answer &mdash; on the sky we only ever see the projection</div>
+    <video class="slideautostart" src="assets/cmz/DaniLipman_3DCMZ_150to200pc_tagged.mp4"
+           muted loop playsinline
+           style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12px; top:78px; width:1000px; height:548px;"></video>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Dani Lipman (Battersby group) &mdash; inner-Galaxy simulation, gas colour-tagged by its true 3D position: face-on (top left), as we see it on the sky (bottom left), and in <i>l</i>&ndash;<i>v</i> (right)</div>
+
+    <aside class=notes>
+        <ul>
+            <li> End on the thing itself: the CMZ with its third dimension restored
+            <li> Everything in this talk &mdash; which cloud is forming stars, which is not, which ones have different ice &mdash; is measured in projection. This is what we get back when it is not
+        </ul>
+    </aside>
+</section>
+
 
 
 <section>

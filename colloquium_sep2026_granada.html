@@ -21,12 +21,12 @@
     .reveal .progress { color: rgb(0,200,200); }
     /* the theme tints every image with 12% white: invisible on white, a grey box on black */
     .reveal section img { background: none; }
-    /* the light "pill" captions keep their light ground so their dark swatch colours still read.
+    /* the light "pill" captions keep their light ground so their dark swatch colors still read.
        Matched on the inline background they already carry, so no slide markup had to change. */
     .reveal [style*="rgba(255,255,255,0.72)"],
     .reveal [style*="rgba(255,255,255,0.80)"] { color: #111; }
     /* hues picked for a white ground: lightened so they read on black without changing which
-       colour means what (RGB channel keys, and the by-cohort colouring on the title slide) */
+       color means what (RGB channel keys, and the by-cohort coloring on the title slide) */
     .reveal [style*="color:darkblue"] { color: #7fa8ff !important; }
     .reveal [style*="color:maroon"]   { color: #ff9a8a !important; }
     .reveal [style*="color:red"]      { color: #ff6b6b !important; }
@@ -866,7 +866,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 <!-- Single-cloud SF relation with the CMZ on top.  Built by
      colloquium_assets/make_sf_relation_figure.py -- rerun that to rebuild as data arrive; the
      CMZ_CLOUDS table at the top of the script is the only thing to edit, and every row carries
-     its own derivation.  Local relation: Pokhrel+ 2021 Fig. 2a, tracks digitised by colour-key
+     its own derivation.  Local relation: Pokhrel+ 2021 Fig. 2a, tracks digitised by color-key
      into colloquium_assets/pokhrel2021_tracks.csv (10 of 12 clouds; Orion-A and Mon R2 are drawn
      in black/grey and cannot be separated from the axes).  Fit: slope 2.00, intercept -4.11,
      +/-1 and 2 sigma at 0.30 dex, fitted only below 676 Msun/pc^2 -- every CMZ point is an
@@ -903,7 +903,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
             <li> <b>Cross-check on which of the two is denser (Tang+ 2021, MNRAS 505, 2392, Fig. 10):</b>
                 their AzTEC+<i>Herschel</i> dust-SED fit gives one uniform N(H2) map of the whole CMZ at 7", so the Brick and Cloud E/F are measured the <i>same way</i>.
                 Reading that map in matched R = 2.4 pc apertures: mean lg N(H2) = 22.90 for the Brick, 23.03 for cloud e and 23.01 for cloud f. <b>Cloud E/F is the denser of the two, by ~0.13 dex (~40%).</b>
-                That is the same ordering the Walker+ 2018 masses give (5.1e3 vs 6.0e3 Msun/pc^2, 0.07 dex), and by a slightly larger margin &mdash; so the separation plotted here is the conservative one. Both clouds saturate Tang's 10^23.4 colour scale over a few per cent of their area, so these are means, not peaks.
+                That is the same ordering the Walker+ 2018 masses give (5.1e3 vs 6.0e3 Msun/pc^2, 0.07 dex), and by a slightly larger margin &mdash; so the separation plotted here is the conservative one. Both clouds saturate Tang's 10^23.4 color scale over a few per cent of their area, so these are means, not peaks.
             <li> <b>Two things I got wrong first, in case they come up:</b>
                 (i) I first took Sigma_gas from Barnes' intro prose, "~1e5 Msun, radii of ~1 pc". Multiplied together those give 3.2e4 Msun/pc^2, five to thirteen times too high, and put E/F to the <i>right</i> of most of Sgr B2. They are order-of-magnitude statements; Barnes never tabulate a cloud-scale mass or radius. Walker+ 2018 Table 1 is the number to use.
                 (ii) I first set the E/F ceiling from Barnes' "the core region could be up to ~600 Msun ... capable of forming one or several high-mass stars (~25 per cent efficiency)". That 150 Msun is star formation <i>potential</i>, not stars that exist &mdash; those cores are starless &mdash; and treating it as already formed put the limit inside the Sgr B2 cloud.
@@ -1077,7 +1077,12 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 
 <section id=soon-nircam>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">The JWST Galactic Center Treasury Survey (GO 10678) &mdash; NIRCam</div>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">The JWST Galactic Center Treasury Survey (GO 10678) &mdash; NIRCam: <b>running now</b></div>
+    <div class=smaller3 style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;"> 
+        <a href="https://starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html">starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html</a>
+        <br>
+        <a href="https://starformation.astro.ufl.edu/jwst-gc/">starformation.astro.ufl.edu/jwst-gc</a>
+    </div>
     <div class=smaller2 style="position:absolute; top:60px; left:44px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
         <ul style='padding-left:15px; margin-left:0px; margin-bottom:0px;'>
             <li style='margin-bottom:2px; margin-top:2px;'> Stellar populations: star formation history
@@ -1086,11 +1091,16 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         </ul>
     </div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:5;" src="assets/cmz/fp_nircam_fullbleed.png">
-    <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#cc7a00">&#9632; JWST NIRCam (GO 10678)</span></div>
+    <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#2f9e57">&#9632; observed (12)</span> &nbsp; <span style="color:#b8860b">&#9632; scheduled (62)</span> &nbsp; <span style="color:#d61f3c">&#9632; delayed (1)</span> &nbsp; <span style="color:#2a8ba6">&#9632; awaiting a date (64)</span> &nbsp; <span style="color:#444">status 2026-09-12</span></div>
 </section>
 
 <section id=soon-miri>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;and the same survey with MIRI</div>
+    <div class=smaller3 style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;"> 
+        <a href="https://starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html">starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html</a>
+        <br>
+        <a href="https://starformation.astro.ufl.edu/jwst-gc/">starformation.astro.ufl.edu/jwst-gc</a>
+    </div>
     <div class=smaller2 style="position:absolute; top:60px; left:44px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
         <ul style='padding-left:15px; margin-left:0px; margin-bottom:0px;'>
             <li style='margin-bottom:2px; margin-top:2px;'> YSO candidates
@@ -1099,7 +1109,91 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     </div>
 
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:5;" src="assets/cmz/fp_miri_fullbleed.png">
-    <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#cc3399">&#9632; JWST MIRI (GO 10678)</span></div>
+    <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#2f9e57">&#9632; observed (12)</span> &nbsp; <span style="color:#b8860b">&#9632; scheduled (62)</span> &nbsp; <span style="color:#d61f3c">&#9632; delayed (1)</span> &nbsp; <span style="color:#6d4fd0">&#9632; awaiting a date (64)</span> &nbsp; <span style="color:#444">status 2026-09-12</span></div>
+</section>
+
+<!-- The survey is actually running: these two slides carry the DATA, on the same full-bleed
+     layer stack and the same WCS grid as the "soon" frames above, so nothing shifts between
+     them.  Both the mosaics (treasury_*_fullbleed / treasury_panel_*) and the status colors
+     on the "soon" frames are generated by colloquium_assets/make_cmz_treasury_layers.py --
+     RE-RUN IT BEFORE THE TALK, the HiPS grow as observations land and the visit statuses move.
+     The panel is a fixed patch of sky (l +0.30..+0.87, b -0.21..+0.14, 1"/px) in the same
+     projection and orientation as the wide grid, so it needs no rotation and its placement
+     never has to be re-measured; box_treasury_start.png outlines that exact rectangle. -->
+<section id=now-nircam>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">Progress:</div>
+    <div class=smaller3 style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;"> 
+        <a href="https://starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html">starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html</a>
+        <br>
+        <a href="https://starformation.astro.ufl.edu/jwst-gc/">starformation.astro.ufl.edu/jwst-gc</a>
+    </div>
+    <div class=smaller2 style="position:absolute; top:60px; left:44px; max-width:52%; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
+        <ul style='padding-left:15px; margin-left:0px; margin-bottom:0px;'>
+            <li style='margin-bottom:2px; margin-top:2px;'> 12 of 139 pointings observed
+            <li style='margin-bottom:2px; margin-top:2px;'> F212N + F480M, opened at $\ell = +0.7$
+            <li style='margin-bottom:2px; margin-top:2px;'> working west, $\sim$7 pointings a night
+        </ul>
+    </div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:5;" src="assets/cmz/treasury_nircam_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/fp_done_nircam_fullbleed.png">
+    <img class="fragment" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:11;" src="assets/cmz/box_treasury_start.png">
+    <div class="fragment" data-fragment-index="1" style="position:absolute; left:440px; top:400px; width:560px; height:343.8px; z-index:12; background:#03050a; outline:2px solid rgba(60,235,60,0.95);"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:560px; height:343.8px;" src="assets/cmz/treasury_panel_nircam.png"></div>
+    <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#2f9e57">&#9633; observed &mdash; NIRCam F212N/F480M</span> &nbsp; <span style="color:#444">mosaic of 2026-09-12, still growing</span></div>
+    <aside class="notes">
+        Built by colloquium_assets/make_cmz_treasury_layers.py, which is live in two ways and
+        should be re-run shortly before the talk: the mosaics come from the growing HiPS at
+        starformation.astro.ufl.edu/avm_images/jwst_gc_treasury_hips/ (NIRCam) and
+        .../jwst_gc_treasury_miri_hips/ (MIRI F770W parallel), and the footprint colors come
+        from the STScI visit status behind starformation.astro.ufl.edu/jwst-gc/monitor/.
+        As of 2026-09-12: 139 pointings, 12 observed (7 Executed, 3 Archived, 2 Collecting),
+        62 Scheduled, 64 Flight Ready, 1 Skipped (GC_136 -- i.e. delayed, it will be rescheduled).
+        Reduction lags the telescope: only 18% of the observed NIRCam area has made it into
+        the mosaic so far, so the colored footprints run ahead of the picture.
+        Caveat worth knowing but probably not worth saying: program 10678 has no offsets table
+        yet, so these tiles sit on the raw assign_wcs frame with no measured tie to VIRAC2/Gaia.
+        Positions are good to roughly a JWST pointing, not to a pixel.
+        The survey runs east to west in descending visit number -- it opened at l = +0.70 and
+        works down through +0.58, +0.51, +0.45 -- so the panel fills in from its left edge.
+        Ten of the twelve observed pointings are the block visible at l = +0.64/+0.70; the other
+        two (GC_138, GC_139) sit at b = +0.58, just above the top of this framing, so the slide
+        shows 10 outlines while the bullet says 12.
+    </aside>
+</section>
+
+<section id=now-miri>
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;and the MIRI parallel, ~6&prime; to the east</div>
+    <div class=smaller3 style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;"> 
+        <a href="https://starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html">starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html</a>
+        <br>
+        <a href="https://starformation.astro.ufl.edu/jwst-gc/">starformation.astro.ufl.edu/jwst-gc</a>
+    </div>
+    <div class=smaller2 style="position:absolute; top:60px; left:44px; max-width:52%; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
+        <ul style='padding-left:15px; margin-left:0px; margin-bottom:0px;'>
+            <li style='margin-bottom:2px; margin-top:2px;'> F770W: PAH emission, warm dust
+        </ul>
+    </div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:5;" src="assets/cmz/treasury_miri_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/fp_done_miri_fullbleed.png">
+    <img class="fragment" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:11;" src="assets/cmz/box_treasury_start.png">
+    <div class="fragment" data-fragment-index="1" style="position:absolute; left:440px; top:400px; width:560px; height:343.8px; z-index:12; background:#03050a; outline:2px solid rgba(60,235,60,0.95);"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:560px; height:343.8px;" src="assets/cmz/treasury_panel_miri.png"></div>
+    <div class=smaller3 style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#2f9e57">&#9633; observed &mdash; MIRI F770W</span> &nbsp; <span style="color:#444">mosaic of 2026-09-12, still growing</span></div>
+    <aside class="notes">
+        Built by colloquium_assets/make_cmz_treasury_layers.py, which is live in two ways and
+        should be re-run shortly before the talk: the mosaics come from the growing HiPS at
+        starformation.astro.ufl.edu/avm_images/jwst_gc_treasury_hips/ (NIRCam) and
+        .../jwst_gc_treasury_miri_hips/ (MIRI F770W parallel), and the footprint colors come
+        from the STScI visit status behind starformation.astro.ufl.edu/jwst-gc/monitor/.
+        As of 2026-09-12: 139 pointings, 12 observed (7 Executed, 3 Archived, 2 Collecting),
+        62 Scheduled, 64 Flight Ready, 1 Skipped (GC_136 -- i.e. delayed, it will be rescheduled).
+        Reduction lags the telescope: only 34% of the observed MIRI area has made it into
+        the mosaic so far, so the colored footprints run ahead of the picture.
+        Caveat worth knowing but probably not worth saying: program 10678 has no offsets table
+        yet, so these tiles sit on the raw assign_wcs frame with no measured tie to VIRAC2/Gaia.
+        Positions are good to roughly a JWST pointing, not to a pixel.
+        The survey runs east to west in descending visit number -- it opened at l = +0.70 and
+        works down through +0.58, +0.51, +0.45 -- so the panel fills in from its left edge.
+        Ten of the twelve observed pointings are the block visible at l = +0.64/+0.70; the other
+        two (GC_138, GC_139) sit at b = +0.58, just above the top of this framing, so the slide
+        shows 10 outlines while the bullet says 12.
+    </aside>
 </section>
 
 <section id=soon-roman>
@@ -1317,7 +1411,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <video class="slideautostart" src="assets/cmz/DaniLipman_3DCMZ_150to200pc_tagged.mp4"
            muted loop playsinline
            style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12px; top:78px; width:1000px; height:548px;"></video>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Dani Lipman (Battersby group) &mdash; inner-Galaxy simulation, gas colour-tagged by its true 3D position: face-on (top left), as we see it on the sky (bottom left), and in <i>l</i>&ndash;<i>v</i> (right)</div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Dani Lipman (Battersby group) &mdash; inner-Galaxy simulation, gas color-tagged by its true 3D position: face-on (top left), as we see it on the sky (bottom left), and in <i>l</i>&ndash;<i>v</i> (right)</div>
 
     <aside class=notes>
         <ul>
@@ -1332,24 +1426,6 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 <section>
 </section>
 
-<section>
-<div class=smaller>JWST has found new HII regions: <br>the SFR is higher than estimated from radio
-<div class=smaller2> (remember Sgr B2 already accounts for $\sim$50% of the CMZ SFR)</div>
-</div>
-    <img src="assets/Nazar/miri_mosaic_hii_labels.png" style='position: absolute;
-    left: -50px;
-    top: 172px;
-    rotate: -4.5deg;
-    scale: 0.975;
-  '>
-    <!-- old version <img src="assets/Nazar/RGB_770_480m410_405m410_withHII.png">-->
-    <div style="position: absolute; bottom: 10%; left: 8%; z-index: 10; text-align: left;" class=smaller2>
-        <span style="color:red">R=770</span><br> <span style="color:green">G=(480-[410-405])</span><br> <span style="color:blue">B=Brα</span>
-    </div>
-    <div style="position: absolute; bottom: 10%; right: 0%; z-index: 10; text-align: right; width:50%; color:rgb(0,214,214);" class=smaller2>
-        <span style='font-size:250%'>&#9632;</span> New HII regions
-    </div>
-</section>
 
 
 

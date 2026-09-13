@@ -1,0 +1,5014 @@
+cloud,log_sigma_gas,log_sigma_sfr
+Ophiuchus,2.0858,0.4874
+Ophiuchus,2.0877,0.4798
+Ophiuchus,2.0895,0.4874
+Ophiuchus,2.0914,0.4924
+Ophiuchus,2.0933,0.4975
+Ophiuchus,2.0952,0.4949
+Ophiuchus,2.0971,0.5025
+Ophiuchus,2.0989,0.5076
+Ophiuchus,2.1008,0.5152
+Ophiuchus,2.1027,0.5177
+Ophiuchus,2.1046,0.5253
+Ophiuchus,2.1065,0.5202
+Ophiuchus,2.1083,0.5278
+Ophiuchus,2.1102,0.5328
+Ophiuchus,2.1121,0.5354
+Ophiuchus,2.114,0.5354
+Ophiuchus,2.1159,0.5429
+Ophiuchus,2.1177,0.548
+Ophiuchus,2.1196,0.553
+Ophiuchus,2.1215,0.5556
+Ophiuchus,2.1234,0.5657
+Ophiuchus,2.1253,0.5631
+Ophiuchus,2.1271,0.5682
+Ophiuchus,2.129,0.5758
+Ophiuchus,2.1309,0.5758
+Ophiuchus,2.1328,0.5783
+Ophiuchus,2.1347,0.5833
+Ophiuchus,2.1365,0.5884
+Ophiuchus,2.1384,0.5934
+Ophiuchus,2.1403,0.5934
+Ophiuchus,2.1422,0.596
+Ophiuchus,2.1441,0.6035
+Ophiuchus,2.1459,0.6086
+Ophiuchus,2.1478,0.6111
+Ophiuchus,2.1497,0.6162
+Ophiuchus,2.1516,0.6187
+Ophiuchus,2.1535,0.6237
+Ophiuchus,2.1553,0.6212
+Ophiuchus,2.1572,0.6313
+Ophiuchus,2.1591,0.6364
+Ophiuchus,2.161,0.6389
+Ophiuchus,2.1629,0.6439
+Ophiuchus,2.1647,0.6515
+Ophiuchus,2.1666,0.6465
+Ophiuchus,2.1685,0.654
+Ophiuchus,2.1704,0.6566
+Ophiuchus,2.1723,0.6641
+Ophiuchus,2.1741,0.6667
+Ophiuchus,2.176,0.6692
+Ophiuchus,2.1779,0.6768
+Ophiuchus,2.1798,0.6717
+Ophiuchus,2.1817,0.6869
+Ophiuchus,2.1835,0.6843
+Ophiuchus,2.1854,0.6919
+Ophiuchus,2.1873,0.6869
+Ophiuchus,2.1892,0.6944
+Ophiuchus,2.1911,0.697
+Ophiuchus,2.1929,0.6995
+Ophiuchus,2.1948,0.697
+Ophiuchus,2.1967,0.7071
+Ophiuchus,2.1986,0.7172
+Ophiuchus,2.2005,0.7146
+Ophiuchus,2.2024,0.7222
+Ophiuchus,2.2042,0.7172
+Ophiuchus,2.2061,0.7247
+Ophiuchus,2.208,0.7273
+Ophiuchus,2.2099,0.7298
+Ophiuchus,2.2118,0.7273
+Ophiuchus,2.2136,0.7323
+Ophiuchus,2.2155,0.7475
+Ophiuchus,2.2174,0.7449
+Ophiuchus,2.2193,0.7525
+Ophiuchus,2.2212,0.7475
+Ophiuchus,2.223,0.7551
+Ophiuchus,2.2249,0.7576
+Ophiuchus,2.2268,0.7601
+Ophiuchus,2.2287,0.7652
+Ophiuchus,2.2306,0.7727
+Ophiuchus,2.2324,0.7727
+Ophiuchus,2.2343,0.7753
+Ophiuchus,2.2362,0.7727
+Ophiuchus,2.2381,0.7879
+Ophiuchus,2.24,0.7879
+Ophiuchus,2.2418,0.7904
+Ophiuchus,2.2437,0.7879
+Ophiuchus,2.2456,0.798
+Ophiuchus,2.2475,0.8081
+Ophiuchus,2.2494,0.8056
+Ophiuchus,2.2512,0.8081
+Ophiuchus,2.2531,0.8081
+Ophiuchus,2.255,0.8157
+Ophiuchus,2.2569,0.8207
+Ophiuchus,2.2588,0.8283
+Ophiuchus,2.2606,0.8232
+Ophiuchus,2.2625,0.8308
+Ophiuchus,2.2644,0.8359
+Ophiuchus,2.2663,0.8434
+Ophiuchus,2.2682,0.8409
+Ophiuchus,2.27,0.8485
+Ophiuchus,2.2719,0.8434
+Ophiuchus,2.2738,0.8586
+Ophiuchus,2.2757,0.8485
+Ophiuchus,2.2776,0.8535
+Ophiuchus,2.2794,0.8636
+Ophiuchus,2.2813,0.8636
+Ophiuchus,2.2832,0.8687
+Ophiuchus,2.2851,0.8737
+Ophiuchus,2.287,0.8687
+Ophiuchus,2.2888,0.8687
+Ophiuchus,2.2907,0.8788
+Ophiuchus,2.2926,0.8838
+Ophiuchus,2.2945,0.8737
+Ophiuchus,2.2964,0.8889
+Ophiuchus,2.2982,0.8788
+Ophiuchus,2.3001,0.8838
+Ophiuchus,2.302,0.8939
+Ophiuchus,2.3039,0.8939
+Ophiuchus,2.3058,0.8939
+Ophiuchus,2.3076,0.8965
+Ophiuchus,2.3095,0.899
+Ophiuchus,2.3114,0.9015
+Ophiuchus,2.3133,0.9091
+Ophiuchus,2.3152,0.9141
+Ophiuchus,2.317,0.9116
+Ophiuchus,2.3189,0.9167
+Ophiuchus,2.3208,0.9192
+Ophiuchus,2.3227,0.9242
+Ophiuchus,2.3246,0.9268
+Ophiuchus,2.3264,0.9318
+Ophiuchus,2.3283,0.9394
+Ophiuchus,2.3302,0.9419
+Ophiuchus,2.334,0.9495
+Ophiuchus,2.3358,0.952
+Ophiuchus,2.3377,0.9571
+Ophiuchus,2.3396,0.9621
+Ophiuchus,2.3415,0.9646
+Ophiuchus,2.3434,0.9646
+Ophiuchus,2.3452,0.9722
+Ophiuchus,2.3471,0.9773
+Ophiuchus,2.349,0.9848
+Ophiuchus,2.3509,0.9798
+Ophiuchus,2.3528,0.9848
+Ophiuchus,2.3546,0.9924
+Ophiuchus,2.3565,1.0
+Ophiuchus,2.3584,1.0051
+Ophiuchus,2.3603,1.0025
+Ophiuchus,2.3622,1.0051
+Ophiuchus,2.364,1.0051
+Ophiuchus,2.3659,1.0126
+Ophiuchus,2.3678,1.0101
+Ophiuchus,2.3697,1.0177
+Ophiuchus,2.3716,1.0227
+Ophiuchus,2.3734,1.0303
+Ophiuchus,2.3753,1.0303
+Ophiuchus,2.3772,1.0328
+Ophiuchus,2.3791,1.0303
+Ophiuchus,2.381,1.0354
+Ophiuchus,2.3828,1.0455
+Ophiuchus,2.3847,1.048
+Ophiuchus,2.3885,1.0556
+Ophiuchus,2.3904,1.0606
+Ophiuchus,2.3922,1.0631
+Ophiuchus,2.3941,1.0682
+Ophiuchus,2.396,1.0758
+Ophiuchus,2.3979,1.0783
+Ophiuchus,2.3998,1.0859
+Ophiuchus,2.4016,1.0808
+Ophiuchus,2.4035,1.0884
+Ophiuchus,2.4054,1.0934
+Ophiuchus,2.4073,1.101
+Ophiuchus,2.4092,1.101
+Ophiuchus,2.4129,1.1086
+Ophiuchus,2.4148,1.1111
+Ophiuchus,2.4167,1.1187
+Ophiuchus,2.4186,1.1237
+Ophiuchus,2.4204,1.1263
+Ophiuchus,2.4223,1.1313
+Ophiuchus,2.4242,1.1414
+Ophiuchus,2.4261,1.1389
+Ophiuchus,2.428,1.1439
+Ophiuchus,2.4298,1.149
+Ophiuchus,2.4317,1.1566
+Ophiuchus,2.4336,1.154
+Ophiuchus,2.4355,1.1591
+Ophiuchus,2.4374,1.1641
+Ophiuchus,2.4392,1.1692
+Ophiuchus,2.4411,1.1667
+Ophiuchus,2.443,1.1768
+Ophiuchus,2.4449,1.1818
+Ophiuchus,2.4468,1.1843
+Ophiuchus,2.4486,1.1894
+Ophiuchus,2.4505,1.197
+Ophiuchus,2.4524,1.1995
+Ophiuchus,2.4543,1.197
+Ophiuchus,2.4562,1.2071
+Ophiuchus,2.458,1.2121
+Ophiuchus,2.4599,1.2146
+Ophiuchus,2.4618,1.2197
+Ophiuchus,2.4637,1.2273
+Ophiuchus,2.4656,1.2298
+Ophiuchus,2.4675,1.2374
+Ophiuchus,2.4693,1.2374
+Ophiuchus,2.4712,1.2374
+Ophiuchus,2.4731,1.2449
+Ophiuchus,2.475,1.25
+Ophiuchus,2.4769,1.2525
+Ophiuchus,2.4787,1.2576
+Ophiuchus,2.4806,1.2601
+Ophiuchus,2.4825,1.2626
+Ophiuchus,2.4844,1.2702
+Ophiuchus,2.4863,1.2753
+Ophiuchus,2.4881,1.2803
+Ophiuchus,2.49,1.2828
+Ophiuchus,2.4919,1.2879
+Ophiuchus,2.4938,1.2904
+Ophiuchus,2.4957,1.2955
+Ophiuchus,2.4975,1.3005
+Ophiuchus,2.4994,1.3056
+Ophiuchus,2.5013,1.303
+Ophiuchus,2.5032,1.3131
+Ophiuchus,2.5051,1.3232
+Ophiuchus,2.5069,1.3283
+Ophiuchus,2.5088,1.3258
+Ophiuchus,2.5107,1.3308
+Ophiuchus,2.5126,1.3333
+Ophiuchus,2.5145,1.3409
+Ophiuchus,2.5163,1.346
+Ophiuchus,2.5182,1.351
+Ophiuchus,2.5201,1.3535
+Ophiuchus,2.522,1.3535
+Ophiuchus,2.5239,1.3611
+Ophiuchus,2.5257,1.3636
+Ophiuchus,2.5276,1.3712
+Ophiuchus,2.5295,1.3737
+Ophiuchus,2.5314,1.3763
+Ophiuchus,2.5333,1.3737
+Ophiuchus,2.5351,1.3838
+Ophiuchus,2.537,1.3939
+Ophiuchus,2.5389,1.3914
+Ophiuchus,2.5427,1.3939
+Ophiuchus,2.5445,1.4015
+Ophiuchus,2.5464,1.404
+Ophiuchus,2.5483,1.4066
+Ophiuchus,2.5502,1.4091
+Ophiuchus,2.5521,1.4091
+Ophiuchus,2.5539,1.4242
+Ophiuchus,2.5558,1.4141
+Ophiuchus,2.5577,1.4293
+Ophiuchus,2.5596,1.4192
+Ophiuchus,2.5615,1.4217
+Ophiuchus,2.5633,1.4293
+Ophiuchus,2.5652,1.4343
+Ophiuchus,2.5671,1.4343
+Ophiuchus,2.569,1.4343
+Ophiuchus,2.5709,1.4293
+Ophiuchus,2.5727,1.4394
+Ophiuchus,2.5746,1.4394
+Ophiuchus,2.5765,1.4394
+Ophiuchus,2.5784,1.447
+Ophiuchus,2.5803,1.4444
+Ophiuchus,2.5821,1.452
+Ophiuchus,2.584,1.4571
+Ophiuchus,2.5859,1.4646
+Ophiuchus,2.5878,1.4646
+Ophiuchus,2.5897,1.4672
+Ophiuchus,2.5915,1.4697
+Ophiuchus,2.5934,1.4697
+Ophiuchus,2.5953,1.4646
+Ophiuchus,2.5972,1.4672
+Ophiuchus,2.5991,1.4747
+Ophiuchus,2.6009,1.4747
+Ophiuchus,2.6028,1.4823
+Ophiuchus,2.6047,1.4848
+Ophiuchus,2.6066,1.4823
+Ophiuchus,2.6085,1.4798
+Ophiuchus,2.6103,1.4899
+Ophiuchus,2.6122,1.4975
+Ophiuchus,2.6141,1.4975
+Ophiuchus,2.616,1.5051
+Ophiuchus,2.6179,1.5076
+Ophiuchus,2.6197,1.5126
+Ophiuchus,2.6216,1.5152
+Ophiuchus,2.6235,1.5152
+Ophiuchus,2.6254,1.5253
+Ophiuchus,2.6273,1.5202
+Ophiuchus,2.6291,1.5278
+Ophiuchus,2.631,1.5253
+Ophiuchus,2.6329,1.5278
+Ophiuchus,2.6348,1.5354
+Ophiuchus,2.6367,1.5354
+Ophiuchus,2.6385,1.5354
+Ophiuchus,2.6404,1.5354
+Ophiuchus,2.6423,1.5404
+Ophiuchus,2.6442,1.5429
+Ophiuchus,2.6461,1.5404
+Ophiuchus,2.6479,1.5429
+Ophiuchus,2.6498,1.548
+Ophiuchus,2.6517,1.553
+Ophiuchus,2.6536,1.5581
+Ophiuchus,2.6555,1.5657
+Ophiuchus,2.6573,1.5682
+Ophiuchus,2.6592,1.5732
+Ophiuchus,2.6611,1.5808
+Ophiuchus,2.663,1.5758
+Ophiuchus,2.6649,1.5884
+Ophiuchus,2.6667,1.596
+Ophiuchus,2.6686,1.596
+Ophiuchus,2.6705,1.6035
+Ophiuchus,2.6724,1.6111
+Ophiuchus,2.6743,1.6263
+Ophiuchus,2.6761,1.6187
+Ophiuchus,2.678,1.6263
+Ophiuchus,2.6799,1.6338
+Ophiuchus,2.6818,1.6338
+Ophiuchus,2.6837,1.6414
+Ophiuchus,2.6874,1.649
+Ophiuchus,2.6893,1.649
+Ophiuchus,2.6912,1.6566
+Ophiuchus,2.6931,1.6591
+Ophiuchus,2.6949,1.6616
+Ophiuchus,2.6968,1.6641
+Ophiuchus,2.6987,1.6667
+Ophiuchus,2.7006,1.6667
+Ophiuchus,2.7025,1.6667
+Ophiuchus,2.7043,1.6667
+Ophiuchus,2.7062,1.6667
+Ophiuchus,2.7081,1.6667
+Ophiuchus,2.71,1.6717
+Ophiuchus,2.7119,1.6768
+Ophiuchus,2.7137,1.6742
+Ophiuchus,2.7156,1.6793
+Ophiuchus,2.7175,1.6919
+Ophiuchus,2.7194,1.697
+Ophiuchus,2.7213,1.6944
+Ophiuchus,2.7231,1.702
+Ophiuchus,2.725,1.7096
+Ophiuchus,2.7269,1.7071
+Ophiuchus,2.7288,1.7121
+Ophiuchus,2.7307,1.7247
+Ophiuchus,2.7325,1.7298
+Ophiuchus,2.7344,1.7348
+Ophiuchus,2.7363,1.7399
+Ophiuchus,2.7382,1.7525
+Ophiuchus,2.7401,1.75
+Ophiuchus,2.742,1.7551
+Ophiuchus,2.7438,1.7677
+Ophiuchus,2.7457,1.7727
+Ophiuchus,2.7476,1.7702
+Ophiuchus,2.7495,1.7828
+Ophiuchus,2.7514,1.7879
+Ophiuchus,2.7532,1.7854
+Ophiuchus,2.7551,1.7929
+Ophiuchus,2.757,1.798
+Ophiuchus,2.7589,1.8005
+Ophiuchus,2.7608,1.803
+Ophiuchus,2.7626,1.8131
+Ophiuchus,2.7645,1.8182
+Ophiuchus,2.7664,1.8081
+Ophiuchus,2.7683,1.8157
+Ophiuchus,2.7702,1.8157
+Ophiuchus,2.772,1.8106
+Ophiuchus,2.7739,1.8056
+Ophiuchus,2.7758,1.8005
+Ophiuchus,2.7777,1.7955
+Ophiuchus,2.7796,1.7879
+Ophiuchus,2.7814,1.7828
+Ophiuchus,2.7833,1.7929
+Ophiuchus,2.7852,1.7778
+Ophiuchus,2.7871,1.7854
+Ophiuchus,2.789,1.7854
+Ophiuchus,2.7908,1.7828
+Ophiuchus,2.7927,1.7778
+Ophiuchus,2.7946,1.7929
+Ophiuchus,2.7965,1.7929
+Ophiuchus,2.7984,1.7879
+Ophiuchus,2.8002,1.7854
+Ophiuchus,2.8021,1.7854
+Ophiuchus,2.804,1.7929
+Ophiuchus,2.8059,1.798
+Ophiuchus,2.8078,1.8081
+Ophiuchus,2.8096,1.8056
+Ophiuchus,2.8115,1.8182
+Ophiuchus,2.8134,1.8182
+Ophiuchus,2.8153,1.8182
+Ophiuchus,2.8172,1.8308
+Ophiuchus,2.819,1.8434
+Ophiuchus,2.8209,1.8485
+Ophiuchus,2.8228,1.846
+Ophiuchus,2.8247,1.8384
+Ophiuchus,2.8266,1.846
+Ophiuchus,2.8284,1.8409
+Ophiuchus,2.8303,1.8359
+Ophiuchus,2.8322,1.8333
+Ophiuchus,2.8341,1.8409
+Ophiuchus,2.836,1.8485
+Ophiuchus,2.8378,1.8485
+Ophiuchus,2.8397,1.8485
+Ophiuchus,2.8416,1.8611
+Ophiuchus,2.8435,1.8737
+Ophiuchus,2.8454,1.8737
+Ophiuchus,2.8472,1.8788
+Ophiuchus,2.8491,1.8788
+Ophiuchus,2.851,1.8914
+Ophiuchus,2.8529,1.8965
+Ophiuchus,2.8548,1.9015
+Ophiuchus,2.8566,1.9066
+Ophiuchus,2.8585,1.9091
+Ophiuchus,2.8604,1.9141
+Ophiuchus,2.8623,1.9192
+Ophiuchus,2.8642,1.9192
+Ophiuchus,2.866,1.9192
+Ophiuchus,2.8679,1.9192
+Ophiuchus,2.8698,1.9192
+Ophiuchus,2.8717,1.9192
+Ophiuchus,2.8736,1.9192
+Ophiuchus,2.8754,1.9192
+Ophiuchus,2.8773,1.9217
+Ophiuchus,2.8792,1.9343
+Ophiuchus,2.8811,1.9343
+Ophiuchus,2.883,1.9394
+Ophiuchus,2.8848,1.9394
+Ophiuchus,2.8867,1.952
+Ophiuchus,2.8886,1.9596
+Ophiuchus,2.8905,1.9697
+Ophiuchus,2.8924,1.9646
+Ophiuchus,2.8942,1.9545
+Ophiuchus,2.8961,1.9495
+Ophiuchus,2.898,1.9495
+Ophiuchus,2.8999,1.9369
+Ophiuchus,2.9018,1.9343
+Ophiuchus,2.9036,1.9343
+Ophiuchus,2.9055,1.9369
+Ophiuchus,2.9074,1.9293
+Ophiuchus,2.9093,1.9293
+Ophiuchus,2.9112,1.9217
+Ophiuchus,2.913,1.9242
+Ophiuchus,2.9187,1.9444
+Ophiuchus,2.9206,1.9444
+Ophiuchus,2.9224,1.9495
+Ophiuchus,2.9243,1.9444
+Ophiuchus,2.9262,1.9444
+Ophiuchus,2.9281,1.9394
+Ophiuchus,2.93,1.9369
+Ophiuchus,2.9318,1.9369
+Ophiuchus,2.9337,1.9293
+Ophiuchus,2.9356,1.9293
+Ophiuchus,2.9375,1.9217
+Ophiuchus,2.9394,1.9242
+Ophiuchus,2.9412,1.9293
+Ophiuchus,2.9431,1.9293
+Ophiuchus,2.945,1.9343
+Ophiuchus,2.9469,1.9242
+Ophiuchus,2.9488,1.9343
+Ophiuchus,2.9506,1.9268
+Ophiuchus,2.9525,1.9242
+Ophiuchus,2.9544,1.9242
+Ophiuchus,2.9563,1.9242
+Ophiuchus,2.9582,1.9293
+Ophiuchus,2.96,1.9369
+Ophiuchus,2.9619,1.9495
+Ophiuchus,2.9638,1.9545
+Ophiuchus,2.9657,1.9596
+Ophiuchus,2.9676,1.9596
+Ophiuchus,2.9694,1.9672
+Ophiuchus,2.9713,1.9798
+Ophiuchus,2.9732,1.9823
+Ophiuchus,2.9751,1.9848
+Ophiuchus,2.977,1.9949
+Ophiuchus,2.9788,2.0025
+Ophiuchus,2.9807,2.0126
+Ophiuchus,3.0033,2.0859
+Ophiuchus,3.0052,2.0859
+Ophiuchus,3.0071,2.0884
+Ophiuchus,3.0089,2.0859
+Ophiuchus,3.0108,2.0909
+Ophiuchus,3.0127,2.1035
+Ophiuchus,3.0146,2.1061
+Ophiuchus,3.0165,2.1086
+Perseus,1.941,0.0657
+Perseus,1.9429,0.0657
+Perseus,1.9448,0.0606
+Perseus,1.9467,0.0682
+Perseus,1.9485,0.0657
+Perseus,1.9504,0.0707
+Perseus,1.9523,0.0758
+Perseus,1.9542,0.0758
+Perseus,1.9561,0.0833
+Perseus,1.9579,0.0808
+Perseus,1.9598,0.0859
+Perseus,1.9617,0.0934
+Perseus,1.9636,0.0909
+Perseus,1.9655,0.0985
+Perseus,1.9673,0.096
+Perseus,1.9692,0.101
+Perseus,1.9711,0.1086
+Perseus,1.973,0.1061
+Perseus,1.9749,0.1136
+Perseus,1.9767,0.1111
+Perseus,1.9786,0.1162
+Perseus,1.9805,0.1237
+Perseus,1.9824,0.1212
+Perseus,1.9843,0.1288
+Perseus,1.9861,0.1313
+Perseus,1.988,0.1313
+Perseus,1.9899,0.1389
+Perseus,1.9918,0.1364
+Perseus,1.9937,0.1439
+Perseus,1.9955,0.1414
+Perseus,1.9974,0.1465
+Perseus,1.9993,0.154
+Perseus,2.0012,0.1566
+Perseus,2.0031,0.1591
+Perseus,2.0049,0.1616
+Perseus,2.0068,0.1616
+Perseus,2.0087,0.1717
+Perseus,2.0106,0.1667
+Perseus,2.0125,0.1742
+Perseus,2.0143,0.1793
+Perseus,2.0162,0.1768
+Perseus,2.0181,0.1843
+Perseus,2.02,0.1869
+Perseus,2.0219,0.1869
+Perseus,2.0237,0.1944
+Perseus,2.0256,0.1995
+Perseus,2.0275,0.2071
+Perseus,2.0294,0.2045
+Perseus,2.0313,0.2096
+Perseus,2.0331,0.2121
+Perseus,2.035,0.2146
+Perseus,2.0369,0.2197
+Perseus,2.0388,0.2222
+Perseus,2.0425,0.2298
+Perseus,2.0444,0.2273
+Perseus,2.0463,0.2374
+Perseus,2.0482,0.2399
+Perseus,2.0501,0.2449
+Perseus,2.0519,0.2475
+Perseus,2.0538,0.2475
+Perseus,2.0557,0.2551
+Perseus,2.0576,0.2601
+Perseus,2.0595,0.2677
+Perseus,2.0613,0.2626
+Perseus,2.0632,0.2702
+Perseus,2.0651,0.2677
+Perseus,2.067,0.2753
+Perseus,2.0689,0.2803
+Perseus,2.0707,0.2828
+Perseus,2.0726,0.2929
+Perseus,2.0745,0.2904
+Perseus,2.0764,0.2879
+Perseus,2.0783,0.298
+Perseus,2.0801,0.3005
+Perseus,2.082,0.3056
+Perseus,2.0839,0.3081
+Perseus,2.0858,0.3081
+Perseus,2.0877,0.3157
+Perseus,2.0895,0.3207
+Perseus,2.0933,0.3283
+Perseus,2.0952,0.3308
+Perseus,2.0971,0.3359
+Perseus,2.0989,0.3409
+Perseus,2.1008,0.3434
+Perseus,2.1046,0.351
+Perseus,2.1065,0.3561
+Perseus,2.1083,0.3636
+Perseus,2.1102,0.3662
+Perseus,2.1121,0.3662
+Perseus,2.114,0.3687
+Perseus,2.1159,0.3763
+Perseus,2.1177,0.3813
+Perseus,2.1196,0.3864
+Perseus,2.1215,0.3889
+Perseus,2.1234,0.399
+Perseus,2.1253,0.3965
+Perseus,2.1271,0.4015
+Perseus,2.129,0.4066
+Perseus,2.1309,0.4116
+Perseus,2.1328,0.4116
+Perseus,2.1347,0.4167
+Perseus,2.1365,0.4217
+Perseus,2.1384,0.4268
+Perseus,2.1403,0.4242
+Perseus,2.1422,0.4343
+Perseus,2.1441,0.4369
+Perseus,2.1459,0.4419
+Perseus,2.1478,0.447
+Perseus,2.1497,0.4545
+Perseus,2.1516,0.4495
+Perseus,2.1535,0.4571
+Perseus,2.1553,0.4621
+Perseus,2.1572,0.4697
+Perseus,2.1591,0.4697
+Perseus,2.161,0.4722
+Perseus,2.1629,0.4747
+Perseus,2.1647,0.4747
+Perseus,2.1666,0.4823
+Perseus,2.1685,0.4798
+Perseus,2.1704,0.4874
+Perseus,2.1723,0.4899
+Perseus,2.1741,0.5
+Perseus,2.176,0.5
+Perseus,2.1779,0.5025
+Perseus,2.1798,0.5051
+Perseus,2.1817,0.5051
+Perseus,2.1835,0.5126
+Perseus,2.1854,0.5177
+Perseus,2.1873,0.5253
+Perseus,2.1892,0.5227
+Perseus,2.1911,0.5303
+Perseus,2.1929,0.5303
+Perseus,2.1948,0.5328
+Perseus,2.1967,0.5354
+Perseus,2.1986,0.5354
+Perseus,2.2005,0.5429
+Perseus,2.2024,0.548
+Perseus,2.2042,0.5556
+Perseus,2.2061,0.5505
+Perseus,2.208,0.5581
+Perseus,2.2099,0.5631
+Perseus,2.2118,0.5631
+Perseus,2.2136,0.5682
+Perseus,2.2155,0.5732
+Perseus,2.2174,0.5783
+Perseus,2.2193,0.5783
+Perseus,2.2212,0.5833
+Perseus,2.223,0.5884
+Perseus,2.2249,0.5934
+Perseus,2.2268,0.5934
+Perseus,2.2287,0.5985
+Perseus,2.2306,0.6035
+Perseus,2.2324,0.6086
+Perseus,2.2343,0.6162
+Perseus,2.2362,0.6111
+Perseus,2.2381,0.6237
+Perseus,2.24,0.6237
+Perseus,2.2418,0.6263
+Perseus,2.2437,0.6313
+Perseus,2.2456,0.6364
+Perseus,2.2475,0.6465
+Perseus,2.2494,0.6439
+Perseus,2.2512,0.6515
+Perseus,2.2531,0.6566
+Perseus,2.255,0.6566
+Perseus,2.2588,0.6667
+Perseus,2.2606,0.6692
+Perseus,2.2625,0.6768
+Perseus,2.2644,0.6768
+Perseus,2.2663,0.6818
+Perseus,2.2682,0.6869
+Perseus,2.3678,0.8737
+Perseus,2.3697,0.8788
+Perseus,2.3716,0.8813
+Perseus,2.3734,0.8838
+Perseus,2.3753,0.8889
+Perseus,2.3772,0.8889
+Perseus,2.3791,0.8914
+Perseus,2.381,0.899
+Perseus,2.3828,0.899
+Perseus,2.3847,0.899
+Perseus,2.3866,0.904
+Perseus,2.3885,0.9116
+Perseus,2.3922,0.9141
+Perseus,2.3941,0.9242
+Perseus,2.396,0.9293
+Perseus,2.3979,0.9268
+Perseus,2.3998,0.9343
+Perseus,2.4016,0.9394
+Perseus,2.4035,0.9419
+Perseus,2.4242,0.9798
+Perseus,2.4261,0.9848
+Perseus,2.428,0.9874
+Perseus,2.4298,0.9848
+Perseus,2.4317,0.9924
+Perseus,2.4336,1.0
+Perseus,2.4355,1.0025
+Perseus,2.4374,0.9949
+Perseus,2.4392,1.0101
+Perseus,2.4411,1.0076
+Perseus,2.443,1.0152
+Perseus,2.4449,1.0177
+Perseus,2.4468,1.0177
+Perseus,2.4486,1.0227
+Perseus,2.4505,1.0278
+Perseus,2.4524,1.0328
+Perseus,2.4543,1.0404
+Perseus,2.4562,1.0404
+Perseus,2.458,1.0429
+Perseus,2.4599,1.048
+Perseus,2.4618,1.053
+Perseus,2.4637,1.0556
+Perseus,2.4656,1.0657
+Perseus,2.4675,1.0631
+Perseus,2.4693,1.0682
+Perseus,2.4712,1.0732
+Perseus,2.4731,1.0783
+Perseus,2.475,1.0783
+Perseus,2.4769,1.0808
+Perseus,2.4787,1.0884
+Perseus,2.4806,1.0934
+Perseus,2.4825,1.0985
+Perseus,2.4844,1.101
+Perseus,2.4881,1.1086
+Perseus,2.49,1.1136
+Perseus,2.4919,1.1187
+Perseus,2.4938,1.1237
+Perseus,2.4957,1.1313
+Perseus,2.4975,1.1288
+Perseus,2.4994,1.1364
+Perseus,2.5032,1.1389
+Perseus,2.5051,1.1364
+Perseus,2.5069,1.1414
+Perseus,2.5088,1.149
+Perseus,2.5107,1.154
+Perseus,2.5126,1.1616
+Perseus,2.5145,1.1591
+Perseus,2.5163,1.1667
+Perseus,2.5201,1.1692
+Perseus,2.522,1.1742
+Perseus,2.5239,1.1717
+Perseus,2.5257,1.1843
+Perseus,2.5276,1.1843
+Perseus,2.5295,1.1894
+Perseus,2.5314,1.1944
+Perseus,2.5333,1.1995
+Perseus,2.537,1.2071
+Perseus,2.5389,1.2096
+Perseus,2.5408,1.2146
+Perseus,2.5427,1.2172
+Perseus,2.5445,1.2197
+Perseus,2.5464,1.2273
+Perseus,2.5483,1.2323
+Perseus,2.5502,1.2298
+Perseus,2.5521,1.2374
+Perseus,2.5539,1.2273
+Perseus,2.5558,1.2323
+Perseus,2.5577,1.2399
+Perseus,2.5596,1.2424
+Perseus,2.5615,1.2449
+Perseus,2.5633,1.2424
+Perseus,2.5652,1.2525
+Perseus,2.5671,1.2551
+Perseus,2.569,1.2601
+Perseus,2.5709,1.2652
+Perseus,2.5727,1.2702
+Perseus,2.5746,1.2677
+Perseus,2.5765,1.2753
+Perseus,2.5784,1.2803
+Perseus,2.5803,1.2854
+Perseus,2.5821,1.2904
+Perseus,2.5859,1.298
+Perseus,2.5878,1.3005
+Perseus,2.5897,1.3056
+Perseus,2.5934,1.3131
+Perseus,2.5972,1.3283
+Perseus,2.5991,1.3258
+Perseus,2.6009,1.3232
+Perseus,2.6047,1.3333
+Perseus,2.6066,1.3434
+Perseus,2.6085,1.3485
+Perseus,2.6103,1.3434
+Perseus,2.6122,1.346
+Perseus,2.6141,1.3485
+Perseus,2.616,1.351
+Perseus,2.6179,1.3586
+Perseus,2.6197,1.3611
+Perseus,2.6216,1.3611
+Perseus,2.6254,1.3687
+Perseus,2.6273,1.3712
+Perseus,2.6291,1.3763
+Perseus,2.631,1.3813
+Perseus,2.6329,1.3889
+Perseus,2.6348,1.3914
+Perseus,2.6367,1.3914
+Perseus,2.6385,1.3939
+Perseus,2.6404,1.4015
+Perseus,2.6423,1.4066
+Perseus,2.6442,1.4116
+Perseus,2.6461,1.4141
+Perseus,2.6498,1.4217
+Perseus,2.6517,1.4268
+Perseus,2.6536,1.4318
+Perseus,2.6555,1.4369
+Perseus,2.6573,1.4369
+Perseus,2.6592,1.4419
+Perseus,2.6611,1.4444
+Perseus,2.663,1.4545
+Perseus,2.6649,1.452
+Perseus,2.6667,1.4596
+Perseus,2.6686,1.4545
+Perseus,2.6705,1.4621
+Perseus,2.6724,1.4646
+Perseus,2.6743,1.4672
+Perseus,2.6761,1.4697
+Perseus,2.678,1.4697
+Perseus,2.6799,1.4798
+Perseus,2.6818,1.4747
+Perseus,2.6837,1.4823
+Perseus,2.6855,1.4874
+Perseus,2.6874,1.4899
+Perseus,2.6912,1.4975
+Perseus,2.6931,1.5025
+Perseus,2.6949,1.5076
+Perseus,2.6968,1.5126
+Perseus,2.6987,1.5253
+Perseus,2.7006,1.5202
+Perseus,2.7043,1.5278
+Perseus,2.7062,1.5328
+Perseus,2.7081,1.5379
+Perseus,2.71,1.5429
+Perseus,2.7119,1.5556
+Perseus,2.7137,1.5505
+Perseus,2.7175,1.5581
+Perseus,2.7194,1.5631
+Perseus,2.7213,1.5682
+Perseus,2.7231,1.5657
+Perseus,2.725,1.5732
+Perseus,2.7269,1.5707
+Perseus,2.7288,1.5758
+Perseus,2.7307,1.5859
+Perseus,2.7325,1.5884
+Perseus,2.7344,1.5808
+Perseus,2.7363,1.596
+Perseus,2.7382,1.5985
+Perseus,2.7401,1.6035
+Perseus,2.742,1.6086
+Perseus,2.7438,1.6086
+Perseus,2.7457,1.6061
+Perseus,2.7476,1.6061
+Perseus,2.7495,1.6035
+Perseus,2.7514,1.601
+Perseus,2.7532,1.6061
+Perseus,2.7551,1.6035
+Perseus,2.757,1.6111
+Perseus,2.7589,1.6136
+Perseus,2.7608,1.6187
+Perseus,2.7626,1.6212
+Perseus,2.7645,1.6288
+Perseus,2.7664,1.6313
+Perseus,2.7683,1.6338
+Perseus,2.7702,1.6364
+Perseus,2.772,1.6364
+Perseus,2.7739,1.6465
+Perseus,2.7758,1.649
+Perseus,2.7777,1.6465
+Perseus,2.7796,1.6414
+Perseus,2.7814,1.6414
+Perseus,2.7833,1.6566
+Perseus,2.7852,1.6566
+Perseus,2.7871,1.6566
+Perseus,2.789,1.6515
+Perseus,2.7908,1.649
+Perseus,2.7927,1.649
+Perseus,2.7946,1.6566
+Perseus,2.7965,1.6591
+Perseus,2.7984,1.6616
+Perseus,2.8002,1.6667
+Perseus,2.8021,1.6717
+Perseus,2.804,1.6742
+Perseus,2.8059,1.6793
+Perseus,2.8078,1.6818
+Perseus,2.8115,1.6869
+Perseus,2.8134,1.6869
+Perseus,2.8153,1.6793
+Perseus,2.8397,1.7121
+Perseus,2.8416,1.7172
+Perseus,2.8435,1.7222
+Perseus,2.8454,1.7222
+Perseus,2.8472,1.7222
+Perseus,2.8491,1.7172
+Perseus,2.851,1.7172
+Perseus,2.8529,1.7222
+Perseus,2.8548,1.7298
+Perseus,2.8566,1.7348
+Perseus,2.8585,1.7374
+Perseus,2.8604,1.7424
+Perseus,2.8623,1.75
+Perseus,2.8642,1.7525
+Perseus,2.866,1.7551
+Perseus,2.8679,1.7601
+Perseus,2.8698,1.7652
+Perseus,2.8717,1.7702
+Perseus,2.8736,1.7727
+Perseus,2.8754,1.7727
+Perseus,2.8773,1.7778
+Perseus,2.8792,1.7854
+Perseus,2.8811,1.7828
+Perseus,2.883,1.7778
+Perseus,2.8848,1.7929
+Perseus,2.8867,1.7929
+Perseus,2.9112,1.8157
+Perseus,2.913,1.8157
+Perseus,2.9149,1.803
+Perseus,2.9168,1.8056
+Perseus,2.9187,1.8056
+Perseus,2.9206,1.8131
+Perseus,2.9224,1.8131
+Perseus,2.9243,1.8081
+Perseus,2.9262,1.8131
+Perseus,2.9318,1.8485
+Perseus,2.9582,1.9091
+Perseus,2.96,1.904
+Perseus,2.9713,1.9066
+Perseus,2.9732,1.9167
+Perseus,2.9751,1.9242
+Perseus,2.977,1.9242
+Perseus,2.9788,1.9242
+Perseus,2.9807,1.9268
+Perseus,2.9826,1.9318
+Perseus,2.9845,1.9369
+Perseus,2.9864,1.9394
+Perseus,2.9882,1.9394
+Perseus,2.9901,1.9394
+Perseus,2.992,1.9444
+Perseus,2.9939,1.947
+Perseus,2.9958,1.952
+Perseus,2.9976,1.9571
+Perseus,2.9995,1.9596
+Perseus,3.0014,1.9646
+Perseus,3.0033,1.9646
+Perseus,3.0071,1.9697
+Perseus,3.0089,1.9798
+Perseus,3.0108,1.9899
+Perseus,3.0127,1.9848
+Perseus,3.0146,1.9949
+Perseus,3.0165,2.0051
+Perseus,3.0183,2.0051
+Perseus,3.0202,2.0
+Perseus,3.0221,1.9975
+Perseus,3.0296,1.9571
+Perseus,3.0409,1.9444
+Perseus,3.0428,1.947
+Perseus,3.0447,1.9495
+Perseus,3.0465,1.9545
+Perseus,3.0484,1.9596
+Perseus,3.0522,1.9899
+Perseus,3.0541,1.9899
+Perseus,3.0616,1.9672
+Perseus,3.0635,1.9596
+Perseus,3.0653,1.9672
+Perseus,3.0672,1.9672
+Perseus,3.0691,1.9697
+Perseus,3.071,1.9747
+Perseus,3.0729,1.9823
+Perseus,3.0747,1.9874
+Perseus,3.0766,1.9899
+Perseus,3.0785,1.9874
+Perseus,3.0804,1.9924
+Perseus,3.0823,1.9798
+Perseus,3.0841,1.9747
+Perseus,3.0879,2.0051
+Perseus,3.0898,2.0126
+Perseus,3.0917,2.0202
+Perseus,3.0935,2.0253
+Perseus,3.0954,2.0303
+Perseus,3.0973,2.0354
+Perseus,3.0992,2.0354
+Perseus,3.1011,2.0354
+Perseus,3.1029,2.0303
+Perseus,3.1048,2.0303
+Perseus,3.1067,2.0227
+Perseus,3.1086,2.0152
+Perseus,3.1105,2.0253
+Perseus,3.1123,2.0177
+Perseus,3.1142,2.0152
+Perseus,3.1161,2.0227
+Perseus,3.118,2.0303
+Perseus,3.1199,2.0354
+Perseus,3.1274,2.0404
+Perseus,3.1293,2.0404
+Perseus,3.1311,2.0455
+Perseus,3.133,2.0556
+Orion-B,2.1159,-0.0429
+Orion-B,2.1177,-0.0429
+Orion-B,2.1196,-0.0379
+Orion-B,2.1234,-0.0253
+Orion-B,2.1253,-0.0354
+Orion-B,2.1271,-0.0227
+Orion-B,2.129,-0.0101
+Orion-B,2.1309,-0.0126
+Orion-B,2.1347,-0.0076
+Orion-B,2.1365,-0.0025
+Orion-B,2.1384,0.0025
+Orion-B,2.1403,0.0152
+Orion-B,2.1441,0.0126
+Orion-B,2.1459,0.0177
+Orion-B,2.1478,0.0227
+Orion-B,2.1516,0.0354
+Orion-B,2.1553,0.0379
+Orion-B,2.1572,0.0505
+Orion-B,2.1591,0.048
+Orion-B,2.1629,0.053
+Orion-B,2.1647,0.0581
+Orion-B,2.1666,0.0631
+Orion-B,2.1685,0.0758
+Orion-B,2.1704,0.0606
+Orion-B,2.1723,0.0732
+Orion-B,2.1741,0.0783
+Orion-B,2.1779,0.0833
+Orion-B,2.1798,0.0884
+Orion-B,2.1817,0.0934
+Orion-B,2.1854,0.0909
+Orion-B,2.1873,0.1035
+Orion-B,2.1892,0.1086
+Orion-B,2.1929,0.1136
+Orion-B,2.1948,0.1263
+Orion-B,2.1967,0.1237
+Orion-B,2.2005,0.1288
+Orion-B,2.2024,0.1414
+Orion-B,2.2042,0.1465
+Orion-B,2.208,0.1439
+Orion-B,2.2099,0.1566
+Orion-B,2.2118,0.1465
+Orion-B,2.2155,0.1591
+Orion-B,2.2174,0.1641
+Orion-B,2.2193,0.1692
+Orion-B,2.2212,0.1818
+Orion-B,2.223,0.1869
+Orion-B,2.2249,0.1818
+Orion-B,2.2268,0.1768
+Orion-B,2.2287,0.197
+Orion-B,2.2306,0.1869
+Orion-B,2.2324,0.1995
+Orion-B,2.2343,0.2121
+Orion-B,2.2362,0.202
+Orion-B,2.2381,0.2222
+Orion-B,2.24,0.2071
+Orion-B,2.2418,0.2197
+Orion-B,2.2437,0.2172
+Orion-B,2.2456,0.2298
+Orion-B,2.2475,0.2424
+Orion-B,2.2494,0.2323
+Orion-B,2.2531,0.2449
+Orion-B,2.255,0.25
+Orion-B,2.2569,0.2551
+Orion-B,2.2606,0.2601
+Orion-B,2.2625,0.2727
+Orion-B,2.2644,0.2702
+Orion-B,2.2682,0.2753
+Orion-B,2.2719,0.2879
+Orion-B,2.2757,0.2904
+Orion-B,2.2794,0.2955
+Orion-B,2.2813,0.3005
+Orion-B,2.2832,0.3056
+Orion-B,2.287,0.3106
+Orion-B,2.2888,0.3157
+Orion-B,2.2907,0.3207
+Orion-B,2.2945,0.3258
+Orion-B,2.2964,0.3308
+Orion-B,2.2982,0.3359
+Orion-B,2.302,0.3485
+Orion-B,2.3039,0.3384
+Orion-B,2.3058,0.351
+Orion-B,2.3095,0.3586
+Orion-B,2.3133,0.3662
+Orion-B,2.3152,0.3788
+Orion-B,2.317,0.3687
+Orion-B,2.3208,0.3813
+Orion-B,2.3227,0.3864
+Orion-B,2.3246,0.3889
+Orion-B,2.3264,0.3914
+Orion-B,2.3283,0.399
+Orion-B,2.3302,0.3889
+Orion-B,2.3321,0.3889
+Orion-B,2.334,0.404
+Orion-B,2.3377,0.3939
+Orion-B,2.3396,0.404
+Orion-B,2.3415,0.4066
+Orion-B,2.3434,0.4141
+Orion-B,2.3452,0.404
+Orion-B,2.3471,0.404
+Orion-B,2.349,0.4116
+Orion-B,2.3509,0.4192
+Orion-B,2.3528,0.4091
+Orion-B,2.3546,0.4167
+Orion-B,2.3565,0.4217
+Orion-B,2.3603,0.4192
+Orion-B,2.3622,0.4318
+Orion-B,2.364,0.4369
+Orion-B,2.3659,0.4419
+Orion-B,2.3697,0.447
+Orion-B,2.3716,0.4444
+Orion-B,2.3734,0.4571
+Orion-B,2.3753,0.4697
+Orion-B,2.3772,0.4596
+Orion-B,2.381,0.4722
+Orion-B,2.3828,0.4773
+Orion-B,2.3847,0.4823
+Orion-B,2.3866,0.4949
+Orion-B,2.3904,0.4949
+Orion-B,2.3941,0.4949
+Orion-B,2.396,0.5076
+Orion-B,2.3979,0.5051
+Orion-B,2.3998,0.5177
+Orion-B,2.4016,0.5303
+Orion-B,2.4035,0.5202
+Orion-B,2.4054,0.5404
+Orion-B,2.4073,0.5253
+Orion-B,2.4092,0.5404
+Orion-B,2.411,0.5354
+Orion-B,2.4129,0.5404
+Orion-B,2.4148,0.553
+Orion-B,2.4167,0.5581
+Orion-B,2.4204,0.5631
+Orion-B,2.4223,0.5
+Orion-B,2.4242,0.5606
+Orion-B,2.4261,0.5379
+Orion-B,2.428,0.5783
+Orion-B,2.4317,0.5833
+Orion-B,2.4336,0.5884
+Orion-B,2.4374,0.5934
+Orion-B,2.4411,0.601
+Orion-B,2.4449,0.6086
+Orion-B,2.4468,0.6212
+Orion-B,2.4486,0.6187
+Orion-B,2.4524,0.6162
+Orion-B,2.4543,0.6288
+Orion-B,2.4562,0.6338
+Orion-B,2.458,0.6389
+Orion-B,2.4618,0.6439
+Orion-B,2.4637,0.6414
+Orion-B,2.4656,0.654
+Orion-B,2.4693,0.6667
+Orion-B,2.4712,0.6566
+Orion-B,2.4731,0.6692
+Orion-B,2.4769,0.6818
+Orion-B,2.4787,0.6717
+Orion-B,2.4806,0.6843
+Orion-B,2.4844,0.697
+Orion-B,2.4863,0.6869
+Orion-B,2.4881,0.6995
+Orion-B,2.49,0.7121
+Orion-B,2.4919,0.7121
+Orion-B,2.4957,0.7146
+Orion-B,2.4975,0.7273
+Orion-B,2.4994,0.7172
+Orion-B,2.5032,0.7298
+Orion-B,2.5051,0.7348
+Orion-B,2.5069,0.7399
+Orion-B,2.5088,0.7525
+Orion-B,2.5107,0.7576
+Orion-B,2.5126,0.7525
+Orion-B,2.5145,0.7677
+Orion-B,2.5163,0.7525
+Orion-B,2.5182,0.7677
+Orion-B,2.5201,0.7626
+Orion-B,2.522,0.7677
+Orion-B,2.5239,0.7879
+Orion-B,2.5257,0.7778
+Orion-B,2.5276,0.7904
+Orion-B,2.5295,0.803
+Orion-B,2.5314,0.7929
+Orion-B,2.5333,0.8056
+Orion-B,2.5351,0.8182
+Orion-B,2.537,0.8157
+Orion-B,2.5389,0.8207
+Orion-B,2.5408,0.8333
+Orion-B,2.5427,0.8232
+Orion-B,2.5445,0.8434
+Orion-B,2.5464,0.8485
+Orion-B,2.5483,0.8434
+Orion-B,2.5502,0.8586
+Orion-B,2.5521,0.8434
+Orion-B,2.5539,0.8586
+Orion-B,2.5558,0.8737
+Orion-B,2.5577,0.8586
+Orion-B,2.5596,0.8737
+Orion-B,2.5615,0.8687
+Orion-B,2.5633,0.8737
+Orion-B,2.5652,0.8939
+Orion-B,2.5671,0.8838
+Orion-B,2.569,0.8965
+Orion-B,2.5709,0.9091
+Orion-B,2.5727,0.899
+Orion-B,2.5746,0.9116
+Orion-B,2.5765,0.9242
+Orion-B,2.5784,0.9217
+Orion-B,2.5821,0.9268
+Orion-B,2.5859,0.9318
+Orion-B,2.5878,0.9394
+Orion-B,2.5915,0.9495
+Orion-B,2.5934,0.9394
+Orion-B,2.5953,0.9545
+Orion-B,2.5972,0.9545
+Orion-B,2.5991,0.9596
+Orion-B,2.6028,0.9672
+Orion-B,2.6047,0.9722
+Orion-B,2.6066,0.9798
+Orion-B,2.6085,0.9798
+Orion-B,2.6103,0.9848
+Orion-B,2.6216,0.9848
+Orion-B,2.6235,0.9848
+Orion-B,2.6254,0.9924
+Orion-B,2.6273,0.9949
+Orion-B,2.6291,1.0
+Orion-B,2.631,1.0101
+Orion-B,2.6329,1.0051
+Orion-B,2.6348,1.0152
+Orion-B,2.6385,1.0202
+Orion-B,2.6423,1.0354
+Orion-B,2.6442,1.0303
+Orion-B,2.6461,1.0354
+Orion-B,2.6479,1.0429
+Orion-B,2.6498,1.0505
+Orion-B,2.6517,1.0505
+Orion-B,2.6536,1.0505
+Orion-B,2.6555,1.0581
+Orion-B,2.6592,1.0682
+Orion-B,2.6611,1.0707
+Orion-B,2.663,1.0758
+Orion-B,2.6649,1.0808
+Orion-B,2.6667,1.0859
+Orion-B,2.6686,1.0909
+Orion-B,2.6705,1.096
+Orion-B,2.6724,1.101
+Orion-B,2.6743,1.1061
+Orion-B,2.6761,1.1111
+Orion-B,2.7288,1.2273
+Orion-B,2.7307,1.2323
+Orion-B,2.7363,1.2424
+Orion-B,2.7382,1.2475
+Orion-B,2.7438,1.2576
+Orion-B,2.7457,1.2626
+Orion-B,2.7495,1.2677
+Orion-B,2.7514,1.2727
+Orion-B,2.7664,1.3308
+Orion-B,2.7683,1.3359
+Orion-B,2.772,1.3384
+Orion-B,2.7739,1.3535
+Orion-B,2.7758,1.3535
+Orion-B,2.7777,1.3636
+Orion-B,2.7796,1.3535
+Orion-B,2.7814,1.2399
+Orion-B,2.7833,1.3586
+Orion-B,2.7852,1.3636
+Orion-B,2.7871,1.3687
+Orion-B,2.789,1.2475
+Orion-B,2.7908,1.3788
+Orion-B,2.7927,1.3838
+Orion-B,2.7946,1.2576
+Orion-B,2.7965,1.3939
+Orion-B,2.7984,1.3914
+Orion-B,2.8002,1.3939
+Orion-B,2.8021,1.1313
+Orion-B,2.8059,1.4066
+Orion-B,2.8078,1.2753
+Orion-B,2.8115,1.2803
+Orion-B,2.8153,1.1515
+Orion-B,2.8172,1.1515
+Orion-B,2.819,1.1566
+Orion-B,2.8209,1.1566
+Orion-B,2.8247,1.1616
+Orion-B,2.8266,1.1616
+Orion-B,2.8284,1.3056
+Orion-B,2.8303,1.1717
+Orion-B,2.8322,1.1717
+Orion-B,2.8341,1.4545
+Orion-B,2.836,1.4697
+Orion-B,2.8397,1.4697
+Orion-B,2.8416,1.4697
+Orion-B,2.8472,1.1818
+Orion-B,2.8491,1.1869
+Orion-B,2.851,1.1869
+Orion-B,2.8529,1.1919
+Orion-B,2.8566,1.197
+Orion-B,2.8585,1.197
+Orion-B,2.8604,1.2071
+Orion-B,2.866,1.2172
+Orion-B,2.8679,1.2172
+Orion-B,2.8698,1.2222
+Orion-B,2.8717,1.2273
+Orion-B,2.8736,1.2273
+Orion-B,2.8811,1.5101
+Orion-B,2.883,1.2475
+Orion-B,2.8848,1.5152
+Orion-B,2.8867,1.3939
+Orion-B,2.8886,1.5202
+Orion-B,2.8905,1.5354
+Orion-B,2.8942,1.5354
+Orion-B,2.8961,1.5404
+Orion-B,2.898,1.5429
+Orion-B,2.8999,1.5505
+Orion-B,2.9036,1.5455
+Orion-B,2.9055,1.548
+Orion-B,2.9074,1.5303
+Orion-B,2.9093,1.5328
+Orion-B,2.9112,1.5253
+Orion-B,2.913,1.5303
+Orion-B,2.9149,1.5303
+Orion-B,2.9168,1.4116
+Orion-B,2.9187,1.2778
+Orion-B,2.9206,1.5354
+Orion-B,2.9224,1.5354
+Orion-B,2.9243,1.5455
+Orion-B,2.9262,1.5505
+Orion-B,2.93,1.5581
+Orion-B,2.9318,1.5429
+Orion-B,2.9337,1.5455
+Orion-B,2.9356,1.5278
+Orion-B,2.9375,1.5303
+Orion-B,2.9394,1.5126
+Orion-B,2.9412,1.5152
+Orion-B,2.9431,1.4167
+Orion-B,2.945,1.5101
+Orion-B,2.9469,1.3182
+Orion-B,2.9488,1.5101
+Orion-B,2.9506,1.4167
+Orion-B,2.9525,1.5455
+Orion-B,2.9544,1.5303
+Orion-B,2.9563,1.5606
+Orion-B,2.9582,1.5455
+Orion-B,2.96,1.4419
+Orion-B,2.9619,1.5606
+Orion-B,2.9638,1.5783
+Orion-B,2.9657,1.5859
+Orion-B,2.9676,1.601
+Orion-B,2.9694,1.5909
+Orion-B,2.9713,1.596
+Orion-B,2.9732,1.3636
+Orion-B,2.9751,1.4798
+Orion-B,2.977,1.6162
+Orion-B,2.9788,1.6061
+Orion-B,2.9807,1.6212
+Orion-B,2.9826,1.6212
+Orion-B,2.9845,1.6263
+Orion-B,2.9864,1.6364
+Orion-B,2.9882,1.6364
+Orion-B,2.9901,1.6364
+Orion-B,2.992,1.6338
+Orion-B,2.9939,1.5051
+Orion-B,2.9958,1.3939
+Orion-B,2.9976,1.3939
+Orion-B,2.9995,1.6313
+Orion-B,3.0014,1.5303
+Orion-B,3.0033,1.6566
+Orion-B,3.0052,1.5379
+Orion-B,3.0071,1.5455
+Orion-B,3.0089,1.5404
+Orion-B,3.0108,1.6768
+Orion-B,3.0127,1.6919
+Orion-B,3.0146,1.6768
+Orion-B,3.0165,1.6591
+Orion-B,3.0183,1.6667
+Orion-B,3.0202,1.6692
+Orion-B,3.0221,1.6414
+Orion-B,3.024,1.6389
+Orion-B,3.0259,1.6465
+Orion-B,3.0277,1.6616
+Orion-B,3.0296,1.6515
+Orion-B,3.0315,1.6566
+Orion-B,3.0334,1.6616
+Orion-B,3.0353,1.6818
+Orion-B,3.0371,1.6768
+Orion-B,3.039,1.7071
+Orion-B,3.0409,1.702
+Orion-B,3.0428,1.7071
+Orion-B,3.0447,1.697
+Orion-B,3.0465,1.7071
+Orion-B,3.0484,1.6818
+Orion-B,3.0503,1.6869
+Orion-B,3.0522,1.5859
+Orion-B,3.0541,1.596
+Orion-B,3.0559,1.5985
+Orion-B,3.0578,1.6717
+Orion-B,3.0597,1.6818
+Orion-B,3.0616,1.7071
+Orion-B,3.0635,1.697
+Orion-B,3.0653,1.702
+Orion-B,3.0672,1.7096
+Orion-B,3.0691,1.7172
+Orion-B,3.071,1.6111
+Orion-B,3.0729,1.7525
+Orion-B,3.0747,1.6288
+Orion-B,3.0766,1.7525
+Orion-B,3.0785,1.7702
+Orion-B,3.0804,1.7576
+Orion-B,3.0823,1.7626
+Orion-B,3.0841,1.7727
+Orion-B,3.086,1.7828
+Orion-B,3.0879,1.7803
+Orion-B,3.0898,1.7753
+Orion-B,3.0935,1.7626
+Orion-B,3.0954,1.7778
+Orion-B,3.0973,1.7828
+Orion-B,3.0992,1.8005
+Orion-B,3.1011,1.7955
+Orion-B,3.1029,1.7929
+Orion-B,3.1048,1.8005
+Orion-B,3.1086,1.8308
+Orion-B,3.1105,1.8359
+Orion-B,3.1123,1.8434
+Orion-B,3.1142,1.8434
+Orion-B,3.1161,1.8258
+Orion-B,3.118,1.8106
+Orion-B,3.1199,1.803
+Orion-B,3.1217,1.8232
+Orion-B,3.1236,1.8131
+Orion-B,3.1274,1.8333
+Orion-B,3.1293,1.8283
+Orion-B,3.1311,1.8586
+Orion-B,3.133,1.8586
+Orion-B,3.1368,1.8737
+Orion-B,3.1387,1.8788
+Orion-B,3.1405,1.8889
+Orion-B,3.1424,1.8914
+Orion-B,3.1443,1.904
+Orion-B,3.1462,1.9141
+Orion-B,3.1481,1.9091
+Orion-B,3.1499,1.9141
+Orion-B,3.1518,1.9141
+Orion-B,3.1537,1.9268
+Orion-B,3.1556,1.9091
+Orion-B,3.1575,1.9217
+Orion-B,3.1593,1.9167
+Orion-B,3.1781,1.952
+Orion-B,3.18,1.9571
+Orion-B,3.1819,1.9697
+Orion-B,3.1838,1.9747
+Orion-B,3.1857,1.9798
+Aquila-North,2.0914,-0.053
+Aquila-North,2.0933,-0.053
+Aquila-North,2.0952,-0.0404
+Aquila-North,2.0971,-0.0404
+Aquila-North,2.0989,-0.0354
+Aquila-North,2.1008,-0.0303
+Aquila-North,2.1027,-0.0227
+Aquila-North,2.1046,-0.0177
+Aquila-North,2.1065,-0.0126
+Aquila-North,2.1083,-0.0076
+Aquila-North,2.1102,-0.0076
+Aquila-North,2.1121,0.0
+Aquila-North,2.114,0.0051
+Aquila-North,2.1159,0.0126
+Aquila-North,2.1177,0.0152
+Aquila-North,2.1196,0.0227
+Aquila-North,2.1271,0.0707
+Aquila-North,2.129,0.0758
+Aquila-North,2.1309,0.0808
+Aquila-North,2.1328,0.0833
+Aquila-North,2.1347,0.0909
+Aquila-North,2.1365,0.0985
+Aquila-North,2.1384,0.1061
+Aquila-North,2.1403,0.1035
+Aquila-North,2.1422,0.1086
+Aquila-North,2.1441,0.1136
+Aquila-North,2.1459,0.1263
+Aquila-North,2.1478,0.1263
+Aquila-North,2.1497,0.1263
+Aquila-North,2.1516,0.1313
+Aquila-North,2.1535,0.1439
+Aquila-North,2.1553,0.1566
+Aquila-North,2.1572,0.1616
+Aquila-North,2.1591,0.1667
+Aquila-North,2.161,0.1667
+Aquila-North,2.1629,0.1667
+Aquila-North,2.1647,0.1717
+Aquila-North,2.1666,0.1768
+Aquila-North,2.1685,0.1818
+Aquila-North,2.1704,0.1919
+Aquila-North,2.1723,0.1919
+Aquila-North,2.1741,0.1995
+Aquila-North,2.176,0.2172
+Aquila-North,2.1779,0.2222
+Aquila-North,2.1798,0.2222
+Aquila-North,2.1835,0.2222
+Aquila-North,2.1854,0.2273
+Aquila-North,2.1986,0.2828
+Aquila-North,2.2005,0.2778
+Aquila-North,2.2024,0.2879
+Aquila-North,2.2042,0.2828
+Aquila-North,2.208,0.303
+Aquila-North,2.2099,0.3081
+Aquila-North,2.2118,0.3131
+Aquila-North,2.2136,0.3131
+Aquila-North,2.2155,0.3207
+Aquila-North,2.2174,0.3232
+Aquila-North,2.2193,0.3283
+Aquila-North,2.2212,0.3333
+Aquila-North,2.223,0.3359
+Aquila-North,2.2249,0.3434
+Aquila-North,2.2287,0.351
+Aquila-North,2.2306,0.3586
+Aquila-North,2.2343,0.3662
+Aquila-North,2.2381,0.3737
+Aquila-North,2.24,0.3788
+Aquila-North,2.2437,0.3889
+Aquila-North,2.2456,0.3939
+Aquila-North,2.2512,0.4091
+Aquila-North,2.255,0.4192
+Aquila-North,2.2794,0.5
+Aquila-North,2.2832,0.5101
+Aquila-North,2.287,0.5202
+Aquila-North,2.2926,0.5303
+Aquila-North,2.2964,0.5404
+Aquila-North,2.2982,0.5455
+Aquila-North,2.3001,0.5505
+Aquila-North,2.302,0.5556
+Aquila-North,2.3058,0.5606
+Aquila-North,2.3095,0.5707
+Aquila-North,2.3114,0.5758
+Aquila-North,2.3133,0.5808
+Aquila-North,2.3152,0.5859
+Aquila-North,2.3189,0.596
+Aquila-North,2.349,0.6667
+Aquila-North,2.3509,0.6717
+Aquila-North,2.3528,0.6768
+Aquila-North,2.3565,0.6843
+Aquila-North,2.3584,0.6869
+Aquila-North,2.3603,0.6919
+Aquila-North,2.3622,0.697
+Aquila-North,2.364,0.702
+Aquila-North,2.3659,0.7071
+Aquila-North,2.3678,0.7096
+Aquila-North,2.3697,0.7146
+Aquila-North,2.3734,0.7222
+Aquila-North,2.3753,0.7273
+Aquila-North,2.3772,0.7323
+Aquila-North,2.3791,0.7374
+Aquila-North,2.381,0.7424
+Aquila-North,2.3828,0.7449
+Aquila-North,2.3847,0.7525
+Aquila-North,2.3866,0.7525
+Aquila-North,2.3885,0.7576
+Aquila-North,2.3904,0.7626
+Aquila-North,2.3922,0.7677
+Aquila-North,2.3941,0.7727
+Aquila-North,2.396,0.7753
+Aquila-North,2.3998,0.7828
+Aquila-North,2.4016,0.7879
+Aquila-North,2.4035,0.7929
+Aquila-North,2.4092,0.803
+Aquila-North,2.411,0.8081
+Aquila-North,2.4167,0.8182
+Aquila-North,2.4204,0.8283
+Aquila-North,2.4242,0.8333
+Aquila-North,2.4261,0.8384
+Aquila-North,2.428,0.8434
+Aquila-North,2.4298,0.8434
+Aquila-North,2.4317,0.8485
+Aquila-North,2.4336,0.851
+Aquila-North,2.4355,0.851
+Aquila-North,2.4374,0.8561
+Aquila-North,2.4392,0.8586
+Aquila-North,2.4411,0.8662
+Aquila-North,2.443,0.8687
+Aquila-North,2.4449,0.8737
+Aquila-North,2.4468,0.8788
+Aquila-North,2.4486,0.8813
+Aquila-North,2.4505,0.8889
+Aquila-North,2.4524,0.8889
+Aquila-North,2.4543,0.899
+Aquila-North,2.4562,0.904
+Aquila-North,2.458,0.9091
+Aquila-North,2.4599,0.9192
+Aquila-North,2.4618,0.9116
+Aquila-North,2.4637,0.9217
+Aquila-North,2.4656,0.9268
+Aquila-North,2.4675,0.9293
+Aquila-North,2.4693,0.9343
+Aquila-North,2.4712,0.9444
+Aquila-North,2.4731,0.9419
+Aquila-North,2.475,0.9444
+Aquila-North,2.4769,0.952
+Aquila-North,2.4787,0.9571
+Aquila-North,2.4806,0.9545
+Aquila-North,2.4825,0.9621
+Aquila-North,2.4844,0.9672
+Aquila-North,2.4863,0.9722
+Aquila-North,2.4881,0.9697
+Aquila-North,2.49,0.9798
+Aquila-North,2.4919,0.9798
+Aquila-North,2.4938,0.9874
+Aquila-North,2.4957,0.9924
+Aquila-North,2.4975,0.9949
+Aquila-North,2.4994,0.9949
+Aquila-North,2.5013,1.0025
+Aquila-North,2.5032,1.0076
+Aquila-North,2.5051,1.0152
+Aquila-North,2.5069,1.0101
+Aquila-North,2.5088,1.0177
+Aquila-North,2.5107,1.0227
+Aquila-North,2.5126,1.0303
+Aquila-North,2.5145,1.0328
+Aquila-North,2.5163,1.0328
+Aquila-North,2.5182,1.0354
+Aquila-North,2.5201,1.0429
+Aquila-North,2.522,1.048
+Aquila-North,2.5239,1.0556
+Aquila-North,2.5257,1.053
+Aquila-North,2.5276,1.0606
+Aquila-North,2.5295,1.0606
+Aquila-North,2.5314,1.0631
+Aquila-North,2.5333,1.0657
+Aquila-North,2.5351,1.0657
+Aquila-North,2.537,1.0758
+Aquila-North,2.5389,1.0707
+Aquila-North,2.5408,1.0783
+Aquila-North,2.5427,1.0758
+Aquila-North,2.5445,1.0859
+Aquila-North,2.5464,1.0884
+Aquila-North,2.5483,1.096
+Aquila-North,2.5502,1.101
+Aquila-North,2.5521,1.0985
+Aquila-North,2.5539,1.1061
+Aquila-North,2.5558,1.1111
+Aquila-North,2.5577,1.1086
+Aquila-North,2.5596,1.1061
+Aquila-North,2.5615,1.1111
+Aquila-North,2.5633,1.1187
+Aquila-North,2.5652,1.1263
+Aquila-North,2.5671,1.1237
+Aquila-North,2.569,1.1288
+Aquila-North,2.5709,1.1313
+Aquila-North,2.5727,1.1414
+Aquila-North,2.5746,1.1389
+Aquila-North,2.5765,1.1364
+Aquila-North,2.5784,1.1465
+Aquila-North,2.5803,1.1515
+Aquila-North,2.5821,1.154
+Aquila-North,2.584,1.1591
+Aquila-North,2.5859,1.1616
+Aquila-North,2.5878,1.1616
+Aquila-North,2.5897,1.1692
+Aquila-North,2.5915,1.1742
+Aquila-North,2.5934,1.1818
+Aquila-North,2.5953,1.1843
+Aquila-North,2.5972,1.1843
+Aquila-North,2.5991,1.1894
+Aquila-North,2.6009,1.1944
+Aquila-North,2.6028,1.1995
+Aquila-North,2.6047,1.2071
+Aquila-North,2.6066,1.202
+Aquila-North,2.6085,1.2096
+Aquila-North,2.6103,1.2146
+Aquila-North,2.6122,1.2172
+Aquila-North,2.6141,1.2172
+Aquila-North,2.616,1.2273
+Aquila-North,2.6179,1.2273
+Aquila-North,2.6197,1.2222
+Aquila-North,2.6216,1.2374
+Aquila-North,2.6235,1.2323
+Aquila-North,2.6254,1.2323
+Aquila-North,2.6273,1.2323
+Aquila-North,2.6291,1.2374
+Aquila-North,2.631,1.2424
+Aquila-North,2.6329,1.2475
+Aquila-North,2.6348,1.2525
+Aquila-North,2.6367,1.2576
+Aquila-North,2.6385,1.2626
+Aquila-North,2.6404,1.2626
+Aquila-North,2.6423,1.2626
+Aquila-North,2.6498,1.2828
+Aquila-North,2.6517,1.2879
+Aquila-North,2.6536,1.2879
+Aquila-North,2.6555,1.2929
+Aquila-North,2.6573,1.298
+Aquila-North,2.6592,1.303
+Aquila-North,2.663,1.3081
+Aquila-North,2.6649,1.3131
+Aquila-North,2.6667,1.3182
+Aquila-North,2.6686,1.3232
+Aquila-North,2.6705,1.3232
+Aquila-North,2.6724,1.3283
+Aquila-North,2.6743,1.3258
+Aquila-North,2.6761,1.3232
+Aquila-North,2.678,1.3308
+Aquila-North,2.6799,1.3308
+Aquila-North,2.6818,1.3434
+Aquila-North,2.6837,1.3485
+Aquila-North,2.6855,1.351
+Aquila-North,2.6874,1.3535
+Aquila-North,2.6893,1.3586
+Aquila-North,2.6968,1.3535
+Aquila-North,2.6987,1.3586
+Aquila-North,2.7006,1.3636
+Aquila-North,2.7025,1.3687
+Aquila-North,2.7043,1.3687
+Aquila-North,2.7062,1.3788
+Aquila-North,2.7081,1.3838
+Aquila-North,2.71,1.3889
+Aquila-North,2.7119,1.3838
+Aquila-North,2.7137,1.3914
+Aquila-North,2.7156,1.3939
+Aquila-North,2.7175,1.399
+Aquila-North,2.7194,1.399
+Aquila-North,2.7213,1.404
+Aquila-North,2.7231,1.404
+Aquila-North,2.725,1.4091
+Aquila-North,2.7288,1.4141
+Aquila-North,2.7325,1.4242
+Aquila-North,2.7344,1.4343
+Aquila-North,2.7363,1.4318
+Aquila-North,2.7382,1.4343
+Aquila-North,2.7401,1.4343
+Aquila-North,2.742,1.4394
+Aquila-North,2.7438,1.4394
+Aquila-North,2.7457,1.4495
+Aquila-North,2.7476,1.4444
+Aquila-North,2.7495,1.452
+Aquila-North,2.7514,1.4545
+Aquila-North,2.7532,1.4621
+Aquila-North,2.7551,1.4672
+Aquila-North,2.757,1.4672
+Aquila-North,2.7589,1.4697
+Aquila-North,2.7608,1.4773
+Aquila-North,2.7626,1.4798
+Aquila-North,2.7645,1.4823
+Aquila-North,2.7664,1.4848
+Aquila-North,2.7683,1.4848
+Aquila-North,2.7702,1.4949
+Aquila-North,2.772,1.4949
+Aquila-North,2.7739,1.4899
+Aquila-North,2.7758,1.5
+Aquila-North,2.7777,1.4949
+Aquila-North,2.7796,1.5
+Aquila-North,2.7814,1.5101
+Aquila-North,2.7833,1.5101
+Aquila-North,2.7852,1.5152
+Aquila-North,2.7871,1.5202
+Aquila-North,2.789,1.5152
+Aquila-North,2.7908,1.5152
+Aquila-North,2.7927,1.5202
+Aquila-North,2.7946,1.5278
+Aquila-North,2.7965,1.5202
+Aquila-North,2.7984,1.5278
+Aquila-North,2.8002,1.5354
+Aquila-North,2.8021,1.5278
+Aquila-North,2.804,1.5303
+Aquila-North,2.8059,1.5354
+Aquila-North,2.8209,1.5606
+Aquila-North,2.8228,1.5657
+Aquila-North,2.8247,1.5707
+Aquila-North,2.8266,1.5758
+Aquila-North,2.8284,1.5808
+Aquila-North,2.8303,1.5909
+Aquila-North,2.8322,1.5884
+Aquila-North,2.8341,1.5934
+Aquila-North,2.836,1.596
+Aquila-North,2.8378,1.596
+Aquila-North,2.8566,1.6364
+Aquila-North,2.8585,1.6414
+Aquila-North,2.8623,1.649
+Aquila-North,2.8642,1.6566
+Aquila-North,2.866,1.6566
+Aquila-North,2.8679,1.6692
+Aquila-North,2.8698,1.6768
+Aquila-North,2.8717,1.6717
+Aquila-North,2.8736,1.6793
+Aquila-North,2.8754,1.6869
+Aquila-North,2.8773,1.6818
+Aquila-North,2.8792,1.6818
+Aquila-North,2.8811,1.6919
+Aquila-North,2.883,1.6869
+Aquila-North,2.8848,1.6944
+Aquila-North,2.8867,1.697
+Aquila-North,2.8886,1.7071
+Aquila-North,2.8905,1.7071
+Aquila-North,2.8924,1.7071
+Aquila-North,2.8942,1.7071
+Aquila-North,2.8961,1.7172
+Aquila-North,2.898,1.7146
+Aquila-North,2.8999,1.7222
+Aquila-North,2.9018,1.7247
+Aquila-North,2.9036,1.7247
+Aquila-North,2.9055,1.7323
+Aquila-North,2.9074,1.7348
+Aquila-North,2.9093,1.7399
+Aquila-North,2.9112,1.7424
+Aquila-North,2.913,1.7424
+Aquila-North,2.9149,1.7424
+Aquila-North,2.9168,1.7475
+Aquila-North,2.9187,1.7525
+Aquila-North,2.9206,1.7626
+Aquila-North,2.9224,1.7525
+Aquila-North,2.9243,1.7626
+Aquila-North,2.9262,1.7677
+Aquila-North,2.9281,1.7702
+Aquila-North,2.93,1.7753
+Aquila-North,2.9318,1.7803
+Aquila-North,2.9337,1.7854
+Aquila-North,2.9356,1.7828
+Aquila-North,2.9375,1.7929
+Aquila-North,2.9394,1.803
+Aquila-North,2.9412,1.8005
+Aquila-North,2.9431,1.8056
+Aquila-North,2.945,1.8106
+Aquila-North,2.9469,1.8157
+Aquila-North,2.9488,1.8207
+Aquila-North,2.9506,1.8258
+Aquila-North,2.9525,1.8232
+Aquila-North,2.9544,1.8232
+Aquila-North,2.96,1.8535
+Aquila-North,2.9619,1.851
+Aquila-North,2.9638,1.8561
+Aquila-North,2.9657,1.8611
+Aquila-North,2.9676,1.8662
+Aquila-North,2.9694,1.8636
+Aquila-North,2.9713,1.8687
+Aquila-North,2.9732,1.8763
+Aquila-North,2.9751,1.8788
+Aquila-North,2.977,1.8763
+Aquila-North,2.9788,1.8788
+Aquila-North,2.9807,1.8864
+Aquila-North,2.9826,1.8914
+Aquila-North,2.9845,1.8965
+Aquila-North,2.9864,1.8939
+Aquila-North,2.9882,1.9066
+Aquila-North,2.9901,1.9192
+Aquila-North,2.992,1.9141
+Aquila-North,2.9939,1.9217
+Aquila-North,2.9958,1.9217
+Aquila-North,2.9976,1.9293
+Aquila-North,2.9995,1.9444
+Aquila-North,3.0014,1.9369
+Aquila-North,3.0033,1.9394
+Aquila-North,3.0052,1.9545
+Aquila-North,3.0071,1.952
+Aquila-North,3.0089,1.9571
+Aquila-North,3.0108,1.9621
+Aquila-North,3.0127,1.9672
+Aquila-North,3.0146,1.9697
+Aquila-North,3.0165,1.9697
+Aquila-North,3.0183,1.9672
+Aquila-North,3.0202,1.9697
+Aquila-North,3.0221,1.9773
+Aquila-North,3.024,1.9823
+Aquila-North,3.0259,1.9798
+Aquila-North,3.0277,1.9798
+Aquila-North,3.0315,1.9773
+Aquila-North,3.0334,1.9747
+Aquila-North,3.0353,1.9697
+Aquila-North,3.0371,1.9773
+Aquila-North,3.039,1.9823
+Aquila-North,3.0409,1.9848
+Aquila-North,3.0428,2.0
+Aquila-North,3.0447,1.9975
+Aquila-North,3.0465,2.0051
+Aquila-North,3.0484,2.0051
+Aquila-North,3.0503,2.0202
+Aquila-North,3.0522,2.0202
+Aquila-North,3.0541,2.0202
+Aquila-North,3.0559,2.0278
+Aquila-North,3.0578,2.0354
+Aquila-North,3.0597,2.0354
+Aquila-North,3.0616,2.0429
+Aquila-North,3.0635,2.0429
+Aquila-North,3.0653,2.0429
+Aquila-North,3.0672,2.0429
+Aquila-North,3.0691,2.048
+Aquila-North,3.071,2.053
+Aquila-North,3.0729,2.0581
+Aquila-North,3.0747,2.0631
+Aquila-North,3.0766,2.0682
+Aquila-North,3.0785,2.0732
+Aquila-North,3.0804,2.0859
+Aquila-North,3.0823,2.0833
+Aquila-North,3.0841,2.0884
+Aquila-North,3.086,2.101
+Aquila-North,3.0879,2.101
+Aquila-North,3.0898,2.1061
+Aquila-North,3.0917,2.1061
+Aquila-North,3.0935,2.1187
+Aquila-North,3.0954,2.1237
+Aquila-North,3.0973,2.1212
+Aquila-North,3.0992,2.1338
+Aquila-North,3.1011,2.1465
+Aquila-North,3.1029,2.1465
+Aquila-North,3.1048,2.1515
+Aquila-North,3.1067,2.1515
+Aquila-North,3.1086,2.1515
+Aquila-North,3.1105,2.1591
+Aquila-North,3.1123,2.1515
+Aquila-North,3.1142,2.154
+Aquila-North,3.1161,2.1515
+Aquila-North,3.118,2.1641
+Aquila-North,3.1199,2.1717
+Aquila-North,3.1217,2.1717
+Aquila-North,3.1236,2.1793
+Aquila-North,3.1255,2.1742
+Aquila-North,3.1274,2.1768
+Aquila-North,3.1293,2.1717
+Aquila-North,3.1311,2.1717
+Aquila-North,3.133,2.1717
+Aquila-North,3.1349,2.1793
+Aquila-North,3.1368,2.1818
+Aquila-North,3.1387,2.1869
+Aquila-North,3.1405,2.1869
+Aquila-North,3.1424,2.1843
+Aquila-North,3.1443,2.1944
+Aquila-North,3.1462,2.197
+Aquila-North,3.1481,2.1919
+Aquila-North,3.1499,2.1995
+Aquila-North,3.1518,2.202
+Aquila-North,3.1537,2.1944
+Aquila-North,3.1556,2.1919
+Aquila-North,3.1575,2.1894
+Aquila-North,3.1593,2.1793
+Aquila-North,3.1612,2.1818
+Aquila-North,3.1631,2.1919
+Aquila-North,3.165,2.1944
+Aquila-North,3.1669,2.197
+Aquila-North,3.1687,2.2096
+Aquila-North,3.1706,2.2247
+Aquila-North,3.1725,2.2323
+Aquila-North,3.1744,2.2348
+Aquila-North,3.1763,2.2525
+Aquila-North,3.1781,2.2449
+Aquila-North,3.18,2.2525
+Aquila-North,3.1819,2.2576
+Aquila-North,3.1838,2.2525
+Aquila-North,3.1857,2.2525
+Aquila-North,3.1875,2.2525
+Aquila-North,3.1894,2.2601
+Aquila-North,3.1913,2.2601
+Aquila-North,3.1932,2.25
+Aquila-North,3.1951,2.2576
+Aquila-North,3.1969,2.2525
+Aquila-North,3.1988,2.25
+Aquila-North,3.2007,2.2525
+Aquila-North,3.2026,2.2727
+Aquila-North,3.2045,2.2727
+Aquila-North,3.2063,2.3005
+Aquila-North,3.2082,2.3106
+Aquila-North,3.2101,2.3131
+Aquila-North,3.212,2.3232
+Aquila-North,3.2139,2.3283
+Aquila-North,3.2157,2.3333
+Aquila-North,3.2176,2.3283
+Aquila-North,3.2195,2.3232
+Aquila-North,3.2214,2.3308
+Aquila-North,3.2233,2.3308
+Aquila-North,3.2251,2.3359
+Aquila-North,3.227,2.3384
+Aquila-North,3.2289,2.3434
+Aquila-North,3.2308,2.346
+Aquila-North,3.2327,2.346
+Aquila-North,3.2345,2.346
+Aquila-North,3.2364,2.3535
+Aquila-North,3.2383,2.3687
+Aquila-North,3.2402,2.3662
+Aquila-North,3.2421,2.3131
+Aquila-North,3.2439,2.3283
+Aquila-North,3.2458,2.3333
+Aquila-North,3.2477,2.3485
+Aquila-South,2.0801,-0.053
+Aquila-South,2.082,-0.0505
+Aquila-South,2.0839,-0.0455
+Aquila-South,2.0858,-0.0404
+Aquila-South,2.0877,-0.0379
+Aquila-South,2.0914,-0.0303
+Aquila-South,2.0933,-0.0253
+Aquila-South,2.0952,-0.0202
+Aquila-South,2.0971,-0.0152
+Aquila-South,2.0989,-0.0152
+Aquila-South,2.1008,0.0051
+Aquila-South,2.1027,0.0025
+Aquila-South,2.1046,0.0076
+Aquila-South,2.1083,0.0227
+Aquila-South,2.1121,0.0303
+Aquila-South,2.114,0.0354
+Aquila-South,2.1159,0.0025
+Aquila-South,2.1215,-0.0253
+Aquila-South,2.1234,0.0455
+Aquila-South,2.1253,0.0126
+Aquila-South,2.1271,0.0455
+Aquila-South,2.129,0.0505
+Aquila-South,2.1309,0.053
+Aquila-South,2.1328,-0.0101
+Aquila-South,2.1347,0.0606
+Aquila-South,2.1365,0.0657
+Aquila-South,2.1384,0.0303
+Aquila-South,2.1403,0.0758
+Aquila-South,2.1422,0.0758
+Aquila-South,2.1441,0.096
+Aquila-South,2.1459,0.0934
+Aquila-South,2.1478,0.0985
+Aquila-South,2.1497,0.0354
+Aquila-South,2.1516,0.1111
+Aquila-South,2.1535,0.1086
+Aquila-South,2.1553,0.1136
+Aquila-South,2.1572,0.1768
+Aquila-South,2.1591,0.1263
+Aquila-South,2.161,0.0606
+Aquila-South,2.1629,0.1364
+Aquila-South,2.1647,0.1793
+Aquila-South,2.1666,0.1263
+Aquila-South,2.1685,0.1313
+Aquila-South,2.1704,0.1439
+Aquila-South,2.1723,0.1212
+Aquila-South,2.1741,0.1465
+Aquila-South,2.176,0.1465
+Aquila-South,2.1779,0.1591
+Aquila-South,2.1798,0.1717
+Aquila-South,2.1817,0.1641
+Aquila-South,2.1835,0.1061
+Aquila-South,2.1854,0.1818
+Aquila-South,2.1873,0.1869
+Aquila-South,2.1892,0.1742
+Aquila-South,2.1911,0.1212
+Aquila-South,2.1929,0.1894
+Aquila-South,2.1948,0.1944
+Aquila-South,2.1967,0.1591
+Aquila-South,2.1986,0.1641
+Aquila-South,2.2005,0.2045
+Aquila-South,2.2024,0.2096
+Aquila-South,2.2042,0.2222
+Aquila-South,2.2061,0.1793
+Aquila-South,2.208,0.2273
+Aquila-South,2.2099,0.2222
+Aquila-South,2.2118,0.2172
+Aquila-South,2.2136,0.1944
+Aquila-South,2.2174,0.2348
+Aquila-South,2.2193,0.2323
+Aquila-South,2.2212,0.2449
+Aquila-South,2.223,0.202
+Aquila-South,2.2249,0.25
+Aquila-South,2.2268,0.2475
+Aquila-South,2.2287,0.2677
+Aquila-South,2.2306,0.2525
+Aquila-South,2.2324,0.2652
+Aquila-South,2.2343,0.2626
+Aquila-South,2.2362,0.2828
+Aquila-South,2.2381,0.2677
+Aquila-South,2.24,0.2727
+Aquila-South,2.2418,0.2778
+Aquila-South,2.2437,0.2778
+Aquila-South,2.2456,0.2904
+Aquila-South,2.2475,0.2626
+Aquila-South,2.2494,0.2929
+Aquila-South,2.2512,0.2929
+Aquila-South,2.2531,0.3056
+Aquila-South,2.255,0.3182
+Aquila-South,2.2569,0.3106
+Aquila-South,2.2588,0.2677
+Aquila-South,2.2606,0.3207
+Aquila-South,2.2625,0.3131
+Aquila-South,2.2644,0.3258
+Aquila-South,2.2663,0.303
+Aquila-South,2.2682,0.3434
+Aquila-South,2.27,0.3359
+Aquila-South,2.2719,0.3409
+Aquila-South,2.2738,0.3384
+Aquila-South,2.2757,0.3586
+Aquila-South,2.2776,0.303
+Aquila-South,2.2794,0.3485
+Aquila-South,2.2813,0.3611
+Aquila-South,2.2832,0.3737
+Aquila-South,2.2851,0.3182
+Aquila-South,2.287,0.3636
+Aquila-South,2.2888,0.3763
+Aquila-South,2.2907,0.3813
+Aquila-South,2.2926,0.3333
+Aquila-South,2.2945,0.3864
+Aquila-South,2.2964,0.3914
+Aquila-South,2.2982,0.404
+Aquila-South,2.3001,0.3485
+Aquila-South,2.302,0.4091
+Aquila-South,2.3039,0.4066
+Aquila-South,2.3058,0.4116
+Aquila-South,2.3076,0.3838
+Aquila-South,2.3095,0.4192
+Aquila-South,2.3114,0.3939
+Aquila-South,2.3133,0.4192
+Aquila-South,2.3152,0.4394
+Aquila-South,2.317,0.4293
+Aquila-South,2.3189,0.3889
+Aquila-South,2.3208,0.4444
+Aquila-South,2.3227,0.4495
+Aquila-South,2.3246,0.4444
+Aquila-South,2.3264,0.4495
+Aquila-South,2.3283,0.4697
+Aquila-South,2.3302,0.4672
+Aquila-South,2.3321,0.4722
+Aquila-South,2.334,0.4646
+Aquila-South,2.3358,0.4798
+Aquila-South,2.3377,0.4747
+Aquila-South,2.3396,0.4141
+Aquila-South,2.3415,0.5
+Aquila-South,2.3434,0.4899
+Aquila-South,2.3452,0.5025
+Aquila-South,2.3471,0.5051
+Aquila-South,2.349,0.5101
+Aquila-South,2.3509,0.5152
+Aquila-South,2.3528,0.4672
+Aquila-South,2.3546,0.5303
+Aquila-South,2.3565,0.5202
+Aquila-South,2.3584,0.4798
+Aquila-South,2.3603,0.5455
+Aquila-South,2.3622,0.5328
+Aquila-South,2.364,0.4899
+Aquila-South,2.3659,0.5404
+Aquila-South,2.3678,0.5455
+Aquila-South,2.3697,0.5505
+Aquila-South,2.3716,0.5631
+Aquila-South,2.3734,0.5758
+Aquila-South,2.3753,0.5657
+Aquila-South,2.3772,0.5783
+Aquila-South,2.3791,0.5253
+Aquila-South,2.381,0.5808
+Aquila-South,2.3828,0.5909
+Aquila-South,2.3847,0.5859
+Aquila-South,2.3866,0.601
+Aquila-South,2.3885,0.6061
+Aquila-South,2.3904,0.601
+Aquila-South,2.3922,0.6136
+Aquila-South,2.3941,0.6111
+Aquila-South,2.396,0.6162
+Aquila-South,2.3979,0.6364
+Aquila-South,2.3998,0.6263
+Aquila-South,2.4016,0.6313
+Aquila-South,2.4035,0.6389
+Aquila-South,2.4054,0.6364
+Aquila-South,2.4073,0.6465
+Aquila-South,2.411,0.6465
+Aquila-South,2.4129,0.6667
+Aquila-South,2.4148,0.6616
+Aquila-South,2.4167,0.601
+Aquila-South,2.4186,0.6162
+Aquila-South,2.4204,0.6818
+Aquila-South,2.4223,0.6667
+Aquila-South,2.4242,0.6793
+Aquila-South,2.4261,0.6843
+Aquila-South,2.428,0.6869
+Aquila-South,2.4298,0.6894
+Aquila-South,2.4317,0.702
+Aquila-South,2.4336,0.6919
+Aquila-South,2.4355,0.601
+Aquila-South,2.4374,0.7071
+Aquila-South,2.4411,0.7071
+Aquila-South,2.443,0.7121
+Aquila-South,2.4449,0.7172
+Aquila-South,2.4468,0.7298
+Aquila-South,2.4505,0.7273
+Aquila-South,2.4543,0.6894
+Aquila-South,2.4562,0.6818
+Aquila-South,2.458,0.7475
+Aquila-South,2.4599,0.702
+Aquila-South,2.4618,0.7071
+Aquila-South,2.4637,0.7626
+Aquila-South,2.4656,0.7677
+Aquila-South,2.4675,0.6667
+Aquila-South,2.4693,0.7778
+Aquila-South,2.4712,0.798
+Aquila-South,2.4731,0.7828
+Aquila-South,2.475,0.6818
+Aquila-South,2.4769,0.7929
+Aquila-South,2.4825,0.697
+Aquila-South,2.49,0.6919
+Aquila-South,2.4938,0.8333
+Aquila-South,2.4957,0.8384
+Aquila-South,2.4975,0.8434
+Aquila-South,2.5013,0.7273
+Aquila-South,2.5032,0.8737
+Aquila-South,2.5051,0.7475
+Aquila-South,2.5069,0.8788
+Aquila-South,2.5107,0.8131
+Aquila-South,2.5126,0.8939
+Aquila-South,2.5145,0.8232
+Aquila-South,2.5163,0.8384
+Aquila-South,2.5201,0.9091
+Aquila-South,2.522,0.899
+Aquila-South,2.5239,0.9116
+Aquila-South,2.5257,0.7854
+Aquila-South,2.5276,0.9242
+Aquila-South,2.5295,0.8687
+Aquila-South,2.5314,0.8131
+Aquila-South,2.5333,0.9343
+Aquila-South,2.5351,0.8232
+Aquila-South,2.537,0.9394
+Aquila-South,2.5408,0.8813
+Aquila-South,2.5427,0.9545
+Aquila-South,2.5445,0.8914
+Aquila-South,2.5464,0.8965
+Aquila-South,2.5483,0.9596
+Aquila-South,2.5502,0.9621
+Aquila-South,2.5521,0.9217
+Aquila-South,2.5558,0.9192
+Aquila-South,2.5577,0.9848
+Aquila-South,2.5596,0.9899
+Aquila-South,2.5615,0.9394
+Aquila-South,2.5633,0.9899
+Aquila-South,2.5652,0.9949
+Aquila-South,2.5671,0.904
+Aquila-South,2.569,1.0152
+Aquila-South,2.5709,1.0152
+Aquila-South,2.5727,1.0152
+Aquila-South,2.5746,1.0227
+Aquila-South,2.5765,1.0202
+Aquila-South,2.5784,1.0303
+Aquila-South,2.5803,1.0253
+Aquila-South,2.5821,1.0379
+Aquila-South,2.584,1.0354
+Aquila-South,2.5859,1.048
+Aquila-South,2.5878,1.0505
+Aquila-South,2.5897,1.0505
+Aquila-South,2.5915,1.0606
+Aquila-South,2.5934,1.0657
+Aquila-South,2.5953,1.0606
+Aquila-South,2.5972,1.0758
+Aquila-South,2.5991,1.0707
+Aquila-South,2.6009,1.0758
+Aquila-South,2.6028,1.0808
+Aquila-South,2.6047,1.0934
+Aquila-South,2.6066,1.0985
+Aquila-South,2.6085,1.0934
+Aquila-South,2.6103,0.9899
+Aquila-South,2.6122,1.1086
+Aquila-South,2.616,1.1212
+Aquila-South,2.6179,1.1187
+Aquila-South,2.6197,1.1313
+Aquila-South,2.6216,1.1162
+Aquila-South,2.6235,1.1364
+Aquila-South,2.6254,1.0556
+Aquila-South,2.6273,1.1389
+Aquila-South,2.6291,1.1515
+Aquila-South,2.631,1.1389
+Aquila-South,2.6329,1.0808
+Aquila-South,2.6348,1.1465
+Aquila-South,2.6367,1.1515
+Aquila-South,2.6385,1.1641
+Aquila-South,2.6404,1.0985
+Aquila-South,2.6423,1.1616
+Aquila-South,2.6442,1.1818
+Aquila-South,2.6461,1.1793
+Aquila-South,2.6479,1.1843
+Aquila-South,2.6498,1.1768
+Aquila-South,2.6517,1.197
+Aquila-South,2.6536,1.197
+Aquila-South,2.6555,1.1995
+Aquila-South,2.6573,1.2045
+Aquila-South,2.6592,1.202
+Aquila-South,2.6611,1.2146
+Aquila-South,2.663,1.2071
+Aquila-South,2.6649,1.2197
+Aquila-South,2.6667,1.2172
+Aquila-South,2.6686,1.2222
+Aquila-South,2.6705,1.1667
+Aquila-South,2.6724,1.2374
+Aquila-South,2.6743,1.1667
+Aquila-South,2.6761,1.2374
+Aquila-South,2.678,1.2576
+Aquila-South,2.6799,1.2475
+Aquila-South,2.6818,1.1843
+Aquila-South,2.6837,1.2601
+Aquila-South,2.6855,1.2727
+Aquila-South,2.6874,1.2652
+Aquila-South,2.6893,1.2626
+Aquila-South,2.6912,1.2677
+Aquila-South,2.6949,1.2753
+Aquila-South,2.6968,1.2778
+Aquila-South,2.7025,1.202
+Aquila-South,2.7043,1.2071
+Aquila-South,2.7062,1.3182
+Aquila-South,2.7081,1.3232
+Aquila-South,2.7119,1.3207
+Aquila-South,2.7137,1.3333
+Aquila-South,2.7156,1.3182
+Aquila-South,2.7175,1.3308
+Aquila-South,2.7213,1.3333
+Aquila-South,2.7231,1.3409
+Aquila-South,2.7269,1.3384
+Aquila-South,2.7288,1.3384
+Aquila-South,2.7307,1.3434
+Aquila-South,2.7325,1.3561
+Aquila-South,2.7344,1.3687
+Aquila-South,2.7363,1.3535
+Aquila-South,2.7382,1.3586
+Aquila-South,2.7401,1.3636
+Aquila-South,2.742,1.3712
+Aquila-South,2.7438,1.3763
+Aquila-South,2.7457,1.3687
+Aquila-South,2.7476,1.3232
+Aquila-South,2.7495,1.3813
+Aquila-South,2.7514,1.3864
+Aquila-South,2.7532,1.399
+Aquila-South,2.7551,1.3838
+Aquila-South,2.757,1.404
+Aquila-South,2.7589,1.3939
+Aquila-South,2.7608,1.4066
+Aquila-South,2.7626,1.3232
+Aquila-South,2.7645,1.404
+Aquila-South,2.7664,1.4167
+Aquila-South,2.7683,1.4293
+Aquila-South,2.7702,1.4141
+Aquila-South,2.772,1.4268
+Aquila-South,2.7739,1.4242
+Aquila-South,2.7758,1.4242
+Aquila-South,2.7777,1.4369
+Aquila-South,2.7796,1.4369
+Aquila-South,2.7814,1.4419
+Aquila-South,2.7833,1.4394
+Aquila-South,2.7852,1.4596
+Aquila-South,2.7871,1.4545
+Aquila-South,2.789,1.4646
+Aquila-South,2.7908,1.4646
+Aquila-South,2.7927,1.4596
+Aquila-South,2.7946,1.4798
+Aquila-South,2.7965,1.4798
+Aquila-South,2.7984,1.4848
+Aquila-South,2.8002,1.4899
+Aquila-South,2.8021,1.4848
+Aquila-South,2.804,1.4899
+Aquila-South,2.8059,1.5101
+Aquila-South,2.8078,1.5
+Aquila-South,2.8096,1.5126
+Aquila-South,2.8115,1.5051
+Aquila-South,2.8134,1.5177
+Aquila-South,2.8153,1.5202
+Aquila-South,2.8172,1.5227
+Aquila-South,2.819,1.5354
+Aquila-South,2.8209,1.5303
+Aquila-South,2.8228,1.5354
+Aquila-South,2.8247,1.5404
+Aquila-South,2.8266,1.5455
+Aquila-South,2.8284,1.5455
+Aquila-South,2.8303,1.5101
+Aquila-South,2.8322,1.5051
+Aquila-South,2.8341,1.5631
+Aquila-South,2.836,1.5606
+Aquila-South,2.8378,1.5657
+Aquila-South,2.8397,1.5859
+Aquila-South,2.8416,1.5808
+Aquila-South,2.8435,1.4747
+Aquila-South,2.8454,1.5808
+Aquila-South,2.8472,1.5934
+Aquila-South,2.8491,1.5985
+Aquila-South,2.851,1.6111
+Aquila-South,2.8529,1.6035
+Aquila-South,2.8548,1.6086
+Aquila-South,2.8566,1.6111
+Aquila-South,2.8585,1.6212
+Aquila-South,2.8604,1.6263
+Aquila-South,2.8623,1.6187
+Aquila-South,2.8642,1.6237
+Aquila-South,2.866,1.6212
+Aquila-South,2.8679,1.6414
+Aquila-South,2.8698,1.6364
+Aquila-South,2.8717,1.6414
+Aquila-South,2.8736,1.6465
+Aquila-South,2.8754,1.6515
+Aquila-South,2.8773,1.654
+Aquila-South,2.8792,1.6515
+Aquila-South,2.8811,1.6465
+Aquila-South,2.883,1.5783
+Aquila-South,2.8848,1.6616
+Aquila-South,2.8867,1.6515
+Aquila-South,2.8886,1.6566
+Aquila-South,2.8905,1.6692
+Aquila-South,2.8924,1.6667
+Aquila-South,2.8942,1.5985
+Aquila-South,2.8961,1.6793
+Aquila-South,2.8999,1.6768
+Aquila-South,2.9018,1.6818
+Aquila-South,2.9036,1.702
+Aquila-South,2.9055,1.6944
+Aquila-South,2.9074,1.6919
+Aquila-South,2.9093,1.7045
+Aquila-South,2.9112,1.7172
+Aquila-South,2.913,1.6237
+Aquila-South,2.9149,1.7172
+Aquila-South,2.9168,1.7121
+Aquila-South,2.9187,1.7273
+Aquila-South,2.9206,1.7273
+Aquila-South,2.9224,1.7399
+Aquila-South,2.9262,1.6591
+Aquila-South,2.9281,1.5707
+Aquila-South,2.9318,1.7576
+Aquila-South,2.9337,1.6616
+Aquila-South,2.9356,1.7677
+Aquila-South,2.9375,1.7626
+Aquila-South,2.9394,1.7677
+Aquila-South,2.9412,1.7828
+Aquila-South,2.9431,1.7727
+Aquila-South,2.945,1.7778
+Aquila-South,2.9469,1.7778
+Aquila-South,2.9488,1.5354
+Aquila-South,2.9506,1.5404
+Aquila-South,2.9525,1.6667
+Aquila-South,2.9544,1.7879
+Aquila-South,2.9563,1.6717
+Aquila-South,2.9582,1.6818
+Aquila-South,2.96,1.8081
+Aquila-South,2.9619,1.803
+Aquila-South,2.9638,1.8283
+Aquila-South,2.9657,1.8131
+Aquila-South,2.9676,1.8232
+Aquila-South,2.9694,1.8359
+Aquila-South,2.9713,1.8333
+Aquila-South,2.9732,1.7247
+Aquila-South,2.9751,1.8384
+Aquila-South,2.977,1.8384
+Aquila-South,2.9788,1.8384
+Aquila-South,2.9807,1.8384
+Aquila-South,2.9826,1.846
+Aquila-South,2.9845,1.8535
+Aquila-South,2.9882,1.8485
+Aquila-South,2.9901,1.8485
+Aquila-South,2.992,1.8535
+Aquila-South,2.9939,1.8687
+Aquila-South,2.9958,1.8737
+Aquila-South,2.9976,1.8813
+Aquila-South,2.9995,1.6566
+Aquila-South,3.0014,1.7601
+Aquila-South,3.0033,1.6717
+Aquila-South,3.0052,1.8838
+Aquila-South,3.0071,1.8838
+Aquila-South,3.0089,1.7854
+Aquila-South,3.0108,1.8864
+Aquila-South,3.0127,1.8788
+Aquila-South,3.0146,1.7854
+Aquila-South,3.0165,1.7955
+Aquila-South,3.0183,1.702
+Aquila-South,3.0202,1.8939
+Aquila-South,3.0221,1.899
+Aquila-South,3.024,1.9091
+Aquila-South,3.0259,1.9091
+Aquila-South,3.0277,1.9293
+Aquila-South,3.0296,1.9242
+Aquila-South,3.0315,1.9192
+Aquila-South,3.0334,1.9293
+Aquila-South,3.0353,1.697
+Aquila-South,3.0371,1.8207
+Aquila-South,3.039,1.9646
+Aquila-South,3.0409,1.8308
+Aquila-South,3.0428,1.6919
+Aquila-South,3.0447,1.9798
+Aquila-South,3.0465,1.9848
+Aquila-South,3.0484,1.9848
+Aquila-South,3.0522,1.8283
+Aquila-South,3.0541,1.8157
+Aquila-South,3.0559,1.8283
+Aquila-South,3.0578,1.9899
+Aquila-South,3.0597,1.8359
+Aquila-South,3.0616,2.0
+Aquila-South,3.0635,2.0051
+Aquila-South,3.0653,1.9924
+Aquila-South,3.0672,2.0025
+Aquila-South,3.0691,1.9949
+Aquila-South,3.071,2.0
+Aquila-South,3.0729,2.0
+Aquila-South,3.0747,1.8788
+Aquila-South,3.0766,2.0101
+Aquila-South,3.0785,2.0152
+Aquila-South,3.0804,2.0202
+Aquila-South,3.0823,2.0278
+Aquila-South,3.0841,2.0278
+Aquila-South,3.086,2.0303
+Aquila-South,3.0879,2.0455
+Aquila-South,3.0898,2.0429
+Aquila-South,3.0917,1.9116
+Aquila-South,3.0935,2.0455
+Aquila-South,3.0954,2.0505
+Aquila-South,3.1011,1.7828
+Aquila-South,3.1067,1.803
+Aquila-South,3.1123,1.8485
+Aquila-South,3.1161,1.8434
+Aquila-South,3.1311,1.8636
+Aquila-South,3.133,1.8687
+Aquila-South,3.1349,1.8737
+Aquila-South,3.1481,1.9242
+Aquila-South,3.1499,1.9293
+Aquila-South,3.1518,1.9217
+Aquila-South,3.1593,1.9242
+Aquila-South,3.1612,1.9141
+Aquila-South,3.165,1.9217
+Aquila-South,3.1744,1.9369
+Aquila-South,3.1763,1.9444
+Aquila-South,3.1781,1.952
+Aquila-South,3.18,1.9646
+Aquila-South,3.1819,1.9672
+Aquila-South,3.1838,1.9747
+Aquila-South,3.1875,1.9798
+NGC 2264,2.0895,-0.1566
+NGC 2264,2.0914,-0.1515
+NGC 2264,2.0933,-0.1515
+NGC 2264,2.0952,-0.1465
+NGC 2264,2.0971,-0.1465
+NGC 2264,2.0989,-0.1364
+NGC 2264,2.1008,-0.1364
+NGC 2264,2.1027,-0.1338
+NGC 2264,2.1046,-0.1263
+NGC 2264,2.1065,-0.1263
+NGC 2264,2.1083,-0.1237
+NGC 2264,2.1102,-0.1187
+NGC 2264,2.1121,-0.1136
+NGC 2264,2.114,-0.1162
+NGC 2264,2.1159,-0.1111
+NGC 2264,2.1177,-0.101
+NGC 2264,2.1196,-0.101
+NGC 2264,2.1215,-0.096
+NGC 2264,2.1234,-0.0934
+NGC 2264,2.1253,-0.0909
+NGC 2264,2.1271,-0.0884
+NGC 2264,2.129,-0.0859
+NGC 2264,2.1309,-0.0808
+NGC 2264,2.1328,-0.0808
+NGC 2264,2.1347,-0.0707
+NGC 2264,2.1365,-0.0657
+NGC 2264,2.1384,-0.0682
+NGC 2264,2.1403,-0.0631
+NGC 2264,2.1422,-0.0581
+NGC 2264,2.1441,-0.0556
+NGC 2264,2.1459,-0.0556
+NGC 2264,2.1478,-0.048
+NGC 2264,2.1497,-0.0455
+NGC 2264,2.1516,-0.0455
+NGC 2264,2.1535,-0.0354
+NGC 2264,2.1553,-0.0354
+NGC 2264,2.1572,-0.0303
+NGC 2264,2.1591,-0.0253
+NGC 2264,2.161,-0.0227
+NGC 2264,2.1629,-0.0177
+NGC 2264,2.1647,-0.0152
+NGC 2264,2.1666,-0.0152
+NGC 2264,2.1685,-0.0051
+NGC 2264,2.1704,0.0
+NGC 2264,2.1723,0.0
+NGC 2264,2.1741,0.0051
+NGC 2264,2.176,0.0101
+NGC 2264,2.1779,0.0126
+NGC 2264,2.1798,0.0202
+NGC 2264,2.1817,0.0253
+NGC 2264,2.1835,0.0202
+NGC 2264,2.1854,0.0278
+NGC 2264,2.1873,0.0354
+NGC 2264,2.1892,0.0404
+NGC 2264,2.1911,0.0379
+NGC 2264,2.1929,0.0404
+NGC 2264,2.1948,0.048
+NGC 2264,2.1967,0.053
+NGC 2264,2.1986,0.0505
+NGC 2264,2.2005,0.0606
+NGC 2264,2.2024,0.0606
+NGC 2264,2.2042,0.0707
+NGC 2264,2.2061,0.0732
+NGC 2264,2.208,0.0758
+NGC 2264,2.2099,0.0783
+NGC 2264,2.2118,0.0808
+NGC 2264,2.2136,0.0884
+NGC 2264,2.2155,0.0909
+NGC 2264,2.2174,0.096
+NGC 2264,2.2193,0.101
+NGC 2264,2.2212,0.1035
+NGC 2264,2.223,0.1061
+NGC 2264,2.2249,0.1111
+NGC 2264,2.2268,0.1111
+NGC 2264,2.2287,0.1187
+NGC 2264,2.2306,0.1212
+NGC 2264,2.2324,0.1313
+NGC 2264,2.2343,0.1288
+NGC 2264,2.2362,0.1338
+NGC 2264,2.2381,0.1389
+NGC 2264,2.24,0.1439
+NGC 2264,2.2418,0.1414
+NGC 2264,2.2437,0.1465
+NGC 2264,2.2456,0.1566
+NGC 2264,2.2475,0.1616
+NGC 2264,2.2494,0.1566
+NGC 2264,2.2512,0.1641
+NGC 2264,2.2531,0.1692
+NGC 2264,2.255,0.1742
+NGC 2264,2.2569,0.1818
+NGC 2264,2.2588,0.1768
+NGC 2264,2.2606,0.1843
+NGC 2264,2.2625,0.1894
+NGC 2264,2.2644,0.1919
+NGC 2264,2.2663,0.197
+NGC 2264,2.2682,0.1995
+NGC 2264,2.27,0.202
+NGC 2264,2.2719,0.2096
+NGC 2264,2.2738,0.2172
+NGC 2264,2.2757,0.2121
+NGC 2264,2.2776,0.2222
+NGC 2264,2.2794,0.2273
+NGC 2264,2.2813,0.2298
+NGC 2264,2.2832,0.2298
+NGC 2264,2.2851,0.2323
+NGC 2264,2.287,0.2424
+NGC 2264,2.2888,0.2475
+NGC 2264,2.2907,0.2449
+NGC 2264,2.2926,0.2525
+NGC 2264,2.2945,0.2576
+NGC 2264,2.2964,0.2601
+NGC 2264,2.2982,0.2601
+NGC 2264,2.3001,0.2652
+NGC 2264,2.302,0.2727
+NGC 2264,2.3039,0.2778
+NGC 2264,2.3058,0.2727
+NGC 2264,2.3076,0.2803
+NGC 2264,2.3095,0.2879
+NGC 2264,2.3114,0.2929
+NGC 2264,2.3133,0.2904
+NGC 2264,2.3152,0.2929
+NGC 2264,2.317,0.3005
+NGC 2264,2.3189,0.3056
+NGC 2264,2.3208,0.303
+NGC 2264,2.3227,0.3081
+NGC 2264,2.3246,0.3182
+NGC 2264,2.3264,0.3182
+NGC 2264,2.3283,0.3232
+NGC 2264,2.3302,0.3232
+NGC 2264,2.3321,0.3258
+NGC 2264,2.334,0.3308
+NGC 2264,2.3358,0.3359
+NGC 2264,2.3377,0.3333
+NGC 2264,2.3396,0.3434
+NGC 2264,2.3415,0.3434
+NGC 2264,2.3434,0.3434
+NGC 2264,2.3452,0.3535
+NGC 2264,2.3471,0.3535
+NGC 2264,2.349,0.3561
+NGC 2264,2.3509,0.3611
+NGC 2264,2.3528,0.3636
+NGC 2264,2.3546,0.3636
+NGC 2264,2.3565,0.3687
+NGC 2264,2.3584,0.3737
+NGC 2264,2.3603,0.3763
+NGC 2264,2.3622,0.3838
+NGC 2264,2.364,0.3813
+NGC 2264,2.3659,0.3864
+NGC 2264,2.3678,0.3939
+NGC 2264,2.3697,0.3939
+NGC 2264,2.3716,0.3939
+NGC 2264,2.3734,0.4015
+NGC 2264,2.3753,0.4091
+NGC 2264,2.3772,0.4141
+NGC 2264,2.3791,0.4116
+NGC 2264,2.381,0.4167
+NGC 2264,2.3828,0.4192
+NGC 2264,2.3847,0.4242
+NGC 2264,2.3866,0.4242
+NGC 2264,2.3885,0.4293
+NGC 2264,2.3904,0.4394
+NGC 2264,2.3922,0.4444
+NGC 2264,2.3941,0.4394
+NGC 2264,2.396,0.447
+NGC 2264,2.3979,0.4495
+NGC 2264,2.3998,0.4545
+NGC 2264,2.4016,0.4571
+NGC 2264,2.4035,0.4596
+NGC 2264,2.4054,0.4672
+NGC 2264,2.4073,0.4722
+NGC 2264,2.4092,0.4697
+NGC 2264,2.411,0.4798
+NGC 2264,2.4129,0.4848
+NGC 2264,2.4148,0.4848
+NGC 2264,2.4167,0.4874
+NGC 2264,2.4186,0.4899
+NGC 2264,2.4204,0.5
+NGC 2264,2.4223,0.5
+NGC 2264,2.4242,0.5051
+NGC 2264,2.4261,0.5101
+NGC 2264,2.428,0.5152
+NGC 2264,2.4317,0.5202
+NGC 2264,2.4336,0.5278
+NGC 2264,2.4355,0.5303
+NGC 2264,2.4374,0.5328
+NGC 2264,2.4392,0.5379
+NGC 2264,2.4411,0.5429
+NGC 2264,2.443,0.548
+NGC 2264,2.4449,0.5505
+NGC 2264,2.4468,0.5556
+NGC 2264,2.4599,0.5606
+NGC 2264,2.4618,0.5631
+NGC 2264,2.4637,0.5682
+NGC 2264,2.4656,0.5732
+NGC 2264,2.4675,0.5758
+NGC 2264,2.4693,0.5808
+NGC 2264,2.4712,0.5808
+NGC 2264,2.4731,0.5859
+NGC 2264,2.475,0.5909
+NGC 2264,2.4769,0.5909
+NGC 2264,2.4787,0.596
+NGC 2264,2.4806,0.596
+NGC 2264,2.4825,0.601
+NGC 2264,2.4844,0.6061
+NGC 2264,2.4863,0.6061
+NGC 2264,2.4881,0.6086
+NGC 2264,2.49,0.6111
+NGC 2264,2.4919,0.6136
+NGC 2264,2.4938,0.6187
+NGC 2264,2.4957,0.6212
+NGC 2264,2.4975,0.6212
+NGC 2264,2.4994,0.6263
+NGC 2264,2.5013,0.6263
+NGC 2264,2.5032,0.6364
+NGC 2264,2.5051,0.6364
+NGC 2264,2.5069,0.6414
+NGC 2264,2.5088,0.6414
+NGC 2264,2.5107,0.6439
+NGC 2264,2.5126,0.6515
+NGC 2264,2.5145,0.6515
+NGC 2264,2.5163,0.654
+NGC 2264,2.5182,0.6566
+NGC 2264,2.5201,0.6566
+NGC 2264,2.522,0.6667
+NGC 2264,2.5239,0.6667
+NGC 2264,2.5257,0.6692
+NGC 2264,2.5276,0.6717
+NGC 2264,2.5295,0.6717
+NGC 2264,2.5314,0.6818
+NGC 2264,2.5333,0.6843
+NGC 2264,2.5351,0.6843
+NGC 2264,2.537,0.6869
+NGC 2264,2.5389,0.697
+NGC 2264,2.5408,0.6944
+NGC 2264,2.5427,0.702
+NGC 2264,2.5445,0.702
+NGC 2264,2.5464,0.7045
+NGC 2264,2.5483,0.7121
+NGC 2264,2.5502,0.7071
+NGC 2264,2.5521,0.7172
+NGC 2264,2.5539,0.7197
+NGC 2264,2.5558,0.7222
+NGC 2264,2.5577,0.7222
+NGC 2264,2.5596,0.7273
+NGC 2264,2.5615,0.7323
+NGC 2264,2.5633,0.7374
+NGC 2264,2.5652,0.7399
+NGC 2264,2.5671,0.7475
+NGC 2264,2.569,0.7475
+NGC 2264,2.5709,0.7475
+NGC 2264,2.5727,0.7551
+NGC 2264,2.5746,0.7601
+NGC 2264,2.5765,0.7576
+NGC 2264,2.5784,0.7652
+NGC 2264,2.5803,0.7677
+NGC 2264,2.5821,0.7727
+NGC 2264,2.584,0.7778
+NGC 2264,2.5859,0.7778
+NGC 2264,2.5878,0.7803
+NGC 2264,2.5897,0.7854
+NGC 2264,2.5915,0.7879
+NGC 2264,2.5934,0.7879
+NGC 2264,2.5953,0.7929
+NGC 2264,2.5972,0.7929
+NGC 2264,2.5991,0.803
+NGC 2264,2.6009,0.803
+NGC 2264,2.6028,0.8081
+NGC 2264,2.6047,0.8081
+NGC 2264,2.6066,0.8106
+NGC 2264,2.6085,0.8157
+NGC 2264,2.6103,0.8182
+NGC 2264,2.6122,0.8182
+NGC 2264,2.6141,0.8232
+NGC 2264,2.616,0.8232
+NGC 2264,2.6179,0.8333
+NGC 2264,2.6197,0.8333
+NGC 2264,2.6216,0.8384
+NGC 2264,2.6235,0.8384
+NGC 2264,2.6254,0.8409
+NGC 2264,2.6273,0.8434
+NGC 2264,2.6291,0.8485
+NGC 2264,2.631,0.8485
+NGC 2264,2.6329,0.8535
+NGC 2264,2.6348,0.8586
+NGC 2264,2.6367,0.8586
+NGC 2264,2.6385,0.8687
+NGC 2264,2.6404,0.8687
+NGC 2264,2.6423,0.8712
+NGC 2264,2.6442,0.8788
+NGC 2264,2.6461,0.8788
+NGC 2264,2.6479,0.8838
+NGC 2264,2.6498,0.8939
+NGC 2264,2.6517,0.8939
+NGC 2264,2.6536,0.8939
+NGC 2264,2.6555,0.8965
+NGC 2264,2.6573,0.904
+NGC 2264,2.6592,0.904
+NGC 2264,2.6611,0.9066
+NGC 2264,2.663,0.9116
+NGC 2264,2.6649,0.9141
+NGC 2264,2.6667,0.9192
+NGC 2264,2.6686,0.9217
+NGC 2264,2.6705,0.9293
+NGC 2264,2.6724,0.9242
+NGC 2264,2.6743,0.9318
+NGC 2264,2.6761,0.9394
+NGC 2264,2.678,0.9419
+NGC 2264,2.6799,0.9343
+NGC 2264,2.6818,0.9419
+NGC 2264,2.6837,0.9419
+NGC 2264,2.6855,0.9495
+NGC 2264,2.6874,0.952
+NGC 2264,2.6893,0.9596
+NGC 2264,2.6912,0.9545
+NGC 2264,2.6931,0.9646
+NGC 2264,2.6949,0.9596
+NGC 2264,2.6968,0.9697
+NGC 2264,2.6987,0.9697
+NGC 2264,2.7006,0.9722
+NGC 2264,2.7025,0.9747
+NGC 2264,2.7043,0.9747
+NGC 2264,2.7062,0.9823
+NGC 2264,2.7081,0.9848
+NGC 2264,2.71,0.9848
+NGC 2264,2.7119,0.9899
+NGC 2264,2.7137,0.9899
+NGC 2264,2.7156,1.0
+NGC 2264,2.7175,1.0
+NGC 2264,2.7194,1.0025
+NGC 2264,2.7213,1.0076
+NGC 2264,2.7231,1.0101
+NGC 2264,2.725,1.0126
+NGC 2264,2.7269,1.0152
+NGC 2264,2.7288,1.0202
+NGC 2264,2.7307,1.0202
+NGC 2264,2.7325,1.0278
+NGC 2264,2.7344,1.0354
+NGC 2264,2.7363,1.0328
+NGC 2264,2.7382,1.0379
+NGC 2264,2.7401,1.0429
+NGC 2264,2.742,1.0455
+NGC 2264,2.7438,1.0455
+NGC 2264,2.7457,1.0505
+NGC 2264,2.7476,1.0556
+NGC 2264,2.7495,1.0581
+NGC 2264,2.7514,1.0657
+NGC 2264,2.7532,1.0631
+NGC 2264,2.7551,1.0657
+NGC 2264,2.757,1.0682
+NGC 2264,2.7589,1.0732
+NGC 2264,2.7608,1.0758
+NGC 2264,2.7626,1.0758
+NGC 2264,2.7645,1.0808
+NGC 2264,2.7664,1.0808
+NGC 2264,2.7683,1.0909
+NGC 2264,2.7702,1.0909
+NGC 2264,2.772,1.0934
+NGC 2264,2.7739,1.101
+NGC 2264,2.7758,1.101
+NGC 2264,2.7777,1.1061
+NGC 2264,2.7796,1.101
+NGC 2264,2.7814,1.1162
+NGC 2264,2.7833,1.1111
+NGC 2264,2.7852,1.1086
+NGC 2264,2.7871,1.1162
+NGC 2264,2.789,1.1212
+NGC 2264,2.7908,1.1212
+NGC 2264,2.7927,1.1212
+NGC 2264,2.7946,1.1263
+NGC 2264,2.7965,1.1263
+NGC 2264,2.7984,1.1263
+NGC 2264,2.8002,1.1288
+NGC 2264,2.8021,1.1364
+NGC 2264,2.804,1.1389
+NGC 2264,2.8059,1.1313
+NGC 2264,2.8078,1.1465
+NGC 2264,2.8096,1.1414
+NGC 2264,2.8115,1.1414
+NGC 2264,2.8134,1.1515
+NGC 2264,2.8153,1.1515
+NGC 2264,2.8172,1.1515
+NGC 2264,2.819,1.1515
+NGC 2264,2.8209,1.1566
+NGC 2264,2.8228,1.1566
+NGC 2264,2.8247,1.1616
+NGC 2264,2.8266,1.1692
+NGC 2264,2.8284,1.1616
+NGC 2264,2.8303,1.1692
+NGC 2264,2.8322,1.1768
+NGC 2264,2.8341,1.1717
+NGC 2264,2.836,1.1692
+NGC 2264,2.8378,1.1692
+NGC 2264,2.8397,1.1692
+NGC 2264,2.8416,1.1768
+NGC 2264,2.8435,1.1818
+NGC 2264,2.8454,1.1818
+NGC 2264,2.8472,1.1818
+NGC 2264,2.8491,1.1818
+NGC 2264,2.851,1.1869
+NGC 2264,2.8529,1.1869
+NGC 2264,2.8548,1.197
+NGC 2264,2.8566,1.197
+NGC 2264,2.8585,1.2071
+NGC 2264,2.8604,1.202
+NGC 2264,2.8623,1.2121
+NGC 2264,2.8642,1.2121
+NGC 2264,2.866,1.2121
+NGC 2264,2.8679,1.2197
+NGC 2264,2.8698,1.2273
+NGC 2264,2.8717,1.2273
+NGC 2264,2.8736,1.2298
+NGC 2264,2.8754,1.2273
+NGC 2264,2.8773,1.2424
+NGC 2264,2.8792,1.2424
+NGC 2264,2.8811,1.2449
+NGC 2264,2.883,1.2475
+NGC 2264,2.8848,1.2525
+NGC 2264,2.8867,1.2576
+NGC 2264,2.8886,1.2601
+NGC 2264,2.8905,1.2626
+NGC 2264,2.8924,1.2626
+NGC 2264,2.8942,1.2677
+NGC 2264,2.8961,1.2677
+NGC 2264,2.898,1.2626
+NGC 2264,2.8999,1.2626
+NGC 2264,2.9018,1.2677
+NGC 2264,2.9036,1.2677
+NGC 2264,2.9055,1.2652
+NGC 2264,2.9074,1.2727
+NGC 2264,2.9093,1.2677
+NGC 2264,2.9112,1.2753
+NGC 2264,2.913,1.2702
+NGC 2264,2.9149,1.2677
+NGC 2264,2.9168,1.2753
+NGC 2264,2.9187,1.2778
+NGC 2264,2.9206,1.2828
+NGC 2264,2.9224,1.2828
+NGC 2264,2.9243,1.2904
+NGC 2264,2.9262,1.298
+NGC 2264,2.9281,1.298
+NGC 2264,2.93,1.303
+NGC 2264,2.9318,1.303
+NGC 2264,2.9337,1.303
+NGC 2264,2.9356,1.298
+NGC 2264,2.9375,1.3131
+NGC 2264,2.9394,1.3081
+NGC 2264,2.9412,1.3056
+NGC 2264,2.9431,1.3131
+NGC 2264,2.945,1.3182
+NGC 2264,2.9469,1.3182
+NGC 2264,2.9488,1.3182
+NGC 2264,2.9506,1.3232
+NGC 2264,2.9525,1.3232
+NGC 2264,2.9544,1.3232
+NGC 2264,2.9563,1.3283
+NGC 2264,2.9582,1.3283
+NGC 2264,2.96,1.3308
+NGC 2264,2.9619,1.3283
+NGC 2264,2.9638,1.3384
+NGC 2264,2.9657,1.3485
+NGC 2264,2.9676,1.3434
+NGC 2264,2.9694,1.3485
+NGC 2264,2.9713,1.3561
+NGC 2264,2.9732,1.3535
+NGC 2264,2.9751,1.3535
+NGC 2264,2.977,1.3611
+NGC 2264,2.9788,1.3586
+NGC 2264,2.9807,1.3687
+NGC 2264,2.9826,1.3737
+NGC 2264,2.9845,1.3737
+NGC 2264,2.9864,1.3763
+NGC 2264,2.9882,1.3838
+NGC 2264,2.9901,1.3838
+NGC 2264,2.992,1.3838
+NGC 2264,2.9939,1.3838
+NGC 2264,2.9976,1.399
+NGC 2264,2.9995,1.3889
+NGC 2264,3.0014,1.3939
+NGC 2264,3.0033,1.404
+NGC 2264,3.0052,1.4091
+NGC 2264,3.0071,1.404
+NGC 2264,3.0089,1.4141
+NGC 2264,3.0108,1.4141
+NGC 2264,3.0127,1.4217
+NGC 2264,3.0146,1.4242
+NGC 2264,3.0165,1.4293
+NGC 2264,3.0183,1.4369
+NGC 2264,3.0202,1.4419
+NGC 2264,3.0221,1.4495
+NGC 2264,3.024,1.452
+NGC 2264,3.0259,1.4596
+NGC 2264,3.0277,1.4596
+NGC 2264,3.0296,1.4697
+NGC 2264,3.0315,1.4747
+NGC 2264,3.0334,1.4747
+NGC 2264,3.0353,1.4823
+NGC 2264,3.0447,1.4848
+NGC 2264,3.0465,1.4874
+NGC 2264,3.0484,1.4949
+NGC 2264,3.0503,1.4949
+NGC 2264,3.0522,1.4975
+NGC 2264,3.0541,1.5051
+NGC 2264,3.0559,1.5051
+NGC 2264,3.0578,1.5152
+NGC 2264,3.0597,1.5202
+NGC 2264,3.0616,1.5126
+NGC 2264,3.0635,1.5101
+NGC 2264,3.0653,1.5101
+NGC 2264,3.0672,1.4975
+NGC 2264,3.0691,1.5
+NGC 2264,3.071,1.5
+NGC 2264,3.0729,1.5
+NGC 2264,3.0747,1.5076
+NGC 2264,3.0766,1.5101
+NGC 2264,3.0785,1.5126
+NGC 2264,3.0804,1.5126
+NGC 2264,3.0823,1.5051
+NGC 2264,3.0841,1.5126
+NGC 2264,3.1838,1.9646
+S140,1.9391,-0.1566
+S140,1.941,-0.1566
+S140,1.9429,-0.1515
+S140,1.9448,-0.1465
+S140,1.9467,-0.1439
+S140,1.9485,-0.1414
+S140,1.9504,-0.1364
+S140,1.9523,-0.1313
+S140,1.9542,-0.1288
+S140,1.9561,-0.1263
+S140,1.9579,-0.1212
+S140,1.9598,-0.1162
+S140,1.9617,-0.1162
+S140,1.9636,-0.1111
+S140,1.9655,-0.1061
+S140,1.9673,-0.101
+S140,1.9692,-0.101
+S140,1.9711,-0.096
+S140,1.973,-0.0909
+S140,1.9749,-0.0859
+S140,1.9767,-0.0859
+S140,1.9786,-0.0808
+S140,1.9805,-0.0783
+S140,1.9824,-0.0707
+S140,1.9843,-0.0707
+S140,1.9861,-0.0657
+S140,1.988,-0.0631
+S140,1.9899,-0.0556
+S140,1.9918,-0.0556
+S140,1.9937,-0.0505
+S140,1.9955,-0.048
+S140,1.9974,-0.0404
+S140,1.9993,-0.0404
+S140,2.0012,-0.0354
+S140,2.0031,-0.0328
+S140,2.0049,-0.0278
+S140,2.0068,-0.0253
+S140,2.0087,-0.0202
+S140,2.0106,-0.0202
+S140,2.0125,-0.0126
+S140,2.0143,-0.0101
+S140,2.0162,-0.0051
+S140,2.0181,-0.0051
+S140,2.02,0.0025
+S140,2.0219,0.0051
+S140,2.0237,0.0101
+S140,2.0256,0.0101
+S140,2.0275,0.0152
+S140,2.0294,0.0202
+S140,2.0313,0.0253
+S140,2.0331,0.0253
+S140,2.035,0.0303
+S140,2.0369,0.0354
+S140,2.0388,0.0404
+S140,2.0407,0.0404
+S140,2.0425,0.0455
+S140,2.0444,0.0505
+S140,2.0463,0.053
+S140,2.0482,0.0556
+S140,2.0501,0.0606
+S140,2.0519,0.0657
+S140,2.0538,0.0682
+S140,2.0557,0.0707
+S140,2.0576,0.0758
+S140,2.0595,0.0808
+S140,2.0613,0.0808
+S140,2.0632,0.0859
+S140,2.0651,0.0909
+S140,2.067,0.096
+S140,2.0689,0.096
+S140,2.0707,0.101
+S140,2.0726,0.1061
+S140,2.0745,0.1111
+S140,2.0764,0.1111
+S140,2.0783,0.1162
+S140,2.0801,0.1187
+S140,2.082,0.1237
+S140,2.0839,0.1263
+S140,2.0858,0.1313
+S140,2.0877,0.1313
+S140,2.0895,0.1364
+S140,2.0914,0.1414
+S140,2.0933,0.1439
+S140,2.0952,0.1465
+S140,2.0971,0.1515
+S140,2.0989,0.1566
+S140,2.1008,0.1566
+S140,2.1027,0.1616
+S140,2.1046,0.1641
+S140,2.1065,0.1692
+S140,2.1083,0.1717
+S140,2.1102,0.1768
+S140,2.1121,0.1793
+S140,2.114,0.1843
+S140,2.1159,0.1869
+S140,2.1177,0.1894
+S140,2.1196,0.1944
+S140,2.1215,0.197
+S140,2.1234,0.202
+S140,2.1253,0.202
+S140,2.1271,0.2096
+S140,2.129,0.2121
+S140,2.1309,0.2172
+S140,2.1328,0.2172
+S140,2.1347,0.2222
+S140,2.1365,0.2273
+S140,2.1384,0.2323
+S140,2.1403,0.2323
+S140,2.1422,0.2399
+S140,2.1441,0.2424
+S140,2.1459,0.2475
+S140,2.1478,0.2475
+S140,2.1497,0.2551
+S140,2.1516,0.2576
+S140,2.1535,0.2626
+S140,2.1553,0.2626
+S140,2.1572,0.2702
+S140,2.1591,0.2727
+S140,2.161,0.2778
+S140,2.1629,0.2803
+S140,2.1647,0.2879
+S140,2.1666,0.2879
+S140,2.1685,0.2929
+S140,2.1704,0.2929
+S140,2.1723,0.303
+S140,2.1741,0.303
+S140,2.176,0.3081
+S140,2.1779,0.3131
+S140,2.1798,0.3182
+S140,2.1817,0.3232
+S140,2.1835,0.3232
+S140,2.1854,0.3333
+S140,2.1873,0.3333
+S140,2.1892,0.3359
+S140,2.1911,0.3434
+S140,2.1929,0.3485
+S140,2.1948,0.3535
+S140,2.1967,0.3535
+S140,2.1986,0.3636
+S140,2.2005,0.3636
+S140,2.2024,0.3687
+S140,2.2042,0.3737
+S140,2.2061,0.3788
+S140,2.208,0.3838
+S140,2.2099,0.3838
+S140,2.2118,0.3939
+S140,2.2136,0.3939
+S140,2.2155,0.399
+S140,2.2174,0.404
+S140,2.2193,0.4091
+S140,2.2212,0.4141
+S140,2.223,0.4192
+S140,2.2249,0.4242
+S140,2.2268,0.4268
+S140,2.2287,0.4293
+S140,2.2306,0.4369
+S140,2.2324,0.4394
+S140,2.2343,0.4444
+S140,2.2362,0.4495
+S140,2.2381,0.4545
+S140,2.24,0.4596
+S140,2.2418,0.4596
+S140,2.2437,0.4697
+S140,2.2456,0.4697
+S140,2.2475,0.4747
+S140,2.2494,0.4798
+S140,2.2512,0.4848
+S140,2.2531,0.4899
+S140,2.255,0.4924
+S140,2.2569,0.5
+S140,2.2588,0.5
+S140,2.2606,0.5051
+S140,2.2625,0.5076
+S140,2.2644,0.5152
+S140,2.2663,0.5152
+S140,2.2682,0.5202
+S140,2.27,0.5253
+S140,2.2719,0.5303
+S140,2.2738,0.5303
+S140,2.2757,0.5354
+S140,2.2776,0.5404
+S140,2.2794,0.5455
+S140,2.2813,0.548
+S140,2.2832,0.5505
+S140,2.2851,0.5556
+S140,2.287,0.5606
+S140,2.2888,0.5657
+S140,2.2907,0.5682
+S140,2.2926,0.5758
+S140,2.2945,0.5808
+S140,2.2964,0.5833
+S140,2.2982,0.5909
+S140,2.3001,0.5909
+S140,2.302,0.596
+S140,2.3039,0.6061
+S140,2.3058,0.6061
+S140,2.3076,0.6111
+S140,2.3095,0.6162
+S140,2.3114,0.6212
+S140,2.3133,0.6263
+S140,2.3152,0.6263
+S140,2.317,0.6364
+S140,2.3189,0.6364
+S140,2.3208,0.6414
+S140,2.3227,0.6465
+S140,2.3246,0.6515
+S140,2.3264,0.6566
+S140,2.3283,0.6566
+S140,2.3302,0.6641
+S140,2.3321,0.6667
+S140,2.334,0.6717
+S140,2.3358,0.6742
+S140,2.3377,0.6818
+S140,2.3396,0.6818
+S140,2.3415,0.6869
+S140,2.3434,0.6894
+S140,2.3452,0.697
+S140,2.3471,0.697
+S140,2.349,0.702
+S140,2.3509,0.7045
+S140,2.3528,0.7096
+S140,2.3546,0.7121
+S140,2.3565,0.7172
+S140,2.3584,0.7172
+S140,2.3603,0.7222
+S140,2.3622,0.7273
+S140,2.364,0.7298
+S140,2.3659,0.7323
+S140,2.3678,0.7374
+S140,2.3697,0.7424
+S140,2.3716,0.7449
+S140,2.3734,0.7475
+S140,2.3753,0.7525
+S140,2.3772,0.7576
+S140,2.3791,0.7576
+S140,2.381,0.7626
+S140,2.3828,0.7652
+S140,2.3847,0.7727
+S140,2.3866,0.7727
+S140,2.3885,0.7778
+S140,2.3904,0.7803
+S140,2.3922,0.7854
+S140,2.3941,0.7879
+S140,2.396,0.7929
+S140,2.3979,0.7929
+S140,2.3998,0.8005
+S140,2.4016,0.803
+S140,2.4035,0.8081
+S140,2.4054,0.8081
+S140,2.4073,0.8182
+S140,2.4092,0.8182
+S140,2.411,0.8232
+S140,2.4129,0.8283
+S140,2.4148,0.8333
+S140,2.4167,0.8359
+S140,2.4186,0.8384
+S140,2.4204,0.8434
+S140,2.4223,0.8485
+S140,2.4242,0.8535
+S140,2.4261,0.8535
+S140,2.428,0.8636
+S140,2.4298,0.8636
+S140,2.4317,0.8687
+S140,2.4336,0.8737
+S140,2.4355,0.8788
+S140,2.4374,0.8788
+S140,2.4392,0.8838
+S140,2.4411,0.8889
+S140,2.443,0.8939
+S140,2.4449,0.899
+S140,2.4468,0.904
+S140,2.4486,0.9091
+S140,2.4505,0.9141
+S140,2.4524,0.9141
+S140,2.4543,0.9242
+S140,2.4562,0.9268
+S140,2.458,0.9293
+S140,2.4599,0.9394
+S140,2.4618,0.9394
+S140,2.4637,0.9444
+S140,2.4656,0.9495
+S140,2.4675,0.9545
+S140,2.4693,0.9596
+S140,2.4712,0.9646
+S140,2.4731,0.9697
+S140,2.475,0.9747
+S140,2.4769,0.9747
+S140,2.4787,0.9848
+S140,2.4806,0.9848
+S140,2.4825,0.9899
+S140,2.4844,0.9949
+S140,2.4863,1.0
+S140,2.4881,1.0051
+S140,2.49,1.0101
+S140,2.4919,1.0152
+S140,2.4938,1.0202
+S140,2.4957,1.0202
+S140,2.4975,1.0303
+S140,2.4994,1.0303
+S140,2.5013,1.0354
+S140,2.5032,1.0404
+S140,2.5051,1.0455
+S140,2.5069,1.0505
+S140,2.5088,1.0556
+S140,2.5107,1.0606
+S140,2.5126,1.0657
+S140,2.5145,1.0657
+S140,2.5163,1.0758
+S140,2.5182,1.0758
+S140,2.5201,1.0808
+S140,2.522,1.0859
+S140,2.5239,1.0909
+S140,2.5257,1.096
+S140,2.5276,1.101
+S140,2.5295,1.1061
+S140,2.5314,1.1111
+S140,2.5333,1.1111
+S140,2.5351,1.1212
+S140,2.537,1.1212
+S140,2.5389,1.1263
+S140,2.5408,1.1313
+S140,2.5427,1.1364
+S140,2.5445,1.1414
+S140,2.5464,1.1465
+S140,2.5483,1.1515
+S140,2.5502,1.154
+S140,2.5521,1.154
+S140,2.5934,1.2525
+S140,2.5953,1.2551
+S140,2.5972,1.2576
+S140,2.5991,1.2626
+S140,2.6009,1.2677
+S140,2.6028,1.2727
+S140,2.6047,1.2778
+S140,2.6066,1.2778
+S140,2.6085,1.2879
+S140,2.6103,1.2904
+S140,2.6122,1.2929
+S140,2.6141,1.3005
+S140,2.616,1.303
+S140,2.6179,1.3081
+S140,2.6197,1.3131
+S140,2.6216,1.3182
+S140,2.6235,1.3232
+S140,2.6254,1.3283
+S140,2.6273,1.3308
+S140,2.6291,1.3308
+S140,2.631,1.3333
+S140,2.6329,1.3333
+S140,2.6348,1.3359
+S140,2.6367,1.3384
+S140,2.6385,1.3384
+S140,2.6404,1.3409
+S140,2.6423,1.3434
+S140,2.6442,1.346
+S140,2.6461,1.3485
+S140,2.6479,1.351
+S140,2.6498,1.351
+S140,2.6517,1.3561
+S140,2.6536,1.3586
+S140,2.6555,1.3586
+S140,2.6573,1.3611
+S140,2.6592,1.3636
+S140,2.6611,1.3636
+S140,2.663,1.3662
+S140,2.6649,1.3687
+S140,2.6667,1.3687
+S140,2.6686,1.3712
+S140,2.6705,1.3712
+S140,2.6724,1.3737
+S140,2.6743,1.3763
+S140,2.6761,1.3788
+S140,2.678,1.3838
+S140,2.6799,1.3889
+S140,2.6818,1.3939
+S140,2.6837,1.3939
+S140,2.6855,1.3965
+S140,2.6874,1.4015
+S140,2.6893,1.404
+S140,2.6912,1.404
+S140,2.6931,1.4066
+S140,2.6949,1.4091
+S140,2.6968,1.4116
+S140,2.6987,1.4167
+S140,2.7006,1.4192
+S140,2.7025,1.4217
+S140,2.7043,1.4242
+S140,2.7062,1.4268
+S140,2.7081,1.4268
+S140,2.71,1.4318
+S140,2.7119,1.4343
+S140,2.7137,1.4343
+S140,2.7156,1.4369
+S140,2.7175,1.4394
+S140,2.7194,1.4419
+S140,2.7213,1.447
+S140,2.7231,1.4495
+S140,2.725,1.452
+S140,2.7269,1.4545
+S140,2.7288,1.4646
+S140,2.7307,1.4672
+S140,2.7325,1.4722
+S140,2.7344,1.4798
+S140,2.7363,1.4848
+S140,2.7382,1.4899
+S140,2.7401,1.4949
+S140,2.742,1.4975
+S140,2.7438,1.5
+S140,2.7457,1.5051
+S140,2.7476,1.5101
+S140,2.7495,1.5152
+S140,2.7626,1.5051
+S140,2.7645,1.5051
+S140,2.7664,1.5126
+S140,2.7683,1.5202
+S140,2.7702,1.5202
+S140,2.772,1.5278
+S140,2.7777,1.5455
+S140,2.7796,1.5505
+S140,2.7814,1.5581
+S140,2.7833,1.5606
+S140,2.7852,1.5581
+S140,2.7871,1.5606
+S140,2.789,1.5682
+S140,2.7908,1.5732
+S140,2.7927,1.5732
+S140,2.7946,1.5682
+S140,2.7965,1.5606
+S140,2.7984,1.5556
+S140,2.8002,1.553
+S140,2.8021,1.553
+S140,2.804,1.553
+S140,2.8059,1.548
+S140,2.8078,1.5455
+S140,2.8096,1.5455
+S140,2.8115,1.548
+S140,2.8134,1.5556
+S140,2.8153,1.5606
+S140,2.8172,1.5682
+S140,2.819,1.5732
+S140,2.8209,1.5833
+S140,2.8228,1.5884
+S140,2.8247,1.596
+S140,2.8266,1.6035
+S140,2.8284,1.6111
+S140,2.8303,1.6187
+S140,2.8322,1.6212
+S140,2.8341,1.6212
+S140,2.836,1.6212
+S140,2.8378,1.6162
+S140,2.8397,1.6061
+S140,2.8416,1.6061
+S140,2.8435,1.6086
+S140,2.8454,1.6162
+S140,2.8472,1.6212
+S140,2.8491,1.6288
+S140,2.851,1.6338
+S140,2.8529,1.6414
+S140,2.8548,1.649
+S140,2.8566,1.654
+S140,2.8585,1.6641
+S140,2.8604,1.6692
+S140,2.8623,1.6768
+S140,2.8642,1.6843
+S140,2.866,1.6894
+S140,2.8679,1.697
+S140,2.8698,1.7045
+S140,2.8717,1.7121
+S140,2.8736,1.7197
+S140,2.8754,1.7247
+S140,2.8773,1.7348
+S140,2.8792,1.7399
+S140,2.8811,1.75
+S140,2.883,1.7551
+S140,2.8848,1.7652
+S140,2.8867,1.7702
+S140,2.8886,1.7803
+S140,2.8905,1.7854
+S140,2.8924,1.7929
+S140,2.8942,1.8005
+S140,2.8961,1.8106
+S140,2.898,1.8131
+S140,2.8999,1.8131
+S140,2.9018,1.8131
+S140,2.9036,1.8157
+S140,2.9055,1.8207
+S140,2.9074,1.8258
+S140,2.9093,1.8359
+S140,2.9112,1.8409
+S140,2.913,1.851
+S140,2.9149,1.8586
+S140,2.9168,1.8586
+S140,2.9187,1.8586
+S140,2.9206,1.8485
+S140,2.9224,1.8434
+S140,2.9243,1.8359
+S140,2.9262,1.8333
+S140,2.9281,1.8283
+S140,2.93,1.8232
+S140,2.9318,1.8258
+S140,2.9337,1.8308
+S140,2.9356,1.8384
+S140,2.9375,1.846
+S140,2.9394,1.8535
+S140,2.9412,1.8636
+S140,2.9431,1.8712
+S140,2.945,1.8788
+S140,2.9469,1.8864
+S140,2.9525,1.9141
+S140,2.9544,1.8535
+S140,2.9563,1.8485
+S140,2.9582,1.8384
+AFGL 490,2.1215,0.303
+AFGL 490,2.1234,0.303
+AFGL 490,2.1253,0.3081
+AFGL 490,2.1271,0.3131
+AFGL 490,2.129,0.3182
+AFGL 490,2.1309,0.3232
+AFGL 490,2.1328,0.3308
+AFGL 490,2.1347,0.3359
+AFGL 490,2.1365,0.3384
+AFGL 490,2.1384,0.346
+AFGL 490,2.1403,0.351
+AFGL 490,2.1422,0.3561
+AFGL 490,2.1441,0.3611
+AFGL 490,2.1459,0.3662
+AFGL 490,2.1478,0.3712
+AFGL 490,2.1497,0.3763
+AFGL 490,2.1516,0.3813
+AFGL 490,2.1535,0.3864
+AFGL 490,2.1553,0.3914
+AFGL 490,2.1572,0.3965
+AFGL 490,2.1591,0.4015
+AFGL 490,2.161,0.4091
+AFGL 490,2.1629,0.4116
+AFGL 490,2.1647,0.4167
+AFGL 490,2.1666,0.4242
+AFGL 490,2.1685,0.4293
+AFGL 490,2.1704,0.4318
+AFGL 490,2.1723,0.4394
+AFGL 490,2.1741,0.4419
+AFGL 490,2.176,0.447
+AFGL 490,2.1779,0.452
+AFGL 490,2.1798,0.4571
+AFGL 490,2.1817,0.4596
+AFGL 490,2.1835,0.4646
+AFGL 490,2.1854,0.4697
+AFGL 490,2.1873,0.4747
+AFGL 490,2.1892,0.4773
+AFGL 490,2.1911,0.4848
+AFGL 490,2.1929,0.4874
+AFGL 490,2.1948,0.4899
+AFGL 490,2.1967,0.4975
+AFGL 490,2.1986,0.5
+AFGL 490,2.2005,0.5051
+AFGL 490,2.2024,0.5076
+AFGL 490,2.2042,0.5152
+AFGL 490,2.2061,0.5177
+AFGL 490,2.208,0.5227
+AFGL 490,2.2099,0.5278
+AFGL 490,2.2118,0.5328
+AFGL 490,2.2136,0.5354
+AFGL 490,2.2155,0.5429
+AFGL 490,2.2174,0.5455
+AFGL 490,2.2193,0.5505
+AFGL 490,2.2212,0.553
+AFGL 490,2.223,0.5606
+AFGL 490,2.2249,0.5631
+AFGL 490,2.2268,0.5682
+AFGL 490,2.2287,0.5732
+AFGL 490,2.2306,0.5783
+AFGL 490,2.2324,0.5808
+AFGL 490,2.2343,0.5884
+AFGL 490,2.2362,0.5909
+AFGL 490,2.2381,0.596
+AFGL 490,2.24,0.5985
+AFGL 490,2.2418,0.6061
+AFGL 490,2.2437,0.6111
+AFGL 490,2.2456,0.6136
+AFGL 490,2.2475,0.6212
+AFGL 490,2.2494,0.6237
+AFGL 490,2.2512,0.6263
+AFGL 490,2.2531,0.6338
+AFGL 490,2.255,0.6364
+AFGL 490,2.2569,0.6414
+AFGL 490,2.2588,0.6465
+AFGL 490,2.2606,0.6515
+AFGL 490,2.2625,0.6566
+AFGL 490,2.2644,0.6616
+AFGL 490,2.2663,0.6667
+AFGL 490,2.2682,0.6717
+AFGL 490,2.27,0.6742
+AFGL 490,2.2719,0.6818
+AFGL 490,2.2738,0.6843
+AFGL 490,2.2757,0.6869
+AFGL 490,2.2776,0.6919
+AFGL 490,2.2794,0.697
+AFGL 490,2.2813,0.702
+AFGL 490,2.2832,0.702
+AFGL 490,2.2851,0.7071
+AFGL 490,2.287,0.7121
+AFGL 490,2.2888,0.7172
+AFGL 490,2.2907,0.7172
+AFGL 490,2.2926,0.7222
+AFGL 490,2.2945,0.7273
+AFGL 490,2.2964,0.7323
+AFGL 490,2.2982,0.7323
+AFGL 490,2.3001,0.7424
+AFGL 490,2.302,0.7424
+AFGL 490,2.3039,0.7475
+AFGL 490,2.3058,0.7475
+AFGL 490,2.3076,0.7576
+AFGL 490,2.3095,0.7576
+AFGL 490,2.3114,0.7626
+AFGL 490,2.3133,0.7652
+AFGL 490,2.3152,0.7727
+AFGL 490,2.317,0.7727
+AFGL 490,2.3189,0.7778
+AFGL 490,2.3208,0.7828
+AFGL 490,2.3227,0.7879
+AFGL 490,2.3246,0.7879
+AFGL 490,2.3264,0.7929
+AFGL 490,2.3283,0.7929
+AFGL 490,2.3302,0.8005
+AFGL 490,2.3321,0.803
+AFGL 490,2.334,0.8081
+AFGL 490,2.3358,0.8081
+AFGL 490,2.3377,0.8131
+AFGL 490,2.3396,0.8182
+AFGL 490,2.3415,0.8182
+AFGL 490,2.3434,0.8232
+AFGL 490,2.3452,0.8232
+AFGL 490,2.3471,0.8283
+AFGL 490,2.349,0.8333
+AFGL 490,2.3509,0.8333
+AFGL 490,2.3528,0.8384
+AFGL 490,2.3546,0.8409
+AFGL 490,2.3565,0.8434
+AFGL 490,2.3584,0.8485
+AFGL 490,2.3603,0.851
+AFGL 490,2.3622,0.8535
+AFGL 490,2.364,0.8535
+AFGL 490,2.3659,0.8561
+AFGL 490,2.3678,0.8611
+AFGL 490,2.3697,0.8636
+AFGL 490,2.3716,0.8662
+AFGL 490,2.3734,0.8687
+AFGL 490,2.3753,0.8687
+AFGL 490,2.3772,0.8737
+AFGL 490,2.3791,0.8763
+AFGL 490,2.381,0.8788
+AFGL 490,2.3828,0.8788
+AFGL 490,2.3847,0.8838
+AFGL 490,2.3866,0.8838
+AFGL 490,2.3885,0.8864
+AFGL 490,2.3904,0.8939
+AFGL 490,2.3922,0.8965
+AFGL 490,2.3941,0.899
+AFGL 490,2.396,0.9066
+AFGL 490,2.3979,0.9091
+AFGL 490,2.3998,0.9141
+AFGL 490,2.4016,0.9217
+AFGL 490,2.4035,0.9242
+AFGL 490,2.4054,0.9293
+AFGL 490,2.4073,0.9343
+AFGL 490,2.4092,0.9394
+AFGL 490,2.411,0.9444
+AFGL 490,2.4129,0.9495
+AFGL 490,2.4148,0.9545
+AFGL 490,2.4167,0.9596
+AFGL 490,2.4186,0.9596
+AFGL 490,2.4204,0.9621
+AFGL 490,2.4223,0.9672
+AFGL 490,2.4242,0.9697
+AFGL 490,2.4261,0.9697
+AFGL 490,2.428,0.9722
+AFGL 490,2.4298,0.9747
+AFGL 490,2.4317,0.9747
+AFGL 490,2.4336,0.9773
+AFGL 490,2.4355,0.9798
+AFGL 490,2.4374,0.9848
+AFGL 490,2.4392,0.9848
+AFGL 490,2.4411,0.9874
+AFGL 490,2.443,0.9899
+AFGL 490,2.4449,0.9899
+AFGL 490,2.4468,0.9949
+AFGL 490,2.4486,1.0
+AFGL 490,2.4505,1.0
+AFGL 490,2.4524,1.0051
+AFGL 490,2.4543,1.0076
+AFGL 490,2.4562,1.0126
+AFGL 490,2.458,1.0152
+AFGL 490,2.4599,1.0202
+AFGL 490,2.4618,1.0227
+AFGL 490,2.4637,1.0278
+AFGL 490,2.4656,1.0303
+AFGL 490,2.4675,1.0354
+AFGL 490,2.4693,1.0379
+AFGL 490,2.4712,1.0429
+AFGL 490,2.4731,1.0455
+AFGL 490,2.475,1.0505
+AFGL 490,2.4769,1.053
+AFGL 490,2.4787,1.0606
+AFGL 490,2.4806,1.0631
+AFGL 490,2.4825,1.0682
+AFGL 490,2.4844,1.0732
+AFGL 490,2.4863,1.0783
+AFGL 490,2.4881,1.0808
+AFGL 490,2.49,1.0884
+AFGL 490,2.4919,1.0934
+AFGL 490,2.4938,1.096
+AFGL 490,2.4957,1.1035
+AFGL 490,2.4975,1.1061
+AFGL 490,2.4994,1.1111
+AFGL 490,2.5013,1.1111
+AFGL 490,2.5032,1.1212
+AFGL 490,2.5051,1.1212
+AFGL 490,2.5069,1.1263
+AFGL 490,2.5088,1.1263
+AFGL 490,2.5107,1.1313
+AFGL 490,2.5126,1.1364
+AFGL 490,2.5145,1.1364
+AFGL 490,2.5163,1.1414
+AFGL 490,2.5182,1.1414
+AFGL 490,2.5201,1.1465
+AFGL 490,2.522,1.1515
+AFGL 490,2.5239,1.1515
+AFGL 490,2.5257,1.1566
+AFGL 490,2.5276,1.1566
+AFGL 490,2.5295,1.1566
+AFGL 490,2.5314,1.1616
+AFGL 490,2.5333,1.1667
+AFGL 490,2.5351,1.1667
+AFGL 490,2.537,1.1717
+AFGL 490,2.5389,1.1717
+AFGL 490,2.5408,1.1742
+AFGL 490,2.5427,1.1742
+AFGL 490,2.5445,1.1742
+AFGL 490,2.5464,1.1742
+AFGL 490,2.5483,1.1742
+AFGL 490,2.5502,1.1742
+AFGL 490,2.5521,1.1742
+AFGL 490,2.5539,1.1742
+AFGL 490,2.5558,1.1742
+AFGL 490,2.5577,1.1742
+AFGL 490,2.5596,1.1717
+AFGL 490,2.5615,1.1717
+AFGL 490,2.5633,1.1793
+AFGL 490,2.5652,1.1818
+AFGL 490,2.5671,1.1869
+AFGL 490,2.569,1.1944
+AFGL 490,2.5709,1.197
+AFGL 490,2.5727,1.202
+AFGL 490,2.5746,1.2096
+AFGL 490,2.5765,1.2121
+AFGL 490,2.5784,1.2172
+AFGL 490,2.5803,1.2247
+AFGL 490,2.5821,1.2273
+AFGL 490,2.584,1.2323
+AFGL 490,2.5859,1.2348
+AFGL 490,2.5878,1.2348
+AFGL 490,2.5897,1.2348
+AFGL 490,2.5915,1.2348
+AFGL 490,2.5934,1.2348
+AFGL 490,2.5953,1.2348
+AFGL 490,2.5972,1.2348
+AFGL 490,2.5991,1.2348
+AFGL 490,2.6009,1.2348
+AFGL 490,2.6028,1.2348
+AFGL 490,2.6047,1.2348
+AFGL 490,2.6066,1.2348
+AFGL 490,2.6085,1.2348
+AFGL 490,2.6103,1.2374
+AFGL 490,2.6122,1.2399
+AFGL 490,2.6141,1.2449
+AFGL 490,2.616,1.2475
+AFGL 490,2.6179,1.2551
+AFGL 490,2.6197,1.2576
+AFGL 490,2.6216,1.2626
+AFGL 490,2.6235,1.2677
+AFGL 490,2.6254,1.2727
+AFGL 490,2.6273,1.2778
+AFGL 490,2.6291,1.2778
+AFGL 490,2.631,1.2778
+AFGL 490,2.6329,1.2778
+AFGL 490,2.6348,1.2753
+AFGL 490,2.6367,1.2753
+AFGL 490,2.6385,1.2753
+AFGL 490,2.6404,1.2727
+AFGL 490,2.6423,1.2727
+AFGL 490,2.6442,1.2727
+AFGL 490,2.6461,1.2727
+AFGL 490,2.6479,1.2727
+AFGL 490,2.6761,1.2828
+AFGL 490,2.678,1.2828
+AFGL 490,2.6799,1.2879
+AFGL 490,2.6818,1.2854
+AFGL 490,2.6837,1.2854
+AFGL 490,2.6855,1.2854
+AFGL 490,2.6874,1.2879
+AFGL 490,2.6893,1.2879
+AFGL 490,2.6912,1.2879
+AFGL 490,2.6931,1.2904
+AFGL 490,2.6949,1.2904
+AFGL 490,2.6968,1.2904
+AFGL 490,2.6987,1.2929
+AFGL 490,2.7006,1.2955
+AFGL 490,2.7025,1.303
+AFGL 490,2.7043,1.303
+AFGL 490,2.7062,1.303
+AFGL 490,2.7081,1.3005
+AFGL 490,2.71,1.298
+AFGL 490,2.7119,1.2929
+AFGL 490,2.7137,1.2929
+AFGL 490,2.7156,1.2904
+AFGL 490,2.7175,1.2904
+AFGL 490,2.7194,1.2929
+AFGL 490,2.7307,1.3081
+AFGL 490,2.7325,1.3081
+AFGL 490,2.7344,1.3131
+AFGL 490,2.7363,1.3182
+AFGL 490,2.7382,1.3131
+AFGL 490,2.7438,1.3081
+AFGL 490,2.7457,1.3106
+AFGL 490,2.7476,1.3081
+AFGL 490,2.7495,1.3106
+AFGL 490,2.7514,1.3131
+AFGL 490,2.7532,1.3106
+AFGL 490,2.7551,1.2753
+AFGL 490,2.757,1.2702
+AFGL 490,2.7589,1.2702
+AFGL 490,2.7645,1.2449
+AFGL 490,2.7664,1.2424
+AFGL 490,2.7683,1.2399
+AFGL 490,2.7702,1.2374
+AFGL 490,2.772,1.2399
+AFGL 490,2.7739,1.2424
+AFGL 490,2.7758,1.2475
+AFGL 490,2.7777,1.25
+AFGL 490,2.7796,1.2525
+AFGL 490,2.7833,1.2576
+AFGL 490,2.7852,1.2576
+AFGL 490,2.7871,1.2525
+AFGL 490,2.789,1.2449
+AFGL 490,2.7908,1.2424
+AFGL 490,2.7927,1.2424
+AFGL 490,2.7946,1.2475
+AFGL 490,2.7965,1.2551
+AFGL 490,2.7984,1.2601
+AFGL 490,2.8002,1.2652
+AFGL 490,2.8021,1.2727
+AFGL 490,2.804,1.2803
+AFGL 490,2.8059,1.2854
+AFGL 490,2.8078,1.2929
+AFGL 490,2.8096,1.3005
+AFGL 490,2.8115,1.3056
+AFGL 490,2.8134,1.3106
+AFGL 490,2.8153,1.3131
+AFGL 490,2.819,1.346
+AFGL 490,2.8209,1.346
+AFGL 490,2.8228,1.351
+AFGL 490,2.8247,1.3561
+AFGL 490,2.8266,1.3636
+AFGL 490,2.8284,1.3712
+AFGL 490,2.8303,1.3788
+AFGL 490,2.8322,1.3838
+AFGL 490,2.8341,1.3914
+AFGL 490,2.836,1.399
+AFGL 490,2.8378,1.4066
+AFGL 490,2.8397,1.4141
+AFGL 490,2.8416,1.4242
+AFGL 490,2.8435,1.4293
+AFGL 490,2.8454,1.4369
+AFGL 490,2.8472,1.447
+AFGL 490,2.8491,1.4495
+AFGL 490,2.851,1.4571
+AFGL 490,2.8529,1.4621
+AFGL 490,2.8548,1.4949
+AFGL 490,2.8566,1.5025
+AFGL 490,2.8585,1.5076
+AFGL 490,2.8604,1.5152
+AFGL 490,2.8623,1.5177
+AFGL 490,2.8642,1.5202
+AFGL 490,2.866,1.5202
+AFGL 490,2.8717,1.5
+AFGL 490,2.8736,1.5
+AFGL 490,2.8754,1.5051
+AFGL 490,2.8773,1.5101
+AFGL 490,2.8792,1.5152
+AFGL 490,2.883,1.5505
+AFGL 490,2.8848,1.5556
+AFGL 490,2.8867,1.5606
+AFGL 490,2.8886,1.5657
+AFGL 490,2.8905,1.5732
+AFGL 490,2.8924,1.5808
+AFGL 490,2.8942,1.5884
+AFGL 490,2.8961,1.596
+AFGL 490,2.898,1.6035
+AFGL 490,2.8999,1.6086
+AFGL 490,2.9018,1.6111
+AFGL 490,2.9036,1.6187
+AFGL 490,2.9112,1.6641
+AFGL 490,2.913,1.6742
+AFGL 490,2.9149,1.6768
+AFGL 490,2.9168,1.6818
+AFGL 490,2.9187,1.6894
+AFGL 490,2.9206,1.6995
+AFGL 490,2.9224,1.7096
+AFGL 490,2.9243,1.7172
+AFGL 490,2.9262,1.7273
+AFGL 490,2.9281,1.7323
+AFGL 490,2.93,1.7399
+AFGL 490,2.9318,1.7449
+Cep OB3,1.9485,-0.4318
+Cep OB3,1.9504,-0.4318
+Cep OB3,1.9523,-0.4192
+Cep OB3,1.9542,-0.4192
+Cep OB3,1.9561,-0.4141
+Cep OB3,1.9579,-0.4141
+Cep OB3,1.9598,-0.4015
+Cep OB3,1.9617,-0.3889
+Cep OB3,1.9636,-0.3889
+Cep OB3,1.9655,-0.3838
+Cep OB3,1.9673,-0.3788
+Cep OB3,1.9692,-0.3636
+Cep OB3,1.9711,-0.3586
+Cep OB3,1.973,-0.3687
+Cep OB3,1.9749,-0.3535
+Cep OB3,1.9767,-0.3485
+Cep OB3,1.9786,-0.3434
+Cep OB3,1.9805,-0.3384
+Cep OB3,1.9824,-0.3409
+Cep OB3,1.9843,-0.3333
+Cep OB3,1.9861,-0.3131
+Cep OB3,1.988,-0.3131
+Cep OB3,1.9899,-0.3081
+Cep OB3,1.9918,-0.3081
+Cep OB3,1.9937,-0.2955
+Cep OB3,1.9955,-0.2828
+Cep OB3,1.9974,-0.2828
+Cep OB3,1.9993,-0.2778
+Cep OB3,2.0012,-0.2778
+Cep OB3,2.0031,-0.2652
+Cep OB3,2.0049,-0.2525
+Cep OB3,2.0068,-0.2525
+Cep OB3,2.0087,-0.2475
+Cep OB3,2.0106,-0.2424
+Cep OB3,2.0125,-0.2374
+Cep OB3,2.0143,-0.2197
+Cep OB3,2.0162,-0.2348
+Cep OB3,2.0181,-0.2273
+Cep OB3,2.02,-0.2121
+Cep OB3,2.0219,-0.2071
+Cep OB3,2.0237,-0.202
+Cep OB3,2.0256,-0.197
+Cep OB3,2.0275,-0.1818
+Cep OB3,2.0294,-0.1869
+Cep OB3,2.0313,-0.1869
+Cep OB3,2.0331,-0.1742
+Cep OB3,2.035,-0.1616
+Cep OB3,2.0369,-0.1616
+Cep OB3,2.0388,-0.1667
+Cep OB3,2.0407,-0.1465
+Cep OB3,2.0425,-0.1465
+Cep OB3,2.0444,-0.1414
+Cep OB3,2.0463,-0.1364
+Cep OB3,2.0482,-0.1212
+Cep OB3,2.0501,-0.1263
+Cep OB3,2.0519,-0.1263
+Cep OB3,2.0538,-0.1136
+Cep OB3,2.0557,-0.101
+Cep OB3,2.0576,-0.101
+Cep OB3,2.0595,-0.0985
+Cep OB3,2.0613,-0.0859
+Cep OB3,2.0632,-0.0859
+Cep OB3,2.0651,-0.0808
+Cep OB3,2.067,-0.0808
+Cep OB3,2.0689,-0.0606
+Cep OB3,2.0707,-0.0657
+Cep OB3,2.0726,-0.0606
+Cep OB3,2.0745,-0.0455
+Cep OB3,2.0764,-0.0379
+Cep OB3,2.082,-0.0227
+Cep OB3,2.0839,-0.0152
+Cep OB3,2.0858,-0.0101
+Cep OB3,2.0877,-0.0051
+Cep OB3,2.0895,0.0
+Cep OB3,2.0914,0.0051
+Cep OB3,2.0933,0.0101
+Cep OB3,2.0952,0.0076
+Cep OB3,2.0971,0.0126
+Cep OB3,2.0989,0.0177
+Cep OB3,2.1008,0.0227
+Cep OB3,2.1027,0.0354
+Cep OB3,2.1046,0.0253
+Cep OB3,2.1065,0.0303
+Cep OB3,2.1083,0.0505
+Cep OB3,2.1102,0.0505
+Cep OB3,2.1121,0.0556
+Cep OB3,2.114,0.0556
+Cep OB3,2.1159,0.0758
+Cep OB3,2.1177,0.0707
+Cep OB3,2.1196,0.0707
+Cep OB3,2.1215,0.0833
+Cep OB3,2.1234,0.096
+Cep OB3,2.1253,0.0859
+Cep OB3,2.1271,0.0985
+Cep OB3,2.129,0.1111
+Cep OB3,2.1309,0.1111
+Cep OB3,2.1328,0.1136
+Cep OB3,2.1347,0.1263
+Cep OB3,2.1365,0.1162
+Cep OB3,2.1384,0.1212
+Cep OB3,2.1403,0.1288
+Cep OB3,2.1422,0.1364
+Cep OB3,2.1441,0.1364
+Cep OB3,2.1459,0.1439
+Cep OB3,2.1478,0.1591
+Cep OB3,2.1497,0.1566
+Cep OB3,2.1516,0.1616
+Cep OB3,2.1535,0.1667
+Cep OB3,2.1666,0.2222
+Cep OB3,2.1685,0.2273
+Cep OB3,2.1704,0.2298
+Cep OB3,2.1723,0.2374
+Cep OB3,2.1741,0.2323
+Cep OB3,2.176,0.2323
+Cep OB3,2.1779,0.2424
+Cep OB3,2.1798,0.2576
+Cep OB3,2.1817,0.2626
+Cep OB3,2.1835,0.2677
+Cep OB3,2.1854,0.2727
+Cep OB3,2.1873,0.2778
+Cep OB3,2.1892,0.2753
+Cep OB3,2.1911,0.2803
+Cep OB3,2.1929,0.2778
+Cep OB3,2.1948,0.2904
+Cep OB3,2.1967,0.2828
+Cep OB3,2.1986,0.303
+Cep OB3,2.2005,0.3081
+Cep OB3,2.2024,0.3131
+Cep OB3,2.2042,0.3182
+Cep OB3,2.2061,0.3232
+Cep OB3,2.208,0.3283
+Cep OB3,2.2118,0.3384
+Cep OB3,2.2155,0.3434
+Cep OB3,2.2174,0.3485
+Cep OB3,2.2193,0.3535
+Cep OB3,2.2212,0.3586
+Cep OB3,2.2249,0.3662
+Cep OB3,2.2287,0.3737
+Cep OB3,2.2306,0.3788
+Cep OB3,2.2324,0.3838
+Cep OB3,2.2343,0.3889
+Cep OB3,2.2381,0.3939
+Cep OB3,2.24,0.399
+Cep OB3,2.2437,0.404
+Cep OB3,2.2456,0.4091
+Cep OB3,2.2475,0.4141
+Cep OB3,2.2512,0.4141
+Cep OB3,2.255,0.4217
+Cep OB3,2.2569,0.4268
+Cep OB3,2.2588,0.4293
+Cep OB3,2.2682,0.4722
+Cep OB3,2.27,0.4773
+Cep OB3,2.2719,0.4798
+Cep OB3,2.2738,0.4848
+Cep OB3,2.2776,0.4924
+Cep OB3,2.2794,0.5
+Cep OB3,2.2813,0.5051
+Cep OB3,2.2832,0.5051
+Cep OB3,2.2851,0.5051
+Cep OB3,2.287,0.5152
+Cep OB3,2.2907,0.5202
+Cep OB3,2.2926,0.5303
+Cep OB3,2.2945,0.5303
+Cep OB3,2.2964,0.5404
+Cep OB3,2.2982,0.5354
+Cep OB3,2.302,0.5404
+Cep OB3,2.3039,0.5455
+Cep OB3,2.3058,0.5505
+Cep OB3,2.3076,0.5556
+Cep OB3,2.3114,0.5606
+Cep OB3,2.3133,0.5657
+Cep OB3,2.3152,0.5707
+Cep OB3,2.3189,0.5758
+Cep OB3,2.3208,0.5808
+Cep OB3,2.3227,0.5859
+Cep OB3,2.3246,0.6061
+Cep OB3,2.3264,0.596
+Cep OB3,2.3283,0.6061
+Cep OB3,2.3302,0.6111
+Cep OB3,2.3321,0.6162
+Cep OB3,2.334,0.6212
+Cep OB3,2.3358,0.6162
+Cep OB3,2.3377,0.6364
+Cep OB3,2.3396,0.6364
+Cep OB3,2.3415,0.6313
+Cep OB3,2.3434,0.654
+Cep OB3,2.3452,0.6389
+Cep OB3,2.3471,0.6616
+Cep OB3,2.349,0.6465
+Cep OB3,2.3509,0.6717
+Cep OB3,2.3528,0.6566
+Cep OB3,2.3565,0.6616
+Cep OB3,2.3584,0.6667
+Cep OB3,2.3603,0.6692
+Cep OB3,2.364,0.6768
+Cep OB3,2.3678,0.6843
+Cep OB3,2.3697,0.6869
+Cep OB3,2.3716,0.6919
+Cep OB3,2.3753,0.697
+Cep OB3,2.3772,0.702
+Cep OB3,2.3791,0.7071
+Cep OB3,2.381,0.7121
+Cep OB3,2.3828,0.7172
+Cep OB3,2.3847,0.7222
+Cep OB3,2.3866,0.7273
+Cep OB3,2.3885,0.7323
+Cep OB3,2.3904,0.7374
+Cep OB3,2.3922,0.7424
+Cep OB3,2.3941,0.7475
+Cep OB3,2.396,0.7525
+Cep OB3,2.3979,0.7576
+Cep OB3,2.3998,0.7626
+Cep OB3,2.4016,0.7677
+Cep OB3,2.4035,0.7727
+Cep OB3,2.4054,0.7753
+Cep OB3,2.4073,0.7778
+Cep OB3,2.4092,0.7828
+Cep OB3,2.4129,0.7904
+Cep OB3,2.4148,0.7929
+Cep OB3,2.4167,0.798
+Cep OB3,2.4204,0.8056
+Cep OB3,2.4223,0.8081
+Cep OB3,2.4242,0.8131
+Cep OB3,2.428,0.8207
+Cep OB3,2.4298,0.8333
+Cep OB3,2.4336,0.8359
+Cep OB3,2.4355,0.8434
+Cep OB3,2.4374,0.8409
+Cep OB3,2.4392,0.8384
+Cep OB3,2.4411,0.8485
+Cep OB3,2.4449,0.851
+Cep OB3,2.4468,0.8586
+Cep OB3,2.4486,0.8561
+Cep OB3,2.4505,0.8636
+Cep OB3,2.4524,0.8586
+Cep OB3,2.4543,0.8662
+Cep OB3,2.4562,0.8712
+Cep OB3,2.458,0.8788
+Cep OB3,2.4618,0.8813
+Cep OB3,2.4637,0.8864
+Cep OB3,2.4656,0.8914
+Cep OB3,2.4675,0.8965
+Cep OB3,2.4693,0.8965
+Cep OB3,2.4712,0.9015
+Cep OB3,2.4731,0.9066
+Cep OB3,2.475,0.9192
+Cep OB3,2.4769,0.904
+Cep OB3,2.4787,0.9167
+Cep OB3,2.4806,0.9217
+Cep OB3,2.4825,0.9268
+Cep OB3,2.4863,0.9394
+Cep OB3,2.4881,0.9293
+Cep OB3,2.49,0.9419
+Cep OB3,2.4919,0.9545
+Cep OB3,2.4938,0.9444
+Cep OB3,2.4975,0.9571
+Cep OB3,2.4994,0.9621
+Cep OB3,2.5013,0.9672
+Cep OB3,2.5032,0.9722
+Cep OB3,2.5051,0.9646
+Cep OB3,2.5069,0.9773
+Cep OB3,2.5088,0.9823
+Cep OB3,2.5107,0.9874
+Cep OB3,2.5145,0.9924
+Cep OB3,2.5163,0.9975
+Cep OB3,2.5201,1.0025
+Cep OB3,2.5239,1.0076
+Cep OB3,2.5257,1.0126
+Cep OB3,2.5276,1.0202
+Cep OB3,2.5295,1.0177
+Cep OB3,2.5314,1.0253
+Cep OB3,2.5333,1.0227
+Cep OB3,2.5351,1.0303
+Cep OB3,2.5389,1.0328
+Cep OB3,2.5408,1.0404
+Cep OB3,2.5427,1.0379
+Cep OB3,2.5445,1.0455
+Cep OB3,2.5464,1.0505
+Cep OB3,2.5483,1.048
+Cep OB3,2.5521,1.0556
+Cep OB3,2.5539,1.0581
+Cep OB3,2.5558,1.0631
+Cep OB3,2.5596,1.0682
+Cep OB3,2.5615,1.0732
+Cep OB3,2.5652,1.0707
+Cep OB3,2.5671,1.0859
+Cep OB3,2.569,1.0859
+Cep OB3,2.5709,1.0758
+Cep OB3,2.5727,1.0808
+Cep OB3,2.5746,1.0859
+Cep OB3,2.5765,1.0909
+Cep OB3,2.5784,1.101
+Cep OB3,2.5803,1.096
+Cep OB3,2.5821,1.101
+Cep OB3,2.584,1.1061
+Cep OB3,2.5859,1.1111
+Cep OB3,2.5878,1.1111
+Cep OB3,2.5897,1.1263
+Cep OB3,2.5915,1.1313
+Cep OB3,2.5934,1.1364
+Cep OB3,2.5953,1.1313
+Cep OB3,2.5972,1.1439
+Cep OB3,2.5991,1.149
+Cep OB3,2.6009,1.154
+Cep OB3,2.6047,1.1667
+Cep OB3,2.6066,1.1641
+Cep OB3,2.6085,1.1692
+Cep OB3,2.6122,1.1768
+Cep OB3,2.6141,1.1793
+Cep OB3,2.616,1.1843
+Cep OB3,2.6179,1.1818
+Cep OB3,2.6197,1.1919
+Cep OB3,2.6216,1.1869
+Cep OB3,2.6235,1.1919
+Cep OB3,2.6254,1.2121
+Cep OB3,2.6273,1.2121
+Cep OB3,2.6291,1.2222
+Cep OB3,2.631,1.2273
+Cep OB3,2.6329,1.2172
+Cep OB3,2.6348,1.2222
+Cep OB3,2.6367,1.2273
+Cep OB3,2.6385,1.2323
+Cep OB3,2.6404,1.2374
+Cep OB3,2.6442,1.2525
+Cep OB3,2.6461,1.2551
+Cep OB3,2.6479,1.2525
+Cep OB3,2.6498,1.2677
+Cep OB3,2.6517,1.2727
+Cep OB3,2.6536,1.2778
+Cep OB3,2.6555,1.2828
+Cep OB3,2.6573,1.2854
+Cep OB3,2.6592,1.2727
+Cep OB3,2.6611,1.2854
+Cep OB3,2.663,1.2879
+Cep OB3,2.6649,1.2879
+Cep OB3,2.6667,1.2828
+Cep OB3,2.6686,1.2904
+Cep OB3,2.6705,1.298
+Cep OB3,2.6724,1.298
+Cep OB3,2.6743,1.303
+Cep OB3,2.6761,1.3005
+Cep OB3,2.678,1.3131
+Cep OB3,2.6799,1.3182
+Cep OB3,2.6818,1.3081
+Cep OB3,2.6837,1.3131
+Cep OB3,2.6855,1.3207
+Cep OB3,2.6874,1.3283
+Cep OB3,2.6893,1.3333
+Cep OB3,2.6912,1.3586
+Cep OB3,2.6931,1.3485
+Cep OB3,2.6949,1.3737
+Cep OB3,2.6968,1.3788
+Cep OB3,2.6987,1.3838
+Cep OB3,2.7006,1.3914
+Cep OB3,2.7025,1.399
+Cep OB3,2.7043,1.404
+Cep OB3,2.7062,1.4066
+Cep OB3,2.7081,1.4091
+Cep OB3,2.71,1.4141
+Cep OB3,2.7119,1.4141
+Cep OB3,2.7137,1.4192
+Cep OB3,2.7156,1.4192
+Cep OB3,2.7175,1.4217
+Cep OB3,2.7194,1.4242
+Cep OB3,2.7231,1.4293
+Cep OB3,2.725,1.4343
+Cep OB3,2.7269,1.4394
+Cep OB3,2.7288,1.4444
+Cep OB3,2.7307,1.4495
+Cep OB3,2.7325,1.4394
+Cep OB3,2.7344,1.452
+Cep OB3,2.7363,1.4545
+Cep OB3,2.7382,1.4596
+Cep OB3,2.7401,1.4672
+Cep OB3,2.742,1.4798
+Cep OB3,2.7438,1.4697
+Cep OB3,2.7457,1.4899
+Cep OB3,2.7476,1.4798
+Cep OB3,2.7495,1.4848
+Cep OB3,2.7514,1.4899
+Cep OB3,2.7532,1.5
+Cep OB3,2.7589,1.5202
+Cep OB3,2.7608,1.5253
+Cep OB3,2.7626,1.5278
+Cep OB3,2.7645,1.5354
+Cep OB3,2.7683,1.5455
+Cep OB3,2.7702,1.5505
+Cep OB3,2.772,1.5556
+Cep OB3,2.7739,1.5631
+Cep OB3,2.7758,1.5707
+Cep OB3,2.7777,1.5758
+Cep OB3,2.7814,1.5808
+Cep OB3,2.7833,1.5859
+Cep OB3,2.7852,1.6035
+Cep OB3,2.7871,1.601
+Cep OB3,2.789,1.596
+Cep OB3,2.7908,1.6162
+Cep OB3,2.7927,1.6061
+Cep OB3,2.7946,1.6212
+Cep OB3,2.7965,1.6263
+Cep OB3,2.7984,1.6313
+Cep OB3,2.8002,1.6414
+Cep OB3,2.8021,1.6465
+Cep OB3,2.804,1.6439
+Cep OB3,2.8059,1.6591
+Cep OB3,2.8078,1.6616
+Cep OB3,2.8096,1.6616
+Cep OB3,2.8115,1.6591
+Cep OB3,2.8134,1.6566
+Cep OB3,2.8153,1.6515
+Cep OB3,2.8172,1.6515
+Cep OB3,2.819,1.6616
+Cep OB3,2.8209,1.6566
+Cep OB3,2.8228,1.6768
+Cep OB3,2.8247,1.6919
+Cep OB3,2.8266,1.6894
+Cep OB3,2.8284,1.6944
+Cep OB3,2.8303,1.7071
+Cep OB3,2.8322,1.7172
+Cep OB3,2.8341,1.7222
+Cep OB3,2.836,1.7273
+Cep OB3,2.8378,1.7273
+Cep OB3,2.8397,1.7323
+Cep OB3,2.8416,1.7399
+Cep OB3,2.8435,1.7374
+Cep OB3,2.8454,1.7424
+Cep OB3,2.8472,1.7424
+Cep OB3,2.8491,1.7424
+Cep OB3,2.851,1.7424
+Cep OB3,2.8529,1.7525
+Cep OB3,2.8548,1.7525
+Cep OB3,2.8566,1.7677
+Cep OB3,2.8585,1.7727
+Cep OB3,2.8604,1.7727
+Cep OB3,2.8623,1.7702
+Cep OB3,2.8642,1.7854
+Cep OB3,2.866,1.7904
+Cep OB3,2.8679,1.7879
+Cep OB3,2.8698,1.8081
+Cep OB3,2.8717,1.8081
+Cep OB3,2.8736,1.8081
+Cep OB3,2.8754,1.8081
+Cep OB3,2.8773,1.8232
+Cep OB3,2.8792,1.8232
+Cep OB3,2.8811,1.8485
+Cep OB3,2.883,1.8384
+Cep OB3,2.8848,1.851
+Cep OB3,2.8867,1.8561
+Cep OB3,2.8886,1.8535
+Cep OB3,2.8905,1.8611
+Cep OB3,2.8924,1.8586
+Cep OB3,2.8942,1.8636
+Cep OB3,2.8961,1.8737
+Cep OB3,2.898,1.8712
+Cep OB3,2.8999,1.8662
+Cep OB3,2.9018,1.8586
+Cep OB3,2.9036,1.8737
+Cep OB3,2.9055,1.8788
+Cep OB3,2.9074,1.8889
+Cep OB3,2.9093,1.8788
+Cep OB3,2.9112,1.904
+Cep OB3,2.913,1.8939
+Cep OB3,2.9149,1.9091
+Cep OB3,2.9168,1.9091
+Cep OB3,2.9187,1.9141
+Cep OB3,2.9206,1.9192
+Cep OB3,2.9224,1.9242
+Cep OB3,2.9243,1.9217
+Cep OB3,2.9262,1.9167
+Cep OB3,2.9281,1.9141
+Cep OB3,2.9318,1.9066
+Cep OB3,2.9337,1.9015
+Cep OB3,2.9356,1.904
+Cep OB3,2.9375,1.8965
+Cep OB3,2.9394,1.8914
+Cep OB3,2.9412,1.899
+Cep OB3,2.9431,1.899
+Cep OB3,2.945,1.899
+Cep OB3,2.9563,1.8838
+Cep OB3,2.9582,1.8838
+Cep OB3,2.96,1.8914
+Cep OB3,2.9619,1.8788
+Cep OB3,2.9638,1.8965
+Cep OB3,2.9657,1.9167
+Cep OB3,2.9676,1.9293
+Cep OB3,2.9694,1.9343
+Cep OB3,2.9713,1.9369
+Cep OB3,2.9732,1.947
+Cep OB3,2.9751,1.9545
+Cep OB3,2.977,1.9545
+Cep OB3,2.9788,1.9722
+Cep OB3,2.9807,1.9747
+Cep OB3,2.9826,1.9848
+Cep OB3,2.9845,1.9924
+Cep OB3,2.9864,2.0025
+Cep OB3,2.9882,2.0126
+Cep OB3,2.9901,2.0278
+Cep OB3,2.992,2.0328
+Cep OB3,2.9939,2.0303
+Cep OB3,2.9958,2.0354
+Cep OB3,2.9976,2.0455
+Cep OB3,2.9995,2.0505
+Cep OB3,3.0014,2.0556
+Cep OB3,3.0033,2.0606
+Cep OB3,3.0052,2.0657
+Cygnus-X,2.1572,-0.1237
+Cygnus-X,2.1591,-0.1263
+Cygnus-X,2.161,-0.1212
+Cygnus-X,2.1629,-0.1187
+Cygnus-X,2.1647,-0.1136
+Cygnus-X,2.1666,-0.1136
+Cygnus-X,2.1685,-0.1086
+Cygnus-X,2.1704,-0.1061
+Cygnus-X,2.1723,-0.101
+Cygnus-X,2.1741,-0.0985
+Cygnus-X,2.176,-0.0934
+Cygnus-X,2.1779,-0.0909
+Cygnus-X,2.1798,-0.0884
+Cygnus-X,2.1817,-0.0833
+Cygnus-X,2.1835,-0.0808
+Cygnus-X,2.1854,-0.0758
+Cygnus-X,2.1873,-0.0732
+Cygnus-X,2.1892,-0.0682
+Cygnus-X,2.1911,-0.0682
+Cygnus-X,2.1929,-0.0631
+Cygnus-X,2.1948,-0.0581
+Cygnus-X,2.1967,-0.053
+Cygnus-X,2.1986,-0.053
+Cygnus-X,2.2005,-0.048
+Cygnus-X,2.2024,-0.0429
+Cygnus-X,2.2042,-0.0379
+Cygnus-X,2.2061,-0.0379
+Cygnus-X,2.208,-0.0328
+Cygnus-X,2.2099,-0.0303
+Cygnus-X,2.2118,-0.0227
+Cygnus-X,2.2136,-0.0227
+Cygnus-X,2.2155,-0.0177
+Cygnus-X,2.2174,-0.0152
+Cygnus-X,2.2193,-0.0076
+Cygnus-X,2.2212,-0.0076
+Cygnus-X,2.223,-0.0025
+Cygnus-X,2.2249,0.0
+Cygnus-X,2.2268,0.0076
+Cygnus-X,2.2287,0.0076
+Cygnus-X,2.2306,0.0152
+Cygnus-X,2.2324,0.0177
+Cygnus-X,2.2343,0.0227
+Cygnus-X,2.2362,0.0227
+Cygnus-X,2.2381,0.0303
+Cygnus-X,2.24,0.0328
+Cygnus-X,2.2418,0.0379
+Cygnus-X,2.2437,0.0404
+Cygnus-X,2.2456,0.0455
+Cygnus-X,2.2475,0.0505
+Cygnus-X,2.2494,0.053
+Cygnus-X,2.2512,0.0581
+Cygnus-X,2.2531,0.0606
+Cygnus-X,2.255,0.0657
+Cygnus-X,2.2569,0.0682
+Cygnus-X,2.2588,0.0758
+Cygnus-X,2.2606,0.0783
+Cygnus-X,2.2625,0.0833
+Cygnus-X,2.2644,0.0859
+Cygnus-X,2.2663,0.0909
+Cygnus-X,2.2682,0.096
+Cygnus-X,2.27,0.0985
+Cygnus-X,2.2719,0.1035
+Cygnus-X,2.2738,0.1061
+Cygnus-X,2.2757,0.1136
+Cygnus-X,2.2776,0.1162
+Cygnus-X,2.2794,0.1212
+Cygnus-X,2.2813,0.1237
+Cygnus-X,2.2832,0.1288
+Cygnus-X,2.2851,0.1338
+Cygnus-X,2.287,0.1364
+Cygnus-X,2.2888,0.1439
+Cygnus-X,2.2907,0.1465
+Cygnus-X,2.2926,0.1515
+Cygnus-X,2.2945,0.1566
+Cygnus-X,2.2964,0.1591
+Cygnus-X,2.2982,0.1667
+Cygnus-X,2.3001,0.1667
+Cygnus-X,2.302,0.1768
+Cygnus-X,2.3039,0.1793
+Cygnus-X,2.3058,0.1818
+Cygnus-X,2.3076,0.1869
+Cygnus-X,2.3095,0.1919
+Cygnus-X,2.3114,0.1995
+Cygnus-X,2.3133,0.202
+Cygnus-X,2.3152,0.2071
+Cygnus-X,2.317,0.2121
+Cygnus-X,2.3189,0.2146
+Cygnus-X,2.3208,0.2222
+Cygnus-X,2.3227,0.2222
+Cygnus-X,2.3246,0.2298
+Cygnus-X,2.3264,0.2323
+Cygnus-X,2.3283,0.2374
+Cygnus-X,2.3302,0.2424
+Cygnus-X,2.3321,0.2449
+Cygnus-X,2.334,0.2525
+Cygnus-X,2.3358,0.2551
+Cygnus-X,2.3377,0.2601
+Cygnus-X,2.3396,0.2652
+Cygnus-X,2.3415,0.2677
+Cygnus-X,2.3434,0.2753
+Cygnus-X,2.3452,0.2778
+Cygnus-X,2.3471,0.2828
+Cygnus-X,2.349,0.2879
+Cygnus-X,2.3509,0.2904
+Cygnus-X,2.3528,0.298
+Cygnus-X,2.3546,0.303
+Cygnus-X,2.3565,0.3056
+Cygnus-X,2.3584,0.3131
+Cygnus-X,2.3603,0.3131
+Cygnus-X,2.3622,0.3207
+Cygnus-X,2.364,0.3283
+Cygnus-X,2.3659,0.3283
+Cygnus-X,2.3678,0.3359
+Cygnus-X,2.3697,0.3434
+Cygnus-X,2.3716,0.3434
+Cygnus-X,2.3734,0.351
+Cygnus-X,2.3753,0.3586
+Cygnus-X,2.3772,0.3586
+Cygnus-X,2.3791,0.3662
+Cygnus-X,2.381,0.3712
+Cygnus-X,2.3828,0.3737
+Cygnus-X,2.3847,0.3813
+Cygnus-X,2.3866,0.3838
+Cygnus-X,2.3885,0.3889
+Cygnus-X,2.3904,0.3965
+Cygnus-X,2.3922,0.399
+Cygnus-X,2.3941,0.404
+Cygnus-X,2.396,0.4091
+Cygnus-X,2.3979,0.4141
+Cygnus-X,2.3998,0.4192
+Cygnus-X,2.4016,0.4242
+Cygnus-X,2.4035,0.4293
+Cygnus-X,2.4054,0.4343
+Cygnus-X,2.4073,0.4394
+Cygnus-X,2.4092,0.4444
+Cygnus-X,2.411,0.4495
+Cygnus-X,2.4129,0.4545
+Cygnus-X,2.4148,0.4596
+Cygnus-X,2.4167,0.4646
+Cygnus-X,2.4186,0.4697
+Cygnus-X,2.4204,0.4722
+Cygnus-X,2.4223,0.4798
+Cygnus-X,2.4242,0.4823
+Cygnus-X,2.4261,0.4874
+Cygnus-X,2.428,0.4924
+Cygnus-X,2.4298,0.4975
+Cygnus-X,2.4317,0.5025
+Cygnus-X,2.4336,0.5076
+Cygnus-X,2.4355,0.5101
+Cygnus-X,2.4374,0.5177
+Cygnus-X,2.4392,0.5177
+Cygnus-X,2.4411,0.5253
+Cygnus-X,2.443,0.5278
+Cygnus-X,2.4449,0.5328
+Cygnus-X,2.4468,0.5404
+Cygnus-X,2.4486,0.5429
+Cygnus-X,2.4505,0.548
+Cygnus-X,2.4524,0.5556
+Cygnus-X,2.4543,0.5606
+Cygnus-X,2.4562,0.5657
+Cygnus-X,2.458,0.5707
+Cygnus-X,2.4599,0.5783
+Cygnus-X,2.4618,0.5808
+Cygnus-X,2.4637,0.5859
+Cygnus-X,2.4656,0.5934
+Cygnus-X,2.4675,0.5934
+Cygnus-X,2.4693,0.601
+Cygnus-X,2.4712,0.6035
+Cygnus-X,2.4731,0.6086
+Cygnus-X,2.475,0.6162
+Cygnus-X,2.4769,0.6162
+Cygnus-X,2.4787,0.6237
+Cygnus-X,2.4806,0.6263
+Cygnus-X,2.4825,0.6313
+Cygnus-X,2.4844,0.6389
+Cygnus-X,2.4863,0.6414
+Cygnus-X,2.4881,0.6465
+Cygnus-X,2.49,0.6515
+Cygnus-X,2.4919,0.6566
+Cygnus-X,2.4938,0.6616
+Cygnus-X,2.4957,0.6667
+Cygnus-X,2.4975,0.6717
+Cygnus-X,2.4994,0.6768
+Cygnus-X,2.5013,0.6818
+Cygnus-X,2.5032,0.6869
+Cygnus-X,2.5051,0.6919
+Cygnus-X,2.5069,0.697
+Cygnus-X,2.5088,0.702
+Cygnus-X,2.5107,0.7071
+Cygnus-X,2.5126,0.7121
+Cygnus-X,2.5145,0.7172
+Cygnus-X,2.5163,0.7222
+Cygnus-X,2.5182,0.7273
+Cygnus-X,2.5201,0.7323
+Cygnus-X,2.522,0.7374
+Cygnus-X,2.5239,0.7424
+Cygnus-X,2.5257,0.7475
+Cygnus-X,2.5276,0.7525
+Cygnus-X,2.5295,0.7601
+Cygnus-X,2.5314,0.7652
+Cygnus-X,2.5333,0.7677
+Cygnus-X,2.5351,0.7753
+Cygnus-X,2.537,0.7828
+Cygnus-X,2.5389,0.7828
+Cygnus-X,2.5408,0.7904
+Cygnus-X,2.5427,0.798
+Cygnus-X,2.5445,0.8005
+Cygnus-X,2.5464,0.8056
+Cygnus-X,2.5483,0.8131
+Cygnus-X,2.5502,0.8182
+Cygnus-X,2.5521,0.8207
+Cygnus-X,2.5539,0.8283
+Cygnus-X,2.5558,0.8333
+Cygnus-X,2.5577,0.8359
+Cygnus-X,2.5596,0.8434
+Cygnus-X,2.5615,0.846
+Cygnus-X,2.5633,0.851
+Cygnus-X,2.5652,0.8561
+Cygnus-X,2.5671,0.8586
+Cygnus-X,2.569,0.8662
+Cygnus-X,2.5709,0.8687
+Cygnus-X,2.5727,0.8737
+Cygnus-X,2.5746,0.8788
+Cygnus-X,2.5765,0.8838
+Cygnus-X,2.5784,0.8889
+Cygnus-X,2.5803,0.8939
+Cygnus-X,2.5821,0.8965
+Cygnus-X,2.584,0.904
+Cygnus-X,2.5859,0.904
+Cygnus-X,2.5878,0.9116
+Cygnus-X,2.5897,0.9167
+Cygnus-X,2.5915,0.9192
+Cygnus-X,2.5934,0.9242
+Cygnus-X,2.5953,0.9268
+Cygnus-X,2.5972,0.9343
+Cygnus-X,2.5991,0.9394
+Cygnus-X,2.6009,0.9444
+Cygnus-X,2.6028,0.952
+Cygnus-X,2.6047,0.9545
+Cygnus-X,2.6066,0.9596
+Cygnus-X,2.6085,0.9646
+Cygnus-X,2.6103,0.9697
+Cygnus-X,2.6122,0.9747
+Cygnus-X,2.6141,0.9798
+Cygnus-X,2.616,0.9874
+Cygnus-X,2.6179,0.9924
+Cygnus-X,2.6197,0.9975
+Cygnus-X,2.6216,1.0025
+Cygnus-X,2.6235,1.0051
+Cygnus-X,2.6254,1.0126
+Cygnus-X,2.6273,1.0152
+Cygnus-X,2.6291,1.0202
+Cygnus-X,2.631,1.0227
+Cygnus-X,2.6329,1.0278
+Cygnus-X,2.6348,1.0328
+Cygnus-X,2.6367,1.0354
+Cygnus-X,2.6385,1.0429
+Cygnus-X,2.6404,1.0455
+Cygnus-X,2.6423,1.048
+Cygnus-X,2.6442,1.053
+Cygnus-X,2.6461,1.0581
+Cygnus-X,2.6479,1.0606
+Cygnus-X,2.6498,1.0657
+Cygnus-X,2.6517,1.0682
+Cygnus-X,2.6536,1.0732
+Cygnus-X,2.6555,1.0783
+Cygnus-X,2.6573,1.0808
+Cygnus-X,2.6592,1.0833
+Cygnus-X,2.6611,1.0909
+Cygnus-X,2.663,1.0934
+Cygnus-X,2.6649,1.0985
+Cygnus-X,2.6667,1.1035
+Cygnus-X,2.6686,1.1086
+Cygnus-X,2.6705,1.1136
+Cygnus-X,2.6724,1.1187
+Cygnus-X,2.6743,1.1263
+Cygnus-X,2.6761,1.1263
+Cygnus-X,2.678,1.1313
+Cygnus-X,2.6799,1.1364
+Cygnus-X,2.6818,1.1389
+Cygnus-X,2.6837,1.1439
+Cygnus-X,2.6855,1.149
+Cygnus-X,2.6874,1.154
+Cygnus-X,2.6893,1.1591
+Cygnus-X,2.6912,1.1641
+Cygnus-X,2.6931,1.1667
+Cygnus-X,2.6949,1.1692
+Cygnus-X,2.6968,1.1742
+Cygnus-X,2.6987,1.1768
+Cygnus-X,2.7006,1.1818
+Cygnus-X,2.7025,1.1843
+Cygnus-X,2.7043,1.1869
+Cygnus-X,2.7062,1.1944
+Cygnus-X,2.7081,1.197
+Cygnus-X,2.71,1.202
+Cygnus-X,2.7119,1.2071
+Cygnus-X,2.7137,1.2146
+Cygnus-X,2.7156,1.2146
+Cygnus-X,2.7175,1.2197
+Cygnus-X,2.7194,1.2247
+Cygnus-X,2.7213,1.2273
+Cygnus-X,2.7231,1.2323
+Cygnus-X,2.725,1.2374
+Cygnus-X,2.7269,1.2399
+Cygnus-X,2.7288,1.2449
+Cygnus-X,2.7307,1.2475
+Cygnus-X,2.7325,1.25
+Cygnus-X,2.7344,1.2551
+Cygnus-X,2.7363,1.2576
+Cygnus-X,2.7382,1.2626
+Cygnus-X,2.7401,1.2652
+Cygnus-X,2.742,1.2702
+Cygnus-X,2.7438,1.2727
+Cygnus-X,2.7457,1.2778
+Cygnus-X,2.7476,1.2803
+Cygnus-X,2.7495,1.2854
+Cygnus-X,2.7514,1.2879
+Cygnus-X,2.7532,1.2879
+Cygnus-X,2.7551,1.2929
+Cygnus-X,2.757,1.3005
+Cygnus-X,2.7589,1.303
+Cygnus-X,2.7608,1.303
+Cygnus-X,2.7626,1.3081
+Cygnus-X,2.7645,1.3081
+Cygnus-X,2.7664,1.3131
+Cygnus-X,2.7683,1.3182
+Cygnus-X,2.7702,1.3207
+Cygnus-X,2.772,1.3258
+Cygnus-X,2.7739,1.3258
+Cygnus-X,2.7758,1.3308
+Cygnus-X,2.7777,1.3333
+Cygnus-X,2.7796,1.3409
+Cygnus-X,2.7814,1.3434
+Cygnus-X,2.7833,1.346
+Cygnus-X,2.7852,1.3485
+Cygnus-X,2.7871,1.351
+Cygnus-X,2.789,1.3586
+Cygnus-X,2.7908,1.3611
+Cygnus-X,2.7927,1.3636
+Cygnus-X,2.7946,1.3662
+Cygnus-X,2.7965,1.3737
+Cygnus-X,2.7984,1.3737
+Cygnus-X,2.8002,1.3788
+Cygnus-X,2.8021,1.3813
+Cygnus-X,2.804,1.3864
+Cygnus-X,2.8059,1.3889
+Cygnus-X,2.8078,1.3939
+Cygnus-X,2.8096,1.3965
+Cygnus-X,2.8115,1.4015
+Cygnus-X,2.8134,1.404
+Cygnus-X,2.8153,1.4066
+Cygnus-X,2.8172,1.4141
+Cygnus-X,2.819,1.4192
+Cygnus-X,2.8209,1.4217
+Cygnus-X,2.8228,1.4242
+Cygnus-X,2.8247,1.4268
+Cygnus-X,2.8266,1.4268
+Cygnus-X,2.8284,1.4293
+Cygnus-X,2.8303,1.4343
+Cygnus-X,2.8322,1.4369
+Cygnus-X,2.8341,1.4394
+Cygnus-X,2.836,1.4419
+Cygnus-X,2.8378,1.4495
+Cygnus-X,2.8397,1.452
+Cygnus-X,2.8416,1.452
+Cygnus-X,2.8435,1.4571
+Cygnus-X,2.8454,1.4646
+Cygnus-X,2.8472,1.4646
+Cygnus-X,2.8491,1.4697
+Cygnus-X,2.851,1.4747
+Cygnus-X,2.8529,1.4798
+Cygnus-X,2.8548,1.4848
+Cygnus-X,2.8566,1.4848
+Cygnus-X,2.8585,1.4874
+Cygnus-X,2.8604,1.4924
+Cygnus-X,2.8623,1.4975
+Cygnus-X,2.8642,1.5
+Cygnus-X,2.866,1.5051
+Cygnus-X,2.8679,1.5076
+Cygnus-X,2.8698,1.5152
+Cygnus-X,2.8717,1.5177
+Cygnus-X,2.8736,1.5227
+Cygnus-X,2.8754,1.5253
+Cygnus-X,2.8773,1.5278
+Cygnus-X,2.8792,1.5328
+Cygnus-X,2.8811,1.5303
+Cygnus-X,2.883,1.5379
+Cygnus-X,2.8848,1.5404
+Cygnus-X,2.8867,1.5404
+Cygnus-X,2.8886,1.5455
+Cygnus-X,2.8905,1.548
+Cygnus-X,2.8924,1.553
+Cygnus-X,2.8942,1.5556
+Cygnus-X,2.8961,1.5581
+Cygnus-X,2.898,1.5606
+Cygnus-X,2.8999,1.5631
+Cygnus-X,2.9018,1.5707
+Cygnus-X,2.9036,1.5707
+Cygnus-X,2.9055,1.5758
+Cygnus-X,2.9074,1.5758
+Cygnus-X,2.9093,1.5783
+Cygnus-X,2.9112,1.5783
+Cygnus-X,2.913,1.5833
+Cygnus-X,2.9149,1.5859
+Cygnus-X,2.9168,1.5884
+Cygnus-X,2.9187,1.5859
+Cygnus-X,2.9206,1.5884
+Cygnus-X,2.9224,1.5934
+Cygnus-X,2.9243,1.5985
+Cygnus-X,2.9262,1.601
+Cygnus-X,2.9281,1.6035
+Cygnus-X,2.93,1.6086
+Cygnus-X,2.9318,1.6111
+Cygnus-X,2.9337,1.6136
+Cygnus-X,2.9356,1.6187
+Cygnus-X,2.9375,1.6187
+Cygnus-X,2.9394,1.6237
+Cygnus-X,2.9412,1.6263
+Cygnus-X,2.9431,1.6288
+Cygnus-X,2.945,1.6313
+Cygnus-X,2.9469,1.6338
+Cygnus-X,2.9488,1.6338
+Cygnus-X,2.9506,1.6389
+Cygnus-X,2.9525,1.6414
+Cygnus-X,2.9544,1.649
+Cygnus-X,2.9563,1.649
+Cygnus-X,2.9582,1.654
+Cygnus-X,2.96,1.6566
+Cygnus-X,2.9619,1.6591
+Cygnus-X,2.9638,1.6641
+Cygnus-X,2.9657,1.6641
+Cygnus-X,2.9676,1.6717
+Cygnus-X,2.9694,1.6742
+Cygnus-X,2.9713,1.6793
+Cygnus-X,2.9732,1.6793
+Cygnus-X,2.9751,1.6818
+Cygnus-X,2.977,1.6818
+Cygnus-X,2.9788,1.6843
+Cygnus-X,2.9807,1.6894
+Cygnus-X,2.9826,1.6894
+Cygnus-X,2.9845,1.6919
+Cygnus-X,2.9864,1.6919
+Cygnus-X,2.9882,1.6919
+Cygnus-X,2.9901,1.6919
+Cygnus-X,2.992,1.6944
+Cygnus-X,2.9939,1.697
+Cygnus-X,2.9958,1.702
+Cygnus-X,2.9976,1.7045
+Cygnus-X,2.9995,1.7096
+Cygnus-X,3.0014,1.7096
+Cygnus-X,3.0033,1.7146
+Cygnus-X,3.0052,1.7172
+Cygnus-X,3.0071,1.7197
+Cygnus-X,3.0089,1.7247
+Cygnus-X,3.0108,1.7273
+Cygnus-X,3.0127,1.7273
+Cygnus-X,3.0146,1.7298
+Cygnus-X,3.0165,1.7298
+Cygnus-X,3.0183,1.7348
+Cygnus-X,3.0202,1.7348
+Cygnus-X,3.0221,1.7399
+Cygnus-X,3.024,1.7399
+Cygnus-X,3.0259,1.7424
+Cygnus-X,3.0277,1.7424
+Cygnus-X,3.0296,1.7449
+Cygnus-X,3.0315,1.7475
+Cygnus-X,3.0334,1.75
+Cygnus-X,3.0353,1.7525
+Cygnus-X,3.0371,1.7525
+Cygnus-X,3.039,1.7525
+Cygnus-X,3.0409,1.7551
+Cygnus-X,3.0428,1.7576
+Cygnus-X,3.0447,1.7601
+Cygnus-X,3.0465,1.7601
+Cygnus-X,3.0484,1.7652
+Cygnus-X,3.0503,1.7652
+Cygnus-X,3.0522,1.7677
+Cygnus-X,3.0541,1.7702
+Cygnus-X,3.0559,1.7702
+Cygnus-X,3.0578,1.7727
+Cygnus-X,3.0597,1.7753
+Cygnus-X,3.0616,1.7778
+Cygnus-X,3.0635,1.7828
+Cygnus-X,3.0653,1.7854
+Cygnus-X,3.0672,1.7879
+Cygnus-X,3.0691,1.7879
+Cygnus-X,3.071,1.7879
+Cygnus-X,3.0729,1.7904
+Cygnus-X,3.0747,1.7955
+Cygnus-X,3.0766,1.7955
+Cygnus-X,3.0785,1.7955
+Cygnus-X,3.0804,1.7955
+Cygnus-X,3.0823,1.798
+Cygnus-X,3.0841,1.798
+Cygnus-X,3.086,1.798
+Cygnus-X,3.0879,1.803
+Cygnus-X,3.0898,1.803
+Cygnus-X,3.0917,1.8005
+Cygnus-X,3.0935,1.8005
+Cygnus-X,3.0954,1.8081
+Cygnus-X,3.0973,1.8131
+Cygnus-X,3.0992,1.8157
+Cygnus-X,3.1011,1.8182
+Cygnus-X,3.1029,1.8157
+Cygnus-X,3.1048,1.8157
+Cygnus-X,3.1067,1.8157
+Cygnus-X,3.1086,1.8182
+Cygnus-X,3.1105,1.8182
+Cygnus-X,3.1123,1.8207
+Cygnus-X,3.1142,1.8258
+Cygnus-X,3.1161,1.8283
+Cygnus-X,3.118,1.8283
+Cygnus-X,3.1199,1.8333
+Cygnus-X,3.1217,1.8384
+Cygnus-X,3.1236,1.8434
+Cygnus-X,3.1255,1.8434
+Cygnus-X,3.1274,1.8434
+Cygnus-X,3.1293,1.8434
+Cygnus-X,3.1311,1.846
+Cygnus-X,3.133,1.8485
+Cygnus-X,3.1349,1.8485
+Cygnus-X,3.1368,1.8535
+Cygnus-X,3.1387,1.8586
+Cygnus-X,3.1405,1.8611
+Cygnus-X,3.1424,1.8662
+Cygnus-X,3.1443,1.8712
+Cygnus-X,3.1462,1.8763
+Cygnus-X,3.1481,1.8838
+Cygnus-X,3.1499,1.8889
+Cygnus-X,3.1518,1.8914
+Cygnus-X,3.1537,1.8914
+Cygnus-X,3.1556,1.8914
+Cygnus-X,3.1575,1.8939
+Cygnus-X,3.1593,1.8939
+Cygnus-X,3.1612,1.8965
+Cygnus-X,3.1631,1.8939
+Cygnus-X,3.165,1.8914
+Cygnus-X,3.1669,1.8914
+Cygnus-X,3.1687,1.8939
+Cygnus-X,3.1706,1.8965
+Cygnus-X,3.1725,1.899
+Cygnus-X,3.1744,1.9015
+Cygnus-X,3.1763,1.9015
+Cygnus-X,3.1781,1.899
+Cygnus-X,3.18,1.899
+Cygnus-X,3.1819,1.899
+Cygnus-X,3.1838,1.9066
+Cygnus-X,3.1857,1.9091
+Cygnus-X,3.1875,1.9116
+Cygnus-X,3.1894,1.9066
+Cygnus-X,3.1913,1.9066
+Cygnus-X,3.1932,1.904
+Cygnus-X,3.1951,1.904
+Cygnus-X,3.1969,1.9066
+Cygnus-X,3.1988,1.9066
+Cygnus-X,3.2007,1.9116
+Cygnus-X,3.2026,1.9141
+Cygnus-X,3.2045,1.9192
+Cygnus-X,3.2063,1.9217
+Cygnus-X,3.2082,1.9192
+Cygnus-X,3.2101,1.9141
+Cygnus-X,3.212,1.9091
+Cygnus-X,3.2139,1.899
+Cygnus-X,3.2157,1.8939
+Cygnus-X,3.2176,1.8864
+Cygnus-X,3.2195,1.8889
+Cygnus-X,3.2214,1.8965
+Cygnus-X,3.2233,1.8965
+Cygnus-X,3.2251,1.8965
+Cygnus-X,3.227,1.8914
+Cygnus-X,3.2289,1.8914
+Cygnus-X,3.2308,1.8914
+Cygnus-X,3.2327,1.8914
+Cygnus-X,3.2345,1.8965
+Cygnus-X,3.2364,1.899
+Cygnus-X,3.2383,1.904
+Cygnus-X,3.2402,1.9091
+Cygnus-X,3.2421,1.9141
+Cygnus-X,3.2439,1.9141
+Cygnus-X,3.2458,1.9167
+Cygnus-X,3.2477,1.9192
+Cygnus-X,3.2496,1.9242
+Cygnus-X,3.2515,1.9242
+Cygnus-X,3.2533,1.9268
+Cygnus-X,3.2552,1.9293
+Cygnus-X,3.2571,1.9217
+Cygnus-X,3.259,1.9167
+Cygnus-X,3.2609,1.9141
+Cygnus-X,3.2627,1.9192
+Cygnus-X,3.2646,1.9268
+Cygnus-X,3.2665,1.9394
+Cygnus-X,3.2684,1.952
+Cygnus-X,3.2703,1.9571
+Cygnus-X,3.2722,1.9571
+Cygnus-X,3.274,1.952
+Cygnus-X,3.2759,1.9495
+Cygnus-X,3.2778,1.947
+Cygnus-X,3.2797,1.9545
+Cygnus-X,3.2816,1.9545
+Cygnus-X,3.2834,1.952
+Cygnus-X,3.2853,1.9495
+Cygnus-X,3.2872,1.9343
+Cygnus-X,3.2891,1.9343
+Cygnus-X,3.291,1.9343
+Cygnus-X,3.2928,1.9369

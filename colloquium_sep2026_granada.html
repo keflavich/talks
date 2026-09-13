@@ -814,7 +814,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     </div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_sgrb2.png">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:292.84px; top:227.87px; width:601.91px; height:267.2px; rotate:31.23deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_sgrb2.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:292.84px; top:227.87px; width:601.91px; height:267.2px; rotate:-148.77deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_sgrb2.jpg">
 </section>
 
 <section id=clouds-cloudef>
@@ -913,6 +913,13 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 
+<section id=aces-overview-why-different>
+    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">What is different about the CMZ?</div>
+    <!-- ACES/MUSTANG stays fixed; only the JWST blowup grows out of its footprint -->
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute;
+                left:0px; top:168.59px; width:1024px; z-index:1;" src="assets/cmz/MUSTANG_12m_feather_noaxes.png">
+</section>
+
 <section id=cmz-cloudc>
     <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">JWST has observed the CMZ dust ridge</div>
     <!-- ACES/MUSTANG stays fixed; only the JWST blowup grows out of its footprint -->
@@ -924,26 +931,50 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
                 --l1:-122.875px;  --t1:102.391px;  --r1:0deg; --s1:1;">
 </section>
 
-<section>
-    <section id=cloudc data-auto-animate>
-        <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
-        <div style='position:absolute;'> The Galactic Center Dust ridge as seen by JWST </div>
-        <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
-    </section>
-    <section id=cloudc1 data-auto-animate>
-        <div style='position: absolute'>
-        ...has a foreground cloud in front
-        </div>
-        <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
-        <div style="border: 10px solid red; position: absolute; width: 300px; height: 150px; top: 246px !important; left: 706px !important; /*! z-index: -100; */">
-        </div>
-        <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
-    </section>
+<section id=cloudc data-auto-animate>
+    <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
+    <div data-id="cloudc-title" style='position:absolute; left:0; top:0;'> JWST's colors show ice </div>
+    <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
+</section>
+<section id=cloudc1 data-auto-animate>
+
+    <div data-id="cloudc-title" style='position:absolute; left:0; top:0;'> JWST's colors show ice </div>
+    <div style='position: absolute'>
+    
+    </div>
+    <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
+    <img style="width:600px; position: absolute; bottom:25%; left:2px; z-index:25;" src="assets/Savannah/f466vsav_3kpcfilament.png">
+    <!-- Reddening + ice vectors over f466vsav_3kpcfilament.png.  Drawn in slide coordinates, tied
+         to the figure's own axes: the plot frame runs x = 0.50..2.50 at 248 px/unit and
+         y = 0.0..-2.0 at 154 px/unit in the 608x441 source, shown here 600px wide at left 2,
+         bottom 25% -> data (X,Y) maps to (85.88 + 244.74*(X-0.5), 165.47 - 151.97*Y).
+         DUST: the CT06_MWGC (Chiar & Tielens 2006 Galactic Centre) law evaluated at the NIRCam
+         pivot wavelengths -- A/A(V) = 0.14261 (F182M 1.845um), 0.11411 (F212N 2.120um),
+         0.05428 (F405N 4.055um), 0.04931 (F466N 4.654um).  Per magnitude of A_V that is
+         d([F182M]-[F212N]) = +0.02850 and d([F405N]-[F466N]) = +0.00497, i.e. slope +0.174
+         (9.9 deg above horizontal).  The arrow drawn is A_V = 19.3 mag.
+         ICE: parallel to the figure's dotted lines, whose slope fits to -1.004 (intercepts 0.0,
+         0.5, 1.0), pointing down-right = deeper 4.66um CO ice absorption.
+         Recompute, don't nudge: python -c "from dust_extinction.averages import CT06_MWGC". -->
+    <svg style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none; z-index:26;" viewBox="0 0 1024 768">
+      <defs>
+        <marker id="ahdust" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#a0522d"/></marker>
+        <marker id="ahice"  markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#0077b6"/></marker>
+      </defs>
+      <line x1="115.2" y1="423.8" x2="249.9" y2="409.3" stroke="#a0522d" stroke-width="3.2" marker-end="url(#ahdust)"/>
+      <text x="256" y="406" fill="#a0522d" font-size="19" font-weight="bold">dust</text>
+      <line x1="115.2" y1="423.8" x2="193.6" y2="472.5" stroke="#0077b6" stroke-width="3.2" marker-end="url(#ahice)"/>
+      <text x="199" y="483" fill="#0077b6" font-size="19" font-weight="bold">ice</text>
+    </svg>
+    <div style="border: 10px solid red; position: absolute; width: 300px; height: 150px; top: 246px !important; left: 706px !important; /*! z-index: -100; */">
+    </div>
+    <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
 
 <!-- Cloud-to-cloud ice variation (Gramze) -- magic-move chain via data-auto-animate -->
 <section id=cloudvar1 data-auto-animate>
     <h3 data-id="cvtitle">The Dust ridge: Cloud A (brick), C, D</h3>
+    <div class=smaller style='top:-10px; margin-top:-10px;'>All have different ice-to-dust ratios</div>
     <img data-id="map-cd" src="assets/Savannah/icevar_dustridge_cloudCD.png"
          style="position:absolute; left:12px; top:105px; width:1000px;">
     <img data-id="map-a" src="assets/Savannah/icevar_dustridge_cloudA.png"
@@ -992,22 +1023,31 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section id=cloudvar3 data-auto-animate>
-    <img data-id="ccd-cloudD" src="assets/Savannah/f466vsav_clouddpng.png" style="position:absolute; left:20px; top:25px; width:280px;">
-    <img data-id="ccd-three" src="assets/Savannah/f466vsav_threeclouds.png" style="position:absolute; left:362px; top:25px; width:300px;">
-    <img data-id="ccd-fil" src="assets/Savannah/f466vsav_3kpcfilament.png" style="position:absolute; left:724px; top:25px; width:280px;">
+    <img data-id="ccd-cloudD" src="assets/Savannah/f466vsav_clouddpng.png" style="position:absolute; left:16px; top:30px; width:300px;">
+    <img data-id="ccd-three" src="assets/Savannah/f466vsav_threeclouds.png" style="position:absolute; left:230px; top:175px; width:500px; z-index:25;">
+    <img data-id="ccd-fil" src="assets/Savannah/f466vsav_3kpcfilament.png" style="position:absolute; left:708px; top:30px; width:300px;">
+    
     <img data-id="map-cd" src="assets/Savannah/icevar_dustridge_cloudCD.png" style="position:absolute; left:72px; top:245px; width:880px;">
     <img data-id="map-a" src="assets/Savannah/icevar_dustridge_cloudA.png" style="position:absolute; left:72px; top:458px; width:880px;">
+    <img data-id="ccd-brickhead" src="assets/Savannah/f466vsav_brickhead.png" style="position:absolute; left:16px; top:508px; width:300px; margin:0;">
     <svg data-id="arrows" style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none;" viewBox="0 0 1024 768">
       <defs>
         <marker id="ahb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#6fa8ff"/></marker>
+        <marker id="ahg" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3fc46a"/></marker>
         <marker id="ahk" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#000"/></marker>
       </defs>
       <line x1="163" y1="232" x2="298" y2="345" stroke="#6fa8ff" stroke-width="2.5" marker-end="url(#ahb)"/>
+      <line x1="322" y1="570" x2="612" y2="558" stroke="#3fc46a" stroke-width="2.5" marker-end="url(#ahg)"/>
       <line x1="730" y1="266" x2="565" y2="349" stroke="#000" stroke-width="2.5" marker-end="url(#ahk)"/>
     </svg>
     <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
+
+    <!-- scrim: dims everything on the slide except the combo figure, which sits at z-index 25.
+         `background`, not `color` (color only paints text, and (0,0,0,0.5) is not a valid value);
+         inset:-200px bleeds past the 1024x768 canvas on all sides so no edge shows. -->
+    <div data-id="scrim" style='position:absolute; inset:-200px; background:rgba(0,0,0,0.5); z-index:24; pointer-events:none;'></div>
 </section>
 
 <section id=cloudvar4 data-auto-animate>

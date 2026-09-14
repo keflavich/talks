@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A hundred stars, a hundred orbits</title>
+<title>Cloud tomography with proper-motion-based distances</title>
 <style>
   :root{
     --bg:#0b0e14; --panel:#12161f; --ink:#e8ecf4; --dim:#93a0b4; --accent:#ffd166;
@@ -65,11 +65,36 @@
   label.chk{display:flex; align-items:center; gap:6px; font-size:0.76rem; color:var(--dim); margin-bottom:6px;}
   footer{margin-top:26px; font-size:0.78rem; color:var(--dim); max-width:940px; line-height:1.6;}
   footer a{color:#8ab4ff;}
+
+  /* ---- embed mode: ?embed=1 -------------------------------------------------
+     Opt-in only, for showing just the graphical panels inside an <iframe> (the
+     Granada colloquium deck does this).  Nothing below applies without the URL
+     parameter, so the standalone page is unchanged.  ?autoplay=1 additionally
+     starts the guided tour on load; the parent can also postMessage('play').  */
+  body.embed{padding:10px 10px 44px; overflow:hidden;}
+  body.embed h1,
+  body.embed .sub-details,
+  body.embed footer,
+  body.embed .controls{display:none !important;}
+  body.embed .layout{gap:14px; flex-wrap:nowrap; justify-content:center;}
+  body.embed canvas{cursor:default;}
+  /* pin the panels to the canvas width so the total is deterministic (3x420 + 2x14
+     gaps + 2x10 padding = 1308) -- otherwise the legend rows stretch their panel
+     whenever the iframe is wider, and the outer panels creep off the edge */
+  body.embed .panel{flex:0 0 420px; width:420px;}
+  body.embed .legend{flex-wrap:wrap;}
+  /* the tour's step text is the narration, so it stays -- moved out of the
+     (hidden) control column into a bar along the bottom by the embed script */
+  #embedStatus{
+    position:fixed; left:0; right:0; bottom:0; padding:7px 14px;
+    background:rgba(5,7,12,0.92); border-top:1px solid var(--line);
+    font-size:0.92rem; color:var(--ink); letter-spacing:0.01em;
+  }
 </style>
 </head>
 <body>
 
-<h1>A hundred stars, a hundred orbits</h1>
+<h1>Cloud tomography with proper-motion-based distances</h1>
 <details class="sub-details">
 <summary>What am I looking at?</summary>
 <p class="sub">
@@ -81,7 +106,7 @@ are plotted the way you'd actually observe them: transverse sky position (&#8733
 velocity. The open, parallelogram-like loop that traces out is the signature of the barred orbit family — and
 because it's a loop rather than a scatter, a star's (l, v) pair still tells you which single orbit and phase
 it sits on, hence its unique 3D location. Click a star in either panel to highlight it in both. Turn on the
-foreground dust cloud below to see the flip side: stars behind a thick enough cloud along the line of sight
+dust cloud below to see the flip side: stars behind a thick enough cloud along the line of sight
 are extinguished, just as real dust column density is read off from how stars are dimmed and reddened behind
 it (the technique behind Vasini et al. 2026). The icon at the panel's edge marks the direction back to the Sun,
 and dashed lines mark Galactic longitude l (this face-on plane is everywhere at b &asymp; 0, so there's no b
@@ -134,6 +159,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
       <h2>Guided tour</h2>
       <div class="row-inline">
         <span style="font-size:0.76rem; color:var(--dim); flex:1; margin-right:10px;" id="movieStatus">A scripted walk-through of the cloud tomography tools.</span>
+        <button class="btn" id="resetDefaults" style="margin-right:6px;">Reset to default</button>
         <button class="btn" id="playMovie">&#9654; Play movie</button>
       </div>
     </div>
@@ -173,8 +199,8 @@ star's proper motion parallel to the plane barely depends on where along the lin
     </div>
 
     <div>
-      <h2>Foreground dust cloud</h2>
-      <label class="chk"><input type="checkbox" id="cloudEnabled" checked> Add a foreground dust cloud</label>
+      <h2>Dust cloud</h2>
+      <label class="chk"><input type="checkbox" id="cloudEnabled" checked> Add a dust cloud</label>
       <div class="row">
         <label>Cloud sky size (transverse, pc) <span class="val" id="v-cr">10 pc</span></label>
         <input type="range" id="cloudR" min="1" max="50" step="1" value="10">
@@ -264,6 +290,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
     faceZoom: document.getElementById('faceZoom'),
     vzoom: document.getElementById('v-zoom'),
     playMovie: document.getElementById('playMovie'),
+    resetDefaults: document.getElementById('resetDefaults'),
     movieStatus: document.getElementById('movieStatus'),
     modeSky: document.getElementById('modeSky'),
     modeLos: document.getElementById('modeLos'),
@@ -279,7 +306,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
   // for every rotation in the model is negated here, in one place, to match that.
   function getPhiRad(){ return -parseFloat(el.phi.value)*Math.PI/180; }
 
-  // foreground dust cloud: a slab in the face-on plane, independently sized on the
+  // dust cloud: a slab in the face-on plane, independently sized on the
   // sky (rSky, transverse) and along the line of sight (rLos). A star's sightline
   // (the horizontal line through its own y) hits the cloud whenever |y-cy|<=rSky;
   // for a star at line-of-sight position x, its fractional depth into the cloud is
@@ -770,7 +797,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
     const plotW = HW-padL-padR, plotH = HH-padT-padB;
     if(!el.cloudEnabled.checked){
       hctx.fillStyle = 'rgba(232,236,244,0.5)'; hctx.font = '12px -apple-system,sans-serif';
-      hctx.fillText('Enable the foreground cloud to see this diagnostic.', 14, HH/2);
+      hctx.fillText('Enable the dust cloud to see this diagnostic.', 14, HH/2);
       return;
     }
     // count stars per bin (no weighting), split into 4 extinction categories by
@@ -847,7 +874,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
     const plotW = TW-padL-padR, plotH = TH-padT-padB;
     if(!el.cloudEnabled.checked){
       tctx.fillStyle = 'rgba(232,236,244,0.5)'; tctx.font = '12px -apple-system,sans-serif';
-      tctx.fillText('Enable the foreground cloud to see this diagnostic.', 14, TH/2);
+      tctx.fillText('Enable the dust cloud to see this diagnostic.', 14, TH/2);
       return;
     }
     const cloudMag = parseFloat(el.cloudTau.value); // slider's own value, in mag
@@ -972,6 +999,27 @@ star's proper motion parallel to the plane barely depends on where along the lin
   // zoomed pencil beam, or the beam's own footprint moving), so they regenerate
   [el.n, el.zoomCloud, el.cloudEnabled, el.cloudR].forEach(inp=> inp.addEventListener('input', regenerateStars));
   el.reshuffle.addEventListener('click', regenerateStars);
+
+  // every control's own markup-declared default, restored verbatim -- kept next to
+  // the controls themselves so this can't drift out of sync with them
+  function resetDefaults(){
+    el.faceZoom.value = 220;
+    el.phi.value = 27;
+    el.q.value = 0.35;
+    el.n.value = 100;
+    el.showOrbits.checked = true;
+    el.animateOn.checked = true;
+    el.cloudEnabled.checked = true;
+    el.cloudR.value = 10;
+    el.cloudLOS.value = 20;
+    el.cloudTau.value = 5;
+    el.zoomCloud.checked = false;
+    cloud.cx = 0;
+    cloud.cy = lToPc(0.25);
+    setVelMode('sky');
+    regenerateStars();
+  }
+  el.resetDefaults.addEventListener('click', resetDefaults);
 
   let animT = 0, lastTS = null;
   function frameLoop(ts){
@@ -1109,6 +1157,25 @@ star's proper motion parallel to the plane barely depends on where along the lin
 
   regenerateStars();
   requestAnimationFrame(frameLoop);
+
+  // ---- embed mode (see the CSS block above).  Additive: without ?embed=1 this
+  // does nothing at all.  #movieStatus is MOVED, not cloned, so el.movieStatus
+  // and playMovie()'s setStatus() keep working on the same node.
+  (function(){
+    const q = new URLSearchParams(location.search);
+    if(!(q.get('embed')==='1' || q.get('embed')==='true')) return;
+    document.body.classList.add('embed');
+    const bar = document.createElement('div');
+    bar.id = 'embedStatus';
+    bar.appendChild(el.movieStatus);
+    document.body.appendChild(bar);
+    el.movieStatus.textContent = 'Press play, or let the tour start.';
+    // the parent frame drives replays: postMessage('play') restarts the tour
+    window.addEventListener('message', ev=>{ if(ev.data==='play') playMovie(); });
+    if(q.get('autoplay')==='1' || q.get('autoplay')==='true'){
+      setTimeout(playMovie, 400);
+    }
+  })();
 })();
 </script>
 </body>

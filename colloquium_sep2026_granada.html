@@ -1455,6 +1455,45 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 
 
+
+<!-- ============================ EXPERIMENT ============================
+     Live embed of assets/cmz/cmz_orbit_stars.html, stripped to its three canvas
+     panels by that page's opt-in ?embed=1 mode (added alongside this slide; without
+     the parameter the standalone page is untouched).  ?autoplay=1 runs its built-in
+     ten-step guided tour on load.
+     The iframe carries data-src rather than src: the script at the end of this file
+     assigns it when the slide is entered -- which both starts the tour from step 1
+     and, by clearing it on the way out, stops the page's requestAnimationFrame loop
+     so it is not burning CPU behind the rest of the deck.
+     The embed CSS pins each panel to 420px, so the content is a deterministic 1308
+     wide (3x420 + 2x14 gaps + 2x10 padding); the iframe is 1310x520 scaled by 0.7664
+     -> 1004x414 on the 1024-wide canvas, transform-origin at
+     the top left so left/top stay the real placement.  max-width:none is REQUIRED: the
+     theme caps iframes at 95% (973px), which silently clipped the outer two panels --
+     if you resize this, check the panel titles are not cut off at either edge. -->
+<section id=cmz-orbit-embed data-background-color="#0b0e14">
+    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">A hundred stars, a hundred orbits &mdash; how proper motions locate a cloud</div>
+    <iframe class="orbit-embed" data-src="assets/cmz/cmz_orbit_stars.html?embed=1&amp;autoplay=1"
+            frameborder="0" scrolling="no" allowtransparency="true"
+            style="position:absolute; left:10px; top:168px; width:1310px; height:540px;
+                   max-width:none; max-height:none; margin:0; border:0; background:#0b0e14;
+                   transform:scale(0.7664); transform-origin:0 0;"></iframe>
+    <button onclick="window.orbitEmbedReplay&&window.orbitEmbedReplay()"
+            style="position:absolute; right:14px; top:8px; z-index:20; background:#2a3040; color:#e8ecf4;
+                   border:1px solid #3a4256; border-radius:6px; padding:4px 11px; font-size:15px; cursor:pointer;">&#9654; replay</button>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf; z-index:20;">Interactive version: <tt>assets/cmz/cmz_orbit_stars.html</tt> &mdash; model after Nieuwmunster+ 2024; method after <a href="https://arxiv.org/abs/2609.10782" class=darkbg>Vasini+ 2026</a></div>
+
+    <aside class=notes>
+        <ul>
+            <li> EXPERIMENT &mdash; live page in an iframe, not a video. It restarts every time you enter the slide; the replay button re-runs it without leaving
+            <li> This is the cartoon behind #roman-tomo-method: each dot is a star on an x2 orbit in the nuclear stellar disc, coloured by the velocity you would measure
+            <li> Watch the middle-left panel: the (l, v) loop is what makes a star's position along the line of sight recoverable at all
+            <li> Then the cloud goes in and sweeps front to back &mdash; the histogram and the A vs proper-motion panel are the actual tomography signal
+            <li> If the iframe fails (opened from file://, or the asset missing) the panel is just dark: open the standalone page instead
+        </ul>
+    </aside>
+</section>
+
 </div>
 </div>
 
@@ -1506,6 +1545,25 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
       { src: 'slideautostart.js', async: true },
         ],
       });
+    </script>
+
+    <script>
+      /* #cmz-orbit-embed: load the iframe on entry (which autostarts its guided tour)
+         and unload it on exit, so the embedded page's animation loop stops. */
+      (function(){
+        var SEC = 'cmz-orbit-embed';
+        function frame(){ var s=document.getElementById(SEC); return s && s.querySelector('iframe.orbit-embed'); }
+        function start(){ var f=frame(); if(f) f.src = f.getAttribute('data-src'); }
+        function stop(){ var f=frame(); if(f) f.removeAttribute('src'); }
+        window.orbitEmbedReplay = start;
+        if (window.Reveal && Reveal.on) {
+          Reveal.on('ready', function(e){ if(e.currentSlide && e.currentSlide.id===SEC) start(); });
+          Reveal.on('slidechanged', function(e){
+            if(e.currentSlide && e.currentSlide.id===SEC) start();
+            else if(e.previousSlide && e.previousSlide.id===SEC) stop();
+          });
+        }
+      })();
     </script>
   </body>
 </html>

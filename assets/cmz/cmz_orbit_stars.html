@@ -83,13 +83,20 @@
      whenever the iframe is wider, and the outer panels creep off the edge */
   body.embed .panel{flex:0 0 420px; width:420px;}
   body.embed .legend{flex-wrap:wrap;}
+  /* the embed is displayed shrunk to ~77% inside the deck, so the page's own type
+     has to grow to stay readable from the back of a lecture hall */
+  body.embed .panelTitle{font-size:1.16rem; letter-spacing:0.02em; margin-bottom:8px;}
+  body.embed .legend{font-size:1.0rem; gap:9px;}
   /* the tour's step text is the narration, so it stays -- moved out of the
      (hidden) control column into a bar along the bottom by the embed script */
   #embedStatus{
-    position:fixed; left:0; right:0; bottom:0; padding:7px 14px;
+    position:fixed; left:0; right:0; bottom:0; padding:11px 16px;
     background:rgba(5,7,12,0.92); border-top:1px solid var(--line);
-    font-size:0.92rem; color:var(--ink); letter-spacing:0.01em;
+    line-height:1.25; letter-spacing:0.01em;
   }
+  /* #movieStatus carries an inline font-size:0.76rem (it is sized for the control
+     column), so the bar's own font-size would lose to it -- override on the node */
+  body.embed #movieStatus{font-size:1.7rem !important; color:var(--ink) !important;}
 </style>
 </head>
 <body>
@@ -1037,13 +1044,18 @@ star's proper motion parallel to the plane barely depends on where along the lin
   // `cloud.rSky/rLos/tau` or `viewR`) are the source of truth read by draw() each
   // frame, so steps that touch those set the slider's .value and let draw() pick
   // it up; cloud.cx/cloud.cy have no slider and are set directly.
-  function sleep(ms){ return new Promise(r=> setTimeout(r, ms)); }
+  // every duration in the tour passes through one of these two, so timeScale slows
+  // (or speeds) the whole sequence without touching a single step.  Stays 1 unless
+  // ?speed= is given -- see the embed block at the bottom.
+  let timeScale = 1;
+  function sleep(ms){ return new Promise(r=> setTimeout(r, ms*timeScale)); }
   function easeInOut(t){ return t<0.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2; }
   function tween(duration, onUpdate){
     return new Promise(resolve=>{
       const t0 = performance.now();
+      const D = duration*timeScale;
       function step(now){
-        const raw = Math.min(1, (now-t0)/duration);
+        const raw = Math.min(1, (now-t0)/D);
         onUpdate(easeInOut(raw));
         if(raw<1) requestAnimationFrame(step); else resolve();
       }
@@ -1172,8 +1184,12 @@ star's proper motion parallel to the plane barely depends on where along the lin
     el.movieStatus.textContent = 'Press play, or let the tour start.';
     // the parent frame drives replays: postMessage('play') restarts the tour
     window.addEventListener('message', ev=>{ if(ev.data==='play') playMovie(); });
+    // the tour is paced for someone driving it themselves; from an audience's seat
+    // it needs to be slower.  ?speed=N overrides (N>1 slower, N<1 faster).
+    timeScale = parseFloat(q.get('speed') || '2.2');
+    if(!isFinite(timeScale) || timeScale <= 0) timeScale = 2.2;
     if(q.get('autoplay')==='1' || q.get('autoplay')==='true'){
-      setTimeout(playMovie, 400);
+      setTimeout(playMovie, 700);
     }
   })();
 })();

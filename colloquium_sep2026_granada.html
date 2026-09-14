@@ -315,6 +315,9 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 /* keep the registered MIRI pose once the N/M/S build advances past it: custom.css's
    .fragment.rotated returns to rotate:0deg when it is no longer the current fragment. */
 #sgrb2_nircam_on_meerkat img.fragment.rotated.visible { rotate: var(--rotation); }
+/* same hand-over as on #sgrb2-miri-catalogs: the excess markers retire when the density
+   contours arrive, keyed on .visible so it survives leaving and re-entering the slide. */
+#sgrb2_nircam_on_meerkat:has(.nc-f480-to-contour.visible) .nc-f480pts { opacity: 0; visibility: hidden; }
 </style>
 <section data-auto-animate class=darkbg data-background-color="black" id=sgrb2_nircam_on_meerkat>
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:5%; margin-left:-51%; ">
@@ -340,6 +343,18 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         <img src="assets/sgrb2/overlay_sgrb2_nms.png" style="position: absolute; top: 35.02102% !important;
   left: 22.15423% !important; height: 100%; max-width: 62%; max-height: 33.30926%; rotate:-3.3589deg; transform-origin: 0px 0px; z-index: 50;" class="fragment" data-fragment-index="2">
         <div class=fragment placeholder-for-fadeout-animation data-fragment-index="2"></div>
+        <!-- The F480M-excess catalogue and its density, on the frame they were measured in.
+             The map is a NIRCam product, so the NIRCam image here shows all of it, whereas the MIRI
+             mosaic on #sgrb2-miri-catalogs holds only 61 per cent of it.  Same expanded overlay PNGs
+             as that slide (3318x1597 mosaic px, origin at mosaic pixel -415,-243), placed through the
+             MIRI mosaic's own pose above -- 0.233621 screen px per mosaic px, rotate -3.3589deg -- so
+             the two slides put every source and contour on exactly the same sky. -->
+        <img class="fragment nc-f480pts" data-fragment-index="3" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:126.75px; top:217.97px; width:775.15px; height:373.09px; rotate:-3.3589deg; transform-origin:0px 0px; z-index:60;" src="assets/Nazar/overlay_f480m_excess_fullfov.png">
+        <div class="smaller3 fragment fade-in nc-f480pts" data-fragment-index="3" style="position:absolute; left:14px; bottom:44px; z-index:151; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9711;</span> JWST 4.8&mu;m excess sources, full NIRCam field (Budaiev+ 2026)</div>
+        <img class="fragment" data-fragment-index="4" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:126.75px; top:217.97px; width:775.15px; height:373.09px; rotate:-3.3589deg; transform-origin:0px 0px; z-index:61;" src="assets/Nazar/overlay_f480m_contour_fullfov.png">
+        <div class="fragment nc-f480-to-contour" data-fragment-index="4"></div>
+        <div class="smaller3 fragment fade-in" data-fragment-index="4" style="position:absolute; left:14px; bottom:44px; z-index:151; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9473;</span> &hellip;and their density: 2&ndash;6 per cent of stars show 4.8&mu;m excess</div>
+
 
         <aside class=notes>
             <ul>
@@ -657,15 +672,24 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
                 --l0:43.268px; --t0:857.669px; --r0:-93.298deg; --s0:3.224040;
                 --l1:93.654px; --t1:233.683px; --r1:-3.333deg;  --s1:1;
                 --transition-duration:1.6s;">
-    <img class="fragment f480pts" data-fragment-index="2" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:2;" src="assets/Nazar/overlay_f480m_excess.png">
+    <img class="fragment f480pts" data-fragment-index="2" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-34.95px; top:160.79px; width:1008.27px; height:485.30px; rotate:-3.333deg; transform-origin:0px 0px; z-index:2;" src="assets/Nazar/overlay_f480m_excess_fullfov.png">
     <img class="fragment" data-fragment-index="3" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:3;" src="assets/Nazar/overlay_alma_yso.png">
     <div class="smaller3 fragment fade-in f480pts" data-fragment-index="2" style="position:absolute; left:14px; bottom:44px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9711;</span> JWST 4.8&mu;m excess sources (Budaiev+ 2026)</div>
-    <div class="smaller3 fragment fade-in" data-fragment-index="3" style="position:absolute; left:14px; bottom:14px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#fff100">&#9632;</span> ALMA 3&nbsp;mm continuum sources (Ginsburg+ 2018)</div>
+    <div class="smaller3 fragment fade-in" data-fragment-index="3" style="position:absolute; left:14px; bottom:14px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#fff100">&#9632;</span> ALMA 3&nbsp;mm continuum sources (Ginsburg+ 2018, Budaiev+ 2024, Daley+ in prep)</div>
     <!-- last build: the individual excess sources retire and hand over to their surface density
          (f480m_excess_density_20260907.fits, EXCESS_FRACTION, 4 arcsec/px), contoured at levels
-         2 3 4 5 6 on the mosaic pixel grid so it carries the same left/top/size/rotate as the
-         point overlays and tracks them exactly. -->
-    <img class="fragment" data-fragment-index="4" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:4;" src="assets/Nazar/overlay_f480m_contour.png">
+         2 3 4 5 6 per cent.
+         FULL FOV: the density map is a NIRCam product (F410M/F405N/F480M), so its footprint is the
+         NIRCam one -- 158" x 355" against the MIRI mosaic's 136" x 287".  The MIRI canvas holds only
+         61% of the map and 510 of the 732 strict excess sources, so both overlays are now drawn on a
+         canvas expanded to the full map footprint: 3318 x 1597 mosaic px with its origin at mosaic
+         pixel (-415,-243).  Same pixel scale and rotation as the mosaic, so it still tracks it; the
+         parts beyond the mosaic simply spill onto the black background, which is the point.
+         The mosaic-px <-> sky mapping was refitted by ICP against the ORIGINAL overlay_f480m_excess.png
+         marker centroids (597 of 698 matched, rms 1.70 px = 0.19"), giving 9.02953 px/arcsec and
+         -86.7154 deg -- so the new overlays land exactly where the old ones did.  Round trip 7e-10 px.
+         Rebuild both PNGs together; do not nudge them by eye. -->
+    <img class="fragment" data-fragment-index="4" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-34.95px; top:160.79px; width:1008.27px; height:485.30px; rotate:-3.333deg; transform-origin:0px 0px; z-index:4;" src="assets/Nazar/overlay_f480m_contour_fullfov.png">
     <div class="fragment f480-to-contour" data-fragment-index="4"></div>
     <div class="smaller3 fragment fade-in" data-fragment-index="4" style="position:absolute; left:14px; bottom:44px; z-index:30; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9473;</span> JWST 4.8&mu;m excess source density</div>
 </section>
@@ -688,13 +712,13 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         <br> (HII regions, outflow cavities do match)
     </div>
 
-    <img class="fragment fade-out" data-fragment-index="2" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:95.24px; top:227.18px; width:755.75px; height:332.75px; rotate:-3.333deg; transform-origin:0px 0px; z-index:184;" src="assets/Nazar/overlay_f480m_contour.png">
+    <img class="fragment fade-out" data-fragment-index="2" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-34.95px; top:160.79px; width:1008.27px; height:485.30px; rotate:-3.333deg; transform-origin:0px 0px; z-index:184;" src="assets/Nazar/overlay_f480m_contour_fullfov.png">
 
     <div class="fragment fade-in" data-fragment-index="2" style='position:absolute; bottom:6%; left:10%; z-index: 150;'>
         <ul>
             <li> Star formation is ongoing
-            <li>  infrared SF tracers are separated from mm
-            <li>   asymmetry hints at an ongoing compression event
+            <li> JWST &amp; ALMA see different phases - complementary
+            <li> Sgr B2 asymmetry is compression/collision
         </ul>
     </div>
 
@@ -798,10 +822,6 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
 </section>
 
-<section id=soon-jwst-today>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">What JWST has observed so far</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
-</section>
 
 <!-- Cloud-by-cloud tour, on #soon-jwst-today's layer stack at exactly its position (left -688) on
      every slide, so the map never shifts through the sequence.  Each green outline is that field's
@@ -822,7 +842,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section id=clouds-cloudef>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Cloud E/F: 1? YSO
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Cloud E/F: $10^5\mathrm{~M}_\odot$ gas, 1? YSO
         <div style="font-size:72%; margin-top:2px;">Houghton, Esteve, Gutermuth, Longmore, Huard, Kauffmann subm.</div>
     </div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
@@ -831,7 +851,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section id=clouds-cloudcd>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Clouds C &amp; D: one small &ldquo;cluster&rdquo; of 5&ndash;10 YSOs each
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Clouds C &amp; D: $10^5\mathrm{~M}_\odot$ gas, one small &ldquo;cluster&rdquo; of 5&ndash;10 YSOs each
         <div style="font-size:72%; margin-top:2px;">Gramze+ in prep</div>
     </div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
@@ -840,7 +860,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section id=clouds-brick>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">The Brick: about 10 YSOs, one above 5 M$_\odot$
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">The Brick: $10^5\mathrm{~M}_\odot$ gas, about 10 YSOs, one above 5 M$_\odot$
         <div style="font-size:72%; margin-top:2px;">Walker+ 2021</div>
     </div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
@@ -849,7 +869,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section id=clouds-arqu>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Quintuplet &amp; Arches: few-Myr old, &gt;10$^4$ M$_\odot$ clusters
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Quintuplet &amp; Arches: no gas, few-Myr old, &gt;10$^4$ M$_\odot$ clusters
         <div style="font-size:72%; margin-top:2px;">Hosek+ 2019</div>
     </div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
@@ -859,7 +879,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </section>
 
 <section id=clouds-sgrc>
-    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Sgr C: ~5 IR&ndash;ALMA matched YSOs,<br>~40 inferred from outflows
+    <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Sgr C: $10^4\mathrm{~M}_\odot$ gas, ~5 IR&ndash;ALMA matched YSOs,<br>~40 inferred from outflows
         <div style="font-size:72%; margin-top:2px;">Crowe+ 2023, Lu+ 2021</div>
     </div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
@@ -1237,6 +1257,34 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     </div>
 </section>
 
+<!-- Closing visual for the tomography thread.  2032x1114 (1.824:1), 11 s, 13 fps; autoplays via
+     slideautostart.js (class="slideautostart"), and loops so it keeps running if you talk over it. -->
+<section id=cmz-3d-movie>
+    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">We have had access to position-velocity for a long time, but we still argue about position</div>
+    <video class="slideautostart" src="assets/cmz/DaniLipman_3DCMZ_150to200pc_tagged.mp4"
+           muted loop playsinline
+           style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12px; top:78px; width:1000px; height:548px;"></video>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Dani Lipman, Robin Tress, Mattia Sormani, et al  &mdash; inner-Galaxy simulation, gas color-tagged by its true 3D position: face-on (top left), as we see it on the sky (bottom left), and in <i>l</i>&ndash;<i>v</i> (right)</div>
+
+    <aside class=notes>
+        <ul>
+            <li> End on the thing itself: the CMZ with its third dimension restored
+            <li> Everything in this talk &mdash; which cloud is forming stars, which is not, which ones have different ice &mdash; is measured in projection. This is what we get back when it is not
+        </ul>
+    </aside>
+</section>
+
+<section id=roman-tomo-inversion>
+    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">Cloud location inversion: ~10 pc resolution along the line of sight</div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:30px; top:105px; width:700px;" src="assets/roman/propermotiongasinversion3.png">
+    <div class=smaller2 style="position:absolute; left:750px; top:150px; width:260px; text-align:left;">
+        ~10<sup>4</sup> stars &rarr; ~10 pc accuracy.<br><br>
+        Observed density ~500 stars pc<sup>&minus;2</sup> at m<sub>K</sub>&lt;19
+        gives ~10&ndash;20 pc
+    </div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;"><a href="https://roman.ipac.caltech.edu/cycle1-approved-programs/19008">Roman GO 19008</a>; <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260910782V/abstract">Vasini+ 2026</a></div>
+</section>
+
 <section>
     STOP HERE
 </section>
@@ -1255,8 +1303,8 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
       <rect class="fragment fade-in" data-fragment-index="1" x="48.5"  y="84.0"  width="182.0" height="97.0"  rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
       <rect class="fragment fade-in" data-fragment-index="2" x="125.4" y="151.3" width="200.5" height="157.2" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
       <rect class="fragment fade-in" data-fragment-index="3" x="363.9" y="97.1"  width="211.3" height="195.1" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
-      <rect class="fragment fade-in" data-fragment-index="4" x="577.5" y="155.5" width="103.0" height="163.0" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
-      <rect class="fragment fade-in" data-fragment-index="4" x="793.8" y="86.3"  width="101.2" height="135.5" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
+      <rect class="fragment fade-in" data-fragment-index="4" x="578.3" y="176.0" width="117.5" height="136.7" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
+      <rect class="fragment fade-in" data-fragment-index="4" x="807.7" y="121.8" width="82.5" height="154.7" rx="7" fill="none" stroke="#d81b60" stroke-width="3.5"/>
     </svg>
 
     <div class="fragment fade-in-then-out" data-fragment-index="1" style="position:absolute; left:0; top:664px; width:1024px; text-align:center; color:#fff; font-size:25px;">Complex organics form on icy grains in cold molecular clouds</div>
@@ -1344,16 +1392,6 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
 </section>
 
-<section id=roman-tomo-inversion>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">Cloud location inversion: ~10 pc resolution along the line of sight</div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:30px; top:105px; width:700px;" src="assets/roman/propermotiongasinversion3.png">
-    <div class=smaller2 style="position:absolute; left:750px; top:150px; width:260px; text-align:left;">
-        ~10<sup>4</sup> stars &rarr; ~10 pc accuracy.<br><br>
-        Observed density ~500 stars pc<sup>&minus;2</sup> at m<sub>K</sub>&lt;19
-        gives ~10&ndash;20 pc &mdash; vs ~100 pc today.
-    </div>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Roman GO 19008 (Ginsburg+) &mdash; CMZ FUZ</div>
-</section>
 
 <section id=roman-tomo-when>
     <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">Feasible in the first two seasons, with archival first epochs</div>
@@ -1408,22 +1446,6 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     </aside>
 </section>
 
-<!-- Closing visual for the tomography thread.  2032x1114 (1.824:1), 11 s, 13 fps; autoplays via
-     slideautostart.js (class="slideautostart"), and loops so it keeps running if you talk over it. -->
-<section id=cmz-3d-movie>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:9;">In a simulation we know the answer &mdash; on the sky we only ever see the projection</div>
-    <video class="slideautostart" src="assets/cmz/DaniLipman_3DCMZ_150to200pc_tagged.mp4"
-           muted loop playsinline
-           style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12px; top:78px; width:1000px; height:548px;"></video>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Dani Lipman (Battersby group) &mdash; inner-Galaxy simulation, gas color-tagged by its true 3D position: face-on (top left), as we see it on the sky (bottom left), and in <i>l</i>&ndash;<i>v</i> (right)</div>
-
-    <aside class=notes>
-        <ul>
-            <li> End on the thing itself: the CMZ with its third dimension restored
-            <li> Everything in this talk &mdash; which cloud is forming stars, which is not, which ones have different ice &mdash; is measured in projection. This is what we get back when it is not
-        </ul>
-    </aside>
-</section>
 
 
 

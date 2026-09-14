@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A hundred stars, a hundred orbits</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#12161f; --ink:#e8ecf4; --dim:#93a0b4; --accent:#ffd166;
+    --line:#2a3040;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    padding:22px 22px 40px;
+  }
+  h1{font-size:1.35rem; margin:0 0 4px; font-weight:600;}
+  .sub{color:var(--dim); font-size:0.92rem; margin:8px 0 0; max-width:940px; line-height:1.5;}
+  .sub-details{margin:0 0 14px;}
+  .sub-details summary{
+    cursor:pointer; color:var(--dim); font-size:0.85rem; list-style:none; user-select:none;
+    display:inline-flex; align-items:center; gap:5px;
+  }
+  .sub-details summary::-webkit-details-marker{display:none;}
+  .sub-details summary::before{content:'\25B8'; font-size:0.7rem;}
+  .sub-details[open] summary::before{content:'\25BE';}
+  .sub-details summary:hover{color:var(--ink);}
+  .layout{display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start;}
+  .panel{flex:0 0 auto;}
+  .stackcol{display:flex; flex-direction:column; gap:14px;}
+  .panelTitle{font-size:0.8rem; color:var(--dim); text-transform:uppercase; letter-spacing:0.04em; margin:0 0 6px;}
+  canvas{display:block; background:#05070c; border-radius:8px; border:1px solid var(--line); cursor:pointer;}
+  .legend{display:flex; align-items:center; gap:8px; font-size:0.75rem; color:var(--dim); margin-top:6px;}
+  .legend .bar{width:160px; height:10px; border-radius:4px;}
+  .veltoggle{display:flex; gap:6px; margin-bottom:9px;}
+  .veltoggle button{
+    flex:1; background:var(--line); color:var(--dim); border:1px solid #3a4256; border-radius:6px;
+    padding:6px 8px; font-size:0.72rem; cursor:pointer;
+  }
+  .veltoggle button.active{background:#2a3348; color:var(--ink); border-color:#4a5578;}
+  .veltoggle button:hover{color:var(--ink);}
+  .controls{
+    flex:1 1 440px; min-width:400px; background:var(--panel); border:1px solid var(--line);
+    border-radius:10px; padding:12px 14px;
+    display:grid; grid-template-columns:1fr 1fr; column-gap:16px; align-content:start;
+  }
+  .ctrl-full{grid-column:1 / -1;}
+  .controls h2{font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--dim); margin:0 0 7px;}
+  .row{margin-bottom:9px;}
+  .row label{display:flex; justify-content:space-between; font-size:0.76rem; margin-bottom:2px;}
+  .row label span.val{color:var(--accent); font-variant-numeric:tabular-nums;}
+  input[type=range]{width:100%;}
+  .row-inline{display:flex; align-items:center; justify-content:space-between; margin-bottom:9px;}
+  .btn{
+    background:var(--line); color:var(--ink); border:1px solid #3a4256; border-radius:6px;
+    padding:5px 10px; font-size:0.74rem; cursor:pointer;
+  }
+  .btn:hover{background:#232a3a;}
+  .info{
+    margin-top:4px; padding:8px 10px; border-radius:8px; font-size:0.76rem; line-height:1.45;
+    border:1px solid var(--line); background:rgba(255,255,255,0.03); min-height:48px;
+  }
+  .info b{color:var(--accent);}
+  label.chk{display:flex; align-items:center; gap:6px; font-size:0.76rem; color:var(--dim); margin-bottom:6px;}
+  footer{margin-top:26px; font-size:0.78rem; color:var(--dim); max-width:940px; line-height:1.6;}
+  footer a{color:#8ab4ff;}
+</style>
+</head>
+<body>
+
+<h1>A hundred stars, a hundred orbits</h1>
+<details class="sub-details">
+<summary>What am I looking at?</summary>
+<p class="sub">
+Each dot is a star placed at a random phase on a randomly chosen x2 orbit in the nuclear stellar disc
+(nested ellipses elongated perpendicular to the Galactic bar; Nieuwmunster et al. 2024), with positions drawn
+from the NSD's actual measured radial density profile. Color shows a velocity each star would have — toggle
+below between plane-of-sky (proper motion) and line-of-sight (radial velocity). On the right, the same stars
+are plotted the way you'd actually observe them: transverse sky position (&#8733; Galactic longitude l) vs.
+velocity. The open, parallelogram-like loop that traces out is the signature of the barred orbit family — and
+because it's a loop rather than a scatter, a star's (l, v) pair still tells you which single orbit and phase
+it sits on, hence its unique 3D location. Click a star in either panel to highlight it in both. Turn on the
+foreground dust cloud below to see the flip side: stars behind a thick enough cloud along the line of sight
+are extinguished, just as real dust column density is read off from how stars are dimmed and reddened behind
+it (the technique behind Vasini et al. 2026). The icon at the panel's edge marks the direction back to the Sun,
+and dashed lines mark Galactic longitude l (this face-on plane is everywhere at b &asymp; 0, so there's no b
+to grid). The panel is drawn as seen from the North Galactic Pole, matching the Milky Way's real (clockwise)
+sense of rotation, with the bar's near side correctly toward positive l. The cloud now has its own
+line-of-sight depth, independent of its size on the sky — drag it, resize it, and use "zoom to the cloud's
+sightline" to isolate just the stars along that one pencil beam, in front of and behind it. The two extra
+panels below are tomography diagnostics: a histogram of how many stars sit at each line-of-sight distance,
+stacked by how extinguished each one is (white = barely dimmed, black = nearly invisible), and an extinction
+(mag) vs. proper-motion plot — for a star at fractional depth d into the cloud, A = A<sub>cloud</sub>&nbsp;&times;&nbsp;d.
+It's proper motion, not radial velocity, that does the work here: Vasini et al. 2026's actual method uses the
+NSD's rotation — near side moving toward +l, far side toward &minus;l — as a proxy for distance, since a
+star's proper motion parallel to the plane barely depends on where along the line of sight it sits.
+</p>
+</details>
+
+<div class="layout">
+  <div class="panel">
+    <p class="panelTitle">Face-on view (Galactic plane, b &asymp; 0)</p>
+    <canvas id="face" width="420" height="420"></canvas>
+    <div class="legend">
+      <span id="legMin">&minus;150 km/s</span><span class="bar" id="legBar"></span><span id="legMax">+150 km/s</span><span id="legLabel">(plane-of-sky velocity)</span>
+    </div>
+  </div>
+
+  <div class="panel stackcol">
+    <div>
+      <p class="panelTitle">Position&ndash;velocity diagram</p>
+      <canvas id="pv" width="420" height="196"></canvas>
+    </div>
+    <div>
+      <p class="panelTitle">Extinction (mag) vs. proper motion (plane-of-sky velocity)</p>
+      <canvas id="tauv" width="420" height="196"></canvas>
+    </div>
+  </div>
+
+  <div class="panel">
+    <p class="panelTitle">Star count along the cloud's sightline</p>
+    <canvas id="hist" width="420" height="420"></canvas>
+    <div class="legend" style="flex-wrap:wrap; row-gap:6px;">
+      <span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;background:#f5f5f5;border:1px solid rgba(255,255,255,0.3);display:inline-block;"></span>&lt;0.5 mag</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;margin-left:10px;"><span style="width:10px;height:10px;background:#aaaaaa;border:1px solid rgba(255,255,255,0.3);display:inline-block;"></span>0.5&ndash;2.5 mag</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;margin-left:10px;"><span style="width:10px;height:10px;background:#5c5c5c;border:1px solid rgba(255,255,255,0.3);display:inline-block;"></span>2.5&ndash;5 mag</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;margin-left:10px;"><span style="width:10px;height:10px;background:#222222;border:1px solid rgba(255,255,255,0.3);display:inline-block;"></span>&gt;5 mag</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="ctrl-full">
+      <h2>Guided tour</h2>
+      <div class="row-inline">
+        <span style="font-size:0.76rem; color:var(--dim); flex:1; margin-right:10px;" id="movieStatus">A scripted walk-through of the cloud tomography tools.</span>
+        <button class="btn" id="playMovie">&#9654; Play movie</button>
+      </div>
+    </div>
+
+    <div class="ctrl-full">
+      <h2>Velocity shown</h2>
+      <div class="veltoggle">
+        <button id="modeSky" class="active">Plane-of-sky (proper motion)</button>
+        <button id="modeLos">Line-of-sight (radial velocity)</button>
+      </div>
+    </div>
+
+    <div>
+      <h2>Model parameters</h2>
+      <div class="row">
+        <label>Face-on view range (&plusmn; pc) <span class="val" id="v-zoom">220 pc</span></label>
+        <input type="range" id="faceZoom" min="40" max="220" step="10" value="220">
+      </div>
+      <div class="row">
+        <label>Bar position angle (near side toward +l) <span class="val" id="v-phi">27&deg;</span></label>
+        <input type="range" id="phi" min="0" max="60" step="1" value="27">
+      </div>
+      <div class="row">
+        <label>x2-orbit flattening (q = minor/major) <span class="val" id="v-q">0.35</span></label>
+        <input type="range" id="q" min="0.20" max="1.00" step="0.01" value="0.35">
+      </div>
+      <div class="row">
+        <label>Number of stars <span class="val" id="v-n">100</span></label>
+        <input type="range" id="n" min="20" max="400" step="1" value="100">
+      </div>
+      <label class="chk"><input type="checkbox" id="showOrbits" checked> Show underlying orbit family</label>
+      <label class="chk"><input type="checkbox" id="animateOn" checked> Animate stars (&asymp;10% of orbit, looping)</label>
+      <div class="row-inline">
+        <span style="font-size:0.76rem; color:var(--dim);">Redraw the star sample</span>
+        <button class="btn" id="reshuffle">New random draw</button>
+      </div>
+    </div>
+
+    <div>
+      <h2>Foreground dust cloud</h2>
+      <label class="chk"><input type="checkbox" id="cloudEnabled" checked> Add a foreground dust cloud</label>
+      <div class="row">
+        <label>Cloud sky size (transverse, pc) <span class="val" id="v-cr">10 pc</span></label>
+        <input type="range" id="cloudR" min="1" max="50" step="1" value="10">
+      </div>
+      <div class="row">
+        <label>Cloud line-of-sight depth <span class="val" id="v-clos">20 pc</span></label>
+        <input type="range" id="cloudLOS" min="1" max="100" step="1" value="20">
+      </div>
+      <div class="row">
+        <label>Cloud depth (extinction) <span class="val" id="v-ctau">5.0 mag</span></label>
+        <input type="range" id="cloudTau" min="0" max="10" step="0.1" value="5">
+      </div>
+      <p style="font-size:0.72rem; color:var(--dim); margin:-6px 0 9px;">Drag the cloud in the face-on panel to reposition it.</p>
+      <label class="chk"><input type="checkbox" id="zoomCloud"> Zoom to the cloud's sightline (only stars in front of / behind it)</label>
+    </div>
+
+    <div class="ctrl-full">
+      <h2 style="margin-top:2px;">Selected star</h2>
+      <div class="info" id="info">Click any star to inspect it.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Same analytic harmonic (epicyclic-limit) x2-orbit family as the companion figure: nested similar ellipses,
+  elongated 90&deg; from the bar, with an illustrative rising-then-flat rotation curve (not a fit to data).
+  Star positions are drawn from the NSD's measured radial surface-density profile — an exponential with scale
+  length R<sub>disc</sub> &asymp; 88.6 pc (Sormani et al. 2022, deprojecting the S&eacute;rsic fit of
+  Gallego-Cano et al. 2020) — sampled out to 220 pc with uniform azimuth, then each position is assigned to
+  whichever x2 orbit passes through it; orbital phase is uniform (equal time per phase, exact for this
+  harmonic family). Bar position angle defaults to 27&deg;, with the near side placed toward positive Galactic
+  longitude, matching the well-established sense from infrared star counts (e.g. Wegg &amp; Gerhard 2013).
+  Rotation direction is fixed by requiring the classic V<sub>r</sub> = R<sub>0</sub> sin(l) [&Omega;(R) &minus;
+  &Omega;<sub>0</sub>] result: gas/stars inside the solar circle at positive l must show positive (receding)
+  line-of-sight velocity &mdash; equivalent to clockwise rotation as seen from the North Galactic Pole, the
+  Milky Way's real sense.<br>
+  Based on: N. Nieuwmunster et al. 2024, <a href="https://www.aanda.org/articles/aa/full_html/2024/05/aa49000-23/aa49000-23.html" target="_blank">"Orbital analysis of stars in the nuclear stellar disc of the Milky Way,"</a> A&amp;A;
+  M. Sormani et al. 2022, <a href="https://arxiv.org/abs/2111.12713" target="_blank">"Self-consistent modelling of the Milky Way's Nuclear Stellar Disc,"</a> MNRAS &mdash;
+  and A. Vasini et al. 2026, <a href="https://arxiv.org/abs/2609.10782" target="_blank">"A Novel Approach to 3D Dust Mapping of the Central Molecular Zone,"</a> arXiv:2609.10782
+  &mdash; whose method is proper-motion-based (NSD stars' velocity parallel to the Galactic plane, not radial
+  velocity): the near side of the rotating NSD moves toward +l and the far side toward &minus;l, so a star's
+  proper motion places it on the near or far side even without a measured distance, which combined with its
+  extinction (as a dust-column proxy) constrains the 3D dust profile along that sightline in a Bayesian
+  framework.
+</footer>
+
+<script>
+(function(){
+  const Rmax = 220;   // pc
+  const v0 = 120;     // km/s asymptotic
+  const rc = 25;      // pc core radius
+  const Dsun = 8200;  // pc, for l readout only
+  const vClip = 150;  // km/s
+  const MAG_PER_TAU = 2.5/Math.LN10; // convert optical depth tau to extinction in magnitudes
+
+  const faceC = document.getElementById('face');
+  const pvC = document.getElementById('pv');
+  const histC = document.getElementById('hist');
+  const tauvC = document.getElementById('tauv');
+  const fctx = faceC.getContext('2d');
+  const pctx = pvC.getContext('2d');
+  const hctx = histC.getContext('2d');
+  const tctx = tauvC.getContext('2d');
+  const W = faceC.width, H = faceC.height;
+  const PW = pvC.width, PH = pvC.height;
+  const HW = histC.width, HH = histC.height;
+  const TW = tauvC.width, TH = tauvC.height;
+
+  const el = {
+    phi: document.getElementById('phi'),
+    q: document.getElementById('q'),
+    n: document.getElementById('n'),
+    vphi: document.getElementById('v-phi'),
+    vq: document.getElementById('v-q'),
+    vn: document.getElementById('v-n'),
+    showOrbits: document.getElementById('showOrbits'),
+    reshuffle: document.getElementById('reshuffle'),
+    info: document.getElementById('info'),
+    cloudEnabled: document.getElementById('cloudEnabled'),
+    cloudR: document.getElementById('cloudR'),
+    cloudLOS: document.getElementById('cloudLOS'),
+    cloudTau: document.getElementById('cloudTau'),
+    vcr: document.getElementById('v-cr'),
+    vclos: document.getElementById('v-clos'),
+    vctau: document.getElementById('v-ctau'),
+    zoomCloud: document.getElementById('zoomCloud'),
+    faceZoom: document.getElementById('faceZoom'),
+    vzoom: document.getElementById('v-zoom'),
+    playMovie: document.getElementById('playMovie'),
+    movieStatus: document.getElementById('movieStatus'),
+    modeSky: document.getElementById('modeSky'),
+    modeLos: document.getElementById('modeLos'),
+    legBar: document.getElementById('legBar'),
+    legLabel: document.getElementById('legLabel'),
+    animateOn: document.getElementById('animateOn'),
+  };
+
+  let velMode = 'sky'; // 'sky' (plane-of-sky / proper motion) or 'los' (line-of-sight / radial velocity)
+
+  // Bar angle sign: the slider gives a magnitude; the near side of the real Galactic
+  // bar/NSD sits toward POSITIVE Galactic longitude (l>0), so the angle actually used
+  // for every rotation in the model is negated here, in one place, to match that.
+  function getPhiRad(){ return -parseFloat(el.phi.value)*Math.PI/180; }
+
+  // foreground dust cloud: a slab in the face-on plane, independently sized on the
+  // sky (rSky, transverse) and along the line of sight (rLos). A star's sightline
+  // (the horizontal line through its own y) hits the cloud whenever |y-cy|<=rSky;
+  // for a star at line-of-sight position x, its fractional depth into the cloud is
+  // 0 at the near edge (cx-rLos) and 1 at or beyond the far edge (cx+rLos), and its
+  // optical depth is tau_cloud times that depth fraction.
+  // Default position: l = 0.25 deg at the GC's distance.
+  const cloud = { cx: 0, cy: Dsun*0.25*Math.PI/180, rSky: 10, rLos: 20, tau: 1.5 };
+
+  function extinctionFactor(x, y){
+    if(!el.cloudEnabled.checked) return {ext:1, tau:0};
+    const dy = y - cloud.cy;
+    if(Math.abs(dy) > cloud.rSky) return {ext:1, tau:0}; // sightline misses the cloud
+    const xNear = cloud.cx - cloud.rLos, xFar = cloud.cx + cloud.rLos;
+    let depth;
+    if(x <= xNear) depth = 0; // nearer than the cloud (toward the Sun) - unaffected
+    else if(x >= xFar) depth = 1; // fully behind it
+    else depth = (x - xNear) / (2*cloud.rLos); // embedded inside it
+    const tau = cloud.tau * depth;
+    return {ext: Math.exp(-tau), tau};
+  }
+
+  function onCloudSightline(c){
+    return el.cloudEnabled.checked && Math.abs(c.y - cloud.cy) <= cloud.rSky;
+  }
+
+  function vcirc(r){ return v0 * r / Math.sqrt(r*r + rc*rc); }
+
+  function vAtBarred(x, y, q, phiRad){
+    const c = Math.cos(phiRad), s = Math.sin(phiRad);
+    const xb = x*c + y*s;
+    const yb = -x*s + y*c;
+    const B = Math.sqrt(yb*yb + (xb/q)*(xb/q));
+    const Om = B > 1e-6 ? vcirc(B)/B : 0;
+    // Sign fixed to reproduce the real Milky Way: inside the solar circle at l>0,
+    // V_r = R0 sin(l) [Omega(R)-Omega0] > 0 (receding). With +x = away from the Sun
+    // and +y = +l, that requires vx>0 at y>0, i.e. clockwise rotation as seen from
+    // the North Galactic Pole (the Galaxy's real sense).
+    const vxb = q*Om*yb;
+    const vyb = -(Om/q)*xb;
+    const vx = vxb*c - vyb*s;
+    const vy = vxb*s + vyb*c;
+    return {vx, vy, B};
+  }
+
+  // diverging colormaps: LOS velocity uses blue<->red, plane-of-sky uses green<->orange
+  const PALETTES = {
+    los: { neg:[43,108,246], mid:[238,241,246], pos:[230,59,59] },
+    sky: { neg:[36,150,110], mid:[238,241,246], pos:[224,140,42] },
+  };
+  function lerp3(a,b,f){ return [0,1,2].map(i=> Math.round(a[i]+(b[i]-a[i])*f)); }
+  function colorForV(v, mode){
+    const pal = PALETTES[mode || velMode];
+    const t = Math.max(-1, Math.min(1, v/vClip));
+    return t<0 ? lerp3(pal.mid, pal.neg, -t) : lerp3(pal.mid, pal.pos, t);
+  }
+  function velLabel(mode){ return mode==='los' ? 'v_los (km/s)' : 'v_sky (km/s)'; }
+  function velOf(c, mode){ return (mode||velMode)==='los' ? c.vx : c.vy; }
+
+  // face-on display range: independent of Rmax (which still bounds where stars/
+  // orbits/the bar actually extend) so "zooming in" just magnifies a sub-region
+  let viewR = Rmax;
+  function toPix(x,y){
+    const px = (x+viewR)/(2*viewR)*W;
+    const py = (viewR-y)/(2*viewR)*H;
+    return [px,py];
+  }
+
+  // --- seeded RNG so "reshuffle" gives a fresh but reproducible-within-frame draw ---
+  function mulberry32(seed){
+    return function(){
+      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  let stars = []; // {B, theta}
+  let selected = -1;
+
+  // NSD radial surface-density profile: exponential with scale length R_disc = 88.6 pc
+  // (Sormani et al. 2022, MNRAS, deprojecting the Sersic fit of Gallego-Cano et al. 2020).
+  // Number in an annulus [R,R+dR] is proportional to Sigma(R) * 2*pi*R dR ~ R * exp(-R/h) dR,
+  // an Erlang(2,h) distribution, sampled here as minus-h times the sum of two log-uniforms.
+  const NSD_SCALE_R = 88.6; // pc
+
+  function sampleOneStar(rng, q, phiRad){
+    for(let tries=0; tries<60; tries++){
+      const R = -NSD_SCALE_R * (Math.log(rng()) + Math.log(rng()));
+      if(R > Rmax || R < 0.5) continue;
+      const az = rng()*2*Math.PI;
+      const orb = xyToOrbit(R*Math.cos(az), R*Math.sin(az), q, phiRad);
+      if(orb) return orb;
+    }
+    return {B: NSD_SCALE_R, theta: rng()*2*Math.PI}; // fallback, should be essentially unreachable
+  }
+
+  function makeStars(n){
+    const rng = mulberry32((Math.random()*1e9)|0);
+    const q = parseFloat(el.q.value), phiRad = getPhiRad();
+    const arr = [];
+    for(let i=0;i<n;i++) arr.push(sampleOneStar(rng, q, phiRad));
+    return arr;
+  }
+
+  // sample a star directly along the cloud's pencil beam: transverse position y
+  // uniform across the cloud's sky footprint, and line-of-sight position x drawn
+  // by rejection sampling from the same NSD surface density Sigma(R) ~ exp(-R/h)
+  // (no extra R weighting here, since this is a 1D draw along a fixed beam, not
+  // a 2D draw over an annulus).
+  function sampleOneCloudLineStar(rng, q, phiRad){
+    for(let tries=0; tries<200; tries++){
+      const y = cloud.cy + (rng()*2-1)*cloud.rSky;
+      const x = (rng()*2-1)*Rmax;
+      const R = Math.sqrt(x*x+y*y);
+      if(rng() < Math.exp(-R/NSD_SCALE_R)){
+        const orb = xyToOrbit(x,y,q,phiRad);
+        if(orb) return orb;
+      }
+    }
+    return xyToOrbit(0.01, cloud.cy, q, phiRad) || {B: NSD_SCALE_R, theta: 0};
+  }
+
+  function makeCloudLineStars(n){
+    const rng = mulberry32((Math.random()*1e9)|0);
+    const q = parseFloat(el.q.value), phiRad = getPhiRad();
+    const arr = [];
+    for(let i=0;i<n;i++) arr.push(sampleOneCloudLineStar(rng, q, phiRad));
+    return arr;
+  }
+
+  function zoomActive(){ return el.zoomCloud.checked && el.cloudEnabled.checked; }
+
+  // single entry point for (re)populating `stars`, used on load, on "new random
+  // draw", and whenever a parameter changes the population that should exist
+  // (star count, entering/leaving zoom mode, or the cloud's sky footprint moving)
+  function regenerateStars(){
+    const n = parseInt(el.n.value,10);
+    stars = zoomActive() ? makeCloudLineStars(n) : makeStars(n);
+    selected = -1;
+    el.info.textContent = 'Click any star to inspect it.';
+    draw();
+  }
+
+  // idle animation: each star creeps steadily (never reverses) along its true CW
+  // orbit at its own true angular speed Omega(B), so faster-rotating inner orbits
+  // visibly move quicker. Speed is tuned so a typical star sweeps ~10% of a full
+  // orbit over a several-second glance. A one-directional creep (rather than a
+  // back-and-forth wobble) is required for consistency with the color, which
+  // always shows the velocity of steady CW motion — any bounded oscillation would
+  // have to reverse direction somewhere, at which point its true instantaneous
+  // velocity would momentarily contradict that color.
+  const ANIM_SPEED = 0.011;
+
+  function starXYV(s, q, phiRad, animSeconds){
+    let theta = s.theta;
+    if(animSeconds != null){
+      const Om = vcirc(s.B)/Math.max(s.B,1e-6);
+      theta = s.theta - Om*animSeconds*ANIM_SPEED;
+    }
+    const xb = q*s.B*Math.cos(theta), yb = s.B*Math.sin(theta);
+    const x = xb*Math.cos(phiRad) - yb*Math.sin(phiRad);
+    const y = xb*Math.sin(phiRad) + yb*Math.cos(phiRad);
+    const {vx,vy} = vAtBarred(x,y,q,phiRad);
+    return {x,y,vx,vy};
+  }
+
+  // invert a physical (x,y) position into its (B, theta) orbit coordinates,
+  // for the given bar angle/flattening — used to seed stars from a real density map
+  function xyToOrbit(x, y, q, phiRad){
+    const c = Math.cos(phiRad), s = Math.sin(phiRad);
+    const xb = x*c + y*s;
+    const yb = -x*s + y*c;
+    const B = Math.sqrt(yb*yb + (xb/q)*(xb/q));
+    if(B < 1e-6) return null;
+    const theta = Math.atan2(yb/B, xb/(q*B));
+    return {B, theta};
+  }
+
+  function drawEllipseContour(ctx, B, q, phiRad, color, width){
+    ctx.beginPath();
+    const N=100;
+    for(let k=0;k<=N;k++){
+      const th = k/N*2*Math.PI;
+      const xb = q*B*Math.cos(th), yb = B*Math.sin(th);
+      const x = xb*Math.cos(phiRad) - yb*Math.sin(phiRad);
+      const y = xb*Math.sin(phiRad) + yb*Math.cos(phiRad);
+      const [px,py] = toPix(x,y);
+      if(k===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+    }
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    ctx.stroke();
+  }
+
+  function drawBarShape(ctx, phiRad){
+    const major = Rmax*0.85, minor = Rmax*0.12;
+    ctx.beginPath();
+    const N=80;
+    for(let k=0;k<=N;k++){
+      const th = k/N*2*Math.PI;
+      const xb = major*Math.cos(th), yb = minor*Math.sin(th);
+      const x = xb*Math.cos(phiRad) - yb*Math.sin(phiRad);
+      const y = xb*Math.sin(phiRad) + yb*Math.cos(phiRad);
+      const [px,py] = toPix(x,y);
+      if(k===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+    }
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(255,220,120,0.10)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,220,120,0.35)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  function drawCloud(ctx){
+    if(!el.cloudEnabled.checked) return;
+    const [px,py] = toPix(cloud.cx, cloud.cy);
+    const rxPix = Math.max(cloud.rLos/(2*viewR)*W, 2);
+    const ryPix = Math.max(cloud.rSky/(2*viewR)*H, 2);
+    const a = Math.min(0.65, 0.22 + 0.13*cloud.tau);
+    ctx.beginPath();
+    ctx.ellipse(px,py,rxPix,ryPix,0,0,2*Math.PI);
+    ctx.fillStyle = `rgba(157,68,222,${a})`;
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(224,180,255,0.65)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    // near/far line-of-sight boundary ticks
+    const [pxNear] = toPix(cloud.cx-cloud.rLos, cloud.cy);
+    const [pxFar] = toPix(cloud.cx+cloud.rLos, cloud.cy);
+    ctx.strokeStyle = 'rgba(224,180,255,0.6)';
+    ctx.setLineDash([3,3]);
+    [pxNear,pxFar].forEach(x=>{
+      ctx.beginPath(); ctx.moveTo(x, py-ryPix); ctx.lineTo(x, py+ryPix); ctx.stroke();
+    });
+    ctx.setLineDash([]);
+  }
+
+  // lines of constant Galactic longitude l, drawn as true rays from the Sun's actual
+  // position (Dsun away in -x); b isn't gridded because this whole face-on plane is
+  // b ~ 0 by construction (no z axis in this model), so there is no b to vary.
+  function drawLBGrid(ctx){
+    const lDegList = [-1.5,-1.0,-0.5,0,0.5,1.0,1.5];
+    ctx.save();
+    ctx.font = '10px -apple-system,sans-serif';
+    lDegList.forEach(lDeg=>{
+      const lRad = lDeg*Math.PI/180;
+      const isZero = lDeg===0;
+      const dirx = Math.cos(lRad), diry = Math.sin(lRad);
+      const t0 = Dsun - viewR*1.5, t1 = Dsun + viewR*1.5;
+      const [px0,py0] = toPix(-Dsun+t0*dirx, t0*diry);
+      const [px1,py1] = toPix(-Dsun+t1*dirx, t1*diry);
+      ctx.strokeStyle = isZero ? 'rgba(255,255,255,0.4)' : 'rgba(255,255,255,0.13)';
+      ctx.lineWidth = isZero ? 1.5 : 1;
+      if(!isZero) ctx.setLineDash([3,4]);
+      ctx.beginPath(); ctx.moveTo(px0,py0); ctx.lineTo(px1,py1); ctx.stroke();
+      ctx.setLineDash([]);
+
+      const tl = Dsun + viewR*0.7;
+      const [pxl,pyl] = toPix(-Dsun+tl*dirx, tl*diry);
+      ctx.fillStyle = isZero ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.35)';
+      ctx.fillText(`l=${lDeg>0?'+':''}${lDeg}°`, pxl+4, pyl-4);
+    });
+    ctx.restore();
+  }
+
+  function drawViewerIcon(ctx){
+    const x = 36, y = H/2;
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255,224,140,0.85)';
+    ctx.lineWidth = 1.5;
+    for(let a=0;a<8;a++){
+      const ang = a/8*2*Math.PI;
+      ctx.beginPath();
+      ctx.moveTo(x+Math.cos(ang)*9, y+Math.sin(ang)*9);
+      ctx.lineTo(x+Math.cos(ang)*14, y+Math.sin(ang)*14);
+      ctx.stroke();
+    }
+    ctx.beginPath(); ctx.arc(x,y,8,0,2*Math.PI);
+    ctx.fillStyle = 'rgba(255,224,140,0.95)'; ctx.fill();
+
+    ctx.strokeStyle = 'rgba(255,255,255,0.45)';
+    ctx.setLineDash([4,4]);
+    ctx.beginPath(); ctx.moveTo(x+18,y); ctx.lineTo(x+58,y); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.beginPath();
+    ctx.moveTo(x+58,y-4); ctx.lineTo(x+66,y); ctx.lineTo(x+58,y+4); ctx.closePath();
+    ctx.fillStyle = 'rgba(255,255,255,0.45)'; ctx.fill();
+
+    ctx.fillStyle = 'rgba(232,236,244,0.85)';
+    ctx.font = '11px -apple-system,sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Sun', x, y+27);
+    ctx.textAlign = 'left';
+    ctx.restore();
+  }
+
+  function pvPix(y, v){
+    const px = (y+Rmax)/(2*Rmax)*PW;
+    const py = (vClip - v)/(2*vClip)*PH;
+    return [px,py];
+  }
+
+  // recompute every star's current position/velocity/extinction, tagged with its
+  // index into `stars` so filtered subsets can still be matched back for selection
+  function computeAll(){
+    const q = parseFloat(el.q.value);
+    const phiRad = getPhiRad();
+    // Animation is suppressed while zoomed: the pencil-beam sample is built to sit
+    // exactly on the cloud's sightline, but each star then creeps at its own true
+    // Omega(B) — differential rotation shears that initially-straight beam into a
+    // winding spiral within seconds (faster inner orbits outrun slower outer ones).
+    // That's real physics, but it defeats a "stable snapshot along this sightline"
+    // diagnostic, so the beam is held static instead.
+    const animArg = (el.animateOn.checked && !zoomActive()) ? animT : null;
+    return stars.map((s,idx) => {
+      const c = starXYV(s,q,phiRad,animArg);
+      const {ext,tau} = extinctionFactor(c.x, c.y);
+      c.ext = ext; c.tau = tau; c.idx = idx;
+      return c;
+    });
+  }
+
+  function draw(){
+    const phiDeg = parseFloat(el.phi.value);
+    const q = parseFloat(el.q.value);
+    const phiRad = getPhiRad();
+    el.vphi.textContent = phiDeg.toFixed(0)+'°';
+    el.vq.textContent = q.toFixed(2);
+    viewR = parseFloat(el.faceZoom.value);
+    el.vzoom.textContent = viewR.toFixed(0)+' pc';
+    cloud.rSky = parseFloat(el.cloudR.value);
+    cloud.rLos = parseFloat(el.cloudLOS.value);
+    const cloudMag = parseFloat(el.cloudTau.value);
+    cloud.tau = cloudMag / MAG_PER_TAU; // slider is in extinction magnitudes; physics runs on tau
+    el.vcr.textContent = cloud.rSky.toFixed(0)+' pc';
+    el.vclos.textContent = cloud.rLos.toFixed(0)+' pc';
+    el.vctau.textContent = cloudMag.toFixed(1)+' mag';
+
+    const computed = computeAll();
+    const cloudLine = computed.filter(onCloudSightline);
+    const zooming = zoomActive();
+    const shown = computed; // `stars` is already just the beam population when zoomed
+
+    el.vn.textContent = zooming ? `${stars.length} (on cloud sightline)` : stars.length;
+
+    // ---- face-on panel ----
+    fctx.clearRect(0,0,W,H);
+    fctx.fillStyle = '#05070c';
+    fctx.beginPath(); fctx.arc(W/2,H/2, W/2-1, 0, 2*Math.PI); fctx.fill();
+    fctx.save();
+    fctx.beginPath(); fctx.arc(W/2,H/2, W/2-1, 0, 2*Math.PI); fctx.clip();
+
+    drawLBGrid(fctx);
+
+    if(el.showOrbits.checked){
+      for(let i=1;i<=7;i++){
+        drawEllipseContour(fctx, Rmax*i/7, q, phiRad, 'rgba(255,255,255,0.10)', 1);
+      }
+    }
+    drawBarShape(fctx, phiRad);
+    drawCloud(fctx);
+
+    const [gx,gy] = toPix(0,0);
+    fctx.beginPath(); fctx.arc(gx,gy,3,0,2*Math.PI);
+    fctx.fillStyle = '#ffffff'; fctx.fill();
+
+    shown.forEach(c=>{
+      const [px,py] = toPix(c.x,c.y);
+      const [r,g,b] = colorForV(velOf(c));
+      const isSel = c.idx===selected;
+      const baseR = isSel?7:4.2;
+      fctx.globalAlpha = 0.12 + 0.88*c.ext;
+      fctx.beginPath();
+      fctx.arc(px,py, baseR*(0.2+0.8*c.ext), 0, 2*Math.PI);
+      fctx.fillStyle = `rgb(${r},${g},${b})`;
+      fctx.fill();
+      fctx.strokeStyle = isSel ? '#ffffff' : 'rgba(5,7,12,0.7)';
+      fctx.lineWidth = isSel?2.5:1;
+      fctx.stroke();
+      fctx.globalAlpha = 1;
+    });
+    fctx.restore();
+
+    // axis ticks (pc), drawn outside the circular clip
+    fctx.save();
+    fctx.font = '9px -apple-system,sans-serif';
+    fctx.fillStyle = 'rgba(232,236,244,0.6)';
+    fctx.strokeStyle = 'rgba(255,255,255,0.3)';
+    fctx.lineWidth = 1;
+    const faceTicks = [-1,-0.5,0,0.5,1].map(f=> Math.round(f*viewR/5)*5);
+    fctx.textAlign = 'center';
+    faceTicks.forEach(tv=>{
+      const [tx] = toPix(tv,0);
+      fctx.beginPath(); fctx.moveTo(tx,H-12); fctx.lineTo(tx,H-8); fctx.stroke();
+      fctx.fillText(String(tv), tx, H-1);
+    });
+    fctx.textAlign = 'right';
+    faceTicks.forEach(tv=>{
+      const [,ty] = toPix(0,tv);
+      fctx.beginPath(); fctx.moveTo(8,ty); fctx.lineTo(12,ty); fctx.stroke();
+      fctx.fillText(String(tv), 7, ty+3);
+    });
+    fctx.textAlign = 'left';
+    fctx.fillText('pc', W-16, H-1);
+    fctx.save(); fctx.translate(7,42); fctx.rotate(-Math.PI/2); fctx.fillText('pc',0,0); fctx.restore();
+    fctx.restore();
+
+    drawViewerIcon(fctx);
+
+    // ---- pv panel ----
+    pctx.clearRect(0,0,PW,PH);
+    pctx.fillStyle = '#05070c';
+    pctx.fillRect(0,0,PW,PH);
+
+    // axes
+    pctx.strokeStyle = 'rgba(255,255,255,0.12)';
+    pctx.lineWidth = 1;
+    const [zx] = pvPix(0,0);
+    const [,zy] = pvPix(0,0);
+    pctx.beginPath(); pctx.moveTo(zx,0); pctx.lineTo(zx,PH); pctx.stroke();
+    pctx.beginPath(); pctx.moveTo(0,zy); pctx.lineTo(PW,zy); pctx.stroke();
+
+    shown.forEach(c=>{
+      const v = velOf(c);
+      const [px,py] = pvPix(c.y, v);
+      const [r,g,b] = colorForV(v);
+      const isSel = c.idx===selected;
+      const baseR = isSel?7:4.2;
+      pctx.globalAlpha = 0.12 + 0.88*c.ext;
+      pctx.beginPath();
+      pctx.arc(px,py, baseR*(0.2+0.8*c.ext), 0, 2*Math.PI);
+      pctx.fillStyle = `rgb(${r},${g},${b})`;
+      pctx.fill();
+      pctx.strokeStyle = isSel ? '#ffffff' : 'rgba(5,7,12,0.7)';
+      pctx.lineWidth = isSel?2.5:1;
+      pctx.stroke();
+      pctx.globalAlpha = 1;
+    });
+
+    pctx.font = '8px -apple-system,sans-serif';
+    pctx.fillStyle = 'rgba(232,236,244,0.55)';
+    pctx.textAlign = 'center';
+    [-200,-100,100,200].forEach(tv=>{
+      const [tx] = pvPix(tv,0);
+      pctx.fillText(String(tv), tx, PH-20);
+    });
+    pctx.textAlign = 'left';
+    [-150,-75,75,150].forEach(tv=>{
+      const [,ty] = pvPix(0,tv);
+      pctx.fillText(String(tv), 3, ty+3);
+    });
+
+    pctx.fillStyle = 'rgba(232,236,244,0.8)';
+    pctx.font = '11px -apple-system,sans-serif';
+    pctx.fillText('transverse position, ∝ Galactic longitude l (pc)', 8, PH-8);
+    pctx.save(); pctx.translate(12,14); pctx.fillText(velLabel(velMode),0,0); pctx.restore();
+
+    // legend
+    const pal = PALETTES[velMode];
+    el.legBar.style.background = `linear-gradient(90deg, rgb(${pal.neg.join(',')}), rgb(${pal.mid.join(',')}) 50%, rgb(${pal.pos.join(',')}))`;
+    el.legLabel.textContent = velMode==='los' ? '(line-of-sight velocity)' : '(plane-of-sky velocity)';
+
+    // info panel
+    const selC = selected>=0 ? computed.find(cc=>cc.idx===selected) : null;
+    if(selC){
+      const c = selC;
+      const lArcmin = (c.y/Dsun)*206265/60;
+      const extLine = el.cloudEnabled.checked
+        ? `<br>extinction from cloud: <b>${((1-c.ext)*100).toFixed(0)}%</b> dimmed (&tau;=${c.tau.toFixed(2)}, transmission ${c.ext.toFixed(2)})`
+        : '';
+      el.info.innerHTML = `<b>Star ${selected+1}</b> of ${stars.length}<br>`+
+        `position: x &asymp; ${c.x.toFixed(0)} pc (along LOS), y &asymp; ${c.y.toFixed(0)} pc (l &asymp; ${lArcmin.toFixed(1)}&prime;)<br>`+
+        `line-of-sight velocity: ${velMode==='los'?'<b>':''}${c.vx.toFixed(0)} km/s${velMode==='los'?'</b>':''}<br>`+
+        `plane-of-sky velocity: ${velMode==='sky'?'<b>':''}${c.vy.toFixed(0)} km/s${velMode==='sky'?'</b>':''}<br>`+
+        `orbit semi-major axis: ${stars[selected].B.toFixed(0)} pc${extLine}`;
+    }
+
+    drawHistogram(cloudLine);
+    drawTauV(cloudLine);
+  }
+
+  function drawHistogram(cloudLine){
+    hctx.clearRect(0,0,HW,HH);
+    hctx.fillStyle = '#05070c'; hctx.fillRect(0,0,HW,HH);
+    const padL=36, padB=30, padT=10, padR=10;
+    const plotW = HW-padL-padR, plotH = HH-padT-padB;
+    if(!el.cloudEnabled.checked){
+      hctx.fillStyle = 'rgba(232,236,244,0.5)'; hctx.font = '12px -apple-system,sans-serif';
+      hctx.fillText('Enable the foreground cloud to see this diagnostic.', 14, HH/2);
+      return;
+    }
+    // count stars per bin (no weighting), split into 4 extinction categories by
+    // how much each star is actually dimmed, in magnitudes: A = (2.5/ln10) * tau
+    const CATS = [
+      {max:0.5,      color:'#f5f5f5'},
+      {max:2.5,      color:'#aaaaaa'},
+      {max:5,        color:'#5c5c5c'},
+      {max:Infinity, color:'#222222'},
+    ];
+    const nbins = 24, binW = (2*Rmax)/nbins;
+    const counts = Array.from({length:nbins}, ()=> [0,0,0,0]);
+    cloudLine.forEach(c=>{
+      const bi = Math.max(0, Math.min(nbins-1, Math.floor((c.x+Rmax)/binW)));
+      const magDimmed = c.tau*MAG_PER_TAU;
+      const ci = CATS.findIndex(cat=> magDimmed < cat.max);
+      counts[bi][ci<0 ? 3 : ci]++;
+    });
+    const totals = counts.map(cs=> cs.reduce((a,b)=>a+b,0));
+    const maxCount = Math.max(1, ...totals);
+    const xPix = i => padL + (i/nbins)*plotW;
+    const yPix = v => padT + (1 - v/maxCount)*plotH;
+    const baseline = padT+plotH;
+
+    hctx.strokeStyle = 'rgba(255,255,255,0.15)';
+    hctx.beginPath(); hctx.moveTo(padL,baseline); hctx.lineTo(padL+plotW,baseline); hctx.stroke();
+
+    const bw = plotW/nbins;
+    for(let i=0;i<nbins;i++){
+      const x0 = xPix(i);
+      let yTop = baseline;
+      counts[i].forEach((n,ci)=>{
+        if(n<=0) return;
+        const segH = (n/maxCount)*plotH;
+        hctx.fillStyle = CATS[ci].color;
+        hctx.fillRect(x0+1, yTop-segH, bw-2, segH);
+        hctx.strokeStyle = 'rgba(255,255,255,0.2)'; hctx.lineWidth = 1;
+        hctx.strokeRect(x0+1, yTop-segH, bw-2, segH);
+        yTop -= segH;
+      });
+    }
+
+    const xNear = cloud.cx-cloud.rLos, xFar = cloud.cx+cloud.rLos;
+    hctx.strokeStyle = 'rgba(200,130,255,0.7)'; hctx.setLineDash([4,3]);
+    [xNear,xFar].forEach(xv=>{
+      const px = padL + ((xv+Rmax)/(2*Rmax))*plotW;
+      hctx.beginPath(); hctx.moveTo(px,padT); hctx.lineTo(px,baseline); hctx.stroke();
+    });
+    hctx.setLineDash([]);
+
+    hctx.font = '8px -apple-system,sans-serif';
+    hctx.fillStyle = 'rgba(232,236,244,0.55)';
+    hctx.textAlign = 'center';
+    [-200,-100,0,100,200].forEach(tv=>{
+      const px = padL + ((tv+Rmax)/(2*Rmax))*plotW;
+      hctx.fillText(String(tv), px, baseline+10);
+    });
+    hctx.textAlign = 'right';
+    const yTickVals = [0, Math.round(maxCount/2), maxCount];
+    [...new Set(yTickVals)].forEach(tv=>{
+      hctx.fillText(String(tv), padL-4, yPix(tv)+3);
+    });
+
+    hctx.fillStyle = 'rgba(232,236,244,0.7)'; hctx.font = '10px -apple-system,sans-serif';
+    hctx.textAlign = 'left';
+    hctx.fillText('near ← distance along sightline → far (pc)', padL, HH-4);
+    hctx.save(); hctx.translate(10,padT+10); hctx.fillText('N stars',0,0); hctx.restore();
+  }
+
+  function drawTauV(cloudLine){
+    tctx.clearRect(0,0,TW,TH);
+    tctx.fillStyle = '#05070c'; tctx.fillRect(0,0,TW,TH);
+    const padL=30, padB=30, padT=10, padR=10;
+    const plotW = TW-padL-padR, plotH = TH-padT-padB;
+    if(!el.cloudEnabled.checked){
+      tctx.fillStyle = 'rgba(232,236,244,0.5)'; tctx.font = '12px -apple-system,sans-serif';
+      tctx.fillText('Enable the foreground cloud to see this diagnostic.', 14, TH/2);
+      return;
+    }
+    const cloudMag = parseFloat(el.cloudTau.value); // slider's own value, in mag
+    const magMax = Math.max(0.5, cloudMag);
+    // reversed so +v (near side) plots on the left, matching the face-on view
+    // (near/front is toward the Sun, drawn on the left there too)
+    const xPix = v => padL + ((vClip-v)/(2*vClip))*plotW;
+    const yPix = a => padT + (1 - a/magMax)*plotH;
+    const magOf = c => c.tau*MAG_PER_TAU;
+
+    tctx.strokeStyle = 'rgba(255,255,255,0.15)';
+    tctx.beginPath(); tctx.moveTo(padL,padT); tctx.lineTo(padL,padT+plotH); tctx.lineTo(padL+plotW,padT+plotH); tctx.stroke();
+
+    const yMax = yPix(cloudMag);
+    tctx.strokeStyle = 'rgba(200,130,255,0.65)'; tctx.setLineDash([4,3]);
+    tctx.beginPath(); tctx.moveTo(padL,yMax); tctx.lineTo(padL+plotW,yMax); tctx.stroke();
+    tctx.setLineDash([]);
+    tctx.fillStyle = 'rgba(216,170,255,0.9)'; tctx.font = '10px -apple-system,sans-serif';
+    tctx.fillText(`A_cloud = ${cloudMag.toFixed(1)} mag`, padL+4, yMax-4);
+
+    cloudLine.forEach(c=>{
+      const [r,g,b] = colorForV(c.vy,'sky');
+      const px = xPix(c.vy), py = yPix(magOf(c));
+      tctx.beginPath(); tctx.arc(px,py,4,0,2*Math.PI);
+      tctx.fillStyle = `rgb(${r},${g},${b})`; tctx.fill();
+      tctx.strokeStyle = 'rgba(5,7,12,0.7)'; tctx.lineWidth=1; tctx.stroke();
+    });
+
+    tctx.font = '8px -apple-system,sans-serif';
+    tctx.fillStyle = 'rgba(232,236,244,0.55)';
+    tctx.textAlign = 'center';
+    [-150,-75,0,75,150].forEach(tv=>{
+      tctx.fillText(String(tv), xPix(tv), padT+plotH+10);
+    });
+    tctx.textAlign = 'right';
+    [0, cloudMag/2, cloudMag].forEach(tv=>{
+      tctx.fillText(tv.toFixed(1), padL-4, yPix(tv)+3);
+    });
+
+    tctx.fillStyle = 'rgba(232,236,244,0.7)'; tctx.font = '10px -apple-system,sans-serif';
+    tctx.textAlign = 'left';
+    tctx.fillText('proper motion v_sky (km/s) — near side > 0, far side < 0', padL, TH-4);
+    tctx.save(); tctx.translate(8,padT+10); tctx.fillText('A (mag)',0,0); tctx.restore();
+  }
+
+  function nearestStar(px,py,list,toPixFn){
+    let bestIdx=-1, bestD=18*18;
+    list.forEach(c=>{
+      const [cx,cy] = toPixFn(c);
+      const d = (cx-px)*(cx-px)+(cy-py)*(cy-py);
+      if(d<bestD){bestD=d; bestIdx=c.idx;}
+    });
+    return bestIdx;
+  }
+
+  // the set of stars currently visible/clickable in the face-on & PV panels
+  function shownComputed(){
+    const computed = computeAll();
+    const zooming = el.zoomCloud.checked && el.cloudEnabled.checked;
+    return zooming ? computed.filter(onCloudSightline) : computed;
+  }
+
+  function physFromFaceEvent(e){
+    const rect = faceC.getBoundingClientRect();
+    const px = (e.clientX-rect.left)*(W/rect.width);
+    const py = (e.clientY-rect.top)*(H/rect.height);
+    const x = (px/W)*2*viewR - viewR;
+    const y = viewR - (py/H)*2*viewR;
+    return [x,y];
+  }
+
+  let draggingCloud = false, cloudInteracted = false;
+  faceC.addEventListener('mousedown', e=>{
+    if(!el.cloudEnabled.checked) return;
+    const [x,y] = physFromFaceEvent(e);
+    const dx = (x-cloud.cx)/cloud.rLos, dy = (y-cloud.cy)/cloud.rSky;
+    if(dx*dx + dy*dy <= 1){
+      draggingCloud = true; cloudInteracted = true;
+      e.preventDefault();
+    }
+  });
+  window.addEventListener('mousemove', e=>{
+    if(draggingCloud){
+      const [x,y] = physFromFaceEvent(e);
+      cloud.cx = Math.max(-Rmax, Math.min(Rmax, x));
+      cloud.cy = Math.max(-Rmax, Math.min(Rmax, y));
+      draw();
+    }
+  });
+  window.addEventListener('mouseup', ()=>{
+    if(draggingCloud && zoomActive()) regenerateStars();
+    draggingCloud = false;
+  });
+
+  faceC.addEventListener('click', e=>{
+    if(cloudInteracted){ cloudInteracted = false; return; }
+    const rect = faceC.getBoundingClientRect();
+    const px = (e.clientX-rect.left)*(W/rect.width);
+    const py = (e.clientY-rect.top)*(H/rect.height);
+    const idx = nearestStar(px,py,shownComputed(), c=>toPix(c.x,c.y));
+    if(idx>=0){ selected = idx; draw(); }
+  });
+  pvC.addEventListener('click', e=>{
+    const rect = pvC.getBoundingClientRect();
+    const px = (e.clientX-rect.left)*(PW/rect.width);
+    const py = (e.clientY-rect.top)*(PH/rect.height);
+    const idx = nearestStar(px,py,shownComputed(), c=>pvPix(c.y, velOf(c)));
+    if(idx>=0){ selected = idx; draw(); }
+  });
+
+  function setVelMode(mode){
+    velMode = mode;
+    el.modeSky.classList.toggle('active', mode==='sky');
+    el.modeLos.classList.toggle('active', mode==='los');
+    draw();
+  }
+  el.modeSky.addEventListener('click', ()=> setVelMode('sky'));
+  el.modeLos.addEventListener('click', ()=> setVelMode('los'));
+
+  [el.phi, el.q, el.showOrbits, el.animateOn, el.cloudLOS, el.cloudTau, el.faceZoom].forEach(inp=> inp.addEventListener('input', draw));
+  // these change WHICH population should exist (star count, entering/leaving the
+  // zoomed pencil beam, or the beam's own footprint moving), so they regenerate
+  [el.n, el.zoomCloud, el.cloudEnabled, el.cloudR].forEach(inp=> inp.addEventListener('input', regenerateStars));
+  el.reshuffle.addEventListener('click', regenerateStars);
+
+  let animT = 0, lastTS = null;
+  function frameLoop(ts){
+    if(el.animateOn.checked){
+      if(lastTS!=null) animT += (ts-lastTS)/1000;
+      lastTS = ts;
+      draw();
+    } else {
+      lastTS = null;
+    }
+    requestAnimationFrame(frameLoop);
+  }
+
+  // ---- guided-tour "movie": a scripted sequence of state changes. Sliders (not
+  // `cloud.rSky/rLos/tau` or `viewR`) are the source of truth read by draw() each
+  // frame, so steps that touch those set the slider's .value and let draw() pick
+  // it up; cloud.cx/cloud.cy have no slider and are set directly.
+  function sleep(ms){ return new Promise(r=> setTimeout(r, ms)); }
+  function easeInOut(t){ return t<0.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2; }
+  function tween(duration, onUpdate){
+    return new Promise(resolve=>{
+      const t0 = performance.now();
+      function step(now){
+        const raw = Math.min(1, (now-t0)/duration);
+        onUpdate(easeInOut(raw));
+        if(raw<1) requestAnimationFrame(step); else resolve();
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  function lToPc(lDeg){ return Dsun*lDeg*Math.PI/180; }
+
+  // like regenerateStars(), but for a sampler+target count already decided by the
+  // caller, and grows the population in over `duration` instead of snapping straight
+  // to the full count — used by the movie so the jump to the zoomed sightline reads
+  // as stars filling in, not a jarring swap
+  async function animateStarsIn(sampleFn, targetN, duration){
+    const full = sampleFn(targetN);
+    selected = -1;
+    el.info.textContent = 'Click any star to inspect it.';
+    await tween(duration, e=>{
+      stars = full.slice(0, Math.max(1, Math.round(e*targetN)));
+      draw();
+    });
+    stars = full;
+    draw();
+  }
+
+  let movieRunning = false;
+  async function playMovie(){
+    if(movieRunning) return;
+    movieRunning = true;
+    el.playMovie.disabled = true;
+    el.playMovie.textContent = 'Playing…';
+    const setStatus = s => { el.movieStatus.textContent = s; };
+
+    setStatus('1/10 — full view, no cloud, 200 stars');
+    el.cloudEnabled.checked = false;
+    el.zoomCloud.checked = false;
+    el.faceZoom.value = 220;
+    el.n.value = 200;
+    regenerateStars();
+    await sleep(500);
+
+    setStatus('2/10 — add a cloud: 10 pc, A=2 mag, l=+0.25°, 100 pc in front');
+    el.cloudR.value = 10;
+    el.cloudLOS.value = 10;
+    el.cloudTau.value = 2;
+    cloud.cy = lToPc(0.25);
+    cloud.cx = -100;
+    el.cloudEnabled.checked = true;
+    draw();
+    await sleep(2000);
+
+    setStatus('3/10 — zoom to the cloud’s sightline');
+    el.zoomCloud.checked = true;
+    await animateStarsIn(makeCloudLineStars, parseInt(el.n.value,10), 1600);
+    await sleep(500);
+
+    setStatus('4/10 — cloud sweeps from front to back');
+    await tween(1800, e=>{ cloud.cx = -100 + e*200; draw(); });
+    await sleep(500);
+
+    setStatus('5/10 — pull the cloud in to 25 pc, in front');
+    {
+      const cx0 = cloud.cx, cxT = -25;
+      await tween(1300, e=>{ cloud.cx = cx0 + e*(cxT-cx0); draw(); });
+    }
+    await sleep(500);
+
+    setStatus('6/10 — zoom the top-down view to ±100 pc');
+    {
+      const vr0 = parseFloat(el.faceZoom.value), vrT = 100;
+      await tween(1300, e=>{ el.faceZoom.value = vr0 + e*(vrT-vr0); draw(); });
+    }
+    await sleep(500);
+
+    setStatus('7/10 — stretch the cloud to 30 pc deep');
+    {
+      const rl0 = parseFloat(el.cloudLOS.value), rlT = 30;
+      await tween(1200, e=>{
+        el.cloudLOS.value = rl0 + e*(rlT-rl0);
+        draw();
+      });
+    }
+    await sleep(500);
+
+    setStatus('8/10 — un-zoom: bring in the full field, 400 stars');
+    el.zoomCloud.checked = false;
+    el.n.value = 400;
+    regenerateStars();
+    await sleep(500);
+
+    setStatus('9/10 — slide from l=+0.25° to l=−0.5°');
+    {
+      const cy0 = cloud.cy, cyT = lToPc(-0.5);
+      await tween(1800, e=>{
+        cloud.cy = cy0 + e*(cyT-cy0);
+        draw();
+      });
+    }
+    await sleep(500);
+
+    setStatus('10/10 — re-sync: zoom back to the cloud’s sightline');
+    el.zoomCloud.checked = true;
+    regenerateStars(); // resample the beam to match the cloud's new sightline
+    await sleep(500);
+
+    setStatus('Done — adjust any control, or play again.');
+    el.playMovie.disabled = false;
+    el.playMovie.textContent = '▶ Play movie';
+    movieRunning = false;
+  }
+  el.playMovie.addEventListener('click', playMovie);
+
+  regenerateStars();
+  requestAnimationFrame(frameLoop);
+})();
+</script>
+</body>
+</html>

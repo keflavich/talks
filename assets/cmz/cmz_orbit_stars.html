@@ -107,7 +107,8 @@
 <p class="sub">
 Each dot is a star placed at a random phase on a randomly chosen x2 orbit in the nuclear stellar disc
 (nested ellipses elongated perpendicular to the Galactic bar; Nieuwmunster et al. 2024), with positions drawn
-from the NSD's actual measured radial density profile. Color shows a velocity each star would have — toggle
+from the NSD's actual measured radial density profile (circular by default — the "NSD ellipticity" slider
+flattens it, independently of the x2 orbits' own flattening). Color shows a velocity each star would have — toggle
 below between plane-of-sky (proper motion) and line-of-sight (radial velocity). On the right, the same stars
 are plotted the way you'd actually observe them: transverse sky position (&#8733; Galactic longitude l) vs.
 velocity. The open, parallelogram-like loop that traces out is the signature of the barred orbit family — and
@@ -192,6 +193,10 @@ star's proper motion parallel to the plane barely depends on where along the lin
       <div class="row">
         <label>x2-orbit flattening (q = minor/major) <span class="val" id="v-q">0.35</span></label>
         <input type="range" id="q" min="0.20" max="1.00" step="0.01" value="0.35">
+      </div>
+      <div class="row">
+        <label>NSD ellipticity (density axis ratio) <span class="val" id="v-nsde">1.00 (circular)</span></label>
+        <input type="range" id="nsdE" min="0.30" max="1.00" step="0.05" value="1.00">
       </div>
       <div class="row">
         <label>Number of stars <span class="val" id="v-n">100</span></label>
@@ -279,9 +284,11 @@ star's proper motion parallel to the plane barely depends on where along the lin
   const el = {
     phi: document.getElementById('phi'),
     q: document.getElementById('q'),
+    nsdE: document.getElementById('nsdE'),
     n: document.getElementById('n'),
     vphi: document.getElementById('v-phi'),
     vq: document.getElementById('v-q'),
+    vnsde: document.getElementById('v-nsde'),
     vn: document.getElementById('v-n'),
     showOrbits: document.getElementById('showOrbits'),
     reshuffle: document.getElementById('reshuffle'),
@@ -400,12 +407,28 @@ star's proper motion parallel to the plane barely depends on where along the lin
   // an Erlang(2,h) distribution, sampled here as minus-h times the sum of two log-uniforms.
   const NSD_SCALE_R = 88.6; // pc
 
-  function sampleOneStar(rng, q, phiRad){
+  // "elliptical radius": contours of constant nsdR are ellipses with semi-major
+  // axis along y_bar (perpendicular to the bar, same convention as the x2 orbits)
+  // and semi-minor axis nsdE*R along x_bar. nsdE=1 reduces this to the ordinary
+  // circular radius, so the NSD's density map stays axisymmetric by default.
+  function nsdR(x, y, nsdE, phiRad){
+    const c = Math.cos(phiRad), s = Math.sin(phiRad);
+    const xb = x*c + y*s;
+    const yb = -x*s + y*c;
+    return Math.sqrt(yb*yb + (xb/nsdE)*(xb/nsdE));
+  }
+
+  function sampleOneStar(rng, q, nsdE, phiRad){
     for(let tries=0; tries<60; tries++){
       const R = -NSD_SCALE_R * (Math.log(rng()) + Math.log(rng()));
       if(R > Rmax || R < 0.5) continue;
       const az = rng()*2*Math.PI;
-      const orb = xyToOrbit(R*Math.cos(az), R*Math.sin(az), q, phiRad);
+      // (xb,yb) traces an ellipse of "radius" R in the bar frame, then rotates
+      // into sky coordinates -- same elongation axis as the x2-orbit family
+      const xb = nsdE*R*Math.cos(az), yb = R*Math.sin(az);
+      const x = xb*Math.cos(phiRad) - yb*Math.sin(phiRad);
+      const y = xb*Math.sin(phiRad) + yb*Math.cos(phiRad);
+      const orb = xyToOrbit(x, y, q, phiRad);
       if(orb) return orb;
     }
     return {B: NSD_SCALE_R, theta: rng()*2*Math.PI}; // fallback, should be essentially unreachable
@@ -413,22 +436,22 @@ star's proper motion parallel to the plane barely depends on where along the lin
 
   function makeStars(n){
     const rng = mulberry32((Math.random()*1e9)|0);
-    const q = parseFloat(el.q.value), phiRad = getPhiRad();
+    const q = parseFloat(el.q.value), nsdE = parseFloat(el.nsdE.value), phiRad = getPhiRad();
     const arr = [];
-    for(let i=0;i<n;i++) arr.push(sampleOneStar(rng, q, phiRad));
+    for(let i=0;i<n;i++) arr.push(sampleOneStar(rng, q, nsdE, phiRad));
     return arr;
   }
 
   // sample a star directly along the cloud's pencil beam: transverse position y
   // uniform across the cloud's sky footprint, and line-of-sight position x drawn
-  // by rejection sampling from the same NSD surface density Sigma(R) ~ exp(-R/h)
-  // (no extra R weighting here, since this is a 1D draw along a fixed beam, not
-  // a 2D draw over an annulus).
-  function sampleOneCloudLineStar(rng, q, phiRad){
+  // by rejection sampling from the same (possibly elliptical) NSD surface density
+  // Sigma(R) ~ exp(-R/h) (no extra R weighting here, since this is a 1D draw along
+  // a fixed beam, not a 2D draw over an annulus).
+  function sampleOneCloudLineStar(rng, q, nsdE, phiRad){
     for(let tries=0; tries<200; tries++){
       const y = cloud.cy + (rng()*2-1)*cloud.rSky;
       const x = (rng()*2-1)*Rmax;
-      const R = Math.sqrt(x*x+y*y);
+      const R = nsdR(x, y, nsdE, phiRad);
       if(rng() < Math.exp(-R/NSD_SCALE_R)){
         const orb = xyToOrbit(x,y,q,phiRad);
         if(orb) return orb;
@@ -439,9 +462,9 @@ star's proper motion parallel to the plane barely depends on where along the lin
 
   function makeCloudLineStars(n){
     const rng = mulberry32((Math.random()*1e9)|0);
-    const q = parseFloat(el.q.value), phiRad = getPhiRad();
+    const q = parseFloat(el.q.value), nsdE = parseFloat(el.nsdE.value), phiRad = getPhiRad();
     const arr = [];
-    for(let i=0;i<n;i++) arr.push(sampleOneCloudLineStar(rng, q, phiRad));
+    for(let i=0;i<n;i++) arr.push(sampleOneCloudLineStar(rng, q, nsdE, phiRad));
     return arr;
   }
 
@@ -644,6 +667,8 @@ star's proper motion parallel to the plane barely depends on where along the lin
     const phiRad = getPhiRad();
     el.vphi.textContent = phiDeg.toFixed(0)+'°';
     el.vq.textContent = q.toFixed(2);
+    const nsdE = parseFloat(el.nsdE.value);
+    el.vnsde.textContent = nsdE.toFixed(2) + (nsdE>=1 ? ' (circular)' : '');
     viewR = parseFloat(el.faceZoom.value);
     el.vzoom.textContent = viewR.toFixed(0)+' pc';
     cloud.rSky = parseFloat(el.cloudR.value);
@@ -1004,7 +1029,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
   [el.phi, el.q, el.showOrbits, el.animateOn, el.cloudLOS, el.cloudTau, el.faceZoom].forEach(inp=> inp.addEventListener('input', draw));
   // these change WHICH population should exist (star count, entering/leaving the
   // zoomed pencil beam, or the beam's own footprint moving), so they regenerate
-  [el.n, el.zoomCloud, el.cloudEnabled, el.cloudR].forEach(inp=> inp.addEventListener('input', regenerateStars));
+  [el.n, el.zoomCloud, el.cloudEnabled, el.cloudR, el.nsdE].forEach(inp=> inp.addEventListener('input', regenerateStars));
   el.reshuffle.addEventListener('click', regenerateStars);
 
   // every control's own markup-declared default, restored verbatim -- kept next to
@@ -1013,6 +1038,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
     el.faceZoom.value = 220;
     el.phi.value = 27;
     el.q.value = 0.35;
+    el.nsdE.value = 1.00;
     el.n.value = 100;
     el.showOrbits.checked = true;
     el.animateOn.checked = true;

@@ -312,12 +312,22 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 <section>
     <style>
-/* keep the registered MIRI pose once the N/M/S build advances past it: custom.css's
-   .fragment.rotated returns to rotate:0deg when it is no longer the current fragment. */
-#sgrb2_nircam_on_meerkat img.fragment.rotated.visible { rotate: var(--rotation); }
-/* same hand-over as on #sgrb2-miri-catalogs: the excess markers retire when the density
-   contours arrive, keyed on .visible so it survives leaving and re-entering the slide. */
-#sgrb2_nircam_on_meerkat:has(.nc-f480-to-contour.visible) .nc-f480pts { opacity: 0; visibility: hidden; }
+/* Hold the registered MIRI pose while the protocluster boxes are up: custom.css's
+   .fragment.rotated drops back to rotate:0deg as soon as it stops being the current
+   fragment, which would swing the mosaic 3.36 deg out from under the boxes.
+   The LAST step releases it -- and takes the boxes with it, so they stay aligned --
+   which is the point: the mosaic has to be unrotated before auto-animate hands over
+   to #sgrb2n_miri, whose copy carries no rotation.  Auto-animate interpolates a
+   bbox-derived translate+scale but NOT rotate, so leaving this slide still rotated
+   makes that transition a jump instead of a morph.
+   NOTE the selector: that marker is written `class=fragment placeholder-for-fadeout-animation`
+   (unquoted), so the second token is a boolean ATTRIBUTE, not a class -- it has to be
+   matched with [placeholder-for-fadeout-animation], not .placeholder-for-fadeout-animation. */
+#sgrb2_nircam_on_meerkat:not(:has([placeholder-for-fadeout-animation].visible)) img.fragment.rotated.visible {
+    rotate: var(--rotation);
+}
+#sgrb2_nircam_on_meerkat img.nms-boxes { transition: rotate 0.5s ease-in-out; }
+#sgrb2_nircam_on_meerkat:has([placeholder-for-fadeout-animation].visible) img.nms-boxes { rotate: 0deg !important; }
 </style>
 <section data-auto-animate class=darkbg data-background-color="black" id=sgrb2_nircam_on_meerkat>
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:5%; margin-left:-51%; ">
@@ -339,21 +349,10 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
         <!-- same overlay as #sgrb2ds-zoomin, carrying the MIRI mosaic's exact pose on this slide
              (both images are 2487x1095, so identical top/left/max-* put them pixel-on-pixel). -->
-        <div class="fragment smaller" data-fragment-index="2" style='position: absolute; color: lime; left:53%; top:55%; z-index:100; width:200px; height:200px'> Protoclusters </div>
+        <div class="fragment fade-in-then-out smaller" data-fragment-index="2" style='position: absolute; color: lime; left:53%; top:55%; z-index:100; width:200px; height:200px'> Protoclusters </div>
         <img src="assets/sgrb2/overlay_sgrb2_nms.png" style="position: absolute; top: 35.02102% !important;
-  left: 22.15423% !important; height: 100%; max-width: 62%; max-height: 33.30926%; rotate:-3.3589deg; transform-origin: 0px 0px; z-index: 50;" class="fragment" data-fragment-index="2">
-        <div class=fragment placeholder-for-fadeout-animation data-fragment-index="2"></div>
-        <!-- The F480M-excess catalogue and its density, on the frame they were measured in.
-             The map is a NIRCam product, so the NIRCam image here shows all of it, whereas the MIRI
-             mosaic on #sgrb2-miri-catalogs holds only 61 per cent of it.  Same expanded overlay PNGs
-             as that slide (3318x1597 mosaic px, origin at mosaic pixel -415,-243), placed through the
-             MIRI mosaic's own pose above -- 0.233621 screen px per mosaic px, rotate -3.3589deg -- so
-             the two slides put every source and contour on exactly the same sky. -->
-        <img class="fragment nc-f480pts" data-fragment-index="3" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:126.75px; top:217.97px; width:775.15px; height:373.09px; rotate:-3.3589deg; transform-origin:0px 0px; z-index:60;" src="assets/Nazar/overlay_f480m_excess_fullfov.png">
-        <div class="smaller3 fragment fade-in nc-f480pts" data-fragment-index="3" style="position:absolute; left:14px; bottom:44px; z-index:151; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9711;</span> JWST 4.8&mu;m excess sources, full NIRCam field (Budaiev+ 2026)</div>
-        <img class="fragment" data-fragment-index="4" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:126.75px; top:217.97px; width:775.15px; height:373.09px; rotate:-3.3589deg; transform-origin:0px 0px; z-index:61;" src="assets/Nazar/overlay_f480m_contour_fullfov.png">
-        <div class="fragment nc-f480-to-contour" data-fragment-index="4"></div>
-        <div class="smaller3 fragment fade-in" data-fragment-index="4" style="position:absolute; left:14px; bottom:44px; z-index:151; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;"><span style="color:#00e1ff">&#9473;</span> &hellip;and their density: 2&ndash;6 per cent of stars show 4.8&mu;m excess</div>
+  left: 22.15423% !important; height: 100%; max-width: 62%; max-height: 33.30926%; rotate:-3.3589deg; transform-origin: 0px 0px; z-index: 50;" class="fragment nms-boxes fade-in-then-out" data-fragment-index="2">
+        <div class=fragment placeholder-for-fadeout-animation data-fragment-index="3"></div>
 
 
         <aside class=notes>

@@ -253,7 +253,13 @@ def load_tracks(csv_path=TRACKS):
     return {k: np.array(sorted(v)) for k, v in d.items()}
 
 
-def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0)):
+def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0), show=None):
+    """show: which CMZ layers to draw, for the build-up on the cloud-tour slides.
+    None = everything (the standalone figure).  Otherwise a set drawn from
+    {"sgrb2", "Cloud E/F", "The Brick", ...}: CMZ_CLOUDS entries are matched by
+    name, "sgrb2" controls the Ginsburg+ 2018 cloud and its averaged point.
+    The axes, bands, local tracks and legend are identical in every variant, so the
+    frames register exactly when they are swapped on top of each other in the deck."""
     tracks = load_tracks()
     fig, ax = plt.subplots(figsize=(9.2, 6.9), dpi=150)
 
@@ -279,31 +285,35 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0)):
 
     # Sgr B2: the whole Fig. 17a cloud, shifted down by the assumed age
     sg, sstar = load_sgrb2()
-    ssfr = sstar - np.log10(SGRB2_AGE_MYR)
-    from scipy.stats import gaussian_kde
-    k = gaussian_kde(np.vstack([sg, ssfr]))
-    gx_, gy_ = np.mgrid[sg.min() - .3:sg.max() + .3:120j, ssfr.min() - .3:ssfr.max() + .3:120j]
-    z = k(np.vstack([gx_.ravel(), gy_.ravel()])).reshape(gx_.shape)
-    zs = np.sort(z.ravel())[::-1]
-    cum = np.cumsum(zs) / zs.sum()
-    lv = sorted(zs[np.searchsorted(cum, f)] for f in (0.90, 0.50))
-    ax.contourf(gx_, gy_, z, levels=lv + [z.max()], colors=["#d62728", "#b01d1e"], alpha=0.20, zorder=6)
-    ax.contour(gx_, gy_, z, levels=lv, colors="#8c1416", linewidths=1.6, zorder=6)
-    ax.scatter(sg, ssfr, s=3, c="#8c1416", alpha=0.35, lw=0, zorder=6)
-    # cloud-averaged Sgr B2: the SAME kind of measurement as the two limits, so the comparison
-    # at fixed Sigma_gas is like for like (the blob above is resolved on 0.25 pc cells).
-    ax.scatter([np.log10(6667.0)], [np.log10(216.0)], s=300, marker="*",
-               facecolors="none", edgecolors="#8c1416", linewidths=2.2, zorder=9)
-    ax.plot([np.log10(6667.0)] * 2, [np.log10(156.0), np.log10(276.0)],
-            color="#8c1416", lw=2.4, zorder=9)
-    ax.annotate("Sgr B2, cloud-averaged", (np.log10(6667.0) + 0.06, np.log10(216.0)),
-                ha="left", va="center", fontsize=11, color="#8c1416", zorder=9,
-                bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=1.6))
-    ax.annotate("Sgr B2\nGinsburg+ 2018", #(Fig. 17a / %.1f Myr)" % SGRB2_AGE_MYR,
-                (4.30, 3.30), ha="center", fontsize=13, color="#a11d1f", fontweight="bold",
-                zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
+    draw_sgrb2 = show is None or "sgrb2" in show
+    if draw_sgrb2:
+        ssfr = sstar - np.log10(SGRB2_AGE_MYR)
+        from scipy.stats import gaussian_kde
+        k = gaussian_kde(np.vstack([sg, ssfr]))
+        gx_, gy_ = np.mgrid[sg.min() - .3:sg.max() + .3:120j, ssfr.min() - .3:ssfr.max() + .3:120j]
+        z = k(np.vstack([gx_.ravel(), gy_.ravel()])).reshape(gx_.shape)
+        zs = np.sort(z.ravel())[::-1]
+        cum = np.cumsum(zs) / zs.sum()
+        lv = sorted(zs[np.searchsorted(cum, f)] for f in (0.90, 0.50))
+        ax.contourf(gx_, gy_, z, levels=lv + [z.max()], colors=["#d62728", "#b01d1e"], alpha=0.20, zorder=6)
+        ax.contour(gx_, gy_, z, levels=lv, colors="#8c1416", linewidths=1.6, zorder=6)
+        ax.scatter(sg, ssfr, s=3, c="#8c1416", alpha=0.35, lw=0, zorder=6)
+        # cloud-averaged Sgr B2: the SAME kind of measurement as the two limits, so the comparison
+        # at fixed Sigma_gas is like for like (the blob above is resolved on 0.25 pc cells).
+        ax.scatter([np.log10(6667.0)], [np.log10(216.0)], s=300, marker="*",
+                   facecolors="none", edgecolors="#8c1416", linewidths=2.2, zorder=9)
+        ax.plot([np.log10(6667.0)] * 2, [np.log10(156.0), np.log10(276.0)],
+                color="#8c1416", lw=2.4, zorder=9)
+        ax.annotate("Sgr B2, cloud-averaged", (np.log10(6667.0) + 0.06, np.log10(216.0)),
+                    ha="left", va="center", fontsize=11, color="#8c1416", zorder=9,
+                    bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=1.6))
+        ax.annotate("Sgr B2\nGinsburg+ 2018", #(Fig. 17a / %.1f Myr)" % SGRB2_AGE_MYR,
+                    (4.30, 3.30), ha="center", fontsize=13, color="#a11d1f", fontweight="bold",
+                    zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
 
     for c in CMZ_CLOUDS:
+        if show is not None and c["name"] not in show:
+            continue
         gx, gy = np.log10(c["sigma_gas"]), np.log10(c["sigma_sfr"])
         ax.scatter([gx], [gy], s=c["size"], marker=c["marker"], c=c["colour"],
                    edgecolors="k", linewidths=1.2, zorder=8)
@@ -338,10 +348,17 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0)):
     leg = ax.legend(handles=handles, loc="upper left", fontsize=12, framealpha=0.92)
     leg.set_zorder(10)
 
-    fig.tight_layout()
+    # FIXED margins, not tight_layout(): tight_layout re-fits the axes to whatever is
+    # drawn, so a variant that omits an annotation gets a subtly different axes box and
+    # the build-up frames no longer register when they are swapped in the deck.
+    fig.subplots_adjust(left=0.085, right=0.985, top=0.985, bottom=0.088)
     fig.savefig(out + ".png")
-    fig.savefig(out + ".pdf")
-    print("wrote %s.png / .pdf" % out)
+    if show is None:
+        fig.savefig(out + ".pdf")
+    print("wrote %s.png" % out)
+    if show is not None:
+        plt.close(fig)
+        return
 
     print("\nprovenance")
     print("-" * 78)
@@ -372,6 +389,8 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0)):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
+    p.add_argument("--variants", action="store_true",
+                   help="also write the build-up frames used on #clouds-cloudef .. #clouds-brick")
     p.add_argument("--digitise", action="store_true",
                    help="rebuild pokhrel2021_tracks.csv from the paper PDF")
     args = p.parse_args()
@@ -380,3 +399,11 @@ if __name__ == "__main__":
     if args.digitise or not os.path.exists(SGRB2):
         digitise_sgrb2()
     make_figure()
+    if args.variants:
+        # Build-up frames for the cloud tour.  Same axes and same everything else, so
+        # they can be stacked/swapped in the deck without anything shifting.
+        for suffix, layers in [("_base",  set()),
+                               ("_ef",    {"Cloud E/F"}),
+                               ("_efb2",  {"Cloud E/F", "sgrb2"}),
+                               ("_all",   {"Cloud E/F", "sgrb2", "The Brick"})]:
+            make_figure(out=OUT + suffix, show=layers)

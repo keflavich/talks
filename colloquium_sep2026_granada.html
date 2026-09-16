@@ -841,6 +841,25 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:292.84px; top:227.87px; width:601.91px; height:267.2px; rotate:-148.77deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_sgrb2.jpg">
 </section>
 
+<style>
+/* Star-formation-relation build-up that runs across three cloud-tour slides.
+   #clouds-cloudef shows it big and adds one layer per press (base -> Cloud E/F ->
+   Sgr B2), then a marker fragment shrinks it into the bottom-left corner, where
+   #clouds-cloudcd and #clouds-brick repeat it at the same place so it reads as the
+   same object carried along.  #clouds-brick adds the Brick and then fades it away.
+   The four PNGs are rendered on FIXED axes margins by
+   colloquium_assets/make_sf_relation_figure.py --variants, so stacking them adds
+   only the new point -- nothing else moves. */
+img.sfrel {
+    position: absolute; margin: 0; background: none; max-width: none; max-height: none;
+    left: 172px; top: 130px; width: 680px; height: 510px;
+    transition: left .8s ease-in-out, top .8s ease-in-out,
+                width .8s ease-in-out, height .8s ease-in-out, opacity .6s ease-in-out;
+}
+#clouds-cloudef:has(.sfrel-shrink.visible) img.sfrel,
+img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
+#clouds-brick:has(.sfrel-out.visible) img.sfrel { opacity: 0 !important; }
+</style>
 <section id=clouds-cloudef>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Cloud E/F: $10^5\mathrm{~M}_\odot$ gas, 1? YSO
         <div style="font-size:72%; margin-top:2px;">Houghton, Esteve, Gutermuth, Longmore, Huard, Kauffmann subm.</div>
@@ -848,6 +867,10 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_cloudef.png">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:412.52px; top:187.38px; width:480.52px; height:348.27px; rotate:29.68deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_cloudef.jpg">
+    <img class="fragment sfrel" data-fragment-index="1" style="z-index:40;" src="colloquium_assets/sf_relation_cmz_base.png">
+    <img class="fragment sfrel" data-fragment-index="2" style="z-index:41;" src="colloquium_assets/sf_relation_cmz_ef.png">
+    <img class="fragment sfrel" data-fragment-index="3" style="z-index:42;" src="colloquium_assets/sf_relation_cmz_efb2.png">
+    <div class="fragment sfrel-shrink" data-fragment-index="4"></div>
 </section>
 
 <section id=clouds-cloudcd>
@@ -857,6 +880,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_cloudcd.png">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:591.82px; top:106.04px; width:200.94px; height:510.78px; rotate:-58.69deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_cloudcd.jpg">
+    <img class="sfrel small" style="z-index:40;" src="colloquium_assets/sf_relation_cmz_efb2.png">
 </section>
 
 <section id=clouds-brick>
@@ -866,6 +890,9 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/box_brick.png">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:638.15px; top:141.5px; width:179.84px; height:439.94px; rotate:-58.66deg; z-index:10; outline:2px solid rgba(60,235,60,0.95);" src="assets/cmz/panel_brick.jpg">
+    <img class="sfrel small" style="z-index:40;" src="colloquium_assets/sf_relation_cmz_efb2.png">
+    <img class="fragment sfrel small" data-fragment-index="1" style="z-index:41;" src="colloquium_assets/sf_relation_cmz_all.png">
+    <div class="fragment sfrel-out" data-fragment-index="2"></div>
 </section>
 
 <section id=clouds-arqu>
@@ -1285,9 +1312,20 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;"><a href="https://roman.ipac.caltech.edu/cycle1-approved-programs/19008">Roman GO 19008</a>; <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260910782V/abstract">Vasini+ 2026</a></div>
 </section>
 
-<section>
-    The GC is the laboratory where cosmologically common conditions are observed at planetary-system forming scales.
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:100%;" src="assets/cmz/treasury_panel_nircam.png">
+<!-- Live Aladin Lite view of the Treasury HiPS, in GALACTIC coordinates: it opens on the
+     whole observed block, zooms to full resolution, then runs the same constant-on-sky-rate
+     pan as https://starformation.astro.ufl.edu/jwst-gc/slow_panner.html (whose tour file it
+     fetches, with a baked-in fallback).  See assets/cmz/jwst_gc_panner_embed.html for the
+     two things that bite: the HiPS has no low-order coverage worth showing outside the
+     survey, and with cooFrame:'galactic' Aladin reads the `target` string as l/b.
+     data-src, not src: the script at the end of this file loads it when the slide is entered
+     (restarting the zoom) and unloads it on the way out so Aladin stops animating. -->
+<section id=wrapup-jwst-panner data-background-color="#05070c">
+    <div class=smaller2 style="position:absolute; top:8px; left:14px; width:996px; text-align:left; z-index:20;">The GC is the laboratory where cosmologically common conditions are observed at planetary-system forming scales.</div>
+    <iframe class="orbit-embed" data-src="assets/cmz/jwst_gc_panner_embed.html"
+            frameborder="0" scrolling="no"
+            style="position:absolute; left:0px; top:104px; width:1024px; height:632px;
+                   max-width:none; max-height:none; margin:0; border:0; background:#05070c;"></iframe>
 </section>
 
 <section>
@@ -1553,20 +1591,20 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     </script>
 
     <script>
-      /* #cmz-orbit-embed: load the iframe on entry (which autostarts its guided tour)
-         and unload it on exit, so the embedded page's animation loop stops. */
+      /* Live embeds (#cmz-orbit-embed, #wrapup-jwst-panner): an iframe carrying data-src
+         is loaded when its slide is entered -- which restarts whatever the page animates
+         from the top -- and unloaded on the way out, so it is not running behind the deck. */
       (function(){
-        var SEC = 'cmz-orbit-embed';
-        function frame(){ var s=document.getElementById(SEC); return s && s.querySelector('iframe.orbit-embed'); }
-        function start(){ var f=frame(); if(f) f.src = f.getAttribute('data-src'); }
-        function stop(){ var f=frame(); if(f) f.removeAttribute('src'); }
-        window.orbitEmbedReplay = start;
+        function frames(slide){ return slide ? slide.querySelectorAll('iframe[data-src]') : []; }
+        function start(slide){ frames(slide).forEach(function(f){ f.src = f.getAttribute('data-src'); }); }
+        function stop(slide){ frames(slide).forEach(function(f){ f.removeAttribute('src'); }); }
+        window.orbitEmbedReplay = function(){
+          var s = Reveal.getCurrentSlide && Reveal.getCurrentSlide();
+          stop(s); start(s);
+        };
         if (window.Reveal && Reveal.on) {
-          Reveal.on('ready', function(e){ if(e.currentSlide && e.currentSlide.id===SEC) start(); });
-          Reveal.on('slidechanged', function(e){
-            if(e.currentSlide && e.currentSlide.id===SEC) start();
-            else if(e.previousSlide && e.previousSlide.id===SEC) stop();
-          });
+          Reveal.on('ready', function(e){ start(e.currentSlide); });
+          Reveal.on('slidechanged', function(e){ stop(e.previousSlide); start(e.currentSlide); });
         }
       })();
     </script>

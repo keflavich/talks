@@ -42,7 +42,7 @@ from PIL import Image, ImageDraw
 Image.MAX_IMAGE_PIXELS = None
 
 OUT = 'assets/cmz'
-NIRCAM_HIPS = 'https://starformation.astro.ufl.edu/avm_images/jwst_gc_treasury_hips/'
+NIRCAM_HIPS = 'https://starformation.astro.ufl.edu/avm_images/jwst_gc_treasury_vminmax_hips/'
 MIRI_HIPS   = 'https://starformation.astro.ufl.edu/avm_images/jwst_gc_treasury_miri_hips/'
 MONITOR_FP  = 'https://starformation.astro.ufl.edu/jwst-gc/monitor/footprints.json'
 
@@ -57,15 +57,19 @@ L0, L1 = -1.55, 1.70
 B0, B1 = -0.688, 0.688
 SC = 4 / 3600.
 
-# Magnified panel.  The survey runs east to west in descending visit number: it opened
-# at l = +0.70 and works down through +0.58, +0.51, +0.45 ... so this window holds the
-# executed pointings and the next couple of weeks of scheduled ones.  Same projection
-# and orientation as the full-bleed grid, so the panel needs no rotation in the deck.
-# The MIRI parallel sits ~6' east of its NIRCam prime and reaches l = +0.852, so the
-# window runs out to +0.87 to hold both instruments whole.  That is ~15 display px
-# further east than the full-bleed framing reaches, so the box's left edge falls just
+# Magnified panel.  It opened at l = +0.70 and worked west, but by 2026-09-15 a SECOND
+# block had opened near Sgr C: the observed pointings now sit in two groups, l = +0.37
+# to +0.85 and l = -0.24 to -0.14, with a gap between.  The window spans both, so it is
+# a wide thin strip (1.15 x 0.35 deg, aspect 3.3) -- which is the shape the survey
+# footprint actually has.  Same projection and orientation as the full-bleed grid, so
+# the panel needs no rotation in the deck.  The MIRI parallel sits ~6' east of its
+# NIRCam prime and reaches l = +0.852, hence +0.88 at that end; that is ~15 display px
+# further east than the full-bleed framing reaches, so the box's right edge falls just
 # off the canvas -- the same thing Sgr C's box does at the other end of the strip.
-PANEL_L = (0.30, 0.87)
+# CHECK THIS when re-running: if the survey has opened a third block, widen again.
+# The deck's inset is sized to PANEL aspect -- if this window changes shape, resize
+# the .treasury-panel div on #now-nircam / #now-miri to match.
+PANEL_L = (-0.27, 0.88)
 PANEL_B = (-0.21, 0.14)
 PANEL_SC = 1 / 3600.
 PANEL_ORDER = 9

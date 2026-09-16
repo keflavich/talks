@@ -851,8 +851,11 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
    colloquium_assets/make_sf_relation_figure.py --variants, so stacking them adds
    only the new point -- nothing else moves. */
 img.sfrel {
+    /* Pinned to the LEFT edge during the big phase so it only clips the near side of
+       the cloud panel (which sits at x 412..893 on #clouds-cloudef) rather than burying
+       it.  560 wide keeps the axis labels legible; going much narrower does not. */
     position: absolute; margin: 0; background: none; max-width: none; max-height: none;
-    left: 172px; top: 130px; width: 680px; height: 510px;
+    left: 8px; top: 158px; width: 560px; height: 420px;
     transition: left .8s ease-in-out, top .8s ease-in-out,
                 width .8s ease-in-out, height .8s ease-in-out, opacity .6s ease-in-out;
 }

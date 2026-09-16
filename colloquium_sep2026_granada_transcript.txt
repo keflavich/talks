@@ -1,0 +1,451 @@
+Hi everyone, my name's Adam Ginsburg again.
+
+I'm going to pick up where Steve left off.
+
+Now, 1st thing I'll note is if you want to follow along with any of my slides, you can go to my homepage and click on the Tox link or go to this link here.
+
+All of these talk slides are online.
+
+So, as I said, I'm picking up where Steve loves off and telling you that the Galactic Center is where we're studying these cosmologically relevant conditions at planet forming scales.
+
+So this is gonna be 3 parts.
+
+First one is that we do see star formation in the central molecular zone, center of our galaxy, but it is different than insular neighborhood.
+
+Part 2 is part of why this happens, which is that CMZ clouds are icier and dustier.
+
+And then part three, I'm going to tell you a little bit about what we're doing in the near future slash present and the slightly more distant future with Roman.
+
+So this is where Steve left you, you know, the Galactic Center is our local testing ground for cosmologically relevant physical conditions where stars form.
+
+So, the CMZ looks like this.
+
+We have something like 10 of the 8 solar massive gas in a roughly 200 parsec, uh, radius volume. Within this area, we find about 10% of the galaxy star information.
+
+And in this region, about a 3rd of the star formation occurs in bound stellar clusters, which is something between 3 and 8 times the local value.
+
+One of those clusters is in the Sagittarius B 2 cloud. Which is a site that contains 50% of all the star formation in the CMZ.
+
+I am going to tell you more about that.
+
+So we're going to tilt it on its size.
+
+We can look at it in James Webb view.
+
+And I'm going to tell you a little bit about our James Webb Observations, led by my PhD student, now post-doc, Nazar Budayev.
+
+So this is a multicolor near cam view of the gas in uh, in Sagittarius P2, showing where there are H2 regions, and those are showing you, in turn, where there are uh, their OMB stars, the massive stars.
+
+With Miri, we can see a little bit deeper in.
+
+We're still seeing primarily ionized gas and heated dust.
+
+But we're going to zoom in a little bit on these proto clusters here.
+
+So there are 3 protocolusters that are, at least 2 of them are pretty, excuse me, confidently going to be remain gravitationally bound.
+
+And these are those very different regions where planet dysformation are quite, uh, quite different, but perhaps more similar to how our own son formed.
+
+So, we're gonna tilt again and zoom it a little bit further, and we're gonna look with these mirror data and see what the with the fart or the mid-infrared here.
+
+We're seeing deeply embedded source of feedbacks.
+
+We gonna zoom in on this particular region.
+
+So, uh, in the contours here, I'm showing you Alma emission.
+
+Alma one milliliter mission.
+
+That tells you where the bulk of the cold-ish gas and dust are forming.
+
+And in this region, we have a few 1000 solar masses of gas and roughly 3000 solar masses of stars. So far.
+
+And what we're seeing in this little ridge that you see right here is a site where there's accretion happening at a rate about a 10th of a solar mass per year, which is very, very fast.
+
+It's enough to assemble a star cluster like the arches or quintuplet in less than a 1000000 years.
+
+In fact, only, yeah, only requires 100,000 years.
+
+And what Muri is showing us is that that process of accretion is coupled with outflow.
+
+So now the contours I've overlaid here, the white ones are still the Alma millimeter continuance, where they're really, really high density, dust is, and the red and blue contours are showing you an SIO bipolar outflow. It's something that's tracing the outflow from this accreting rapidly accreting, forming cluster.
+
+So, okay, this is where this is the thing it comprises, about a 3rd of all the star formation in the CMC.
+
+But I'm going to tell you a little bit more about Star Formation elsewhere.
+
+So we're gonna kind of zoom back out now, go back to this full field, and we're gonna tilt down.
+
+Um, so, okay, these clusters account for a third, but there's so that leaves 2 thirds that we haven't talked about.
+
+So what does that look like?
+
+Well, that we're going, sorry about the twisting.
+
+We got to look at different angles here.
+
+So in this deep south region, what we see is a couple sites where we're seeing both Alma and Webb showing us where star formations ongoing.
+
+So mostly we're seeing Star Formation traced in the millimeter.
+
+I'm going to zoom into these regions, we see these individual dust cores, these are likely sites.
+
+These are sites where there are individual YSOs with disks forming.
+
+And if we look in the infrared, we see something coming out.
+
+We see these probably outflows again.
+
+And if we look at the SIO contours, It tells a complicated story.
+
+Yes, these are outflows, but no, they're not always simple.
+
+Um, So, and this is the 4.8 Micron dust emission.
+
+Um, and or possibly CO and H2 mission.
+
+And what we're not seeing here is any ionized gas.
+
+So this is outflows from relatively low mass stars.
+
+They have to be B stars, essentially, or later.
+
+We look at a couple others, so jump down here.
+
+This is another region where we see some emission in the red.
+
+And it's associated with this, this core.
+
+But this one is a nice bipolar outflow.
+
+We have a clean bipolar outflow coming from a core, and the emission we see with James Webb is always offset from where the actual star is forming.
+
+Uh, but is still associated with the same. Object.
+
+Finally, we'll look at this guy down here. Where we see this nice ridge of stars, you know, a bunch of YSOs along a narrow filament.
+
+And Again, the story gets complicated.
+
+We know there's outflowing emission, but like this looks like a nice bipolar flow, but it doesn't quite track with the SIO.
+
+So the story as a whole is that we can easily, we can definitely track, um, accretion.
+
+And in this particular case, this is onto a high mass young seller object.
+
+It's a hot core, which tells us that the luminosity is at least in the early B range.
+
+So, like, we're talking about a 20 solar mass star that's creating here.
+
+The outflows are very messy and we're able to see sign and star formation with web, but it's not the simple story that we get in the neighborhood.
+
+All right, so that's the, to tell you that we were able to, um, trace star formation.
+
+We're going to zoom back out a little bit now and put Sasby 2 back into the broader content or look the broader star formation inside P2.
+
+And we can find, again, some signs of stars with infrared access, which indicate that they're discs.
+
+So these are the some of the reddest sources.
+
+4.8 micron access sources that are likely to be young seller objects.
+
+Alma detects a whole bunch of sources that are showing us where the ongoing star formation is.
+
+So these blue sources, these are the older star formation in the sense that they're probably mostly done accreting, but there are disks.
+
+These are the planet forming objects.
+
+Or late stage platforming objects.
+
+These, these yellow sources, these almo ones, are completely dominated by cold dust.
+
+They probably still have most of their mass in an envelope, and the stars only represent a small fraction of the total mass. In the sources.
+
+Well, they might be a large fraction in some cases, but there is a lot of mass around left to be a credent.
+
+And just to give you, you know, put this in a density view.
+
+We can see that there is an over density of sources, uh, on the side of this object here, Sagittarius be 2 M. So there's this sign, okay, we have star formation happening right now on one side and getting revealed from the cloud on the other side, which is telling us that at least where the extinction is lower, we're able to trace that those later stages of star formation.
+
+What's intriguing here, and we don't fully understand, is that the transition is pretty sharp, and Web has really shown us that this is this sharp transition.
+
+Um, wait, uh, It, yeah.
+
+The other curious thing that I've hinted at is that what Alma sees.
+
+So these millimeter sources that are very dusty, JWC doesn't.
+
+Out of the 700 point sources and the Alma catalog, only 3 have matches in web.
+
+And what that's telling us is that they're, these, these are still accreting sources are just so embedded that we generally can't see them.
+
+But this is highlighting the complementarity of Alma and Webb between the two telescopes.
+
+We are getting a very good sensus of the overall star carnation.
+
+So we're zooming back on, going to the whole CMZ view.
+
+And telling you the story is, Star Formation is ongoing in the galactic center.
+
+But Webb and Alma are different and complimentary.
+
+And then Saturday, Tuesday, symmetry, that looks like it's probably coming from some collision or compression event.
+
+We still don't have a complete understanding of it, but the simulations are helping us get a slightly better picture.
+
+So we go back out to our full aces view of Galactic Center.
+
+We're going to go through and see what JWST has done.
+
+And prior to this week, WWD had observed a good amount of the blocking center, but certainly not all of it.
+
+And so, as I told you, in Sagittarius B 2, we found over 500 young solar objects with Alma, of order 100 HU regions, with a combination of web, Alma, of the LA.
+
+And so this is just, you know, this is the star forming cloud of the gliding center.
+
+This is a starbursting cloud as much as any could be defined.
+
+This thing would easily be detectable.
+
+Uh, in fact, is detected in in galaxies like entity 253.
+
+This is the prototypical proto-stellar cluster.
+
+By contrast, there are places like this one, which is a cloud that's not so much less massive.
+
+It's, you know, one tenth of a mass, but Steve and his team, led by Rebecca Houghton, have found that in this cloud, 10 of the 5 solar mass cloud, similar size to Tadgeby 2.
+
+Um, There's only one detected YSO.
+
+And the expectation, if you follow local star forming laws, that there should be 5000.
+
+This is a pattern that repeats.
+
+We look at clouds C and D along the dust ridge.
+
+They have over the same amount of gas and they each have maybe a handful, 5 to 10 young stellar objects.
+
+Similarly, the brick, the brick is sort of the classic one we've looked at, and it also has around 10 to 5 solar massive gas.
+
+It's even more concentrated.
+
+Uh, and it only has one YSO above 5 solar masses.
+
+10 YSOs total.
+
+So very, very low star formation.
+
+Now, in the, um, The Quintal Blen and Arches are sort of the next thing you look at.
+
+These are older regions.
+
+Um, you know, a few 1000000 years old.
+
+These are the 10th of the forest, and mass clusters.
+
+This is what Sageby 2 is turning into.
+
+And then on the other side, we have sad sea, which has lower total gas mass and more star formation.
+
+So there's something happening on this one.
+
+It's not accounting for much of the overall sour information, but it's happening.
+
+So, okay, we have star formation throughout the Galactic Center, but putting it into this context, we can look at the surface density of gas versus the service entity of star formation relation.
+
+So this is how you might characterize, you know, how does the gas density determine?
+
+How star formation progresses.
+
+And in the solar neighborhood, over this range of 10 to the 2 to 10 to the three, solar masses per square parsec, there's a pretty good relation with a relatively small scatter.
+
+But if you extrapolate that outward, the galactic center clouds all fall below it.
+
+So, uh, what we're learning is that the the relation, the Star forming relations, we determine, um, from local gas, simply don't hold in galactic center like conditions.
+
+They, as you get to those higher service densities, Interestingly, the star formation efficiency appears to decrease.
+
+Okay, so we can ask then, what is different about the CMZ that caused this?
+
+So assuming back out again to this view, we're gonna jump into the CMZ dust ridge here and look at these clouds. It's clouds C and D, and this little filament on the right side.
+
+So what we learned when we 1st looked at the lab is that these, the colors, the potometry, are is very good for measuring ices.
+
+So in this cloud in particular, We had a look, and we measured this color, color diagram.
+
+So on the X axis here, we're talking about 2 near infrared colors.
+
+Can't think of it as like H band minus K band that you're familiar with these.
+
+And on the Y axis we have to, um, 2 different filters at in the form my card band.
+
+And if this were purely dust extinction, what we would expect is that as things moved right, they would move up, right?
+
+Dust makes things redder, so you'd follow that vector, stars would move up that way.
+
+Instead, what we see is that things move down along this vector, that is an ice dominated vector, whereas you go further down and to the right, there is more and more CO ice absorbing. Background stars.
+
+So this cloud, in particular, happens to be in the foreground for black and center.
+
+It is not part of the blacking center itself.
+
+Um, but so it gives us a nice, uh, in-band control or uh, in-field control.
+
+When we look at the dust ridge, we can make a bunch of measurements.
+
+And I'm going to show you a couple here.
+
+We're gonna look at clouds.
+
+C, so the red object up here, cloud D. And blue and cloud A, which is part of the brick.
+
+So, which I conveniently labeled the brick here.
+
+And each of these clouds exhibits interesting chemical differences.
+
+So, if we look at their color magnitude diagrams up on the top right is the filament I told you about, which were, we've labeled it 3 kilobarsec filament, that, that 3 kilobarsec is misleading, but the name, we're stuck with the name.
+
+Over here we have Cloud D, which has a different slope and then the brick head region, which is part of part of the rick.
+
+And if we compare these three, put them on the same plot, you can immediately see that the black ones have a shallow slope.
+
+The green ones have a middling slope, and the blue ones have a steeper slope.
+
+Okay, so what does that mean?
+
+Well, we don't entirely know, but it's fairly clear that this is telling us about chemical differences between clouds and the CMC.
+
+So what we are not sure about yet is whether this has to do with the CEO to water ratio, or whether this has to do with the abundances of ammonium salt.
+
+So the actual chemistry, we're still working on, there is a near spec program observed just a few weeks ago, led by Matt Ashby.
+
+And we'll be able to have a look at those.
+
+But the story I want you to take from this is that there are clear chemical differences between clouds within the central moleculular.
+
+So, uh, and that those chemical differences are happening in the ice phase, the ices that have accumulated onto dust rains.
+
+And those are the ices that are going to then populate the protoplanetary disks and the commentary clouds around forming new planetary systems.
+
+And these scatter plots here are showing you the degree of variation.
+
+Now, in these plots, there is the one black point that is the foreground cloud.
+
+The rest of these are clouds that we think are within the CMZ.
+
+Though, you know, we're getting hints that maybe some of these these objects are actually in the foreground, but even for Sume Z-Cloud, we're seeing significant variations from one region to another.
+
+Okay, so the gas and dust varies within the CMC.
+
+All right.
+
+So now we get to the what does the future hold question?
+
+So we know these stars are forming the CMZ, but we've only measured a small fraction of the CMZ.
+
+Well, how do we sell that?
+
+We start measuring more of it.
+
+So the JVC Galactic Center Treasury Survey, led by Reiner here, is running right now.
+
+And we have 3 big goals that I'm interested in.
+
+So, and a lot of different minor goals.
+
+Of course, one thing we want to do is just measure the star formation history of the entire CMC.
+
+That is something that Paco is leading.
+
+We're going to make extinction maps and determine where the gas is, and we're going to identify young stellar object candidates.
+
+Um, now, in this footprint, we're showing where we have observed with web. Those green ones were observed in the last week.
+
+The yellow ones are scheduled and the blue ones are TBD.
+
+Um, we also are in parallel.
+
+We're running a coordinated parallel program.
+
+We're getting Miri data, and those are gonna help us with measuring the YSO candidates and get PhD back.
+
+But we're not going to have a complete map with Miri.
+
+It only going to be this partial set of strip maps.
+
+We have some progress.
+
+We have observed some number of pointings.
+
+Now this is already out of date by the time I'm giving this, but as of a day or 2 ago, it was about 40 out of 140.
+
+Um, And this is the state today.
+
+So here's a snapshot showing you what those images, what those data look like right now.
+
+If you want to see any live image of this, you can go to these URLs up here.
+
+This is a treasury program, so the data are released immediately upon being taken.
+
+But they all, they have astrometric problems.
+
+We are going to fix the astrometry.
+
+We're going to fix, we're going to make catalogs.
+
+Those are the products, the value added products our team is going to be providing.
+
+Yeah, here's the and here's the mirror data.
+
+Again, you can see looks very pretty when you zoom in.
+
+But I'm not going to do that for you right now.
+
+The last thing I want to tell you about is what the near future holds.
+
+So Roman launched not very long ago.
+
+It is on its way to L2, and it is going to be able to do quite a lot more.
+
+So the Roman field of view, each pointing, is going to look like this, and in the brown here, there's the galactic bulge time domain survey, and in the blue, we have the galactic plane survey, time domain component.
+
+And with these, we're going to be able to do a lot of things.
+
+So one is astrometry.
+
+We're gonna have very good astrometry from multiple epics and astrometry to match, and the web data against, uh, which is going to, uh, well, I'll tell you what it does.
+
+There's variability, which lets us, you know, measure, for example, distances to our library stars, and we piece these together, we're gonna be able to do tomography.
+
+So if we zoom out here, this is the area we're going to cover.
+
+It is a lot larger than the James Webb footprint, but the James Webb Treasury program is covering the region where the stellar density is the highest and where we have to, um, worry about the resolution even of Roman being inadequate.
+
+So what they're going to let us do is 3D tomography of clouds.
+
+So, for a long time, we have been able to access the position and velocity measurements.
+
+That's what Steve was showing in the Ace's data.
+
+So on the right side of this plot.
+
+It's, you know, a synthetic map of what the, um, kitomatic maps of gas in the CMZ look like.
+
+But we want to have this top down view that used to get the top left.
+
+And we have never had access to that before.
+
+With a new technique that has been developed by Ariana Bassini and Matthias Romani, we're going to be able to actually measure the line of sight locations and line of sight.
+
+Uh, sizes of clouds in the galactic center.
+
+So we have a program approved, um, to use the Roman data, uh, and use the fact that there is a well understood and sharply changing proper motion as a function of depth into the galactic center, uh, that we can use to invert out, uh, the the cloud shapes and optical depth.
+
+So the goal here, the expectation is that with the, uh, 1000000s of stars we're going to measure, we're going to have be able to measure a border 10 of the 4 stars, uh, per cloud at different depths into the cloud, and that's going to give us a 10%, uh, sorry, a 10 parsec resolution along the line of site.
+
+And so we're going to actually be making true three-dimensional maps of the dust in the Galactic Center. Be able to tie that back to the gas emission observed with aces.
+
+So to wrap up the Galactic Center is this laboratory where we're observing these cosmologically relevant systems, and I will leave you with our panning view of the brand new just this week reduced.
+
+James Webb, Galactic Center, Treasury Program.
+
+Thank you. 

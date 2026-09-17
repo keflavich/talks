@@ -81,7 +81,8 @@
   /* pin the panels to the canvas width so the total is deterministic (3x420 + 2x14
      gaps + 2x10 padding = 1308) -- otherwise the legend rows stretch their panel
      whenever the iframe is wider, and the outer panels creep off the edge */
-  body.embed .panel{flex:0 0 420px; width:420px;}
+  body.embed:not(.only-face) .panel{flex:0 0 420px; width:420px;}
+  body.embed.only-face .layout{justify-content:center;}
   body.embed .legend{flex-wrap:wrap;}
   /* the embed is displayed shrunk to ~77% inside the deck, so the page's own type
      has to grow to stay readable from the back of a lecture hall */
@@ -274,6 +275,16 @@ star's proper motion parallel to the plane barely depends on where along the lin
   const pctx = pvC.getContext('2d');
   const hctx = histC.getContext('2d');
   const tctx = tauvC.getContext('2d');
+  // ?facesize=N enlarges the face-on canvas.  This has to happen HERE, before the line
+  // below: W and H are consts read once at startup, so resizing the canvas any later
+  // leaves every draw() still working to the old 420x420 grid.
+  (function(){
+    var n = parseInt(new URLSearchParams(location.search).get('facesize') || '0', 10);
+    if (n >= 200 && n <= 1600) {
+      faceC.width = n; faceC.height = n;
+      faceC.style.width = n + 'px'; faceC.style.height = n + 'px';
+    }
+  })();
   const W = faceC.width, H = faceC.height;
   const PW = pvC.width, PH = pvC.height;
   const HW = histC.width, HH = histC.height;
@@ -1227,6 +1238,42 @@ star's proper motion parallel to the plane barely depends on where along the lin
     const q = new URLSearchParams(location.search);
     if(!(q.get('embed')==='1' || q.get('embed')==='true')) return;
     document.body.classList.add('embed');
+
+    // ?only=face -- just the face-on panel.  The other two panels are diagnostics; this
+    // variant is for showing the orbits themselves, colour-coded by plane-of-sky motion,
+    // with one cloud extinguishing the stars behind it.
+    if (q.get('only') === 'face') {
+      document.body.classList.add('only-face');
+      const panels = document.querySelectorAll('.layout > .panel');
+      for (let i = 1; i < panels.length; i++) { panels[i].style.display = 'none'; }
+    }
+
+    // any control can be set from the URL, so a deck slide is a link rather than a fork
+    const setv = (key, elem) => { const v = q.get(key); if (v !== null) { elem.value = v; } };
+    const setc = (key, elem) => { const v = q.get(key); if (v !== null) { elem.checked = (v === '1' || v === 'true'); } };
+    setv('zoom',     el.faceZoom);
+    setv('phi',      el.phi);
+    setv('q',        el.q);
+    setv('n',        el.n);
+    setv('cloudr',   el.cloudR);
+    setv('cloudlos', el.cloudLOS);
+    setv('tau',      el.cloudTau);
+    setc('orbits',   el.showOrbits);
+    setc('animate',  el.animateOn);
+    setc('cloud',    el.cloudEnabled);
+    setc('zoomcloud', el.zoomCloud);
+    if (q.get('vel') === 'los') { setVelMode('los'); }
+    // cloud.cx / cloud.cy have no slider, so they are set directly (same as the tour does).
+    // cloudx is the position ALONG the line of sight in pc (negative = in front of the GC,
+    // which is what puts a big cone of stars behind it); cloudy is in DEGREES of longitude.
+    if (q.get('cloudx') !== null) { cloud.cx = parseFloat(q.get('cloudx')); }
+    if (q.get('cloudy') !== null) { cloud.cy = lToPc(parseFloat(q.get('cloudy'))); }
+    regenerateStars();
+
+    // ?label=0 suppresses the step-text bar (the face-only variant carries its caption on
+    // the slide instead).  Everything below this point is the guided tour, which that
+    // variant does not use.
+    if (q.get('label') === '0') { return; }
     const bar = document.createElement('div');
     bar.id = 'embedStatus';
     bar.appendChild(el.movieStatus);

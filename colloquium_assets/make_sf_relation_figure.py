@@ -26,6 +26,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+import imf
+from astropy import units as u
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TRACKS = os.path.join(HERE, "pokhrel2021_tracks.csv")
@@ -57,8 +59,19 @@ PROTOSTELLAR_LIFETIME_MYR = 0.5     # Pokhrel's t_PS, reused for the CMZ so the 
 # Pokhrel's t_PS, so both axes mean the same thing, AND it is the more conservative choice --
 # a shorter age raises Sigma_SFR and shrinks the gap.  0.1 Myr is the extreme: even then the
 # cloud stays below the extrapolated relation (see the printout).
-SGRB2_AGE_MYR = 0.5
+SGRB2_AGE_MYR = 0.1
 CORE_TO_STAR_EFFICIENCY = 0.3       # Ginsburg+2018 Eq. 3 "star formation efficiency of a core"
+
+# Cloud-averaged Sgr B2 (the open star).  Ginsburg+ 2018 Table 2 quotes SFR = 0.035 (Total) to
+# 0.062 (Totalmax) Msun/yr over the 15x15 pc field, and those were divided by the PAPER'S OWN
+# age: t = 0.74 Myr, the time since pericentre in the Kruijssen+ 2015 model.  The point cloud is
+# rescaled by SGRB2_AGE_MYR, so this point has to be rescaled the same way or the two disagree by
+# exactly the ratio of the ages -- which is what left the star stranded below its own blob when
+# the age went 0.5 -> 0.1 Myr.
+GINSBURG_SFR_AGE_MYR = 0.74
+SGRB2_FIELD_AREA_PC2 = 225.0        # 15 x 15 pc
+SGRB2_FIELD_GAS = 1.5e6             # Msun -> Sigma_gas = 6667
+SGRB2_FIELD_SFR = (0.035, 0.062)    # Msun/yr, Table 2 Total and Totalmax
 
 # N(H2) [cm^-2] -> Sigma_gas [Msun/pc^2] with mu = 2.8 amu (the convention Ginsburg, Barnes and
 # Walker all use).  Pokhrel's 2 m_H N(H2)/X with X = 0.71 agrees with this to 1%.
@@ -71,12 +84,37 @@ N_H2_TO_SIGMA = 2.2419e-20
 #   Every row must carry its own derivation in `note` -- if you cannot write the derivation,
 #   the point does not belong on the plot.
 # ----------------------------------------------------------------------------------------
+
+myso_brick = 5*u.M_sun
+nmin_yso_brick = 1
+surfacearea_brick = 19.6*u.pc**2
+age_core = 0.1*u.Myr
+mcores_brick = 104 * u.M_sun
+sigma_sfr_brick = nmin_yso_brick * 1/imf.imf.Kroupa().integrate(myso_brick.value, 150)[0] * u.M_sun / age_core / surfacearea_brick
+# the extrapolation from 1x 5 msun is the same (within a few percent) as the measured mass
+print(nmin_yso_brick * 1/imf.imf.Kroupa().integrate(myso_brick.value, 150)[0], mcores_brick)
+sigma_sfr_brick = mcores_brick / age_core / surfacearea_brick
+print(f"brick: {sigma_sfr_brick}")
+
+# assumed minimum mass for the YSO
+myso_cloudef = 10*u.M_sun
+# assumed number of YSOs detected
+nmin_yso_cloudef = 1
+surfacearea_cloudef = 30.7*u.pc**2
+age_core = 0.1*u.Myr
+sigma_sfr_cloudef = nmin_yso_cloudef * 1/imf.imf.Kroupa().integrate(myso_cloudef.value, 150)[0] * u.M_sun / age_core / surfacearea_cloudef
+print(f"Cloud e/f: {sigma_sfr_cloudef}")
+
+
+
 CMZ_CLOUDS = [
     dict(
         name="The Brick",
-        sigma_gas=5.1e3, sigma_gas_lo=1.0e23 * 2.2419e-20, sigma_gas_hi=6.4e23 * 2.2419e-20,
-        sigma_sfr=10.6, sigma_sfr_lo=None, sigma_sfr_hi=None,
-        limit=True, colour="#1f77b4", marker="v", size=230, label_offset=(-16, -34), label_ha="right",
+        sigma_gas=5.1e3, sigma_gas_lo=5.0e22 * N_H2_TO_SIGMA, sigma_gas_hi=6.4e23 * N_H2_TO_SIGMA,
+        #sigma_sfr=10.6,
+        sigma_sfr=sigma_sfr_brick.to(u.Msun/u.Myr/u.pc**2).value,
+        sigma_sfr_lo=None, sigma_sfr_hi=sigma_sfr_brick.to(u.Msun/u.Myr/u.pc**2).value,
+        limit=True, colour="#1f77b4", marker="v", size=230, label_offset=(10, -122), label_ha="center",
         ref="Walker+ 2021",
         note=("CLOUD-SCALE aperture, to match how Pokhrel measure (all the protostars in a cloud "
               "against all the gas above a contour) and so that the Brick and Cloud E/F are "
@@ -88,11 +126,18 @@ CMZ_CLOUDS = [
               "(64.2 Msun) rather than split, = 104 Msun of core GAS, times a core-to-star "
               "efficiency of 1.0 -- i.e. every gram already a star.  / 0.5 Myr / 19.6 pc^2 "
               "-> 10.6 Msun/pc^2/Myr.  "
+              "Adam's recalculation: "
+              "Assume 1x 10 Msun star (doubling the measured 5 Msun core) "
+              "Assume it's Stage 0 = 0.1 Myr lifetime "
+              "Extrapolate 1x10 Msun to full IMF = multiply by 12.4"
               "Horizontal bar: the range of column the cloud actually covers, from the CMZoom "
               "threshold N(H2) = 1e23 cm^-2 (Walker+ 2018 Sec 2.1: 'designed to target all regions "
               "within the CMZ that lie above a column density threshold of ~1e23 cm^-2') up to the "
               "densest structure in the cloud, the maser core -- 72 Msun in R = 0.04 pc "
               "(Rathborne+ 2015 via Walker+ 2021 Sec 4.2) = 1.4e4 Msun/pc^2 = 6.4e23 cm^-2.  "
+              " sigma_gas_lo modified to show the range; the peak surface density in Rathborne "
+              " is close to 2e22 cm^-2 [http://localhost:8000/Dropbox/talks/talks/colloquium_HMSF.html#/48]"
+              " however I now think that must be a filtering effect in Rathborne... "
               "These cores are genuinely protostellar: 9 of 18 drive SiO outflows.  "
               "If instead you use the 19-arcsec ALMA field alone (7e3 Msun, 1.75 pc^2) the point "
               "moves to (4.0e3, 119) -- same cloud, aperture ten times smaller.  Fiducial "
@@ -107,9 +152,11 @@ CMZ_CLOUDS = [
     ),
     dict(
         name="Cloud E/F",
-        sigma_gas=6.03e3, sigma_gas_lo=1.0e23 * 2.2419e-20, sigma_gas_hi=3.7e24 * 2.2419e-20,
-        sigma_sfr=1.96, sigma_sfr_lo=None, sigma_sfr_hi=None,
-        limit=True, colour="#2ca02c", marker="v", size=230, label_offset=(18, 22),
+        sigma_gas=6.03e3, sigma_gas_lo=7.0e22 * N_H2_TO_SIGMA, sigma_gas_hi=3.7e24 * N_H2_TO_SIGMA,
+        #sigma_sfr=1.96,
+        sigma_sfr=sigma_sfr_cloudef.to(u.Msun/u.Myr/u.pc**2).value,
+        sigma_sfr_lo=None, sigma_sfr_hi=None,
+        limit=True, colour="#2ca02c", marker="v", size=230, label_offset=(62, -60), label_ha="center",
         ref="Barnes+ 2019, Walker+ 2018",
         note=("Sigma_gas: from Walker+ 2018 Table 1, which tabulates the dust ridge clouds on a "
               "consistent footing (values from Walker+ 2015).  Cloud e: 11.2e4 Msun, R = 2.4 pc; "
@@ -139,7 +186,9 @@ CMZ_CLOUDS = [
               "or several high-mass stars (~25 per cent)'.  That 150 Msun is star formation "
               "potential, not stars that exist -- these cores are starless.  "
               "See the Brick entry for the Tang+ 2021 cross-check that puts Cloud E/F above the "
-              "Brick in column density on a single uniform map."),
+              "Brick in column density on a single uniform map."
+              "sigma_gas_lo set to 2e22 instead of 1e23 based on http://localhost:8000/Dropbox/talks/talks/colloquium_HMSF.html#/48"
+             ),
     ),
     # dict(name="Clouds C & D", ... ),   # Gramze+ in prep
     # dict(name="Sgr C", ... ),          # Crowe+ 2023, Lu+ 2021
@@ -253,7 +302,7 @@ def load_tracks(csv_path=TRACKS):
     return {k: np.array(sorted(v)) for k, v in d.items()}
 
 
-def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0), show=None):
+def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
     """show: which CMZ layers to draw, for the build-up on the cloud-tour slides.
     None = everything (the standalone figure).  Otherwise a set drawn from
     {"sgrb2", "Cloud E/F", "The Brick", ...}: CMZ_CLOUDS entries are matched by
@@ -300,15 +349,21 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0), show=None):
         ax.scatter(sg, ssfr, s=3, c="#8c1416", alpha=0.35, lw=0, zorder=6)
         # cloud-averaged Sgr B2: the SAME kind of measurement as the two limits, so the comparison
         # at fixed Sigma_gas is like for like (the blob above is resolved on 0.25 pc cells).
-        ax.scatter([np.log10(6667.0)], [np.log10(216.0)], s=300, marker="*",
+        agescale = GINSBURG_SFR_AGE_MYR / SGRB2_AGE_MYR
+        sgx = np.log10(SGRB2_FIELD_GAS / SGRB2_FIELD_AREA_PC2)
+        sfr_lo, sfr_hi = [v * 1e6 / SGRB2_FIELD_AREA_PC2 * agescale for v in SGRB2_FIELD_SFR]
+        sfr_mid = np.sqrt(sfr_lo * sfr_hi)
+        ax.scatter([sgx], [np.log10(sfr_mid)], s=300, marker="*",
                    facecolors="none", edgecolors="#8c1416", linewidths=2.2, zorder=9)
-        ax.plot([np.log10(6667.0)] * 2, [np.log10(156.0), np.log10(276.0)],
+        ax.plot([sgx] * 2, [np.log10(sfr_lo), np.log10(sfr_hi)],
                 color="#8c1416", lw=2.4, zorder=9)
-        ax.annotate("Sgr B2, cloud-averaged", (np.log10(6667.0) + 0.06, np.log10(216.0)),
+        ax.annotate("Sgr B2, cloud-averaged", (sgx + 0.07, np.log10(sfr_mid)),
                     ha="left", va="center", fontsize=11, color="#8c1416", zorder=9,
                     bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=1.6))
-        ax.annotate("Sgr B2\nGinsburg+ 2018", #(Fig. 17a / %.1f Myr)" % SGRB2_AGE_MYR,
-                    (4.30, 3.30), ha="center", fontsize=13, color="#a11d1f", fontweight="bold",
+        # rides with the point cloud instead of a fixed spot, so it follows when the age changes
+        ax.annotate("Sgr B2\nGinsburg+ 2018",
+                    (np.percentile(sg, 96), np.percentile(ssfr, 90)),
+                    ha="center", fontsize=13, color="#a11d1f", fontweight="bold",
                     zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
 
     for c in CMZ_CLOUDS:
@@ -329,10 +384,17 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0), show=None):
         elif c.get("sigma_sfr_lo"):
             ax.plot([gx, gx], [np.log10(c["sigma_sfr_lo"]), np.log10(c["sigma_sfr_hi"])],
                     color=c["colour"], lw=2.6, solid_capstyle="butt", zorder=7)
+        # The labels have to live in the empty lower right -- everything near the markers is
+        # taken by the two horizontal bars and the Sgr B2 cloud -- so each one gets a thin
+        # leader back to its own marker.  Without it a reader cannot tell which is which.
+        off = c.get("label_offset", (16, 10))
+        lead = dict(arrowstyle="-", color=c["colour"], lw=1.1,
+                    shrinkA=1, shrinkB=9, alpha=0.85) if abs(off[1]) > 40 else None
         ax.annotate("%s\n%s" % (c["name"], c["ref"]), (gx, gy),
-                    textcoords="offset points", xytext=c.get("label_offset", (16, 10)),
-                    ha=c.get("label_ha", "left"),
+                    textcoords="offset points", xytext=off,
+                    ha=c.get("label_ha", "left"), va="center",
                     fontsize=13, color=c["colour"], fontweight="bold", zorder=9,
+                    arrowprops=lead,
                     bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
 
     ax.set_xlim(*xlim)
@@ -367,8 +429,13 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0), show=None):
     print("    median (log Sgas, log Ssfr) = (%.2f, %.2f); relation predicts %.2f -> %.2f dex below"
           % (med_g, med_s, POKHREL_SLOPE * med_g + POKHREL_INTERCEPT,
              POKHREL_SLOPE * med_g + POKHREL_INTERCEPT - med_s))
-    print("    cloud-averaged, for comparison with the two limits: 1.5e6 Msun and "
-          "SFR 0.035-0.062 Msun/yr over the 15x15 pc field -> (3.82, 2.19-2.44)")
+    _sc = GINSBURG_SFR_AGE_MYR / SGRB2_AGE_MYR
+    _lo, _hi = [v * 1e6 / SGRB2_FIELD_AREA_PC2 * _sc for v in SGRB2_FIELD_SFR]
+    print("    cloud-averaged (the star): %.1e Msun and SFR %.3f-%.3f Msun/yr over the %.0f pc^2 field,"
+          % (SGRB2_FIELD_GAS, SGRB2_FIELD_SFR[0], SGRB2_FIELD_SFR[1], SGRB2_FIELD_AREA_PC2))
+    print("        rescaled from Ginsburg's own %.2f Myr to %.2f Myr (x%.1f) -> (%.2f, %.2f-%.2f)"
+          % (GINSBURG_SFR_AGE_MYR, SGRB2_AGE_MYR, _sc,
+             np.log10(SGRB2_FIELD_GAS / SGRB2_FIELD_AREA_PC2), np.log10(_lo), np.log10(_hi)))
     for age in (1.0, 0.5, 0.1):
         m = np.median(sstar - np.log10(age))
         print("      age %.2f Myr -> median log Ssfr %.2f, %.2f dex below the relation"
@@ -389,8 +456,9 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.0), show=None):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--variants", action="store_true",
-                   help="also write the build-up frames used on #clouds-cloudef .. #clouds-brick")
+    p.add_argument("--no-variants", action="store_true",
+                   help="skip the build-up frames; by default they are ALWAYS rebuilt, so that "
+                        "the deck can never show a stale build against a fresh main figure")
     p.add_argument("--digitise", action="store_true",
                    help="rebuild pokhrel2021_tracks.csv from the paper PDF")
     args = p.parse_args()
@@ -399,7 +467,7 @@ if __name__ == "__main__":
     if args.digitise or not os.path.exists(SGRB2):
         digitise_sgrb2()
     make_figure()
-    if args.variants:
+    if not args.no_variants:
         # Build-up frames for the cloud tour.  Same axes and same everything else, so
         # they can be stacked/swapped in the deck without anything shifting.
         for suffix, layers in [("_base",  set()),

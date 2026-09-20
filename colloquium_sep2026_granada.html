@@ -37,8 +37,12 @@
     html.reveal-print .reveal .slide-background { background-color: #000 !important; }
     html.reveal-print, html.reveal-print body { background: #000 !important; }
     </style>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
+    <!-- Offline safety: rel=stylesheet here would be render-blocking, so if this link ever
+         hangs (dead DNS, a captive airline-wifi portal with no route out) the whole deck can sit
+         blank until it times out.  media=print + the onload swap loads it the same way when a
+         network is present but never blocks the page from painting when one is not. -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' media='print' onload="this.media='all'">
+    <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet' media='print' onload="this.media='all'">
 
 
 
@@ -115,7 +119,25 @@ Speaker: Steven Longmore, Adam Ginsburg
 Filiation: Liverpool John Moores University, University of Florida
 Date: September, 17th 2026
 Abstract:
-Observations of nearby star-forming regions provide the empirical foundation for our current understanding of star and planet formation, where gas is converted into stars through environmentally independent “universal” dense-gas-star-formation relations and the stellar initial mass function is assumed to be invariant. However, recent ALMA and JWST observations of the Galactic Centre are increasingly challenging this paradigm. In this colloquium, we will present recent results using the inner Milky Way as a laboratory to study star and planet formation under conditions that are more representative of the environments in which most stars in the Universe formed. Large programmes such as ACES and ALMA-IMF reveal that star formation in the dense molecular clouds of the Galactic Centre is inhibited until clouds reach densities far higher than predicted by standard models. At the same time, observations of proto-stellar and proto-cluster populations suggest that the richest star-forming environments may preferentially produce high-mass stars. We will discuss how recent ALMA and JWST observations are transforming our view of embedded stellar clusters, proto-planetary environments, and the origin of the stellar initial mass function, pointing towards a picture in which environment plays a fundamental role in regulating star and planet formation across cosmic time.
+Observations of nearby star-forming regions provide the empirical foundation
+for our current understanding of star and planet formation, where gas is
+converted into stars through environmentally independent “universal”
+dense-gas-star-formation relations and the stellar initial mass function is
+assumed to be invariant. However, recent ALMA and JWST observations of the
+Galactic Centre are increasingly challenging this paradigm. In this colloquium,
+we will present recent results using the inner Milky Way as a laboratory to
+study star and planet formation under conditions that are more representative
+of the environments in which most stars in the Universe formed. Large
+programmes such as ACES and ALMA-IMF reveal that star formation in the dense
+molecular clouds of the Galactic Centre is inhibited until clouds reach
+densities far higher than predicted by standard models. At the same time,
+observations of proto-stellar and proto-cluster populations suggest that the
+richest star-forming environments may preferentially produce high-mass stars.
+We will discuss how recent ALMA and JWST observations are transforming our view
+of embedded stellar clusters, proto-planetary environments, and the origin of
+the stellar initial mass function, pointing towards a picture in which
+environment plays a fundamental role in regulating star and planet formation
+across cosmic time.
 
 
 -->
@@ -1588,7 +1610,12 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
 <script src="reveal/plugin/notes/notes.js"></script>
 <script src="pdfjs/compatibility.js"> </script>
 <script src="pdfjs/pdf.js"> </script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js"></script>
+<!-- Offline safety: this is a nice-to-have (speaker-view laser pointer sync), not
+     something the deck needs to render.  Without defer it is a parser-blocking script tag, so a
+     hung fetch (dead DNS, a captive wifi portal) stalls parsing of everything after it -- which
+     used to include the Reveal.initialize() call itself, i.e. the whole deck. defer lets parsing
+     (and thus Reveal.initialize) continue immediately; this script just runs a bit later. -->
+<script defer src="https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js"></script>
 
 
     <script>

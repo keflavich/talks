@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="white.css" id="theme">
     <link rel="stylesheet" href="reveal/lib/zenburn.css">
     <link rel="stylesheet" href="custom.css" id="custom-theme">
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- Offline safety: rel=stylesheet here would be render-blocking, so if this link ever
+         hangs (dead DNS, a captive airline-wifi portal with no route out) the whole deck can sit
+         blank until it times out.  media=print + the onload swap loads it the same way when a
+         network is present but never blocks the page from painting when one is not. -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' media='print' onload="this.media='all'">
     <script>
     <script src="reveal/lib/js/html5shiv.js">
     </script>

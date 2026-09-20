@@ -84,6 +84,8 @@
   body.embed:not(.only-face) .panel{flex:0 0 420px; width:420px;}
   body.embed.only-face .layout{justify-content:center;}
   body.embed .legend{flex-wrap:wrap;}
+  /* the selected-star inspector needs a click and a control column; not for decks */
+  body.embed .inspect-col{display:none !important;}
   /* the embed is displayed shrunk to ~77% inside the deck, so the page's own type
      has to grow to stay readable from the back of a lecture hall */
   body.embed .panelTitle{font-size:1.16rem; letter-spacing:0.02em; margin-bottom:8px;}
@@ -164,6 +166,22 @@ star's proper motion parallel to the plane barely depends on where along the lin
     </div>
   </div>
 
+  <div class="panel stackcol inspect-col">
+    <div>
+      <p class="panelTitle">Selected star: proper motion vs. distance</p>
+      <canvas id="dist" width="420" height="224"></canvas>
+      <div class="legend" style="flex-wrap:wrap; row-gap:4px;">
+        <span>&#9679; true distance</span>
+        <span>&#9675; where the mean curve gives this &mu;<sub>l</sub></span>
+        <span>&#9644; within &plusmn;&sigma; of it</span>
+      </div>
+    </div>
+    <div>
+      <p class="panelTitle">Where along the sightline? P(distance | &mu;<sub>l</sub>)</p>
+      <canvas id="post" width="420" height="224"></canvas>
+    </div>
+  </div>
+
   <div class="controls">
     <div class="ctrl-full">
       <h2>Guided tour</h2>
@@ -195,6 +213,10 @@ star's proper motion parallel to the plane barely depends on where along the lin
       <div class="row">
         <label>NSD ellipticity (axis ratio — also sets x2-orbit flattening) <span class="val" id="v-nsde">1.00 (circular)</span></label>
         <input type="range" id="nsdE" min="0.20" max="1.00" step="0.01" value="1.00">
+      </div>
+      <div class="row">
+        <label>Velocity dispersion &sigma; (sets the band) <span class="val" id="v-sigma">30 km/s</span></label>
+        <input type="range" id="sigmaV" min="5" max="100" step="5" value="30">
       </div>
       <div class="row">
         <label>Number of stars <span class="val" id="v-n">100</span></label>
@@ -275,6 +297,10 @@ star's proper motion parallel to the plane barely depends on where along the lin
   const pctx = pvC.getContext('2d');
   const hctx = histC.getContext('2d');
   const tctx = tauvC.getContext('2d');
+  const distC = document.getElementById('dist');
+  const postC = document.getElementById('post');
+  const dctx = distC.getContext('2d');
+  const zctx = postC.getContext('2d');
   // ?facesize=N enlarges the face-on canvas.  This has to happen HERE, before the line
   // below: W and H are consts read once at startup, so resizing the canvas any later
   // leaves every draw() still working to the old 420x420 grid.
@@ -289,10 +315,14 @@ star's proper motion parallel to the plane barely depends on where along the lin
   const PW = pvC.width, PH = pvC.height;
   const HW = histC.width, HH = histC.height;
   const TW = tauvC.width, TH = tauvC.height;
+  const DW = distC.width, DH = distC.height;
+  const ZW = postC.width, ZH = postC.height;
 
   const el = {
     phi: document.getElementById('phi'),
     nsdE: document.getElementById('nsdE'),
+    sigmaV: document.getElementById('sigmaV'),
+    vsigma: document.getElementById('v-sigma'),
     n: document.getElementById('n'),
     vphi: document.getElementById('v-phi'),
     vnsde: document.getElementById('v-nsde'),
@@ -855,6 +885,179 @@ star's proper motion parallel to the plane barely depends on where along the lin
 
     drawHistogram(cloudLine);
     drawTauV(cloudLine);
+    el.vsigma.textContent = parseFloat(el.sigmaV.value).toFixed(0)+' km/s';
+    drawInspect(selC, q, phiRad);
+  }
+
+  // ---- inspector: how ONE star's proper motion constrains its distance -------
+  // (suggested by Ariana Vasini, whose method this page illustrates).  For the
+  // selected star's CURRENT sky position y -- so the curve changes as the star
+  // orbits -- the model's mean plane-of-sky velocity at each candidate line-of-sight
+  // distance x is vAtBarred(x,y).vy: the "proper motion vs. distance" curve of
+  // Fig. 1 in Vasini et al. 2026.  A real population scatters about that mean, so
+  // the band is +-sigma (slider).  The lower panel is Bayes' rule,
+  //   P(x | mu) ~ P(x) * N(mu; mean(x), sigma),
+  // with P(x) the NSD density along this sightline (the exp(-R/h) the beam sampler
+  // uses).  Illustrative, not the paper's exact likelihood; and the toy stars carry
+  // no dispersion of their own, so the star sits exactly on the mean curve.
+  const MASYR_KMS = 4.74047*Dsun/1000; // km/s per mas/yr at the GC distance
+  const INSPECT_N = 240;
+  const IP = {l:40, r:12, t:34, b:34};
+
+  function fmtSigned(v, d){ return (v>=0?'+':'−') + Math.abs(v).toFixed(d||0); }
+
+  function inspectFrame(ctx, cw, ch, xLabel){
+    ctx.clearRect(0,0,cw,ch);
+    ctx.fillStyle = '#05070c'; ctx.fillRect(0,0,cw,ch);
+    if(!xLabel) return;
+    const L=IP.l, R=cw-IP.r, B=ch-IP.b;
+    ctx.strokeStyle = 'rgba(255,255,255,0.18)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(L,IP.t); ctx.lineTo(L,B); ctx.lineTo(R,B); ctx.stroke();
+    ctx.fillStyle = 'rgba(232,236,244,0.55)'; ctx.font = '8px -apple-system,sans-serif';
+    ctx.textAlign = 'center';
+    [-200,-100,0,100,200].forEach(tv=>{
+      ctx.fillText(String(tv), L + (tv+Rmax)/(2*Rmax)*(R-L), B+10);
+    });
+    ctx.fillStyle = 'rgba(232,236,244,0.7)'; ctx.font = '10px -apple-system,sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(xLabel, L, ch-4);
+  }
+
+  function drawInspect(c, q, phiRad){
+    if(!c){
+      [[dctx,DW,DH,'Click a star to see how its proper motion'],[zctx,ZW,ZH,'constrains where along the sightline it sits']].forEach(([ctx,cw,ch,msg])=>{
+        inspectFrame(ctx, cw, ch, null);
+        ctx.fillStyle = 'rgba(232,236,244,0.5)'; ctx.font = '12px -apple-system,sans-serif';
+        ctx.textAlign = 'center'; ctx.fillText(msg, cw/2, ch/2); ctx.textAlign = 'left';
+      });
+      return;
+    }
+    const sigma = parseFloat(el.sigmaV.value);
+    const N = INSPECT_N, dx = 2*Rmax/N, y = c.y, mu0 = c.vy;
+    const xs = new Float64Array(N), mu = new Float64Array(N), prior = new Float64Array(N), post = new Float64Array(N);
+    let priorZ = 0, Z = 0;
+    for(let i=0;i<N;i++){
+      const x = -Rmax + (i+0.5)*dx;
+      xs[i] = x;
+      mu[i] = vAtBarred(x, y, q, phiRad).vy;
+      prior[i] = Math.exp(-nsdR(x, y, q, phiRad)/NSD_SCALE_R);
+      const z = (mu0-mu[i])/sigma;
+      post[i] = prior[i]*Math.exp(-0.5*z*z);
+      priorZ += prior[i]; Z += post[i];
+    }
+    const okPost = Z > 1e-12;
+    for(let i=0;i<N;i++){ prior[i] /= priorZ*dx; if(okPost) post[i] /= Z*dx; }
+    const quant = p => { let acc=0; for(let i=0;i<N;i++){ acc += post[i]*dx; if(acc>=p) return xs[i]; } return xs[N-1]; };
+    let pNear = 0; for(let i=0;i<N;i++){ if(xs[i]<0) pNear += post[i]*dx; }
+
+    // where the mean curve crosses the measured mu (the "corresponding LOS positions")
+    const roots = [];
+    for(let i=1;i<N;i++){
+      const a = mu[i-1]-mu0, b = mu[i]-mu0;
+      if(a*b < 0) roots.push(xs[i-1] + (xs[i]-xs[i-1])*a/(a-b));
+    }
+    const rgb = 'rgb('+colorForV(mu0,'sky').join(',')+')';
+    const L=IP.l, R=DW-IP.r, T=IP.t, B=DH-IP.b, pw=R-L, ph=B-T;
+    const xPix = x => L + (x+Rmax)/(2*Rmax)*pw;
+    const trueOn = Math.abs(c.x) <= Rmax;
+
+    // ---- panel 1: proper motion vs distance ----
+    inspectFrame(dctx, DW, DH, 'near ← distance along sightline (pc) → far');
+    const vPix = v => T + (vClip-v)/(2*vClip)*ph;
+    dctx.fillStyle = 'rgba(232,236,244,0.55)'; dctx.font = '8px -apple-system,sans-serif'; dctx.textAlign = 'right';
+    [-150,-75,0,75,150].forEach(tv=>{ dctx.fillText(String(tv), L-4, vPix(tv)+3); });
+    dctx.save(); dctx.translate(9,(T+B)/2); dctx.rotate(-Math.PI/2);
+    dctx.textAlign = 'center'; dctx.font = '10px -apple-system,sans-serif'; dctx.fillStyle = 'rgba(232,236,244,0.7)';
+    dctx.fillText('μ_l (km/s)', 0, 0); dctx.restore(); dctx.textAlign = 'left';
+
+    dctx.save(); dctx.beginPath(); dctx.rect(L,T,pw,ph); dctx.clip();
+    dctx.strokeStyle = 'rgba(255,255,255,0.10)';
+    dctx.beginPath(); dctx.moveTo(L,vPix(0)); dctx.lineTo(R,vPix(0)); dctx.stroke();
+    dctx.setLineDash([3,4]); dctx.beginPath(); dctx.moveTo(xPix(0),T); dctx.lineTo(xPix(0),B); dctx.stroke(); dctx.setLineDash([]);
+    // +-sigma band and the mean curve
+    dctx.beginPath();
+    for(let i=0;i<N;i++){ const px=xPix(xs[i]), py=vPix(mu[i]+sigma); if(i===0) dctx.moveTo(px,py); else dctx.lineTo(px,py); }
+    for(let i=N-1;i>=0;i--){ dctx.lineTo(xPix(xs[i]), vPix(mu[i]-sigma)); }
+    dctx.closePath(); dctx.fillStyle = 'rgba(120,150,210,0.25)'; dctx.fill();
+    dctx.beginPath();
+    for(let i=0;i<N;i++){ const px=xPix(xs[i]), py=vPix(mu[i]); if(i===0) dctx.moveTo(px,py); else dctx.lineTo(px,py); }
+    dctx.strokeStyle = 'rgba(200,215,250,0.95)'; dctx.lineWidth = 2; dctx.stroke();
+    // distances within +-sigma of the measured mu: a bar riding on the x axis
+    dctx.strokeStyle = rgb; dctx.lineWidth = 5; dctx.globalAlpha = 0.85;
+    let runStart = null;
+    for(let i=0;i<=N;i++){
+      const inside = i<N && Math.abs(mu[i]-mu0) <= sigma;
+      if(inside && runStart===null) runStart = xs[i]-dx/2;
+      if(!inside && runStart!==null){
+        dctx.beginPath(); dctx.moveTo(xPix(runStart), B-3); dctx.lineTo(xPix(xs[i-1]+dx/2), B-3); dctx.stroke();
+        runStart = null;
+      }
+    }
+    dctx.globalAlpha = 1; dctx.lineWidth = 1;
+    // the measured mu, and the mean-curve crossings
+    dctx.strokeStyle = rgb; dctx.setLineDash([5,4]);
+    dctx.beginPath(); dctx.moveTo(L,vPix(mu0)); dctx.lineTo(R,vPix(mu0)); dctx.stroke(); dctx.setLineDash([]);
+    dctx.strokeStyle = '#ffffff'; dctx.lineWidth = 1.5;
+    roots.forEach(xr=>{ dctx.beginPath(); dctx.arc(xPix(xr), vPix(mu0), 5, 0, 2*Math.PI); dctx.stroke(); });
+    if(trueOn){
+      dctx.strokeStyle = 'rgba(255,255,255,0.55)'; dctx.setLineDash([2,3]); dctx.lineWidth = 1;
+      dctx.beginPath(); dctx.moveTo(xPix(c.x),T); dctx.lineTo(xPix(c.x),B); dctx.stroke(); dctx.setLineDash([]);
+      dctx.beginPath(); dctx.arc(xPix(c.x), vPix(mu0), 5.5, 0, 2*Math.PI);
+      dctx.fillStyle = rgb; dctx.fill(); dctx.strokeStyle = '#ffffff'; dctx.lineWidth = 2; dctx.stroke();
+    }
+    dctx.restore();
+    dctx.font = '10px -apple-system,sans-serif'; dctx.textAlign = 'left';
+    dctx.fillStyle = rgb;
+    dctx.fillText(`measured μ_l = ${fmtSigned(mu0)} km/s  (${fmtSigned(mu0/MASYR_KMS,1)} mas/yr)`, L, 14);
+    dctx.fillStyle = 'rgba(232,236,244,0.85)';
+    const rootTxt = roots.length ? roots.slice(0,4).map(v=>fmtSigned(v)).join(', ')+' pc' : 'none in range';
+    dctx.fillText(`mean curve gives x = ${rootTxt}   ·   true x = ${fmtSigned(c.x)} pc`, L, 27);
+
+    // ---- panel 2: P(distance | proper motion) ----
+    inspectFrame(zctx, ZW, ZH, 'near ← distance along sightline (pc) → far');
+    zctx.save(); zctx.translate(9,(T+B)/2); zctx.rotate(-Math.PI/2);
+    zctx.textAlign = 'center'; zctx.font = '10px -apple-system,sans-serif'; zctx.fillStyle = 'rgba(232,236,244,0.7)';
+    zctx.fillText('probability density', 0, 0); zctx.restore(); zctx.textAlign = 'left';
+    if(!okPost){
+      zctx.fillStyle = 'rgba(232,236,244,0.7)'; zctx.font = '11px -apple-system,sans-serif';
+      zctx.fillText('No distance in range is consistent with this μ_l at this σ.', L, 20);
+      return;
+    }
+    let pmax = 0; for(let i=0;i<N;i++){ pmax = Math.max(pmax, post[i], prior[i]); }
+    const pPix = p => B - p/(pmax*1.08)*ph;
+    const q16 = quant(0.16), q50 = quant(0.50), q84 = quant(0.84);
+    zctx.save(); zctx.beginPath(); zctx.rect(L,T,pw,ph); zctx.clip();
+    zctx.beginPath(); zctx.moveTo(xPix(xs[0]), B);
+    for(let i=0;i<N;i++){ zctx.lineTo(xPix(xs[i]), pPix(post[i])); }
+    zctx.lineTo(xPix(xs[N-1]), B); zctx.closePath();
+    zctx.fillStyle = 'rgba(255,209,102,0.22)'; zctx.fill();
+    zctx.beginPath(); zctx.moveTo(xPix(q16), B);       // the central 68%
+    for(let i=0;i<N;i++){ if(xs[i]>=q16 && xs[i]<=q84) zctx.lineTo(xPix(xs[i]), pPix(post[i])); }
+    zctx.lineTo(xPix(q84), B); zctx.closePath();
+    zctx.fillStyle = 'rgba(255,209,102,0.30)'; zctx.fill();
+    zctx.beginPath();
+    for(let i=0;i<N;i++){ const px=xPix(xs[i]), py=pPix(post[i]); if(i===0) zctx.moveTo(px,py); else zctx.lineTo(px,py); }
+    zctx.strokeStyle = '#ffd166'; zctx.lineWidth = 1.8; zctx.stroke();
+    zctx.setLineDash([4,3]); zctx.beginPath();          // the prior: stellar density alone
+    for(let i=0;i<N;i++){ const px=xPix(xs[i]), py=pPix(prior[i]); if(i===0) zctx.moveTo(px,py); else zctx.lineTo(px,py); }
+    zctx.strokeStyle = 'rgba(255,255,255,0.4)'; zctx.lineWidth = 1; zctx.stroke(); zctx.setLineDash([]);
+    zctx.strokeStyle = 'rgba(255,255,255,0.35)'; zctx.setLineDash([3,4]);
+    zctx.beginPath(); zctx.moveTo(xPix(0),T); zctx.lineTo(xPix(0),B); zctx.stroke(); zctx.setLineDash([]);
+    if(trueOn){
+      zctx.strokeStyle = '#ffffff'; zctx.lineWidth = 1.5; zctx.setLineDash([2,3]);
+      zctx.beginPath(); zctx.moveTo(xPix(c.x),T); zctx.lineTo(xPix(c.x),B); zctx.stroke(); zctx.setLineDash([]);
+      zctx.beginPath(); zctx.arc(xPix(c.x), B-1, 4.5, 0, 2*Math.PI); zctx.fillStyle = rgb; zctx.fill();
+      zctx.strokeStyle = '#ffffff'; zctx.stroke();
+    }
+    zctx.restore();
+    zctx.font = '10px -apple-system,sans-serif'; zctx.textAlign = 'left';
+    zctx.fillStyle = '#ffd166';
+    zctx.fillText(`P(near side, x<0) = ${(pNear*100).toFixed(0)}%`, L, 14);
+    zctx.fillStyle = 'rgba(232,236,244,0.85)';
+    zctx.fillText(`median ${fmtSigned(q50)} pc, 68%: ${fmtSigned(q16)} … ${fmtSigned(q84)} pc   ·   true ${fmtSigned(c.x)} pc`, L, 27);
+    zctx.fillStyle = 'rgba(232,236,244,0.45)'; zctx.textAlign = 'right';
+    zctx.fillText('dashed: prior (stellar density only)', R, T+11);
+    zctx.textAlign = 'left';
   }
 
   function drawHistogram(cloudLine){
@@ -1061,7 +1264,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
   el.modeSky.addEventListener('click', ()=> setVelMode('sky'));
   el.modeLos.addEventListener('click', ()=> setVelMode('los'));
 
-  [el.phi, el.showOrbits, el.animateOn, el.starTrails, el.cloudLOS, el.cloudTau, el.faceZoom].forEach(inp=> inp.addEventListener('input', draw));
+  [el.phi, el.showOrbits, el.animateOn, el.starTrails, el.cloudLOS, el.cloudTau, el.faceZoom, el.sigmaV].forEach(inp=> inp.addEventListener('input', draw));
   // these change WHICH population should exist (star count, entering/leaving the
   // zoomed pencil beam, or the beam's own footprint moving), so they regenerate
   [el.n, el.zoomCloud, el.cloudEnabled, el.cloudR, el.nsdE].forEach(inp=> inp.addEventListener('input', regenerateStars));
@@ -1077,6 +1280,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
     el.showOrbits.checked = true;
     el.animateOn.checked = true;
     el.starTrails.checked = false;
+    el.sigmaV.value = 30;
     el.cloudEnabled.checked = true;
     el.cloudR.value = 10;
     el.cloudLOS.value = 20;
@@ -1253,7 +1457,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
     const setc = (key, elem) => { const v = q.get(key); if (v !== null) { elem.checked = (v === '1' || v === 'true'); } };
     setv('zoom',     el.faceZoom);
     setv('phi',      el.phi);
-    setv('q',        el.q);
+    setv('q',        el.nsdE);
     setv('n',        el.n);
     setv('cloudr',   el.cloudR);
     setv('cloudlos', el.cloudLOS);

@@ -66,6 +66,14 @@
   footer{margin-top:26px; font-size:0.78rem; color:var(--dim); max-width:940px; line-height:1.6;}
   footer a{color:#8ab4ff;}
 
+  /* ---- inversion game: locate a cloud from mu_l-derived star positions ---- */
+  .inversion{margin-top:34px; padding-top:18px; border-top:1px solid var(--line);}
+  .inversion h2.invTitle{font-size:1.15rem; margin:0 0 6px; letter-spacing:0.01em;}
+  .inversion .invIntro{color:var(--dim); font-size:0.85rem; line-height:1.5; max-width:940px; margin:0 0 14px;}
+  .inversion canvas{cursor:ew-resize; touch-action:none;}
+  .inversion canvas:focus-visible{outline:1px solid #6b7aa6;}
+  .inversion .controls{flex:1 1 300px; min-width:280px;}
+
   /* ---- embed mode: ?embed=1 -------------------------------------------------
      Opt-in only, for showing just the graphical panels inside an <iframe> (the
      Granada colloquium deck does this).  Nothing below applies without the URL
@@ -85,7 +93,8 @@
   body.embed.only-face .layout{justify-content:center;}
   body.embed .legend{flex-wrap:wrap;}
   /* the selected-star inspector needs a click and a control column; not for decks */
-  body.embed .inspect-col{display:none !important;}
+  body.embed .inspect-col,
+  body.embed .inversion{display:none !important;}
   /* the embed is displayed shrunk to ~77% inside the deck, so the page's own type
      has to grow to stay readable from the back of a lecture hall */
   body.embed .panelTitle{font-size:1.16rem; letter-spacing:0.02em; margin-bottom:8px;}
@@ -177,7 +186,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
       </div>
     </div>
     <div>
-      <p class="panelTitle">Where along the sightline? P(distance | &mu;<sub>l</sub>)</p>
+      <p class="panelTitle">Where along the sightline? P(distance | <span style="text-transform:none">&mu;<sub>l</sub></span>)</p>
       <canvas id="post" width="420" height="224"></canvas>
     </div>
   </div>
@@ -256,6 +265,65 @@ star's proper motion parallel to the plane barely depends on where along the lin
     </div>
   </div>
 </div>
+
+<section class="inversion" id="inversion">
+  <h2 class="invTitle">Now run it backwards: find the cloud</h2>
+  <p class="invIntro">
+    Everything above went forward: known positions in, observables out. Here you only get the observables.
+    Pick a sightline and you receive stars on it, each with a proper motion &mu;<sub>l</sub> and an extinction
+    (positions hidden). Each star's &mu;<sub>l</sub> gives a smeared-out position, exactly as in the selected-star panels
+    above. A thin dust screen adds a fixed extinction to every star behind it. Its position along the sightline is the
+    only unknown: drag it (or click either plot) and watch the score. Highest score = best fit. When you are done, reveal
+    the truth.
+  </p>
+  <div class="layout">
+    <div class="panel stackcol">
+      <div>
+        <p class="panelTitle">Stars on the sightline: extinction vs. position inferred from <span style="text-transform:none">&mu;<sub>l</sub></span></p>
+        <canvas id="invA" width="640" height="300" tabindex="0"></canvas>
+        <div class="legend" style="flex-wrap:wrap; row-gap:4px;">
+          <span>&#9679; median position from &mu;<sub>l</sub> (colour = &mu;<sub>l</sub>)</span>
+          <span>&#9644; smear + bracket: 68% range</span>
+          <span style="color:#c39bff;">&#9646; your cloud</span>
+        </div>
+      </div>
+      <div>
+        <p class="panelTitle">Score vs. cloud position</p>
+        <canvas id="invB" width="640" height="220"></canvas>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="ctrl-full">
+        <h2>Sightline</h2>
+        <div class="row">
+          <label>Longitude l <span class="val" id="v-invL">+0.25&deg;</span></label>
+          <input type="range" id="invL" min="-1" max="1" step="0.05" value="0.25">
+        </div>
+        <div class="row">
+          <label>Stars on the sightline <span class="val" id="v-invN">12</span></label>
+          <input type="range" id="invN" min="4" max="40" step="1" value="12">
+        </div>
+        <div class="row">
+          <label>Proper-motion scatter &sigma; <span class="val" id="v-invSigma">30 km/s</span></label>
+          <input type="range" id="invSigma" min="5" max="100" step="5" value="30">
+        </div>
+        <p style="font-size:0.72rem; color:var(--dim); margin:-2px 0 9px;">
+          Uses the bar angle and ellipticity set above, as they were when the sightline was drawn
+          (<span id="invModel"></span>). Cloud: a thin screen adding 5 mag; extinction errors 0.4 mag.
+        </p>
+      </div>
+      <div class="ctrl-full">
+        <div class="row-inline">
+          <button class="btn" id="invNew">New sightline</button>
+          <button class="btn" id="invReveal">Reveal the truth</button>
+        </div>
+        <label class="chk"><input type="checkbox" id="invCurve"> Show the full score curve</label>
+        <div class="info" id="invInfo">Drag the cloud in either plot.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   Same analytic harmonic (epicyclic-limit) x2-orbit family as the companion figure: nested similar ellipses,
@@ -1269,6 +1337,320 @@ star's proper motion parallel to the plane barely depends on where along the lin
   // zoomed pencil beam, or the beam's own footprint moving), so they regenerate
   [el.n, el.zoomCloud, el.cloudEnabled, el.cloudR, el.nsdE].forEach(inp=> inp.addEventListener('input', regenerateStars));
   el.reshuffle.addEventListener('click', regenerateStars);
+
+  // ==== inversion game (suggested by Ariana Vasini) ============================
+  // The forward panels go positions -> observables.  Here the observables are all
+  // the player gets: N stars on one sightline, each with a measured mu_l and an
+  // extinction, true positions hidden.  A star's mu_l gives a posterior over its
+  // line-of-sight position, P(x | mu_l) ~ NSD density * N(mu_l; mean(x), sigma),
+  // as in the selected-star panels.  A thin dust screen at x_c adds A0 to every
+  // star behind it: the ONE free parameter.  Scoring a trial x_c marginalises over
+  // each star's position uncertainty,
+  //   L_i(x_c) = P(x_i > x_c) N(A_i; A0, sA) + P(x_i < x_c) N(A_i; 0, sA),
+  // and the score is prod_i L_i (shown as a log-scaled 0-100, best fit = 100).
+  const invA = document.getElementById('invA'), invB = document.getElementById('invB');
+  const actx = invA.getContext('2d'), bctx = invB.getContext('2d');
+  const IW = invA.width, IH = invA.height, SW = invB.width, SH = invB.height;
+  const invEl = {
+    l: document.getElementById('invL'), vl: document.getElementById('v-invL'),
+    n: document.getElementById('invN'), vn: document.getElementById('v-invN'),
+    sig: document.getElementById('invSigma'), vsig: document.getElementById('v-invSigma'),
+    model: document.getElementById('invModel'), info: document.getElementById('invInfo'),
+    newBtn: document.getElementById('invNew'), reveal: document.getElementById('invReveal'),
+    curve: document.getElementById('invCurve'),
+  };
+  const inv = {
+    A0: 5, sigA: 0.4, GN: 220, TEMP_PER_STAR: 3,   // score = 100 exp(dlnL / (TEMP_PER_STAR N))
+    dx: 0, y: 0, n: 0, sigma: 30, q: 1, phiRad: 0,
+    stars: [], scoreEdge: null, llMax: 0, xBest: 0, xcTrue: 0,
+    xc: null, tried: new Map(), revealed: false,
+  };
+  const INV_CLOUD = '195,155,255';
+
+  function invGauss(){
+    let u = 0; while(u === 0) u = Math.random();
+    return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*Math.random());
+  }
+  function invQuant(s, pp){
+    for(let j=0;j<inv.GN;j++){
+      if(s.cdf[j+1] >= pp){
+        const f = s.p[j] > 0 ? (pp - s.cdf[j])/s.p[j] : 0;
+        return -Rmax + (j+f)*inv.dx;
+      }
+    }
+    return Rmax;
+  }
+  function invLogL(xc){
+    const GN = inv.GN;
+    const t = (xc+Rmax)/inv.dx;
+    const j = Math.max(0, Math.min(GN-1, Math.floor(t)));
+    const f = Math.max(0, Math.min(1, t-j));
+    let ll = 0;
+    for(const s of inv.stars){
+      const pBehind = 1 - (s.cdf[j] + (s.cdf[j+1]-s.cdf[j])*f);
+      const g1 = Math.exp(-0.5*((s.A-inv.A0)/inv.sigA)**2);
+      const g0 = Math.exp(-0.5*(s.A/inv.sigA)**2);
+      ll += Math.log(Math.max(1e-300, pBehind*g1 + (1-pBehind)*g0));
+    }
+    return ll;
+  }
+
+  function invGenerate(){
+    const GN = inv.GN, dx = 2*Rmax/GN;
+    inv.dx = dx;
+    const lDeg = parseFloat(invEl.l.value);
+    inv.y = lToPc(lDeg);
+    inv.n = parseInt(invEl.n.value, 10);
+    inv.sigma = parseFloat(invEl.sig.value);
+    inv.q = parseFloat(el.nsdE.value); inv.phiRad = getPhiRad();
+    invEl.vl.textContent = fmtSigned(lDeg, 2)+'°';
+    invEl.vn.textContent = String(inv.n);
+    invEl.vsig.textContent = inv.sigma.toFixed(0)+' km/s';
+    invEl.model.textContent = 'bar angle '+el.phi.value+'°, ellipticity '+inv.q.toFixed(2);
+
+    const mu = new Float64Array(GN), prior = new Float64Array(GN);
+    for(let i=0;i<GN;i++){
+      const x = -Rmax + (i+0.5)*dx;
+      mu[i] = vAtBarred(x, inv.y, inv.q, inv.phiRad).vy;
+      prior[i] = Math.exp(-nsdR(x, inv.y, inv.q, inv.phiRad)/NSD_SCALE_R);
+    }
+    // true star positions, drawn from the same density the posterior uses as prior
+    const xt = [];
+    while(xt.length < inv.n){
+      const x = (Math.random()*2-1)*Rmax;
+      if(Math.random() < Math.exp(-nsdR(x, inv.y, inv.q, inv.phiRad)/NSD_SCALE_R)) xt.push(x);
+    }
+    xt.sort((a,b)=>a-b);
+    // hidden cloud: in a gap between neighbouring stars, with at least ~a quarter of
+    // the stars on each side, so there is always something in front and behind
+    const kLo = Math.max(1, Math.ceil(0.25*inv.n)), kHi = Math.min(inv.n-1, Math.floor(0.75*inv.n));
+    const k = kLo + Math.floor(Math.random()*(kHi-kLo+1));
+    inv.xcTrue = xt[k-1] + (0.2+0.6*Math.random())*(xt[k]-xt[k-1]);
+
+    inv.stars = xt.map(x=>{
+      const muObs = vAtBarred(x, inv.y, inv.q, inv.phiRad).vy + inv.sigma*invGauss();
+      const A = (x > inv.xcTrue ? inv.A0 : 0) + inv.sigA*invGauss();
+      const p = new Float64Array(GN);
+      let Z = 0;
+      for(let i=0;i<GN;i++){ const z = (muObs-mu[i])/inv.sigma; p[i] = prior[i]*Math.exp(-0.5*z*z); Z += p[i]; }
+      if(!(Z > 1e-300)){ Z = 0; for(let i=0;i<GN;i++){ p[i] = prior[i]; Z += p[i]; } }
+      let pmax = 0;
+      for(let i=0;i<GN;i++){ p[i] /= Z; if(p[i] > pmax) pmax = p[i]; }
+      const cdf = new Float64Array(GN+1);
+      for(let i=0;i<GN;i++) cdf[i+1] = cdf[i] + p[i];
+      const s = {xTrue:x, mu:muObs, A, p, pmax, cdf, rgb:colorForV(muObs,'sky')};
+      s.lo = invQuant(s,0.16); s.med = invQuant(s,0.5); s.hi = invQuant(s,0.84);
+      return s;
+    });
+
+    // score at every grid edge (the player's positions snap to these)
+    const ll = new Float64Array(GN+1);
+    let llMax = -Infinity, jBest = 0;
+    for(let j=0;j<=GN;j++){ ll[j] = invLogL(-Rmax + j*dx); if(ll[j] > llMax){ llMax = ll[j]; jBest = j; } }
+    inv.llMax = llMax; inv.xBest = -Rmax + jBest*dx;
+    inv.scoreEdge = new Float64Array(GN+1);
+    for(let j=0;j<=GN;j++) inv.scoreEdge[j] = 100*Math.exp((ll[j]-llMax)/(inv.TEMP_PER_STAR*inv.n));
+
+    inv.xc = null; inv.tried = new Map(); inv.revealed = false;
+    invEl.reveal.textContent = 'Reveal the truth';
+    invDrawAll();
+  }
+
+  function invSetXc(x){
+    const key = Math.max(0, Math.min(inv.GN, Math.round((x+Rmax)/inv.dx)));
+    inv.xc = -Rmax + key*inv.dx;
+    inv.tried.set(key, inv.scoreEdge[key]);
+  }
+  function invScoreNow(){ return inv.xc===null ? null : inv.scoreEdge[Math.round((inv.xc+Rmax)/inv.dx)]; }
+
+  function invDrawA(){
+    const c = actx, L = IP.l, R = IW-IP.r, T = IP.t, B = IH-IP.b, pw = R-L, ph = B-T;
+    const xP = x => L + (x+Rmax)/(2*Rmax)*pw;
+    const yMin = -1.5, yMax = 8.5, yP = a => B - (a-yMin)/(yMax-yMin)*ph;
+    inspectFrame(c, IW, IH, 'near ← position along sightline (pc), inferred from μ_l → far');
+    c.fillStyle = 'rgba(232,236,244,0.55)'; c.font = '8px -apple-system,sans-serif'; c.textAlign = 'right';
+    [0,2,4,6,8].forEach(a=>{ c.fillText(String(a), L-4, yP(a)+3); });
+    c.save(); c.translate(9,(T+B)/2); c.rotate(-Math.PI/2);
+    c.textAlign = 'center'; c.font = '10px -apple-system,sans-serif'; c.fillStyle = 'rgba(232,236,244,0.7)';
+    c.fillText('extinction (mag)', 0, 0); c.restore(); c.textAlign = 'left';
+
+    c.save(); c.beginPath(); c.rect(L,T,pw,ph); c.clip();
+    c.strokeStyle = 'rgba(255,255,255,0.10)'; c.setLineDash([2,4]);
+    [0, inv.A0].forEach(a=>{ c.beginPath(); c.moveTo(L,yP(a)); c.lineTo(R,yP(a)); c.stroke(); });
+    c.beginPath(); c.moveTo(xP(0),T); c.lineTo(xP(0),B); c.stroke(); c.setLineDash([]);
+
+    // the player's cloud and the extinction it predicts
+    if(inv.xc !== null){
+      const cx = xP(inv.xc);
+      c.fillStyle = 'rgba('+INV_CLOUD+',0.25)'; c.fillRect(cx-3, T, 6, ph);
+      c.strokeStyle = 'rgba('+INV_CLOUD+',0.95)'; c.lineWidth = 1.5;
+      c.beginPath(); c.moveTo(cx,T); c.lineTo(cx,B); c.stroke();
+      c.strokeStyle = 'rgba(255,255,255,0.7)'; c.setLineDash([5,3]); c.lineWidth = 1.3;
+      c.beginPath(); c.moveTo(L,yP(0)); c.lineTo(cx,yP(0)); c.lineTo(cx,yP(inv.A0)); c.lineTo(R,yP(inv.A0)); c.stroke();
+      c.setLineDash([]);
+      c.fillStyle = 'rgba('+INV_CLOUD+',0.95)';
+      c.beginPath(); c.moveTo(cx-6,T); c.lineTo(cx+6,T); c.lineTo(cx,T+9); c.closePath(); c.fill();
+    }
+    if(inv.revealed){
+      const tx = xP(inv.xcTrue);
+      c.strokeStyle = '#ffd166'; c.lineWidth = 1.6; c.setLineDash([6,4]);
+      c.beginPath(); c.moveTo(tx,T); c.lineTo(tx,B); c.stroke(); c.setLineDash([]);
+    }
+    // each star: smear of P(x | mu_l) at its observed extinction, plus median and 68% bracket
+    for(const s of inv.stars){
+      const y = yP(s.A), rgb = s.rgb.join(',');
+      for(let j=0;j<inv.GN;j++){
+        const a = 0.75*s.p[j]/s.pmax;
+        if(a < 0.02) continue;
+        c.fillStyle = 'rgba('+rgb+','+a.toFixed(3)+')';
+        c.fillRect(xP(-Rmax+j*inv.dx), y-3, pw*inv.dx/(2*Rmax)+0.6, 6);
+      }
+      c.strokeStyle = 'rgba(255,255,255,0.55)'; c.lineWidth = 1;
+      c.beginPath(); c.moveTo(xP(s.lo), y+7); c.lineTo(xP(s.hi), y+7);
+      c.moveTo(xP(s.lo), y+5); c.lineTo(xP(s.lo), y+9); c.moveTo(xP(s.hi), y+5); c.lineTo(xP(s.hi), y+9); c.stroke();
+      if(inv.revealed){
+        c.strokeStyle = 'rgba(255,255,255,0.35)';
+        c.beginPath(); c.moveTo(xP(s.med), y); c.lineTo(xP(s.xTrue), y); c.stroke();
+      }
+    }
+    for(const s of inv.stars){
+      const y = yP(s.A);
+      c.beginPath(); c.arc(xP(s.med), y, 3.6, 0, 2*Math.PI);
+      c.fillStyle = 'rgb('+s.rgb.join(',')+')'; c.fill();
+      c.strokeStyle = 'rgba(5,7,12,0.9)'; c.lineWidth = 1; c.stroke();
+      if(inv.revealed){
+        c.beginPath(); c.arc(xP(s.xTrue), y, 5.2, 0, 2*Math.PI);
+        c.strokeStyle = '#ffffff'; c.lineWidth = 1.4; c.stroke();
+      }
+    }
+    c.restore();
+
+    c.font = '10px -apple-system,sans-serif'; c.textAlign = 'left';
+    if(inv.xc === null){
+      c.fillStyle = 'rgba('+INV_CLOUD+',0.95)';
+      c.fillText('Drag (or click) here to place your cloud along the sightline', L, 14);
+    }else{
+      c.fillStyle = 'rgba('+INV_CLOUD+',0.95)';
+      c.fillText('your cloud: x = '+fmtSigned(inv.xc)+' pc', L, 14);
+    }
+    c.fillStyle = 'rgba(232,236,244,0.7)';
+    c.fillText(inv.revealed
+      ? 'gold dashed: true cloud ('+fmtSigned(inv.xcTrue)+' pc)  ·  white rings: true star positions'
+      : 'l = '+fmtSigned(parseFloat(invEl.l.value),2)+'°, '+inv.n+' stars · dashed white: extinction your cloud predicts', L, 27);
+  }
+
+  function invDrawB(){
+    const c = bctx, L = IP.l, R = SW-IP.r, T = 26, B = SH-IP.b, pw = R-L, ph = B-T;
+    const xP = x => L + (x+Rmax)/(2*Rmax)*pw, sP = s => B - s/105*ph;
+    inspectFrame(c, SW, SH, 'near ← position of the cloud along the sightline (pc) → far');
+    c.fillStyle = 'rgba(232,236,244,0.55)'; c.font = '8px -apple-system,sans-serif'; c.textAlign = 'right';
+    [0,25,50,75,100].forEach(s=>{ c.fillText(String(s), L-4, sP(s)+3); });
+    c.save(); c.translate(9,(T+B)/2); c.rotate(-Math.PI/2);
+    c.textAlign = 'center'; c.font = '10px -apple-system,sans-serif'; c.fillStyle = 'rgba(232,236,244,0.7)';
+    c.fillText('score (higher = better)', 0, 0); c.restore(); c.textAlign = 'left';
+
+    c.save(); c.beginPath(); c.rect(L,T,pw,ph+1); c.clip();
+    c.strokeStyle = 'rgba(255,255,255,0.10)'; c.setLineDash([2,4]);
+    [50,100].forEach(s=>{ c.beginPath(); c.moveTo(L,sP(s)); c.lineTo(R,sP(s)); c.stroke(); });
+    c.beginPath(); c.moveTo(xP(0),T); c.lineTo(xP(0),B); c.stroke(); c.setLineDash([]);
+    if(invEl.curve.checked || inv.revealed){
+      c.beginPath(); c.moveTo(xP(-Rmax), B);
+      for(let j=0;j<=inv.GN;j++) c.lineTo(xP(-Rmax+j*inv.dx), sP(inv.scoreEdge[j]));
+      c.lineTo(xP(Rmax), B); c.closePath(); c.fillStyle = 'rgba(255,209,102,0.16)'; c.fill();
+      c.beginPath();
+      for(let j=0;j<=inv.GN;j++){ const px = xP(-Rmax+j*inv.dx), py = sP(inv.scoreEdge[j]); if(j===0) c.moveTo(px,py); else c.lineTo(px,py); }
+      c.strokeStyle = '#ffd166'; c.lineWidth = 1.6; c.stroke();
+    }
+    if(inv.revealed){
+      c.strokeStyle = '#ffd166'; c.lineWidth = 1.6; c.setLineDash([6,4]);
+      c.beginPath(); c.moveTo(xP(inv.xcTrue),T); c.lineTo(xP(inv.xcTrue),B); c.stroke(); c.setLineDash([]);
+      c.fillStyle = '#ffffff';
+      const bx = xP(inv.xBest);
+      c.beginPath(); c.moveTo(bx-5,T); c.lineTo(bx+5,T); c.lineTo(bx,T+8); c.closePath(); c.fill();
+    }
+    let bestKey = null;
+    inv.tried.forEach((s,key)=>{
+      if(bestKey===null || s > inv.tried.get(bestKey)) bestKey = key;
+      c.beginPath(); c.arc(xP(-Rmax+key*inv.dx), sP(s), 2.6, 0, 2*Math.PI);
+      c.fillStyle = 'rgba('+INV_CLOUD+',0.75)'; c.fill();
+    });
+    if(inv.xc !== null){
+      const cx = xP(inv.xc), sc = invScoreNow();
+      c.strokeStyle = 'rgba('+INV_CLOUD+',0.6)'; c.lineWidth = 1;
+      c.beginPath(); c.moveTo(cx,T); c.lineTo(cx,B); c.stroke();
+      c.beginPath(); c.arc(cx, sP(sc), 5, 0, 2*Math.PI);
+      c.fillStyle = 'rgb('+INV_CLOUD+')'; c.fill(); c.strokeStyle = '#ffffff'; c.lineWidth = 1.5; c.stroke();
+    }
+    if(bestKey !== null){
+      c.beginPath(); c.arc(xP(-Rmax+bestKey*inv.dx), sP(inv.tried.get(bestKey)), 6.5, 0, 2*Math.PI);
+      c.strokeStyle = '#ffffff'; c.lineWidth = 1; c.stroke();
+    }
+    c.restore();
+
+    c.font = '10px -apple-system,sans-serif'; c.textAlign = 'left';
+    if(inv.xc === null){
+      c.fillStyle = 'rgba(232,236,244,0.7)';
+      c.fillText('Each position you try adds a point here. The peak is the best-fit cloud position.', L, 14);
+    }else{
+      c.fillStyle = 'rgb('+INV_CLOUD+')';
+      c.fillText('score '+invScoreNow().toFixed(0)+' at x = '+fmtSigned(inv.xc)+' pc', L, 14);
+      if(bestKey !== null){
+        c.fillStyle = 'rgba(232,236,244,0.85)'; c.textAlign = 'right';
+        c.fillText('best of '+inv.tried.size+' tried: '+inv.tried.get(bestKey).toFixed(0)+' at x = '+fmtSigned(-Rmax+bestKey*inv.dx)+' pc', R, 14);
+        c.textAlign = 'left';
+      }
+    }
+  }
+
+  function invDrawInfo(){
+    if(inv.xc === null){ invEl.info.innerHTML = 'Drag the cloud in either plot.'; return; }
+    let bestKey = null;
+    inv.tried.forEach((s,key)=>{ if(bestKey===null || s > inv.tried.get(bestKey)) bestKey = key; });
+    const xb = -Rmax + bestKey*inv.dx;
+    let html = 'Your cloud: <b>'+fmtSigned(inv.xc)+' pc</b> &middot; score <b>'+invScoreNow().toFixed(0)+'</b><br>'
+             + 'Best of '+inv.tried.size+' positions tried: <b>'+fmtSigned(xb)+' pc</b> (score '+inv.tried.get(bestKey).toFixed(0)+')';
+    if(inv.revealed){
+      html += '<br>True cloud: <b>'+fmtSigned(inv.xcTrue)+' pc</b> &middot; max-score position: <b>'+fmtSigned(inv.xBest)
+            + ' pc</b> &middot; your best is off by <b>'+Math.abs(xb-inv.xcTrue).toFixed(0)+' pc</b>';
+    }
+    invEl.info.innerHTML = html;
+  }
+  function invDrawAll(){
+    invDrawA(); invDrawB(); invDrawInfo();
+    if(inv.revealed && inv.xc === null){
+      invEl.info.innerHTML = 'True cloud: <b>'+fmtSigned(inv.xcTrue)+' pc</b> &middot; max-score position: <b>'+fmtSigned(inv.xBest)+' pc</b>';
+    }
+  }
+
+  function invPointerX(cv, e){
+    const rect = cv.getBoundingClientRect();
+    const px = (e.clientX-rect.left)*(cv.width/rect.width);
+    return (px-IP.l)/(cv.width-IP.l-IP.r)*2*Rmax - Rmax;
+  }
+  [invA, invB].forEach(cv=>{
+    let down = false;
+    cv.addEventListener('pointerdown', e=>{
+      down = true; cv.setPointerCapture(e.pointerId);
+      invSetXc(invPointerX(cv,e)); invDrawAll(); e.preventDefault();
+    });
+    cv.addEventListener('pointermove', e=>{ if(down){ invSetXc(invPointerX(cv,e)); invDrawAll(); } });
+    ['pointerup','pointercancel'].forEach(t=> cv.addEventListener(t, ()=>{ down = false; }));
+  });
+  invA.addEventListener('keydown', e=>{
+    const step = (e.shiftKey ? 5 : 1)*inv.dx;
+    if(e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    invSetXc((inv.xc===null ? 0 : inv.xc) + (e.key==='ArrowRight' ? step : -step));
+    invDrawAll(); e.preventDefault();
+  });
+  [invEl.l, invEl.n, invEl.sig].forEach(inp=> inp.addEventListener('input', invGenerate));
+  invEl.newBtn.addEventListener('click', invGenerate);
+  invEl.reveal.addEventListener('click', ()=>{
+    inv.revealed = !inv.revealed;
+    invEl.reveal.textContent = inv.revealed ? 'Hide the truth' : 'Reveal the truth';
+    invDrawAll();
+  });
+  invEl.curve.addEventListener('input', invDrawAll);
+  invGenerate();
 
   // every control's own markup-declared default, restored verbatim -- kept next to
   // the controls themselves so this can't drift out of sync with them

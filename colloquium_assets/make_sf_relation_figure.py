@@ -2,7 +2,7 @@
 """
 Sigma_SFR vs Sigma_gas: the local single-cloud star formation relation, with CMZ clouds on top.
 
-Reproduces Pokhrel et al. (2021, ApJL 912, L19) Fig. 2a and overlays the Galactic Centre
+Reproduces Pokhrel et al. (2021, ApJL 912, L19) Fig. 2a and overlays the Galactic Center
 clouds we have numbers for.  Rerun this to rebuild the figure as new data arrive -- edit
 CMZ_CLOUDS below and nothing else.
 
@@ -11,9 +11,9 @@ CMZ_CLOUDS below and nothing else.
 Outputs colloquium_assets/sf_relation_cmz.png (and .pdf).
 
 The local cloud tracks come from colloquium_assets/pokhrel2021_tracks.csv, digitised from
-Fig. 2a of the paper (~/Dropbox (Personal)/Papers/Pokhrel2021_UniformEpsFF.pdf) by colour-
+Fig. 2a of the paper (~/Dropbox (Personal)/Papers/Pokhrel2021_UniformEpsFF.pdf) by color-
 keying each curve against its legend swatch.  Ten of the twelve clouds are recoverable that
-way; Orion-A (black) and Mon R2 (grey) are drawn in colours indistinguishable from the axes
+way; Orion-A (black) and Mon R2 (gray) are drawn in colors indistinguishable from the axes
 and the fit line, so they are not included.  Rerun with --digitise to rebuild the CSV.
 
 UNITS THROUGHOUT: Sigma_gas [M_sun / pc^2],  Sigma_SFR [M_sun / pc^2 / Myr].
@@ -114,7 +114,7 @@ CMZ_CLOUDS = [
         #sigma_sfr=10.6,
         sigma_sfr=sigma_sfr_brick.to(u.Msun/u.Myr/u.pc**2).value,
         sigma_sfr_lo=None, sigma_sfr_hi=sigma_sfr_brick.to(u.Msun/u.Myr/u.pc**2).value,
-        limit=True, colour="#1f77b4", marker="v", size=230, label_offset=(10, -122), label_ha="center",
+        limit=True, color="#1f77b4", marker="v", size=230, label_offset=(10, -122), label_ha="center",
         ref="Walker+ 2021",
         note=("CLOUD-SCALE aperture, to match how Pokhrel measure (all the protostars in a cloud "
               "against all the gas above a contour) and so that the Brick and Cloud E/F are "
@@ -156,7 +156,7 @@ CMZ_CLOUDS = [
         #sigma_sfr=1.96,
         sigma_sfr=sigma_sfr_cloudef.to(u.Msun/u.Myr/u.pc**2).value,
         sigma_sfr_lo=None, sigma_sfr_hi=None,
-        limit=True, colour="#2ca02c", marker="v", size=230, label_offset=(62, -60), label_ha="center",
+        limit=True, color="#2ca02c", marker="v", size=230, label_offset=(62, -60), label_ha="center",
         ref="Barnes+ 2019, Walker+ 2018",
         note=("Sigma_gas: from Walker+ 2018 Table 1, which tabulates the dust ridge clouds on a "
               "consistent footing (values from Walker+ 2015).  Cloud e: 11.2e4 Msun, R = 2.4 pc; "
@@ -170,7 +170,7 @@ CMZ_CLOUDS = [
               "radius.  That error put Cloud E/F to the right of most of Sgr B2, which is wrong: "
               "it should sit at lower column density than most of the Sgr B2 cloud.  "
               "Sigma_SFR: ceiling set by what is OBSERVED.  No HII regions, no protostellar "
-              "source catalogue; the only star formation signature in either cloud is an H2O plus "
+              "source catalog; the only star formation signature in either cloud is an H2O plus "
               "Class II CH3OH maser pair at one spot in the south.  A Class II methanol maser marks "
               "a high-mass protostar, so allow one such star plus companions, <= 30 Msun -- "
               "generous, and bounded above by the Brick's ENTIRE counted protostellar content "
@@ -196,7 +196,7 @@ CMZ_CLOUDS = [
 
 
 def digitise(csv_path=TRACKS, pdf=PAPER):
-    """Rebuild pokhrel2021_tracks.csv from the paper by colour-keying Fig. 2a."""
+    """Rebuild pokhrel2021_tracks.csv from the paper by color-keying Fig. 2a."""
     import fitz
     from PIL import Image
     doc = fitz.open(pdf)
@@ -231,7 +231,7 @@ def digitise(csv_path=TRACKS, pdf=PAPER):
     rows = []
     for name, c in clouds:
         d = np.sqrt(((sub - np.array(c)) ** 2).sum(2))
-        m = (d < 45) & (satmap > 35)          # colour match AND saturated: keeps out axes/bands
+        m = (d < 45) & (satmap > 35)          # color match AND saturated: keeps out axes/bands
         for j in range(sub.shape[1]):
             ys = np.where(m[:, j])[0]
             if len(ys) == 0:
@@ -370,30 +370,30 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
         if show is not None and c["name"] not in show:
             continue
         gx, gy = np.log10(c["sigma_gas"]), np.log10(c["sigma_sfr"])
-        ax.scatter([gx], [gy], s=c["size"], marker=c["marker"], c=c["colour"],
+        ax.scatter([gx], [gy], s=c["size"], marker=c["marker"], c=c["color"],
                    edgecolors="k", linewidths=1.2, zorder=8)
         if c.get("sigma_gas_lo"):
             ax.plot([np.log10(c["sigma_gas_lo"]), np.log10(c["sigma_gas_hi"])], [gy, gy],
-                    color=c["colour"], lw=3.4, solid_capstyle="butt", zorder=7)
+                    color=c["color"], lw=3.4, solid_capstyle="butt", zorder=7)
             for e in ("sigma_gas_lo", "sigma_gas_hi"):
                 ax.plot([np.log10(c[e])] * 2, [gy - 0.07, gy + 0.07],
-                        color=c["colour"], lw=3.4, zorder=7)
+                        color=c["color"], lw=3.4, zorder=7)
         if c["limit"]:
             ax.annotate("", xy=(gx, gy - 0.42), xytext=(gx, gy - 0.06),
-                        arrowprops=dict(arrowstyle="-|>", color=c["colour"], lw=2.4), zorder=8)
+                        arrowprops=dict(arrowstyle="-|>", color=c["color"], lw=2.4), zorder=8)
         elif c.get("sigma_sfr_lo"):
             ax.plot([gx, gx], [np.log10(c["sigma_sfr_lo"]), np.log10(c["sigma_sfr_hi"])],
-                    color=c["colour"], lw=2.6, solid_capstyle="butt", zorder=7)
+                    color=c["color"], lw=2.6, solid_capstyle="butt", zorder=7)
         # The labels have to live in the empty lower right -- everything near the markers is
         # taken by the two horizontal bars and the Sgr B2 cloud -- so each one gets a thin
         # leader back to its own marker.  Without it a reader cannot tell which is which.
         off = c.get("label_offset", (16, 10))
-        lead = dict(arrowstyle="-", color=c["colour"], lw=1.1,
+        lead = dict(arrowstyle="-", color=c["color"], lw=1.1,
                     shrinkA=1, shrinkB=9, alpha=0.85) if abs(off[1]) > 40 else None
         ax.annotate("%s\n%s" % (c["name"], c["ref"]), (gx, gy),
                     textcoords="offset points", xytext=off,
                     ha=c.get("label_ha", "left"), va="center",
-                    fontsize=13, color=c["colour"], fontweight="bold", zorder=9,
+                    fontsize=13, color=c["color"], fontweight="bold", zorder=9,
                     arrowprops=lead,
                     bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
 

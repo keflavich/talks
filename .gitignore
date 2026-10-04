@@ -3,3 +3,7 @@ bck
 .DS_store
 ipy*py
 *~
+
+# assets/co3d: make_co3d_data.py's decompressed working copy of the ~1.3 GB Dame CO cube.
+# Regenerated on demand from the astropy download cache; never worth tracking.
+assets/co3d/_COGAL_all_interp.fits

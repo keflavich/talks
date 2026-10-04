@@ -7,7 +7,7 @@ PNG stacks 1:1 in the deck with no per-slide transform.
 Outputs (all in assets/cmz/):
   treasury_nircam_fullbleed.png   the NIRCam mosaic itself, from the live HiPS
   treasury_miri_fullbleed.png     the MIRI F770W parallel mosaic, from the live HiPS
-  fp_nircam_fullbleed.png         all 139 NIRCam pointings, coloured by visit status
+  fp_nircam_fullbleed.png         all 139 NIRCam pointings, colored by visit status
   fp_miri_fullbleed.png           the same for the MIRI parallel
   fp_done_nircam_fullbleed.png    outline only, the pointings already observed
   fp_done_miri_fullbleed.png      ditto
@@ -74,8 +74,8 @@ PANEL_B = (-0.21, 0.14)
 PANEL_SC = 1 / 3600.
 PANEL_ORDER = 9
 
-# Visit status -> (display class, colour).  STScI's own vocabulary, collapsed to the
-# four things an audience cares about.  Colours follow the jwst-gc monitor's sky map
+# Visit status -> (display class, color).  STScI's own vocabulary, collapsed to the
+# four things an audience cares about.  Colors follow the jwst-gc monitor's sky map
 # so the deck and the monitor page read the same.
 STATUS_CLASS = {
     'executed': 'observed', 'archived': 'observed', 'collecting': 'observed',
@@ -131,7 +131,7 @@ def main():
               % (key, nt, nu, 100 * mosaics[key].mean()))
         save(arr, f'treasury_{key}_fullbleed')
 
-    # ---- footprints, coloured by visit status -----------------------------------
+    # ---- footprints, colored by visit status -----------------------------------
     fp = requests.get(MONITOR_FP, timeout=60).json()
     visits = list(fp['observed']) + list(fp['planned'])
     by_class = {c: [] for c in DRAW_ORDER}

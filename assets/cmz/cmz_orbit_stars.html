@@ -117,7 +117,7 @@
 <details class="sub-details">
 <summary>What am I looking at?</summary>
 <p class="sub">
-Each dot is a star placed at a random phase on a randomly chosen x2 orbit in the nuclear stellar disc
+Each dot is a star placed at a random phase on a randomly chosen x2 orbit in the nuclear stellar disk
 (nested ellipses elongated perpendicular to the Galactic bar; Nieuwmunster et al. 2024), with positions drawn
 from the NSD's actual measured radial density profile (circular by default). The "NSD ellipticity" slider
 flattens that density map — and, since the stars set the potential, the same axis ratio also sets how flattened
@@ -282,7 +282,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
         <p class="panelTitle">Stars on the sightline: extinction vs. position inferred from <span style="text-transform:none">&mu;<sub>l</sub></span></p>
         <canvas id="invA" width="640" height="300" tabindex="0"></canvas>
         <div class="legend" style="flex-wrap:wrap; row-gap:4px;">
-          <span>&#9679; median position from &mu;<sub>l</sub> (colour = &mu;<sub>l</sub>)</span>
+          <span>&#9679; median position from &mu;<sub>l</sub> (color = &mu;<sub>l</sub>)</span>
           <span>&#9644; smear + bracket: 68% range</span>
           <span style="color:#c39bff;">&#9646; your cloud</span>
         </div>
@@ -329,7 +329,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
   Same analytic harmonic (epicyclic-limit) x2-orbit family as the companion figure: nested similar ellipses,
   elongated 90&deg; from the bar, with an illustrative rising-then-flat rotation curve (not a fit to data).
   Star positions are drawn from the NSD's measured radial surface-density profile — an exponential with scale
-  length R<sub>disc</sub> &asymp; 88.6 pc (Sormani et al. 2022, deprojecting the S&eacute;rsic fit of
+  length R<sub>disk</sub> &asymp; 88.6 pc (Sormani et al. 2022, deprojecting the S&eacute;rsic fit of
   Gallego-Cano et al. 2020) — sampled out to 220 pc with uniform azimuth, then each position is assigned to
   whichever x2 orbit passes through it; orbital phase is uniform (equal time per phase, exact for this
   harmonic family). Bar position angle defaults to 27&deg;, with the near side placed toward positive Galactic
@@ -338,8 +338,8 @@ star's proper motion parallel to the plane barely depends on where along the lin
   &Omega;<sub>0</sub>] result: gas/stars inside the solar circle at positive l must show positive (receding)
   line-of-sight velocity &mdash; equivalent to clockwise rotation as seen from the North Galactic Pole, the
   Milky Way's real sense.<br>
-  Based on: N. Nieuwmunster et al. 2024, <a href="https://www.aanda.org/articles/aa/full_html/2024/05/aa49000-23/aa49000-23.html" target="_blank">"Orbital analysis of stars in the nuclear stellar disc of the Milky Way,"</a> A&amp;A;
-  M. Sormani et al. 2022, <a href="https://arxiv.org/abs/2111.12713" target="_blank">"Self-consistent modelling of the Milky Way's Nuclear Stellar Disc,"</a> MNRAS &mdash;
+  Based on: N. Nieuwmunster et al. 2024, <a href="https://www.aanda.org/articles/aa/full_html/2024/05/aa49000-23/aa49000-23.html" target="_blank">"Orbital analysis of stars in the nuclear stellar disk of the Milky Way,"</a> A&amp;A;
+  M. Sormani et al. 2022, <a href="https://arxiv.org/abs/2111.12713" target="_blank">"Self-consistent modeling of the Milky Way's Nuclear Stellar Disk,"</a> MNRAS &mdash;
   and A. Vasini et al. 2026, <a href="https://arxiv.org/abs/2609.10782" target="_blank">"A Novel Approach to 3D Dust Mapping of the Central Molecular Zone,"</a> arXiv:2609.10782
   &mdash; whose method is proper-motion-based (NSD stars' velocity parallel to the Galactic plane, not radial
   velocity): the near side of the rotating NSD moves toward +l and the far side toward &minus;l, so a star's
@@ -1826,7 +1826,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
     document.body.classList.add('embed');
 
     // ?only=face -- just the face-on panel.  The other two panels are diagnostics; this
-    // variant is for showing the orbits themselves, colour-coded by plane-of-sky motion,
+    // variant is for showing the orbits themselves, color-coded by plane-of-sky motion,
     // with one cloud extinguishing the stars behind it.
     if (q.get('only') === 'face') {
       document.body.classList.add('only-face');

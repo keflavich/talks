@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang=en><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>JWST GC Treasury — zoom in and pan</title>
+<link rel=stylesheet href="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.css">
+<!--
+  Deck-facing variant of https://starformation.astro.ufl.edu/jwst-gc/slow_panner.html
+  Differences from that page, all for presenting rather than browsing:
+    * GALACTIC coordinates (the HiPS is natively hips_frame = galactic)
+    * no control bar -- nothing to click during a talk
+    * an opening move: hold on the whole survey, then zoom to full resolution and
+      hand over to the same constant-on-sky-rate pan the release page uses
+  The tour (stop list, pan rate) is fetched live from the release page, which is
+  CORS-open, and falls back to a baked-in copy so a network hiccup at the podium
+  cannot leave a blank slide.  Tunable from the URL: ?fov0= ?fov1= ?hold= ?zoom=
+  ?rate= ?label=0
+-->
+<style>
+:root { --bg:#05070c; --fg:#e6edf3; --muted:#9fb0c3; }
+* { box-sizing:border-box; }
+html, body { margin:0; height:100%; background:var(--bg); color:var(--fg); overflow:hidden;
+  font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+#sky { position:absolute; inset:0; }
+#tag { position:absolute; left:0; right:0; bottom:0; z-index:5;
+  padding:9px 15px; background:rgba(5,7,12,.86); border-top:1px solid #1f2937;
+  font-size:1.35rem; letter-spacing:.01em; }
+#tag b { color:#7ee2a8; }
+#tag span { color:var(--muted); font-variant-numeric:tabular-nums; }
+</style>
+</head><body>
+<div id=sky></div>
+<div id=tag><span id=where>loading the JWST Galactic Center Treasury mosaic&hellip;</span></div>
+<script src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js" charset=utf-8></script>
+<script>
+var Q = new URLSearchParams(location.search);
+function num(k, d){ var v = parseFloat(Q.get(k)); return isFinite(v) ? v : d; }
+
+// Opening view.  NOT the centroid of the stop list -- that lands in the gap between
+// the two observed blocks, where the HiPS has no imagery yet and the slide opens on
+// blank gray.  These are the center of the densest fully-covered patch of the current
+// mosaic: the OPENING CENTRE is the centroid of the imagery (l = +0.537, b = -0.045)
+// so the block sits in the middle of the frame, and the ZOOM TARGET is tour stop 26
+// (GC_130, at the densest fully-covered patch) so the zoom lands on data and the pan
+// carries straight on from there.  Both measured off assets/cmz/treasury_panel_nircam.png
+// -- re-measure if the mosaic grows a lot.
+var START_RA  = num('ra',  266.766502);
+var START_DEC = num('dec', -28.500839);
+var START_LEG = num('leg', 26);           // GC_130
+var FOV0  = num('fov0', 0.72);   // opening field: the observed block, not the whole CMZ
+var FOV1  = num('fov1', 0.008);  // full resolution, matching the release page
+var HOLD  = num('hold', 1.6);    // seconds to sit on the wide view first
+var ZOOM  = num('zoom', 7.5);    // seconds of zoom
+var RATE  = num('rate', 0);      // arcsec/s; 0 = use the tour's own rate
+var SHOWLABEL = Q.get('label') !== '0';
+
+// Fallback tour: the live file is authoritative, this is only so the slide still
+// does something if the fetch fails.  Center of the observed blocks.
+var FALLBACK = {survey:'https://starformation.astro.ufl.edu/avm_images/jwst_gc_treasury_vminmax_hips/',
+  fov:0.008, rate:2.0, stops:[
+  {id:'o139',label:'GC_139',ra:265.782689,dec:-28.724178,jump:false},
+  {id:'o138',label:'GC_138',ra:265.820676,dec:-28.670742,jump:true},
+  {id:'o042',label:'GC_42', ra:266.320867,dec:-29.113492,jump:false},
+  {id:'o041',label:'GC_41', ra:266.356137,dec:-29.132322,jump:false}]};
+
+var TOUR=null, aladin=null, last=null, phase='hold', t0=null;
+var leg=0, along=0, startPos=null;
+
+function unit(ra,dec){var r=ra*Math.PI/180,d=dec*Math.PI/180;
+  return [Math.cos(d)*Math.cos(r),Math.cos(d)*Math.sin(r),Math.sin(d)];}
+function fromUnit(v){var ra=Math.atan2(v[1],v[0])*180/Math.PI; if(ra<0)ra+=360;
+  return [ra, Math.asin(Math.max(-1,Math.min(1,v[2])))*180/Math.PI];}
+function slerp(a,b,t){var u=unit(a[0],a[1]),w=unit(b[0],b[1]);
+  var dot=Math.max(-1,Math.min(1,u[0]*w[0]+u[1]*w[1]+u[2]*w[2])),ang=Math.acos(dot);
+  if(ang<1e-9){return a.slice();}
+  var s=Math.sin(ang),k1=Math.sin((1-t)*ang)/s,k2=Math.sin(t*ang)/s;
+  return fromUnit([k1*u[0]+k2*w[0],k1*u[1]+k2*w[1],k1*u[2]+k2*w[2]]);}
+function sep(a,b){var u=unit(a[0],a[1]),w=unit(b[0],b[1]);
+  var dot=Math.max(-1,Math.min(1,u[0]*w[0]+u[1]*w[1]+u[2]*w[2]));
+  return Math.acos(dot)*180/Math.PI*3600;}
+function ease(t){ return t<0.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2; }
+function legPoints(i){var p=TOUR.stops; return [p[i%p.length], p[(i+1)%p.length]];}
+
+// galactic readout, since the view is in galactic coordinates
+function gal(ra,dec){
+  var d2r=Math.PI/180, ag=192.85948*d2r, dg=27.12825*d2r, lncp=122.93192*d2r;
+  var a=ra*d2r, d=dec*d2r;
+  var sb=Math.sin(dg)*Math.sin(d)+Math.cos(dg)*Math.cos(d)*Math.cos(a-ag);
+  var b=Math.asin(Math.max(-1,Math.min(1,sb)));
+  var y=Math.cos(d)*Math.sin(a-ag);
+  var x=Math.cos(dg)*Math.sin(d)-Math.sin(dg)*Math.cos(d)*Math.cos(a-ag);
+  var l=(lncp-Math.atan2(y,x))/d2r; l=((l%360)+360)%360; if(l>180){l-=360;}
+  return [l, b/d2r];
+}
+function say(label, ra, dec){
+  if(!SHOWLABEL){ return; }
+  var g=gal(ra,dec);
+  document.getElementById('where').innerHTML =
+    (label ? '<b>'+label+'</b> &nbsp; ' : '') +
+    '<span>l = '+(g[0]>=0?'+':'')+g[0].toFixed(3)+'&deg;, b = '+(g[1]>=0?'+':'')+g[1].toFixed(3)+'&deg;</span>';
+}
+
+
+
+function step(now){
+  requestAnimationFrame(step);
+  if(!aladin || !TOUR){ return; }
+  if(last===null){ last=now; t0=now; }
+  var dt=Math.min(0.25,(now-last)/1000); last=now;
+
+  if(phase==='hold'){
+    if((now-t0)/1000 >= HOLD){ phase='zoom'; t0=now; }
+    return;
+  }
+  if(phase==='zoom'){
+    var u=Math.min(1,(now-t0)/1000/ZOOM), e=ease(u);
+    aladin.setFoV(FOV0*Math.pow(FOV1/FOV0, e));          // geometric: constant zoom rate
+    var tgt=TOUR.stops[leg] || TOUR.stops[0];
+    var p=slerp(startPos,[tgt.ra,tgt.dec],e);
+    aladin.gotoRaDec(p[0],p[1]);
+    say('the JWST Galactic Center Treasury Survey', p[0], p[1]);
+    if(u>=1){ phase='pan'; along=0; }
+    return;
+  }
+
+  // ---- the release page's pan, unchanged in substance -------------------
+  var ends=legPoints(leg);
+  for(var guard=0; ends[0].jump && guard<TOUR.stops.length; guard++){
+    leg=(leg+1)%TOUR.stops.length; along=0; ends=legPoints(leg);
+  }
+  if(ends[0].jump){ return; }
+  var span=sep([ends[0].ra,ends[0].dec],[ends[1].ra,ends[1].dec]);
+  if(span<1e-6){ leg=(leg+1)%TOUR.stops.length; along=0; return; }
+  along += ((RATE||TOUR.rate)*dt)/span;
+  while(along>=1){
+    along-=1; leg=(leg+1)%TOUR.stops.length; ends=legPoints(leg);
+    for(var g2=0; ends[0].jump && g2<TOUR.stops.length; g2++){
+      leg=(leg+1)%TOUR.stops.length; along=0; ends=legPoints(leg);
+    }
+    if(ends[0].jump){ return; }
+    span=sep([ends[0].ra,ends[0].dec],[ends[1].ra,ends[1].dec]);
+    if(span<1e-6){ along=0; break; }
+  }
+  var q=slerp([ends[0].ra,ends[0].dec],[ends[1].ra,ends[1].dec],along);
+  aladin.gotoRaDec(q[0],q[1]);
+  say((along<0.5?ends[0]:ends[1]).label, q[0], q[1]);
+}
+
+function boot(){
+  startPos=[START_RA, START_DEC];
+  leg = (START_LEG >= 0 && START_LEG < TOUR.stops.length) ? START_LEG : 0;
+  while(TOUR.stops[leg].jump){ leg=(leg+1)%TOUR.stops.length; }
+  A.init.then(function(){
+    // NOTE: do NOT rely on the `target` option here.  With cooFrame:'galactic'
+    // Aladin parses that string as galactic l/b, so an ICRS "ra dec" pair silently
+    // points somewhere else entirely and the view opens on blank sky.  gotoRaDec()
+    // is always ICRS, so the explicit call below is what actually sets the center.
+    aladin=A.aladin('#sky', {survey:TOUR.survey, fov:FOV0, cooFrame:'galactic',
+      showLayersControl:false, showFullscreenControl:false, showCooGridControl:false,
+      showProjectionControl:false, showZoomControl:false, showGotoControl:false,
+      showSimbadPointerControl:false, showContextMenu:false, showReticle:false,
+      showFrame:false, showCooLocation:false});
+    aladin.gotoRaDec(startPos[0], startPos[1]);
+    aladin.setFoV(FOV0);
+    say('the whole survey', startPos[0], startPos[1]);
+    requestAnimationFrame(step);
+  }).catch(function(err){
+    document.getElementById('where').textContent='Aladin Lite failed to load: '+err;
+  });
+}
+
+fetch('https://starformation.astro.ufl.edu/jwst-gc/slow_panner_tour.json',{cache:'no-cache'})
+  .then(function(r){ if(!r.ok){throw new Error('HTTP '+r.status);} return r.json(); })
+  .then(function(d){ TOUR=d; boot(); })
+  .catch(function(){ TOUR=FALLBACK; boot(); });
+</script>
+</body></html>

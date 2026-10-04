@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JWST tour of the Galactic Center (CMZ)</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/lib/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style>
+      body, .reveal, .reveal .slide-background, .slides section { background: #000 !important; }
+      /* The canvas image fills the slide; transform-origin at top-left so
+         percentage translations resolve cleanly. The viewport (slide) clips
+         everything outside via `overflow: hidden` on the slide. */
+      .reveal .slides section.frame {
+          padding: 0; height: 100%;
+          overflow: hidden;
+      }
+      .reveal .slides section.frame img.canvas-img {
+          position: absolute; left: 0; top: 0;
+          width: 100%; height: 100%;
+          transform-origin: 0 0;
+          will-change: transform;
+          border: none; box-shadow: none;
+          image-rendering: auto;
+      }
+      .frame-title {
+          position: absolute; left: 4%; top: 4%;
+          color: rgba(255,255,255,0.92);
+          font-family: 'Lato', sans-serif; font-size: 70%;
+          text-shadow: 0 0 6px black, 0 0 8px black;
+          pointer-events: none;
+          z-index: 5;
+      }
+      .caption {
+        position: absolute; left: 0; right: 0; bottom: 4%;
+        text-align: center; color: rgba(255,255,255,0.85);
+        font-family: 'Lato', sans-serif; font-size: 60%;
+        text-shadow: 0 0 6px black, 0 0 8px black;
+        pointer-events: none;
+        z-index: 5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides" id="slides-root">
+        <!-- Title slide -->
+        <section>
+          <h3>JWST tour of the Galactic Center</h3>
+          <div class=smaller>
+            JWST CMZ coadd composited over the MeerKAT+Spitzer color image
+            (Ashley Barnes). Tour path adapted from the
+            <a href="https://github.com/keflavich/talks">ACES Aladin tour</a>.
+          </div>
+          <br><br>
+          <div class=smaller2 style="text-align:left; max-width:60%; margin:0 auto;">
+            <ul>
+              <li> <b>→</b> starts the tour. Each waypoint dwells for its
+                   <code>pause_time</code>; reveal pan/zoom-tweens to the
+                   next over its <code>transition_time</code>.
+              <li> <b>space</b>/<b>a</b> pauses or resumes auto-advance.
+              <li> Edit <code>assets/CMZ_tour/waypoints_cmz_jwst.json</code>
+                   then rerun <code>assets/CMZ_tour/make_cmz_animation.py</code>.
+            </ul>
+          </div>
+        </section>
+        <!-- Pan/zoom keystone sections injected by JS below from frames_manifest.js -->
+      </div>
+    </div>
+
+    <script src="reveal/dist/reveal.js"></script>
+    <script src="reveal/plugin/highlight/highlight.js"></script>
+    <!-- Manifest written by make_cmz_animation.py; sets window.CMZ_TOUR_MANIFEST. -->
+    <script src="assets/CMZ_tour/frames_manifest.js"></script>
+    <script>
+      // Build one section per keystone. Every section embeds the SAME
+      // canvas image with shared data-id="cmz-canvas"; the only thing that
+      // differs is the per-section CSS transform that pans/zooms into the
+      // canvas. Reveal's data-auto-animate framework smoothly tweens the
+      // transform between sections, producing a continuous pan-zoom tour.
+      (function () {
+        const root = document.getElementById('slides-root');
+        const manifest = window.CMZ_TOUR_MANIFEST;
+        if (!manifest) {
+          const warn = document.createElement('section');
+          warn.innerHTML = '<h3>No canvas yet</h3><div class=smaller>Run '
+            + '<code>python3 assets/CMZ_tour/make_cmz_animation.py</code> first.</div>';
+          root.appendChild(warn);
+          Reveal.initialize({controls:false, progress:false, history:true, theme:false});
+          return;
+        }
+
+        const easing = 'cubic-bezier(0.770, 0.000, 0.175, 1.000)';
+        const canvasSrc = 'assets/CMZ_tour/' + manifest.canvas;
+
+        manifest.frames.forEach((f, i) => {
+          const sec = document.createElement('section');
+          sec.className = 'frame';
+          sec.setAttribute('data-auto-animate', '');
+          sec.setAttribute('data-auto-animate-duration', String(f.transition_time));
+          sec.setAttribute('data-auto-animate-easing', easing);
+          sec.setAttribute('data-autoslide', String(f.pause_time));
+          sec.setAttribute('data-background-color', '#000000');
+          sec.innerHTML =
+            '<img class="canvas-img" data-id="cmz-canvas" src="' + canvasSrc + '"'
+            + ' style="transform: ' + f.transform + ';">'
+            + (f.title ? '<div class="frame-title">' + f.title + '</div>' : '');
+          if (i === manifest.frames.length - 1) {
+            sec.removeAttribute('data-autoslide');
+            sec.innerHTML +=
+              '<div class="caption">JWST + MeerKAT/Spitzer · '
+              + 'jwst_cmz_hips over rgb_final_uncropped_hips</div>';
+          }
+          root.appendChild(sec);
+        });
+        console.log('cmz_tour: built', manifest.frames.length,
+                    'pan-zoom sections over', canvasSrc);
+
+        Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          keyboard: true,
+          touch: true,
+          overview: true,
+          mouseWheel: false,
+          width: 1024,
+          height: 768,
+          maxScale: 10,
+          margin: 0.0,
+          pdfMaxPagesPerSlide: 1,
+          theme: false,
+          transition: 'none',
+          autoSlide: 0,                 // per-section data-autoslide drives pacing
+          autoSlideStoppable: true,
+          loop: false,
+          plugins: [ RevealHighlight ],
+        });
+
+        // Forward-only data-autoslide: track the last user navigation
+        // direction via keydown (capture phase) and prev/next-control
+        // clicks; in slidechanged force autoslide off when the user just
+        // went backward, on when forward. Use the explicit override form
+        // of toggleAutoSlide — the no-arg form just toggles, which
+        // silently flips state on the first slidechange.
+        let lastDirection = 'forward';
+        const backKeys = new Set(['ArrowLeft','ArrowUp','PageUp','Home','h','k']);
+        const fwdKeys  = new Set(['ArrowRight','ArrowDown','PageDown','End','l','j',' ','Enter','Spacebar']);
+        document.addEventListener('keydown', function (e) {
+          if (backKeys.has(e.key)) lastDirection = 'backward';
+          else if (fwdKeys.has(e.key)) lastDirection = 'forward';
+        }, true);
+        document.addEventListener('click', function (e) {
+          if (e.target.closest('.navigate-left, .navigate-up')) lastDirection = 'backward';
+          else if (e.target.closest('.navigate-right, .navigate-down')) lastDirection = 'forward';
+        }, true);
+        Reveal.on('slidechanged', function () {
+          Reveal.toggleAutoSlide(lastDirection === 'forward');
+        });
+      })();
+    </script>
+  </body>
+</html>

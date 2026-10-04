@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>What shape is the CMZ?</title>
+<!--
+  ============================================================================================
+  The #cmz-what-shape slide of colloquium_2026_cfa.html.  Replaces cmz_topdown_hypotheses.html
+  (kept in this directory, unused) after "the data and points are confusing ... start with the
+  Edenhofer dust map, zoom out to the whole galaxy, overlay a ring, spiral arms and disk
+  morphology ... we're showing clouds, not stars - so not points, fuzzes".
+
+  PHASES (the deck steps them with empty fragments; standalone, it plays them in order):
+    0  local    REAL DATA: Edenhofer+ 2024 3D dust, top down, +-1.25 kpc around the Sun
+    1  galaxy   zoom out: that map is a small patch of the Galaxy (schematic gas disk on the
+                Reid+ 2019 arm fits; see make_cmz_shape_layers.py for exactly what is real)
+    2  gc       fly to the Galactic Center.  Each cloud is a streak along the line of sight --
+                its sky position is known, its depth is not -- plus the edge-on view "from the
+                Sun" underneath and a "?"
+    3  ring     the clouds settle into a ring
+    4  spiral   ... slide to two spiral arms
+    5  disk     ... slide to a filled disk
+    6  verdict  all three side by side, each above its own view from the Sun
+
+  THE CONSTRUCTION, and what it does and does not claim: every cloud has ONE sky position (x)
+  and ONE height (z), shared by all three shapes.  The shapes differ ONLY in depth (y), so
+  between phases 2 and 5 clouds move strictly up and down the screen and the edge-on strip
+  never changes.  That is a statement about what an IMAGE constrains -- sky positions, not depth
+  -- and it is true by construction.  It is NOT a claim that the published models are
+  indistinguishable: they also differ in line-of-sight velocity, which is why the l-v data have
+  been fit by a ring (Molinari+ 2011), spiral arms (Sofue 1995; Ridley+ 2017) and orbits that are
+  neither.  Say "the image cannot tell you the depth", not "the data cannot tell them apart".
+
+  FRAME: pc, seen from the north Galactic pole, GC at (0, 0) and up, Sun at (0, -R0), Galactic
+  longitude increasing to the LEFT -- so the edge-on strip is oriented like any l-b image of the
+  CMZ (l increasing left).  R0 = 8.15 kpc, the value the Reid+ 2019 arm fits assume.
+
+  URL PARAMETERS:
+    ?embed=1    deck mode: no autoplay, wait for window.cmzGoto(phase, animate)
+    ?stage=N    land on phase N, static
+    ?speed=1    >1 is faster
+  The deck calls window.cmzGoto(p, true) for a one-step-forward fragment and
+  window.cmzGoto(p, false) for anything else (backward, jumps, arriving on the slide).
+  ============================================================================================
+-->
+<style>
+  html, body { margin:0; padding:0; background:#000; overflow:hidden; }
+  body { color:#e8ecf4; font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  #stage { position:relative; width:1000px; height:670px; }
+  #cv { position:absolute; left:0; top:0; width:1000px; height:670px; }
+  #cap { position:absolute; left:16px; top:12px; width:282px; font-size:27px; line-height:1.22;
+         transition:opacity .2s ease-in-out; }
+  #cap .cite { display:block; margin-top:9px; font-size:16px; line-height:1.32; color:#9aa3b5; }
+  #cap .hl { color:#ffd166; font-size:21px; }
+  body:not(.embed) #stage { cursor:pointer; }
+</style>
+</head>
+<body>
+<div id=stage>
+  <canvas id=cv width=2000 height=1340></canvas>
+  <div id=cap></div>
+</div>
+<script>
+(function(){
+"use strict";
+
+const q = new URLSearchParams(location.search);
+const EMBED = q.get('embed') === '1' || q.get('embed') === 'true';
+const STAGE = q.get('stage') === null ? null : parseInt(q.get('stage'), 10);
+const SPEED = Math.max(0.2, parseFloat(q.get('speed') || '1'));
+if (EMBED) document.body.classList.add('embed');
+
+const W = 1000, H = 670, DPR = 2;
+const AX = 625, AY = 335;                // screen anchor of the camera center
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+const capEl = document.getElementById('cap');
+
+const R0 = 8150;                         // pc, Sun - GC
+const DUST_HALF = 1250;                  // shape_local_dust.jpg: +-1250 pc around the Sun
+const GAL_HALF = 18000;                  // shape_galaxy_gas.jpg: +-18 kpc around the GC
+
+const imgDust = new Image(), imgGal = new Image();
+imgDust.src = 'shape_local_dust.jpg';
+imgGal.src = 'shape_galaxy_gas.jpg';
+let ready = false;
+
+// ---------------------------------------------------------------------------------------
+// deterministic RNG: identical scene every load
+// ---------------------------------------------------------------------------------------
+let seed = 20261004;
+function rnd(){ seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }
+function gauss(){ return Math.sqrt(-2 * Math.log(rnd() + 1e-12)) * Math.cos(2 * Math.PI * rnd()); }
+
+// ---------------------------------------------------------------------------------------
+// The CMZ clouds.  x (sky) and z (height) are fixed per cloud; y (depth) depends on the shape.
+// ---------------------------------------------------------------------------------------
+const R_SKY = 130;                       // pc: half-extent on the sky, the same for every shape
+const STREAK = 150;                      // pc: half-length of the "depth unknown" streak
+const clouds = [];
+(function(){
+  for (let i = 0; i < 230; i++){
+    const u = rnd();
+    // a mix of uniform and limb-brightened, so a ring, a disk and spiral arms all fill in
+    let x = (rnd() < 0.3 ? Math.sin(Math.PI * (u - 0.5)) : 2 * u - 1) * R_SKY * 0.97;
+    clouds.push({ x: x, z: gauss() * 9, r: 4 + 5.5 * Math.pow(rnd(), 1.5),
+                  m: Math.exp(0.55 * gauss()) * (x < 0 ? 1.15 : 0.9),
+                  sgn: rnd() < 0.5 ? -1 : 1, ud: 2 * rnd() - 1, jy: gauss() * 5, pick: rnd() });
+  }
+  // one big, bright cloud at positive longitude: most of the CMZ's dense gas is on that side
+  clouds.push({ x: -92, z: -3, r: 11, m: 2.6, sgn: -1, ud: -0.35, jy: 0, pick: 0.3 });
+})();
+
+// two log-spiral arms, trailing for the Galaxy's clockwise (on screen) rotation, sampled
+// uniformly in radius, then scaled so their sky extent is R_SKY like the other shapes
+const ARM = (function(){
+  const psi = 20 * Math.PI / 180, Rin = 22, Rout = 150, rot = 0.55, K = 1400, pts = [];
+  for (let a = 0; a < 2; a++){
+    for (let k = 0; k <= K; k++){
+      const R = Rin + (Rout - Rin) * k / K;
+      const ang = rot + a * Math.PI + Math.log(R / Rin) / Math.tan(psi);
+      pts.push([R * Math.cos(ang), R * Math.sin(ang)]);
+    }
+  }
+  let mx = 0; pts.forEach(function(p){ mx = Math.max(mx, Math.abs(p[0])); });
+  const s = R_SKY / mx;
+  pts.forEach(function(p){ p[0] *= s; p[1] *= s; });
+  return pts;
+})();
+
+function ySpiral(c){
+  const cand = [];
+  for (let k = 0; k < ARM.length; k++) if (Math.abs(ARM[k][0] - c.x) < 1.2) cand.push(ARM[k][1]);
+  if (!cand.length){
+    let best = 1e9, by = 0;
+    ARM.forEach(function(p){ const d = Math.abs(p[0] - c.x); if (d < best){ best = d; by = p[1]; } });
+    return by;
+  }
+  return cand[Math.floor(c.pick * cand.length)] + c.jy * 0.6;
+}
+
+// shape index: 0 unknown (streaks), 1 ring, 2 spiral arms, 3 disk
+const Y = [[], [], [], []];
+const LEN = [STREAK, 0, 0, 0];
+clouds.forEach(function(c){
+  const half = Math.sqrt(Math.max(0, R_SKY * R_SKY - c.x * c.x));
+  Y[0].push(0);
+  Y[1].push(c.sgn * half + c.jy);
+  Y[2].push(ySpiral(c));
+  Y[3].push(c.ud * half * 0.97);
+});
+
+// one soft Gaussian sprite, warm, drawn additively: the "fuzz" every cloud is made of
+const SPRITE = (function(){
+  const n = 64, c = document.createElement('canvas');
+  c.width = c.height = n;
+  const g = c.getContext('2d');
+  const gr = g.createRadialGradient(n / 2, n / 2, 0, n / 2, n / 2, n / 2);
+  for (let k = 0; k <= 12; k++){
+    const t = k / 12;                                       // radius / (3 sigma)
+    gr.addColorStop(t, 'rgba(255,150,70,' + Math.exp(-0.5 * 9 * t * t).toFixed(4) + ')');
+  }
+  g.fillStyle = gr; g.fillRect(0, 0, n, n);
+  return c;
+})();
+
+// ---------------------------------------------------------------------------------------
+// State, views, phases
+// ---------------------------------------------------------------------------------------
+const VIEW = {
+  local:  { cx: 0, cy: -R0, s: 0.256 },
+  galaxy: { cx: 0, cy: 0, s: 0.0205 },
+  gc:     { cx: 0, cy: -49, s: 1.7 }          // puts the GC at screen y ~ 252
+};
+const NPHASE = 7;
+function target(p){
+  const t = { galaxy: 0, dust: 0, annot: 0, sun: 0, cmz: 0, strip: 0, qm: 0, trip: 0,
+              shA: 0, shB: 0, mt: 0 };
+  switch (p){
+    case 0: return Object.assign(t, VIEW.local, { dust: 1, sun: 1 });
+    case 1: return Object.assign(t, VIEW.galaxy, { galaxy: 1, dust: 1, annot: 1, sun: 1, cmz: 1 });
+    case 2: return Object.assign(t, VIEW.gc, { cmz: 1, strip: 1, qm: 1 });
+    case 3: return Object.assign(t, VIEW.gc, { cmz: 1, strip: 1, shA: 1, shB: 1 });
+    case 4: return Object.assign(t, VIEW.gc, { cmz: 1, strip: 1, shA: 2, shB: 2 });
+    case 5: return Object.assign(t, VIEW.gc, { cmz: 1, strip: 1, shA: 3, shB: 3 });
+    default: return Object.assign(t, VIEW.gc, { trip: 1, shA: 3, shB: 3 });
+  }
+}
+// forward transitions: duration, per-key [start, end] windows (fractions), a camera anchor in
+// world pc whose SCREEN position moves in a straight line while the scale changes
+// geometrically (so a zoom never swings the thing you are zooming to off-screen), and for
+// the shape changes the pair of shapes to morph between
+const TRANS = {
+  0: { dur: 2600, anchor: [0, -R0], win: { cam: [0, 1], galaxy: [0.12, 0.7], annot: [0.75, 1], cmz: [0.6, 1] } },
+  1: { dur: 2800, anchor: [0, 0], win: { cam: [0, 1], galaxy: [0.22, 0.62], dust: [0, 0.45], annot: [0, 0.2],
+                                         sun: [0, 0.2], strip: [0.82, 1], qm: [0.82, 1] } },
+  2: { dur: 1600, morph: [0, 1], win: { qm: [0, 0.3], mt: [0.12, 1] } },
+  3: { dur: 1500, morph: [1, 2], win: { mt: [0, 1] } },
+  4: { dur: 1500, morph: [2, 3], win: { mt: [0, 1] } },
+  5: { dur: 800, win: { trip: [0.2, 1], cmz: [0, 0.6], strip: [0, 0.6] } }
+};
+const CAPS = [
+  'Our neighborhood, mapped in 3D' +
+    '<span class=cite>dust within 1.25 kpc of the Sun, seen from above: Edenhofer+ 2024</span>',
+  'That map covers this small patch of the Galaxy' +
+    '<span class=cite>gas clouds on spiral-arm fits to maser parallaxes (Reid+ 2019), faded where ' +
+    'extrapolated; bar lanes schematic</span>',
+  'At the Galactic Center we measure where clouds are on the sky &mdash; but not their depth' +
+    '<span class=cite>schematic clouds</span>',
+  'A ring?<span class=cite>e.g. Molinari+ 2011</span>',
+  'Two spiral arms?<span class=cite>e.g. Sofue 1995; Ridley+ 2017</span>',
+  'A filled disk?<span class=cite>same sky positions in every shape: only the depth changes</span>',
+  'Three shapes, one view from the Sun: depth is the missing axis' +
+    '<span class="cite hl">Roman proper motions can supply it.</span>'
+];
+
+const S = target(0);
+let cur = 0;
+
+// ---------------------------------------------------------------------------------------
+// Drawing
+// ---------------------------------------------------------------------------------------
+function sx(x){ return AX + (x - S.cx) * S.s; }
+function sy(y){ return AY - (y - S.cy) * S.s; }
+function lerp(a, b, f){ return a + (b - a) * f; }
+
+function font(px, w){ return (w || 600) + ' ' + px + 'px -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif'; }
+
+function drawImages(){
+  ctx.globalCompositeOperation = 'lighter';
+  if (S.galaxy > 0.002){
+    ctx.globalAlpha = S.galaxy;
+    const x0 = sx(-GAL_HALF), y0 = sy(GAL_HALF), w = 2 * GAL_HALF * S.s;
+    ctx.drawImage(imgGal, x0, y0, w, w);
+  }
+  if (S.dust > 0.002){
+    ctx.globalAlpha = S.dust;
+    const x0 = sx(-DUST_HALF), y0 = sy(-R0 + DUST_HALF), w = 2 * DUST_HALF * S.s;
+    ctx.drawImage(imgDust, x0, y0, w, w);
+  }
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = 'source-over';
+}
+
+function drawSun(a){
+  if (a <= 0.002) return;
+  const X = sx(0), Yp = sy(-R0);
+  ctx.globalAlpha = a;
+  ctx.strokeStyle = '#ffd166'; ctx.fillStyle = '#ffd166'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.arc(X, Yp, 7, 0, 2 * Math.PI); ctx.stroke();
+  ctx.beginPath(); ctx.arc(X, Yp, 2, 0, 2 * Math.PI); ctx.fill();
+  ctx.font = font(16); ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  ctx.fillText('Sun', X + 12, Yp + 1);
+  ctx.globalAlpha = 1;
+}
+
+function drawAnnot(a){
+  if (a <= 0.002) return;
+  ctx.globalAlpha = a;
+  const sunX = sx(0), sunY = sy(-R0), gcX = sx(0), gcY = sy(0);
+  // the 3D-mapped patch
+  ctx.strokeStyle = 'rgba(160,220,255,0.95)'; ctx.lineWidth = 1.6;
+  ctx.beginPath(); ctx.arc(sunX, sunY, DUST_HALF * S.s, 0, 2 * Math.PI); ctx.stroke();
+  ctx.font = font(16); ctx.fillStyle = 'rgba(160,220,255,0.95)';
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+  ctx.fillText('mapped in 3D', sunX - DUST_HALF * S.s - 8, sunY);
+  // Sun -> GC
+  ctx.setLineDash([5, 5]); ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.lineWidth = 1.2;
+  ctx.beginPath(); ctx.moveTo(sunX, sunY - DUST_HALF * S.s - 3); ctx.lineTo(gcX, gcY + 9); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = 'rgba(255,255,255,0.8)'; ctx.textAlign = 'left';
+  ctx.fillText('8 kpc', sunX + 7, (sunY + gcY) / 2 + 22);
+  ctx.font = font(18); ctx.fillStyle = '#ffffff';
+  ctx.fillText('Galactic Center', gcX + 16, gcY + 16);     // lower right: clear of the bar lanes
+  ctx.globalAlpha = 1;
+}
+
+// clouds in the top-down view; streaks while the depth is unknown
+function drawClouds(a){
+  if (a <= 0.002) return;
+  const yA = Y[S.shA], yB = Y[S.shB], L = lerp(LEN[S.shA], LEN[S.shB], S.mt);
+  const Lpx = L * S.s, fade = Math.min(1, 0.25 + S.s / 0.5);
+  ctx.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < clouds.length; i++){
+    const c = clouds[i];
+    const X = sx(c.x), Yp = sy(lerp(yA[i], yB[i], S.mt));
+    const rpx = Math.max(1.4, 3 * c.r * S.s);
+    ctx.globalAlpha = Math.min(1, a * fade * 0.30 * c.m * c.r / (c.r + 0.45 * L));
+    ctx.drawImage(SPRITE, X - rpx, Yp - rpx - Lpx, 2 * rpx, 2 * rpx + 2 * Lpx);
+  }
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = 'source-over';
+}
+
+// the edge-on view from the Sun: x and z only, so it is the same for every shape
+const STRIP = { x0: 335, x1: 915, y0: 500, y1: 662 };
+function drawStrip(a){
+  if (a <= 0.002) return;
+  ctx.globalAlpha = a;
+  ctx.fillStyle = '#000';
+  ctx.fillRect(STRIP.x0, STRIP.y0, STRIP.x1 - STRIP.x0, STRIP.y1 - STRIP.y0);
+  ctx.strokeStyle = 'rgba(150,160,185,0.55)'; ctx.lineWidth = 1;
+  ctx.strokeRect(STRIP.x0 + 0.5, STRIP.y0 + 0.5, STRIP.x1 - STRIP.x0 - 1, STRIP.y1 - STRIP.y0 - 1);
+  ctx.font = font(15); ctx.fillStyle = '#c9b8ff'; ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+  ctx.fillText('what we see from the Sun: positions on the sky', STRIP.x0 + 10, STRIP.y0 + 8);
+  stripClouds(sx(0), (STRIP.y0 + STRIP.y1) / 2 + 10, S.s, a);
+  // the depth axis nobody has measured
+  const xa = 950, ya0 = 40, ya1 = 470;
+  ctx.globalAlpha = a;
+  ctx.strokeStyle = '#ffd166'; ctx.fillStyle = '#ffd166'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(xa, ya0 + 10); ctx.lineTo(xa, ya1 - 10); ctx.stroke();
+  [[ya0, 1], [ya1, -1]].forEach(function(e){
+    ctx.beginPath(); ctx.moveTo(xa, e[0]); ctx.lineTo(xa - 7, e[0] + 13 * e[1]);
+    ctx.lineTo(xa + 7, e[0] + 13 * e[1]); ctx.closePath(); ctx.fill();
+  });
+  ctx.save(); ctx.translate(xa + 18, (ya0 + ya1) / 2); ctx.rotate(-Math.PI / 2);
+  ctx.font = font(16); ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText('depth along our line of sight: not measured', 0, 0);
+  ctx.restore();
+  ctx.globalAlpha = 1;
+}
+
+function stripClouds(cx0, cy0, s, a){
+  ctx.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < clouds.length; i++){
+    const c = clouds[i];
+    const rpx = Math.max(1.4, 3 * c.r * s);
+    ctx.globalAlpha = Math.min(1, a * 0.16 * c.m);
+    ctx.drawImage(SPRITE, cx0 + c.x * s - rpx, cy0 - c.z * s - rpx, 2 * rpx, 2 * rpx);
+  }
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = 'source-over';
+}
+
+function drawQMark(a){
+  if (a <= 0.002) return;
+  ctx.globalAlpha = a * 0.92;
+  ctx.font = '700 250px Georgia, serif';
+  ctx.fillStyle = '#ffd166'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText('?', sx(0), sy(0) + 8);
+  ctx.globalAlpha = 1;
+}
+
+function drawScaleBar(a){
+  if (a <= 0.002) return;
+  const nice = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
+  let L = nice[0];
+  nice.forEach(function(v){ if (v * S.s <= 170) L = v; });
+  const len = L * S.s, x1 = 975, x0 = x1 - len, yb = 34;
+  ctx.globalAlpha = a;
+  ctx.strokeStyle = '#d8dde8'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(x0, yb); ctx.lineTo(x1, yb);
+  ctx.moveTo(x0, yb - 5); ctx.lineTo(x0, yb + 5); ctx.moveTo(x1, yb - 5); ctx.lineTo(x1, yb + 5); ctx.stroke();
+  ctx.font = font(15); ctx.fillStyle = '#d8dde8'; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+  ctx.fillText(L >= 1000 ? (L / 1000) + ' kpc' : L + ' pc', (x0 + x1) / 2, yb - 7);
+  ctx.globalAlpha = 1;
+}
+
+// the verdict: three shapes side by side, each above its own (identical) view from the Sun
+const TRIP = { xs: [418, 640, 862], yc: 262, s: 0.8, names: ['ring', 'spiral arms', 'disk'] };
+function drawTrip(a){
+  if (a <= 0.002) return;
+  for (let k = 0; k < 3; k++){
+    const cx0 = TRIP.xs[k], ys = Y[k + 1];
+    ctx.globalCompositeOperation = 'lighter';
+    for (let i = 0; i < clouds.length; i++){
+      const c = clouds[i];
+      const rpx = Math.max(1.4, 3 * c.r * TRIP.s);
+      ctx.globalAlpha = Math.min(1, a * 0.30 * c.m);
+      ctx.drawImage(SPRITE, cx0 + c.x * TRIP.s - rpx, TRIP.yc - ys[i] * TRIP.s - rpx, 2 * rpx, 2 * rpx);
+    }
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = a;
+    ctx.font = font(22); ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(TRIP.names[k], cx0, 112);
+    // its view from the Sun
+    const bx0 = cx0 - 112, bx1 = cx0 + 112, by0 = 448, by1 = 518;
+    ctx.fillStyle = '#000'; ctx.fillRect(bx0, by0, bx1 - bx0, by1 - by0);
+    ctx.strokeStyle = 'rgba(150,160,185,0.55)'; ctx.lineWidth = 1;
+    ctx.strokeRect(bx0 + 0.5, by0 + 0.5, bx1 - bx0 - 1, by1 - by0 - 1);
+    ctx.font = font(14); ctx.fillStyle = '#c9b8ff';
+    ctx.fillText('↓ seen from the Sun', cx0, by0 - 14);
+    stripClouds(cx0, (by0 + by1) / 2, TRIP.s, a);
+  }
+  ctx.globalAlpha = 1;
+}
+
+function draw(){
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, W, H);
+  if (!ready) return;
+  drawImages();
+  drawAnnot(S.annot);
+  drawSun(S.sun * (1 - S.annot) + S.annot);
+  drawClouds(S.cmz);
+  drawQMark(S.qm);
+  drawStrip(S.strip);
+  drawScaleBar(1 - S.trip);
+  drawTrip(S.trip);
+}
+
+// ---------------------------------------------------------------------------------------
+// Transitions
+// ---------------------------------------------------------------------------------------
+function ease(t){ return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+function clamp01(t){ return t < 0 ? 0 : t > 1 ? 1 : t; }
+
+let token = 0;
+function setCaption(p){
+  capEl.style.opacity = 0;
+  const my = token;
+  setTimeout(function(){ if (my !== token) return; capEl.innerHTML = CAPS[p]; capEl.style.opacity = 1; }, 140);
+}
+function setCaptionNow(p){ capEl.innerHTML = CAPS[p]; capEl.style.opacity = 1; }
+
+function screenOf(view, P){
+  return [AX + (P[0] - view.cx) * view.s, AY - (P[1] - view.cy) * view.s];
+}
+
+function animate(from, to){
+  const my = ++token;
+  const spec = TRANS[from];
+  const A = target(from), B = target(to);
+  if (spec.morph){ A.shA = B.shA = spec.morph[0]; A.shB = B.shB = spec.morph[1]; A.mt = 0; B.mt = 1; }
+  const pA = spec.anchor ? screenOf(A, spec.anchor) : null;
+  const pB = spec.anchor ? screenOf(B, spec.anchor) : null;
+  setCaption(to);
+  const dur = spec.dur / SPEED, t0 = performance.now();
+  return new Promise(function(resolve){
+    (function step(now){
+      if (my !== token){ resolve(false); return; }
+      const t = clamp01((now - t0) / dur);
+      Object.keys(A).forEach(function(k){
+        if (k === 'cx' || k === 'cy' || k === 's') return;
+        const w = spec.win[k] || [0, 1];
+        S[k] = lerp(A[k], B[k], ease(clamp01((t - w[0]) / (w[1] - w[0]))));
+      });
+      const wc = spec.win.cam || [0, 1];
+      const fc = ease(clamp01((t - wc[0]) / (wc[1] - wc[0])));
+      S.s = A.s * Math.pow(B.s / A.s, fc);
+      if (pA){
+        const px = lerp(pA[0], pB[0], fc), py = lerp(pA[1], pB[1], fc);
+        S.cx = spec.anchor[0] - (px - AX) / S.s;
+        S.cy = spec.anchor[1] - (AY - py) / S.s;
+      } else { S.cx = lerp(A.cx, B.cx, fc); S.cy = lerp(A.cy, B.cy, fc); }
+      draw();
+      if (t < 1) requestAnimationFrame(step);
+      else { Object.assign(S, target(to)); draw(); resolve(true); }
+    })(t0);
+  });
+}
+
+function goto(p, anim){
+  p = Math.max(0, Math.min(NPHASE - 1, p | 0));
+  if (anim && p === cur + 1 && TRANS[cur]){
+    const from = cur; cur = p;
+    return animate(from, p);
+  }
+  token++;
+  cur = p;
+  Object.assign(S, target(p));
+  setCaptionNow(p);
+  draw();
+  return Promise.resolve(true);
+}
+
+window.cmzGoto = goto;
+window.cmzPhase = function(){ return cur; };
+
+// standalone: play the phases in order; click to restart
+let tourId = 0;
+async function tour(){
+  const me = ++tourId;
+  goto(0, false);
+  for (let p = 1; p < NPHASE; p++){
+    await new Promise(function(r){ setTimeout(r, 2200 / SPEED); });
+    if (me !== tourId) return;
+    await goto(p, true);
+    if (me !== tourId) return;
+  }
+}
+if (!EMBED) document.getElementById('stage').addEventListener('click', function(){ tour(); });
+
+Promise.all([imgDust.decode(), imgGal.decode()]).catch(function(){}).then(function(){
+  ready = true;
+  if (STAGE !== null) goto(STAGE, false);
+  else if (!EMBED) tour();
+  else goto(cur, false);
+  // tell the deck we are ready, so it can put us on whatever fragment it is showing
+  try { if (window.parent !== window && window.parent.cmzShapeSync) window.parent.cmzShapeSync(); } catch (e) {}
+});
+setCaptionNow(0);
+draw();
+})();
+</script>
+</body>
+</html>

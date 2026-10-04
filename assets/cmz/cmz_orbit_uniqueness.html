@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why orbits map uniquely to location in the Galactic Center</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#12161f; --ink:#e8ecf4; --dim:#93a0b4; --accent:#ffd166;
+    --blue:#3b82f6; --red:#ef4444; --line:#2a3040;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    padding:22px 22px 40px;
+  }
+  h1{font-size:1.35rem; margin:0 0 4px; font-weight:600;}
+  .sub{color:var(--dim); font-size:0.92rem; margin:0 0 18px; max-width:900px; line-height:1.5;}
+  .layout{display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start;}
+  .colcanvas{flex:0 0 auto;}
+  .controls{
+    flex:1 1 260px; min-width:240px; background:var(--panel); border:1px solid var(--line);
+    border-radius:10px; padding:16px 18px;
+  }
+  .controls h2{font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--dim); margin:0 0 12px;}
+  .row{margin-bottom:16px;}
+  .row label{display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;}
+  .row label span.val{color:var(--accent); font-variant-numeric:tabular-nums;}
+  input[type=range]{width:100%;}
+  .status{
+    margin-top:6px; padding:12px 14px; border-radius:8px; font-size:0.85rem; line-height:1.5;
+    border:1px solid var(--line);
+  }
+  .status.unique{background:rgba(59,130,246,0.12); border-color:#3b82f688;}
+  .status.ambiguous{background:rgba(239,68,68,0.12); border-color:#ef444488;}
+  .status b{display:block; margin-bottom:2px;}
+  .panelTitle{font-size:0.8rem; color:var(--dim); text-transform:uppercase; letter-spacing:0.04em; margin:0 0 6px;}
+  canvas{display:block; background:#05070c; border-radius:8px; border:1px solid var(--line); cursor:ew-resize;}
+  .legend{display:flex; align-items:center; gap:8px; font-size:0.75rem; color:var(--dim); margin-top:6px;}
+  .legend .bar{width:160px; height:10px; border-radius:4px;
+    background:linear-gradient(90deg,#2b6cf6,#eef1f6 50%,#e63b3b);}
+  .curvekey{display:flex; gap:18px; font-size:0.78rem; color:var(--dim); margin-top:6px;}
+  .curvekey span{display:inline-flex; align-items:center; gap:6px;}
+  .swatch{width:16px; height:3px; border-radius:2px; display:inline-block;}
+  footer{margin-top:26px; font-size:0.78rem; color:var(--dim); max-width:900px; line-height:1.6;}
+  footer a{color:#8ab4ff;}
+  .btn{
+    background:var(--line); color:var(--ink); border:1px solid #3a4256; border-radius:6px;
+    padding:6px 12px; font-size:0.8rem; cursor:pointer;
+  }
+  .btn:hover{background:#232a3a;}
+</style>
+</head>
+<body>
+
+<h1>Why orbits uniquely map to location in the Galactic Center</h1>
+<p class="sub">
+Stars in the Milky Way's nuclear stellar disc mostly move on <b>x2 orbits</b>: closed, nested ellipses
+elongated <i>perpendicular</i> to the Galactic bar (Nieuwmunster et al. 2024). Because these orbits are
+non-crossing and their speed varies with position, the line-of-sight velocity you'd measure along a fixed
+sightline changes as a distinctive function of distance — unlike for simple circular orbits, where near and
+far points along the same sightline look kinematically identical. That asymmetry is what lets proper motions
++ orbit models break the classic near/far distance ambiguity (the method behind arXiv:2609.10782's 3D dust map).
+Drag the marker in the top panel to test it.
+</p>
+
+<div class="layout">
+  <div class="colcanvas">
+    <p class="panelTitle">Face-on view of the nuclear disc / CMZ (Galactic plane)</p>
+    <canvas id="face" width="560" height="560"></canvas>
+    <div class="legend">
+      <span>&minus;150 km/s</span><span class="bar"></span><span>+150 km/s (line-of-sight velocity)</span>
+    </div>
+
+    <p class="panelTitle" style="margin-top:18px;">Predicted line-of-sight velocity along that sightline</p>
+    <canvas id="pv" width="560" height="260"></canvas>
+    <div class="curvekey">
+      <span><span class="swatch" style="background:var(--accent)"></span> barred x2-orbit model</span>
+      <span><span class="swatch" style="background:var(--dim); border-top:1px dashed var(--dim); background:none; height:0;"></span> circular-orbit model (no bar)</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <h2>Model parameters</h2>
+    <div class="row">
+      <label>Bar position angle <span class="val" id="v-phi">20&deg;</span></label>
+      <input type="range" id="phi" min="0" max="60" step="1" value="20">
+    </div>
+    <div class="row">
+      <label>x2-orbit flattening (q = minor/major) <span class="val" id="v-q">0.35</span></label>
+      <input type="range" id="q" min="0.20" max="1.00" step="0.01" value="0.35">
+    </div>
+    <div class="row">
+      <label>Sightline offset from Sgr A* (l) <span class="val" id="v-y0">50 pc</span></label>
+      <input type="range" id="y0" min="-180" max="180" step="1" value="50">
+    </div>
+    <div class="row">
+      <label>Assumed line-of-sight distance <span class="val" id="v-x">-60 pc</span></label>
+      <input type="range" id="xm" min="-220" max="220" step="1" value="-60">
+    </div>
+    <div class="row" style="display:flex; align-items:center; justify-content:space-between;">
+      <span style="font-size:0.85rem; color:var(--dim);">Animate a star on its orbit</span>
+      <button class="btn" id="playBtn">Pause</button>
+    </div>
+
+    <h2 style="margin-top:6px;">What this sightline tells you</h2>
+    <div class="status" id="status"></div>
+  </div>
+</div>
+
+<footer>
+  Orbit family: analytic harmonic (epicyclic-limit) approximation to x2 orbits — nested similar ellipses,
+  elongated 90&deg; from the bar, with an illustrative rising-then-flat rotation curve (not a fit to data).
+  This reproduces the qualitative mechanism, not the full made-to-measure dynamical model.<br>
+  Based on: N. Nieuwmunster et al. 2024, <a href="https://www.aanda.org/articles/aa/full_html/2024/05/aa49000-23/aa49000-23.html" target="_blank">"Orbital analysis of stars in the nuclear stellar disc of the Milky Way,"</a> A&amp;A —
+  and <a href="https://arxiv.org/abs/2609.10782" target="_blank">arXiv:2609.10782, "A Novel Approach to 3D Dust Mapping of the Central Molecular Zone."</a>
+</footer>
+
+<script>
+(function(){
+  const Rmax = 220;      // pc, extent shown
+  const v0 = 120;        // km/s asymptotic rotation speed
+  const rc = 25;         // pc core radius of illustrative rotation curve
+  const Dsun = 8200;     // pc, for l readout only
+  const vClip = 150;     // km/s color/axis clip
+
+  const faceC = document.getElementById('face');
+  const pvC = document.getElementById('pv');
+  const fctx = faceC.getContext('2d');
+  const pctx = pvC.getContext('2d');
+  const W = faceC.width, H = faceC.height;
+  const PW = pvC.width, PH = pvC.height;
+
+  const el = {
+    phi: document.getElementById('phi'),
+    q: document.getElementById('q'),
+    y0: document.getElementById('y0'),
+    xm: document.getElementById('xm'),
+    vphi: document.getElementById('v-phi'),
+    vq: document.getElementById('v-q'),
+    vy0: document.getElementById('v-y0'),
+    vx: document.getElementById('v-x'),
+    status: document.getElementById('status'),
+    playBtn: document.getElementById('playBtn'),
+  };
+
+  let playing = true;
+  let orbitPhase = 0;
+
+  function vcirc(r){ return v0 * r / Math.sqrt(r*r + rc*rc); }
+
+  // Barred x2-orbit velocity field
+  function vAtBarred(x, y, q, phiRad){
+    const c = Math.cos(phiRad), s = Math.sin(phiRad);
+    const xb = x*c + y*s;
+    const yb = -x*s + y*c;
+    const B = Math.sqrt(yb*yb + (xb/q)*(xb/q));
+    const Om = B > 1e-6 ? vcirc(B)/B : 0;
+    const vxb = -q*Om*yb;
+    const vyb = (Om/q)*xb;
+    const vx = vxb*c - vyb*s;
+    const vy = vxb*s + vyb*c;
+    return {vx, vy, B};
+  }
+  // Circular (unbarred) comparison field
+  function vAtCircular(x,y){
+    const r = Math.sqrt(x*x+y*y);
+    const Om = r>1e-6 ? vcirc(r)/r : 0;
+    return {vx: -Om*y, vy: Om*x, r};
+  }
+
+  function colorForV(v){
+    const t = Math.max(-1, Math.min(1, v/vClip));
+    let r,g,b;
+    if(t < 0){
+      const u = 1+t; // 0..1, 0=full blue,1=white
+      r = Math.round(43 + u*(238-43));
+      g = Math.round(108 + u*(241-108));
+      b = Math.round(246 + u*(246-246));
+    } else {
+      const u = 1-t; // 1=white,0=full red
+      r = Math.round(230 + (1-u)*(0));
+      r = Math.round(238 - (1-u)*(238-230));
+      g = Math.round(241 - (1-u)*(241-59));
+      b = Math.round(246 - (1-u)*(246-59));
+    }
+    return [r,g,b];
+  }
+
+  // --- field rendering (coarse grid upscaled) ---
+  const grid = 200;
+  const off = document.createElement('canvas');
+  off.width = grid; off.height = grid;
+  const octx = off.getContext('2d');
+  const imgData = octx.createImageData(grid, grid);
+
+  function toPhys(px, py){
+    const x = (px/grid)*2*Rmax - Rmax;
+    const y = Rmax - (py/grid)*2*Rmax;
+    return [x,y];
+  }
+  function toPix(x,y){
+    const px = (x+Rmax)/(2*Rmax)*W;
+    const py = (Rmax-y)/(2*Rmax)*H;
+    return [px,py];
+  }
+  function toPvPix(x, v){
+    const px = (x+Rmax)/(2*Rmax)*PW;
+    const py = (vClip - v)/(2*vClip)*PH;
+    return [px,py];
+  }
+
+  function renderField(q, phiRad){
+    const data = imgData.data;
+    for(let j=0;j<grid;j++){
+      for(let i=0;i<grid;i++){
+        const [x,y] = toPhys(i+0.5, j+0.5);
+        const R = Math.sqrt(x*x+y*y);
+        const idx = (j*grid+i)*4;
+        if(R > Rmax){
+          data[idx]=5; data[idx+1]=7; data[idx+2]=12; data[idx+3]=255;
+          continue;
+        }
+        const {vx} = vAtBarred(x,y,q,phiRad);
+        const [r,g,b] = colorForV(vx);
+        data[idx]=r; data[idx+1]=g; data[idx+2]=b; data[idx+3]=255;
+      }
+    }
+    octx.putImageData(imgData,0,0);
+  }
+
+  function drawEllipseContour(ctx, B, q, phiRad, color, width){
+    ctx.beginPath();
+    const N=100;
+    for(let k=0;k<=N;k++){
+      const th = k/N*2*Math.PI;
+      const xb = q*B*Math.cos(th), yb = B*Math.sin(th);
+      const x = xb*Math.cos(phiRad) - yb*Math.sin(phiRad);
+      const y = xb*Math.sin(phiRad) + yb*Math.cos(phiRad);
+      const [px,py] = toPix(x,y);
+      if(k===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+    }
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    ctx.stroke();
+  }
+
+  function drawBarShape(ctx, phiRad){
+    const major = Rmax*0.85, minor = Rmax*0.12;
+    ctx.beginPath();
+    const N=80;
+    for(let k=0;k<=N;k++){
+      const th = k/N*2*Math.PI;
+      const xb = major*Math.cos(th), yb = minor*Math.sin(th);
+      const x = xb*Math.cos(phiRad) - yb*Math.sin(phiRad);
+      const y = xb*Math.sin(phiRad) + yb*Math.cos(phiRad);
+      const [px,py] = toPix(x,y);
+      if(k===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+    }
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(255,220,120,0.14)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,220,120,0.45)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  function findOrbitB(x,y,q,phiRad){
+    return vAtBarred(x,y,q,phiRad).B;
+  }
+
+  function countRoots(fn, y0, target){
+    const N = 440;
+    let prevSign = null;
+    let count = 0;
+    let prevDiff = null;
+    for(let i=0;i<=N;i++){
+      const x = -Rmax + i*(2*Rmax/N);
+      const diff = fn(x,y0) - target;
+      if(prevDiff !== null){
+        if((prevDiff<0 && diff>=0) || (prevDiff>0 && diff<=0)) count++;
+      }
+      prevDiff = diff;
+    }
+    return count;
+  }
+
+  function draw(){
+    const phiDeg = parseFloat(el.phi.value);
+    const q = parseFloat(el.q.value);
+    const y0 = parseFloat(el.y0.value);
+    const xm = parseFloat(el.xm.value);
+    const phiRad = phiDeg*Math.PI/180;
+
+    el.vphi.textContent = phiDeg.toFixed(0)+'°';
+    el.vq.textContent = q.toFixed(2);
+    el.vy0.textContent = y0.toFixed(0)+' pc';
+    el.vx.textContent = xm.toFixed(0)+' pc';
+
+    // ---- face-on panel ----
+    renderField(q, phiRad);
+    fctx.imageSmoothingEnabled = true;
+    fctx.clearRect(0,0,W,H);
+    fctx.drawImage(off,0,0,grid,grid,0,0,W,H);
+
+    // nested orbit contours
+    for(let i=1;i<=7;i++){
+      drawEllipseContour(fctx, Rmax*i/7, q, phiRad, 'rgba(10,14,22,0.38)', 1.1);
+    }
+    drawBarShape(fctx, phiRad);
+
+    // GC marker
+    const [gx,gy] = toPix(0,0);
+    fctx.beginPath(); fctx.arc(gx,gy,4,0,2*Math.PI);
+    fctx.fillStyle = '#ffffff'; fctx.fill();
+
+    // sightline
+    const [ , syPix] = toPix(0,y0);
+    fctx.beginPath();
+    fctx.setLineDash([6,5]);
+    fctx.moveTo(0, syPix); fctx.lineTo(W, syPix);
+    fctx.strokeStyle = 'rgba(255,255,255,0.55)';
+    fctx.lineWidth = 1.5;
+    fctx.stroke();
+    fctx.setLineDash([]);
+
+    // "toward Sun" arrow, near left edge of sightline
+    fctx.fillStyle = 'rgba(255,255,255,0.7)';
+    fctx.font = '11px -apple-system,sans-serif';
+    fctx.fillText('← toward Sun / Earth', 8, syPix-8);
+
+    // orbit currently passing through marker, animate a star along it
+    const Bsel = findOrbitB(xm, y0, q, phiRad);
+    if(orbitPhase===0) orbitPhase = Math.atan2(y0, xm); // seed
+    if(playing){
+      const Om = Bsel>1e-6 ? vcirc(Bsel)/Bsel : 0;
+      orbitPhase += Om*0.00035; // arbitrary time unit for a pleasant animation speed
+    }
+    drawEllipseContour(fctx, Bsel, q, phiRad, 'rgba(255,209,102,0.9)', 2);
+    {
+      const xb = q*Bsel*Math.cos(orbitPhase), yb = Bsel*Math.sin(orbitPhase);
+      const x = xb*Math.cos(phiRad) - yb*Math.sin(phiRad);
+      const y = xb*Math.sin(phiRad) + yb*Math.cos(phiRad);
+      const [px,py] = toPix(x,y);
+      fctx.beginPath(); fctx.arc(px,py,4,0,2*Math.PI);
+      fctx.fillStyle = '#ffd166'; fctx.fill();
+      fctx.strokeStyle = '#000'; fctx.lineWidth=1; fctx.stroke();
+    }
+
+    // marker (draggable "assumed distance")
+    const {vx: vxm} = vAtBarred(xm,y0,q,phiRad);
+    const [mx,my] = toPix(xm,y0);
+    fctx.beginPath(); fctx.arc(mx,my,7,0,2*Math.PI);
+    const [cr,cg,cb] = colorForV(vxm);
+    fctx.fillStyle = `rgb(${cr},${cg},${cb})`;
+    fctx.fill();
+    fctx.strokeStyle = '#ffffff'; fctx.lineWidth = 2; fctx.stroke();
+
+    // ---- PV panel ----
+    pctx.clearRect(0,0,PW,PH);
+    // zero-velocity gridline
+    pctx.strokeStyle = 'rgba(255,255,255,0.12)';
+    pctx.lineWidth = 1;
+    const [,zy] = toPvPix(0,0);
+    pctx.beginPath(); pctx.moveTo(0,zy); pctx.lineTo(PW,zy); pctx.stroke();
+    pctx.beginPath(); pctx.setLineDash([4,4]);
+    const [zx0] = toPvPix(0,0);
+    pctx.moveTo(zx0,0); pctx.lineTo(zx0,PH); pctx.strokeStyle='rgba(255,255,255,0.10)'; pctx.stroke();
+    pctx.setLineDash([]);
+
+    // circular comparison curve (dashed)
+    pctx.beginPath();
+    pctx.setLineDash([5,4]);
+    for(let i=0;i<=300;i++){
+      const x = -Rmax + i*(2*Rmax/300);
+      const {vx:vv} = vAtCircular(x,y0);
+      const [px,py] = toPvPix(x,vv);
+      if(i===0) pctx.moveTo(px,py); else pctx.lineTo(px,py);
+    }
+    pctx.strokeStyle = 'rgba(147,160,180,0.9)';
+    pctx.lineWidth = 2;
+    pctx.stroke();
+    pctx.setLineDash([]);
+
+    // barred curve (solid, colored by velocity)
+    for(let i=0;i<300;i++){
+      const x1 = -Rmax + i*(2*Rmax/300);
+      const x2 = -Rmax + (i+1)*(2*Rmax/300);
+      const {vx:v1} = vAtBarred(x1,y0,q,phiRad);
+      const {vx:v2} = vAtBarred(x2,y0,q,phiRad);
+      const [p1x,p1y] = toPvPix(x1,v1);
+      const [p2x,p2y] = toPvPix(x2,v2);
+      const [rr,gg,bb] = colorForV((v1+v2)/2);
+      pctx.beginPath();
+      pctx.moveTo(p1x,p1y); pctx.lineTo(p2x,p2y);
+      pctx.strokeStyle = `rgb(${rr},${gg},${bb})`;
+      pctx.lineWidth = 2.5;
+      pctx.stroke();
+    }
+
+    // markers on both curves at xm
+    const {vx: vBarM} = vAtBarred(xm,y0,q,phiRad);
+    const {vx: vCirM} = vAtCircular(xm,y0);
+    const [bx,by] = toPvPix(xm, vBarM);
+    const [cx,cy] = toPvPix(xm, vCirM);
+    pctx.beginPath(); pctx.moveTo(bx,0); pctx.lineTo(bx,PH);
+    pctx.strokeStyle='rgba(255,255,255,0.25)'; pctx.lineWidth=1; pctx.stroke();
+    pctx.beginPath(); pctx.arc(cx,cy,5,0,2*Math.PI); pctx.fillStyle='#93a0b4'; pctx.fill();
+    pctx.beginPath(); pctx.arc(bx,by,6,0,2*Math.PI);
+    fctxFill(pctx, colorForV(vBarM)); pctx.strokeStyle='#fff'; pctx.lineWidth=2; pctx.stroke();
+
+    // axis labels
+    pctx.fillStyle = 'rgba(232,236,244,0.8)';
+    pctx.font = '11px -apple-system,sans-serif';
+    pctx.fillText('near ← distance along sightline → far (pc)', 8, PH-8);
+    pctx.save(); pctx.translate(12,14); pctx.fillText('v_los (km/s)',0,0); pctx.restore();
+
+    // ---- status readout ----
+    const nBar = countRoots((x,y)=>vAtBarred(x,y,q,phiRad).vx, y0, vBarM);
+    const nCir = countRoots((x,y)=>vAtCircular(x,y).vx, y0, vCirM);
+    const lArcmin = (y0/Dsun)*206265/60;
+    let html;
+    if(nBar<=1){
+      el.status.className='status unique';
+      html = `<b>Unique &#10003;</b>At l &asymp; ${lArcmin.toFixed(1)}&prime;, the measured line-of-sight velocity `+
+             `(${vBarM.toFixed(0)} km/s) corresponds to only <b>${nBar}</b> distance on the barred x2-orbit model — `+
+             `you can read off a single 3D location. A simple circular-orbit model gives <b>${nCir}</b> `+
+             `indistinguishable distance(s) for the same velocity.`;
+    } else {
+      el.status.className='status ambiguous';
+      html = `<b>Still ambiguous</b>At l &asymp; ${lArcmin.toFixed(1)}&prime;, this velocity `+
+             `(${vBarM.toFixed(0)} km/s) matches <b>${nBar}</b> distances even on the barred model — try a different `+
+             `sightline offset, bar angle, or flattening. (Circular model: <b>${nCir}</b> matches.)`;
+    }
+    el.status.innerHTML = html;
+  }
+
+  function fctxFill(ctx, rgb){ ctx.fillStyle = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`; }
+
+  // --- interaction ---
+  ['input'].forEach(evt=>{
+    [el.phi, el.q, el.y0, el.xm].forEach(inp=> inp.addEventListener(evt, ()=>{ orbitPhase=0; draw(); }));
+  });
+
+  let dragging = false;
+  function xmFromEvent(e){
+    const rect = faceC.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const px = clientX - rect.left;
+    const x = (px/rect.width)*2*Rmax - Rmax;
+    return Math.max(-Rmax, Math.min(Rmax, x));
+  }
+  function xmFromPvEvent(e){
+    const rect = pvC.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const px = clientX - rect.left;
+    const x = (px/rect.width)*2*Rmax - Rmax;
+    return Math.max(-Rmax, Math.min(Rmax, x));
+  }
+  faceC.addEventListener('mousedown', e=>{ dragging=true; el.xm.value = xmFromEvent(e).toFixed(0); orbitPhase=0; draw(); });
+  window.addEventListener('mousemove', e=>{ if(dragging){ el.xm.value = xmFromEvent(e).toFixed(0); draw(); } });
+  window.addEventListener('mouseup', ()=> dragging=false);
+  pvC.addEventListener('mousedown', e=>{ dragging=true; el.xm.value = xmFromPvEvent(e).toFixed(0); orbitPhase=0; draw(); });
+  faceC.addEventListener('touchstart', e=>{ dragging=true; el.xm.value = xmFromEvent(e).toFixed(0); orbitPhase=0; draw(); }, {passive:true});
+  faceC.addEventListener('touchmove', e=>{ if(dragging){ el.xm.value = xmFromEvent(e).toFixed(0); draw(); } }, {passive:true});
+  window.addEventListener('touchend', ()=> dragging=false);
+
+  el.playBtn.addEventListener('click', ()=>{
+    playing = !playing;
+    el.playBtn.textContent = playing ? 'Pause' : 'Play';
+  });
+
+  function loop(){
+    if(playing) draw();
+    requestAnimationFrame(loop);
+  }
+  draw();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

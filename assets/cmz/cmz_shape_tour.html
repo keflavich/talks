@@ -20,7 +20,11 @@
     3  ring     the clouds settle into a ring
     4  spiral   ... slide to two spiral arms
     5  disk     ... slide to a filled disk
-    6  verdict  all three side by side, each above its own view from the Sun
+    6  flocc    ... slide to what the hydrodynamic simulations look like (Tress+ 2020): a fluffy
+                filled disk with flocculent, sheared arms coming off its edge (feathered at the
+                outer edge), and bar-lane gas joining at opposite sides (added 2026-10-04,
+                reshaped 10-05 and 10-06)
+    7  verdict  all four side by side, each above its own view from the Sun
 
   THE CONSTRUCTION, and what it does and does not claim: every cloud has ONE sky position (x)
   and ONE height (z), shared by all three shapes.  The shapes differ ONLY in depth (y), so
@@ -53,6 +57,8 @@
   #cap .cite { display:block; margin-top:9px; font-size:16px; line-height:1.32; color:#9aa3b5; }
   #cap .hl { color:#ffd166; font-size:21px; }
   body:not(.embed) #stage { cursor:pointer; }
+  /* in the deck, each hypothesis' reference is a clickable snapshot beside the animation instead */
+  body.embed #cap .cite.ref { display:none; }
 </style>
 </head>
 <body>
@@ -97,7 +103,7 @@ function gauss(){ return Math.sqrt(-2 * Math.log(rnd() + 1e-12)) * Math.cos(2 * 
 // The CMZ clouds.  x (sky) and z (height) are fixed per cloud; y (depth) depends on the shape.
 // ---------------------------------------------------------------------------------------
 const R_SKY = 130;                       // pc: half-extent on the sky, the same for every shape
-const STREAK = 150;                      // pc: half-length of the "depth unknown" streak
+const STREAK = 150;                      // pc: length scale of the "depth unknown" streak
 const clouds = [];
 (function(){
   for (let i = 0; i < 230; i++){
@@ -106,21 +112,54 @@ const clouds = [];
     let x = (rnd() < 0.3 ? Math.sin(Math.PI * (u - 0.5)) : 2 * u - 1) * R_SKY * 0.97;
     clouds.push({ x: x, z: gauss() * 9, r: 4 + 5.5 * Math.pow(rnd(), 1.5),
                   m: Math.exp(0.55 * gauss()) * (x < 0 ? 1.15 : 0.9),
-                  sgn: rnd() < 0.5 ? -1 : 1, ud: 2 * rnd() - 1, jy: gauss() * 5, pick: rnd() });
+                  sgn: rnd() < 0.5 ? -1 : 1, ud: 2 * rnd() - 1, jy: gauss() * 5, pick: rnd(), fine: false });
   }
   // one big, bright cloud at positive longitude: most of the CMZ's dense gas is on that side
-  clouds.push({ x: -92, z: -3, r: 11, m: 2.6, sgn: -1, ud: -0.35, jy: 0, pick: 0.3 });
+  clouds.push({ x: -92, z: -3, r: 11, m: 2.6, sgn: -1, ud: -0.35, jy: 0, pick: 0.3, fine: false });
+})();
+// A second, finer and fainter population (added 2026-10-05, so the flocculent shape can look like
+// the Tress+ 2020 simulations: many thin, sheared filaments).  Its own RNG, so the 231 clouds
+// above -- and the ring, spiral and disk built from them -- are unchanged; these only add texture.
+// They obey the same rule: one sky position and height per cloud, shared by every shape.
+let seed3 = 9001;
+function rnd3(){ seed3 = (seed3 * 1664525 + 1013904223) >>> 0; return seed3 / 4294967296; }
+function gauss3(){ return Math.sqrt(-2 * Math.log(rnd3() + 1e-12)) * Math.cos(2 * Math.PI * rnd3()); }
+(function(){
+  for (let i = 0; i < 480; i++){
+    const u = rnd3();
+    const x = (rnd3() < 0.35 ? Math.sin(Math.PI * (u - 0.5)) : 2 * u - 1) * R_SKY * 0.97;
+    clouds.push({ x: x, z: gauss3() * 6, r: 1.6 + 2.4 * Math.pow(rnd3(), 1.3),
+                  m: 0.55 * Math.exp(0.5 * gauss3()),
+                  sgn: rnd3() < 0.5 ? -1 : 1, ud: 2 * rnd3() - 1, jy: gauss3() * 4, pick: rnd3(), fine: true });
+  }
 })();
 
-// two log-spiral arms, trailing for the Galaxy's clockwise (on screen) rotation, sampled
-// uniformly in radius, then scaled so their sky extent is R_SKY like the other shapes
+// Points along a trailing log spiral (trailing for the Galaxy's clockwise on-screen rotation:
+// radius grows counterclockwise), each carrying the local direction of the arm, so a cloud
+// placed there can be stretched along it.  [x, y, angle]
+function logArm(pts, r0, r1, phase, psiDeg, n){
+  const psi = psiDeg * Math.PI / 180, span = Math.log(r1 / r0) / Math.tan(psi);
+  for (let j = 0; j <= n; j++){
+    const th = span * j / n, rr = r0 * Math.exp(th * Math.tan(psi)), pol = phase + th;
+    pts.push([rr * Math.cos(pol), rr * Math.sin(pol), pol + Math.PI / 2 - psi]);
+  }
+}
+// choose, among the points whose sky position matches x, one at random (u in [0,1))
+function pick(pts, x, tol, u){
+  const cand = [];
+  for (let k = 0; k < pts.length; k++) if (Math.abs(pts[k][0] - x) < tol) cand.push(pts[k]);
+  return cand.length ? cand[Math.floor(u * cand.length)] : null;
+}
+
+// two log-spiral arms, sampled uniformly in radius, then scaled so their sky extent is R_SKY
+// like the other shapes
 const ARM = (function(){
   const psi = 20 * Math.PI / 180, Rin = 22, Rout = 150, rot = 0.55, K = 1400, pts = [];
   for (let a = 0; a < 2; a++){
     for (let k = 0; k <= K; k++){
       const R = Rin + (Rout - Rin) * k / K;
-      const ang = rot + a * Math.PI + Math.log(R / Rin) / Math.tan(psi);
-      pts.push([R * Math.cos(ang), R * Math.sin(ang)]);
+      const pol = rot + a * Math.PI + Math.log(R / Rin) / Math.tan(psi);
+      pts.push([R * Math.cos(pol), R * Math.sin(pol), pol + Math.PI / 2 - psi]);
     }
   }
   let mx = 0; pts.forEach(function(p){ mx = Math.max(mx, Math.abs(p[0])); });
@@ -128,28 +167,100 @@ const ARM = (function(){
   pts.forEach(function(p){ p[0] *= s; p[1] *= s; });
   return pts;
 })();
-
-function ySpiral(c){
-  const cand = [];
-  for (let k = 0; k < ARM.length; k++) if (Math.abs(ARM[k][0] - c.x) < 1.2) cand.push(ARM[k][1]);
-  if (!cand.length){
-    let best = 1e9, by = 0;
-    ARM.forEach(function(p){ const d = Math.abs(p[0] - c.x); if (d < best){ best = d; by = p[1]; } });
-    return by;
-  }
-  return cand[Math.floor(c.pick * cand.length)] + c.jy * 0.6;
+function onArm(c){
+  const p = pick(ARM, c.x, 1.2, c.pick);
+  if (p) return [p[1] + c.jy * 0.6, p[2]];
+  let best = 1e9, bp = ARM[0];
+  ARM.forEach(function(q){ const d = Math.abs(q[0] - c.x); if (d < best){ best = d; bp = q; } });
+  return [bp[1], bp[2]];
 }
 
-// shape index: 0 unknown (streaks), 1 ring, 2 spiral arms, 3 disk
-const Y = [[], [], [], []];
-const LEN = [STREAK, 0, 0, 0];
+// ---- shape 4: the CMZ as it looks in hydrodynamic simulations of gas in the bar potential
+// (Tress+ 2020 / Sormani+ 2020; Adam, 2026-10-05: "needs to more closely resemble these images
+// from Tress et al"): an outer ring of interleaved, tightly wound arm segments; a multi-armed
+// spiral winding in from the ring to the center; feathery spurs off the ring's outer edge; and
+// gas from the bar's dust lanes arriving at opposite sides and joining the ring tangentially.
+// Built from its own RNG, so it did not reshuffle the clouds of the other shapes.
+let seed2 = 4242;
+function rnd2(){ seed2 = (seed2 * 1664525 + 1013904223) >>> 0; return seed2 / 4294967296; }
+const TRESS = (function(){
+  // (Adam, 2026-10-06: "the inner part should be more fluffy and less wrapped-spiraly; the
+  // spirals should be coming off the filled disk more".)  So: a fluffy FILLED core of radius
+  // RC, and trailing arms that start at the core's edge and wind out to the outer edge.
+  const R = R_SKY, RC = 0.52 * R_SKY, ring = [], feath = [];
+  for (let k = 0; k < 5; k++)
+    logArm(ring, (0.46 + 0.08 * rnd2()) * R, 0.99 * R, k * 2 * Math.PI / 5 + 0.5 * (rnd2() - 0.5), 13 + 4 * rnd2(), 500);
+  // feathers: short spurs leaving the ring's outer edge, pointing outward and trailing
+  for (let k = 0; k < 16; k++){
+    let p;
+    do { p = ring[Math.floor(rnd2() * ring.length)]; } while (Math.hypot(p[0], p[1]) < 0.86 * R);
+    const pol = Math.atan2(p[1], p[0]), dir = pol + (40 + 20 * rnd2()) * Math.PI / 180;
+    const len = (0.10 + 0.12 * rnd2()) * R;
+    for (let j = 0; j <= 60; j++) feath.push([p[0] + Math.cos(dir) * len * j / 60, p[1] + Math.sin(dir) * len * j / 60, dir]);
+  }
+  // The near-side bar stream: from the lower left (the bar's near end is at positive longitude,
+  // ~28 deg off the Sun-GC line, as in shape_galaxy_gas.jpg), swinging up onto the ring's left
+  // side in the direction of rotation.  Monotonic in x, so each sky position has one depth.
+  // The far-side stream is its point reflection.
+  const sn = [], A = [-50, -155], C = [-125, -140], B = [-127, -30];
+  for (let k = 0; k <= 300; k++){
+    const t = k / 300, u = 1 - t;
+    const x = u * u * A[0] + 2 * t * u * C[0] + t * t * B[0];
+    const y = u * u * A[1] + 2 * t * u * C[1] + t * t * B[1];
+    const dx = 2 * u * (C[0] - A[0]) + 2 * t * (B[0] - C[0]), dy = 2 * u * (C[1] - A[1]) + 2 * t * (B[1] - C[1]);
+    sn.push([x, y, Math.atan2(dy, dx)]);
+  }
+  const sf = sn.map(function(p){ return [-p[0], -p[1], p[2]]; });
+  return { rc: RC, ring: ring, feath: feath, sn: sn, sf: sf };
+})();
+function onTress(c){
+  const u1 = rnd2(), u2 = rnd2(), u3 = rnd2(), u4 = rnd2(), j = (rnd2() - 0.5) * (c.fine ? 3.5 : 6);
+  const half = Math.sqrt(Math.max(0, R_SKY * R_SKY - c.x * c.x));
+  const hc = Math.sqrt(Math.max(0, TRESS.rc * TRESS.rc - c.x * c.x));
+  if (u1 < 0.22){
+    const p = pick(c.x < 0 ? TRESS.sn : TRESS.sf, c.x, 1.5, u2);
+    if (p) return [p[1] + j, p[2], 3.8];
+  }
+  // the fluffy filled core: anywhere inside RC, random orientation, barely stretched
+  if (u3 < 0.5 && hc > 0) return [(2 * u2 - 1) * hc, 2 * Math.PI * u4, 1.25];
+  // ...otherwise on the arms that come off it, or on a feather
+  const sets = u3 < 0.88 ? [[TRESS.ring, 3.4], [TRESS.feath, 3.0]] : [[TRESS.feath, 3.0], [TRESS.ring, 3.4]];
+  for (let k = 0; k < sets.length; k++){
+    const p = pick(sets[k][0], c.x, 1.5, u2);
+    if (p) return [p[1] + j, p[2], sets[k][1]];
+  }
+  if (hc > 0) return [(2 * u2 - 1) * hc, 2 * Math.PI * u4, 1.25];
+  const y = (2 * u2 - 1) * half * 0.9;                     // a little diffuse fill
+  return [y, Math.atan2(y, c.x) + Math.PI / 2, 1.2];
+}
+
+// Per shape and cloud: [depth y, orientation angle, half-length, half-width] (pc).  Shapes
+// stretch each cloud along the local flow, area-preserving, and less so for the big clouds;
+// shape 0 ("depth unknown") is a streak along the line of sight.
+// shape index: 0 unknown, 1 ring, 2 spiral arms, 3 disk, 4 simulation-like flocculent disk
+const G = [[], [], [], [], []];
+function geom(c, y, ang, el, bigShear){
+  const e = c.fine ? el : 1 + (el - 1) * (bigShear || 0.45), q = Math.sqrt(e);
+  return [y, ang, c.r * q, c.r / q];
+}
 clouds.forEach(function(c){
   const half = Math.sqrt(Math.max(0, R_SKY * R_SKY - c.x * c.x));
-  Y[0].push(0);
-  Y[1].push(c.sgn * half + c.jy);
-  Y[2].push(ySpiral(c));
-  Y[3].push(c.ud * half * 0.97);
+  G[0].push([0, Math.PI / 2, c.r + STREAK / 3, c.r]);
+  const y1 = c.sgn * half + c.jy;
+  G[1].push(geom(c, y1, Math.atan2(y1, c.x) + Math.PI / 2, 2.2));
+  const s2 = onArm(c);
+  G[2].push(geom(c, s2[0], s2[1], 2.3));
+  const y3 = c.ud * half * 0.97;
+  G[3].push(geom(c, y3, Math.atan2(y3, c.x) + Math.PI / 2, 1.6));
+  const s4 = onTress(c);
+  G[4].push(geom(c, s4[0], s4[1], s4[2], 0.75));      // strongly sheared, as in the simulations
 });
+function lerpAng(a, b, f){                 // ellipses: angles are only defined mod pi
+  let d = (b - a) % Math.PI;
+  if (d > Math.PI / 2) d -= Math.PI;
+  if (d < -Math.PI / 2) d += Math.PI;
+  return a + d * f;
+}
 
 // one soft Gaussian sprite, warm, drawn additively: the "fuzz" every cloud is made of
 const SPRITE = (function(){
@@ -171,9 +282,9 @@ const SPRITE = (function(){
 const VIEW = {
   local:  { cx: 0, cy: -R0, s: 0.256 },
   galaxy: { cx: 0, cy: 0, s: 0.0205 },
-  gc:     { cx: 0, cy: -49, s: 1.7 }          // puts the GC at screen y ~ 252
+  gc:     { cx: 0, cy: -57, s: 1.45 }         // GC at screen y ~ 252; room for the spurs' depth
 };
-const NPHASE = 7;
+const NPHASE = 8;
 function target(p){
   const t = { galaxy: 0, dust: 0, annot: 0, sun: 0, cmz: 0, strip: 0, qm: 0, trip: 0,
               shA: 0, shB: 0, mt: 0 };
@@ -184,7 +295,8 @@ function target(p){
     case 3: return Object.assign(t, VIEW.gc, { cmz: 1, strip: 1, shA: 1, shB: 1 });
     case 4: return Object.assign(t, VIEW.gc, { cmz: 1, strip: 1, shA: 2, shB: 2 });
     case 5: return Object.assign(t, VIEW.gc, { cmz: 1, strip: 1, shA: 3, shB: 3 });
-    default: return Object.assign(t, VIEW.gc, { trip: 1, shA: 3, shB: 3 });
+    case 6: return Object.assign(t, VIEW.gc, { cmz: 1, strip: 1, shA: 4, shB: 4 });
+    default: return Object.assign(t, VIEW.gc, { trip: 1, shA: 4, shB: 4 });
   }
 }
 // forward transitions: duration, per-key [start, end] windows (fractions), a camera anchor in
@@ -193,25 +305,25 @@ function target(p){
 // the shape changes the pair of shapes to morph between
 const TRANS = {
   0: { dur: 2600, anchor: [0, -R0], win: { cam: [0, 1], galaxy: [0.12, 0.7], annot: [0.75, 1], cmz: [0.6, 1] } },
-  1: { dur: 2800, anchor: [0, 0], win: { cam: [0, 1], galaxy: [0.22, 0.62], dust: [0, 0.45], annot: [0, 0.2],
+  1: { dur: 2800, anchor: [0, 0], win: { cam: [0, 1], galaxy: [0.40, 0.88], dust: [0, 0.45], annot: [0, 0.2],
                                          sun: [0, 0.2], strip: [0.82, 1], qm: [0.82, 1] } },
   2: { dur: 1600, morph: [0, 1], win: { qm: [0, 0.3], mt: [0.12, 1] } },
   3: { dur: 1500, morph: [1, 2], win: { mt: [0, 1] } },
   4: { dur: 1500, morph: [2, 3], win: { mt: [0, 1] } },
-  5: { dur: 800, win: { trip: [0.2, 1], cmz: [0, 0.6], strip: [0, 0.6] } }
+  5: { dur: 1600, morph: [3, 4], win: { mt: [0, 1] } },
+  6: { dur: 800, win: { trip: [0.2, 1], cmz: [0, 0.6], strip: [0, 0.6] } }
 };
 const CAPS = [
   'Our neighborhood, mapped in 3D' +
     '<span class=cite>dust within 1.25 kpc of the Sun, seen from above: Edenhofer+ 2024</span>',
-  'That map covers this small patch of the Galaxy' +
-    '<span class=cite>gas clouds on spiral-arm fits to maser parallaxes (Reid+ 2019), faded where ' +
-    'extrapolated; bar lanes schematic</span>',
-  'At the Galactic Center we measure where clouds are on the sky &mdash; but not their depth' +
-    '<span class=cite>schematic clouds</span>',
-  'A ring?<span class=cite>e.g. Molinari+ 2011</span>',
-  'Two spiral arms?<span class=cite>e.g. Sofue 1995; Ridley+ 2017</span>',
-  'A filled disk?<span class=cite>same sky positions in every shape: only the depth changes</span>',
-  'Three shapes, one view from the Sun: depth is the missing axis' +
+  'That map covers this small patch of the Galaxy',
+  'At the Galactic Center we have excellent 2D maps but poor 3D',
+  'Hypotheses include: \n<br> A ring?<span class="cite ref">e.g. Molinari+ 2011</span>',
+  'Hypotheses include: \n<br> Spiral arms?<span class="cite ref">e.g. Sofue+ 2025</span>',
+  'Hypotheses include: \n<br> A filled disk?<span class=cite>same sky positions in every shape: only the depth changes</span>',
+  'Hypotheses include: \n<br> A mix of all?' +
+    '<span class="cite ref">after hydrodynamic simulations, e.g. Tress+ 2026</span>',
+  'Four shapes, one view from the Sun: depth is the missing axis' +
     '<span class="cite hl">Roman proper motions can supply it.</span>'
 ];
 
@@ -276,18 +388,27 @@ function drawAnnot(a){
   ctx.globalAlpha = 1;
 }
 
-// clouds in the top-down view; streaks while the depth is unknown
+// clouds in the top-down view; streaks while the depth is unknown.  Each cloud is the soft
+// sprite stretched to its (interpolated) half-length x half-width and turned to its angle.
+function drawEllipse(X, Yp, A, B, ang){
+  ctx.save(); ctx.translate(X, Yp); ctx.rotate(-ang);          // world angles: y up; screen: y down
+  ctx.drawImage(SPRITE, -A, -B, 2 * A, 2 * B);
+  ctx.restore();
+}
+function cloudShape(i, shA, shB, t){
+  const ga = G[shA][i], gb = G[shB][i];
+  return [lerp(ga[0], gb[0], t), lerpAng(ga[1], gb[1], t), lerp(ga[2], gb[2], t), lerp(ga[3], gb[3], t)];
+}
 function drawClouds(a){
   if (a <= 0.002) return;
-  const yA = Y[S.shA], yB = Y[S.shB], L = lerp(LEN[S.shA], LEN[S.shB], S.mt);
-  const Lpx = L * S.s, fade = Math.min(1, 0.25 + S.s / 0.5);
+  const fade = Math.min(1, 0.25 + S.s / 0.5);
   ctx.globalCompositeOperation = 'lighter';
   for (let i = 0; i < clouds.length; i++){
-    const c = clouds[i];
-    const X = sx(c.x), Yp = sy(lerp(yA[i], yB[i], S.mt));
-    const rpx = Math.max(1.4, 3 * c.r * S.s);
-    ctx.globalAlpha = Math.min(1, a * fade * 0.30 * c.m * c.r / (c.r + 0.45 * L));
-    ctx.drawImage(SPRITE, X - rpx, Yp - rpx - Lpx, 2 * rpx, 2 * rpx + 2 * Lpx);
+    const c = clouds[i], g = cloudShape(i, S.shA, S.shB, S.mt);
+    const A = Math.max(1.4, 3 * g[2] * S.s), B = Math.max(1.0, 3 * g[3] * S.s);
+    // area-preserving stretches keep their brightness; the depth streak spreads it out
+    ctx.globalAlpha = Math.min(1, a * fade * 0.30 * c.m * Math.min(1, c.r * c.r / (g[2] * g[3])));
+    drawEllipse(sx(c.x), sy(g[0]), A, B, g[1]);
   }
   ctx.globalAlpha = 1;
   ctx.globalCompositeOperation = 'source-over';
@@ -357,25 +478,26 @@ function drawScaleBar(a){
   ctx.globalAlpha = 1;
 }
 
-// the verdict: three shapes side by side, each above its own (identical) view from the Sun
-const TRIP = { xs: [418, 640, 862], yc: 262, s: 0.8, names: ['ring', 'spiral arms', 'disk'] };
+// the verdict: the four shapes side by side, each above its own (identical) view from the Sun
+const TRIP = { xs: [387, 561, 735, 909], yc: 268, s: 0.6,
+               names: ['ring', 'spiral arms', 'disk', 'as in simulations'] };
 function drawTrip(a){
   if (a <= 0.002) return;
-  for (let k = 0; k < 3; k++){
-    const cx0 = TRIP.xs[k], ys = Y[k + 1];
+  for (let k = 0; k < TRIP.xs.length; k++){
+    const cx0 = TRIP.xs[k], gk = G[k + 1];
     ctx.globalCompositeOperation = 'lighter';
     for (let i = 0; i < clouds.length; i++){
-      const c = clouds[i];
-      const rpx = Math.max(1.4, 3 * c.r * TRIP.s);
+      const c = clouds[i], g = gk[i];
       ctx.globalAlpha = Math.min(1, a * 0.30 * c.m);
-      ctx.drawImage(SPRITE, cx0 + c.x * TRIP.s - rpx, TRIP.yc - ys[i] * TRIP.s - rpx, 2 * rpx, 2 * rpx);
+      drawEllipse(cx0 + c.x * TRIP.s, TRIP.yc - g[0] * TRIP.s,
+                  Math.max(1.4, 3 * g[2] * TRIP.s), Math.max(1.0, 3 * g[3] * TRIP.s), g[1]);
     }
     ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = a;
-    ctx.font = font(22); ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = font(18); ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     ctx.fillText(TRIP.names[k], cx0, 112);
     // its view from the Sun
-    const bx0 = cx0 - 112, bx1 = cx0 + 112, by0 = 448, by1 = 518;
+    const bx0 = cx0 - 84, bx1 = cx0 + 84, by0 = 448, by1 = 506;
     ctx.fillStyle = '#000'; ctx.fillRect(bx0, by0, bx1 - bx0, by1 - by0);
     ctx.strokeStyle = 'rgba(150,160,185,0.55)'; ctx.lineWidth = 1;
     ctx.strokeRect(bx0 + 0.5, by0 + 0.5, bx1 - bx0 - 1, by1 - by0 - 1);
@@ -468,6 +590,7 @@ function goto(p, anim){
 }
 
 window.cmzGoto = goto;
+window.cmzDebug = function(){ return { clouds: clouds, G: G }; };   // for checking shapes from devtools
 window.cmzPhase = function(){ return cur; };
 
 // standalone: play the phases in order; click to restart

@@ -282,7 +282,8 @@
        [parked]      sn-exoplanets, sn-sf-relation -- still to be integrated
        Vienna 38-43  "Our Galaxy" (Gaia, 2MASS, Planck/HI4PI stack), nearby regions form few
                      massive stars, the inner Galaxy is where most stars form
-       transitions   topdown-local -> topdown-compare -> open-edge-on -> cmz-what-shape
+       transitions   topdown-local -> cmz-zoomout (cmz-what-shape steps 0-1).  sn-exoplanets
+                     ... cmz-what-shape moved to after soon-roman (2026-10-09)
      Everything the old CfA opener had that is not listed here is PARKED as hidden slides at the
      end of the deck (search "PARKED"), not deleted.
      ====================================================================================== -->
@@ -303,7 +304,21 @@
               </ul>
           </section>
 
-          <section style='background-color:black'>
+          <!-- slide 1 (2026-10-09), replacing the zoom movie, which is kept hidden right below -->
+          <section id=takeaways>
+              <h4> Three brief things to take away </h4>
+              <ul style="font-size:40px; line-height:1.5; margin-top:40px;">
+                  <li> The Galactic Center is <span style="color:#ffd166;">important</span>
+                  <li> It is <span style="color:#ffd166;">poorly understood</span>
+                  <li> We're about to know it <span style="color:#ffd166;">much better</span>
+              </ul>
+              <p style="font-size:30px; color:#ccc; margin-top:60px; line-height:1.4;">
+                  On the way, I hope to teach you a little bit of interesting physics and show some epic images.
+              </p>
+          </section>
+
+          <!-- PARKED 2026-10-09: the zoom movie that was slide 1.  Delete data-visibility to restore. -->
+          <section id=zoom-movie data-visibility="hidden" style='background-color:black'>
               <div style='width:1500px; margin-left:-220px; height:1500px; margin-top:-200px; background-color:black; position: absolute; z-index:-1'>
               </div>
               <div style='width:1450px; margin-left:-220px; z-index:10'>
@@ -478,21 +493,7 @@ across cosmic time.
     </div>
 </section>
 
-<section id=index>
-<h4> While I'm visiting, ask me about </h4>
-<ul>
-    <li> <a href="#SaltedDisks">Salted disks</a>
-    <li> <a href="#ALMA-IMF">ALMA-IMF and the Core Mass Function</a>
-    <li> <a href="#ACES">ACES: ALMA Galactic Center</a>
-    <li> <a href="#hotcores">Hot Cores [in the GC &amp; disk]</a>
-    <li> <a href="#MUBLO">The MUBLO</a>
-    <li> <a href="#Orion">The Orion BN/KL Explosive Outflow</a>
-    <li> <a href="#ysomodels">YSO SED models</a>
-    <li> <a href="#sgrb2">Sgr B2</a>
-    <li> <a href="#w51">W51</a>
-    <li> <a href="#iceicebaby">Ice in the CMZ and Galactic Disk</a>
-</ul>
-</section>
+<!-- (#index, 'While I'm visiting', moved to the end of the talk 2026-10-09) -->
 
 
 
@@ -534,14 +535,16 @@ across cosmic time.
 
 
 <section>
-    <h4>High-mass stars produce photons &amp; heavy elements<br> low-mass stars live practically forever</h4>
+    <!-- title colors are the figures' own point colors (vendian.org blackbody colors): the
+         hottest/most massive stars #9cb3ff, the coolest/least massive #fc6a3e -->
+    <h4><span style='color:#9cb3ff;'>High-mass stars</span> produce photons &amp; heavy elements<br> <span style='color:#fc6a3e;'>low-mass stars</span> live practically forever</h4>
     <div style="float:left; width:50%;">
         <img src="colloquium_assets/mass_lum_diagram.svg">
     </div>
     <div style="float:right; width:50%;">
         <img src="colloquium_assets/HR_diagram.svg">
     </div>
-    <div class=smaller> Point color shows effective temperature, point size shows luminosity (left) and mass (right) </div>
+    <div class=smaller> Point color shows effective temperature, point size shows <br>luminosity (left) and mass (right) </div>
     <!--<img src="colloquium_assets/Hertzsprung-Russel_StarData.png">
     <div style="position: absolute; bottom: 50px; left:10px" class="smaller2"><a href="https://commons.wikimedia.org/wiki/File:Hertzsprung-Russel_StarData.png">ESO via Wikipedia</a></div>-->
     <div style="position: absolute; bottom: 140px; right:10px" class="smaller3">
@@ -635,7 +638,7 @@ across cosmic time.
 <section>
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/ESA_Herschel_Taurus_1280w.jpg); max-width:125%'>
     <h4> Most of what we know of star formation in detail comes from small local clouds </h4>
-    <div style="position: relative; bottom: -59%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="http://sci.esa.int/herschel/55944-taurus-molecular-cloud/">Herschel/Palmeirim+ 2013</a></div>
+    <div style="position: relative; bottom: -59%; left:1%; text-align: left;" class="smaller3">FIR: <a class=darkbg href="http://sci.esa.int/herschel/55944-taurus-molecular-cloud/">Herschel/Palmeirim+ 2013</a></div>
     </span>
     <!-- Build (2026-10-08): Herschel -> DSS2 of this same footprint, rendered from CDS HiPS onto
          the ESA image's own (recovered) WCS: far-IR dust glow, then the same dust opaque in the
@@ -648,7 +651,7 @@ across cosmic time.
           max-width:none; margin:0; border:1px solid #555; box-shadow:none; }
     </style>
     <span class="image fragment taurus-xfade" style='position:absolute; top:0; left:0; background-position: center center; background-image: url(colloquium_assets/Taurus_B211_DSS2_hips.jpg);'>
-      <div style="position:absolute; top:73.5%; left:1%; text-align:left;" class="smaller3"><a class=darkbg href="https://alasky.cds.unistra.fr/DSS/">DSS2</a> red+blue (HiPS), same field</div>
+      <div style="position:absolute; top:73.5%; left:1%; text-align:left;" class="smaller3">Optical: <a class=darkbg href="https://alasky.cds.unistra.fr/DSS/">DSS2</a></div>
     </span>
     <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
     <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
@@ -1057,294 +1060,134 @@ across cosmic time.
 </section>
 </section>  <!-- end of the #topdown-local stack -->
 
-<!-- Real figure, rebuildable: colloquium_assets/make_exoplanet_distance_figure.py queries the
-     NASA Exoplanet Archive pscomppars table and caches it to exoplanet_distances.csv.
-     As of 2026-09: 6366 confirmed planets, 95% inside 3 kpc, 82% inside 1 kpc.  The bump at
-     ~7 kpc is bulge microlensing — essentially the only planets we know outside the disk.
-
-     TO PUT THE PLANETS IN THE 3D FIGURE INSTEAD OF (or as well as) THIS 1D ONE: the same script
-     now also writes colloquium_assets/exoplanet_hosts_galactic_xyz.csv — 6338 planets with
-     heliocentric Galactic Cartesian x/y/z in pc, the same frame Edenhofer+ 2024 and the oviz
-     figures use, so it loads into oviz as a new trace with no further transform.  Add it to
-     massive_stars_combined.html as a trace, save a camera state, re-export, and this slide can
-     become a third view of the same top-down figure rather than a separate plot.  I could not
-     do that step from here: it is authoring inside the oviz UI. -->
-<section id=sn-exoplanets>
-    <h4> Almost every planet we know is in that same volume </h4>
-    <img src="colloquium_assets/exoplanet_distances.png" style="position:absolute; top:112px; left:112px; width:800px; background:white;">
-    <div class="smaller3" style="position:absolute; bottom:6px; right:5%;">NASA Exoplanet Archive, Sept 2026 &mdash; <tt>make_exoplanet_distance_figure.py</tt></div>
-    <aside class=notes>
-        95% of all 6366 confirmed planets are inside 3 kpc; 82% inside 1 kpc.  The little pile
-        at 7-8 kpc is bulge microlensing, and it is nearly the whole of what we know about
-        planets outside the solar neighborhood.
-        <br><br>
-        So the planet census and the star formation census are the SAME sample.  Whatever is
-        biased about one is biased about the other.
-    </aside>
-</section>
-
-<!-- Sequel to #sn-exoplanets: the same distance axis, today's confirmed planets in gray, then the
-     yield of Roman's Galactic Bulge Time Domain Survey added in two clicks (microlensing, then
-     transits).  Built by colloquium_assets/make_roman_exoplanet_figure.py; every number and both
-     distance distributions are sourced in that script's docstring.  Log y axis, because the
-     transit peak is ~40x taller per bin than anything else.
-     Numbers are the conservative end:
-       microlensing ~1,000  = Penny+ 2019's 1,428 (Cassan+12 mass function) / 1.4 for the lower
-                              measured event rates (GBTDS Definition Committee report, in ROTAC 2025)
-       transiting  ~50,000  = Wilson+ 2023 Kepler-like occurrence (52-64k), ~51k for the adopted
-                              5-field + GC design (ROTAC 2025 Fig. 5); up to ~200k if giant-planet
-                              occurrence tracks metallicity
-     Distances: microlensing = true lens distances of Terry+ 2026's simulated GBTDS planet events
-     (their Fig. 6, extracted from the vector PDF); transits = Wilson+ 2023 Fig. 16 total. -->
-<section id=sn-exoplanets-roman>
-    <h4> Roman will find tens of thousands of planets ~8 kpc away </h4>
-    <img src="colloquium_assets/roman_exoplanets_0_known.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
-    <img class="fragment" data-fragment-index="1" src="colloquium_assets/roman_exoplanets_1_microlensing.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
-    <img class="fragment" data-fragment-index="2" src="colloquium_assets/roman_exoplanets_2_transits.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
-    <div class="fragment" data-fragment-index="1" style="position:absolute; top:636px; left:112px; width:800px; font-size:19px; line-height:1.25; text-align:left;">
-        Roman's bulge survey: 6 fields (~1.7&nbsp;deg<sup>2</sup>), each every 12&nbsp;min, six seasons in 5&nbsp;years &mdash;
-        incl. a Galactic Center field, where JWST already resolves 3.7&nbsp;million stars in 0.2&nbsp;deg<sup>2</sup>
-    </div>
-    <div class="smaller3" style="position:absolute; bottom:6px; left:4%; width:92%; text-align:left;">
-        Known: NASA Exoplanet Archive, Sept 2026 &middot;
-        microlensing: <a href="https://ui.adsabs.harvard.edu/abs/2019ApJS..241....3P/abstract">Penny+ 2019</a>,
-        <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250510574O/abstract">ROTAC 2025</a>,
-        <a href="https://ui.adsabs.harvard.edu/abs/2026AJ....171..212T/abstract">Terry+ 2026</a> &middot;
-        transits: <a href="https://ui.adsabs.harvard.edu/abs/2023ApJS..269....5W/abstract">Wilson+ 2023</a> &middot;
-        JWST GC Treasury (program 10678) &mdash; <tt>make_roman_exoplanet_figure.py</tt>
-    </div>
-    <aside class=notes>
-        Same axis as the last slide, now logarithmic in the vertical: gray is the 6,366 confirmed
-        planets we know today, 82% within 1 kpc.
-        <br><br>
-        Click: microlensing.  Roman launched on August 30; its Galactic Bulge Time Domain Survey is
-        six ~70-day seasons, the first three and last three of the 5-year prime mission, so these
-        are numbers for ~2031.  About 1,000 bound planets, from a tenth of an Earth mass up to
-        tens of Jupiters, at 0.3&ndash;30 au: Penny+ 2019 predicted 1,400, and the survey
-        definition committee says the newer, lower measured event rates take that down by ~1.4x.
-        (Free-floating planets, ~250 more, are not in this.)  Their hosts: median 7.7 kpc, 90%
-        between 6 and 10 kpc, because Roman's fields sit only ~1&ndash;1.5 degrees below the
-        plane, so most of the lenses are bulge stars.
-        <br><br>
-        Click: transits.  About 50,000 &mdash; Wilson+ 2023 with Kepler-like occurrence rates,
-        and the ROTAC's estimate for the adopted design.  If giant-planet occurrence tracks
-        metallicity, as it does locally, it is 135,000&ndash;200,000.  90&ndash;95% are close-in
-        giants, and most will stay candidates; a few thousand hot Jupiters can be confirmed from
-        their secondary eclipses.  Three quarters of them are between 5 and 10 kpc; the tail
-        reaches ~20 kpc, the far side of the bulge.
-        <br><br>
-        So in five years the planet census stops being a solar-neighborhood census: of ~57,000
-        planets with distances, ~10% instead of 82% would be inside 1 kpc.  (The local census
-        keeps growing too &mdash; Gaia astrometry, PLATO &mdash; so "two-centered", not "moved".)
-        <br><br>
-        And Roman includes a Galactic Center field (Sgr A*, Arches, Quintuplet) at the same
-        12-minute cadence.  For scale: the JWST GC Treasury (program 10678, catalog v1.9) has
-        3,747,256 sources in 68 NIRCam tiles, 0.20 deg<sup>2</sup> of the CMZ, F212N and F480M,
-        ~5,300 per arcmin<sup>2</sup> detected and crowding-limited.  The planet yields above are
-        for the lower-extinction bulge fields, not the CMZ itself.
-    </aside>
-</section>
-
-
-<!-- This is deliberately the SAME figure that comes back later with the CMZ points on it
-     (sf-relation-sgrb2 / clouds-* in Act IV).  sf_relation_cmz_base.png is the local-only
-     build from colloquium_assets/make_sf_relation_figure.py.
-     TODO: add the Spilker & Kainulainen relation as a second line/band.  Their Paper I
-     (2021, A&A 653, A63, arXiv:2108.04518) is the column-density + star formation one;
-     the link in the brief, 2022 A&A 667 A110, is Paper II (kinematics).  Worth citing both;
-     worth deciding which relation we actually draw. -->
-<section id=sn-sf-relation data-topdown=census-dim>
-    <h4> ...and it defines the star formation relation we extrapolate from </h4>
-    <img src="colloquium_assets/sf_relation_cmz_base.png" style="position:absolute; top:108px; left:150px; width:724px; background:white;">
-    <div class="smaller3" style="position:absolute; bottom:6px; left:4%; text-align:left;">
-        <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...912L..19P/abstract">Pokhrel+ 2021</a> &middot;
-        <a href="https://ui.adsabs.harvard.edu/abs/2021A%26A...653A..63S/abstract">Spilker, Kainulainen &amp; Orkisz 2021</a> &middot;
-        <a href="https://ui.adsabs.harvard.edu/abs/2022A%26A...667A.110S/abstract">2022</a>
-    </div>
-    <aside class=notes>
-        Twelve clouds.  All within ~1.5 kpc.  Uniform eps_ff = 0.026, and a relation fitted only
-        below N(H2) = 3e22, i.e. Sigma_gas &lt; 676 Msun/pc^2.
-        <br><br>
-        Remember this figure.  It comes back with the Galactic Center on it, one to two dex to
-        the right of anything it was ever fitted to.
-    </aside>
-</section>
-
-<section>
-    <h4>
-        The Inner Galaxy is where most stars form </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_zones.png);'></span>
-</section>
-
-
-<section data-auto-animate>
-    <h4> The Inner Galaxy is where most stars form </h4>
-    <img src="colloquium_assets/HI-CO-Dust_m0.35_RGB_innergal_zoombox.png" style='width:100%; height:auto; max-height:none; max-width:none; margin-top:64px; position:absolute; left:0px;'>
-</section>
-
-
-<!-- Real figure, rebuildable: colloquium_assets/make_local_vs_cmz_scale.py
-     Top panel: the CMZ's measured extent (~400 pc) drawn top-down, to scale, as a circle.  Only
-     its SIZE is claimed -- its top-down shape is unmeasured (#cmz-what-shape).  An earlier
-     version drew a rectangle here (the bottom panel's plane-of-sky footprint, laid along the
-     line of sight) -- that was wrong on both counts.  Bottom panel: the CMZ blown up, at its
-     own scale, edge-on as we actually see it.  This is the hinge of the talk. -->
-<section id=topdown-compare>
-    <h4> The Galactic Center &amp; solar neighborhood to scale </h4>
-    <img src="colloquium_assets/local_vs_cmz_scale.png" style="position:absolute; top:88px; left:10px; height:620px; width:auto; max-width:none; background:white;">
-    <!-- Molecular gas, both sides sourced and with matching radii:
-           local   Sigma(H2) = 1.0 +/- 0.3 Msun/pc^2 incl. He (McKee, Parravano & Hollenbach 2015,
-                   Table 2, after Dame+ 1987 / Heyer & Dame 2015) x pi (2 kpc)^2 = 1.3e7 Msun.
-                   Assumes the local average holds out to 2 kpc; it rises somewhat inward.
-           CMZ     2-6e7 Msun within R ~ 300 pc (Henshaw+ 2023 PPVII, after Dahmen+ 1998 and
-                   Ferriere+ 2007) -> Sigma = 70-210 Msun/pc^2 over 0.28 kpc^2.
-         ~1e8 for the CMZ would overstate the literature range by 2-5x. -->
-    <div style="position:absolute; left:672px; top:150px; width:340px; text-align:left; font-size:23px; line-height:1.35;">
-        <div><b>Within 2 kpc of the Sun</b><br>
-             M<sub>H<sub>2</sub></sub> &asymp; 1 &times; 10<sup>7</sup> M<sub>&odot;</sub><br>
-             <span style="color:#aaa;"> &Sigma; &asymp; 1 M<sub>&odot;</sub> pc<sup>&minus;2</sup></span></div>
-        <div style="margin-top:18px; color:#ff8a80;"><b>CMZ</b> (R &lt; 300 pc)<br>
-             M<sub>H<sub>2</sub></sub> &asymp; 5 &times; 10<sup>7</sup> M<sub>&odot;</sub><br>
-             <span style="color:#d99;"> &Sigma; &asymp; 200 M<sub>&odot;</sub> pc<sup>&minus;2</sup></span></div>
-        <div style="margin-top:22px;">~5x the molecular gas of the solar neighborhood, in ~1% of the area.</div>
-    </div>
-    <div class="smaller3" style="position:absolute; bottom:6px; left:4%;">Edenhofer+ 2024 (top-down) &middot; Battersby+ 2025 (edge-on) &middot; M<sub>H<sub>2</sub></sub>: <a href="https://ui.adsabs.harvard.edu/abs/2015ApJ...814...13M/abstract">McKee+ 2015</a>, <a href="https://ui.adsabs.harvard.edu/abs/2023ASPC..534...83H/abstract">Henshaw+ 2023</a></div>
-    <aside class=notes>
-        The red circle is the CMZ's real size, to scale -- about 600 pc across.  Only the size:
-        nobody has measured its shape from above.
-        <br><br>
-        Numbers: the whole solar neighborhood out to 2 kpc holds ~1e7 Msun of H2 (1 Msun/pc^2,
-        McKee+ 2015).  The CMZ holds 2-6e7 Msun (Henshaw+ 2023) -- more than all of that, in 1/45
-        of the area, at 70-200x the surface density.
-        <br><br>
-        One structure, less than half a kiloparsec across, with more dense gas in it than the entire
-        upper panel, and nothing in the upper panel resembles it.  That is the whole argument for
-        why the rest of this talk is at the Galactic Center.
-        <br><br>
-        Caveat to say out loud: the bottom panel is plane-of-sky, not top-down — we do not HAVE
-        the top-down view of the CMZ.  That is the problem the end of the talk attacks.
-    </aside>
-</section>
-
-<!--
-<section id=open-edge-on>
-    <h4> The trouble: our nearest galaxy center is edge-on and obscured </h4>
-    <span class=image style='background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_innergal_zoombox.png);'></span>
-    <div style="position:absolute; bottom:56px; left:0; width:100%; text-align:center;" class=smaller2>
-        We see the CMZ through 30 magnitudes of extinction, projected along 200 pc of line of sight.
-        <br>Getting the top-down view is the last third of this talk.
-    </div>
-    <aside class=notes>
-        Plant the promise here and pay it off with the 3D CMZ / Roman proper-motion tomography
-        section at the end (cmz-3d-movie, cmz-orbit-stars, roman-tomo-*).
-    </aside>
-</section>
--->
-
-<!-- ======================================================================================
-     The hinge of the whole talk, as an animation: assets/cmz/cmz_shape_tour.html (rebuilt
-     2026-10-04; the old point-particle version, cmz_topdown_hypotheses.html, is still in that
-     directory but nothing uses it).  STEPPED BY THE SEVEN EMPTY FRAGMENTS below -- one click per
-     phase, each forward click animates, anything else snaps (script near the end of this file):
-       0 local    REAL: Edenhofer+ 2024 3D dust, top down, 1.25 kpc around the Sun
-       1 galaxy   zoom out: that map is a small patch of the Galaxy (gas clouds on the Reid+ 2019
-                  arm fits, tips tapered; far side = near side mirrored through the GC; bar drawn
-                  schematically as x1 orbits + leading-edge lanes, x2 orbits in the center)
-       2 gc       fly to the GC: every cloud a streak along the line of sight, a "?", and the
-                  edge-on "what we see from the Sun" strip appears underneath
-       3 ring     the clouds slide into a ring
-       4 spiral   ... into two spiral arms
-       5 disk     ... into a filled disk
-       6 flocc    ... into what the hydrodynamic simulations look like (Tress+ 2020): a fluffy
-                  filled disk with flocculent, sheared arms coming off its edge, and gas from the
-                  bar lanes joining at opposite sides
-       7 verdict  all four side by side, each above its own (identical) view from the Sun
-     Layers are built by assets/cmz/make_cmz_shape_layers.py.
-
-     WHAT IT DOES AND DOES NOT CLAIM (header comment of the page has the long version): every
-     cloud keeps one sky position and one height in all four shapes; only the depth changes, so
-     the edge-on strip is identical by construction.  That shows what an IMAGE cannot tell you.
-     It is not a claim that the published models are indistinguishable -- they also differ in
-     line-of-sight velocity, and the honest statement is that the l-v data have so far been fit
-     by all of them. -->
-<section id=cmz-what-shape data-background-color="#000">
+<!-- #cmz-zoomout (2026-10-09): a copy of #cmz-what-shape's first two steps -- the Edenhofer map
+     top-down, then one click zooms out to the whole Galaxy -- right after #topdown-local.  Same
+     page (assets/cmz/cmz_shape_tour.html), its own iframe, one empty fragment (phase 1); the sync
+     script at the end of this file drives every slide that has an iframe.cmz-shape.  The full
+     sequence (zoom-in to the GC and the shape hypotheses) is #cmz-what-shape, after #soon-roman. -->
+<section id=cmz-zoomout data-background-color="#000">
     <h4> We know the solar neighborhood in 3D, but not the GC </h4>
-    <!-- src, not data-src: the page loads with the deck and sits idle until a fragment tells it
-         to move, so arriving on this slide never waits on a load -->
     <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1"
             style="position:absolute; left:12px; top:92px; width:1000px; height:670px;
                    max-width:none; max-height:none; margin:0; border:0; background:#000;
                    pointer-events:none;"></iframe>
     <span class=fragment data-cmz-phase=1></span>
-    <span class=fragment data-cmz-phase=2></span>
-    <span class=fragment data-cmz-phase=3></span>
-    <span class=fragment data-cmz-phase=4></span>
-    <span class=fragment data-cmz-phase=5></span>
-    <span class=fragment data-cmz-phase=6></span>
-    <span class=fragment data-cmz-phase=7></span>
-    <!-- One published picture per hypothesis, in the empty column under the animation's caption.
-         Deck elements rather than part of the iframe (whose pointer-events are off so it can never
-         take the keyboard), so the reference links stay clickable.  Shown by the sync script at
-         the end of this file for the matching phase only.  The disk has no single proponent paper;
-         3D CMZ V's nested x2 orbits are the closest published "filled" picture. -->
-    <style>
-      #cmz-what-shape .cmz-snap { position:absolute; left:16px; top:300px; width:318px; z-index:6;
-          text-align:center; opacity:0; visibility:hidden;
-          transition:opacity .4s ease-in-out, visibility .4s; }
-      #cmz-what-shape .cmz-snap.on { opacity:1; visibility:visible; }
-      #cmz-what-shape .cmz-snap img { display:block; margin:0 auto; max-width:318px; max-height:330px;
-          border:0; box-shadow:none; background:#fff; }
-      #cmz-what-shape .cmz-snap .cap { font-size:16px; line-height:1.3; color:#9aa3b5; margin-top:6px; }
-    </style>
-    <div class=cmz-snap data-snap-phase=3>
-        <a href="https://ui.adsabs.harvard.edu/abs/2011ApJ...735L..33M/abstract" target=_blank rel=noopener><img src="assets/cmz/snap_molinari2011.png" alt="Molinari+ 2011: the 100-pc ring, face-on"></a>
-        <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2011ApJ...735L..33M/abstract" target=_blank rel=noopener>Molinari+ 2011</a>: the "100-pc ring", face-on</div>
-    </div>
-    <div class=cmz-snap data-snap-phase=4>
-        <a href="https://ui.adsabs.harvard.edu/abs/2025PASJ...77..687S/abstract" target=_blank rel=noopener><img src="assets/cmz/snap_sofue2025.jpg" alt="Sofue+ 2025: Galactic Center arms from ACES"></a>
-        <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2025PASJ...77..687S/abstract" target=_blank rel=noopener>Sofue+ 2025</a>: nested Galactic Center arms from ACES</div>
-    </div>
-    <div class=cmz-snap data-snap-phase=5>
-        <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract" target=_blank rel=noopener><img src="assets/cmz_papers/lipman2026a_fig6.jpg" alt="Lipman+ 2026: nested x2 orbits"></a>
-        <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract" target=_blank rel=noopener>Lipman+ 2026</a> (3D CMZ V): nested x<sub>2</sub> orbits</div>
-    </div>
-    <div class=cmz-snap data-snap-phase=6>
-        <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract" target=_blank rel=noopener><img src="assets/cmz/snap_tress2026.jpg" alt="Tress+ 2026: the CMZ in the Rhea-RT simulation"></a>
-        <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract" target=_blank rel=noopener>Tress+ 2026</a>: the CMZ in the Rhea-RT Milky Way simulation</div>
-    </div>
     <aside class=notes>
-        Eight clicks' worth.  Start where we just were: the 3D dust map of the solar
-        neighborhood -- real data, Edenhofer+ 2024, seen from above.  We know where every cloud
-        is.
-        <br><br>
-        Click: pull out.  That whole map is the little circle; the Galactic Center is 8 kpc
-        away.  (The Galaxy here is gas clouds placed on the Reid+ 2019 maser-parallax arm fits;
-        the parallaxes only cover the near side, so the far side is the near side mirrored
-        through the center.  The bar is drawn schematically as gas on its orbit families: x1
-        loops along the bar with dust lanes on their leading edges, and x2 orbits across it in
-        the center -- which is where the CMZ sits as we fly in.)
-        <br><br>
-        Click: fly in.  At the GC we know where each cloud is on the sky, not how deep it sits
-        -- so each one is a streak along our line of sight.  The strip at the bottom is what we
-        actually see.
-        <br><br>
-        Clicks: a ring (Molinari+ 2011), spiral arms (Sofue+ 2025, from ACES), a filled disk
-        (nested x2 orbits, 3D CMZ V: Lipman+ 2026), and what simulations look like (Tress+ 2026,
-        Rhea-RT): a fluffy filled disk throwing off flocculent spiral arms, with gas from the bar
-        lanes arriving at opposite sides.  Each step shows that paper's own picture at the left,
-        linked to ADS.  Point out that the
-        clouds only move up and down, and the strip never changes.
-        <br><br>
-        Final click: four shapes, one view.  Careful wording: "an image can't tell you the
-        depth" -- NOT "the data can't tell them apart"; velocities carry some information, and
-        that is why all of these have been fit to the l-v data.  Land on: Roman proper motions
-        add the missing axis -- the promise the tomography section at the end pays off.
+        The same dust map, now our own top-down rendering of Edenhofer+ 2024.  Click: pull out --
+        that whole map is the little circle; the Galactic Center is 8 kpc away.  (Steps 0-1 of
+        #cmz-what-shape, which picks this up again later.)
     </aside>
 </section>
 
+<!-- ===== Bar inflow -> CMZ (2026-10-09): transition from #cmz-zoomout (the Galaxy, with the bar) into the
+     CMZ.  Three slides: the inflow (Savannah's cartoon), the evidence that overshooting gas collides
+     (Gramze+ 2023, G5), and what the colliding flows do to star formation in the CMZ (Tress+ 2026
+     Fig. 22).  Numbers checked against the abstracts:
+       Sormani & Barnes 2019 (MNRAS 484, 1213): inflow along the dust lanes 2.7 (+1.5/-1.7) Msun/yr
+       Hatchfield+ 2021 (ApJ 922, 79; simulations): only 30 +- 12% accretes on the first pass, the
+         rest overshoots -> true inflow 0.8 +- 0.6 Msun/yr
+       Gramze+ 2023 (ApJ 959, 93): G5 at (l,b) = (+5.4, -0.4); velocity bridge between clouds at ~50
+         and ~150 km/s = direct evidence of a cloud-cloud collision; ~60 K; X_CO 10-20x below Galactic -->
+<section id=bar-inflow>
+    <h4> The bar feeds the CMZ </h4>
+    <div style="position:absolute; left:52px; top:104px; width:450px; height:586px; background:#fff; border-radius:8px;"></div>
+    <img src="assets/Savannah/CMZCartoon.png" alt="cartoon of the bar, its dust lanes, and the CMZ"
+         style="position:absolute; left:62px; top:112px; height:570px; width:auto; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+    <div style="position:absolute; left:540px; top:150px; width:450px; text-align:left; font-size:28px; line-height:1.3;">
+        <p style="margin:0 0 26px 0;">Gas falls in along the bar's dust lanes: <span style="color:#ffd166;">~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></span>
+            <span style="display:block; font-size:16px; color:#aaa; margin-top:4px;">
+                <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.1213S/abstract">Sormani &amp; Barnes 2019</a>: 2.7<sup>+1.5</sup><sub>&minus;1.7</sub>;
+                <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...922...79H/abstract">Hatchfield+ 2021</a>: 0.8&nbsp;&plusmn;&nbsp;0.6</span></p>
+        <p  style="margin:0 0 26px 0;">Only <span style="color:#ffd166;">~&#8531;</span> lands on the CMZ the first time around; the rest overshoots
+            <span style="display:block; font-size:16px; color:#aaa; margin-top:4px;"> <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...922...79H/abstract">Hatchfield+ 2021</a></span></p>
+        <p  style="margin:0;">...and hits the dust lane on the far side
+        </p>
+    </div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:52px;">cartoon: S. Gramze (<a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Gramze+ 2023</a>)</div>
+    <aside class=notes>
+        Coming out of the zoom: the bar.  Gas on the bar's orbits gets shocked into two dust
+        lanes and falls toward the center -- about a solar mass per year (Sormani &amp; Barnes 2019
+        measured 2.7 from CO along the lanes; Hatchfield+ 2021 argue the effective rate is lower,
+        0.8, because in their simulations only ~30% accretes on the first pass).
+        <br><br>
+        Click: most of it overshoots.  Click: and collides with the lane on the other side --
+        the bursts on the cartoon.  We can see one of these collisions happening.
+    </aside>
+</section>
 
+<section id=g5-collision>
+    <h4> We see it happen: G5, a collision of overshooting gas </h4>
+    <div style="position:absolute; left:40px; top:104px; width:478px; height:526px; background:#fff; border-radius:8px;"></div>
+    <img src="assets/Savannah/G5_pvdiagram_12CO.png" alt="12CO position-velocity diagram of G5"
+         style="position:absolute; left:50px; top:112px; height:510px; width:auto; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+    <div style="position:absolute; left:540px; top:104px; width:210px; height:274px; background:#fff; border-radius:8px;"></div>
+    <img src="assets/Savannah/CMZCartoon.png" alt=""
+         style="position:absolute; left:545px; top:108px; height:266px; width:auto; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+    <div style="position:absolute; left:776px; top:104px; width:200px; text-align:center; font-size:17px; color:#ddd;">
+        <img src="assets/Savannah/SavannahGramze.jpeg" alt="Savannah Gramze"
+             style="width:150px; height:200px; object-fit:cover; margin:0 auto 4px; display:block; border-radius:6px; box-shadow:none; border:0; max-width:none; max-height:none; background:none;">
+        Savannah Gramze
+    </div>
+    <div style="position:absolute; left:545px; top:400px; width:450px; text-align:left; font-size:23px; line-height:1.3;">
+        A <span style="color:#ffd166;">velocity bridge</span> joins clouds at ~50 and ~150&nbsp;km&nbsp;s<sup>&minus;1</sup> : evidence of collision
+    </div>
+    <!-- builds: the same position-velocity cut in the other tracers (Gramze's figures, white boxes over the top) 
+    <div class=fragment style="position:absolute; left:30px; top:100px; width:964px; height:540px; background:#fff; border-radius:8px; z-index:5;">
+        <img src="assets/Savannah/pvs_13co_c18o.png" alt="13CO and C18O position-velocity diagrams"
+             style="position:absolute; left:12px; top:10px; width:940px; height:auto; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+        <div style="position:absolute; left:0; bottom:10px; width:100%; text-align:center; font-size:22px; color:#222;">the bridge is in the optically thin tracers too</div>
+    </div>
+    <div class=fragment style="position:absolute; left:30px; top:100px; width:964px; height:540px; background:#fff; border-radius:8px; z-index:6;">
+        <img src="assets/Savannah/pvs_sio_h2co.png" alt="SiO and H2CO position-velocity diagrams"
+             style="position:absolute; left:12px; top:10px; width:940px; height:auto; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+        <div style="position:absolute; left:0; bottom:10px; width:100%; text-align:center; font-size:22px; color:#222;">and SiO, a shock tracer, is bright in both clouds</div>
+    </div>
+    -->
+    <div class=smaller3 style="position:absolute; bottom:6px; left:40px;"><a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Gramze+ 2023</a> (ALMA/ACA)</div>
+    <aside class=notes>
+        Savannah's G5, at l = +5.4: in position-velocity, two clouds at ~50 and ~150 km/s joined by
+        a bridge -- the signature of a collision.  It sits where the cartoon says overshooting gas
+        should hit the far-side lane.  Fully molecular, ~60 K, and the CO-to-H2 factor is 10-20x
+        below the Galactic average.  (These are molecular high-velocity clouds in the plane, not
+        infalling HI.)
+        <br><br>
+        Click: the bridge is there in 13CO and C18O as well.  Click: SiO -- a shock tracer -- is
+        bright in both clouds.
+    </aside>
+</section>
 
-
+<!-- Tress+ 2026 (Rhea-RT, A&A 711, A103) Fig. 22, rendered from the vector PDF in the arXiv source
+     (assets/cmz/tress2026_fig22_sketch_cmz.png, 2600 px).  Panels revealed one per click: white
+     covers over (b), (c), (d) fade out in turn.  Panel split measured from the figure's gutters:
+     x = 1314/2600; rows split at y = 1380/2600, below the (a)/(b) labels (rows 1224-1345).  Captions paraphrase the paper's caption and Sect. 5 text. -->
+<section id=tress-colliding-flows>
+    <h4> In the CMZ, colliding flows pull stars and gas apart </h4>
+    <div style="position:absolute; left:30px; top:100px; width:592px; height:592px; background:#fff; border-radius:8px;"></div>
+    <img src="assets/cmz/tress2026_fig22_sketch_cmz.png" alt="Tress+ 2026 Fig. 22: schematic of a star-forming region in the CMZ"
+         style="position:absolute; left:46px; top:116px; width:560px; height:560px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+    <div class="fragment fade-out" data-fragment-index=0 style="position:absolute; left:329px; top:116px; width:277px; height:297px; background:#fff;"></div>
+    <div class="fragment fade-out" data-fragment-index=1 style="position:absolute; left:46px; top:413px; width:283px; height:263px; background:#fff;"></div>
+    <div class="fragment fade-out" data-fragment-index=2 style="position:absolute; left:329px; top:413px; width:277px; height:263px; background:#fff;"></div>
+    <div style="position:absolute; left:650px; top:118px; width:350px; text-align:left; font-size:21px; line-height:1.3;">
+        <p style="margin:0 0 18px 0;"><b style="color:#ffd166;">(a)</b> Gas arrives along the bar's shock lane and runs into the CMZ ring, where a cluster is forming</p>
+        <p class=fragment data-fragment-index=0 style="margin:0 0 18px 0;"><b style="color:#ffd166;">(b)</b> Collisions and short orbits decouple stars from gas: the young cluster is exposed</p>
+        <p class=fragment data-fragment-index=1 style="margin:0 0 18px 0;"><b style="color:#ffd166;">(c)</b> Gas stays on closed x<sub>2</sub> orbits; the stars, collisionless, follow open orbits and drift away</p>
+        <p class=fragment data-fragment-index=2 style="margin:0;"><b style="color:#ffd166;">(d)</b> ...back into dense gas: young stars are re-embedded, so feedback couples to the gas differently than near the Sun</p>
+    </div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:30px;"><a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract">Tress+ 2026</a> (Rhea-RT), Fig. 22</div>
+    <aside class=notes>
+        What the inflow does once it reaches the CMZ, from Robin Tress's Rhea-RT simulations.
+        (a) Gas arrives along the shock lane and hits the ring, where a cloud is forming stars.
+        (b) Click: cloud collisions and the short (5-10 Myr) orbits decouple the stars from the gas,
+        and the cluster is exposed.  (c) Click: gas can only follow nearly closed x2 orbits --
+        otherwise it collides with itself -- but stars are collisionless and follow open rosette
+        orbits, so they drift away from their birth gas on an orbital time.  (d) Click: and they
+        run back into dense gas and are re-embedded.  So in the CMZ, feedback does not get to
+        disperse a cloud from the inside the way it does near the Sun.
+        <br><br>
+        Now let's go into the CMZ.
+    </aside>
+</section>
 
 <section id=sgrb2>
     <section id=cmz-to-sgrb2 data-auto-animate>
@@ -2386,6 +2229,298 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     </div>
 </section>
 
+<!-- ===== moved here 2026-10-09: sn-exoplanets ... cmz-what-shape (was after topdown-local) ===== -->
+<!-- Real figure, rebuildable: colloquium_assets/make_exoplanet_distance_figure.py queries the
+     NASA Exoplanet Archive pscomppars table and caches it to exoplanet_distances.csv.
+     As of 2026-09: 6366 confirmed planets, 95% inside 3 kpc, 82% inside 1 kpc.  The bump at
+     ~7 kpc is bulge microlensing — essentially the only planets we know outside the disk.
+
+     TO PUT THE PLANETS IN THE 3D FIGURE INSTEAD OF (or as well as) THIS 1D ONE: the same script
+     now also writes colloquium_assets/exoplanet_hosts_galactic_xyz.csv — 6338 planets with
+     heliocentric Galactic Cartesian x/y/z in pc, the same frame Edenhofer+ 2024 and the oviz
+     figures use, so it loads into oviz as a new trace with no further transform.  Add it to
+     massive_stars_combined.html as a trace, save a camera state, re-export, and this slide can
+     become a third view of the same top-down figure rather than a separate plot.  I could not
+     do that step from here: it is authoring inside the oviz UI. -->
+<section id=sn-exoplanets>
+    <h4> Almost every planet we know is in that same volume </h4>
+    <img src="colloquium_assets/exoplanet_distances.png" style="position:absolute; top:112px; left:112px; width:800px; background:white;">
+    <div class="smaller3" style="position:absolute; bottom:6px; right:5%;">NASA Exoplanet Archive, Sept 2026 &mdash; <tt>make_exoplanet_distance_figure.py</tt></div>
+    <aside class=notes>
+        95% of all 6366 confirmed planets are inside 3 kpc; 82% inside 1 kpc.  The little pile
+        at 7-8 kpc is bulge microlensing, and it is nearly the whole of what we know about
+        planets outside the solar neighborhood.
+        <br><br>
+        So the planet census and the star formation census are the SAME sample.  Whatever is
+        biased about one is biased about the other.
+    </aside>
+</section>
+
+<!-- Sequel to #sn-exoplanets: the same distance axis, today's confirmed planets in gray, then the
+     yield of Roman's Galactic Bulge Time Domain Survey added in two clicks (microlensing, then
+     transits).  Built by colloquium_assets/make_roman_exoplanet_figure.py; every number and both
+     distance distributions are sourced in that script's docstring.  Log y axis, because the
+     transit peak is ~40x taller per bin than anything else.
+     Numbers are the conservative end:
+       microlensing ~1,000  = Penny+ 2019's 1,428 (Cassan+12 mass function) / 1.4 for the lower
+                              measured event rates (GBTDS Definition Committee report, in ROTAC 2025)
+       transiting  ~50,000  = Wilson+ 2023 Kepler-like occurrence (52-64k), ~51k for the adopted
+                              5-field + GC design (ROTAC 2025 Fig. 5); up to ~200k if giant-planet
+                              occurrence tracks metallicity
+     Distances: microlensing = true lens distances of Terry+ 2026's simulated GBTDS planet events
+     (their Fig. 6, extracted from the vector PDF); transits = Wilson+ 2023 Fig. 16 total. -->
+<section id=sn-exoplanets-roman>
+    <h4> Roman will find tens of thousands of planets ~8 kpc away </h4>
+    <img src="colloquium_assets/roman_exoplanets_0_known.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
+    <img class="fragment" data-fragment-index="1" src="colloquium_assets/roman_exoplanets_1_microlensing.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
+    <img class="fragment" data-fragment-index="2" src="colloquium_assets/roman_exoplanets_2_transits.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
+    <div class="fragment" data-fragment-index="1" style="position:absolute; top:636px; left:112px; width:800px; font-size:19px; line-height:1.25; text-align:left;">
+        Roman's bulge survey: 6 fields (~1.7&nbsp;deg<sup>2</sup>), each every 12&nbsp;min, six seasons in 5&nbsp;years &mdash;
+        incl. a Galactic Center field, where JWST already resolves 3.7&nbsp;million stars in 0.2&nbsp;deg<sup>2</sup>
+    </div>
+    <div class="smaller3" style="position:absolute; bottom:6px; left:4%; width:92%; text-align:left;">
+        Known: NASA Exoplanet Archive, Sept 2026 &middot;
+        microlensing: <a href="https://ui.adsabs.harvard.edu/abs/2019ApJS..241....3P/abstract">Penny+ 2019</a>,
+        <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250510574O/abstract">ROTAC 2025</a>,
+        <a href="https://ui.adsabs.harvard.edu/abs/2026AJ....171..212T/abstract">Terry+ 2026</a> &middot;
+        transits: <a href="https://ui.adsabs.harvard.edu/abs/2023ApJS..269....5W/abstract">Wilson+ 2023</a> &middot;
+        JWST GC Treasury (program 10678) &mdash; <tt>make_roman_exoplanet_figure.py</tt>
+    </div>
+    <aside class=notes>
+        Same axis as the last slide, now logarithmic in the vertical: gray is the 6,366 confirmed
+        planets we know today, 82% within 1 kpc.
+        <br><br>
+        Click: microlensing.  Roman launched on August 30; its Galactic Bulge Time Domain Survey is
+        six ~70-day seasons, the first three and last three of the 5-year prime mission, so these
+        are numbers for ~2031.  About 1,000 bound planets, from a tenth of an Earth mass up to
+        tens of Jupiters, at 0.3&ndash;30 au: Penny+ 2019 predicted 1,400, and the survey
+        definition committee says the newer, lower measured event rates take that down by ~1.4x.
+        (Free-floating planets, ~250 more, are not in this.)  Their hosts: median 7.7 kpc, 90%
+        between 6 and 10 kpc, because Roman's fields sit only ~1&ndash;1.5 degrees below the
+        plane, so most of the lenses are bulge stars.
+        <br><br>
+        Click: transits.  About 50,000 &mdash; Wilson+ 2023 with Kepler-like occurrence rates,
+        and the ROTAC's estimate for the adopted design.  If giant-planet occurrence tracks
+        metallicity, as it does locally, it is 135,000&ndash;200,000.  90&ndash;95% are close-in
+        giants, and most will stay candidates; a few thousand hot Jupiters can be confirmed from
+        their secondary eclipses.  Three quarters of them are between 5 and 10 kpc; the tail
+        reaches ~20 kpc, the far side of the bulge.
+        <br><br>
+        So in five years the planet census stops being a solar-neighborhood census: of ~57,000
+        planets with distances, ~10% instead of 82% would be inside 1 kpc.  (The local census
+        keeps growing too &mdash; Gaia astrometry, PLATO &mdash; so "two-centered", not "moved".)
+        <br><br>
+        And Roman includes a Galactic Center field (Sgr A*, Arches, Quintuplet) at the same
+        12-minute cadence.  For scale: the JWST GC Treasury (program 10678, catalog v1.9) has
+        3,747,256 sources in 68 NIRCam tiles, 0.20 deg<sup>2</sup> of the CMZ, F212N and F480M,
+        ~5,300 per arcmin<sup>2</sup> detected and crowding-limited.  The planet yields above are
+        for the lower-extinction bulge fields, not the CMZ itself.
+    </aside>
+</section>
+
+
+<!-- This is deliberately the SAME figure that comes back later with the CMZ points on it
+     (sf-relation-sgrb2 / clouds-* in Act IV).  sf_relation_cmz_base.png is the local-only
+     build from colloquium_assets/make_sf_relation_figure.py.
+     TODO: add the Spilker & Kainulainen relation as a second line/band.  Their Paper I
+     (2021, A&A 653, A63, arXiv:2108.04518) is the column-density + star formation one;
+     the link in the brief, 2022 A&A 667 A110, is Paper II (kinematics).  Worth citing both;
+     worth deciding which relation we actually draw. -->
+<section id=sn-sf-relation data-topdown=census-dim>
+    <h4> ...and it defines the star formation relation we extrapolate from </h4>
+    <img src="colloquium_assets/sf_relation_cmz_base.png" style="position:absolute; top:108px; left:150px; width:724px; background:white;">
+    <div class="smaller3" style="position:absolute; bottom:6px; left:4%; text-align:left;">
+        <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...912L..19P/abstract">Pokhrel+ 2021</a> &middot;
+        <a href="https://ui.adsabs.harvard.edu/abs/2021A%26A...653A..63S/abstract">Spilker, Kainulainen &amp; Orkisz 2021</a> &middot;
+        <a href="https://ui.adsabs.harvard.edu/abs/2022A%26A...667A.110S/abstract">2022</a>
+    </div>
+    <aside class=notes>
+        Twelve clouds.  All within ~1.5 kpc.  Uniform eps_ff = 0.026, and a relation fitted only
+        below N(H2) = 3e22, i.e. Sigma_gas &lt; 676 Msun/pc^2.
+        <br><br>
+        Remember this figure.  It comes back with the Galactic Center on it, one to two dex to
+        the right of anything it was ever fitted to.
+    </aside>
+</section>
+
+<section>
+    <h4>
+        The Inner Galaxy is where most stars form </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_zones.png);'></span>
+</section>
+
+
+<section data-auto-animate>
+    <h4> The Inner Galaxy is where most stars form </h4>
+    <img src="colloquium_assets/HI-CO-Dust_m0.35_RGB_innergal_zoombox.png" style='width:100%; height:auto; max-height:none; max-width:none; margin-top:64px; position:absolute; left:0px;'>
+</section>
+
+
+<!-- Real figure, rebuildable: colloquium_assets/make_local_vs_cmz_scale.py
+     Top panel: the CMZ's measured extent (~400 pc) drawn top-down, to scale, as a circle.  Only
+     its SIZE is claimed -- its top-down shape is unmeasured (#cmz-what-shape).  An earlier
+     version drew a rectangle here (the bottom panel's plane-of-sky footprint, laid along the
+     line of sight) -- that was wrong on both counts.  Bottom panel: the CMZ blown up, at its
+     own scale, edge-on as we actually see it.  This is the hinge of the talk. -->
+<section id=topdown-compare>
+    <h4> The Galactic Center &amp; solar neighborhood to scale </h4>
+    <img src="colloquium_assets/local_vs_cmz_scale.png" style="position:absolute; top:88px; left:10px; height:620px; width:auto; max-width:none; background:white;">
+    <!-- Molecular gas, both sides sourced and with matching radii:
+           local   Sigma(H2) = 1.0 +/- 0.3 Msun/pc^2 incl. He (McKee, Parravano & Hollenbach 2015,
+                   Table 2, after Dame+ 1987 / Heyer & Dame 2015) x pi (2 kpc)^2 = 1.3e7 Msun.
+                   Assumes the local average holds out to 2 kpc; it rises somewhat inward.
+           CMZ     2-6e7 Msun within R ~ 300 pc (Henshaw+ 2023 PPVII, after Dahmen+ 1998 and
+                   Ferriere+ 2007) -> Sigma = 70-210 Msun/pc^2 over 0.28 kpc^2.
+         ~1e8 for the CMZ would overstate the literature range by 2-5x. -->
+    <div style="position:absolute; left:672px; top:150px; width:340px; text-align:left; font-size:23px; line-height:1.35;">
+        <div><b>Within 2 kpc of the Sun</b><br>
+             M<sub>H<sub>2</sub></sub> &asymp; 1 &times; 10<sup>7</sup> M<sub>&odot;</sub><br>
+             <span style="color:#aaa;"> &Sigma; &asymp; 1 M<sub>&odot;</sub> pc<sup>&minus;2</sup></span></div>
+        <div style="margin-top:18px; color:#ff8a80;"><b>CMZ</b> (R &lt; 300 pc)<br>
+             M<sub>H<sub>2</sub></sub> &asymp; 5 &times; 10<sup>7</sup> M<sub>&odot;</sub><br>
+             <span style="color:#d99;"> &Sigma; &asymp; 200 M<sub>&odot;</sub> pc<sup>&minus;2</sup></span></div>
+        <div style="margin-top:22px;">~5x the molecular gas of the solar neighborhood, in ~1% of the area.</div>
+    </div>
+    <div class="smaller3" style="position:absolute; bottom:6px; left:4%;">Edenhofer+ 2024 (top-down) &middot; Battersby+ 2025 (edge-on) &middot; M<sub>H<sub>2</sub></sub>: <a href="https://ui.adsabs.harvard.edu/abs/2015ApJ...814...13M/abstract">McKee+ 2015</a>, <a href="https://ui.adsabs.harvard.edu/abs/2023ASPC..534...83H/abstract">Henshaw+ 2023</a></div>
+    <aside class=notes>
+        The red circle is the CMZ's real size, to scale -- about 600 pc across.  Only the size:
+        nobody has measured its shape from above.
+        <br><br>
+        Numbers: the whole solar neighborhood out to 2 kpc holds ~1e7 Msun of H2 (1 Msun/pc^2,
+        McKee+ 2015).  The CMZ holds 2-6e7 Msun (Henshaw+ 2023) -- more than all of that, in 1/45
+        of the area, at 70-200x the surface density.
+        <br><br>
+        One structure, less than half a kiloparsec across, with more dense gas in it than the entire
+        upper panel, and nothing in the upper panel resembles it.  That is the whole argument for
+        why the rest of this talk is at the Galactic Center.
+        <br><br>
+        Caveat to say out loud: the bottom panel is plane-of-sky, not top-down — we do not HAVE
+        the top-down view of the CMZ.  That is the problem the end of the talk attacks.
+    </aside>
+</section>
+
+<!--
+<section id=open-edge-on>
+    <h4> The trouble: our nearest galaxy center is edge-on and obscured </h4>
+    <span class=image style='background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_innergal_zoombox.png);'></span>
+    <div style="position:absolute; bottom:56px; left:0; width:100%; text-align:center;" class=smaller2>
+        We see the CMZ through 30 magnitudes of extinction, projected along 200 pc of line of sight.
+        <br>Getting the top-down view is the last third of this talk.
+    </div>
+    <aside class=notes>
+        Plant the promise here and pay it off with the 3D CMZ / Roman proper-motion tomography
+        section at the end (cmz-3d-movie, cmz-orbit-stars, roman-tomo-*).
+    </aside>
+</section>
+-->
+
+<!-- ======================================================================================
+     The hinge of the whole talk, as an animation: assets/cmz/cmz_shape_tour.html (rebuilt
+     2026-10-04; the old point-particle version, cmz_topdown_hypotheses.html, is still in that
+     directory but nothing uses it).  STEPPED BY THE SEVEN EMPTY FRAGMENTS below -- one click per
+     phase, each forward click animates, anything else snaps (script near the end of this file):
+       0 local    REAL: Edenhofer+ 2024 3D dust, top down, 1.25 kpc around the Sun
+       1 galaxy   zoom out: that map is a small patch of the Galaxy (gas clouds on the Reid+ 2019
+                  arm fits, tips tapered; far side = near side mirrored through the GC; bar drawn
+                  schematically as x1 orbits + leading-edge lanes, x2 orbits in the center)
+       2 gc       fly to the GC: every cloud a streak along the line of sight, a "?", and the
+                  edge-on "what we see from the Sun" strip appears underneath
+       3 ring     the clouds slide into a ring
+       4 spiral   ... into two spiral arms
+       5 disk     ... into a filled disk
+       6 flocc    ... into what the hydrodynamic simulations look like (Tress+ 2020): a fluffy
+                  filled disk with flocculent, sheared arms coming off its edge, and gas from the
+                  bar lanes joining at opposite sides
+       7 verdict  all four side by side, each above its own (identical) view from the Sun
+     Layers are built by assets/cmz/make_cmz_shape_layers.py.
+
+     WHAT IT DOES AND DOES NOT CLAIM (header comment of the page has the long version): every
+     cloud keeps one sky position and one height in all four shapes; only the depth changes, so
+     the edge-on strip is identical by construction.  That shows what an IMAGE cannot tell you.
+     It is not a claim that the published models are indistinguishable -- they also differ in
+     line-of-sight velocity, and the honest statement is that the l-v data have so far been fit
+     by all of them. -->
+<section id=cmz-what-shape data-background-color="#000">
+    <h4> We know the solar neighborhood in 3D, but not the GC </h4>
+    <!-- src, not data-src: the page loads with the deck and sits idle until a fragment tells it
+         to move, so arriving on this slide never waits on a load -->
+    <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1"
+            style="position:absolute; left:12px; top:92px; width:1000px; height:670px;
+                   max-width:none; max-height:none; margin:0; border:0; background:#000;
+                   pointer-events:none;"></iframe>
+    <span class=fragment data-cmz-phase=1></span>
+    <span class=fragment data-cmz-phase=2></span>
+    <span class=fragment data-cmz-phase=3></span>
+    <span class=fragment data-cmz-phase=4></span>
+    <span class=fragment data-cmz-phase=5></span>
+    <span class=fragment data-cmz-phase=6></span>
+    <span class=fragment data-cmz-phase=7></span>
+    <!-- One published picture per hypothesis, in the empty column under the animation's caption.
+         Deck elements rather than part of the iframe (whose pointer-events are off so it can never
+         take the keyboard), so the reference links stay clickable.  Shown by the sync script at
+         the end of this file for the matching phase only.  The disk has no single proponent paper;
+         3D CMZ V's nested x2 orbits are the closest published "filled" picture. -->
+    <style>
+      #cmz-what-shape .cmz-snap { position:absolute; left:16px; top:300px; width:318px; z-index:6;
+          text-align:center; opacity:0; visibility:hidden;
+          transition:opacity .4s ease-in-out, visibility .4s; }
+      #cmz-what-shape .cmz-snap.on { opacity:1; visibility:visible; }
+      #cmz-what-shape .cmz-snap img { display:block; margin:0 auto; max-width:318px; max-height:330px;
+          border:0; box-shadow:none; background:#fff; }
+      #cmz-what-shape .cmz-snap .cap { font-size:16px; line-height:1.3; color:#9aa3b5; margin-top:6px; }
+    </style>
+    <div class=cmz-snap data-snap-phase=3>
+        <a href="https://ui.adsabs.harvard.edu/abs/2011ApJ...735L..33M/abstract" target=_blank rel=noopener><img src="assets/cmz/snap_molinari2011.png" alt="Molinari+ 2011: the 100-pc ring, face-on"></a>
+        <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2011ApJ...735L..33M/abstract" target=_blank rel=noopener>Molinari+ 2011</a>: the "100-pc ring", face-on</div>
+    </div>
+    <div class=cmz-snap data-snap-phase=4>
+        <a href="https://ui.adsabs.harvard.edu/abs/2025PASJ...77..687S/abstract" target=_blank rel=noopener><img src="assets/cmz/snap_sofue2025.jpg" alt="Sofue+ 2025: Galactic Center arms from ACES"></a>
+        <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2025PASJ...77..687S/abstract" target=_blank rel=noopener>Sofue+ 2025</a>: nested Galactic Center arms from ACES</div>
+    </div>
+    <div class=cmz-snap data-snap-phase=5>
+        <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract" target=_blank rel=noopener><img src="assets/cmz_papers/lipman2026a_fig6.jpg" alt="Lipman+ 2026: nested x2 orbits"></a>
+        <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract" target=_blank rel=noopener>Lipman+ 2026</a> (3D CMZ V): nested x<sub>2</sub> orbits</div>
+    </div>
+    <!-- phase 6: a MOVIE, not a still -- the total-surface-density panel (top left) of R. Tress's
+         ProjMosaic_5.mp4 (Rhea-RT), cropped to the map interior: 476x476 px at (78,31) of the 2560x1526
+         mosaic, i.e. 1 kpc across, no axes; t = 232 -> 357 Myr, 10 fps, 51 s, looped.  Played only
+         while this step is showing (sync script at the end of the file).  The previous still,
+         snap_tress2026.jpg, is still in assets/cmz/. -->
+    <div class=cmz-snap data-snap-phase=6>
+        <video src="assets/cmz/tress_ProjMosaic5_sigma_tot.mp4" muted loop playsinline preload=auto
+               style="display:block; margin:0 auto; width:318px; height:318px; border:0;"></video>
+        <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract" target=_blank rel=noopener>Tress+ 2026</a> (Rhea-RT): total gas surface density, face-on, 1&nbsp;kpc across, over 125&nbsp;Myr</div>
+    </div>
+    <aside class=notes>
+        Eight clicks' worth.  Start where we just were: the 3D dust map of the solar
+        neighborhood -- real data, Edenhofer+ 2024, seen from above.  We know where every cloud
+        is.
+        <br><br>
+        Click: pull out.  That whole map is the little circle; the Galactic Center is 8 kpc
+        away.  (The Galaxy here is gas clouds placed on the Reid+ 2019 maser-parallax arm fits;
+        the parallaxes only cover the near side, so the far side is the near side mirrored
+        through the center.  The bar is drawn schematically as gas on its orbit families: x1
+        loops along the bar with dust lanes on their leading edges, and x2 orbits across it in
+        the center -- which is where the CMZ sits as we fly in.)
+        <br><br>
+        Click: fly in.  At the GC we know where each cloud is on the sky, not how deep it sits
+        -- so each one is a streak along our line of sight.  The strip at the bottom is what we
+        actually see.
+        <br><br>
+        Clicks: a ring (Molinari+ 2011), spiral arms (Sofue+ 2025, from ACES), a filled disk
+        (nested x2 orbits, 3D CMZ V: Lipman+ 2026), and what simulations look like (Tress+ 2026,
+        Rhea-RT): a fluffy filled disk throwing off flocculent spiral arms, with gas from the bar
+        lanes arriving at opposite sides.  Each step shows that paper's own picture at the left,
+        linked to ADS.  Point out that the
+        clouds only move up and down, and the strip never changes.
+        <br><br>
+        Final click: four shapes, one view.  Careful wording: "an image can't tell you the
+        depth" -- NOT "the data can't tell them apart"; velocities carry some information, and
+        that is why all of these have been fit to the l-v data.  Land on: Roman proper motions
+        add the missing axis -- the promise the tomography section at the end pays off.
+    </aside>
+</section>
+
 <!-- Closing visual for the tomography thread.  2032x1114 (1.824:1), 11 s, 13 fps; autoplays via
      slideautostart.js (class="slideautostart"), and loops so it keeps running if you talk over it. -->
 <section id=cmz-3d-movie>
@@ -2465,6 +2600,23 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
             style="position:absolute; left:0px; top:104px; width:1024px; height:632px;
                    max-width:none; max-height:none; margin:0; border:0; background:#05070c;
                    pointer-events:none;"></iframe>
+</section>
+
+<!-- moved here from slide 3 (2026-10-09): the last slide of the talk -->
+<section id=index>
+<h4> While I'm visiting, ask me about </h4>
+<ul>
+    <li> <a href="#SaltedDisks">Salted disks</a>
+    <li> <a href="#ALMA-IMF">ALMA-IMF and the Core Mass Function</a>
+    <li> <a href="#ACES">ACES: ALMA Galactic Center</a>
+    <li> <a href="#hotcores">Hot Cores [in the GC &amp; disk]</a>
+    <li> <a href="#MUBLO">The MUBLO</a>
+    <li> <a href="#Orion">The Orion BN/KL Explosive Outflow</a>
+    <li> <a href="#ysomodels">YSO SED models</a>
+    <li> <a href="#sgrb2">Sgr B2</a>
+    <li> <a href="#w51">W51</a>
+    <li> <a href="#iceicebaby">Ice in the CMZ and Galactic Disk</a>
+</ul>
 </section>
 
 <section>
@@ -4945,42 +5097,58 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     </script>
 
     <script>
-      /* #cmz-what-shape: assets/cmz/cmz_shape_tour.html is stepped by the slide's empty
-         fragments (data-cmz-phase 1..6; none visible = phase 0).  ONE fragment forward animates
-         that step; anything else -- going back, jumping in, arriving on the slide -- snaps to
-         the finished state, so the slide is never caught half-drawn.  The page calls
-         cmzShapeSync() itself once its images are decoded, in case it finishes loading after
-         the deck is already sitting on this slide. */
+      /* Every slide with an iframe.cmz-shape (#cmz-zoomout, #cmz-what-shape) steps that copy of
+         assets/cmz/cmz_shape_tour.html with its empty fragments (data-cmz-phase N; none visible =
+         phase 0).  ONE fragment forward animates that step; anything else -- going back, jumping
+         in, arriving on the slide -- snaps to the finished state, so a slide is never caught
+         half-drawn.  Each page calls cmzShapeSync() itself once its images are decoded, in case
+         it finishes loading after the deck is already sitting on its slide. */
       (function(){
-        var slide = document.getElementById('cmz-what-shape');
-        var frame = slide && slide.querySelector('iframe.cmz-shape');
-        if (!frame) return;
-        var shown = null;
-        function phase(){
-          var p = 0;
-          slide.querySelectorAll('.fragment.visible[data-cmz-phase]').forEach(function(f){
-            p = Math.max(p, +f.getAttribute('data-cmz-phase'));
-          });
-          return p;
-        }
-        // the paper snapshot beside each hypothesis (.cmz-snap[data-snap-phase]): deck elements,
-        // not part of the iframe, so their reference links stay clickable
-        var snaps = slide.querySelectorAll('.cmz-snap');
-        function sync(stepping){
-          var p = phase();
-          snaps.forEach(function(el){ el.classList.toggle('on', +el.getAttribute('data-snap-phase') === p); });
-          var w;
-          try { w = frame.contentWindow; } catch (_) { return; }
-          if (!w || !w.cmzGoto) return;
-          w.cmzGoto(p, !!stepping && shown !== null && p === shown + 1);
-          shown = p;
-        }
-        window.cmzShapeSync = function(){ shown = null; sync(false); };
+        var controllers = [];
+        document.querySelectorAll('.reveal .slides section').forEach(function(slide){
+          var frame = slide.querySelector(':scope > iframe.cmz-shape');
+          if (!frame) return;
+          var shown = null;
+          function phase(){
+            var p = 0;
+            slide.querySelectorAll('.fragment.visible[data-cmz-phase]').forEach(function(f){
+              p = Math.max(p, +f.getAttribute('data-cmz-phase'));
+            });
+            return p;
+          }
+          // the paper snapshot beside each hypothesis (.cmz-snap[data-snap-phase]): deck elements,
+          // not part of the iframe, so their reference links stay clickable
+          var snaps = slide.querySelectorAll('.cmz-snap');
+          function sync(stepping){
+            var p = phase();
+            snaps.forEach(function(el){
+              var on = +el.getAttribute('data-snap-phase') === p;
+              el.classList.toggle('on', on);
+              var v = el.querySelector('video');          // movies play only while their step is shown
+              if (v) { if (on) { var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); } else v.pause(); }
+            });
+            var w;
+            try { w = frame.contentWindow; } catch (_) { return; }
+            if (!w || !w.cmzGoto) return;
+            w.cmzGoto(p, !!stepping && shown !== null && p === shown + 1);
+            shown = p;
+          }
+          controllers.push({ slide: slide, sync: sync, reset: function(){ shown = null; } });
+        });
+        if (!controllers.length) return;
+        window.cmzShapeSync = function(){ controllers.forEach(function(c){ c.reset(); c.sync(false); }); };
         if (window.Reveal && Reveal.on) {
-          Reveal.on('ready', function(){ sync(false); });
-          Reveal.on('slidechanged', function(e){ if (e.currentSlide === slide) { shown = null; sync(false); } });
-          Reveal.on('fragmentshown', function(){ if (Reveal.getCurrentSlide() === slide) sync(true); });
-          Reveal.on('fragmenthidden', function(){ if (Reveal.getCurrentSlide() === slide) sync(false); });
+          Reveal.on('ready', function(){ controllers.forEach(function(c){ c.sync(false); }); });
+          Reveal.on('slidechanged', function(e){
+            controllers.forEach(function(c){
+              if (e.currentSlide === c.slide) { c.reset(); c.sync(false); }
+              else c.slide.querySelectorAll('.cmz-snap video').forEach(function(v){ v.pause(); });
+            });
+          });
+          Reveal.on('fragmentshown', function(){ var cur = Reveal.getCurrentSlide();
+            controllers.forEach(function(c){ if (cur === c.slide) c.sync(true); }); });
+          Reveal.on('fragmenthidden', function(){ var cur = Reveal.getCurrentSlide();
+            controllers.forEach(function(c){ if (cur === c.slide) c.sync(false); }); });
         }
       })();
     </script>

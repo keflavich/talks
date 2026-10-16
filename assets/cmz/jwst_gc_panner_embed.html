@@ -17,11 +17,17 @@
   The tour (stop list, pan rate) is fetched live from the release page, which is
   CORS-open, and falls back to a baked-in copy so a network hiccup at the podium
   cannot leave a blank slide.  Tunable from the URL: ?fov0= ?fov1= ?hold= ?zoom=
-  ?rate= ?label=0 ?survey=<HiPS URL>
+  ?rate= ?label=0 ?survey=<HiPS URL> ?overlay=<HiPS URL>
   ?survey= (2026-10-15) overrides the tour's own HiPS, e.g. the ACES-blended composite
   https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/ for #wrapup-jwst-panner.
   That one is order 12 (~0.1"/px) rather than 14, so pair it with ?fov1=0.03 (1:1 on a 1024 px
   frame) instead of the default 0.008, or the last ~4x of the zoom is just upsampling.
+  Remote HiPS URLs must send CORS headers (starformation.astro.ufl.edu does, data.rc.ufl.edu does not);
+  if the base layer is unreachable both locally and remotely, the overlay is shown alone.
+  ?overlay= (2026-10-16) a second HiPS drawn on top of ?survey= (Aladin's overlay image layer), for a
+  background + JWST view: #wrapup-jwst-panner uses GCSpitzerLike_vvv_aces_hips (VVV Ks + IRAC 4.5 um as
+  F212N/F480M stand-ins, x ACES 3 mm) under GCTreasury_radio_ACES_hips, which is transparent wherever
+  JWST has no data.  Both go through the same local-first lookup.
 -->
 <style>
 :root { --bg:#05070c; --fg:#e6edf3; --muted:#9fb0c3; }
@@ -60,6 +66,7 @@ var ZOOM  = num('zoom', 7.5);    // seconds of zoom
 var RATE  = num('rate', 0);      // arcsec/s; 0 = use the tour's own rate
 var SHOWLABEL = Q.get('label') !== '0';
 var SURVEY = Q.get('survey');      // optional: a different HiPS than the tour's
+var OVERLAY = Q.get('overlay');    // optional: a second HiPS on top of it
 
 // Fallback tour: the live file is authoritative, this is only so the slide still
 // does something if the fetch fails.  Center of the observed blocks.
@@ -167,6 +174,9 @@ function boot(){
       showProjectionControl:false, showZoomControl:false, showGotoControl:false,
       showSimbadPointerControl:false, showContextMenu:false, showReticle:false,
       showFrame:false, showCooLocation:false});
+    // empty sky in the page's own near-black, not Aladin's gray (beyond the survey, or with no background)
+    try { aladin.setBackgroundColor('rgb(5,7,12)'); } catch(e){}
+    if(OVERLAY){ aladin.setOverlayImageLayer(A.imageHiPS(OVERLAY, {name:'JWST'}), 'jwst'); }
     aladin.gotoRaDec(startPos[0], startPos[1]);
     aladin.setFoV(FOV0);
     say('the whole survey', startPos[0], startPos[1]);
@@ -199,12 +209,18 @@ function getJSON(urls){
 }
 // a HiPS whose directory name exists under hips/ is read from there; anything else from its own URL.
 // Absolute URLs either way: Aladin treats a bare relative string as a HiPS ID, not a path.
+// Resolves to null when neither copy is reachable.  NOTE data.rc.ufl.edu sends no CORS header, so Aladin
+// (WebGL) cannot draw tiles from it even when they exist -- remote URLs must be starformation.astro.ufl.edu.
+function reachable(url){
+  return fetch(url + 'properties', {cache:'no-cache'}).then(function(r){ return r.ok; }).catch(function(){ return false; });
+}
 function localFirst(remote){
   var name = remote.replace(/\/+$/, '').split('/').pop();
   var local = LOCAL + name + '/';
-  return fetch(local + 'properties', {cache:'no-cache'})
-    .then(function(r){ return r.ok ? local : remote; })
-    .catch(function(){ return remote; });
+  return reachable(local).then(function(ok){
+    if(ok){ return local; }
+    return reachable(remote).then(function(ok2){ return ok2 ? remote : null; });
+  });
 }
 Promise.all([
   loadScript([LOCAL + 'aladin-lite/aladin.js', 'https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js']),
@@ -212,7 +228,12 @@ Promise.all([
     .catch(function(){ return FALLBACK; })
 ]).then(function(res){
   TOUR = res[1];
-  return localFirst(SURVEY || TOUR.survey).then(function(url){ SURVEY = url; boot(); });
+  return Promise.all([localFirst(SURVEY || TOUR.survey), OVERLAY ? localFirst(OVERLAY) : null])
+    .then(function(u){
+      SURVEY = u[0]; OVERLAY = u[1];
+      if(!SURVEY){ SURVEY = OVERLAY || TOUR.survey; OVERLAY = null; }   // no background: the overlay alone
+      boot();
+    });
 }).catch(function(err){
   document.getElementById('where').textContent = 'Aladin Lite failed to load: ' + err;
 });

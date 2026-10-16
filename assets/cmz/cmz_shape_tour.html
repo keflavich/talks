@@ -389,8 +389,7 @@ const CAPS = [
   'Hypotheses include: \n<br> A filled disk?<span class=cite>same sky positions in every shape: only the depth changes</span>',
   'Hypotheses include: \n<br> A mix of all?' +
     '<span class="cite ref">after hydrodynamic simulations, e.g. Tress+ 2026</span>',
-  'Four shapes, one view from the Sun: depth is the missing axis' +
-    '<span class="cite hl">Roman proper motions can supply it.</span>'
+  'Four shapes, one view from the Sun: depth is the missing axis'   // (2026-10-16: the "Roman proper motions can supply it" line dropped)
 ];
 
 const S = target(0);
@@ -630,7 +629,9 @@ function ease(t){ return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; 
 function clamp01(t){ return t < 0 ? 0 : t > 1 ? 1 : t; }
 
 let token = 0;
-function capFor(p){ return ROT && p >= 2 ? '' : CAPS[p]; }    // the cartoon slide brings its own title
+// topdown frame (#cmz-zoomout): no captions from the page at all -- the deck shows that slide's text
+// itself, on its own builds (2026-10-16).  #cmz-what-shape keeps CAPS.
+function capFor(p){ return ROT ? '' : CAPS[p]; }
 function setCaption(p){
   capEl.style.opacity = 0;
   const my = token;

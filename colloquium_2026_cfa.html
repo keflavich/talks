@@ -332,12 +332,12 @@
           <section id=takeaways>
               <h4> Three brief things to take away </h4>
               <ul style="font-size:40px; line-height:1.5; margin-top:40px;">
-                  <li> The Galactic Center is <span style="color:#ffd166;">important</span>
-                  <li> It is <span style="color:#ffd166;">poorly understood</span>
-                  <li> We're about to know it <span style="color:#ffd166;">much better</span>
+                  <li> The Galactic Center is important to you <span style="color:#ffd166;"></span>
+                  <li> It's still poorly understood
+                  <li> We're about to know it much better
               </ul>
               <p style="font-size:30px; color:#ccc; margin-top:60px; line-height:1.4;">
-                  On the way, I hope to teach you a little bit of interesting physics and show some epic images.
+              <!--On the way, I hope to teach you a little bit of interesting physics and show some epic images.-->
               </p>
           </section>
 
@@ -1042,7 +1042,7 @@ across cosmic time.
      (assets/local/topdown_clusters_zoom.jpg), drawn by the page over exactly the #topdown-bg box
      (hence this iframe's 1024 x 672 at top 92), so the cut between the two slides keeps the same
      pixels.  #cmz-what-shape keeps the page's own GC-up frame and its own Edenhofer rendering. -->
-<!-- Build 2 (2026-10-15; was build 1 before the cosmic-noon build went in): the hand-off to #bar-inflow.  The page's phase 2 in frame=topdown zooms,
+<!-- Build 3 (2026-10-15; was build 1, then 2 -- the cosmic-noon card and the caption build went in before it): the hand-off to #bar-inflow.  The page's phase 2 in frame=topdown zooms,
      rotates and pans the drawing onto the bar so it lands on S. Gramze's cartoon where #bar-inflow
      shows it (3.0 s); then the cartoon card and that slide's title fade in on top (.zo-late: delayed
      2.7 s, no delay going back), so advancing to #bar-inflow changes nothing but adding its text.
@@ -1057,8 +1057,8 @@ across cosmic time.
 </style>
 <section id=cmz-zoomout data-background-color="#000">
     <h4 style="position:relative; z-index:6;">
-        <span class="fragment fade-out zo-late" data-fragment-index=2>The most crowded region in the Galaxy is its center</span>
-        <span class="fragment zo-late" data-fragment-index=2 style="position:absolute; left:0; right:0; top:0;">The bar feeds the CMZ</span>
+        <span class="fragment fade-out zo-late" data-fragment-index=3>The most crowded region in the Galaxy is its center</span>
+        <span class="fragment zo-late" data-fragment-index=3 style="position:absolute; left:0; right:0; top:0;">The bar feeds the CMZ</span>
     </h4>
     <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown"
             style="position:absolute; left:0px; top:92px; width:1024px; height:672px;
@@ -1091,13 +1091,23 @@ across cosmic time.
         </svg>
         <img src="colloquium_assets/Madau2014_plot.svg" alt="Madau & Dickinson 2014 cosmic star formation history"
              style="position:absolute; left:30px; top:150px; width:580px; height:426.3px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+        <div style="position:absolute; left:580px; top:136px; width:450px; text-align:left; line-height:1.00; pointer-events:auto; font-weight:700;">
+            Crowded ~ cosmic noon 
+        </div>
         <div style="position:absolute; left:640px; top:236px; width:356px; text-align:left; line-height:1.25; pointer-events:auto;">
-            <div style="font-size:38px; font-weight:700;">Stars formed in <span style="color:#c0392b;">denser gas</span>, in <span style="color:#c0392b;">more compact regions</span></div>
+            <div style="font-size:38px; ">Stars formed in smaller, denser, more turbulent volumes</div>
             <div style="font-size:16px; margin-top:16px;"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1309.0505/abstract" style="color:#1a5fb4;">Kruijssen &amp; Longmore 2013</a></div>
         </div>
     </div>
-    <span class=fragment data-fragment-index=2 data-cmz-phase=2></span>
-    <img class="fragment zo-late" data-fragment-index=2 src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model: the bar's near- and far-side dust lanes feeding the CMZ, overshooting gas, and G1.3, BC2 and G5, on a barred galaxy, with the l = 0 and +-5 deg sightlines"
+    <!-- build 2 (2026-10-16): the Galaxy-view caption, back after the cosmic-noon card.  It used to come from
+         the page (CAPS[1]) with the zoom-out itself; Adam: "cmz-zoomout/0 should omit the 'we have at best'
+         text ... after cmz-zoomout/1".  Styled and placed like the page's own caption (#cap, iframe + 12 px). -->
+    <div class="fragment fade-in-then-out" data-fragment-index=2
+         style="position:absolute; left:16px; top:104px; width:282px; z-index:3; text-align:left; font-size:27px; line-height:1.22;
+                color:#e8ecf4; font-family:-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+        We have at best a cartoony view of the Galactic Center</div>
+    <span class=fragment data-fragment-index=3 data-cmz-phase=2></span>
+    <img class="fragment zo-late" data-fragment-index=3 src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model: the bar's near- and far-side dust lanes feeding the CMZ, overshooting gas, and G1.3, BC2 and G5, on a barred galaxy, with the l = 0 and +-5 deg sightlines"
          style="position:absolute; left:259.40px; top:150.93px; width:501.47px; height:540px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none; border-radius:6px; z-index:3;">
     <aside class=notes>
         The same dust map, now our own top-down rendering of Edenhofer+ 2024.  Click: pull out --
@@ -1133,7 +1143,7 @@ across cosmic time.
     <div style="position:absolute; left:772px; top:50px; width:244px; text-align:left; font-size:28px; line-height:1.3;">
         <p style="margin:0 0 26px 0;">Gas falls along bar dust lanes: <span style="color:#ffd166;">~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></span>
             <span style="display:block; font-size:16px; color:#aaa; margin-top:4px;">
-                <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.1213S/abstract">Sormani &amp; Barnes 2019</a>: 2.7<sup>+1.5</sup><sub>&minus;1.7</sub>;
+                <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.1213S/abstract">Sormani &amp; Barnes 2019</a>: $2.7^{+1.5}_{-1.7}$
                 <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...922...79H/abstract">Hatchfield+ 2021</a>: 0.8&nbsp;&plusmn;&nbsp;0.6</span></p>
         <p  style="margin:0 0 26px 0;"><span style="color:#ffd166;">~&#8531;</span> lands on the CMZ first pass; the rest overshoots
             <span style="display:block; font-size:16px; color:#aaa; margin-top:4px;"> <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...922...79H/abstract">Hatchfield+ 2021</a></span></p>
@@ -1225,6 +1235,7 @@ across cosmic time.
 
 <section id=g5-collision>
     <h4> Colliding gas stagnates flows and feeds the CMZ </h4>
+    <div class=smaller2>Gas comes in molecular but mostly without forming stars</div>
     <!-- (2026-10-15) layout: G5's 12CO PV (459 x 509) and Adam's 4-panel figure of two more clouds
          (assets/Savannah/pv_diagrams_l3.3_l2.9.png, 989 x 990: map + cut, and the PV along it, at l ~ 3.3
          and 2.9 deg) side by side on white cards; the bar-model cartoon and Savannah's photo squeezed
@@ -2187,7 +2198,7 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
 
 <section id=cloudvar3 data-auto-animate>
     <img data-id="ccd-cloudD" src="assets/Savannah/f466vsav_clouddpng.png" style="position:absolute; left:16px; top:30px; width:300px;">
-    <img data-id="ccd-three" src="assets/Savannah/f466vsav_threeclouds.png" style="position:absolute; left:230px; top:175px; width:500px; z-index:25;">
+    <img data-id="ccd-three" src="assets/Savannah/ccd_scatter_3kpc_d_head.png" style="position:absolute; left:242px; top:150px; width:540px; height:438.7px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:25;">
     <img data-id="ccd-fil" src="assets/Savannah/f466vsav_3kpcfilament.png" style="position:absolute; left:708px; top:30px; width:300px;">
     
     <img data-id="map-cd" src="assets/Savannah/icevar_dustridge_cloudCD.png" style="position:absolute; left:72px; top:245px; width:880px;">
@@ -2207,15 +2218,13 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
 
-    <!-- builds (2026-10-15): Savannah's contour versions of the combo figure, fitted onto it so the axes line
-         up -- only their plot interiors, resampled onto this figure's frame (same axis limits, different
-         aspect), opaque, with a hole where this figure's legend is.  assets/Savannah/
-         make_threeclouds_contour_builds.py; the full figures are *_contours_full.png / *_contours_fits_full.png.
-         Placed at the combo figure's (left, top) + (70.72, 8.22) -- move them with it. -->
-    <img class=fragment data-fragment-index=0 src="assets/Savannah/f466vsav_threeclouds_contours.png" alt="density contours of the three clouds in the color-color diagram"
-         style="position:absolute; left:300.72px; top:183.22px; width:406px; height:302.5px; z-index:26; max-width:none; max-height:none; background:none; box-shadow:none; border:0;">
-    <img class=fragment data-fragment-index=1 src="assets/Savannah/f466vsav_threeclouds_contours_fits.png" alt="the same contours with each cloud's fitted line"
-         style="position:absolute; left:300.72px; top:183.22px; width:406px; height:302.5px; z-index:27; max-width:none; max-height:none; background:none; box-shadow:none; border:0;">
+    <!-- builds (2026-10-16): Savannah's figures from ~/work/gc/cloudc/figures/, all 1311 x 1065 on identical axes, so they
+         stack exactly: ccd_scatter_3kpc_d_head (points, above) -> ccd_density_bar_d_head (density contours) ->
+         ccd_density_bar_d_head_fits (contours + fitted slopes).  Replaces the 2026-10-15 axis-fitted overlays. -->
+    <img class=fragment data-fragment-index=0 src="assets/Savannah/ccd_density_bar_d_head.png" alt="density contours of the 3 kpc arm, Cloud D and the Brick Head in the color-color diagram"
+         style="position:absolute; left:242px; top:150px; width:540px; height:438.7px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:26;">
+    <img class=fragment data-fragment-index=1 src="assets/Savannah/ccd_density_bar_d_head_fits.png" alt="the same contours with each cloud's fitted slope"
+         style="position:absolute; left:242px; top:150px; width:540px; height:438.7px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:27;">
 
     <!-- scrim: dims everything on the slide except the combo figure, which sits at z-index 25.
          `background`, not `color` (color only paints text, and (0,0,0,0.5) is not a valid value);
@@ -2224,8 +2233,8 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
 </section>
 
 <section id=cloudvar4 data-auto-animate>
-    <img data-id="ccd-three" src="assets/Savannah/f466vsav_threeclouds.png"
-         style="position:absolute; left:20px; top:22px; width:300px;">
+    <img data-id="ccd-three" src="assets/Savannah/ccd_density_bar_d_head_fits.png"
+         style="position:absolute; left:20px; top:22px; width:300px; height:243.7px; margin:0; border:0; max-width:none; max-height:none;">
     <div data-id="cvtitle" style="position:absolute; left:372px; top:30px; width:635px; text-align:left; font-size:27px; line-height:1.45;">
         Slope changes &rightarrow; metallicity differences.
         <br>Both CMZ &harr; bar &amp; within CMZ
@@ -2697,8 +2706,16 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
      (restarting the zoom) and unloads it on the way out so Aladin stops animating. -->
 <section id=wrapup-jwst-panner data-background-color="#05070c">
     <div class=smaller2 style="position:absolute; top:8px; left:14px; width:996px; text-align:left; z-index:20;">The GC is the laboratory where cosmologically common conditions are observed at planetary-system forming scales.</div>
-    <!-- (2026-10-15) the ACES-blended composite (F212N+F480M diffuse + ACES 3 mm), order 12, so fov1 0.03 -->
-    <iframe class="orbit-embed" data-src="assets/cmz/jwst_gc_panner_embed.html?survey=https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/&amp;fov1=0.03"
+    <!-- (2026-10-15) the ACES-blended composite (F212N+F480M diffuse + ACES 3 mm), order 12.
+         (2026-10-16) gentler zoom, closer to the cold open's (3 s hold, 5.6x over 9 s): hold 3 s, then 12x
+         over 9 s (0.72 -> 0.06 deg; was 24x in 7.5 s, to 0.03), and the pan rate doubled (4"/s) so it
+         crosses the now-2x-wider field at the same on-screen speed as before. -->
+    <!-- (2026-10-16) the view: the VVV + Spitzer + ACES "background" (GCSpitzerLike_vvv_aces_hips) with the
+         JWST + ACES composite superposed on top as an overlay layer.  Both read from hips/ first; the remote
+         fallbacks are on starformation.astro.ufl.edu because data.rc.ufl.edu sends no CORS header (Aladin
+         cannot draw from it).  The background was not on starformation yet on 2026-10-16 -- until it is
+         synced there, a viewer without hips/ sees the JWST layer alone. -->
+    <iframe class="orbit-embed" data-src="assets/cmz/jwst_gc_panner_embed.html?survey=https://starformation.astro.ufl.edu/avm_images/GCSpitzerLike_vvv_aces_hips/&amp;overlay=https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/&amp;fov1=0.06&amp;hold=3&amp;zoom=9&amp;rate=4"
             frameborder="0" scrolling="no"
             style="position:absolute; left:0px; top:104px; width:1024px; height:632px;
                    max-width:none; max-height:none; margin:0; border:0; background:#05070c;

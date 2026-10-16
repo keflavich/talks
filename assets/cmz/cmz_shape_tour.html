@@ -43,6 +43,24 @@
     ?embed=1    deck mode: no autoplay, wait for window.cmzGoto(phase, animate)
     ?stage=N    land on phase N, static
     ?speed=1    >1 is faster
+    ?frame=topdown   #cmz-zoomout's framing (2026-10-15): the scene turned to match #topdown-local just
+                before it -- GC to the RIGHT, l = 90 deg UP (the tour's own frame rotated 90 deg clockwise;
+                no mirror), 266.1 px/kpc -- and a 1024 x 672 stage, for an iframe exactly over that slide's
+                background box (slide left 0, top 92).  The local map is NOT shape_local_dust.jpg here but
+                #topdown-local's own last background, the oviz render ../local/topdown_clusters_zoom.jpg
+                (2048 x 1344, drawn at 0.5 px per px with its top-left at (0, 0) in phase 0), so the hand-off
+                between the two slides is the same pixels, not the same data rendered twice.  As the zoom-out
+                starts it crossfades to a copy masked to the 1.25 kpc map edge, so the render's grid lines
+                and the clusters beyond the dust do not ride along as a rectangle.  Its frame was measured,
+                not assumed: correlating shape_local_dust.jpg against the render gives rotation 90.00 deg,
+                scale 0.99 of its nominal 268.8 px/kpc, Sun offset < 7 pc (ncc 0.77).  Only phases 0-1 are
+                laid out for it (the CMZ shapes need GC up).
+                Also in this mode (Adam, 2026-10-15): the Galaxy in neutral gray to match that render
+                (shape_galaxy_gas_gray.jpg, a gray sprite); no "8 kpc" label; and the scale bar fades out
+                with the zoom-out instead of turning into "5 kpc".
+                Phase 2 here is NOT the GC view: it zooms, rotates and pans onto the bar so that it lands
+                on the bar-model cartoon (assets/Savannah/bar_model_galaxy.jpg) on #bar-inflow, the next
+                slide -- see CARTOON below.  The deck fades the cartoon itself in on top as the zoom ends.
   The deck calls window.cmzGoto(p, true) for a one-step-forward fragment and
   window.cmzGoto(p, false) for anything else (backward, jumps, arriving on the slide).
   ============================================================================================
@@ -76,9 +94,35 @@ const STAGE = q.get('stage') === null ? null : parseInt(q.get('stage'), 10);
 const SPEED = Math.max(0.2, parseFloat(q.get('speed') || '1'));
 if (EMBED) document.body.classList.add('embed');
 
-const W = 1000, H = 670, DPR = 2;
+// ?frame=topdown: the world is drawn rotated by S.rot (clockwise on screen) about the camera center,
+// which lands at screen (S.ax, S.ay) instead of (AX, AY); text stays upright.  Everything that is not
+// screen-fixed goes through P() or world().  Without it, rot = 0 and (ax, ay) = (AX, AY): unchanged.
+const ROT = q.get('frame') === 'topdown';
+const W = ROT ? 1024 : 1000, H = ROT ? 672 : 670, DPR = 2;
 const AX = 625, AY = 335;                // screen anchor of the camera center
+const AXR = 512.7, AYR = 338.5;     // Sun; +0.7/+2.5 px from the box center = the oviz render's own Sun offset, measured
+// the oviz render (topdown frame only): 2048 x 1344 px, 0.5 screen px per px in phase 0, top-left at
+// (0, 0) -- so the Sun is at its px (2 AXR, 2 AYR) -- and 1250 pc (the dust map's edge) = 665 of its px
+const OVIZ = { src: '../local/topdown_clusters_zoom.jpg', w: 2048, h: 1344, sun: [2 * AXR, 2 * AYR], rEdge: 665 };
+// phase 2 in this frame: land on the #bar-inflow cartoon, assets/Savannah/bar_model_galaxy.pdf (rendered to
+// bar_model_galaxy.jpg).  Geometry read from the PDF's own vector paths, in pt of its 375.64 x 404.5 page:
+// the bar ellipse (fitted to its 4 Bezier arcs) is centered at (189.22, 190.02) -- the CMZ circle's
+// center, on the l = 0 sightline -- with semi-major 297.25 pt, tilted 30.16 deg from the Sun-GC line
+// (the l = +-5 deg sightlines meet 8.2 kpc below, so the cartoon is to scale).  The deck shows it
+// 540 px tall (k = 1.334981 px/pt) with its top-left at slide (259.40, 150.93), which puts the GC at
+// slide (512, 404.6); the iframe is at slide (0, 92).  The Galaxy view (phase 1) puts the GC on the SAME
+// point, so the dive into the bar is a pure zoom + turn about a fixed, centered GC.  The zoom matches the
+// drawing's outer x1 orbit (3.3 kpc) to the cartoon's ellipse; the turn is +2.2 deg (cartoon bar 30.16
+// deg vs 28 here).  Keep in step with the deck.
+const CARTOON = { left: 259.40, top: 150.93, k: 1.334981, gc: [189.22, 190.02], semimajor: 297.25, tilt: 30.16 };
+const GC_SCREEN = [CARTOON.left + CARTOON.k * CARTOON.gc[0], CARTOON.top + CARTOON.k * CARTOON.gc[1] - 92];
+const BAR_VIEW = { cx: 0, cy: 0, s: CARTOON.k * CARTOON.semimajor / 3300, ax: GC_SCREEN[0], ay: GC_SCREEN[1],
+                   rot: (CARTOON.tilt - 28.0) * Math.PI / 180 };
 const cv = document.getElementById('cv');
+if (ROT){
+  cv.width = W * DPR; cv.height = H * DPR;
+  [cv, document.getElementById('stage')].forEach(function(e){ e.style.width = W + 'px'; e.style.height = H + 'px'; });
+}
 const ctx = cv.getContext('2d');
 ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
 const capEl = document.getElementById('cap');
@@ -88,8 +132,21 @@ const DUST_HALF = 1250;                  // shape_local_dust.jpg: +-1250 pc arou
 const GAL_HALF = 18000;                  // shape_galaxy_gas.jpg: +-18 kpc around the GC
 
 const imgDust = new Image(), imgGal = new Image();
-imgDust.src = 'shape_local_dust.jpg';
-imgGal.src = 'shape_galaxy_gas.jpg';
+imgDust.src = ROT ? OVIZ.src : 'shape_local_dust.jpg';
+let dustMasked = null;                   // topdown frame: the oviz render cut to the 1.25 kpc edge
+function maskDust(){
+  const c = document.createElement('canvas'), g = c.getContext('2d');
+  c.width = OVIZ.w; c.height = OVIZ.h;
+  g.drawImage(imgDust, 0, 0);
+  g.globalCompositeOperation = 'destination-in';
+  const gr = g.createRadialGradient(OVIZ.sun[0], OVIZ.sun[1], 0, OVIZ.sun[0], OVIZ.sun[1], OVIZ.rEdge + 15);
+  gr.addColorStop(0, 'rgba(0,0,0,1)');
+  gr.addColorStop((OVIZ.rEdge - 15) / (OVIZ.rEdge + 15), 'rgba(0,0,0,1)');
+  gr.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, OVIZ.w, OVIZ.h);
+  dustMasked = c;
+}
+imgGal.src = ROT ? 'shape_galaxy_gas_gray.jpg' : 'shape_galaxy_gas.jpg';
 let ready = false;
 
 // ---------------------------------------------------------------------------------------
@@ -270,7 +327,7 @@ const SPRITE = (function(){
   const gr = g.createRadialGradient(n / 2, n / 2, 0, n / 2, n / 2, n / 2);
   for (let k = 0; k <= 12; k++){
     const t = k / 12;                                       // radius / (3 sigma)
-    gr.addColorStop(t, 'rgba(255,150,70,' + Math.exp(-0.5 * 9 * t * t).toFixed(4) + ')');
+    gr.addColorStop(t, (ROT ? 'rgba(235,235,235,' : 'rgba(255,150,70,') + Math.exp(-0.5 * 9 * t * t).toFixed(4) + ')');
   }
   g.fillStyle = gr; g.fillRect(0, 0, n, n);
   return c;
@@ -284,10 +341,17 @@ const VIEW = {
   galaxy: { cx: 0, cy: 0, s: 0.0205 },
   gc:     { cx: 0, cy: -57, s: 1.45 }         // GC at screen y ~ 252; room for the spurs' depth
 };
+if (ROT){
+  VIEW.local.s = 0.2661;                       // = #topdown-local's map (see ?frame=topdown above)
+  Object.assign(VIEW.galaxy, { ax: GC_SCREEN[0], ay: GC_SCREEN[1], rot: Math.PI / 2 });   // GC centered, as on #bar-inflow
+}
 const NPHASE = 8;
 function target(p){
   const t = { galaxy: 0, dust: 0, annot: 0, sun: 0, cmz: 0, strip: 0, qm: 0, trip: 0,
-              shA: 0, shB: 0, mt: 0 };
+              shA: 0, shB: 0, mt: 0,
+              ax: ROT ? AXR : AX, ay: ROT ? AYR : AY, rot: ROT ? Math.PI / 2 : 0,
+              dmask: p >= 1 ? 1 : 0 };
+  if (ROT && p >= 2) return Object.assign(t, BAR_VIEW, { galaxy: 1, cmz: 1 });
   switch (p){
     case 0: return Object.assign(t, VIEW.local, { dust: 1, sun: 1 });
     case 1: return Object.assign(t, VIEW.galaxy, { galaxy: 1, dust: 1, annot: 1, sun: 1, cmz: 1 });
@@ -304,7 +368,7 @@ function target(p){
 // geometrically (so a zoom never swings the thing you are zooming to off-screen), and for
 // the shape changes the pair of shapes to morph between
 const TRANS = {
-  0: { dur: 2600, anchor: [0, -R0], win: { cam: [0, 1], galaxy: [0.12, 0.7], annot: [0.75, 1], cmz: [0.6, 1] } },
+  0: { dur: 2600, anchor: [0, -R0], win: { cam: [0, 1], galaxy: [0.12, 0.7], annot: [0.75, 1], cmz: [0.6, 1], dmask: [0, 0.3] } },
   1: { dur: 2800, anchor: [0, 0], win: { cam: [0, 1], galaxy: [0.40, 0.88], dust: [0, 0.45], annot: [0, 0.2],
                                          sun: [0, 0.2], strip: [0.82, 1], qm: [0.82, 1] } },
   2: { dur: 1600, morph: [0, 1], win: { qm: [0, 0.3], mt: [0.12, 1] } },
@@ -313,10 +377,12 @@ const TRANS = {
   5: { dur: 1600, morph: [3, 4], win: { mt: [0, 1] } },
   6: { dur: 800, win: { trip: [0.2, 1], cmz: [0, 0.6], strip: [0, 0.6] } }
 };
+// ?frame=topdown: phase 1 -> 2 is the zoom/rotate/pan onto the bar (BAR_VIEW), anchored on the GC.
+// 3.0 s: the deck's cartoon fade-in on #cmz-zoomout is delayed to start as this ends.
+if (ROT) TRANS[1] = { dur: 3000, anchor: [0, 0], win: { cam: [0, 1], annot: [0, 0.25], sun: [0, 0.25], dust: [0, 0.25] } };
 const CAPS = [
-  'Our neighborhood, mapped in 3D' +
-    '<span class=cite>dust within 1.25 kpc of the Sun, seen from above: Edenhofer+ 2024</span>',
-  'That map covers this small patch of the Galaxy',
+  '', //'Our neighborhood, mapped in 3D' + '<span class=cite>dust within 1.25 kpc of the Sun, seen from above: Edenhofer+ 2024</span>',
+  'We have at best a cartoony view of the Galactic Center',
   'At the Galactic Center we have excellent 2D maps but poor 3D',
   'Hypotheses include: \n<br> A ring?<span class="cite ref">e.g. Molinari+ 2011</span>',
   'Hypotheses include: \n<br> Spiral arms?<span class="cite ref">e.g. Sofue+ 2025</span>',
@@ -335,6 +401,20 @@ let cur = 0;
 // ---------------------------------------------------------------------------------------
 function sx(x){ return AX + (x - S.cx) * S.s; }
 function sy(y){ return AY - (y - S.cy) * S.s; }
+// screen position of world point (x, y), including the ?frame=topdown rotation
+function P(x, y){
+  const X = sx(x), Y = sy(y);
+  if (!ROT) return [X, Y];
+  const u = X - AX, v = Y - AY, c = Math.cos(S.rot), sn = Math.sin(S.rot);
+  return [S.ax + u * c - v * sn, S.ay + u * sn + v * c];
+}
+// draw world-space rasters (images, cloud sprites) inside world(function(){ ... })
+function world(f){
+  ctx.save();
+  if (ROT){ ctx.translate(S.ax, S.ay); ctx.rotate(S.rot); ctx.translate(-AX, -AY); }
+  f();
+  ctx.restore();
+}
 function lerp(a, b, f){ return a + (b - a) * f; }
 
 function font(px, w){ return (w || 600) + ' ' + px + 'px -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif'; }
@@ -346,7 +426,15 @@ function drawImages(){
     const x0 = sx(-GAL_HALF), y0 = sy(GAL_HALF), w = 2 * GAL_HALF * S.s;
     ctx.drawImage(imgGal, x0, y0, w, w);
   }
-  if (S.dust > 0.002){
+  if (S.dust > 0.002 && ROT){
+    // the oviz render is already in the topdown frame: undo the world's 90 deg about the Sun
+    const k = 0.5 * S.s / VIEW.local.s;                     // screen px per render px
+    const x0 = -OVIZ.sun[0] * k, y0 = -OVIZ.sun[1] * k, w = OVIZ.w * k, h = OVIZ.h * k;
+    ctx.save(); ctx.translate(sx(0), sy(-R0)); ctx.rotate(-Math.PI / 2);
+    if (S.dmask < 0.998){ ctx.globalAlpha = S.dust * (1 - S.dmask); ctx.drawImage(imgDust, x0, y0, w, h); }
+    if (S.dmask > 0.002 && dustMasked){ ctx.globalAlpha = S.dust * S.dmask; ctx.drawImage(dustMasked, x0, y0, w, h); }
+    ctx.restore();
+  } else if (S.dust > 0.002){
     ctx.globalAlpha = S.dust;
     const x0 = sx(-DUST_HALF), y0 = sy(-R0 + DUST_HALF), w = 2 * DUST_HALF * S.s;
     ctx.drawImage(imgDust, x0, y0, w, w);
@@ -357,7 +445,7 @@ function drawImages(){
 
 function drawSun(a){
   if (a <= 0.002) return;
-  const X = sx(0), Yp = sy(-R0);
+  const sun = P(0, -R0), X = sun[0], Yp = sun[1];
   ctx.globalAlpha = a;
   ctx.strokeStyle = '#ffd166'; ctx.fillStyle = '#ffd166'; ctx.lineWidth = 2;
   ctx.beginPath(); ctx.arc(X, Yp, 7, 0, 2 * Math.PI); ctx.stroke();
@@ -370,21 +458,31 @@ function drawSun(a){
 function drawAnnot(a){
   if (a <= 0.002) return;
   ctx.globalAlpha = a;
-  const sunX = sx(0), sunY = sy(-R0), gcX = sx(0), gcY = sy(0);
+  const sun = P(0, -R0), gc = P(0, 0), sunX = sun[0], sunY = sun[1], gcX = gc[0], gcY = gc[1];
+  const rr = DUST_HALF * S.s, L = Math.hypot(gcX - sunX, gcY - sunY) || 1;
+  const ux = (gcX - sunX) / L, uy = (gcY - sunY) / L;          // unit vector Sun -> GC on screen
   // the 3D-mapped patch
   ctx.strokeStyle = 'rgba(160,220,255,0.95)'; ctx.lineWidth = 1.6;
-  ctx.beginPath(); ctx.arc(sunX, sunY, DUST_HALF * S.s, 0, 2 * Math.PI); ctx.stroke();
+  ctx.beginPath(); ctx.arc(sunX, sunY, rr, 0, 2 * Math.PI); ctx.stroke();
   ctx.font = font(16); ctx.fillStyle = 'rgba(160,220,255,0.95)';
   ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
-  ctx.fillText('mapped in 3D', sunX - DUST_HALF * S.s - 8, sunY);
+  ctx.fillText('mapped in 3D', sunX - rr - 8, sunY);
   // Sun -> GC
   ctx.setLineDash([5, 5]); ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.lineWidth = 1.2;
-  ctx.beginPath(); ctx.moveTo(sunX, sunY - DUST_HALF * S.s - 3); ctx.lineTo(gcX, gcY + 9); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(sunX + ux * (rr + 3), sunY + uy * (rr + 3)); ctx.lineTo(gcX - ux * 9, gcY - uy * 9); ctx.stroke();
   ctx.setLineDash([]);
-  ctx.fillStyle = 'rgba(255,255,255,0.8)'; ctx.textAlign = 'left';
-  ctx.fillText('8 kpc', sunX + 7, (sunY + gcY) / 2 + 22);
-  ctx.font = font(18); ctx.fillStyle = '#ffffff';
-  ctx.fillText('Galactic Center', gcX + 16, gcY + 16);     // lower right: clear of the bar lanes
+  ctx.fillStyle = 'rgba(255,255,255,0.8)';
+  if (!ROT){                                 // (no distance label in the topdown frame)
+    ctx.textAlign = 'left';
+    ctx.fillText('8 kpc', sunX + 7, (sunY + gcY) / 2 + 22);
+  }
+  ctx.font = font(24); ctx.fillStyle = '#77aaff';
+  if (ROT){                                  // the bar now runs upper left -> lower right: upper right is clear
+    ctx.textAlign = 'left'; ctx.textBaseline = 'bottom';
+    ctx.fillText('Galactic Center', gcX + 16, gcY - 14);
+  } else {
+    ctx.fillText('Galactic Center', gcX + 16, gcY + 16);     // lower right: clear of the bar lanes
+  }
   ctx.globalAlpha = 1;
 }
 
@@ -459,7 +557,8 @@ function drawQMark(a){
   ctx.globalAlpha = a * 0.92;
   ctx.font = '700 250px Georgia, serif';
   ctx.fillStyle = '#ffd166'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-  ctx.fillText('?', sx(0), sy(0) + 8);
+  const g0 = P(0, 0);
+  ctx.fillText('?', g0[0], g0[1] + 8);
   ctx.globalAlpha = 1;
 }
 
@@ -514,13 +613,13 @@ function draw(){
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, W, H);
   if (!ready) return;
-  drawImages();
+  world(drawImages);
   drawAnnot(S.annot);
   drawSun(S.sun * (1 - S.annot) + S.annot);
-  drawClouds(S.cmz);
+  world(function(){ drawClouds(S.cmz); });
   drawQMark(S.qm);
   drawStrip(S.strip);
-  drawScaleBar(1 - S.trip);
+  drawScaleBar(ROT ? 1 - S.galaxy : 1 - S.trip);
   drawTrip(S.trip);
 }
 
@@ -531,12 +630,13 @@ function ease(t){ return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; 
 function clamp01(t){ return t < 0 ? 0 : t > 1 ? 1 : t; }
 
 let token = 0;
+function capFor(p){ return ROT && p >= 2 ? '' : CAPS[p]; }    // the cartoon slide brings its own title
 function setCaption(p){
   capEl.style.opacity = 0;
   const my = token;
-  setTimeout(function(){ if (my !== token) return; capEl.innerHTML = CAPS[p]; capEl.style.opacity = 1; }, 140);
+  setTimeout(function(){ if (my !== token) return; capEl.innerHTML = capFor(p); capEl.style.opacity = 1; }, 140);
 }
-function setCaptionNow(p){ capEl.innerHTML = CAPS[p]; capEl.style.opacity = 1; }
+function setCaptionNow(p){ capEl.innerHTML = capFor(p); capEl.style.opacity = 1; }
 
 function screenOf(view, P){
   return [AX + (P[0] - view.cx) * view.s, AY - (P[1] - view.cy) * view.s];
@@ -608,6 +708,7 @@ async function tour(){
 if (!EMBED) document.getElementById('stage').addEventListener('click', function(){ tour(); });
 
 Promise.all([imgDust.decode(), imgGal.decode()]).catch(function(){}).then(function(){
+  if (ROT) maskDust();
   ready = true;
   if (STAGE !== null) goto(STAGE, false);
   else if (!EMBED) tour();

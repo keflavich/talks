@@ -304,6 +304,30 @@
               </ul>
           </section>
 
+          <!-- COLD OPEN (2026-10-09): ACES (top) and JWST NIRCam (bottom), the same patch of sky at the
+               same scale in both rows: the full ACES footprint, then a zoom until ACES is at the screen's
+               resolution (0.5"/pixel, its own pixel), then a slow pan from Sgr B2 along the dust ridge,
+               then back out; loops.  JWST = the GC Treasury NIRCam HiPS (jwst-gc-treasury-nircam-mosaic-
+               minmax, live copy of 2026-09-30).  One pre-rendered video, assets/cmz/coldopen/coldopen.mp4
+               (fetch_hips.py, make_mosaics.py --jwst ..., make_coldopen.py in that directory -- edit
+               PATH / timings there). -->
+          <section id=cold-open data-background-color="#000">
+              <video src="assets/cmz/coldopen/coldopen.mp4" data-autoplay loop muted playsinline preload=auto
+                     style="position:absolute; left:0; top:8px; width:1024px; height:752px; max-width:none;
+                            max-height:none; margin:0; border:0;"></video>
+              <div style="position:absolute; left:10px; top:12px; font-size:17px; color:#ddd; text-align:left;
+                          text-shadow:0 0 4px #000, 0 0 2px #000;">ALMA &middot; ACES 3&nbsp;mm</div>
+              <div style="position:absolute; left:10px; top:394px; font-size:17px; color:#ddd; text-align:left;
+                          text-shadow:0 0 4px #000, 0 0 2px #000;">JWST NIRCam &middot; GC Treasury (F480M / F212N)</div>
+              <aside class=notes>
+                  Cold open -- let it run.  Top: ALMA, the ACES 3 mm continuum of the whole CMZ.  Bottom:
+                  the JWST GC Treasury (GO 10678) NIRCam mosaic, F480M / F212N -- the same patch of sky at the
+                  same scale; the black is sky the survey has not covered (yet).  It zooms in on Sgr B2
+                  until ACES is at its own resolution, then pans along the dust ridge past the Brick, and
+                  loops.
+              </aside>
+          </section>
+
           <!-- slide 1 (2026-10-09), replacing the zoom movie, which is kept hidden right below -->
           <section id=takeaways>
               <h4> Three brief things to take away </h4>
@@ -609,7 +633,6 @@ across cosmic time.
         <h4> Almost all of the <span style='color:blue'>light</span> in star-forming galaxies is produced by high-mass stars</h4>
         <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
     </span>
-    <span class="image" style='position:absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_andromeda.png);'></span>
     <aside class=notes>
         <ul>
             <li> UV image of M31, Andromeda, our closest massive neighbor
@@ -624,7 +647,6 @@ across cosmic time.
         <h4> The stars form in and from <span style="color:maroon"> gas</span> <span class=smaller>(as traced by <span style="color:brown">dust</span>)</span> </h4>
         <div style="position: relative; bottom: -67%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
     </span>
-    <span class="image" style='position:absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_andromeda.png);'></span>
     <aside class=notes>
         <ul>
             <li> Herschel FIR dust image of M31
@@ -653,8 +675,6 @@ across cosmic time.
     <span class="image fragment taurus-xfade" style='position:absolute; top:0; left:0; background-position: center center; background-image: url(colloquium_assets/Taurus_B211_DSS2_hips.jpg);'>
       <div style="position:absolute; top:73.5%; left:1%; text-align:left;" class="smaller3">Optical: <a class=darkbg href="https://alasky.cds.unistra.fr/DSS/">DSS2</a></div>
     </span>
-    <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
-    <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
     <aside class=notes>
         <ul>
             <li> Herschel FIR dust image of Taurus mol cld
@@ -727,10 +747,19 @@ across cosmic time.
 </section>
 
 <section>
-    The cartoon is right for a small minority (&lt;10% locally, likely &lt;1% cosmically)
 
 
-    Real stars form in crowds
+    <span class=image style='width:150%; height:150%; margin-left:-25%; margin-top:-22%; background-position: center center; background-image: url(assets/Wd1_nircam_miri_composite.png); background-size:150%; transform: rotate(180deg); '>
+    </span>
+    <h4 style='position: absolute; left: 0%; width:90%; top: 1%; text-align: center; background-color:rgba(0.5, 0.5, 0.5, 0.7);' class=darkbg> 
+
+        The cartoon is right for a small minority <br><span class=smaller>(&lt;10% locally, likely &lt;1% cosmically)</span>
+        <br>
+
+        Most stars form in crowds. </h4>
+    <div class="smaller3" style="color:white; background:rgba(0.5, 0.5, 0.5, 0.4); position: absolute; left: 5%;  bottom: 5%; text-align: center; ">
+        <a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2025A%26A...693A.120G/abstract"> Guarcello+ 2025: JWST EWOCS Wd1</a>
+    </div>
 </section>
 
 <!-- ---------- PARKED HERE pending integration (2026-10-04): wanted in the opener, position TBD ---------- -->
@@ -748,63 +777,6 @@ across cosmic time.
 
 
 
-<section>
-    <h4> Our Galaxy </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/ESAGaiaSkyColor.png); background-size:997px'></span>
-    <div class=smaller2 style="float:right">Gaia star colors via ESA</div>
-</section>
-
-<section>
-    <h4> Our Galaxy </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/2MASS_MilkyWayInfrared_IPAC.png); background-size:1000px'></span>
-    <div class=smaller2 style="float:right">2MASS via IPAC</div>
-</section>
-
-<section>
-    <section>
-        <h4> Our Galaxy </h4>
-        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_RGB.png);'></span>
-        <div class=smaller2 style="float:right">Planck + HI4PI via lambda.gsfc.nasa.gov</div>
-    </section>
-
-    <section>
-        <h4> Our Galaxy </h4>
-        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_HI.png);'></span>
-        <div style="position:relative; top:-80%">
-            <div style="position:absolute; top:-10%; right:0px"> HI: "Diffuse" gas
-                <div class=smaller2 style="text-align:right; right:0px">HI4PI</div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <h4> Our Galaxy </h4>
-        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_Dust.png);'></span>
-        <div style="position:relative; top:-80%">
-            <div style="position:absolute; top:-10%; right:0px"> Dust
-                <div class=smaller2 style="text-align:right; right:0px">Planck</div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <h4> Our Galaxy </h4>
-        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_CO.png);'></span>
-        <div style="position:relative; top:-80%">
-            <div style="position:absolute; top:-10%; right:0px"> CO: molecular gas
-                <div class=smaller2 style="text-align:right; right:0px">Planck</div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h4> Our Galaxy </h4>
-        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_RGB.png);'></span>
-    </section>
-</section>
-
-<section>
-    <h4> Nearby star-forming regions form few or no massive stars </h4>
-    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_nearby_SFRs.png);'></span>
-</section>
 
 
 
@@ -817,7 +789,7 @@ across cosmic time.
      CfA-relevant: Zucker, Saydjari and Finkbeiner are all on Edenhofer+ 2024. -->
 <section>  <!-- vertical stack: #topdown-local, and below it the labeled version -->
 <section id=topdown-local data-topdown=dust-zoom>
-    <h4> Top-down: 3D dust and young clusters around the Sun </h4>
+    <h4> The solar neighborhood is not crowded </h4>
     <!-- the clusters build carries its own key: colors are the oviz scene's own trace colors
          (red #ff0000 = "Clusters (< 15 Myr)", blue #2f80ff = "Clusters (< 60 Myr)"; red is drawn
          over blue).  Data: Hunt & Reffert 2023 Gaia DR3 cluster catalog (positions + ages), with
@@ -1064,18 +1036,79 @@ across cosmic time.
      top-down, then one click zooms out to the whole Galaxy -- right after #topdown-local.  Same
      page (assets/cmz/cmz_shape_tour.html), its own iframe, one empty fragment (phase 1); the sync
      script at the end of this file drives every slide that has an iframe.cmz-shape.  The full
-     sequence (zoom-in to the GC and the shape hypotheses) is #cmz-what-shape, after #soon-roman. -->
+     sequence (zoom-in to the GC and the shape hypotheses) is #cmz-what-shape, after #soon-roman.
+     frame=topdown (2026-10-15): turned and placed to match #topdown-local right before it -- GC to the
+     right, same kpc scale -- and its first view IS that slide's last background
+     (assets/local/topdown_clusters_zoom.jpg), drawn by the page over exactly the #topdown-bg box
+     (hence this iframe's 1024 x 672 at top 92), so the cut between the two slides keeps the same
+     pixels.  #cmz-what-shape keeps the page's own GC-up frame and its own Edenhofer rendering. -->
+<!-- Build 2 (2026-10-15; was build 1 before the cosmic-noon build went in): the hand-off to #bar-inflow.  The page's phase 2 in frame=topdown zooms,
+     rotates and pans the drawing onto the bar so it lands on S. Gramze's cartoon where #bar-inflow
+     shows it (3.0 s); then the cartoon card and that slide's title fade in on top (.zo-late: delayed
+     2.7 s, no delay going back), so advancing to #bar-inflow changes nothing but adding its text.
+     The cartoon image copies #bar-inflow's exactly -- move them together, and CARTOON in the page with them.
+     (2026-10-15, later still) Cartoon is now assets/Savannah/bar_model_galaxy.jpg (from the PDF beside it),
+     replacing CMZCartoon.png; no white card -- it is full-bleed.
+     (2026-10-15, later) Cartoon centered: its GC dot at slide (512, 404.6), which is also where the page
+     puts the GC in the Galaxy view, so the dive is a pure zoom + turn about a fixed, centered point. -->
+<style>
+  .reveal .slides section .fragment.zo-late { transition:opacity .6s ease-in-out, visibility .6s; }
+  .reveal .slides section .fragment.zo-late.visible { transition-delay:2.7s; }
+</style>
 <section id=cmz-zoomout data-background-color="#000">
-    <h4> We know the solar neighborhood in 3D, but not the GC </h4>
-    <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1"
-            style="position:absolute; left:12px; top:92px; width:1000px; height:670px;
+    <h4 style="position:relative; z-index:6;">
+        <span class="fragment fade-out zo-late" data-fragment-index=2>The most crowded region in the Galaxy is its center</span>
+        <span class="fragment zo-late" data-fragment-index=2 style="position:absolute; left:0; right:0; top:0;">The bar feeds the CMZ</span>
+    </h4>
+    <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown"
+            style="position:absolute; left:0px; top:92px; width:1024px; height:672px;
                    max-width:none; max-height:none; margin:0; border:0; background:#000;
                    pointer-events:none;"></iframe>
-    <span class=fragment data-cmz-phase=1></span>
+    <span class=fragment data-fragment-index=0 data-cmz-phase=1></span>
+    <!-- Build 1 (2026-10-15): cosmic noon.  Adam's Madau & Dickinson 2014 figure (the vector SVG of
+         #cosmic-noon-discs, black ink on transparent, hence the white card) with the z = 1-3 band placed
+         from that slide's measured tick fractions (z = 1 and 3 at x = 0.43204 and 0.68318 of the width;
+         band y = 0.11505-0.89494 of the height).  On the slide, 9 words (Adam: "<10 words"; the cosmic-noon
+         peak itself is implicit in the plot).  What backs them:
+           Madau & Dickinson 2014 (ARA&A 52, 415; arXiv:1403.0007): psi peaked at z ~ 1.9; half of today's
+             stellar mass formed before z = 1.3.
+           Kruijssen & Longmore 2013 (MNRAS 435, 2598; arXiv:1309.0505): CMZ clouds and regions are
+             "indistinguishable from high-redshift clouds and galaxies" in baryonic composition,
+             kinematics and densities; Sigma_gas 1e2-1e3 Msun/pc^2 is where the two overlap, Mach ~70
+             (CMZ) vs ~100 (high z), gas:stars 0.1-4 in both; "the CMZ replaces Arp 220 as the nearest
+             high-z galaxy analogue".
+         Differences KL13 list themselves: CMZ metallicity higher by a factor of a few; high-z radiation and
+         cosmic-ray pressures far higher; CMZ SFR 1-2 dex below the scaling relations. -->
+    <div class="fragment fade-in-then-out" data-fragment-index=1
+         style="position:absolute; left:8px; top:98px; width:1008px; height:510px; z-index:4; background:#fff; border-radius:8px; box-shadow:0 0 0 2000px rgba(0,0,0,0.72);">
+    </div>
+    <div class="fragment fade-in-then-out" data-fragment-index=1 style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:5; pointer-events:none; color:#111;">
+        <div style="position:absolute; left:30px; top:108px; font-size:18px; pointer-events:auto;"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1403.0007/abstract" style="color:#1a5fb4;">Madau &amp; Dickinson 2014</a></div>
+        <svg style="position:absolute; left:0; top:0; width:1024px; height:768px; margin:0; overflow:visible;" viewBox="0 0 1024 768">
+            <rect x="280.6" y="199.0" width="145.7" height="332.4" fill="rgba(247,193,74,0.45)" />
+            <text x="353.4" y="519.5" text-anchor="middle" font-size="19" font-weight="700" fill="#8a5a00"
+                  font-family="Lato, Helvetica, Arial, sans-serif">cosmic noon</text>
+        </svg>
+        <img src="colloquium_assets/Madau2014_plot.svg" alt="Madau & Dickinson 2014 cosmic star formation history"
+             style="position:absolute; left:30px; top:150px; width:580px; height:426.3px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+        <div style="position:absolute; left:640px; top:236px; width:356px; text-align:left; line-height:1.25; pointer-events:auto;">
+            <div style="font-size:38px; font-weight:700;">Stars formed in <span style="color:#c0392b;">denser gas</span>, in <span style="color:#c0392b;">more compact regions</span></div>
+            <div style="font-size:16px; margin-top:16px;"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1309.0505/abstract" style="color:#1a5fb4;">Kruijssen &amp; Longmore 2013</a></div>
+        </div>
+    </div>
+    <span class=fragment data-fragment-index=2 data-cmz-phase=2></span>
+    <img class="fragment zo-late" data-fragment-index=2 src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model: the bar's near- and far-side dust lanes feeding the CMZ, overshooting gas, and G1.3, BC2 and G5, on a barred galaxy, with the l = 0 and +-5 deg sightlines"
+         style="position:absolute; left:259.40px; top:150.93px; width:501.47px; height:540px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none; border-radius:6px; z-index:3;">
     <aside class=notes>
         The same dust map, now our own top-down rendering of Edenhofer+ 2024.  Click: pull out --
         that whole map is the little circle; the Galactic Center is 8 kpc away.  (Steps 0-1 of
-        #cmz-what-shape, which picks this up again later.)
+        #cmz-what-shape, which picks this up again later.)  Click: why the Galactic Center matters beyond
+        the Milky Way -- most stars in the universe formed at cosmic noon, z ~ 1-3 (half before z = 1.3),
+        and they formed in denser gas, in more compact regions -- like the CMZ (Kruijssen &amp; Longmore
+        2013: same gas surface densities, 1e2-1e3 Msun/pc^2, Mach numbers and gas-to-star ratios).
+        Caveats they list themselves: the CMZ is more metal-rich, high-z galaxies have far more radiation
+        and cosmic rays, and the CMZ forms stars 1-2 dex below the scaling relations.  Click: dive into the bar -- and here is what it does
+        (the bar-model cartoon).
     </aside>
 </section>
 
@@ -1090,20 +1123,91 @@ across cosmic time.
          and ~150 km/s = direct evidence of a cloud-cloud collision; ~60 K; X_CO 10-20x below Galactic -->
 <section id=bar-inflow>
     <h4> The bar feeds the CMZ </h4>
-    <div style="position:absolute; left:52px; top:104px; width:450px; height:586px; background:#fff; border-radius:8px;"></div>
-    <img src="assets/Savannah/CMZCartoon.png" alt="cartoon of the bar, its dust lanes, and the CMZ"
-         style="position:absolute; left:62px; top:112px; height:570px; width:auto; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
-    <div style="position:absolute; left:540px; top:150px; width:450px; text-align:left; font-size:28px; line-height:1.3;">
-        <p style="margin:0 0 26px 0;">Gas falls in along the bar's dust lanes: <span style="color:#ffd166;">~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></span>
+    <!-- the bar-model cartoon (2026-10-15; replaces S. Gramze's CMZCartoon.png): assets/Savannah/bar_model_galaxy.jpg,
+         rendered at 240 dpi from bar_model_galaxy.pdf beside it.  540 px tall (1.334981 px per pt of its
+         375.64 x 404.5 pt page), top-left at (259.40, 150.93) so its GC -- the CMZ circle's center, PDF
+         (189.22, 190.02) pt -- sits at slide (512, 404.6).  #cmz-zoomout's dive lands on exactly this
+         image (and the CARTOON constants in assets/cmz/cmz_shape_tour.html) -- move all three together. -->
+    <img src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model: the bar's near- and far-side dust lanes feeding the CMZ, overshooting gas, and G1.3, BC2 and G5, on a barred galaxy, with the l = 0 and +-5 deg sightlines"
+         style="position:absolute; left:259.40px; top:150.93px; width:501.47px; height:540px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none; border-radius:6px;">
+    <div style="position:absolute; left:772px; top:50px; width:244px; text-align:left; font-size:28px; line-height:1.3;">
+        <p style="margin:0 0 26px 0;">Gas falls along bar dust lanes: <span style="color:#ffd166;">~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></span>
             <span style="display:block; font-size:16px; color:#aaa; margin-top:4px;">
                 <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.1213S/abstract">Sormani &amp; Barnes 2019</a>: 2.7<sup>+1.5</sup><sub>&minus;1.7</sub>;
                 <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...922...79H/abstract">Hatchfield+ 2021</a>: 0.8&nbsp;&plusmn;&nbsp;0.6</span></p>
-        <p  style="margin:0 0 26px 0;">Only <span style="color:#ffd166;">~&#8531;</span> lands on the CMZ the first time around; the rest overshoots
+        <p  style="margin:0 0 26px 0;"><span style="color:#ffd166;">~&#8531;</span> lands on the CMZ first pass; the rest overshoots
             <span style="display:block; font-size:16px; color:#aaa; margin-top:4px;"> <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...922...79H/abstract">Hatchfield+ 2021</a></span></p>
-        <p  style="margin:0;">...and hits the dust lane on the far side
+        <p  style="margin:0;">...and hits the far side dust lane
         </p>
     </div>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:52px;">cartoon: S. Gramze (<a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Gramze+ 2023</a>)</div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:259px;">cartoon: S. Gramze (<a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Gramze+ 2023</a>)</div>
+
+    <!-- R. Tress's ProjMosaic_3.mp4 (Rhea-RT), cropped to the total-surface-density panel only: the
+         476x476 px map interior at (78,31) of the 2560x1526 mosaic, same crop as ProjMosaic_5 on
+         #cmz-what-shape; this run's panel is 6 kpc across (+-3 kpc).  t = 232 -> 357 Myr, 10 fps,
+         51 s, looped; reveal's data-autoplay starts it on the slide and pauses it on leaving.
+         Sized to sit under the text (which ends at y = 439).
+         TURNED (2026-10-15) to the cartoon's orientation: the run is in the bar's frame with the bar
+         along x (the lanes' principal axis is 0.9 deg off horizontal, from the time-averaged frames)
+         and, like the cartoon, rotating clockwise (each lane meets the nuclear ring on its leading
+         side), so a pure rotation matches it -- no mirror: -59.84 deg puts the bar 30.16 deg from
+         vertical, as the bar-model cartoon's ellipse (was -70.2 for S. Gramze's, at 19.8 deg).  It turns about the nuclear ring's center (movie px 240.5, 241.4,
+         mean over the run; display px 126.58, 127.05 at 250 px), which the translate then puts at the
+         disc's center, and a circular mask hides the turned square's corners -- r = 122.6 px, inside the
+         122.95 px the shifted video still covers all round, so no black sliver shows at its edge. -->
+    <style>
+      #bar-inflow .bar-shape { position:absolute; right:8px; bottom:24px; width:250px; z-index:6;
+          text-align:center; opacity:1;
+          transform-origin:0 0; transition:transform .9s ease-in-out; }
+      /* BUILD (2026-10-11): one click blows the movie up to a full-height 768x768 square (x 128-896)
+         over a black backdrop, then the arrows fade in.  The small video sits at (738, 453), 270 px,
+         so: translate to (128, 0) and scale 768/270. */
+      /* (2026-10-15) the movie is now 250 px at (766, 473), clear of the wider cartoon: translate to (128, 0),
+         scale 768/250 -- the blown-up disc is unchanged, so are the arrows */
+      #bar-inflow:has(.bar-blowup.visible) .bar-shape { transform:translate(-638px, -473px) scale(3.072); }
+      #bar-inflow .bar-shape .bar-cap { transition:opacity .3s; }
+      #bar-inflow:has(.bar-blowup.visible) .bar-shape .bar-cap { opacity:0; }
+      .reveal .slides section .fragment.bar-blowup { transition:opacity .5s ease-in-out, visibility .5s; }
+      .reveal .slides section .fragment.bar-arrows { transition:opacity .5s ease-in-out .9s, visibility .5s .9s; }
+    </style>
+    <div class=bar-shape>
+        <div class=bar-disc style="position:relative; width:250px; height:250px; margin:0 auto; overflow:hidden; clip-path:circle(122.6px at 125px 125px);">
+        <video src="assets/cmz/tress_ProjMosaic3_sigma_tot.mp4" data-autoplay muted loop playsinline preload=auto
+               style="display:block; position:absolute; left:0; top:0; margin:0; width:250px; height:250px; max-width:none; max-height:none; border:0;
+                      transform-origin:126.58px 127.05px; transform:translate(-1.58px, -2.05px) rotate(-59.84deg);"></video>
+        </div>
+        <div class=bar-cap style="font-size:14px; line-height:1.25; color:#9aa3b5; margin-top:4px; white-space:nowrap;"><a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract">Tress+ 2026</a> (Rhea-RT) &middot; 6&nbsp;kpc box</div>
+    </div>
+    <!-- the build: backdrop (also the trigger the CSS above keys on), then the arrows.  Arrow tips are
+         where the two bar lanes meet the central ring, chosen on frames across the whole run (the ring
+         shrinks into a compact disk; the tips stay on its edge): movie px (208,224) and (256,250) of
+         the 476 px frame, i.e. slide (464,361) and (541,403) at 768/476 = 1.613 slide px per movie px.
+         The arrows come in from beside the lanes so they don't cover them.
+         (2026-10-15) Arrows turned with the movie: -59.84 deg about the ring center, which moves from
+         slide (516.84, 390.29) unturned to the disc center (512, 384). -->
+    <div class="fragment bar-blowup" data-fragment-index=0
+         style="position:absolute; left:-200px; top:-200px; width:1424px; height:1168px; background:#000; z-index:5;"></div>
+    <svg class="fragment bar-arrows" data-fragment-index=0 viewBox="0 0 1024 768"
+         style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:7; overflow:visible; margin:0; pointer-events:none;">
+        <defs>
+            <marker id=bar-ah viewBox="0 0 10 10" refX=8 refY=5 markerWidth=5 markerHeight=5 orient=auto-start-reverse>
+                <path d="M0,0 L10,5 L0,10 Z" fill="#fff" stroke="#fff" stroke-width=1 />
+            </marker>
+        </defs>
+        <g stroke-linecap=round>
+            <line x1=330.9 y1=504.1 x2=413.9 y2=444.8 stroke="#fff" stroke-width=9 />
+            <line x1=330.9 y1=504.1 x2=413.9 y2=444.8 stroke="#fff" stroke-width=5 marker-end="url(#bar-ah)" />
+            <!--<line x1=668.9 y1=280.7 x2=544.0 y2=364.2 stroke="#000" stroke-width=9 />
+            <line x1=668.9 y1=280.7 x2=544.0 y2=364.2 stroke="#fff" stroke-width=5 marker-end="url(#bar-ah)" />-->
+        </g>
+        <g font-family="Lato, Helvetica, Arial, sans-serif" font-weight=700 font-size=26 fill="#fff"
+           style="paint-order:stroke; stroke:#000; stroke-width:5px;">
+            <!--<text x=318.2 y=506.0 text-anchor=end>lane hits the CMZ</text>
+            <!--<text x=695.4 y=286.8 text-anchor=start>lane hits the CMZ</text>-->
+        </g>
+        <text x=890 y=760 text-anchor=end font-size=15 fill="#cfcfcf" font-family="Lato, Helvetica, Arial, sans-serif"
+              style="paint-order:stroke; stroke:#000; stroke-width:3px;">Tress+ 2026 (Rhea-RT), total gas surface density, 6&nbsp;kpc across</text>
+    </svg>
     <aside class=notes>
         Coming out of the zoom: the bar.  Gas on the bar's orbits gets shocked into two dust
         lanes and falls toward the center -- about a solar mass per year (Sormani &amp; Barnes 2019
@@ -1112,24 +1216,28 @@ across cosmic time.
         <br><br>
         Click: most of it overshoots.  Click: and collides with the lane on the other side --
         the bursts on the cartoon.  We can see one of these collisions happening.
+        <br><br>
+        Click: the simulation full screen (Tress+ 2026, Rhea-RT, gas surface density, 6 kpc
+        across, ~125 Myr).  The arrows: where the two bar lanes run into the CMZ ring -- the
+        collision points.  Watch the ring settle into a compact disk.
     </aside>
 </section>
 
 <section id=g5-collision>
-    <h4> We see it happen: G5, a collision of overshooting gas </h4>
+    <h4> Colliding gas stagnates flows and feeds the CMZ </h4>
     <div style="position:absolute; left:40px; top:104px; width:478px; height:526px; background:#fff; border-radius:8px;"></div>
     <img src="assets/Savannah/G5_pvdiagram_12CO.png" alt="12CO position-velocity diagram of G5"
          style="position:absolute; left:50px; top:112px; height:510px; width:auto; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
-    <div style="position:absolute; left:540px; top:104px; width:210px; height:274px; background:#fff; border-radius:8px;"></div>
-    <img src="assets/Savannah/CMZCartoon.png" alt=""
-         style="position:absolute; left:545px; top:108px; height:266px; width:auto; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+    <!-- the bar-model cartoon (2026-10-15), as on #bar-inflow, in place of CMZCartoon.png: shows where G5 sits -->
+    <img src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model cartoon with G1.3, BC2 and G5 on the near-side lane"
+         style="position:absolute; left:540px; top:104px; width:210px; height:226.1px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none; border-radius:6px;">
     <div style="position:absolute; left:776px; top:104px; width:200px; text-align:center; font-size:17px; color:#ddd;">
         <img src="assets/Savannah/SavannahGramze.jpeg" alt="Savannah Gramze"
              style="width:150px; height:200px; object-fit:cover; margin:0 auto 4px; display:block; border-radius:6px; box-shadow:none; border:0; max-width:none; max-height:none; background:none;">
-        Savannah Gramze
+        <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Savannah Gramze+ 2023</a>, in prep
     </div>
     <div style="position:absolute; left:545px; top:400px; width:450px; text-align:left; font-size:23px; line-height:1.3;">
-        A <span style="color:#ffd166;">velocity bridge</span> joins clouds at ~50 and ~150&nbsp;km&nbsp;s<sup>&minus;1</sup> : evidence of collision
+        A <span style="color:#ffd166;">velocity bridge</span> joins clouds at ~50 and ~150&nbsp;km&nbsp;s<sup>&minus;1</sup> 
     </div>
     <!-- builds: the same position-velocity cut in the other tracers (Gramze's figures, white boxes over the top) 
     <div class=fragment style="position:absolute; left:30px; top:100px; width:964px; height:540px; background:#fff; border-radius:8px; z-index:5;">
@@ -1143,6 +1251,17 @@ across cosmic time.
         <div style="position:absolute; left:0; bottom:10px; width:100%; text-align:center; font-size:22px; color:#222;">and SiO, a shock tracer, is bright in both clouds</div>
     </div>
     -->
+    <!-- build (2026-10-15): Adam's 4-panel figure, assets/Savannah/pv_diagrams_l3.3_l2.9.png (989 x 990, from
+         ~/Downloads/pv_diagrams.png): two more clouds at l ~ 3.3 and ~ 2.9 deg, each a map with its cut (red)
+         and the position-velocity diagram along it.  White card because the figure is on white. -->
+    <div class=fragment style="position:absolute; left:30px; top:100px; width:964px; height:590px; background:#fff; border-radius:8px; z-index:5;">
+        <img src="assets/Savannah/pv_diagrams_l3.3_l2.9.png" alt="maps and position-velocity diagrams of clouds at l ~ 3.3 and 2.9 deg"
+             style="position:absolute; left:10px; top:8px; width:573px; height:574px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+        <div style="position:absolute; left:606px; top:200px; width:340px; text-align:left; font-size:30px; line-height:1.3; color:#111;">
+            The same <span style="color:#b8860b;">velocity bridges</span> in two more clouds
+            <div style="font-size:18px; color:#555; margin-top:12px;">l&nbsp;&asymp;&nbsp;3.3&deg; (top) and 2.9&deg; (bottom)</div>
+        </div>
+    </div>
     <div class=smaller3 style="position:absolute; bottom:6px; left:40px;"><a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Gramze+ 2023</a> (ALMA/ACA)</div>
     <aside class=notes>
         Savannah's G5, at l = +5.4: in position-velocity, two clouds at ~50 and ~150 km/s joined by
@@ -1152,7 +1271,10 @@ across cosmic time.
         infalling HI.)
         <br><br>
         Click: the bridge is there in 13CO and C18O as well.  Click: SiO -- a shock tracer -- is
-        bright in both clouds.
+        bright in both clouds.  (Those two builds are commented out.)
+        <br><br>
+        Click: and it is not just G5 -- two more clouds, at l ~ 3.3 and 2.9 deg, show the same kind of
+        bridge in position-velocity along the cuts (red lines).
     </aside>
 </section>
 
@@ -1161,7 +1283,7 @@ across cosmic time.
      covers over (b), (c), (d) fade out in turn.  Panel split measured from the figure's gutters:
      x = 1314/2600; rows split at y = 1380/2600, below the (a)/(b) labels (rows 1224-1345).  Captions paraphrase the paper's caption and Sect. 5 text. -->
 <section id=tress-colliding-flows>
-    <h4> In the CMZ, colliding flows pull stars and gas apart </h4>
+    <h4> Gas &amp; young stars can decouple </h4>
     <div style="position:absolute; left:30px; top:100px; width:592px; height:592px; background:#fff; border-radius:8px;"></div>
     <img src="assets/cmz/tress2026_fig22_sketch_cmz.png" alt="Tress+ 2026 Fig. 22: schematic of a star-forming region in the CMZ"
          style="position:absolute; left:46px; top:116px; width:560px; height:560px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
@@ -1169,10 +1291,10 @@ across cosmic time.
     <div class="fragment fade-out" data-fragment-index=1 style="position:absolute; left:46px; top:413px; width:283px; height:263px; background:#fff;"></div>
     <div class="fragment fade-out" data-fragment-index=2 style="position:absolute; left:329px; top:413px; width:277px; height:263px; background:#fff;"></div>
     <div style="position:absolute; left:650px; top:118px; width:350px; text-align:left; font-size:21px; line-height:1.3;">
-        <p style="margin:0 0 18px 0;"><b style="color:#ffd166;">(a)</b> Gas arrives along the bar's shock lane and runs into the CMZ ring, where a cluster is forming</p>
-        <p class=fragment data-fragment-index=0 style="margin:0 0 18px 0;"><b style="color:#ffd166;">(b)</b> Collisions and short orbits decouple stars from gas: the young cluster is exposed</p>
-        <p class=fragment data-fragment-index=1 style="margin:0 0 18px 0;"><b style="color:#ffd166;">(c)</b> Gas stays on closed x<sub>2</sub> orbits; the stars, collisionless, follow open orbits and drift away</p>
-        <p class=fragment data-fragment-index=2 style="margin:0;"><b style="color:#ffd166;">(d)</b> ...back into dense gas: young stars are re-embedded, so feedback couples to the gas differently than near the Sun</p>
+        <p style="margin:0 0 18px 0;"><b style="color:#ffd166;">(a)</b> A cluster forms, perhaps where the bar hits the CMZ</p>
+        <p class=fragment data-fragment-index=0 style="margin:0 0 18px 0;"><b style="color:#ffd166;">(b)</b> Feedback opens a hole in cloud, doesn't destroy it</p>
+        <p class=fragment data-fragment-index=1 style="margin:0 0 18px 0;"><b style="color:#ffd166;">(c)</b> Gas feels pressure, follows ~circular orbits; stars drift away</p>
+        <p class=fragment data-fragment-index=2 style="margin:0;"><b style="color:#ffd166;">(d)</b> stars <i>may</i> drift back in - feedback from non-birth cloud</p>
     </div>
     <div class=smaller3 style="position:absolute; bottom:6px; left:30px;"><a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract">Tress+ 2026</a> (Rhea-RT), Fig. 22</div>
     <aside class=notes>
@@ -1215,7 +1337,9 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
             </div>
         </div>
-        <div class=fragment></div>
+        <div class="fragment smaller2 darkbg" data-fragment-index="3" style="position: absolute; top: 86%; left: 2%; width: 96%;">
+            We're going to zoom in ~300&times; to measure star formation by counting young stars.
+        </div>
         <aside class=notes>
             <ul>
                 <li> Zoom-in to the Sgr B2 cloud:
@@ -1274,6 +1398,15 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </style>
 <section data-auto-animate class=darkbg data-background-color="black" id=sgrb2_nircam_on_meerkat>
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:5%; margin-left:-51%; ">
+        <!-- build 2 (2026-10-15): ALMA 3 mm continuum, N+M mosaic with short spacings, monochrome log
+             stretch masked to islands (HiPS ivo://UFL/P/sgrb2nm-b3-mono-islands, read at order 12).  Rendered
+             onto NIRCAMSgrB2_on_MEERKAT.png's own pixel grid (2952x1967), so it copies that image's CSS and
+             must stay directly after it.  That figure's WCS came from registering its NIRCam panel to
+             ~/repos/avm_images/SgrB2_RGB_480-405-187_scaled.png (pure 2.492x scale, 143 patches, rms 0.02");
+             the islands land on the compact HII regions JWST sees to <1 px.  assets/sgrb2/b3_overlay/. -->
+        <img src="assets/sgrb2/overlay_sgrb2nm_b3_islands.png" class="fragment fade-in-then-out" data-fragment-index="2"
+             style="width:150%;  position: absolute; margin-top:5%; margin-left:-51%; z-index:30; background:none;">
+        <div class="smaller3 fragment fade-in-then-out" data-fragment-index="2" style="position:absolute; left:14px; top:44px; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 8px; border-radius:3px;">ALMA 3&nbsp;mm continuum (Sgr B2 N &amp; M)</div>
         <!-- pose measured by registering SGR-B2_MIRI_Mosaic.png against NIRCAMSgrB2_on_MEERKAT.png
              (patch cross-correlation, 60 patches, residual rms 2.2 x 2.7 NIRCam px = 0.9 screen px,
              ncc 0.869): mosaic->NIRCam is a similarity with rotation -3.3589 deg and scale 0.708935,
@@ -1292,10 +1425,10 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
         <!-- same overlay as #sgrb2ds-zoomin, carrying the MIRI mosaic's exact pose on this slide
              (both images are 2487x1095, so identical top/left/max-* put them pixel-on-pixel). -->
-        <div class="fragment fade-in-then-out smaller" data-fragment-index="2" style='position: absolute; color: lime; left:53%; top:55%; z-index:100; width:200px; height:200px'> Protoclusters </div>
+        <div class="fragment fade-in-then-out smaller" data-fragment-index="3" style='position: absolute; color: lime; left:53%; top:55%; z-index:100; width:200px; height:200px'> Protoclusters </div>
         <img src="assets/sgrb2/overlay_sgrb2_nms.png" style="position: absolute; top: 35.02102% !important;
-  left: 22.15423% !important; height: 100%; max-width: 62%; max-height: 33.30926%; rotate:-3.3589deg; transform-origin: 0px 0px; z-index: 50;" class="fragment nms-boxes fade-in-then-out" data-fragment-index="2">
-        <div class=fragment placeholder-for-fadeout-animation data-fragment-index="3"></div>
+  left: 22.15423% !important; height: 100%; max-width: 62%; max-height: 33.30926%; rotate:-3.3589deg; transform-origin: 0px 0px; z-index: 50;" class="fragment nms-boxes fade-in-then-out" data-fragment-index="3">
+        <div class=fragment placeholder-for-fadeout-animation data-fragment-index="4"></div>
 
 
         <aside class=notes>
@@ -1498,6 +1631,8 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 </section>
 
+<section>  <!-- vertical stack (2026-10-15): #sgrb2ds-overview, with #sgrb2ds-f1 and #sgrb2ds-f2 BELOW it --
+     kept but skipped by default: ArrowRight goes overview -> f3; ArrowDown (or Space/PageDown) steps into them -->
 <section id=sgrb2ds-overview data-background-color="black">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; extended star formation with JWST</div>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;"></div>
@@ -1513,21 +1648,25 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 
 </section>
 
+<!-- SiO contours on #sgrb2ds-f1/f2/f3 (2026-10-15): blue (12-40 km/s) and red (54-88 km/s) wings of
+     SiO 5-4 (v_sys ~ 47 km/s), continuum-subtracted, at 5/10/20/40 sigma, from ALMA 2017.1.00114.S
+     (hpg:/orange/adamginsburg/sgrb2/2017.1.00114.S/imaging_results/Sgr_B2_DS_B6_spw0_12M_sio.image.fits);
+     assets/sgrb2ds/make_sio_redblue.py.  The old single-color overlays are f*_sio.png. -->
 <section id=sgrb2ds-f1 data-background-color="black">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; mostly seen by ALMA</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:1;" src="assets/sgrb2ds/miri_fullfov.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_hi1.png">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2ds/f1_jwst.jpg"
          style="width:350px; height:350px; z-index:10; --l0:168.9px; --t0:230.4px; --r0:0deg; --s0:0.138980; --l1:652px; --t1:26px; --r1:0deg; --s1:1;">
-    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f1_sio.png"
+    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f1_sio_rb.png"
          style="width:350px; height:350px; z-index:12; --l0:168.9px; --t0:230.4px; --r0:0deg; --s0:0.138980; --l1:652px; --t1:26px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2ds/f1_alma.jpg"
          style="width:350px; height:350px; z-index:11; --l0:168.9px; --t0:230.4px; --r0:0deg; --s0:0.138980; --l1:652px; --t1:406px; --r1:0deg; --s1:1;">
-    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f1_sio.png"
+    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f1_sio_rb.png"
          style="width:350px; height:350px; z-index:13; --l0:168.9px; --t0:230.4px; --r0:0deg; --s0:0.138980; --l1:652px; --t1:406px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <br><span style='color:red'>F480M (hot dust &amp;/or CO+H<sub>2</sub>)</span> <span style='color:green'>Brα</span> <span style='color:blue'> Paα </span></div>
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:712px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum
-        <br> <span class="fragment fade-in" data-fragment-index="2" style="z-index:31; ">contour: ALMA SiO 5&ndash;4 </span>
+    <div class="smaller3 fragment fade-in sgrb2cap" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <br><span style='color:red'>F480M (hot dust &amp;/or CO+H<sub>2</sub>)</span> <span style='color:green'>Brα</span> <span style='color:blue'> Paα </span></div>
+    <div class="smaller3 fragment fade-in sgrb2cap" data-fragment-index="1" style="position:absolute; left:652px; top:712px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum
+        <br> <span class="fragment fade-in" data-fragment-index="2" style="z-index:31; ">contours: ALMA SiO 5&ndash;4 <span style='color:#4da6ff'>12&ndash;40</span> / <span style='color:#ff4d4d'>54&ndash;88</span>&nbsp;km&nbsp;s<sup>&minus;1</sup></span>
     </div>
     <div class="fragment sgrb2-contours-on" data-fragment-index="2"></div>
     <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
@@ -1549,19 +1688,20 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_hi2.png">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2ds/f2_jwst.jpg"
          style="width:350px; height:350px; z-index:10; --l0:133.3px; --t0:303.9px; --r0:0deg; --s0:0.160684; --l1:652px; --t1:26px; --r1:0deg; --s1:1;">
-    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f2_sio.png"
+    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f2_sio_rb.png"
          style="width:350px; height:350px; z-index:12; --l0:133.3px; --t0:303.9px; --r0:0deg; --s0:0.160684; --l1:652px; --t1:26px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2ds/f2_alma.jpg"
          style="width:350px; height:350px; z-index:11; --l0:133.3px; --t0:303.9px; --r0:0deg; --s0:0.160684; --l1:652px; --t1:406px; --r1:0deg; --s1:1;">
-    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f2_sio.png"
+    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f2_sio_rb.png"
          style="width:350px; height:350px; z-index:13; --l0:133.3px; --t0:303.9px; --r0:0deg; --s0:0.160684; --l1:652px; --t1:406px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <br><span style='color:red'>F480M (hot dust &amp;/or CO+H<sub>2</sub>)</span><span style='color:green'>Brα</span> <span style='color:blue'> Paα </span></div>
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:712px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum
-        <br> <span class="fragment fade-in" data-fragment-index="2" style="z-index:31; ">contour: ALMA SiO 5&ndash;4 </span>
+    <div class="smaller3 fragment fade-in sgrb2cap" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <br><span style='color:red'>F480M (hot dust &amp;/or CO+H<sub>2</sub>)</span><span style='color:green'>Brα</span> <span style='color:blue'> Paα </span></div>
+    <div class="smaller3 fragment fade-in sgrb2cap" data-fragment-index="1" style="position:absolute; left:652px; top:712px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum
+        <br> <span class="fragment fade-in" data-fragment-index="2" style="z-index:31; ">contours: ALMA SiO 5&ndash;4 <span style='color:#4da6ff'>12&ndash;40</span> / <span style='color:#ff4d4d'>54&ndash;88</span>&nbsp;km&nbsp;s<sup>&minus;1</sup></span>
     </div>
     <div class="fragment sgrb2-contours-on" data-fragment-index="2"></div>
     <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
 </section>
+</section>  <!-- end of the #sgrb2ds-overview stack -->
 
 <section id=sgrb2ds-f3 data-background-color="black">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:30; background:rgba(0,0,0,0.55); max-width:50%; color:#fff; padding:2px 9px; border-radius:4px;">Sgr B2 Deep South &mdash; DS9, a hot core containing a massive star, along a thin filament</div>
@@ -1569,18 +1709,29 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:0px; top:0px; width:1024px; height:768px; z-index:2;" src="assets/sgrb2ds/boxes_hi3.png">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2ds/f3_jwst.jpg"
          style="width:350px; height:350px; z-index:10; --l0:93.1px; --t0:621.5px; --r0:0deg; --s0:0.228037; --l1:652px; --t1:26px; --r1:0deg; --s1:1;">
-    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f3_sio.png"
+    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f3_sio_rb.png"
          style="width:350px; height:350px; z-index:12; --l0:93.1px; --t0:621.5px; --r0:0deg; --s0:0.228037; --l1:652px; --t1:26px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
     <img class="fragment custom cmzzoom" data-fragment-index="1" src="assets/sgrb2ds/f3_alma.jpg"
          style="width:350px; height:350px; z-index:11; --l0:93.1px; --t0:621.5px; --r0:0deg; --s0:0.228037; --l1:652px; --t1:406px; --r1:0deg; --s1:1;">
-    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f3_sio.png"
+    <img class="fragment custom cmzzoom sgrb2contour" data-fragment-index="1" src="assets/sgrb2ds/f3_sio_rb.png"
          style="width:350px; height:350px; z-index:13; --l0:93.1px; --t0:621.5px; --r0:0deg; --s0:0.228037; --l1:652px; --t1:406px; --r1:0deg; --o0:0; --o1:0; --s1:1;">
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <br><span style='color:red'>F480M (hot dust &amp;/or CO+H<sub>2</sub>)</span> <span style='color:green'>Brα</span> <span style='color:blue'> Paα </span></div>
-    <div class="smaller3 fragment fade-in" data-fragment-index="1" style="position:absolute; left:652px; top:712px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum
-        <br> <span class="fragment fade-in" data-fragment-index="2" style="z-index:31; ">contour: ALMA SiO 5&ndash;4 </span>
+    <div class="smaller3 fragment fade-in sgrb2cap" data-fragment-index="1" style="position:absolute; left:652px; top:352px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">NIRCam starless <br><span style='color:red'>F480M (hot dust &amp;/or CO+H<sub>2</sub>)</span> <span style='color:green'>Brα</span> <span style='color:blue'> Paα </span></div>
+    <div class="smaller3 fragment fade-in sgrb2cap" data-fragment-index="1" style="position:absolute; left:652px; top:712px; width:350px; text-align:center; z-index:31; background:rgba(0,0,0,0.6); color:#fff; padding:2px 6px; border-radius:3px;">ALMA 1.3&nbsp;mm continuum
+        <br> <span class="fragment fade-in" data-fragment-index="2" style="z-index:31; ">contours: ALMA SiO 5&ndash;4 <span style='color:#4da6ff'>12&ndash;40</span> / <span style='color:#ff4d4d'>54&ndash;88</span>&nbsp;km&nbsp;s<sup>&minus;1</sup></span>
     </div>
     <div class="fragment sgrb2-contours-on" data-fragment-index="2"></div>
-    <div class="fragment sgrb2-zoomback" data-fragment-index="3"></div>
+    <!-- build 3 (2026-10-15): the side-view sketch of DS9 -- panel (c) of the DS9 figure, which explains
+         the 4.8 um centroid offset along the outflow cavity -- on the LEFT so the insets (which are
+         panels a/b of that figure) stay clear; gone again at the zoom-back.
+         assets/sgrb2ds/ds9_protostar_cartoon.png (1400 x 814: the hi-res standalone sketch, whitespace trimmed; the full figure is ds9_protostar_figure.png) -->
+    <div class="fragment fade-in-then-out" data-fragment-index="3"
+         style="position:absolute; left:16px; top:110px; width:612px; height:363px; z-index:40;
+                background:#fff; border-radius:8px; box-shadow:0 2px 14px rgba(0,0,0,0.7);">
+        <img src="assets/sgrb2ds/ds9_protostar_cartoon.png" alt="side-view sketch: 4.8 um light escapes along the outflow cavity, the mm traces the dust core"
+             style="position:absolute; left:8px; top:8px; width:596px; height:auto; margin:0; border:0; box-shadow:none;
+                    max-width:none; max-height:none; background:none;">
+    </div>
+    <div class="fragment sgrb2-zoomback" data-fragment-index="4"></div>
 </section>
 
 <!-- Full-frame MIRI in the same sky framing as asymmetry.png on #sgrb2-to-cmz, so the two
@@ -1597,7 +1748,8 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 #sgrb2-miri-catalogs:has(.f480-to-contour.visible) .f480pts { opacity: 0; visibility: hidden; }
 </style>
 <section id=sgrb2-miri-catalogs data-background-color="black">
-    <div class="smaller darkbg" style="position:absolute; top:8px; left:14px; width:80%; text-align:left; z-index:20;">Zooming back out to the overview...</div>
+    <div class="smaller darkbg fragment fade-out" data-fragment-index="1" style="position:absolute; top:8px; left:14px; width:70%; text-align:left; z-index:20; background-color:rgba(0,0,0,0.5);">The puffy red stuff, only at 25&mu;m, is still a mystery</div>
+    <div class="smaller darkbg fragment fade-in" data-fragment-index="1" style="position:absolute; top:8px; left:14px; width:70%; text-align:left; z-index:20; background-color:rgba(0,0,0,0.5);">Zooming back out to the overview...</div>
     <div class="smaller darkbg fragment" data-fragment-index="2" style="position:absolute; top:42px; left:14px; width:80%; text-align:left; z-index:20; color:cyan;">JWST finds the extended, older star formation</div>
     <div class="smaller darkbg fragment" data-fragment-index="3" style="position:absolute; top:75px; left:14px; width:80%; text-align:left; z-index:20; color:yellow;">ALMA finds the embedded, ongoing star formation</div>
     <!-- left/top are 1.586px left and 6.503px down from the overlays: the press-release MIRI mosaic
@@ -1714,11 +1866,15 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
    zoom forward on return.  .visible persists, so coming back from #cloudc it is
    already zoomed and stepping back plays the shrink in reverse. */
 /* Sgr B2 DS zoom builds: two marker fragments drive extra states via :has(),
-   since an element can only carry one data-fragment-index. */
-.reveal section:has(.sgrb2-contours-on.visible) img.sgrb2contour.visible { opacity: 1; }
-.reveal section:has(.sgrb2-zoomback.visible) img.cmzzoom.visible {
+   since an element can only carry one data-fragment-index.  :not(.stack) so a vertical-stack
+   wrapper (reveal adds .stack to it; #sgrb2ds-f1/-f2 sit in one) never matches its children's
+   markers and applies them to its other slides. */
+.reveal section:not(.stack):has(.sgrb2-contours-on.visible) img.sgrb2contour.visible { opacity: 1; }
+.reveal section:not(.stack):has(.sgrb2-zoomback.visible) img.cmzzoom.visible {
     left: var(--l0); top: var(--t0); rotate: var(--r0); scale: var(--s0);
 }
+/* the inset captions leave with the insets at the zoom-back (they are plain fade-ins at build 1) */
+.reveal section:not(.stack):has(.sgrb2-zoomback.visible) .sgrb2cap.visible { opacity: 0; visibility: hidden; }
 .reveal section img.cmzzoom.visible {
     left: var(--l1); top: var(--t1); rotate: var(--r1); scale: var(--s1); opacity: var(--o1, 1);
 }
@@ -1910,7 +2066,26 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
 
 
 <section id=aces-overview-why-different>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">What is different about the CMZ?</div>
+    <!-- Builds (2026-10-12): the property list gets color-coded.
+           0  "What is different about the CMZ?"            plain list
+           1  "...different from the solar neighborhood?"   every property red (all different)
+           2  "...different from cosmic noon?"              shear and metallicity stay red; turbulence,
+                                                            density and inflow turn blue = shared with
+                                                            cosmic-noon galaxies -> the CMZ as an analogue
+         Metallicity counts as a difference from cosmic noon too: the CMZ is ~2x solar, z~2 star-forming
+         galaxies typically sub-solar.  To change which property is which, move its class between
+         wd-same and wd-diff below.  The question line swaps via three stacked variants. -->
+    <style>
+      #aces-overview-why-different .wd { transition:color .5s ease-in-out; }
+      #aces-overview-why-different:has(.wd-q-sn.visible) .wd { color:#ff7b6b; }
+      #aces-overview-why-different:has(.wd-q-noon.visible) .wd.wd-same { color:#7fdbff; }
+      #aces-overview-why-different:has(.wd-q-noon.visible) .wd.wd-diff { color:#ff7b6b; }
+    </style>
+    <div class="smaller2 fragment fade-out" data-fragment-index=0 style="position:absolute; top:8px; left:12px; z-index:5;">What is different about the CMZ?  From the solar neighborhood and cosmic noon?</div>
+    <div class="smaller2 fragment fade-in-then-out wd-q-sn" data-fragment-index=0 style="position:absolute; top:8px; left:12px; z-index:5;">What is different about the CMZ from the <span style="color:#ff7b6b;">solar neighborhood</span>?</div>
+    <div class="smaller2 fragment wd-q-noon" data-fragment-index=1 style="position:absolute; top:8px; left:12px; z-index:5;">What is different about the CMZ from <span style="color:#ff7b6b;">cosmic noon</span>?  <span style="color:#7fdbff;">(blue: the same)</span></div>
+    <div class=smaller2 style="position:absolute; top:34px; left:12px; z-index:5;"><span class="wd wd-same">More turbulent</span>, <span class="wd wd-same">higher density</span>, <span class="wd wd-same">has inflow</span>, <span class="wd wd-diff">shear</span>, <span class="wd wd-diff">metallicity</span></div>
+
     <!-- ACES/MUSTANG stays fixed; only the JWST blowup grows out of its footprint -->
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute;
                 left:0px; top:168.59px; width:1024px; z-index:1;" src="assets/cmz/MUSTANG_12m_feather_noaxes.png">
@@ -2646,8 +2821,6 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
       <div style="position:absolute; top:73.5%; left:1%; text-align:left;" class="smaller3"><a class=darkbg href="https://alasky.cds.unistra.fr/DSS/">DSS2</a> red+blue (HiPS), same field</div>
     </span>
     <img class=taurus-locator src="colloquium_assets/Taurus_locator_12.png" alt="Taurus in Planck 857 GHz, with this field (cyan) and the next slide's (dashed)">
-    <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
-    <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
     <aside class=notes>
         <ul>
             <li> Herschel FIR dust image of Taurus mol cld
@@ -2672,8 +2845,6 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
       <div style="position:absolute; top:76.5%; left:1%; text-align:left;" class="smaller3"><a class=darkbg href="https://www.cosmos.esa.int/web/esdc/esasky">Herschel SPIRE</a> (HiPS), same field; corners: Planck</div>
     </span>
     <img class=taurus-locator src="colloquium_assets/Taurus_locator_13.png" alt="Taurus in Planck 857 GHz, with this field (cyan) and the previous slide's (dashed)">
-    <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
-    <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
     <aside class=notes>
         <ul>
             <li> NIR extinction map
@@ -4599,8 +4770,6 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     <h4> The solar neighborhood is the only place we have <i>resolved</i> star formation </h4>
     <div style="position: relative; bottom: -59%; left:1%; text-align: left;" class="smaller3"><a class=darkbg href="http://sci.esa.int/herschel/55944-taurus-molecular-cloud/">Herschel/Palmeirim+ 2013</a></div>
     </span>
-    <span class="image" style='position: absolute; width:200px; bottom:-325px; left:50px; background-position: center center; background-image: url(assets/galaxyoverview_local_kiloparsec.png);'></span>
-    <span class="image" style='position: absolute; width:200px; bottom:-300px; right:50px; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_taurus.png);'></span>
     <aside class=notes>
         Taurus, 140 pc.  Filaments, cores, and individual protostars, all separately resolved.
         Every cartoon of star formation you have ever seen was drawn from a cloud like this one.
@@ -4966,6 +5135,64 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
                 The picture on the slide is Bally+ 2020's; the physics is not his.
         </ul>
     </aside>
+</section>
+
+<section>
+    <h4> Our Galaxy </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/ESAGaiaSkyColor.png); background-size:997px'></span>
+    <div class=smaller2 style="float:right">Gaia star colors via ESA</div>
+</section>
+
+<section>
+    <h4> Our Galaxy </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/2MASS_MilkyWayInfrared_IPAC.png); background-size:1000px'></span>
+    <div class=smaller2 style="float:right">2MASS via IPAC</div>
+</section>
+
+<section>
+    <section>
+        <h4> Our Galaxy </h4>
+        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_RGB.png);'></span>
+        <div class=smaller2 style="float:right">Planck + HI4PI via lambda.gsfc.nasa.gov</div>
+    </section>
+
+    <section>
+        <h4> Our Galaxy </h4>
+        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_HI.png);'></span>
+        <div style="position:relative; top:-80%">
+            <div style="position:absolute; top:-10%; right:0px"> HI: "Diffuse" gas
+                <div class=smaller2 style="text-align:right; right:0px">HI4PI</div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h4> Our Galaxy </h4>
+        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_Dust.png);'></span>
+        <div style="position:relative; top:-80%">
+            <div style="position:absolute; top:-10%; right:0px"> Dust
+                <div class=smaller2 style="text-align:right; right:0px">Planck</div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h4> Our Galaxy </h4>
+        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_CO.png);'></span>
+        <div style="position:relative; top:-80%">
+            <div style="position:absolute; top:-10%; right:0px"> CO: molecular gas
+                <div class=smaller2 style="text-align:right; right:0px">Planck</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h4> Our Galaxy </h4>
+        <span class=image style='height:85%; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_RGB.png);'></span>
+    </section>
+</section>
+
+<section>
+    <h4> Nearby star-forming regions form few or no massive stars </h4>
+    <span class=image style='height:85%; background-position: center center; background-image: url(assets/cmz/HI-CO-Dust_m0.35_RGB_labeled_nearby_SFRs.png);'></span>
 </section>
 
 

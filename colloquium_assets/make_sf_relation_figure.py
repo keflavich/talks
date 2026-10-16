@@ -115,7 +115,7 @@ CMZ_CLOUDS = [
         sigma_sfr=sigma_sfr_brick.to(u.Msun/u.Myr/u.pc**2).value,
         sigma_sfr_lo=None, sigma_sfr_hi=sigma_sfr_brick.to(u.Msun/u.Myr/u.pc**2).value,
         limit=True, color="#1f77b4", marker="v", size=230, label_offset=(10, -122), label_ha="center",
-        ref="Walker+ 2021",
+        ref="Walker+ 2021\n",
         note=("CLOUD-SCALE aperture, to match how Pokhrel measure (all the protostars in a cloud "
               "against all the gas above a contour) and so that the Brick and Cloud E/F are "
               "comparable to each other.  "
@@ -157,7 +157,7 @@ CMZ_CLOUDS = [
         sigma_sfr=sigma_sfr_cloudef.to(u.Msun/u.Myr/u.pc**2).value,
         sigma_sfr_lo=None, sigma_sfr_hi=None,
         limit=True, color="#2ca02c", marker="v", size=230, label_offset=(62, -60), label_ha="center",
-        ref="Barnes+ 2019, Walker+ 2018",
+        ref="Barnes+ 2019,\nWalker+ 2018",
         note=("Sigma_gas: from Walker+ 2018 Table 1, which tabulates the dust ridge clouds on a "
               "consistent footing (values from Walker+ 2015).  Cloud e: 11.2e4 Msun, R = 2.4 pc; "
               "cloud f: 7.3e4 Msun, R = 2.0 pc.  Barnes+ treat e and f as one cloud, so combined: "
@@ -357,13 +357,17 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
                    facecolors="none", edgecolors="#8c1416", linewidths=2.2, zorder=9)
         ax.plot([sgx] * 2, [np.log10(sfr_lo), np.log10(sfr_hi)],
                 color="#8c1416", lw=2.4, zorder=9)
-        ax.annotate("Sgr B2, cloud-averaged", (sgx + 0.07, np.log10(sfr_mid)),
-                    ha="left", va="center", fontsize=11, color="#8c1416", zorder=9,
-                    bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=1.6))
+        #ax.annotate("Sgr B2, cloud-averaged", (sgx + 0.07, np.log10(sfr_mid)),
+        #            ha="left", va="center", fontsize=11, color="#8c1416", zorder=9,
+        #            bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=1.6))
         # rides with the point cloud instead of a fixed spot, so it follows when the age changes
-        ax.annotate("Sgr B2\nGinsburg+ 2018",
+        ax.annotate("Sgr B2",
                     (np.percentile(sg, 96), np.percentile(ssfr, 90)),
                     ha="center", fontsize=13, color="#a11d1f", fontweight="bold",
+                    zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
+        ax.annotate("Ginsburg+ 2018",
+                    (np.percentile(sg, 96), np.percentile(ssfr, 85)),
+                    ha="center", fontsize=10, color="#a11d1f", fontweight="light",
                     zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
 
     for c in CMZ_CLOUDS:
@@ -390,11 +394,17 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
         off = c.get("label_offset", (16, 10))
         lead = dict(arrowstyle="-", color=c["color"], lw=1.1,
                     shrinkA=1, shrinkB=9, alpha=0.85) if abs(off[1]) > 40 else None
-        ax.annotate("%s\n%s" % (c["name"], c["ref"]), (gx, gy),
+        ax.annotate("%s" % (c["name"]), (gx, gy),
                     textcoords="offset points", xytext=off,
                     ha=c.get("label_ha", "left"), va="center",
                     fontsize=13, color=c["color"], fontweight="bold", zorder=9,
                     arrowprops=lead,
+                    bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
+        ax.annotate("%s" % (c["ref"]), (gx, gy-0.3),
+                    textcoords="offset points", xytext=off,
+                    ha=c.get("label_ha", "left"), va="center",
+                    fontsize=10, color=c["color"], fontweight="light", zorder=8,
+                    #arrowprops=lead,
                     bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
 
     ax.set_xlim(*xlim)
@@ -405,8 +415,8 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
 
     handles = [Line2D([], [], color="0.3", ls="--", lw=2,
                       label=r"Pokhrel+ 2021: $\Sigma_{\rm SFR}\propto\Sigma_{\rm gas}^{2.0}$"),
-               Line2D([], [], color="0.70", lw=9, label=r"$\pm1\sigma$, $\pm2\sigma$ cloud-to-cloud"),
-               Line2D([], [], color="C0", lw=1.6, label="local clouds (10 of 12)")]
+               #Line2D([], [], color="0.70", lw=9, label=r"$\pm1\sigma$, $\pm2\sigma$ cloud-to-cloud"),
+               Line2D([], [], color="C0", lw=1.6, label="local clouds")]
     leg = ax.legend(handles=handles, loc="upper left", fontsize=12, framealpha=0.92)
     leg.set_zorder(10)
 

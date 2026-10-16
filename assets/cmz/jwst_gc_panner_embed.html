@@ -2,7 +2,11 @@
 <html lang=en><head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>JWST GC Treasury — zoom in and pan</title>
-<link rel=stylesheet href="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.css">
+<!-- LOCAL FIRST (2026-10-15): Aladin Lite, the tour and the HiPS are all tried from the repo's hips/ mirror
+     (colloquium_assets/mirror_local_hips.py; hips/ is not in git) and fall back to the network when it is
+     missing -- e.g. the slides served from GitHub Pages or from someone else's checkout. -->
+<link rel=stylesheet href="../../hips/aladin-lite/aladin.css"
+      onerror="this.onerror=null; this.href='https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.css';">
 <!--
   Deck-facing variant of https://starformation.astro.ufl.edu/jwst-gc/slow_panner.html
   Differences from that page, all for presenting rather than browsing:
@@ -13,7 +17,11 @@
   The tour (stop list, pan rate) is fetched live from the release page, which is
   CORS-open, and falls back to a baked-in copy so a network hiccup at the podium
   cannot leave a blank slide.  Tunable from the URL: ?fov0= ?fov1= ?hold= ?zoom=
-  ?rate= ?label=0
+  ?rate= ?label=0 ?survey=<HiPS URL>
+  ?survey= (2026-10-15) overrides the tour's own HiPS, e.g. the ACES-blended composite
+  https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/ for #wrapup-jwst-panner.
+  That one is order 12 (~0.1"/px) rather than 14, so pair it with ?fov1=0.03 (1:1 on a 1024 px
+  frame) instead of the default 0.008, or the last ~4x of the zoom is just upsampling.
 -->
 <style>
 :root { --bg:#05070c; --fg:#e6edf3; --muted:#9fb0c3; }
@@ -30,7 +38,6 @@ html, body { margin:0; height:100%; background:var(--bg); color:var(--fg); overf
 </head><body>
 <div id=sky></div>
 <div id=tag><span id=where>loading the JWST Galactic Center Treasury mosaic&hellip;</span></div>
-<script src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js" charset=utf-8></script>
 <script>
 var Q = new URLSearchParams(location.search);
 function num(k, d){ var v = parseFloat(Q.get(k)); return isFinite(v) ? v : d; }
@@ -52,6 +59,7 @@ var HOLD  = num('hold', 1.6);    // seconds to sit on the wide view first
 var ZOOM  = num('zoom', 7.5);    // seconds of zoom
 var RATE  = num('rate', 0);      // arcsec/s; 0 = use the tour's own rate
 var SHOWLABEL = Q.get('label') !== '0';
+var SURVEY = Q.get('survey');      // optional: a different HiPS than the tour's
 
 // Fallback tour: the live file is authoritative, this is only so the slide still
 // does something if the fetch fails.  Center of the observed blocks.
@@ -154,7 +162,7 @@ function boot(){
     // Aladin parses that string as galactic l/b, so an ICRS "ra dec" pair silently
     // points somewhere else entirely and the view opens on blank sky.  gotoRaDec()
     // is always ICRS, so the explicit call below is what actually sets the center.
-    aladin=A.aladin('#sky', {survey:TOUR.survey, fov:FOV0, cooFrame:'galactic',
+    aladin=A.aladin('#sky', {survey:SURVEY || TOUR.survey, fov:FOV0, cooFrame:'galactic',
       showLayersControl:false, showFullscreenControl:false, showCooGridControl:false,
       showProjectionControl:false, showZoomControl:false, showGotoControl:false,
       showSimbadPointerControl:false, showContextMenu:false, showReticle:false,
@@ -168,9 +176,45 @@ function boot(){
   });
 }
 
-fetch('https://starformation.astro.ufl.edu/jwst-gc/slow_panner_tour.json',{cache:'no-cache'})
-  .then(function(r){ if(!r.ok){throw new Error('HTTP '+r.status);} return r.json(); })
-  .then(function(d){ TOUR=d; boot(); })
-  .catch(function(){ TOUR=FALLBACK; boot(); });
+// ---- local first, network second ---------------------------------------------------
+var LOCAL = new URL('../../hips/', location.href).href;   // the repo's hips/ mirror
+function loadScript(srcs){                                   // first one that loads wins
+  return new Promise(function(resolve, reject){
+    var i = 0;
+    (function next(){
+      if(i >= srcs.length){ reject(new Error('Aladin Lite unavailable')); return; }
+      var el = document.createElement('script');
+      el.src = srcs[i++]; el.charset = 'utf-8';
+      el.onload = function(){ resolve(); }; el.onerror = next;
+      document.head.appendChild(el);
+    })();
+  });
+}
+function getJSON(urls){
+  return urls.reduce(function(p, u){
+    return p.catch(function(){
+      return fetch(u, {cache:'no-cache'}).then(function(r){ if(!r.ok){ throw new Error('HTTP '+r.status); } return r.json(); });
+    });
+  }, Promise.reject());
+}
+// a HiPS whose directory name exists under hips/ is read from there; anything else from its own URL.
+// Absolute URLs either way: Aladin treats a bare relative string as a HiPS ID, not a path.
+function localFirst(remote){
+  var name = remote.replace(/\/+$/, '').split('/').pop();
+  var local = LOCAL + name + '/';
+  return fetch(local + 'properties', {cache:'no-cache'})
+    .then(function(r){ return r.ok ? local : remote; })
+    .catch(function(){ return remote; });
+}
+Promise.all([
+  loadScript([LOCAL + 'aladin-lite/aladin.js', 'https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js']),
+  getJSON([LOCAL + 'jwst-gc/slow_panner_tour.json', 'https://starformation.astro.ufl.edu/jwst-gc/slow_panner_tour.json'])
+    .catch(function(){ return FALLBACK; })
+]).then(function(res){
+  TOUR = res[1];
+  return localFirst(SURVEY || TOUR.survey).then(function(url){ SURVEY = url; boot(); });
+}).catch(function(err){
+  document.getElementById('where').textContent = 'Aladin Lite failed to load: ' + err;
+});
 </script>
 </body></html>

@@ -7,3 +7,7 @@ ipy*py
 # assets/co3d: make_co3d_data.py's decompressed working copy of the ~1.3 GB Dame CO cube.
 # Regenerated on demand from the astropy download cache; never worth tracking.
 assets/co3d/_COGAL_all_interp.fits
+
+# hips/: local mirrors of the HiPS / Aladin Lite / tour the deck's live embeds use (colloquium_assets/
+# mirror_local_hips.py).  Hundreds of MB of tiles; the embeds fall back to the network without it.
+hips/

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <title>The Galactic Center: a mystery about to crack</title>
+    <title>The Galactic Center</title>
     <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="reveal/lib/reveal.css">
@@ -330,11 +330,11 @@
 
           <!-- slide 1 (2026-10-09), replacing the zoom movie, which is kept hidden right below -->
           <section id=takeaways>
-              <h4> The Galactic Center is a mystery we&rsquo;re about to crack </h4>
+              <h4> The Galactic Center </h4>
               <ul style="font-size:36px; line-height:1.5; margin-top:40px;">
-                  <li> Dozens of questions about it have been open for decades
-                  <li> Three new datasets are answering them now: <span style="color:#ffd166;">ALMA, JWST, and soon Roman</span>
-                  <li> The answers matter far beyond the Galactic Center:<br>cosmic noon, black-hole feeding, planets
+                  <li> Tons of open questions, many about to be answered
+                  <li> New surveys: <span style="color:#ffd166;">ALMA, JWST, and soon Roman</span>
+                  <li> The GC is the lab for star &amp; planet formation spanning cosmic time
               </ul>
               <p style="font-size:30px; color:#ccc; margin-top:60px; line-height:1.4;">
               <!--On the way, I hope to teach you a little bit of interesting physics and show some epic images.-->
@@ -468,14 +468,14 @@ across cosmic time.
 
 -->
 
-<section data-id="9e1f37193271406fc72e974be0a8a3fe">
+<section data-id="9e1f37193271406fc72e974be0a8a3fe" id=title>
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
     <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
         <!-- TODO: settle the final title with the CfA.  This is a working one that matches the
              story in the outline comment below; the Granada title is kept here in case you
              want it back:
              "What sets star and planet formation in the Galaxy's richest environments across cosmic time" -->
-             <h3 class=smaller2 style="font-size:130%; word-break: keep-all; hyphens: none;">Star Formation<br> and The Galactic Center</h3>
+             <h3 class=smaller2 style="font-size:130%; word-break: keep-all; hyphens: none;">Star Formation and Gas Flows<br> in The Galactic Center</h3>
             <div class="footer smaller">Adam Ginsburg </div>
             <div class="smaller3 footer">Waldo W. Neikirk Associate Professor <br>Department of Astronomy<br>University of Florida, Gainesville </div>
 
@@ -1015,10 +1015,16 @@ across cosmic time.
              high-z galaxy analogue".
          Differences KL13 list themselves: CMZ metallicity higher by a factor of a few; high-z radiation and
          cosmic-ray pressures far higher; CMZ SFR 1-2 dex below the scaling relations. -->
-    <div class="fragment fade-in-then-out" data-fragment-index=1
+    <!-- (2026-10-16) the card is up for builds 1 AND 2 (build 2 adds "cosmically commonplace"): both parts fade in at 1
+         and are hidden by the style below once the caption (.zo-cap, build 3) is visible.  (fade-in-then-out would
+         hide them at 2; a zero-height fade-out wrapper around them did not paint in Chrome.) -->
+    <style>
+      .reveal #cmz-zoomout:has(.zo-cap.visible) .zo-card { opacity:0 !important; visibility:hidden !important; }
+    </style>
+    <div class="fragment zo-card" data-fragment-index=1
          style="position:absolute; left:8px; top:98px; width:1008px; height:510px; z-index:4; background:#fff; border-radius:8px; box-shadow:0 0 0 2000px rgba(0,0,0,0.72);">
     </div>
-    <div class="fragment fade-in-then-out" data-fragment-index=1 style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:5; pointer-events:none; color:#111;">
+    <div class="fragment zo-card" data-fragment-index=1 style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:5; pointer-events:none; color:#111;">
         <div style="position:absolute; left:30px; top:108px; font-size:18px; pointer-events:auto;"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1403.0007/abstract" style="color:#1a5fb4;">Madau &amp; Dickinson 2014</a></div>
         <svg style="position:absolute; left:0; top:0; width:1024px; height:768px; margin:0; overflow:visible;" viewBox="0 0 1024 768">
             <rect x="280.6" y="199.0" width="145.7" height="332.4" fill="rgba(247,193,74,0.45)" />
@@ -1033,12 +1039,13 @@ across cosmic time.
         <div style="position:absolute; left:640px; top:236px; width:356px; text-align:left; line-height:1.25; pointer-events:auto;">
             <div style="font-size:38px; ">Stars formed in smaller, denser, more turbulent volumes</div>
             <div style="font-size:16px; margin-top:16px;"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1309.0505/abstract" style="color:#1a5fb4;">Kruijssen &amp; Longmore 2013</a></div>
+            <div style="font-size:38px;" class=fragment data-fragment-index=2>The GC is special on the sky but cosmically commonplace </div>
         </div>
     </div>
     <!-- build 2 (2026-10-16): the Galaxy-view caption, back after the cosmic-noon card.  It used to come from
          the page (CAPS[1]) with the zoom-out itself; Adam: "cmz-zoomout/0 should omit the 'we have at best'
          text ... after cmz-zoomout/1".  Styled and placed like the page's own caption (#cap, iframe + 12 px). -->
-    <div class="fragment fade-in-then-out" data-fragment-index=2
+    <div class="fragment fade-in-then-out zo-cap" data-fragment-index=3
          style="position:absolute; left:16px; top:104px; width:282px; z-index:3; text-align:left; font-size:27px; line-height:1.22;
                 color:#e8ecf4; font-family:-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
         We have at best a cartoony view of the Galactic Center</div>
@@ -1160,6 +1167,40 @@ across cosmic time.
     </div>
     <aside class=notes>The three datasets that come back at the end of every question.  ACES is done; the JWST
         Galactic Center Treasury is half observed; Roman's bulge survey is next.</aside>
+</section>
+
+<!-- (2026-10-16) "Full team" credit slides, one per survey (Adam: "assemble mosaics of people's faces from each of these
+     huge collaborations in addition to their names").  colloquium_assets/make_team_mosaics.py builds the mosaics and the
+     name lists (assets/teams/): ACES = authors of ACES papers I-VI + the oversight committee on the ACES site; JWST-GC =
+     the 100 investigators of program 10678 at STScI.  Leads first (bold in the list), then alphabetical; faces are the
+     people for whom a public professional headshot was found (assets/teams/photo_sources.txt).  To add a missing face,
+     drop it in assets/teams/src/faces/<slug>.jpg and re-run the script.
+     (2026-10-16, later) In reserve: both hidden (data-visibility="hidden") -- delete that attribute to show them. -->
+<style>
+  .reveal .cmzq-team img.team-mosaic { position:absolute; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; background:none; }
+  .reveal .cmzq-team .team-names { position:absolute; left:16px; right:16px; text-align:justify; text-align-last:center;
+      font-size:14.5px; line-height:1.45; color:#c9d1dc; }
+  .reveal .cmzq-team .team-names b { color:#ffd166; font-weight:700; }
+</style>
+<section id=cmzq-team-aces class=cmzq-team data-background-color="#05070c" data-visibility="hidden">
+    <h4 style="margin-bottom:0;">The ACES team <span style="font-size:60%; color:#9aa3b5;">&middot; 113 people</span></h4>
+    <img class=team-mosaic src="assets/teams/aces_faces.jpg" style="left:62px; top:70px; width:900px; height:319.5px;">
+    <div class=team-names style="top:402px;"><b>Steve&nbsp;Longmore</b>&nbsp;&middot; <b>John&nbsp;Bally</b>&nbsp;&middot; <b>Cara&nbsp;Battersby</b>&nbsp;&middot; <b>Adam&nbsp;Ginsburg</b>&nbsp;&middot; <b>Jonathan&nbsp;Henshaw</b>&nbsp;&middot; <b>Paul&nbsp;Ho</b>&nbsp;&middot; <b>Izaskun&nbsp;Jiménez&#8209;Serra</b>&nbsp;&middot; <b>Betsy&nbsp;Mills</b>&nbsp;&middot; <b>Daniel&nbsp;Walker</b>&nbsp;&middot; <b>Ashley&nbsp;Barnes</b>&nbsp;&middot; <b>Mattia&nbsp;Sormani</b>&nbsp;&middot; <b>Robin&nbsp;Tress</b>&nbsp;&middot; <b>Jennifer&nbsp;Wallace</b>&nbsp;&middot; <b>Laura&nbsp;Colzi</b>&nbsp;&middot; <b>Maya&nbsp;Petkova</b>&nbsp;&middot; Danya&nbsp;Alboslani&nbsp;&middot; Emad&nbsp;Alkhuja&nbsp;&middot; Jairo&nbsp;Armijos&#8209;Abendaño&nbsp;&middot; Lucia&nbsp;Armillotta&nbsp;&middot; N.&nbsp;Bijas&nbsp;&middot; Nazar&nbsp;Budaiev&nbsp;&middot; Rojita&nbsp;Buddhacharya&nbsp;&middot; Alyssa&nbsp;Bulatek&nbsp;&middot; Michael&nbsp;Burton&nbsp;&middot; Laura&nbsp;Busch&nbsp;&middot; Natalie&nbsp;Butterfield&nbsp;&middot; Paola&nbsp;Caselli&nbsp;&middot; Mélanie&nbsp;Chevance&nbsp;&middot; Claire&nbsp;Cook&nbsp;&middot; Samuel&nbsp;Crowe&nbsp;&middot; Ana&nbsp;Karla&nbsp;Díaz&#8209;Rodríguez&nbsp;&middot; Simon&nbsp;Dicker&nbsp;&middot; Katarzyna&nbsp;Dutkowska&nbsp;&middot; Adam&nbsp;Fairley&nbsp;&middot; Christoph&nbsp;Federrath&nbsp;&middot; Rubén&nbsp;Fedriani&nbsp;&middot; Zi&#8209;Xuan&nbsp;Feng&nbsp;&middot; Karl&nbsp;Fiteni&nbsp;&middot; Gary&nbsp;Fuller&nbsp;&middot; Pablo&nbsp;García&nbsp;&middot; Philipp&nbsp;Girichidis&nbsp;&middot; Simon&nbsp;Glover&nbsp;&middot; Javier&nbsp;Goicoechea&nbsp;&middot; Mark&nbsp;Gorski&nbsp;&middot; Savannah&nbsp;Gramze&nbsp;&middot; Qi&#8209;Lao&nbsp;Gu&nbsp;&middot; Perry&nbsp;Hatchfield&nbsp;&middot; Christian&nbsp;Henkel&nbsp;&middot; Rebecca&nbsp;Houghton&nbsp;&middot; Pei&#8209;Ying&nbsp;Hsieh&nbsp;&middot; Yue&nbsp;Hu&nbsp;&middot; Katharina&nbsp;Immer&nbsp;&middot; Namitha&nbsp;Issac&nbsp;&middot; Desmond&nbsp;Jeff&nbsp;&middot; Janik&nbsp;Karoly&nbsp;&middot; Jens&nbsp;Kauffmann&nbsp;&middot; Ralf&nbsp;Klessen&nbsp;&middot; Diederik&nbsp;Kruijssen&nbsp;&middot; Mark&nbsp;Krumholz&nbsp;&middot; Cornelia&nbsp;Lang&nbsp;&middot; Alex&nbsp;Lazarian&nbsp;&middot; Rachel&nbsp;Lee&nbsp;&middot; Emily&nbsp;Levesque&nbsp;&middot; Fu&#8209;Heng&nbsp;Liang&nbsp;&middot; Dani&nbsp;Lipman&nbsp;&middot; Xunchuan&nbsp;Liu&nbsp;&middot; Xing&nbsp;Lu&nbsp;&middot; Qiu&#8209;yi&nbsp;Luo&nbsp;&middot; Alessandro&nbsp;Lupi&nbsp;&middot; Sera&nbsp;Markoff&nbsp;&middot; Sergio&nbsp;Martín&nbsp;&middot; Brian&nbsp;Mason&nbsp;&middot; Farideh&nbsp;Mazoochi&nbsp;&middot; Laura&nbsp;McCafferty&nbsp;&middot; Emily&nbsp;Moravec&nbsp;&middot; Mark&nbsp;Morris&nbsp;&middot; Francisco&nbsp;Nogueras&#8209;Lara&nbsp;&middot; Marie&nbsp;Nonhebel&nbsp;&middot; Tomoharu&nbsp;Oka&nbsp;&middot; John&nbsp;Orlowski&#8209;Scherer&nbsp;&middot; Jürgen&nbsp;Ott&nbsp;&middot; Marco&nbsp;Padovani&nbsp;&middot; Xing&nbsp;Pan&nbsp;&middot; Dylan&nbsp;Paré&nbsp;&middot; Thushara&nbsp;Pillai&nbsp;&middot; Jaime&nbsp;Pineda&nbsp;&middot; Marc&nbsp;Pound&nbsp;&middot; Denise&nbsp;Riquelme&#8209;Vásquez&nbsp;&middot; Víctor&nbsp;Rivilla&nbsp;&middot; Charles&nbsp;Romero&nbsp;&middot; Galaxy&nbsp;Salo&nbsp;&middot; Álvaro&nbsp;Sánchez&#8209;Monge&nbsp;&middot; Miriam&nbsp;Santa&#8209;Maria&nbsp;&middot; Anika&nbsp;Schmiedeke&nbsp;&middot; Rainer&nbsp;Schödel&nbsp;&middot; Matthias&nbsp;Schultheis&nbsp;&middot; Howard&nbsp;Smith&nbsp;&middot; Yoshiaki&nbsp;Sofue&nbsp;&middot; Jack&nbsp;Sullivan&nbsp;&middot; Enrico&nbsp;Di&nbsp;Teodoro&nbsp;&middot; Leonardo&nbsp;Testi&nbsp;&middot; Volker&nbsp;Tolls&nbsp;&middot; Miguel&nbsp;Requena&nbsp;Torres&nbsp;&middot; Grant&nbsp;Tremblay&nbsp;&middot; Arianna&nbsp;Vasini&nbsp;&middot; Gijs&nbsp;Vermariën&nbsp;&middot; Alexey&nbsp;Vikhlinin&nbsp;&middot; Serena&nbsp;Viti&nbsp;&middot; Q.&nbsp;Daniel&nbsp;Wang&nbsp;&middot; Gwenllian&nbsp;Williams&nbsp;&middot; Fengwei&nbsp;Xu&nbsp;&middot; Qizhou&nbsp;Zhang&nbsp;&middot; Suinan&nbsp;Zhang</div>
+    <div class=smaller3 style="position:absolute; bottom:4px; left:16px; right:16px; text-align:left; color:#9aa3b5;">Names: ACES papers I&ndash;VI (2026) and <a href="https://sites.google.com/view/aces-cmz/team">sites.google.com/view/aces-cmz/team</a>
+        &middot; <span style="color:#ffd166;">gold</span>: PI, co-PIs &amp; work-package leads &middot; faces from public pages, where one was found</div>
+    <aside class=notes>ACES: the ALMA CMZ Exploration Survey.  PI Steve Longmore; co-PIs John Bally, Cara Battersby, Adam
+        Ginsburg, Jonathan Henshaw, Paul Ho, Izaskun Jim&eacute;nez-Serra, Betsy Mills; work-package leads Dan Walker, Ashley Barnes,
+        Mattia Sormani, Robin Tress, Jen Wallace, Laura Colzi, Maya Petkova.  113 people across papers I-VI.</aside>
+</section>
+
+<section id=cmzq-team-jwstgc class=cmzq-team data-background-color="#05070c" data-visibility="hidden">
+    <h4 style="margin-bottom:0;">The JWST GC Treasury team <span style="font-size:60%; color:#9aa3b5;">&middot; 100 people</span></h4>
+    <img class=team-mosaic src="assets/teams/jwstgc_faces.jpg" style="left:94.5px; top:70px; width:835.5px; height:319.5px;">
+    <div class=team-names style="top:402px;"><b>Rainer&nbsp;Schödel</b>&nbsp;&middot; <b>Steve&nbsp;Longmore</b>&nbsp;&middot; <b>Adam&nbsp;Ginsburg</b>&nbsp;&middot; Konstantina&nbsp;Anastasopoulou&nbsp;&middot; Jay&nbsp;Anderson&nbsp;&middot; John&nbsp;Bally&nbsp;&middot; Ashley&nbsp;Barnes&nbsp;&middot; Cara&nbsp;Battersby&nbsp;&middot; Alessandra&nbsp;Mastrobuono&nbsp;Battisti&nbsp;&middot; Giuseppe&nbsp;Bono&nbsp;&middot; Aaron&nbsp;Bryant&nbsp;&middot; Santi&nbsp;Cassisi&nbsp;&middot; Mélanie&nbsp;Chevance&nbsp;&middot; Anna&nbsp;Ciurlo&nbsp;&middot; Angela&nbsp;Cotera&nbsp;&middot; Samuel&nbsp;Crowe&nbsp;&middot; Tuan&nbsp;Do&nbsp;&middot; Rubén&nbsp;Fedriani&nbsp;&middot; Anja&nbsp;Feldmeier&#8209;Krause&nbsp;&middot; Sebastiano&nbsp;von&nbsp;Fellenberg&nbsp;&middot; Lucia&nbsp;Bravo&nbsp;Ferres&nbsp;&middot; Dimitri&nbsp;Gadotti&nbsp;&middot; Carme&nbsp;Gallart&nbsp;&middot; Teresa&nbsp;Gallego&#8209;Calvente&nbsp;&middot; Eulalia&nbsp;Gallego&#8209;Cano&nbsp;&middot; Pablo&nbsp;García&nbsp;&middot; Angela&nbsp;Gardini&nbsp;&middot; Abhimat&nbsp;Gautam&nbsp;&middot; Andrea&nbsp;Ghez&nbsp;&middot; Stefan&nbsp;Gillessen&nbsp;&middot; Miguel&nbsp;Cano&nbsp;González&nbsp;&middot; Alessia&nbsp;Gualandris&nbsp;&middot; Robert&nbsp;Gutermuth&nbsp;&middot; Daryl&nbsp;Haggard&nbsp;&middot; Matthew&nbsp;Hankins&nbsp;&middot; Jonathan&nbsp;Henshaw&nbsp;&middot; Matthew&nbsp;Hosek&nbsp;&middot; Rebecca&nbsp;Houghton&nbsp;&middot; Yue&nbsp;Hu&nbsp;&middot; Tracy&nbsp;Huard&nbsp;&middot; Ralf&nbsp;Klessen&nbsp;&middot; Diederik&nbsp;Kruijssen&nbsp;&middot; Ryan&nbsp;Lau&nbsp;&middot; Alex&nbsp;Lazarian&nbsp;&middot; Rebecca&nbsp;Levy&nbsp;&middot; Mattia&nbsp;Libralato&nbsp;&middot; Anan&nbsp;Lu&nbsp;&middot; Jessica&nbsp;Lu&nbsp;&middot; Xing&nbsp;Lu&nbsp;&middot; Nora&nbsp;Luetzgendorf&nbsp;&middot; John&nbsp;Magorrian&nbsp;&middot; Shifra&nbsp;Mandel&nbsp;&middot; Roeland&nbsp;van&nbsp;der&nbsp;Marel&nbsp;&middot; Macarena&nbsp;García&nbsp;Marín&nbsp;&middot; Sera&nbsp;Markoff&nbsp;&middot; Alvaro&nbsp;Martinez&nbsp;&middot; Maria&nbsp;Melamed&nbsp;&middot; Betsy&nbsp;Mills&nbsp;&middot; Kaya&nbsp;Mori&nbsp;&middot; Mark&nbsp;Morris&nbsp;&middot; Elena&nbsp;Murchikova&nbsp;&middot; Paco&nbsp;Najarro&nbsp;&middot; David&nbsp;Nataf&nbsp;&middot; Nadine&nbsp;Neumayer&nbsp;&middot; Shogo&nbsp;Nishiyama&nbsp;&middot; Francisco&nbsp;Nogueras&#8209;Lara&nbsp;&middot; Dylan&nbsp;Paré&nbsp;&middot; Florian&nbsp;Peissker&nbsp;&middot; Maya&nbsp;Petkova&nbsp;&middot; Thushara&nbsp;Pillai&nbsp;&middot; Gabriele&nbsp;Ponti&nbsp;&middot; Rodrigo&nbsp;Contreras&nbsp;Ramos&nbsp;&middot; R.&nbsp;Michael&nbsp;Rich&nbsp;&middot; Carlos&nbsp;Román&#8209;Zúñiga&nbsp;&middot; Michael&nbsp;Rugel&nbsp;&middot; Nils&nbsp;Ryde&nbsp;&middot; Nadeen&nbsp;Sabha&nbsp;&middot; Joel&nbsp;Sánchez&#8209;Bermúdez&nbsp;&middot; Álvaro&nbsp;Sánchez&#8209;Monge&nbsp;&middot; Matthias&nbsp;Schultheis&nbsp;&middot; Stephen&nbsp;Serjeant&nbsp;&middot; Lijing&nbsp;Shao&nbsp;&middot; Janet&nbsp;Simpson&nbsp;&middot; Mattia&nbsp;Sormani&nbsp;&middot; Christopher&nbsp;Sorrell&nbsp;&middot; Jonathan&nbsp;Tan&nbsp;&middot; Enrico&nbsp;Di&nbsp;Teodoro&nbsp;&middot; Brian&nbsp;Thorsbro&nbsp;&middot; Pablo&nbsp;Torne&nbsp;&middot; Robin&nbsp;Tress&nbsp;&middot; Elena&nbsp;Valenti&nbsp;&middot; Sill&nbsp;Verberne&nbsp;&middot; Pierre&nbsp;Vermot&nbsp;&middot; Eduardo&nbsp;Vitral&nbsp;&middot; Gunther&nbsp;Witzel&nbsp;&middot; Siyao&nbsp;Xu&nbsp;&middot; Farhad&nbsp;Yusef&#8209;Zadeh&nbsp;&middot; Michal&nbsp;Zajacek&nbsp;&middot; Qizhou&nbsp;Zhang&nbsp;&middot; Manuela&nbsp;Zoccali</div>
+    <div class=smaller3 style="position:absolute; bottom:4px; left:16px; right:16px; text-align:left; color:#9aa3b5;">Names: investigators of <a href="https://www.stsci.edu/jwst-program-info/investigators/?program=10678">JWST program 10678</a>
+        &middot; <span style="color:#ffd166;">gold</span>: PI &amp; co-PIs &middot; faces from public pages, where one was found</div>
+    <aside class=notes>JWST Galactic Center Treasury (program 10678): PI Rainer Sch&ouml;del, co-PIs Steve Longmore and Adam
+        Ginsburg, and 97 co-investigators.  Matt Hosek leads the cluster / tidal-stream work.</aside>
 </section>
 
 <!-- ######################## Q1: how does gas get into the CMZ? ######################## -->
@@ -1354,11 +1395,13 @@ across cosmic time.
 </section>
 <section id=cmzq-q1-next>
     <h4> Future: gas into the CMZ </h4>
-    <!-- Lipman+ 2026 (ACES VIII) Fig. 2, from the arXiv source (ACES_CS_HVCC_lb_lv_plot_dendro.png, 778 x 485):
+    <!-- Lipman+ 2026 (ACES VIII) Fig. 2.  (2026-10-16) Now rendered at 200 dpi (2164 x 1350) from the vector original in the
+         paper's Overleaf project (~/work/gc/lipman_hvccs, FIGURES/ACES_CS_HVCC_lb_lv_plot_dendro.pdf, the file main.tex
+         includes; Sep 23 2026) -- same figure as the arXiv v1 PNG (778 x 485) it replaces:
          the 235 compact high-velocity features ("EVF" in the paper's own file names) on the CS peak intensity
          map (top) and in l-v (bottom).  Text cut to three lines (Adam, 2026-10-16: too much text). -->
     <div class=cmzq-card style="left:52px; top:92px; width:920px; height:585px;">
-        <img src="assets/cmz_papers/lipman2026b_fig2.png" style="left:8px; top:6px; width:904px; height:563.5px;"></div>
+        <img src="assets/cmz_papers/lipman2026b_fig2.png" style="left:8px; top:6px; width:904px; height:564px;"></div>
     <div class=cmzq-text style="left:22px; top:686px; width:980px; font-size:20px; text-align:center;">
         Bar-lane gas hits the CMZ at ~200&nbsp;km&nbsp;s<sup>&minus;1</sup> <span class=ref>&mdash; <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.4663S/abstract">Sormani+ 2019</a></span>
         &nbsp;&middot;&nbsp; ACES finds <b>235</b> such features <span class=ref>&mdash; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2609.10472/abstract">Lipman+ 2026</a></span>
@@ -1516,7 +1559,7 @@ across cosmic time.
         <ul>
             <li style="margin-bottom:34px;">~3/4 of known clouds are <b>in front</b> of Sgr&nbsp;A*, including the 20 and 50&nbsp;km&nbsp;s<sup>&minus;1</sup> clouds
                 <div class=ref style="margin-top:6px;"><a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...984..158W/abstract">Walker+ 2025</a>; <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract">Lipman+ 2026</a>; <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...706A..18N/abstract">Nogueras-Lara+ 2026</a>; <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1001..184M/abstract">Mills+ 2026</a></div>
-            <li class=fragment>The best we can say is &ldquo;in front&rdquo;
+            <li class=fragment>For most clouds, the best we can say is &ldquo;in front&rdquo;
         </ul>
     </div>
     <aside class=notes>Walker+ 2025 (3D CMZ III): H2CO absorption against the cm continuum places 18 of 23 sources on the
@@ -1529,9 +1572,8 @@ across cosmic time.
 
 
 <section id=soon-roman>
-    <div class="smaller2" data-fragment-index="1" style="z-index:20; position:absolute; top:10px; left:14px; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">Roman covers the CMZ &amp; more</div>
 
-    <div class="smaller2" data-fragment-index="1" style="position:absolute; top:60px; left:44px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
+    <div class="smaller2" data-fragment-index="1" style="position:absolute; top:30px; left:44px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
         <div style="max-width:560px; text-align:left;">Roman will measure proper motions and RR&nbsp;Lyrae distances,
             enabling 3D tomography with absolute distance anchors</div>
     </div>
@@ -1575,11 +1617,13 @@ across cosmic time.
          data-src, not src: loaded on slide entry and unloaded on exit by the script at the end. -->
     <section id=cmz-orbit-stars data-background-color="#0b0e14">
         <div class=smaller2 style="position:absolute; top:8px; left:14px; width:996px; text-align:left; z-index:20;">Cloud Tomography with Stellar Proper Motions</div>
-        <iframe class="orbit-embed" data-src="assets/cmz/cmz_orbit_stars.html?embed=1&amp;only=face&amp;facesize=560&amp;label=0&amp;orbits=0&amp;animate=1&amp;n=400&amp;tau=0.8&amp;cloudr=26&amp;cloudlos=30&amp;cloudx=-70&amp;cloudy=0.25"
+        <!-- (2026-10-16) bar=0: no shaded bar ellipse.  pointer-events:auto so the purple cloud can be dragged live
+             (the page hands keyboard focus back to the deck after each drag, so the clicker keeps working). -->
+        <iframe class="orbit-embed" data-src="assets/cmz/cmz_orbit_stars.html?embed=1&amp;only=face&amp;facesize=560&amp;label=0&amp;orbits=0&amp;bar=0&amp;animate=1&amp;n=400&amp;tau=0.8&amp;cloudr=26&amp;cloudlos=30&amp;cloudx=-70&amp;cloudy=0.25"
                 frameborder="0" scrolling="no"
                 style="position:absolute; left:8px; top:92px; width:586px; height:660px;
                        max-width:none; max-height:none; margin:0; border:0; background:#0b0e14;
-                       pointer-events:none;"></iframe>
+                       pointer-events:auto;"></iframe>
         <div style="position:absolute; left:620px; top:132px; width:390px; text-align:left; color:#e8ecf4; font-size:22px; line-height:1.45;">
             Stellar orbital motion is measurable w/JWST + Roman
             <div style="margin-top:20px;">Clouds block and redden stars behind and within</div>
@@ -1592,6 +1636,7 @@ across cosmic time.
                 <li> Same live page as the next slide, just the face-on panel &mdash; no controls, nothing to click
                 <li> Orange / teal is proper motion: the nuclear stellar disk rotates, so near-side and far-side stars move in opposite directions on the sky. ~5 mas/yr apart, against ~1 mas/yr scatter
                 <li> The purple ellipse is a cloud; the stars behind it fade. Measure how much each star is dimmed and you locate the cloud along the line of sight
+                <li> The cloud can be dragged live: move it behind the Galactic Center and fewer stars fade
                 <li> Next slide is the same model with the tomography diagnostics attached
             </ul>
         </aside>
@@ -2426,14 +2471,20 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
      The panel is a fixed patch of sky (l +0.30..+0.87, b -0.21..+0.14, 1"/px) in the same
      projection and orientation as the wide grid, so it needs no rotation and its placement
      never has to be re-measured; box_treasury_start.png outlines that exact rectangle. -->
-<section id=now-nircam>
+<section id=now-nircam data-background-color="#000">
     <!-- (2026-10-16, cmzq) Arrival = the text-heavy overview: progress, early highlights, footprints, and the
          magnified strip as an inset.  Build 0: all the text and every green box goes, and the inset FLIES onto
          its own footprint on the map (landed rect = the strip's PANEL_L/PANEL_B window on the full-bleed grid,
          as make_cmz_treasury_layers.py prints it: x -21.8..740.7, y 244.5..476.5) -- data only.  Builds 1-3, in
          that same place: stars subtracted; NIRCam + ACES 3 mm; then MIRI F770W (the full-frame mosaic incl. the 4QPM
          fields, monochrome) overlaid on top -- same 1"/px panel grid (make_miri_fullframe_layers.py), so it is
-         coordinate-matched to everything under it. -->
+         coordinate-matched to everything under it.
+         (2026-10-16, later) Adam: zoom into the NIRCam data, fill the screen, clear off all the background; then each
+         build shows ONLY its own image (212+480 -> star-subtracted -> NIRCam+ACES -> MIRI), no stacking.  So: build 0
+         flies the strip to the full slide width (1024 x 311.6, centred; the strip is 3.3:1, so that is as big as it gets
+         uncropped) while every map layer fades to the black slide background; builds 1-2 are fade-in-then-out on that
+         rect, the strip itself fades once any of them is shown (the :has rule), and MIRI stays at the end.  NIRCam+ACES
+         is treasury_panel_aces_transparent.png (no black no-data slab; make_nircam_extra_layers.py). -->
     <style>
       #now-nircam .nn-text { transition:opacity .6s ease-in-out, visibility .6s; }
       #now-nircam img.nn-land { position:absolute; margin:0; border:0; max-width:none; max-height:none; box-shadow:none;
@@ -2441,8 +2492,10 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
           background:#03050a; outline:2px solid rgba(60,235,60,0.95);
           transition:left 1.4s ease-in-out, top 1.4s ease-in-out, width 1.4s ease-in-out, height 1.4s ease-in-out,
                      background-color .8s ease-in-out .6s, outline-color .5s ease-in-out; }
-      #now-nircam img.nn-land.visible { left:-21.8px; top:244.5px; width:762.5px; height:232.0px;
+      #now-nircam img.nn-land.visible { left:0px; top:228.2px; width:1024px; height:311.6px;
           background-color:rgba(3,5,10,0); outline-color:rgba(60,235,60,0); }
+      #now-nircam img.nn-bg { transition:opacity 1.2s ease-in-out, visibility 1.2s; }
+      #now-nircam:has(.nn-only.visible) img.nn-land.visible { opacity:0; transition:opacity .5s ease-in-out; }
     </style>
     <div class="smaller2 fragment fade-out nn-text" data-fragment-index="1" style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">Progress:</div>
     <div class="smaller3 fragment fade-out nn-text" data-fragment-index="1" style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;">
@@ -2461,19 +2514,19 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
         <b>Early highlights</b>
         <ul style='padding-left:18px; margin:2px 0 0 0;'>
             <li> ~4 million unique sources so far
-            <li> astrometric precision &lt;&nbsp;1&nbsp;mas
-            <li> proper motions to &lt;&nbsp;0.3&nbsp;mas&nbsp;yr<sup>&minus;1</sup> where earlier epochs exist
+            <li> astrometric precision $\sigma<1$ mas
+            <li> proper motions to &lt;&nbsp;0.3&nbsp;mas&nbsp;yr<sup>&minus;1</sup> if earlier epochs exist
         </ul>
     </div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png"><img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:5;" src="assets/cmz/treasury_nircam_fullbleed.png">
+    <img class="fragment fade-out nn-bg" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg"><img class="fragment fade-out nn-bg" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg"><img class="fragment fade-out nn-bg" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png"><img class="fragment fade-out nn-bg" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:4;" src="assets/cmz/jwst_today_fullbleed.png"><img class="fragment fade-out nn-bg" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:5;" src="assets/cmz/treasury_nircam_fullbleed.png">
     <img class="fragment fade-out nn-text" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:6;" src="assets/cmz/fp_done_nircam_fullbleed.png">
     <img class="fragment fade-out nn-text" data-fragment-index="1" style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:11;" src="assets/cmz/box_treasury_start.png">
     <img class="fragment custom nn-land" data-fragment-index="1" src="assets/cmz/treasury_panel_nircam.png" alt="JWST GC Treasury NIRCam strip">
     <div class="smaller3 fragment fade-out nn-text" data-fragment-index="1" style="position:absolute; bottom:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;"><span style="color:#2f9e57">&#9633; observed &mdash; NIRCam F212N/F480M</span> &nbsp; <span style="color:#444">mosaic of 2026-10-15</span></div>
     <!-- data builds, all on the landed rect (colloquium_assets/make_nircam_extra_layers.py, make_miri_fullframe_layers.py) -->
-    <img class="fragment" data-fragment-index="2" src="assets/cmz/treasury_panel_starless.png" style="position:absolute; left:-21.8px; top:244.5px; width:762.5px; height:232.0px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:13;">
-    <img class="fragment" data-fragment-index="3" src="assets/cmz/treasury_panel_aces.png" style="position:absolute; left:-21.8px; top:244.5px; width:762.5px; height:232.0px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:14;">
-    <img class="fragment" data-fragment-index="4" src="assets/cmz/miri_fullframe_panel.png" style="position:absolute; left:-21.8px; top:244.5px; width:762.5px; height:232.0px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:16;">
+    <img class="fragment fade-in-then-out nn-only" data-fragment-index="2" src="assets/cmz/treasury_panel_starless.png" style="position:absolute; left:0px; top:228.2px; width:1024px; height:311.6px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:13;">
+    <img class="fragment fade-in-then-out nn-only" data-fragment-index="3" src="assets/cmz/treasury_panel_aces_transparent.png" style="position:absolute; left:0px; top:228.2px; width:1024px; height:311.6px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:14;">
+    <img class="fragment nn-only" data-fragment-index="4" src="assets/cmz/miri_fullframe_panel.png" style="position:absolute; left:0px; top:228.2px; width:1024px; height:311.6px; margin:0; border:0; max-width:none; max-height:none; box-shadow:none; z-index:16;">
     <div class="fragment fade-in-then-out" data-fragment-index="1" style="position:absolute; left:14px; bottom:10px; z-index:30; font-size:19px; color:#fff; background:rgba(0,0,0,0.6); padding:2px 9px; border-radius:4px;">JWST GC Treasury &middot; NIRCam F212N + F480M</div>
     <div class="fragment fade-in-then-out" data-fragment-index="2" style="position:absolute; left:14px; bottom:10px; z-index:30; font-size:19px; color:#fff; background:rgba(0,0,0,0.6); padding:2px 9px; border-radius:4px;">stars subtracted</div>
     <div class="fragment fade-in-then-out" data-fragment-index="3" style="position:absolute; left:14px; bottom:10px; z-index:30; font-size:19px; color:#fff; background:rgba(0,0,0,0.6); padding:2px 9px; border-radius:4px;">NIRCam diffuse emission + ACES 3&nbsp;mm continuum (red)</div>
@@ -2502,7 +2555,8 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     </aside>
 </section>
 
-<section id=now-miri>
+<!-- (2026-10-16) skipped: hidden, kept in the deck (delete data-visibility to restore) -->
+<section id=now-miri data-visibility="hidden">
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">&hellip;and the MIRI parallel, ~6&prime; to the east</div>
     <div class=smaller3 style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;"> 
         <a href="https://starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html">starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html</a>
@@ -2561,7 +2615,7 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     <img src="colloquium_assets/arches_jwst_module.jpg" alt="Arches cluster, JWST NIRCam + MIRI" style="position:absolute; top:84px; width:456px; height:456px; margin:0; border:0; max-width:none; max-height:none; background:none; box-shadow:none; left:40px;">
     <img src="colloquium_assets/quintuplet_jwst_module.jpg" alt="Quintuplet cluster, JWST NIRCam" style="position:absolute; top:84px; width:456px; height:456px; margin:0; border:0; max-width:none; max-height:none; background:none; box-shadow:none; left:528px;">
     <div style="position:absolute; top:543px; width:456px; text-align:left; font-size:17px; color:#c9d1dc; left:40px;"><b style="color:#fff;">Arches</b> &middot; F212N / F323N / F480M / F770W</div>
-    <div style="position:absolute; top:543px; width:456px; text-align:left; font-size:17px; color:#c9d1dc; left:528px;"><b style="color:#fff;">Quintuplet</b> &middot; F212N / F323N</div>
+    <div style="position:absolute; top:543px; width:456px; text-align:left; font-size:17px; color:#c9d1dc; left:528px;"><b style="color:#fff;">Quintuplet</b> &middot; F212N / F323N / F480M</div>
     <div class=cmzq-text style="left:40px; top:572px; width:944px; font-size:19px;">
         <ul>
             <li>Clusters this close to the center dissolve within ~55&nbsp;Myr &mdash; but fade into the background in a few Myr
@@ -2571,9 +2625,7 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
         </ul>
     </div>
     <div class="cmzq-crack fragment" style="left:12px; top:668px; width:974px; font-size:19px;">
-        <b>Future:</b> Matt Hosek&rsquo;s GC Treasury project searches the Treasury&rsquo;s proper motions for the
-        Arches and Quintuplet <b>tidal streams</b> &mdash; ~4&nbsp;million stars, proper motions to &lt;&nbsp;0.3&nbsp;mas&nbsp;yr<sup>&minus;1</sup>
-        where earlier epochs exist.</div>
+        <b>Future:</b> Arches and Quintuplet <b>tidal streams</b> from JWST GC Treasury + Roman</div>
     <aside class=notes>Portegies Zwart+ 2002: clusters within 150 pc dissolve within ~55 Myr, but drop below the background
         density in only a few Myr -- so most of the CMZ's past clusters should be invisible as clusters.  Hosek+ 2015: HST
         proper motions out to 3 pc; tidal radius at least 2.8 pc; no tidal tails along the orbital path in that field.
@@ -2841,22 +2893,22 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
 </section>
 <section id=cmzq-ices-next>
-    <h4> Future: ices &amp; metallicity </h4>
+    <h4> Future: ices abundances </h4>
     <!-- (2026-10-16) just GO 6927 (Adam: "leave out the whole CMZ thing, it's untrue"; the chemistry is TBD, not Gramze+).
-         Program details from www.stsci.edu/jwst/phase2-public/6927.pdf. -->
-    <div class=cmzq-card style="left:60px; top:180px; width:904px; height:340px; background:#0d1424; border:2px solid #4ade80;"></div>
-    <div class=cmzq-text style="left:96px; top:206px; width:840px; font-size:24px; line-height:1.35; color:#e8ecf4;">
-        <div style="font-size:22px; color:#4ade80; letter-spacing:.06em;">JWST GO 6927 &middot; Cycle 4 &middot; NIRSpec</div>
-        <div style="font-size:33px; font-weight:700; margin:10px 0 22px; line-height:1.2;">Groundbreaking Constraints on the Galactic Dust Extinction Law in the High-Opacity Regime</div>
-        <div>Spectra of &gt;200 heavily obscured stars in and around the Brick (A<sub>V</sub> up to 50) &rarr; the 1&ndash;5&nbsp;&mu;m
-            extinction curve at high opacity, where grain growth and ices matter</div>
-        <div style="margin-top:22px; font-size:21px; color:#c9d1dc;">PI <b style="color:#ffd166;">Matt Ashby</b> (SAO) &middot; <b style="color:#ffd166;">Cargile</b>, Ginsburg, <b style="color:#ffd166;">Hora</b>, Lisse, <b style="color:#ffd166;">Melnick</b>, Paladini, <b style="color:#ffd166;">Tolls</b>, Werner, Young, <b style="color:#ffd166;">Zucker</b>, Kim
-            <span style="color:#9aa3b5;">&nbsp;(CfA in gold)</span></div>
+         Program details from www.stsci.edu/jwst/phase2-public/6927.pdf.
+         (2026-10-16, later) Adam's NIRSpec spectrum (assets/brick/go6927_nirspec_spectrum.png, pasted into the session) in
+         place of the title and description: only the program line above it and the team line below; CfA names still gold,
+         but no "(CfA in gold)" legend. -->
+    <div class=cmzq-text style="left:0; right:0; top:88px; text-align:center; font-size:24px; color:#4ade80; letter-spacing:.06em;">JWST GO 6927 &middot; Cycle 4 &middot; NIRSpec</div>
+    <div class=cmzq-card style="left:209px; top:130px; width:606px; height:508px;">
+        <img src="assets/brick/go6927_nirspec_spectrum.png" style="left:8px; top:6px; width:590px; height:496px;">
     </div>
-    <aside class=notes>GO 6927 (Cycle 4, PI Matt Ashby at SAO): NIRSpec MSA spectra of more than 200 highly obscured stars in and
-        around the Brick, A_V up to 50, to pin down the 1-5 micron extinction curve as a function of A_V in the high-opacity
-        regime -- the regime that matters for grain growth and the ice content of dense clouds.  Co-Is from the CfA: Cargile,
-        Hora, Melnick, Tolls, Zucker.</aside>
+    <div class=cmzq-text style="left:4px; right:4px; top:656px; text-align:center; font-size:21px; white-space:nowrap; line-height:1.4; color:#c9d1dc;">PI <b style="color:#ffd166;">Matt Ashby</b> (SAO) &middot; <b style="color:#ffd166;">Cargile</b>, Ginsburg, <b style="color:#ffd166;">Hora</b>, Lisse, <b style="color:#ffd166;">Melnick</b>, Paladini, <b style="color:#ffd166;">Tolls</b>, Werner, Young, <b style="color:#ffd166;">Zucker</b>, Kim</div>
+    <aside class=notes>GO 6927 (Cycle 4, PI Matt Ashby at SAO), "Groundbreaking Constraints on the Galactic Dust Extinction Law in
+        the High-Opacity Regime": NIRSpec MSA spectra of more than 200 highly obscured stars in and around the Brick, A_V up
+        to 50, to pin down the 1-5 micron extinction curve as a function of A_V in the high-opacity regime -- the regime that
+        matters for grain growth and the ice content of dense clouds.  The spectrum shown is one of them.  Co-Is from the CfA
+        (in gold): Cargile, Hora, Melnick, Tolls, Zucker.</aside>
 </section>
 
 <!-- ######################## Q7: does gas reach Sgr A*? ######################## -->
@@ -3052,6 +3104,9 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     <img src="colloquium_assets/roman_exoplanets_0_known.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
     <img class="fragment" data-fragment-index="1" src="colloquium_assets/roman_exoplanets_1_microlensing.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
     <img class="fragment" data-fragment-index="2" src="colloquium_assets/roman_exoplanets_2_transits.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
+    <!-- (2026-10-16) from make_roman_exoplanet_figure.py's inputs: 5,219 of 6,366 known within 1 kpc (82%); with ~1,000
+         microlensing (none within 1 kpc) + ~50,000 transiting (~330 within 1 kpc) -> 5,545 / 57,366 = 9.7% -->
+    <div class="fragment" data-fragment-index="2" style="position:absolute; top:646px; left:0; right:0; text-align:center; font-size:28px; color:#e8ecf4;">Planets within 1&nbsp;kpc: <b>82%</b> of those known today &rarr; <b style="color:#ffd166;">~10%</b> after Roman</div>
     <div class="smaller3" style="position:absolute; bottom:6px; left:4%; width:92%; text-align:left;">
         Known: NASA Exoplanet Archive, Sept 2026 &middot;
         microlensing: <a href="https://ui.adsabs.harvard.edu/abs/2019ApJS..241....3P/abstract">Penny+ 2019</a>,
@@ -3091,13 +3146,67 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
         for the lower-extinction bulge fields, not the CMZ itself.
     </aside>
 </section>
+
+<!-- (2026-10-16) Adam: "add 'disks in cmz' slide ... at least include Xing Lu's Sgr C disk and show some high-resolution
+     cutouts from Nazar's work in Sgr B2" (and: leave out the Yusef-Zadeh+ 2015/2017 Sgr A* proplyd candidates -- those
+     are not disk candidates).  Figures: assets/cmz_disks/make_lu2022_panels.py (Lu+ 2022 Fig. 1a,b) and
+     assets/cmz_disks/make_sgrb2_disk_cutouts.py (six 0.8" cutouts, uniform-weighted 1 mm long-baseline images). -->
+<section id=cmzq-disks>
+    <h4> Disks in the CMZ </h4>
+    <div class=cmzq-card style="left:14px; top:76px; width:640px; height:430px;">
+        <img src="assets/cmz_disks/lu2022_fig1ab.png" style="left:0; top:0; width:640px; height:429.6px;">
+        <div class=cmzq-text style="left:436px; top:250px; width:196px; font-size:18px; line-height:1.4; color:#1a1f2b;"><b>Sgr&nbsp;C</b><br>disk: r&nbsp;&asymp;&nbsp;2000&nbsp;au, 4.7&nbsp;M<sub>&#9737;</sub><br>protostar: 32&nbsp;M<sub>&#9737;</sub><br>spirals A, B: a flyby</div>
+    </div>
+    <div class=cmzq-text style="left:676px; top:86px; width:334px; font-size:22px; line-height:1.35; color:#e8ecf4;">
+        <div>Disks exist in the CMZ 
+            <br><br> 100's detected, ~few resolved
+            <br><br> <b>We can study planet formation in this environment.</b>
+
+        </div>
+        <!--
+            <div style="margin-top:18px; font-size:19px; color:#c9d1dc;">Same disk at 300&nbsp;au: an O-type protostar (~40&nbsp;M<sub>&#9737;</sub>) fed by streamers &mdash; Weng+ 2026</div>
+            <div style="margin-top:14px; font-size:19px; color:#c9d1dc;">199 compact (~370&nbsp;au) fragments in the 20&nbsp;km&nbsp;s<sup>&minus;1</sup> cloud &amp; Sgr&nbsp;C: disk, envelope or core candidates &mdash; Zhang+ 2025</div>
+        -->
+    </div>
+    <div class=fragment data-fragment-index=1>
+        <img src="assets/cmz_disks/sgrb2_disk_cutouts.png" style="position:absolute; left:42px; top:522px; width:940px; height:150px; margin:0; border:0; max-width:none; max-height:none; background:none; box-shadow:none;">
+    </div>
+    <div class="smaller3" style="position:absolute; bottom:4px; left:4%; width:92%; text-align:left;">
+        <a href="https://ui.adsabs.harvard.edu/abs/2022NatAs...6..837L/abstract">Lu+ 2022</a> (figure) &middot;
+        <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1003..219W/abstract">Weng+ 2026</a> &middot;
+        <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...982L..10Z/abstract">Zhang+ 2025</a> &middot;
+        <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>
+    </div>
+    <aside class=notes>
+        Planets need disks; do CMZ stars get them?  Sgr C (Lu+ 2022, Nature Astronomy): ALMA long-baseline 1.3 mm
+        resolves a Keplerian disk, radius ~2000 au, 4.7 Msun (factor ~2 uncertain) around a 31.7 +/- 4.7 Msun protostar,
+        rotation v ~ r^-0.51 +/- 0.20 inside 1000 au, inclination 53 deg.  Gravitationally stable, with two trailing
+        spirals (A, B) best explained by a close flyby -- and a perturber with the right properties is identified.
+        So an early O star here forms "in a similar manner" to low-mass stars: disk-mediated accretion and flyby-impacted
+        disk evolution.  Weng+ 2026 (ApJ 1003, 219; 300 au): the same source, disk + envelope + streamers, ~40 Msun
+        from the dynamics (SED fits give ~20, Crowe+ 2025).
+        <br><br>
+        Zhang+ 2025 (ApJL 982, L10): 0.04" ALMA 1.3 mm of 20 km/s C1, C4 and Sgr C C4 -- 199 compact fragments, typical
+        size ~370 au, the first sample of protostellar envelope/disk and prestellar-kernel candidates there.
+        <br><br>
+        Click: Sgr B2 (Budaiev+ 2024, ApJ 961, 4; Nazar's thesis work).  500 au (1 mm) and 700 au (3 mm): 371 sources at
+        3 mm, 222 at 1 mm; the 110 sources seen at 5000 au fragment into ~2 each.  Most are marginally resolved and at
+        least partly optically thick; too hot for prestellar cores, too high column for Stage II -- most consistent
+        with Stage 0/I YSOs, rotationally supported disks with an envelope, warmer (~50 K) than local ones.  Only the
+        four brightest Orion disks would be detectable at Sgr B2's distance, so if these are disks they are larger
+        (>200 au) and more massive than any disk in the solar neighborhood.  The cutouts are six of them, 0.8" (~6500 au)
+        each, from the uniform-weighted images (beam 0.05" x 0.02", ~400 x 150 au), sharper than the paper's catalog
+        images.
+    </aside>
+</section>
 <!-- ######################## Close ######################## -->
 
 <section id=cmzq-scoreboard>
     <!-- (2026-10-16) first pass at de-busying: one short phrase per cell (was full sentences), bigger type, and the
          bottom block cut to three one-line lists.  The long version's details are in the notes. -->
     <h4 style="margin-bottom:8px;">The scoreboard</h4>
-    <table class=cmzq style="font-size:23px; width:1010px;">
+    <style>#cmzq-scoreboard table.cmzq td { padding-top:11px; padding-bottom:11px; }</style>
+    <table class=cmzq style="font-size:26px; width:1010px;">
         <tr><th></th><th>question</th><th>now</th><th style="color:#4ade80;">future</th></tr>
         <tr><td class=n>Q1</td><td>How does gas get into the CMZ?</td><td style="color:#c9d1dc;">inflow measured</td><td style="color:#4ade80;">ACES + matched sims</td></tr>
         <tr><td class=n>Q2</td><td>What shape is the CMZ?</td><td style="color:#c9d1dc;">mostly in front</td><td style="color:#4ade80;">Roman tomography</td></tr>
@@ -3106,7 +3215,7 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
         <tr><td class=n>Q5</td><td>Is the IMF different?</td><td style="color:#c9d1dc;">Arches top-heavy</td><td style="color:#4ade80;">deeper, more clusters</td></tr>
         <tr><td class=n>Q6</td><td>What is the metallicity?</td><td style="color:#c9d1dc;">ices: higher?</td><td style="color:#4ade80;">NIRSpec (GO&nbsp;6927)</td></tr>
         <tr><td class=n>Q7</td><td>What gas reaches Sgr&nbsp;A*?</td><td style="color:#c9d1dc;">hints of inflow</td><td style="color:#4ade80;">Roman + sub-pc sims</td></tr>
-        <tr><td class=n>Q8</td><td>What planets form there?</td><td style="color:#c9d1dc;">none known</td><td style="color:#4ade80;">Roman microlensing</td></tr>
+        <tr><td class=n>Q8</td><td>What planets form there?</td><td style="color:#c9d1dc;">none known</td><td style="color:#4ade80;">Roman microlensing, ALMA disks</td></tr>
     </table>
     <div style="position:absolute; left:14px; right:14px; bottom:10px; font-size:18px; line-height:1.45; color:#9aa3b5; text-align:left;">
         <b style="color:#4ade80;">Answered:</b> Why is the dense gas warm? (<a href="https://ui.adsabs.harvard.edu/abs/2016A%26A...586A..50G/abstract">Ginsburg+ 2016</a>)<br>

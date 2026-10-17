@@ -11,3 +11,6 @@ assets/co3d/_COGAL_all_interp.fits
 # hips/: local mirrors of the HiPS / Aladin Lite / tour the deck's live embeds use (colloquium_assets/
 # mirror_local_hips.py).  Hundreds of MB of tiles; the embeds fall back to the network without it.
 hips/
+
+# team-slide inputs: downloaded headshots (colloquium_assets/make_team_mosaics.py); only the mosaics are published
+assets/teams/src/

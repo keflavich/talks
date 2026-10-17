@@ -488,6 +488,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
   // face-on display range: independent of Rmax (which still bounds where stars/
   // orbits/the bar actually extend) so "zooming in" just magnifies a sub-region
   let viewR = Rmax;
+  let showBar = true;   // ?bar=0 (embed mode) hides the bar's shaded ellipse in the face-on panel
   function toPix(x,y){
     const px = (x+viewR)/(2*viewR)*W;
     const py = (viewR-y)/(2*viewR)*H;
@@ -830,7 +831,7 @@ star's proper motion parallel to the plane barely depends on where along the lin
         drawEllipseContour(fctx, Rmax*i/7, q, phiRad, 'rgba(255,255,255,0.10)', 1);
       }
     }
-    drawBarShape(fctx, phiRad);
+    if(showBar) drawBarShape(fctx, phiRad);
     drawCloud(fctx);
 
     const [gx,gy] = toPix(0,0);
@@ -1854,7 +1855,24 @@ star's proper motion parallel to the plane barely depends on where along the lin
     // which is what puts a big cone of stars behind it); cloudy is in DEGREES of longitude.
     if (q.get('cloudx') !== null) { cloud.cx = parseFloat(q.get('cloudx')); }
     if (q.get('cloudy') !== null) { cloud.cy = lToPc(parseFloat(q.get('cloudy'))); }
+    if (q.get('bar') === '0') { showBar = false; }
     regenerateStars();
+
+    // Inside a reveal.js deck (same origin), a slide may let the audience-facing presenter drag the cloud
+    // (the deck sets pointer-events:auto on that iframe).  Clicking into the iframe takes keyboard focus from
+    // the deck, so after each mouse-up hand focus back, and pass navigation keys on as a fallback -- a
+    // clicker's PageDown / arrow must still advance the slides.
+    try {
+      const deck = window.parent !== window ? window.parent : null;
+      if (deck && deck.Reveal) {
+        const giveBack = () => { try { if (window.frameElement) window.frameElement.blur(); deck.focus(); } catch (e) {} };
+        window.addEventListener('mouseup', () => setTimeout(giveBack, 0));
+        const NAV = {ArrowRight:'next', ArrowDown:'next', PageDown:'next', ' ':'next', ArrowLeft:'prev', ArrowUp:'prev', PageUp:'prev'};
+        window.addEventListener('keydown', ev => {
+          if (NAV[ev.key]) { ev.preventDefault(); giveBack(); deck.Reveal[NAV[ev.key]](); }
+        });
+      }
+    } catch (e) {}
 
     // ?label=0 suppresses the step-text bar (the face-only variant carries its caption on
     // the slide instead).  Everything below this point is the guided tour, which that

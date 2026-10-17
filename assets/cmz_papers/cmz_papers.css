@@ -1,0 +1,54 @@
+/* ============================================================================================
+   CMZ paper-summary appendix: the #cmzp-* slides at the end of colloquium_2026_cfa.html.
+   One overview slide per topic, then one slide per paper.  Figures are exported from the
+   papers' arXiv sources into this directory (cmz_papers/<slide-id>_figN.jpg).
+
+   Layouts:
+     .cmzp-body.side    text column on the left, figure(s) on the right  -- tall/square figures
+     .cmzp-body.stack   figure(s) on top, text underneath                -- wide figures
+   A figure's max height can be overridden per slide with style="--fig-h: 420px" on .cmzp-figs.
+   ============================================================================================ */
+.reveal section.cmzp { text-align: left; }
+.reveal section.cmzp h4 {
+    position: absolute; left: 18px; right: 18px; top: 4px; margin: 0;
+    font-size: 32px; line-height: 1.12; text-align: left;
+}
+.reveal .cmzp-ref {
+    position: absolute; left: 18px; right: 18px; top: 82px;
+    font-size: 17px; line-height: 1.3; color: #9aa3b5;
+}
+.reveal .cmzp-ref a { color: rgb(0,200,200); }
+.reveal .cmzp-ref .cmzp-me { color: #ffd166; }
+.reveal .cmzp-body {
+    position: absolute; left: 18px; right: 18px; top: 116px; bottom: 12px;
+    display: flex; gap: 22px;
+}
+.reveal .cmzp-body.side  { flex-direction: row;    align-items: flex-start; }
+.reveal .cmzp-body.stack { flex-direction: column; align-items: stretch; gap: 14px; }
+.reveal .cmzp-text { font-size: 22px; line-height: 1.3; color: #ececec; }
+.reveal .cmzp-body.side .cmzp-text { flex: 0 0 360px; }
+.reveal .cmzp-text ul { display: block; margin: 0; padding-left: 1.05em; }
+.reveal .cmzp-text li { margin: 0 0 11px 0; }
+.reveal .cmzp-text b, .reveal .cmzp-text strong { color: #ffd166; font-weight: 600; }
+.reveal .cmzp-figs {
+    flex: 1 1 auto; min-width: 0; min-height: 0;
+    display: flex; gap: 12px; justify-content: center; align-items: flex-start;
+}
+.reveal .cmzp-figs figure { margin: 0; min-width: 0; display: flex; flex-direction: column; align-items: center; }
+.reveal .cmzp-figs img {
+    margin: 0; border: 0; box-shadow: none; background: #fff;
+    max-width: 100%; max-height: var(--fig-h, 600px); object-fit: contain;
+}
+.reveal .cmzp-figs figcaption { font-size: 14px; line-height: 1.25; color: #9aa3b5; margin-top: 4px; text-align: center; }
+
+/* topic overview slides */
+.reveal .cmzp-overview .cmzp-body.side .cmzp-text { flex: 1 1 auto; font-size: 23px; }   /* must outrank .side's fixed 360px column */
+.reveal .cmzp-list { flex: 0 0 318px; font-size: 15px; line-height: 1.3; color: #cfd5e2; }
+.reveal .cmzp-list .cmzp-list-head { font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #9aa3b5; margin-bottom: 6px; }
+.reveal .cmzp-list a { display: block; margin-bottom: 7px; color: #cfd5e2; }
+.reveal .cmzp-list a b { color: rgb(0,200,200); font-weight: 600; }
+
+/* appendix index */
+.reveal .cmzp-index a { color: #ececec; }
+.reveal .cmzp-index a b { color: rgb(0,200,200); }
+.reveal .cmzp-back { position: absolute; right: 18px; top: 84px; font-size: 15px; color: #9aa3b5; }

@@ -1,0 +1,30 @@
+{
+ "local_selection": "signed Oort window for 0 < d < 1300 pc, +/- 5.0 km/s",
+ "gc_mask_deg": [
+  12.0,
+  2.0
+ ],
+ "inner_strip_mask_deg": [
+  70.0,
+  1.5
+ ],
+ "bright_thresh_k": 1.5,
+ "ppv_scale_l_pc_per_deg": 6.0,
+ "ppv_scale_b_pc_per_deg": 6.0,
+ "ppv_scale_v_pc_per_kms": 40.0,
+ "n_points": 90000,
+ "n_points_distance_valid": 57205,
+ "n_planck_points": 24323,
+ "n_planck_distance_valid": 10726,
+ "planck_to_dame_scale": 1.9918765032647237,
+ "planck_z0_pc": 100.0,
+ "a_oort_kms_per_kpc": 15.3,
+ "sin2l_floor": 0.12,
+ "d_max_pc": 1300.0,
+ "sky_image_deg": [
+  360,
+  180
+ ],
+ "l_increases": "left",
+ "provenance": "Dame, Hartmann & Thaddeus 2001 (CO 1-0, with velocities); Planck 2015 Commander CO(2-1) off-plane (no velocities)"
+}

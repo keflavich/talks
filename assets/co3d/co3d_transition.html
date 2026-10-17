@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From the whole Galaxy in CO to the local 3D neighborhood</title>
+<!--
+  ============================================================================================
+  THE ARGUMENT THIS PAGE MAKES, phase by phase:
+
+    0. local-sky        "This is how the local kiloparsec looks in CO."  One full-sky map:
+                        Dame, Hartmann & Thaddeus (2001) near the plane, keeping only gas whose
+                        velocity the local rotation field allows for d < 1.3 kpc, plus Planck
+                        CO off the plane, where Dame never looked and where the gas is assumed
+                        local.  The Galactic Center and the inner-Galaxy midplane are masked
+                        (flat gray): they sit at "local" velocities without being local.  This is
+                        the STARTING picture -- no animated "select by velocity" step.
+    1. lift-to-ppv      The map dissolves into the voxels it is made of, which lift off the page
+                        along a third, literal axis: velocity.  Planck gas has no velocity, so it
+                        stays in the v = 0 plane -- visibly, on purpose.
+    2. morph-to-ppp     Velocity -> approximate distance by the local Oort-A approximation for
+                        Dame gas; Planck gas placed assuming a ~100 pc thick layer
+                        (d = Z0 / sin|b|).  The cloud warps as it goes, because (l, b) are
+                        angles and (x, y, z) are not -- that warp is the content, not an
+                        artifact.  Points the method cannot place fade out.
+    3. compare-to-dust  Laid over the real, independently measured 3D dust map (Edenhofer+ 2024).
+    4. verdict          Close on both together.
+
+  DATA: assets/co3d/make_co3d_data.py (the CO cube + Planck -> moment_local.png /
+  pointcloud.bin / planck_points.bin) and make_co3d_data.py's binary format doc, and make_dust_binary.py (the dust
+  point cloud -> dust_points.bin, same format). Regenerate either by running that script; this
+  page only reads the outputs, so it never touches the ~1.3 GB source cube itself.
+
+  COORDINATES: pointcloud.bin carries THREE representations of each surviving voxel, computed
+  once in Python so the JS side never repeats the trig:
+    (x_ppv, y_ppv, z_ppv)   literal (l, b, v), each just linearly rescaled -- an orthogonal box
+    (x_pc,  y_pc,  z_pc)    heliocentric Galactic Cartesian pc via the Oort approximation
+    d_valid                 1 where that distance is inside the method's trusted range, else 0
+  dust_points.bin carries only (x_pc, y_pc, z_pc), already in the same frame (X toward the GC,
+  Y toward l=90, Z toward the north Galactic pole) -- no transform needed to compare the two.
+
+  URL PARAMETERS (all optional; the page runs the whole tour by itself with none of them):
+    ?embed=1        hide the page chrome, fill the frame (matches assets/cmz/*.html convention)
+    ?autoplay=0     land on phase 0 and wait (click, or window.co3dReplay(), to run)
+    ?stage=N        jump straight to phase N (0..4), no animation
+    ?speed=1.0      >1 is faster; every duration is divided by it
+  Click anywhere on the canvas to replay. This page is fully self-contained and offline-safe:
+  three.js and OrbitControls are vendored in assets/vendor/ (no CDN), and every data file here
+  is a local, pre-baked product of the Python scripts above -- nothing is fetched at view time.
+  ============================================================================================
+-->
+<style>
+  :root{ --bg:#05070c; --ink:#e8ecf4; --dim:#93a0b4; --accent:#ffd166; }
+  *{ box-sizing:border-box; }
+  html, body{ margin:0; height:100%; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    overflow:hidden; }
+  #wrap{ position:relative; width:100%; height:100%; }
+  canvas#scene{ display:block; width:100%; height:100%; cursor:pointer; }
+  #caption{
+    position:absolute; left:0; right:0; bottom:18px; text-align:center; pointer-events:none;
+    font-size:1.05rem; line-height:1.4; padding:0 5%; text-shadow:0 1px 6px rgba(0,0,0,0.9);
+    transition:opacity .35s ease-in-out;
+  }
+  #caption .hint{ color:var(--dim); font-size:0.86em; }
+  #loading{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-size:1rem; color:var(--dim); background:var(--bg);
+  }
+  #legend{
+    position:absolute; top:14px; right:16px; font-size:0.82rem; color:var(--dim);
+    text-align:right; line-height:1.6; pointer-events:none;
+  }
+  #legend .sw{ display:inline-block; width:10px; height:10px; border-radius:50%; margin-left:6px; }
+
+  /* ---- embed mode: ?embed=1 -- matches assets/cmz/cmz_topdown_hypotheses.html's convention */
+  body.embed #caption{ font-size:1.28rem; bottom:8px; }
+  body.embed #legend{ font-size:0.95rem; }
+</style>
+</head>
+<body>
+
+<div id="wrap">
+  <canvas id="scene"></canvas>
+  <div id="legend"></div>
+  <div id="caption"></div>
+  <div id="loading">loading Dame CO cube + dust map...</div>
+</div>
+
+<script src="../vendor/three.min.js"></script>
+<script src="../vendor/OrbitControls.js"></script>
+<script>
+(function(){
+"use strict";
+
+// ---------------------------------------------------------------------------------------
+// Params
+// ---------------------------------------------------------------------------------------
+const q = new URLSearchParams(location.search);
+const SPEED = Math.max(0.15, parseFloat(q.get("speed") || "1.0"));
+const AUTOPLAY = !(q.get("autoplay") === "0" || q.get("autoplay") === "false");
+const STAGE = q.get("stage") === null ? null : Math.max(0, Math.min(4, parseInt(q.get("stage"), 10)));
+if (q.get("embed") === "1" || q.get("embed") === "true") document.body.classList.add("embed");
+
+const canvas = document.getElementById("scene");
+const captionEl = document.getElementById("caption");
+const legendEl = document.getElementById("legend");
+const loadingEl = document.getElementById("loading");
+
+// ---------------------------------------------------------------------------------------
+// Binary point-cloud parser -- matches make_co3d_data.py's write_binary() format exactly.
+// Uses ArrayBuffer.slice() rather than a direct Float32Array view because the per-field
+// header (a name string of variable length) does not generally land the float data on a
+// 4-byte boundary, and Float32Array views require alignment; slice() copies bytes into a
+// fresh, aligned buffer instead, which is trivial at these data sizes (a few MB).
+// ---------------------------------------------------------------------------------------
+function parseCO3D(buf) {
+  const dv = new DataView(buf);
+  let off = 0;
+  const magic = String.fromCharCode(dv.getUint8(0), dv.getUint8(1), dv.getUint8(2), dv.getUint8(3));
+  if (magic !== "CO3D") throw new Error("bad magic in point-cloud binary: " + magic);
+  off = 4;
+  const nFields = dv.getUint32(off, true); off += 4;
+  const fields = [];
+  for (let i = 0; i < nFields; i++) {
+    const nameLen = dv.getUint16(off, true); off += 2;
+    let name = "";
+    for (let j = 0; j < nameLen; j++) name += String.fromCharCode(dv.getUint8(off + j));
+    off += nameLen;
+    const count = dv.getUint32(off, true); off += 4;
+    fields.push({ name, count });
+  }
+  const result = {};
+  for (const f of fields) {
+    const byteLen = f.count * 4;
+    result[f.name] = new Float32Array(buf.slice(off, off + byteLen));
+    off += byteLen;
+  }
+  return result;
+}
+
+function loadBinary(url) {
+  return fetch(url).then(r => r.arrayBuffer()).then(parseCO3D);
+}
+function loadJSON(url) {
+  return fetch(url).then(r => r.json());
+}
+function loadTexture(url) {
+  return new Promise((resolve, reject) => {
+    new THREE.TextureLoader().load(url, resolve, undefined, reject);
+  });
+}
+
+// ---------------------------------------------------------------------------------------
+// Scene setup
+// ---------------------------------------------------------------------------------------
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x05070c);
+
+const camera = new THREE.PerspectiveCamera(38, 1, 1, 20000);
+camera.position.set(0, 0, 3200);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.enablePan = false;
+controls.minDistance = 40;
+controls.maxDistance = 8000;
+controls.autoRotate = false;
+controls.autoRotateSpeed = 0.5;
+
+function resize() {
+  const w = canvas.clientWidth || window.innerWidth;
+  const h = canvas.clientHeight || window.innerHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+window.addEventListener("resize", resize);
+
+// A little starfield so the empty phases (0-1, straight-on flat image) don't read as a
+// rendering error -- decorative only, not data.
+(function addStars() {
+  const N = 900, pos = new Float32Array(N * 3);
+  for (let i = 0; i < N; i++) {
+    const r = 6000 + Math.random() * 4000;
+    const th = Math.random() * Math.PI * 2, ph = Math.acos(2 * Math.random() - 1);
+    pos[i*3] = r * Math.sin(ph) * Math.cos(th);
+    pos[i*3+1] = r * Math.sin(ph) * Math.sin(th);
+    pos[i*3+2] = r * Math.cos(ph);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+  const m = new THREE.PointsMaterial({ color: 0x66707f, size: 2.2, sizeAttenuation: false,
+    transparent: true, opacity: 0.5 });
+  scene.add(new THREE.Points(g, m));
+})();
+
+// ---------------------------------------------------------------------------------------
+// Data (filled in once loaded)
+// ---------------------------------------------------------------------------------------
+let META = null;
+let PLANE_W = 0, PLANE_H = 0;          // pc-equivalent size of the full-sky map plane
+let planeSky;                          // the textured local-sky map
+// Each point family is split into "can be placed in 3D" / "cannot" so the second half can
+// fade out during the PPV -> PPP step instead of flying to a meaningless position.
+const fam = {};                        // fam.co / fam.pl -> {valid, invalid} THREE.Points + arrays
+let dustPoints, sunMarker;
+
+function gather(idx, X, Y, Z) {
+  const out = new Float32Array(idx.length * 3);
+  for (let k = 0; k < idx.length; k++) {
+    const i = idx[k];
+    out[k*3] = X[i]; out[k*3+1] = Y[i]; out[k*3+2] = Z ? Z[i] : 0;
+  }
+  return out;
+}
+function makePoints(pos, color, size) {
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.BufferAttribute(pos.slice(), 3));
+  const p = new THREE.Points(g, new THREE.PointsMaterial({
+    color, size, sizeAttenuation: true, transparent: true, opacity: 0,
+    blending: THREE.AdditiveBlending, depthWrite: false }));
+  scene.add(p);
+  return p;
+}
+function buildFamily(cloud, color, size) {
+  const n = cloud.l_deg.length, vi = [], ii = [];
+  for (let i = 0; i < n; i++) (cloud.d_valid[i] > 0.5 ? vi : ii).push(i);
+  const f = {
+    flatV: gather(vi, cloud.x_ppv, cloud.y_ppv, null),
+    ppvV:  gather(vi, cloud.x_ppv, cloud.y_ppv, cloud.z_ppv),
+    pppV:  gather(vi, cloud.x_pc,  cloud.y_pc,  cloud.z_pc),
+    flatI: gather(ii, cloud.x_ppv, cloud.y_ppv, null),
+    ppvI:  gather(ii, cloud.x_ppv, cloud.y_ppv, cloud.z_ppv),
+  };
+  f.valid = makePoints(f.flatV, color, size);
+  f.invalid = makePoints(f.flatI, color, size);
+  return f;
+}
+
+Promise.all([
+  loadJSON("co3d_meta.json"),
+  loadBinary("pointcloud.bin"),
+  loadBinary("planck_points.bin"),
+  loadBinary("dust_points.bin"),
+  loadTexture("moment_local.png"),
+]).then(([meta, cloud, planck, dust, texSky]) => {
+  META = meta;
+  PLANE_W = 360 * meta.ppv_scale_l_pc_per_deg;
+  PLANE_H = 180 * meta.ppv_scale_b_pc_per_deg;
+  texSky.magFilter = THREE.LinearFilter; texSky.minFilter = THREE.LinearFilter;
+  planeSky = new THREE.Mesh(new THREE.PlaneGeometry(PLANE_W, PLANE_H),
+    new THREE.MeshBasicMaterial({ map: texSky, transparent: true, opacity: 1 }));
+  scene.add(planeSky);
+
+  fam.co = buildFamily(cloud, 0xffa64d, 5);     // Dame: has velocities
+  fam.pl = buildFamily(planck, 0xff6fa8, 5);    // Planck: no velocities -> its own color
+
+  const dustArr = new Float32Array(dust.x_pc.length * 3);
+  for (let i = 0; i < dust.x_pc.length; i++) {
+    dustArr[i*3] = dust.x_pc[i]; dustArr[i*3+1] = dust.y_pc[i]; dustArr[i*3+2] = dust.z_pc[i];
+  }
+  // Color deliberately NOT the reference page's flat gray, so it reads as a distinct family.
+  dustPoints = makePoints(dustArr, 0x9fd3ff, 3);
+
+  sunMarker = new THREE.Mesh(new THREE.SphereGeometry(6, 16, 16),
+    new THREE.MeshBasicMaterial({ color: 0xffd166, transparent: true, opacity: 0 }));
+  scene.add(sunMarker);
+
+  legendEl.innerHTML =
+    `<div>CO with velocities (Dame+ 2001) &rarr; Oort distance<span class="sw" style="background:#ffa64d"></span></div>` +
+    `<div>CO without velocities (Planck) &rarr; 100 pc layer<span class="sw" style="background:#ff6fa8"></span></div>` +
+    `<div>Gaia + dust (Edenhofer+ 2024)<span class="sw" style="background:#9fd3ff"></span></div>`;
+  legendEl.style.opacity = 0;
+
+  resize();
+  loadingEl.style.display = "none";
+  animate();
+  if (STAGE !== null) { runToken++; setStatic(PHASES[STAGE]); }
+  else if (AUTOPLAY) { tour(); }
+  else { setStatic("local-sky"); }
+}).catch(err => {
+  loadingEl.textContent = "failed to load: " + err.message;
+  console.error(err);
+});
+
+// ---------------------------------------------------------------------------------------
+// Render loop
+// ---------------------------------------------------------------------------------------
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+// ---------------------------------------------------------------------------------------
+// Tour: tween helpers (same idiom as cmz_topdown_hypotheses.html in this repo)
+// ---------------------------------------------------------------------------------------
+function ease(t){ return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2)/2; }
+let runToken = 0;
+function sleep(ms){ return new Promise(r => setTimeout(r, ms / SPEED)); }
+function tween(ms, fn){
+  const my = runToken;
+  return new Promise((resolve) => {
+    const t0 = performance.now(), dur = Math.max(1, ms / SPEED);
+    (function step(now){
+      if (my !== runToken) { resolve(); return; }
+      const t = Math.min(1, (now - t0) / dur);
+      fn(ease(t), t);
+      if (t < 1) requestAnimationFrame(step); else resolve();
+    })(t0);
+  });
+}
+function say(html){
+  captionEl.style.opacity = 0;
+  setTimeout(() => { captionEl.innerHTML = html; captionEl.style.opacity = 1; }, 160);
+}
+function lerp(a, b, f){ return a + (b - a) * f; }
+function lerpArr(dst, a, b, f){
+  for (let i = 0; i < dst.length; i++) dst[i] = a[i] + (b[i] - a[i]) * f;
+}
+function setPos(points, arr){
+  points.geometry.attributes.position.array.set(arr);
+  points.geometry.attributes.position.needsUpdate = true;
+}
+function famOpacity(v, i){ // valid / invalid opacity for both families
+  fam.co.valid.material.opacity = v;  fam.pl.valid.material.opacity = v;
+  fam.co.invalid.material.opacity = i; fam.pl.invalid.material.opacity = i;
+}
+function famPos(which){     // "flat" | "ppv" | "ppp"
+  for (const f of [fam.co, fam.pl]) {
+    setPos(f.valid, which === "flat" ? f.flatV : which === "ppv" ? f.ppvV : f.pppV);
+    setPos(f.invalid, which === "flat" ? f.flatI : f.ppvI);
+  }
+}
+
+const CAPTIONS = {
+  "local-sky": 'This is how the local kiloparsec looks in CO.' +
+    '<br><span class="hint">Dame+ 2001 near the plane, Planck off it &middot; Galactic Center and inner-Galaxy midplane masked (not local)</span>',
+  "lift-to-ppv": 'But the data are a cube: two sky angles, and velocity.' +
+    '<br><span class="hint">Planck has no velocities &mdash; it stays flat at v = 0</span>',
+  "morph-to-ppp": 'Velocity &rarr; approximate distance (local Oort approximation).' +
+    '<br><span class="hint">off-plane Planck gas: assumed to lie in a ~100 pc layer</span>',
+  "compare-to-dust": 'Laid over the real map: Gaia distances + starlight reddening (Edenhofer+ 2024).',
+  "verdict": 'A crude, velocity-only guess at 3D structure &mdash; next to the real thing.',
+};
+const PHASES = ["local-sky", "lift-to-ppv", "morph-to-ppp", "compare-to-dust", "verdict"];
+const CAM = {
+  "local-sky":       [0, 0, 2600],
+  "lift-to-ppv":     [1500, -1100, 1700],
+  "morph-to-ppp":    [1200, -1300, 900],
+  "compare-to-dust": [0, -1900, 1100],
+  "verdict":         [0, -1900, 1100],
+};
+
+function setStatic(phase) {
+  planeSky.material.opacity = 0; famOpacity(0, 0);
+  dustPoints.material.opacity = 0; sunMarker.material.opacity = 0;
+  controls.autoRotate = false; legendEl.style.opacity = 0;
+  camera.position.set(...CAM[phase]); controls.target.set(0, 0, 0);
+  switch (phase) {
+    case "local-sky":
+      planeSky.material.opacity = 1; famPos("flat"); break;
+    case "lift-to-ppv":
+      famOpacity(0.55, 0.3); famPos("ppv"); break;
+    case "morph-to-ppp":
+      famOpacity(0.6, 0); famPos("ppp"); sunMarker.material.opacity = 1; break;
+    case "compare-to-dust":
+      famOpacity(0.45, 0); famPos("ppp"); sunMarker.material.opacity = 1;
+      dustPoints.material.opacity = 0.5; legendEl.style.opacity = 1; controls.autoRotate = true; break;
+    case "verdict":
+      famOpacity(0.32, 0); famPos("ppp"); sunMarker.material.opacity = 1;
+      dustPoints.material.opacity = 0.6; legendEl.style.opacity = 1; controls.autoRotate = true; break;
+  }
+  say(CAPTIONS[phase]);
+}
+
+async function tour() {
+  const my = ++runToken;
+  setStatic("local-sky");
+  await sleep(3200); if (my !== runToken) return;
+
+  // ---- 1: the map dissolves into its voxels, which lift into a literal PPV cube --------
+  say(CAPTIONS["lift-to-ppv"]);
+  famPos("flat");
+  await tween(1000, f => { planeSky.material.opacity = 1 - f; famOpacity(0.55 * f, 0.3 * f); });
+  if (my !== runToken) return;
+  {
+    const c0 = camera.position.clone(), c1 = new THREE.Vector3(...CAM["lift-to-ppv"]);
+    const bufs = [fam.co, fam.pl].map(f => [new Float32Array(f.flatV.length), new Float32Array(f.flatI.length)]);
+    await tween(2800, f => {
+      camera.position.lerpVectors(c0, c1, f);
+      [fam.co, fam.pl].forEach((fm, k) => {
+        lerpArr(bufs[k][0], fm.flatV, fm.ppvV, f); setPos(fm.valid, bufs[k][0]);
+        lerpArr(bufs[k][1], fm.flatI, fm.ppvI, f); setPos(fm.invalid, bufs[k][1]);
+      });
+    });
+  }
+  if (my !== runToken) return;
+  await sleep(2000); if (my !== runToken) return;
+
+  // ---- 2: velocity -> distance; unplaceable points fade --------------------------------
+  say(CAPTIONS["morph-to-ppp"]);
+  {
+    const c0 = camera.position.clone(), c1 = new THREE.Vector3(...CAM["morph-to-ppp"]);
+    const bufs = [fam.co, fam.pl].map(f => new Float32Array(f.ppvV.length));
+    await tween(3200, f => {
+      camera.position.lerpVectors(c0, c1, f);
+      [fam.co, fam.pl].forEach((fm, k) => { lerpArr(bufs[k], fm.ppvV, fm.pppV, f); setPos(fm.valid, bufs[k]); });
+      famOpacity(lerp(0.55, 0.6, f), 0.3 * (1 - f));
+      sunMarker.material.opacity = f;
+    });
+  }
+  if (my !== runToken) return;
+  await sleep(2200); if (my !== runToken) return;
+
+  // ---- 3: compare to the real dust map ----------------------------------------------
+  say(CAPTIONS["compare-to-dust"]);
+  {
+    const c0 = camera.position.clone(), c1 = new THREE.Vector3(...CAM["compare-to-dust"]);
+    await tween(2400, f => {
+      camera.position.lerpVectors(c0, c1, f);
+      dustPoints.material.opacity = 0.5 * f;
+      famOpacity(lerp(0.6, 0.45, f), 0);
+      legendEl.style.opacity = f;
+    });
+  }
+  controls.autoRotate = true;
+  if (my !== runToken) return;
+  await sleep(4200); if (my !== runToken) return;
+
+  // ---- 4: verdict -----------------------------------------------------------------------
+  say(CAPTIONS["verdict"]);
+  await tween(1400, f => {
+    famOpacity(lerp(0.45, 0.32, f), 0);
+    dustPoints.material.opacity = lerp(0.5, 0.6, f);
+  });
+}
+
+canvas.addEventListener("click", () => { if (META) tour(); });
+window.co3dReplay = function(){ if (META) tour(); };
+
+})();
+</script>
+</body>
+</html>

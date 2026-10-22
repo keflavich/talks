@@ -58,6 +58,9 @@
                 Also in this mode (Adam, 2026-10-15): the Galaxy in neutral gray to match that render
                 (shape_galaxy_gas_gray.jpg, a gray sprite); no "8 kpc" label; and the scale bar fades out
                 with the zoom-out instead of turning into "5 kpc".
+    &oviz=gr    (with frame=topdown; 2026-10-22) start from ../local/topdown_clusters_zoom_gr.jpg instead: the
+                same render with the clusters recolored (<15 Myr green, <60 Myr red), which
+                colloquium_2026_cfa_cmzq.html's #topdown-local ends on.  Same size and registration.
                 Phase 2 here is NOT the GC view: it zooms, rotates and pans onto the bar so that it lands
                 on the bar-model cartoon (assets/Savannah/bar_model_galaxy.jpg) on #bar-inflow, the next
                 slide -- see CARTOON below.  The deck fades the cartoon itself in on top as the zoom ends.
@@ -103,7 +106,8 @@ const AX = 625, AY = 335;                // screen anchor of the camera center
 const AXR = 512.7, AYR = 338.5;     // Sun; +0.7/+2.5 px from the box center = the oviz render's own Sun offset, measured
 // the oviz render (topdown frame only): 2048 x 1344 px, 0.5 screen px per px in phase 0, top-left at
 // (0, 0) -- so the Sun is at its px (2 AXR, 2 AYR) -- and 1250 pc (the dust map's edge) = 665 of its px
-const OVIZ = { src: '../local/topdown_clusters_zoom.jpg', w: 2048, h: 1344, sun: [2 * AXR, 2 * AYR], rEdge: 665 };
+const OVIZ = { src: q.get('oviz') === 'gr' ? '../local/topdown_clusters_zoom_gr.jpg' : '../local/topdown_clusters_zoom.jpg',
+               w: 2048, h: 1344, sun: [2 * AXR, 2 * AYR], rEdge: 665 };
 // phase 2 in this frame: land on the #bar-inflow cartoon, assets/Savannah/bar_model_galaxy.pdf (rendered to
 // bar_model_galaxy.jpg).  Geometry read from the PDF's own vector paths, in pt of its 375.64 x 404.5 page:
 // the bar ellipse (fitted to its 4 Bezier arcs) is centered at (189.22, 190.02) -- the CMZ circle's

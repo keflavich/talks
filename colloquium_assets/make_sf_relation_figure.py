@@ -52,14 +52,18 @@ POKHREL_FIT_MAX_SIGMA = 676.0
 POKHREL_EPS_FF = 0.026
 
 # Conversions used for the CMZ points, kept here so they are easy to see and change.
-PROTOSTELLAR_LIFETIME_MYR = 0.5     # Pokhrel's t_PS, reused for the CMZ so the axes mean the same thing
+PROTOSTELLAR_LIFETIME_MYR = 0.5     # Pokhrel's t_PS -- for reference only; NOT used for the CMZ points (they use 0.1 Myr)
 
-# Sgr B2 is drawn as the whole Fig. 17a point cloud, not one point: Sigma_SFR = Sigma_* / age.
-# Ginsburg+2018 use 0.74 Myr (time since pericentre).  0.5 Myr is used here because it matches
-# Pokhrel's t_PS, so both axes mean the same thing, AND it is the more conservative choice --
-# a shorter age raises Sigma_SFR and shrinks the gap.  0.1 Myr is the extreme: even then the
-# cloud stays below the extrapolated relation (see the printout).
+# Sgr B2: Sigma_SFR = Sigma_* / age, for the Fig. 17a point cloud and for the cloud-averaged star.
+# Ginsburg+2018 use 0.74 Myr (time since pericentre).  0.1 Myr is used here -- the Stage 0 lifetime,
+# the same age_core as the Brick and Cloud E/F below -- which is 5x shorter than Pokhrel's t_PS
+# (0.5 Myr), so it is the GENEROUS choice for the CMZ: a shorter age raises Sigma_SFR (by 0.7 dex
+# relative to 0.5 Myr) and shrinks the gap to the relation (see the printout for 1.0/0.5/0.1 Myr).
 SGRB2_AGE_MYR = 0.1
+# (2026-10-19) Adam: "show each cloud as a single point instead of the full range".  True: Sgr B2 is just its
+# cloud-averaged star (no Fig. 17a point cloud / contours, no Total-Totalmax bar) and the Brick and Cloud E/F lose
+# their horizontal Sigma_gas bars (the upper-limit arrows stay).  False restores the range rendering.
+SINGLE_POINTS = True
 CORE_TO_STAR_EFFICIENCY = 0.3       # Ginsburg+2018 Eq. 3 "star formation efficiency of a core"
 
 # Cloud-averaged Sgr B2 (the open star).  Ginsburg+ 2018 Table 2 quotes SFR = 0.035 (Total) to
@@ -115,6 +119,7 @@ CMZ_CLOUDS = [
         sigma_sfr=sigma_sfr_brick.to(u.Msun/u.Myr/u.pc**2).value,
         sigma_sfr_lo=None, sigma_sfr_hi=sigma_sfr_brick.to(u.Msun/u.Myr/u.pc**2).value,
         limit=True, color="#1f77b4", marker="v", size=230, label_offset=(10, -122), label_ha="center",
+        label_offset_single=(-62, -10),   # no Sigma_gas bar to dodge: just left of the marker
         ref="Walker+ 2021\n",
         note=("CLOUD-SCALE aperture, to match how Pokhrel measure (all the protostars in a cloud "
               "against all the gas above a contour) and so that the Brick and Cloud E/F are "
@@ -124,12 +129,12 @@ CMZ_CLOUDS = [
               "Sigma_SFR: DERIVED -- Walker+ quote no SFR and no limit.  Generous ceiling on the "
               "STELLAR content: every Table 3 core at its 22 K mass, source 1 counted whole "
               "(64.2 Msun) rather than split, = 104 Msun of core GAS, times a core-to-star "
-              "efficiency of 1.0 -- i.e. every gram already a star.  / 0.5 Myr / 19.6 pc^2 "
-              "-> 10.6 Msun/pc^2/Myr.  "
-              "Adam's recalculation: "
-              "Assume 1x 10 Msun star (doubling the measured 5 Msun core) "
-              "Assume it's Stage 0 = 0.1 Myr lifetime "
-              "Extrapolate 1x10 Msun to full IMF = multiply by 12.4"
+              "efficiency of 1.0 -- i.e. every gram already a star.  / age_core = 0.1 Myr (Stage 0 "
+              "lifetime, the same t_YSO as Sgr B2) / 19.6 pc^2 -> 53 Msun/pc^2/Myr (log 1.72).  "
+              "Cross-check (computed first in the code, then replaced by the core sum): one 5 Msun "
+              "star (the measured core) extrapolated over a Kroupa IMF to 150 Msun is 117 Msun, "
+              "within ~10% of the 104 Msun core sum.  (Before 2026-10-19 this note said / 0.5 Myr "
+              "-> 10.6; the code has used 0.1 Myr since Adam's recalculation.)  "
               "Horizontal bar: the range of column the cloud actually covers, from the CMZoom "
               "threshold N(H2) = 1e23 cm^-2 (Walker+ 2018 Sec 2.1: 'designed to target all regions "
               "within the CMZ that lie above a column density threshold of ~1e23 cm^-2') up to the "
@@ -140,8 +145,8 @@ CMZ_CLOUDS = [
               " however I now think that must be a filtering effect in Rathborne... "
               "These cores are genuinely protostellar: 9 of 18 drive SiO outflows.  "
               "If instead you use the 19-arcsec ALMA field alone (7e3 Msun, 1.75 pc^2) the point "
-              "moves to (4.0e3, 119) -- same cloud, aperture ten times smaller.  Fiducial "
-              "efficiency 0.3 on the 44 Msun low-temperature core sum gives 1.3 here.  "
+              "moves to (4.0e3, 594) at 0.1 Myr -- same cloud, aperture ten times smaller.  Fiducial "
+              "efficiency 0.3 on the 44 Msun low-temperature core sum gives 6.7 here (at 0.1 Myr).  "
               "CROSS-CHECK (Tang+ 2021, MNRAS 505, 2392, Fig. 10 -- one uniform AzTEC+Herschel "
               "dust-SED N(H2) map of the whole CMZ, so the Brick and Cloud E/F are measured the "
               "same way): reading the map in matched R = 2.4 pc apertures gives mean lg N(H2) = "
@@ -172,10 +177,11 @@ CMZ_CLOUDS = [
               "Sigma_SFR: ceiling set by what is OBSERVED.  No HII regions, no protostellar "
               "source catalog; the only star formation signature in either cloud is an H2O plus "
               "Class II CH3OH maser pair at one spot in the south.  A Class II methanol maser marks "
-              "a high-mass protostar, so allow one such star plus companions, <= 30 Msun -- "
-              "generous, and bounded above by the Brick's ENTIRE counted protostellar content "
-              "(104 Msun in 18 cores), since E/F shows strictly less.  / 0.5 Myr / 30.7 pc^2 "
-              "-> 2.0 Msun/pc^2/Myr.  "
+              "a high-mass protostar, so allow one star of >= 10 Msun and the full Kroupa IMF that "
+              "comes with it (to 150 Msun): 295 Msun.  / age_core = 0.1 Myr (Stage 0 lifetime, the "
+              "same t_YSO as Sgr B2 and the Brick) / 30.7 pc^2 -> 96 Msun/pc^2/Myr (log 1.98).  "
+              "(Before 2026-10-19 this note said <= 30 Msun / 0.5 Myr -> 2.0, bounded by the Brick's "
+              "104 Msun; with the full-IMF extrapolation the E/F ceiling is now above the Brick's.)  "
               "Horizontal bar: from the same 1e23 cm^-2 threshold up to the peak column Barnes+ "
               "measure, 3.7e24 cm^-2 towards the south of Cloud E/F (Sec 3.1) = 8.3e4 Msun/pc^2.  "
               "The bar is drawn flat, at the cloud-averaged limit.  A contour-by-contour treatment "
@@ -337,6 +343,7 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
     draw_sgrb2 = show is None or "sgrb2" in show
     if draw_sgrb2:
         ssfr = sstar - np.log10(SGRB2_AGE_MYR)
+    if draw_sgrb2 and not SINGLE_POINTS:
         from scipy.stats import gaussian_kde
         k = gaussian_kde(np.vstack([sg, ssfr]))
         gx_, gy_ = np.mgrid[sg.min() - .3:sg.max() + .3:120j, ssfr.min() - .3:ssfr.max() + .3:120j]
@@ -347,27 +354,44 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
         ax.contourf(gx_, gy_, z, levels=lv + [z.max()], colors=["#d62728", "#b01d1e"], alpha=0.20, zorder=6)
         ax.contour(gx_, gy_, z, levels=lv, colors="#8c1416", linewidths=1.6, zorder=6)
         ax.scatter(sg, ssfr, s=3, c="#8c1416", alpha=0.35, lw=0, zorder=6)
+    if draw_sgrb2:
         # cloud-averaged Sgr B2: the SAME kind of measurement as the two limits, so the comparison
         # at fixed Sigma_gas is like for like (the blob above is resolved on 0.25 pc cells).
         agescale = GINSBURG_SFR_AGE_MYR / SGRB2_AGE_MYR
         sgx = np.log10(SGRB2_FIELD_GAS / SGRB2_FIELD_AREA_PC2)
         sfr_lo, sfr_hi = [v * 1e6 / SGRB2_FIELD_AREA_PC2 * agescale for v in SGRB2_FIELD_SFR]
         sfr_mid = np.sqrt(sfr_lo * sfr_hi)
-        ax.scatter([sgx], [np.log10(sfr_mid)], s=300, marker="*",
-                   facecolors="none", edgecolors="#8c1416", linewidths=2.2, zorder=9)
-        ax.plot([sgx] * 2, [np.log10(sfr_lo), np.log10(sfr_hi)],
-                color="#8c1416", lw=2.4, zorder=9)
+        if SINGLE_POINTS:
+            ax.scatter([sgx], [np.log10(sfr_mid)], s=380, marker="*",
+                       c="#d62728", edgecolors="k", linewidths=1.2, zorder=9)
+        else:
+            ax.scatter([sgx], [np.log10(sfr_mid)], s=300, marker="*",
+                       facecolors="none", edgecolors="#8c1416", linewidths=2.2, zorder=9)
+            ax.plot([sgx] * 2, [np.log10(sfr_lo), np.log10(sfr_hi)],
+                    color="#8c1416", lw=2.4, zorder=9)
         #ax.annotate("Sgr B2, cloud-averaged", (sgx + 0.07, np.log10(sfr_mid)),
         #            ha="left", va="center", fontsize=11, color="#8c1416", zorder=9,
         #            bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=1.6))
-        # rides with the point cloud instead of a fixed spot, so it follows when the age changes
+        # rides with the point cloud instead of a fixed spot, so it follows when the age changes;
+        # with SINGLE_POINTS the three labels sit just right of the star instead
+        lab_xy = (sgx, np.log10(sfr_mid)) if SINGLE_POINTS else (np.percentile(sg, 96), np.percentile(ssfr, 90))
+        ref_xy = (sgx, np.log10(sfr_mid)) if SINGLE_POINTS else (np.percentile(sg, 96), np.percentile(ssfr, 85))
+        lab_off = dict(xytext=(16, 6), textcoords="offset points") if SINGLE_POINTS else {}
+        ref_off = dict(xytext=(16, -10), textcoords="offset points") if SINGLE_POINTS else {}
+        age_off = dict(xytext=(16, -24) if SINGLE_POINTS else (0, -14), textcoords="offset points")
+        ha = "left" if SINGLE_POINTS else "center"
         ax.annotate("Sgr B2",
-                    (np.percentile(sg, 96), np.percentile(ssfr, 90)),
-                    ha="center", fontsize=13, color="#a11d1f", fontweight="bold",
+                    lab_xy, **lab_off,
+                    ha=ha, fontsize=13, color="#a11d1f", fontweight="bold",
                     zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
         ax.annotate("Ginsburg+ 2018",
-                    (np.percentile(sg, 96), np.percentile(ssfr, 85)),
-                    ha="center", fontsize=10, color="#a11d1f", fontweight="light",
+                    ref_xy, **ref_off,
+                    ha=ha, fontsize=10, color="#a11d1f", fontweight="light",
+                    zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
+        # (2026-10-18) the assumed age behind Sigma_SFR = Sigma_* / age, just under the reference
+        ax.annotate(r"(w/ $t_\mathrm{YSO}\sim$%g Myr)" % SGRB2_AGE_MYR,
+                    ref_xy, **age_off,
+                    ha=ha, fontsize=10, color="#a11d1f", fontweight="light",
                     zorder=9, bbox=dict(facecolor="white", alpha=0.80, edgecolor="none", pad=2.0))
 
     for c in CMZ_CLOUDS:
@@ -376,7 +400,7 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
         gx, gy = np.log10(c["sigma_gas"]), np.log10(c["sigma_sfr"])
         ax.scatter([gx], [gy], s=c["size"], marker=c["marker"], c=c["color"],
                    edgecolors="k", linewidths=1.2, zorder=8)
-        if c.get("sigma_gas_lo"):
+        if c.get("sigma_gas_lo") and not SINGLE_POINTS:
             ax.plot([np.log10(c["sigma_gas_lo"]), np.log10(c["sigma_gas_hi"])], [gy, gy],
                     color=c["color"], lw=3.4, solid_capstyle="butt", zorder=7)
             for e in ("sigma_gas_lo", "sigma_gas_hi"):
@@ -392,6 +416,8 @@ def make_figure(out=OUT, xlim=(1.8, 5.0), ylim=(-0.6, 4.9), show=None):
         # taken by the two horizontal bars and the Sgr B2 cloud -- so each one gets a thin
         # leader back to its own marker.  Without it a reader cannot tell which is which.
         off = c.get("label_offset", (16, 10))
+        if SINGLE_POINTS and c.get("label_offset_single"):
+            off = c["label_offset_single"]
         lead = dict(arrowstyle="-", color=c["color"], lw=1.1,
                     shrinkA=1, shrinkB=9, alpha=0.85) if abs(off[1]) > 40 else None
         ax.annotate("%s" % (c["name"]), (gx, gy),

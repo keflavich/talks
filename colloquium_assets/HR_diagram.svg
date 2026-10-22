@@ -1032,7 +1032,7 @@ L 522.6525 31.57875
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;"/>
    </g>
    <g id="matplotlib.axis_1">
-    <g id="xtick_1">
+    <g id="xtick_1" style="visibility:hidden">
      <g id="line2d_1">
       <defs>
        <path d="M 0 0 

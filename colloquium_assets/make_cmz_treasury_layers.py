@@ -53,7 +53,15 @@ HIPS_ORDER = 7
 HIPS_MAPPING = 'F'
 
 # full-bleed CMZ grid (inside the Ash image's coverage), recentred on l = +0.075
-L0, L1 = -1.55, 1.70
+# (2026-10-18) ...but the deck's existing full-bleed layers (bg_spitzer_fullbleed.jpg,
+# layer_acesmustang_fullbleed.png, jwst_today_fullbleed.png) are NOT on that grid: measured against
+# this script's own renders (ACES/MUSTANG layer vs the GCTreasury_radio_ACES HiPS, and jwst_today vs the
+# NIRCam mosaic -- the same data, sharp correlation peaks), they sit +56.0 px (= 0.0623 deg) further along
+# x, and 0.0 px in b.  Every layer this script writes has to stack on those, so the grid is shifted by that
+# amount: the footprints / mosaic were drawn 3.7' east of where the deck's background puts the same sky
+# (which also put observed polygons on top of GC_92/93).  Re-measure if the background layers are remade.
+BG_GRID_DL = 56.04 * 4 / 3600.
+L0, L1 = -1.55 + BG_GRID_DL, 1.70 + BG_GRID_DL
 B0, B1 = -0.688, 0.688
 SC = 4 / 3600.
 

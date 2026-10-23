@@ -3199,5 +3199,43 @@ Class 0 is a poor proxy for Stage 0.
         ],
       });
     </script>
+
+    <script>
+      /* (2026-10-23) 's' = reveal's own speaker view.  notes-pointer.js (the deferred CDN script above) re-binds 's'
+         to ITS notes.html, fetched from jsDelivr -- and jsDelivr serves .html as text/plain, so the speaker window
+         showed the page source as raw text.  Re-bind 's' to the built-in notes plugin once both have registered
+         (the deferred script has run by DOMContentLoaded; the plugin by 'ready').  Not inside the speaker view's
+         slide previews (?receiver), which never had an 's'.
+         'A' (laser pointer) pressed in the speaker view: that notes.html also passed the pointer from the current-slide
+         preview on to the main window.  The built-in speaker view does not, so the preview does it itself, below. */
+      (function(){
+        var receiver = /receiver/i.test(window.location.search);
+        function useBuiltinSpeakerView(){
+          Reveal.addKeyBinding({ keyCode: 83, key: 'S', description: 'Speaker notes view' },
+                               function(){ Reveal.getPlugin('notes').open(); });
+        }
+        function arm(){ if (Reveal.isReady()) useBuiltinSpeakerView(); else Reveal.on('ready', useBuiltinSpeakerView); }
+        if (!receiver) {
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arm); else arm();
+        }
+        // In the current-slide preview (the one with postMessageEvents), notes-pointer.js posts
+        // {namespace:'reveal', type:'point', x, y, state} to the speaker window; hand each one to the main deck,
+        // the speaker window's opener.  Same origin when served over http; from file:// there is no relay.
+        if (receiver && /postMessageEvents=true/.test(window.location.search) && window.parent !== window) {
+          try {
+            var sv = window.parent;
+            if (sv.__pointerRelay) sv.removeEventListener('message', sv.__pointerRelay);
+            sv.__pointerRelay = function(ev){
+              if (typeof ev.data !== 'string') return;
+              var d; try { d = JSON.parse(ev.data); } catch (_) { return; }
+              var main = sv.opener;
+              if (d && d.namespace === 'reveal' && d.type === 'point' && main && !main.closed && main.Reveal && main.Reveal.point)
+                main.Reveal.point(d.x, d.y, d.state);
+            };
+            sv.addEventListener('message', sv.__pointerRelay);
+          } catch (_) {}
+        }
+      })();
+    </script>
   </body>
 </html>

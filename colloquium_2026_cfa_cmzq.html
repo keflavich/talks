@@ -2042,6 +2042,7 @@ across cosmic time.
     <aside class=notes>Question 3: (How) does gas reach Sgr&nbsp;A*?  Open since 1996.  Where we are: candidate pipes in ACES; their 3D positions are disputed.  What comes next: 3D positions (JWST, Roman) + an ACES inflow census + sub-pc simulations.</aside>
 </section>
 
+<section>  <!-- (2026-10-23) vertical stack: #35-cmzq-sgra-ladder + five hidden down-slides, one per step -->
 <section id=35-cmzq-sgra-ladder data-background-color="#000">
     <h4> What gas reaches Sgr&nbsp;A*? </h4>
     <img src="colloquium_assets/inflow_ladder.png" style="position:absolute; left:47px; top:92px; width:930px; height:590px; margin:0; border:0; max-width:none; max-height:none; background:none; box-shadow:none;">
@@ -2056,6 +2057,216 @@ across cosmic time.
         1e-3 at 10 pc lasting 3-5 Myr (Feng+ 2026).  So: does gas get there at all, and how?
         Radii for the MRI limit (~100 pc, the ring) and the horizon point (~10 R_s) are approximate placements.
     </aside>
+</section>
+<section id=35.1-sgra-ladder-gold class=ladsub data-background-color="#000">
+    <!-- (2026-10-23) Adam: "add a subslide (down-direction) with explanations unpacking each of the steps for
+         35-cmzq-sgra-ladder. I need to learn some of this myself; bar lanes are easy (what I've already presented in
+         previous slides), blue lines are mostly simulation-based right now but are exactly the zone we're hoping to
+         empirically probe w/3D data. What's the origin of the red data points? I got it wrong and need to be sure I have
+         it right, with evidence backing. the subslides can be a little more figure-dense and text-rich; I don't expect
+         to show them."  Five down-slides, one per step: gold, blue (magnetic), blue (feedback), red (Bondi), red (horizon).
+         Every number was checked against the paper's own text (arXiv source or the journal HTML); figures are the papers'
+         own, in assets/sgra_ladder/. -->
+    <style>
+      .ladsub h4 { margin:4px 0 0 0; font-size:30px; }
+      .ladsub .lcap { position:absolute; margin:0; font-size:12.5px; line-height:1.25; color:#9aa3b5; text-align:left; }
+      .ladsub .cmzq-text { font-size:16px; line-height:1.3; color:#e8ecf4; }
+      .ladsub .cmzq-text ul { padding-left:18px; margin:2px 0 8px 0; }
+      .ladsub .cmzq-text li { margin-bottom:4px; }
+      .ladsub .lon { border-left:4px solid; padding:5px 10px; background:rgba(255,255,255,.07); border-radius:4px; }
+      .ladsub b.g { color:#ffd166; } .ladsub b.b { color:#7fdbff; } .ladsub b.r { color:#ff7b6b; }
+    </style>
+    <h4>Bar lanes &rarr; CMZ: ~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></h4>
+    <div class=cmzq-card style="left:10px; top:66px; width:289px; height:291px;"><img src="assets/sgra_ladder/sormanibarnes2019_fig1.jpg" style="left:4px; top:4px; width:280.6px; height:283.0px;"></div>
+    <p class=lcap style="left:10px; top:360px; width:289px;">SB19 Fig. 1: CO of the near-side (blue) and far-side (red) dust lanes; top l&ndash;b (gives the mass), bottom l&ndash;v</p>
+    <div class=cmzq-card style="left:307px; top:66px; width:297px; height:291px;"><img src="assets/sgra_ladder/sormanibarnes2019_fig3.png" style="left:4px; top:4px; width:288.8px; height:283.0px;"></div>
+    <p class=lcap style="left:307px; top:360px; width:297px;">SB19 Fig. 3: inflow over the next 16&nbsp;Myr from the gas now on the lanes: instantaneous (top), cumulative (bottom)</p>
+    <div class=cmzq-card style="left:613px; top:66px; width:375px; height:291px;"><img src="assets/sgra_ladder/hatchfield2021_fig3.png" style="left:4px; top:4px; width:366.7px; height:283.0px;"></div>
+    <p class=lcap style="left:613px; top:360px; width:375px;">Hatchfield+ 2021 Fig. 3: simulation, face-on: lane gas that misses the CMZ (&ldquo;overshooting&rdquo;) and hits the far lane</p>
+    <div class=cmzq-text style="left:14px; top:398px; width:486px;">
+        <b class=g>Sormani &amp; Barnes 2019: 2.7 (+1.5/&minus;1.7)&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></b> &mdash; the circle
+        <ul>
+            <li> The two bar dust lanes, picked out of the Dame+ 2001 <sup>12</sup>CO cube in (l,&nbsp;b,&nbsp;v):
+                near side (the &ldquo;connecting arm&rdquo;) and far side
+            <li> Mass from CO &times; X<sub>CO</sub>.  A geometric bar model (bar angle &phi; = 15&ndash;30&deg;) turns each
+                lane's (l,&nbsp;v) into a position and an inward speed
+            <li> &#7744; = mass &divide; time to reach the CMZ (R = 300&nbsp;pc): near 1.2, far 1.5 &rarr; 2.7, averaged
+                over the next ~10&nbsp;Myr.  The instantaneous rate swings by a factor of a few (episodic)
+            <li> Errors: X<sub>CO</sub> and &phi;
+        </ul>
+    </div>
+    <div class=cmzq-text style="left:524px; top:398px; width:486px;">
+        <b class=g>Hatchfield+ 2021: 0.8 &plusmn; 0.6&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></b> &mdash; the square
+        <ul>
+            <li> Not all lane gas lands on the first pass: some overshoots the CMZ and hits the far lane.  SB19 flagged
+                this as an unknown factor f&nbsp;&le;&nbsp;1
+            <li> Tracer particles in an Arepo bar simulation: 30&nbsp;&plusmn;&nbsp;12% accretes on first approach; most
+                of the rest arrives within ~25&nbsp;Myr
+            <li> 2.7 &times; 0.30 = 0.8: an observed mass flux times a simulated efficiency
+        </ul>
+        <div class=lon style="border-color:#ffd166;"><b class=g>On the ladder:</b> both points at the CMZ edge
+            (~200&nbsp;pc).  The only step where the rate comes from tracing the inflowing gas itself.</div>
+    </div>
+    <div class=smaller3 style="position:absolute; left:14px; bottom:6px; text-align:left; color:#9aa3b5;"><a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.1213S/abstract">Sormani &amp; Barnes 2019</a>; <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...922...79H/abstract">Hatchfield+ 2021</a>; CO: Dame+ 2001</div>
+    <aside class=notes>
+        Bar lanes: Sormani &amp; Barnes 2019 measured the mass on the two dust lanes in CO and used a bar model to get the
+        inward speed: 2.7 Msun/yr.  Hatchfield+ 2021 found in simulations that only ~30% lands on the first pass: 0.8.
+    </aside>
+</section>
+<section id=35.2-sgra-ladder-mri class=ladsub data-background-color="#000">
+    <h4>CMZ ring &rarr; center: magnetic transport (simulation)</h4>
+    <div class=cmzq-card style="left:10px; top:66px; width:608px; height:330px;"><img src="assets/sgra_ladder/tress2024_fig6.jpg" style="left:4px; top:4px; width:600.0px; height:321.9px;"></div>
+    <p class=lcap style="left:10px; top:399px; width:608px;">Tress+ 2024 Fig. 6: MHD run, central &plusmn;0.5&nbsp;kpc, t&nbsp;=&nbsp;147&ndash;293&nbsp;Myr: the empty inside of the ring fills with gas</p>
+    <div class=cmzq-card style="left:10px; top:432px; width:210px; height:270px;"><img src="assets/sgra_ladder/tress2024_fig23.png" style="left:4px; top:4px; width:202.4px; height:262.0px;"></div>
+    <p class=lcap style="left:10px; top:705px; width:210px;">Fig. 23: inflow into R&nbsp;&lt;&nbsp;100&nbsp;pc: MHD (solid) vs. no field (dashed)</p>
+    <div class=cmzq-card style="left:229px; top:432px; width:215px; height:270px;"><img src="assets/sgra_ladder/tress2024_figB1_resolution.png" style="left:4px; top:4px; width:207.4px; height:262.0px;"></div>
+    <p class=lcap style="left:229px; top:705px; width:215px;">Fig. B1: same, at cell mass 10<sup>3</sup>, 10<sup>2</sup>, 10&nbsp;M<sub>&#9737;</sub> (bottom)</p>
+    <div class=cmzq-text style="left:634px; top:70px; width:380px;">
+        <b class=b>Tress+ 2024: the magneto-rotational instability (MRI) moves gas in from the ring</b>
+        <ul>
+            <li> MHD of gas in a Milky Way bar potential (Arepo).  No self-gravity, star formation or feedback
+            <li> The bar fills the CMZ ring at ~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup>, with or without a field
+            <li> Inside the ring only the MHD run has inflow: magnetic (Maxwell) stresses carry angular momentum out and
+                gas drifts in at <b>0.01&ndash;0.1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></b>.  Without a field it is ~zero: all the gas
+                stays in the ring
+            <li> Not converged: each 10&times; finer cell mass cuts the inflow ~5&ndash;10&times; (Fig. B1).  The
+                authors call 0.01&ndash;0.1 an <b>upper limit</b>
+        </ul>
+    </div>
+    <div class=cmzq-text style="left:540px; top:432px; width:474px;">
+        <b class=b>What 3D data can test here</b>
+        <ul>
+            <li> Predicted, and observable: the ordered field follows the gas flow; B &asymp; 100&nbsp;&mu;G
+                (n/10<sup>3</sup>&nbsp;cm<sup>&minus;3</sup>)<sup>0.33</sup>; a slow radial drift of gas inside the ring
+            <li> &#7744;(R) = 2&pi;R&nbsp;&Sigma;(R)&nbsp;v<sub>R</sub>(R) needs face-on &Sigma; and v<sub>R</sub>.  Seen
+                edge-on, the line-of-sight velocity mixes rotation and inflow; positions along the line of sight separate
+                them
+        </ul>
+        <div class=lon style="border-color:#7fdbff;"><b class=b>On the ladder:</b> the pale bar at ~100&nbsp;pc with the
+            downward arrow.</div>
+    </div>
+    <div class=smaller3 style="position:absolute; left:14px; bottom:6px; text-align:left; color:#9aa3b5;"><a href="https://ui.adsabs.harvard.edu/abs/2024A%26A...691A.303T/abstract">Tress+ 2024</a></div>
+    <aside class=notes>
+        Blue, magnetic: Tress+ 2024 MHD simulations.  The MRI drives 0.01-0.1 Msun/yr from the ring inward; with no field,
+        nothing gets in.  It drops with resolution, so it is an upper limit.
+    </aside>
+</section>
+<section id=35.3-sgra-ladder-feedback class=ladsub data-background-color="#000">
+    <h4>CMZ &rarr; CND &rarr; 1&nbsp;pc: stellar feedback (simulation)</h4>
+    <div class=cmzq-card style="left:10px; top:66px; width:598px; height:397px;"><img src="assets/sgra_ladder/feng2026_fig26.png" style="left:4px; top:4px; width:590.0px; height:388.9px;"></div>
+    <p class=lcap style="left:10px; top:466px; width:598px;">Feng+ 2026 Fig. 26: time-averaged inflow vs. radius (red: SN + radiation; blue: SN only; black: no feedback), with the observational estimates (dots) and Tress+ 2020 / 2024 (stars, squares)</p>
+    <div class=cmzq-card style="left:760px; top:420px; width:259px; height:298px;"><img src="assets/sgra_ladder/feng2026_fig27_resolution.png" style="left:4px; top:4px; width:250.8px; height:290.0px;"></div>
+    <p class=lcap style="left:760px; top:721px; width:254px;">Fig. 27: lower resolution (pale) &rarr; more inflow</p>
+    <div class=cmzq-text style="left:624px; top:70px; width:390px;">
+        <b class=b>Feng+ 2026: supernovae + radiation feedback push gas inward</b>
+        <ul>
+            <li> Arepo: Milky Way bar potential, self-gravity, star formation, supernovae, on-the-fly radiative transfer;
+                cells &le;&nbsp;20&nbsp;M<sub>&#9737;</sub> inside 100&nbsp;pc
+            <li> Time-averaged inflow falls steeply inward: 5&times;10<sup>&minus;3</sup> (100&nbsp;pc) &rarr;
+                2&times;10<sup>&minus;4</sup> (10&nbsp;pc) &rarr; 10<sup>&minus;6</sup>&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup> (1&nbsp;pc)
+            <li> Two parts: a smooth, viscous-disk-like drift from feedback-driven turbulence, plus clouds falling in:
+                bursts up to 10<sup>&minus;3</sup>&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup> for 3&ndash;5&nbsp;Myr at 10&nbsp;pc
+            <li> No feedback &rarr; almost no inflow inside 100&nbsp;pc
+            <li> Higher resolution &rarr; less inflow (Fig. 27): <b>upper limits</b>
+        </ul>
+    </div>
+    <div class=cmzq-text style="left:14px; top:504px; width:728px;">
+        <b class=b>The data here are few and model-based:</b> ~10<sup>&minus;2</sup>&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup> from
+        cloud kinematics fit with an accretion-disk model (<a href="https://ui.adsabs.harvard.edu/abs/1993A%26A...269..169V/abstract">von Linden+ 1993</a>; blue dot), and
+        10<sup>&minus;4</sup>&ndash;10<sup>&minus;3</sup> in the CND from disk models of colliding clouds and from CS
+        streamers (<a href="https://ui.adsabs.harvard.edu/abs/2001A%26A...367...72V/abstract">Vollmer &amp; Duschl 2001</a>, <a href="https://ui.adsabs.harvard.edu/abs/2002A%26A...388..128V/abstract">2002</a>; <a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...847....3H/abstract">Hsieh+ 2017</a>; green dot).  Feng's curves lie below
+        both.  Measuring &Sigma; and v<sub>R</sub> in 3D, ring to CND, is the test.
+        <div class=lon style="border-color:#7fdbff; margin-top:8px;"><b class=b>On the ladder:</b> the open circles and
+            line (the 10&nbsp;pc point is drawn at 10<sup>&minus;4</sup>; the paper says ~2&times;10<sup>&minus;4</sup>);
+            the dashed arrow is the 3&ndash;5&nbsp;Myr bursts.</div>
+    </div>
+    <div class=smaller3 style="position:absolute; left:14px; bottom:6px; text-align:left; color:#9aa3b5;"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2605.16192/abstract">Feng+ 2026</a>; <a href="https://ui.adsabs.harvard.edu/abs/1993A%26A...269..169V/abstract">von Linden+ 1993</a>; <a href="https://ui.adsabs.harvard.edu/abs/2001A%26A...367...72V/abstract">Vollmer &amp; Duschl 2001</a>, <a href="https://ui.adsabs.harvard.edu/abs/2002A%26A...388..128V/abstract">2002</a>; <a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...847....3H/abstract">Hsieh+ 2017</a></div>
+    <aside class=notes>
+        Blue, feedback: Feng+ 2026.  Supernovae and radiation stir the gas and it drifts in, 5e-3 at 100 pc down to 1e-6
+        at 1 pc, with bursts of 1e-3 at 10 pc.  Also an upper limit.  The few observational estimates here are older and
+        model-based; this is the zone a 3D map of the CMZ can measure.
+    </aside>
+</section>
+<section id=35.4-sgra-ladder-bondi class=ladsub data-background-color="#000">
+    <h4>The red diamond: Bondi capture, from Chandra</h4>
+    <div class=cmzq-card style="left:10px; top:66px; width:309px; height:276px;"><img src="assets/sgra_ladder/wang2013_fig1a.jpg" style="left:4px; top:4px; width:300.8px; height:268.0px;"></div>
+    <p class=lcap style="left:10px; top:345px; width:309px;">Wang+ 2013 Fig. 1a: Chandra 1&ndash;9&nbsp;keV; dashed circle: their Bondi radius (4&Prime;)</p>
+    <div class=cmzq-card style="left:327px; top:66px; width:379px; height:276px;"><img src="assets/sgra_ladder/baganoff2003_fig12.png" style="left:4px; top:4px; width:370.7px; height:268.0px;"></div>
+    <p class=lcap style="left:327px; top:345px; width:379px;">Baganoff+ 2003 Fig. 12: spectrum of the diffuse gas within 10&Prime;: hot plasma + Fe line</p>
+    <div class=cmzq-card style="left:715px; top:66px; width:276px; height:276px;"><img src="assets/sgra_ladder/ressler2018_fig6.jpg" style="left:4px; top:4px; width:268.0px; height:268.0px;"></div>
+    <p class=lcap style="left:715px; top:345px; width:276px;">Ressler+ 2018 Fig. 6: simulated winds of the ~30 Wolf&ndash;Rayet stars, 0.5&nbsp;pc across</p>
+    <div class=cmzq-card style="left:670px; top:432px; width:344px; height:252px;"><img src="assets/sgra_ladder/ressler2018_fig12.png" style="left:4px; top:4px; width:336.0px; height:243.9px;"></div>
+    <p class=lcap style="left:670px; top:687px; width:344px;">Ressler+ 2018 Fig. 12: inflow (grey) and outflow (green) rates vs. radius in that simulation</p>
+    <div class=cmzq-text style="left:14px; top:388px; width:640px;">
+        <b class=r>Measured (Baganoff+ 2003, Chandra):</b> hot plasma, kT &asymp; 1.3&nbsp;keV and
+        n<sub>e</sub> &asymp; 26&nbsp;cm<sup>&minus;3</sup>, within ~1.5&Prime; of Sgr&nbsp;A*.
+        <br><b class=r>Derived:</b> Bondi (1952): gas inside R<sub>B</sub> = 2GM/c<sub>s</sub><sup>2</sup> is captured.
+        c<sub>s</sub> &asymp; 550&nbsp;km/s &rarr; R<sub>B</sub> &asymp; 0.07&nbsp;pc (they adopt 0.06).
+        &#7744;<sub>B</sub> &prop; M<sup>2</sup>&rho;/c<sub>s</sub><sup>3</sup> &asymp; 10<sup>&minus;6</sup>&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup>,
+        for the 2003 mass, 2.6&times;10<sup>6</sup>&nbsp;M<sub>&#9737;</sub>.  At today's 4.3&times;10<sup>6</sup>: ~3&times;10<sup>&minus;6</sup>
+        (and R<sub>B</sub>&nbsp;&asymp;&nbsp;0.1&nbsp;pc); <a href="https://ui.adsabs.harvard.edu/abs/2013Sci...341..981W/abstract">Wang+ 2013</a> (3&nbsp;Ms Chandra) quote ~10<sup>&minus;5</sup>.
+        <br><b class=r>So:</b> an estimate of what Sgr&nbsp;A* <i>could</i> capture, not a measured inflow; Baganoff call
+        it a lower limit (cold gas not counted).
+        <br><b class=r>Whose gas:</b> mostly shocked winds of the ~30 Wolf&ndash;Rayet stars in the central parsec
+        (<a href="https://ui.adsabs.harvard.edu/abs/2008MNRAS.383..458C/abstract">Cuadra+ 2008</a>; <a href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.478.3544R/abstract">Ressler+ 2018</a> reproduce the Chandra emission with them) &mdash; not the molecular gas
+        coming down from the CMZ.
+        <br><b class=r>How much gets in:</b> Wang+ 2013: a flat density profile means outflow nearly balances inflow;
+        &lesssim;1% of the captured gas reaches the hole.  Ressler+ 2018 extrapolate to a few&nbsp;&times;10<sup>&minus;8</sup> at the horizon.
+        <div class=lon style="border-color:#ff7b6b; margin-top:8px;"><b class=r>On the ladder:</b> the diamond
+            (10<sup>&minus;6</sup> at 0.055&nbsp;pc) is Baganoff's number at the 2003 mass, drawn filled but model-based;
+            today ~3&times;10<sup>&minus;6</sup>&ndash;10<sup>&minus;5</sup> at ~0.1&nbsp;pc.</div>
+    </div>
+    <div class=smaller3 style="position:absolute; left:14px; bottom:6px; text-align:left; color:#9aa3b5;"><a href="https://ui.adsabs.harvard.edu/abs/2003ApJ...591..891B/abstract">Baganoff+ 2003</a>; <a href="https://ui.adsabs.harvard.edu/abs/2013Sci...341..981W/abstract">Wang+ 2013</a>; <a href="https://ui.adsabs.harvard.edu/abs/2008MNRAS.383..458C/abstract">Cuadra+ 2008</a>; <a href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.478.3544R/abstract">Ressler+ 2018</a></div>
+    <aside class=notes>
+        Red diamond: not EHT.  Chandra sees hot gas around Sgr A* (Baganoff+ 2003); the Bondi formula says Sgr A* could
+        capture ~1e-6 Msun/yr of it (~3e-6 with today's mass, ~1e-5 in Wang+ 2013).  The gas is mostly Wolf-Rayet wind
+        material, and less than ~1% of it gets in.
+    </aside>
+</section>
+<section id=35.5-sgra-ladder-horizon class=ladsub data-background-color="#000">
+    <h4>The red bar: Faraday rotation, not the EHT</h4>
+    <div class=cmzq-card style="left:10px; top:66px; width:383px; height:258px;"><img src="assets/sgra_ladder/marrone2007_fig1.png" style="left:4px; top:4px; width:375.5px; height:250.0px;"></div>
+    <p class=lcap style="left:10px; top:327px; width:383px;">Marrone+ 2007 Fig. 1: polarization angle vs. &lambda;<sup>2</sup>, SMA 227 + 343&nbsp;GHz; slope = RM</p>
+    <div class=cmzq-card style="left:402px; top:66px; width:323px; height:258px;"><img src="assets/sgra_ladder/bower2018_fig10.png" style="left:4px; top:4px; width:314.8px; height:250.0px;"></div>
+    <p class=lcap style="left:402px; top:327px; width:323px;">Bower+ 2018 Fig. 10: |RM| over 2002&ndash;2016 (BIMA, SMA, ALMA)</p>
+    <div class=cmzq-card style="left:734px; top:66px; width:221px; height:258px;"><img src="assets/sgra_ladder/ressler2020apjl_fig6.png" style="left:4px; top:4px; width:213.1px; height:250.0px;"></div>
+    <p class=lcap style="left:734px; top:327px; width:221px;">Ressler+ 2020 Fig. 6: inflow (top), outflow (bottom) in 10<sup>&minus;8</sup>&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup> vs. radius (r<sub>g</sub>): WR winds &rarr; MHD &rarr; GRMHD</p>
+    <div class=cmzq-card style="left:600px; top:400px; width:414px; height:154px;"><img src="assets/sgra_ladder/eht2022paperV_fig16_mdotrow.jpg" style="left:4px; top:4px; width:406.0px; height:146.5px;"></div>
+    <p class=lcap style="left:600px; top:557px; width:414px;">EHT 2022 Paper V Fig. 16 (top): horizon &#7744; of the GRMHD models vs. spin, normalized to the 230&nbsp;GHz flux</p>
+    <div class=cmzq-text style="left:14px; top:368px; width:572px;">
+        <b class=r>Measured (Marrone+ 2007, SMA):</b> the polarization angle of Sgr&nbsp;A* rotates &prop;
+        &lambda;<sup>2</sup>: RM = (&minus;5.6&nbsp;&plusmn;&nbsp;0.7)&times;10<sup>5</sup>&nbsp;rad&nbsp;m<sup>&minus;2</sup>,
+        constant over 10 epochs.
+        <br><b class=r>Derived:</b> RM &prop; &int;n<sub>e</sub>B<sub>&parallel;</sub>dl through the accretion flow,
+        from R<sub>B</sub> in to r<sub>in</sub>, where electrons turn relativistic.  For n &prop; r<sup>&minus;&beta;</sup>
+        and an equipartition field:
+        <ul>
+            <li> upper limit 5&times;10<sup>&minus;8</sup>&ndash;2&times;10<sup>&minus;7</sup>&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup> for
+                r<sub>in</sub> = 30&ndash;100&nbsp;R<sub>S</sub>, if the field is ordered and radial.  A weaker field
+                (fraction &epsilon;) raises it by &epsilon;<sup>&minus;2/3</sup>
+            <li> lower limit 2&times;10<sup>&minus;9</sup>, even for a weak, tangled or toroidal field
+        </ul>
+        <b class=r>Since:</b> ALMA mean RM &asymp; &minus;5&times;10<sup>5</sup>, as for ~20&nbsp;yr (it varies on hours&ndash;months) &rarr;
+        &#7744; &asymp; 10<sup>&minus;8</sup> (<a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...868..101B/abstract">Bower+ 2018</a>).  EHT &ldquo;best-bet&rdquo; models (MAD; pass every constraint
+        but variability): (5.2&ndash;9.5)&times;10<sup>&minus;9</sup> (<a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...930L..16E/abstract">EHT 2022 Paper V</a>).  Wind-fed GRMHD: &asymp;&nbsp;10<sup>&minus;8</sup>,
+        magnetically arrested (<a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...896L...6R/abstract">Ressler+ 2020</a>).
+    </div>
+    <div class=cmzq-text style="left:600px; top:600px; width:410px; font-size:15px;">
+        <div class=lon style="border-color:#ff7b6b;"><b class=r>On the ladder:</b> the bar (2&times;10<sup>&minus;9</sup>&ndash;2&times;10<sup>&minus;7</sup>)
+            is Marrone's range, drawn at ~10&nbsp;R<sub>S</sub>: the RM constrains the inner flow (&lesssim;100&nbsp;R<sub>S</sub>),
+            so &ldquo;event horizon&rdquo; is approximate.  The EHT values fall inside it.
+            <br>Bondi &rarr; horizon: ~10<sup>&minus;6</sup>&ndash;10<sup>&minus;5</sup> could be captured;
+            ~10<sup>&minus;8</sup> gets in.</div>
+    </div>
+    <div class=smaller3 style="position:absolute; left:14px; bottom:6px; text-align:left; color:#9aa3b5;"><a href="https://ui.adsabs.harvard.edu/abs/2007ApJ...654L..57M/abstract">Marrone+ 2007</a>; <a href="https://ui.adsabs.harvard.edu/abs/2018ApJ...868..101B/abstract">Bower+ 2018</a>; <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...930L..16E/abstract">EHT 2022 Paper V</a>; <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...896L...6R/abstract">Ressler+ 2020</a></div>
+    <aside class=notes>
+        Red bar: not EHT either.  It is Faraday rotation measured with the SMA (Marrone+ 2007) turned into an accretion
+        rate with a hot-flow model: between 2e-9 and 2e-7.  Later ALMA RM (Bower+ 2018), the EHT models, and wind-fed
+        GRMHD all land near 1e-8.  Say: at the Bondi radius, Chandra's hot gas (mostly stellar-wind material) implies
+        Sgr A* could capture ~1e-6 to 1e-5 Msun/yr; Faraday rotation and EHT-calibrated models put what reaches the
+        horizon near 1e-8 -- about a percent or less of the Bondi rate.
+    </aside>
+</section>
 </section>
 
 <section id=36-cmzq-sgra-pipes>
@@ -2394,11 +2605,14 @@ across cosmic time.
     <div class=cmzq-card style="left:12px; top:86px; width:1000px; height:585px;">
         <img src="colloquium_assets/sfr_obs_vs_pred.png" style="left:6px; top:6px; width:988px; height:573px;">
     </div>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:4%; text-align:left;">
-        Observed: <a href="https://ui.adsabs.harvard.edu/abs/2023ASPC..534...83H/abstract">Henshaw+ 2023</a> (PPVII) Table 2 &middot;
-        predicted: <a href="https://ui.adsabs.harvard.edu/abs/2013MNRAS.429..987L/abstract">Longmore+ 2013</a> Table 2, from
-        <a href="https://ui.adsabs.harvard.edu/abs/2012ApJ...745..190L/abstract">Lada+ 2012</a> and
-        <a href="https://ui.adsabs.harvard.edu/abs/2012ApJ...745...69K/abstract">Krumholz, Dekel &amp; McKee 2012</a>
+    <!-- (2026-10-23) Adam: "make the text on 44-sfr-obs-vs-pred look like 54-cmz-wide: minimalist": the figure re-rendered
+         with #cmz-wide's trims (make_sfr_obs_vs_pred.py) and the credit cut to #cmz-wide's one line (was "Observed:
+         Henshaw+ 2023 (PPVII) Table 2 . predicted: Longmore+ 2013 Table 2, from Lada+ 2012 and Krumholz, Dekel & McKee 2012"). -->
+    <div class=smaller3 style="position:absolute; bottom:6px; right:12px; text-align:right;">
+        <a href="https://ui.adsabs.harvard.edu/abs/2023ASPC..534...83H/abstract">Henshaw+ 2023</a>;
+        <a href="https://ui.adsabs.harvard.edu/abs/2013MNRAS.429..987L/abstract">Longmore+ 2013</a>
+        (<a href="https://ui.adsabs.harvard.edu/abs/2012ApJ...745..190L/abstract">Lada+ 2012</a>,
+        <a href="https://ui.adsabs.harvard.edu/abs/2012ApJ...745...69K/abstract">Krumholz+ 2012</a>)
     </div>
     <aside class=notes>
         Blue: source counts, from the Henshaw+23 compilation (YSOs 0.05-0.08 after contamination corrections; masers +
@@ -3633,9 +3847,20 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
     <img style="width:150px; position: absolute; bottom:5%; right:0px;" src="assets/Savannah/SavannahGramze.jpeg">
     <!-- build (2026-10-16, from gc_ice_2025.html #cloudc2): CO-ice column vs extinction, cloud c & D and the 3 kpc arm
          filament against the CO/H2 abundance curves; black points Smith+ 2025 -->
-    <div class="fragment cc1-cmp" style="position:absolute; left:514px; top:126px; width:500px; height:411px; z-index:40; background:#fff; border-radius:8px; box-shadow:0 2px 14px rgba(0,0,0,0.6);">
+    <div class="fragment cc1-cmp" data-fragment-index=0 style="position:absolute; left:514px; top:126px; width:500px; height:411px; z-index:40; background:#fff; border-radius:8px; box-shadow:0 2px 14px rgba(0,0,0,0.6);">
         <img src="assets/brick/ice_column_vs_f182_cloudcomparison.png" style="position:absolute; left:6px; top:6px; width:488px; height:381.3px; margin:0; border:0; max-width:none; max-height:none; background:none; box-shadow:none;">
         <div style="position:absolute; right:10px; bottom:6px; font-size:14px; color:#333;">Smith+ 2025: 27 data points</div>
+        <!-- (2026-10-23) Adam: "add a build to 71-cloudc1/0 that shows Z (capital Z) as an arrow pointing from dash-dotted
+             line to dashed line in the legend ... the cue for me to say "Higher CO per AV looks like metallicity rise"".
+             Straight, vertical arrow (Adam: "vertical, not curved - this is supposed to be linear") from the height of the
+             CO/H2 = 1e-4 (dash-dotted) legend sample up to the 5e-4 (dashed) one, just left of the legend frame. -->
+        <svg class=fragment data-fragment-index=1 style="position:absolute; left:0; top:0; width:500px; height:411px; pointer-events:none;" viewBox="0 0 500 411">
+          <defs>
+            <marker id="cc1zah" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L0,8 L10,4 z" fill="#c43c3c"/></marker>
+          </defs>
+          <line x1="291" y1="331" x2="291" y2="295.5" stroke="#c43c3c" stroke-width="2.5" marker-end="url(#cc1zah)"/>
+          <text x="284" y="314" fill="#c43c3c" font-size="26" font-weight="bold" text-anchor="end" dominant-baseline="middle">Z</text>
+        </svg>
     </div>
 </section>
 
@@ -3762,15 +3987,55 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
          style="position:absolute; left:20px; top:22px; width:300px; height:243.7px; margin:0; border:0; max-width:none; max-height:none;">
     <div data-id="cvtitle" style="position:absolute; left:372px; top:30px; width:635px; text-align:left; font-size:27px; line-height:1.45;">
         Slope changes &rightarrow; metallicity differences.
-        <br>Both CMZ &harr; bar &amp; within CMZ
-        <div style="margin-top:20px;">Chemistry: CO/Water ratio?<br>
+        <br><span class="fragment cv4-bar" data-fragment-index=0><b>Both CMZ &harr; bar</b></span>
+        <span class="fragment cv4-within" data-fragment-index=1><b>&amp; within CMZ</b></span>
+        <div class="fragment cv4-chem" data-fragment-index=2 style="margin-top:20px;">Chemistry: CO/Water ratio?<br>
         OCN<sup>&minus;</sup> / Ammonium salt abundance?</div>
-        <div style="margin-top:20px;">TBD: Ashby+ NIRSPEC 6927</div>
+        <div class=fragment data-fragment-index=3 style="margin-top:20px;">TBD: Ashby+ NIRSPEC 6927</div>
     </div>
     <img data-id="map-a" src="assets/Savannah/icevar_avslope_cloudA.png"
          style="position:absolute; left:25px; top:275px; width:370px;">
     <img data-id="map-cd" src="assets/Savannah/icevar_avslope_cloudCD.png"
          style="position:absolute; left:440px; top:275px; width:486px;">
+    <!-- (2026-10-23) Adam's builds: arrival = only "Slope changes -> metallicity differences" (and the plots).  (The 73-74
+         dimming squares over the A_V-vs-slope panels were tried and removed: "distracting".)
+         0: boxes on both plots, slope -0.75..-0.5 shaded black "foreground-like", slope <= -0.75 "CMZ-like" in cyan (Adam: "cyan highlighting (maybe 10-20% alpha)"); text "Both
+            CMZ <-> bar" in bold.
+         1: the boxes go away; arrows from slope -1.15 to -0.9 at A_V = 30 on both plots (Adam wrote -1.5, which is off both
+            axes -- they start at -1.21 -- so read as -1.15, the left end of the CMZ points); "& within CMZ" in bold, and
+            "Both CMZ <-> bar" back to normal weight.
+         2: chemistry block.  3: TBD block. -->
+    <style>
+      #\37 5-cloudvar4:has(.cv4-within.visible) .cv4-bar b { font-weight:normal; }
+      /* Adam: "bolding around "& within CMZ" should fade out on 75-cloudvar4/2" */
+      #\37 5-cloudvar4:has(.cv4-chem.visible) .cv4-within b { font-weight:normal; }
+      #\37 5-cloudvar4 .cv4-tag { position:absolute; background:#000; color:#fff; font-weight:bold; font-size:17px; line-height:1.3; padding:0 7px; border-radius:4px; white-space:nowrap; }
+    </style>
+    <div class="fragment fade-in-then-out" data-fragment-index=0>
+      <svg style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none;" viewBox="0 0 1024 768">
+        <rect x="117" y="319" width="120.2" height="266.7" fill="rgba(0,229,255,0.15)" stroke="#00acc1" stroke-width="2.5"/>
+        <rect x="237.2" y="319" width="65.6" height="266.7" fill="rgba(0,0,0,0.3)" stroke="#000" stroke-width="2.5"/>
+        <rect x="566.3" y="304" width="163.7" height="273.3" fill="rgba(0,229,255,0.15)" stroke="#00acc1" stroke-width="2.5"/>
+        <rect x="730" y="304" width="90.3" height="273.3" fill="rgba(0,0,0,0.3)" stroke="#000" stroke-width="2.5"/>
+      </svg>
+      <div class=cv4-tag style="left:117px; top:295px; background:#00838f;">CMZ-like</div>
+      <div class=cv4-tag style="left:237px; top:295px;">foreground-like</div>
+      <div class=cv4-tag style="left:566px; top:280px; background:#00838f;">CMZ-like</div>
+      <div class=cv4-tag style="left:730px; top:280px;">foreground-like</div>
+    </div>
+    <svg class=fragment data-fragment-index=1 style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none;" viewBox="0 0 1024 768">
+      <!-- (2026-10-23) Adam: "arrows should be green to blue; in the left plot, the right arrow should be a little further
+           to the right" -> left plot now -1.15 .. -0.85 (x 211.3); right plot unchanged (-1.15 .. -0.9).  Gradients are
+           userSpaceOnUse: a horizontal line's bounding box has zero height, so an objectBoundingBox gradient never paints. -->
+      <defs>
+        <marker id="cv4ahg" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L0,6 L8,3 z" fill="#10a030"/></marker>
+        <marker id="cv4ahb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L0,6 L8,3 z" fill="#1f4fe0"/></marker>
+        <linearGradient id="cv4gA" gradientUnits="userSpaceOnUse" x1="132.9" y1="0" x2="211.3" y2="0"><stop offset="0" stop-color="#10a030"/><stop offset="1" stop-color="#1f4fe0"/></linearGradient>
+        <linearGradient id="cv4gCD" gradientUnits="userSpaceOnUse" x1="586.0" y1="0" x2="676.1" y2="0"><stop offset="0" stop-color="#10a030"/><stop offset="1" stop-color="#1f4fe0"/></linearGradient>
+      </defs>
+      <line x1="132.9" y1="353.6" x2="211.3" y2="353.6" stroke="url(#cv4gA)" stroke-width="3" marker-start="url(#cv4ahg)" marker-end="url(#cv4ahb)"/>
+      <line x1="586.0" y1="340.1" x2="676.1" y2="340.1" stroke="url(#cv4gCD)" stroke-width="3" marker-start="url(#cv4ahg)" marker-end="url(#cv4ahb)"/>
+    </svg>
     <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
     <aside class=notes>Plots first: x is the ice-absorption slope, y is the foreground A_V.  The points spread in slope at nearly the
@@ -7056,6 +7321,44 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
       { src: 'slideautostart.js', async: true },
         ],
       });
+    </script>
+
+    <script>
+      /* (2026-10-23) 's' = reveal's own speaker view.  notes-pointer.js (the deferred CDN script above) re-binds 's'
+         to ITS notes.html, fetched from jsDelivr -- and jsDelivr serves .html as text/plain, so the speaker window
+         showed the page source as raw text.  Re-bind 's' to the built-in notes plugin once both have registered
+         (the deferred script has run by DOMContentLoaded; the plugin by 'ready').  Not inside the speaker view's
+         slide previews (?receiver), which never had an 's'.
+         'A' (laser pointer) pressed in the speaker view: that notes.html also passed the pointer from the current-slide
+         preview on to the main window.  The built-in speaker view does not, so the preview does it itself, below. */
+      (function(){
+        var receiver = /receiver/i.test(window.location.search);
+        function useBuiltinSpeakerView(){
+          Reveal.addKeyBinding({ keyCode: 83, key: 'S', description: 'Speaker notes view' },
+                               function(){ Reveal.getPlugin('notes').open(); });
+        }
+        function arm(){ if (Reveal.isReady()) useBuiltinSpeakerView(); else Reveal.on('ready', useBuiltinSpeakerView); }
+        if (!receiver) {
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arm); else arm();
+        }
+        // In the current-slide preview (the one with postMessageEvents), notes-pointer.js posts
+        // {namespace:'reveal', type:'point', x, y, state} to the speaker window; hand each one to the main deck,
+        // the speaker window's opener.  Same origin when served over http; from file:// there is no relay.
+        if (receiver && /postMessageEvents=true/.test(window.location.search) && window.parent !== window) {
+          try {
+            var sv = window.parent;
+            if (sv.__pointerRelay) sv.removeEventListener('message', sv.__pointerRelay);
+            sv.__pointerRelay = function(ev){
+              if (typeof ev.data !== 'string') return;
+              var d; try { d = JSON.parse(ev.data); } catch (_) { return; }
+              var main = sv.opener;
+              if (d && d.namespace === 'reveal' && d.type === 'point' && main && !main.closed && main.Reveal && main.Reveal.point)
+                main.Reveal.point(d.x, d.y, d.state);
+            };
+            sv.addEventListener('message', sv.__pointerRelay);
+          } catch (_) {}
+        }
+      })();
     </script>
 
     <script>

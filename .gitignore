@@ -14,3 +14,7 @@ hips/
 
 # team-slide inputs: downloaded headshots (colloquium_assets/make_team_mosaics.py); only the mosaics are published
 assets/teams/src/
+
+# dropbox_only/: media hosted from Dropbox, not GitHub (Adam, 2026-10-23).  The decks play the local copy when
+# served from this folder; for the github.io copy, add a Dropbox share link (?raw=1) as a second <source>.
+dropbox_only/

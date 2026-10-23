@@ -28,6 +28,18 @@
   background + JWST view: #wrapup-jwst-panner uses GCSpitzerLike_vvv_aces_hips (VVV Ks + IRAC 4.5 um as
   F212N/F480M stand-ins, x ACES 3 mm) under GCTreasury_radio_ACES_hips, which is transparent wherever
   JWST has no data.  Both go through the same local-first lookup.
+  (2026-10-23) three more, all off by default so the other decks' copies are unchanged:
+  ?tour=<JSON URL, relative to this page> replaces the release page's stop list, e.g.
+  jwst_gc_panner_tour_arches_sgrb2.json (make_jwst_gc_panner_tour.py) for #wrapup-jwst-panner.
+  ?dive=1 zooms about the first stop: it holds its place on screen and only slides to the center near
+  the end, instead of the view swinging across the field on the way in (which, for a stop far from the
+  opening center, flies over empty sky).
+  ?full=1 is for a full-bleed reveal background (data-background-iframe): no bar under the label, which
+  floats over the image instead (bottom left, clear of the Aladin logo), sized like 20 px slide text
+  (reveal's 1024x768 scaled to this window).
+  ?fovh0=<deg> caps the opening field's HEIGHT, so that the band of imagery (VVV/Spitzer covers b ~ -0.20
+  to +0.14) fills the window top to bottom whatever its aspect ratio: the opening width becomes
+  min(fov0, fovh0 x width/height).
 -->
 <style>
 :root { --bg:#05070c; --fg:#e6edf3; --muted:#9fb0c3; }
@@ -40,6 +52,11 @@ html, body { margin:0; height:100%; background:var(--bg); color:var(--fg); overf
   font-size:1.35rem; letter-spacing:.01em; }
 #tag b { color:#7ee2a8; }
 #tag span { color:var(--muted); font-variant-numeric:tabular-nums; }
+body.full #tag { background:none; border:0; right:auto;
+  padding:0 min(calc(100vw * 16 / 1024), calc(100vh * 16 / 768)) min(calc(100vw * 10 / 1024), calc(100vh * 10 / 768));
+  font-size:min(calc(100vw * 20 / 1024), calc(100vh * 20 / 768));
+  text-shadow:0 0 4px #000, 0 0 2px #000, 0 0 1px #000; }
+body.full #tag span { color:#d5dde8; }
 </style>
 </head><body>
 <div id=sky></div>
@@ -67,6 +84,11 @@ var RATE  = num('rate', 0);      // arcsec/s; 0 = use the tour's own rate
 var SHOWLABEL = Q.get('label') !== '0';
 var SURVEY = Q.get('survey');      // optional: a different HiPS than the tour's
 var OVERLAY = Q.get('overlay');    // optional: a second HiPS on top of it
+var TOURURL = Q.get('tour');       // optional: a stop list other than the release page's
+var DIVE = Q.get('dive') === '1';  // zoom about the first stop instead of sliding across to it
+if(Q.get('full') === '1'){ document.body.className = 'full'; }
+var FOVH0 = num('fovh0', 0);       // optional: cap on the opening field's height (deg)
+if(FOVH0 > 0){ FOV0 = Math.min(FOV0, FOVH0 * innerWidth / Math.max(1, innerHeight)); }
 
 // Fallback tour: the live file is authoritative, this is only so the slide still
 // does something if the fetch fails.  Center of the observed blocks.
@@ -128,9 +150,11 @@ function step(now){
   }
   if(phase==='zoom'){
     var u=Math.min(1,(now-t0)/1000/ZOOM), e=ease(u);
-    aladin.setFoV(FOV0*Math.pow(FOV1/FOV0, e));          // geometric: constant zoom rate
+    var fov=FOV0*Math.pow(FOV1/FOV0, e);                 // geometric: constant zoom rate
+    aladin.setFoV(fov);
     var tgt=TOUR.stops[leg] || TOUR.stops[0];
-    var p=slerp(startPos,[tgt.ra,tgt.dec],e);
+    // dive: the offset from the target shrinks with the field, so the target stays put on screen
+    var p=DIVE ? slerp([tgt.ra,tgt.dec],startPos,(fov-FOV1)/(FOV0-FOV1)) : slerp(startPos,[tgt.ra,tgt.dec],e);
     aladin.gotoRaDec(p[0],p[1]);
     say('the JWST Galactic Center Treasury Survey', p[0], p[1]);
     if(u>=1){ phase='pan'; along=0; }
@@ -173,7 +197,7 @@ function boot(){
       showLayersControl:false, showFullscreenControl:false, showCooGridControl:false,
       showProjectionControl:false, showZoomControl:false, showGotoControl:false,
       showSimbadPointerControl:false, showContextMenu:false, showReticle:false,
-      showFrame:false, showCooLocation:false});
+      showFrame:false, showCooLocation:false, showFov:false});
     // empty sky in the page's own near-black, not Aladin's gray (beyond the survey, or with no background)
     try { aladin.setBackgroundColor('rgb(5,7,12)'); } catch(e){}
     if(OVERLAY){ aladin.setOverlayImageLayer(A.imageHiPS(OVERLAY, {name:'JWST'}), 'jwst'); }
@@ -224,7 +248,8 @@ function localFirst(remote){
 }
 Promise.all([
   loadScript([LOCAL + 'aladin-lite/aladin.js', 'https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js']),
-  getJSON([LOCAL + 'jwst-gc/slow_panner_tour.json', 'https://starformation.astro.ufl.edu/jwst-gc/slow_panner_tour.json'])
+  getJSON(TOURURL ? [new URL(TOURURL, location.href).href]
+                  : [LOCAL + 'jwst-gc/slow_panner_tour.json', 'https://starformation.astro.ufl.edu/jwst-gc/slow_panner_tour.json'])
     .catch(function(){ return FALLBACK; })
 ]).then(function(res){
   TOUR = res[1];

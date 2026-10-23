@@ -388,11 +388,16 @@
                video against a 1024x768 screenshot of #/4/4 (row/column profiles, r = 0.9999) gives a uniform
                0.498x scale at offset (13.5, 142.5) -> 996x498.  The movie starts zooming at once, so only
                frame 0 lines up.  No controls (2026-10-21, Adam). -->
+          <!-- (2026-10-23) Adam: "have slide 5 end and hold at the ACES full-field view and not do the
+               zoom-and-pan.  The movie should not loop - just freeze frame at the full-fov ACES shot."
+               ..._toACES.mp4 is the first 376 frames (15.0 s) of ..._withpause.mp4, which 8 decks still use:
+               it reaches the ACES full field at 11.5 s and holds it to the end (the zoom-and-pan began at
+               15.2 s).  No loop, so the video stops on its last frame. -->
           <section id=5-zoom-movie data-background-color="#000">
-                <video data-autoplay loop muted playsinline preload=auto
+                <video data-autoplay muted playsinline preload=auto
                        style="position:absolute; left:13.5px; top:142.5px; width:996px; height:498px;
                               max-width:none; max-height:none; margin:0; border:0;"
-                       src="assets/cmz/zoom_anim_cmz_linear_withACES_HI-CO-Dust_m0.35_combined_frommp4_withpause.mp4"></video>
+                       src="assets/cmz/zoom_anim_cmz_linear_withACES_HI-CO-Dust_m0.35_combined_frommp4_toACES.mp4"></video>
           </section>
 
           <!-- slide 1 (2026-10-09), replacing the zoom movie (which now follows the Planck stack, above) -->
@@ -406,6 +411,7 @@
               <p style="font-size:30px; color:#ccc; margin-top:60px; line-height:1.4;">
               <!--On the way, I hope to teach you a little bit of interesting physics and show some epic images.-->
               </p>
+              <aside class=notes>Lots of open questions, and new surveys (ALMA, JWST, soon Roman) to test them.</aside>
           </section>
 
 
@@ -623,7 +629,9 @@ across cosmic time.
         <img src="colloquium_assets/mass_lum_diagram.svg">
     </div>
     <div style="float:right; width:50%;">
-        <img src="colloquium_assets/HR_diagram.svg">
+        <!-- (2026-10-23) temperature axis from 0 (was -10000) and points styled like the left plot (no edge,
+             bigger): colloquium_assets/make_HR_diagram_noedge.py; HR_diagram.svg is unchanged for the other decks -->
+        <img src="colloquium_assets/HR_diagram_noedge.svg">
     </div>
     <div class=smaller> Point color shows effective temperature, point size shows <br>luminosity (left) and mass (right) </div>
     <!--<img src="colloquium_assets/Hertzsprung-Russel_StarData.png">
@@ -662,6 +670,7 @@ across cosmic time.
             <li> URL links to script to make figures
             <li> The IMF is generally assumed to be universal in time and space
             primarily because of the weakness of evidence of variation
+            <li> Say "it may not be universal" -- whether it varies is Q7, asked later for the CMZ
         </ul>
     </aside>
 </section>
@@ -1298,16 +1307,16 @@ across cosmic time.
 </section>
 <!-- ===================== THE QUESTION LEDGER (cmzq restructure, 2026-10-16) =====================
      (later 2026-10-16) "Why is the dense gas so warm?" (Guesten+ 1981) is off this list -- answered by
-     Ginsburg+ 2016 (turbulent heating) -- and appears only on #cmzq-scoreboard, as answered.
+     Ginsburg+ 2016 (turbulent heating) -- and appears only on #cmzq-summary, as answered.
      Every "open since" reference was checked in ADS (2026-10-16).  The featured questions (Q1-Q8) are the
      talk's spine: each gets a header slide (#cmzq-qN) with the same eight rows, then progress, then
-     "how we crack it", and #cmzq-scoreboard closes with all of them.
+     "what comes next", and #cmzq-summary (was #cmzq-scoreboard; renamed 2026-10-23) closes with all of them.
      (2026-10-22) Order changed (Adam: "Move q7 after q1.  move q8 right before q1."): planets, inflow,
      Sgr A*, shape, few stars, clusters, IMF, chemistry -- renumbered Q1-Q8 in that order everywhere.
      (2026-10-22) Q6 and Q7 stay two questions but share one header slide (Adam: "merge q6 and q7 and both are
      'future'" ... "I want the slides for Q6 and Q7 merged"): the Q6 header highlights both rows, then the clusters
      slide, then the IMF slide; the Q7 header (cmzq-q5) is hidden.  Both show "future" afterwards.  To change a question, edit FEAT /
-     OTHER in the assembly script, or edit all of #cmzq-ledger, #cmzq-qN and #cmzq-scoreboard together. -->
+     OTHER in the assembly script, or edit all of #cmzq-ledger, #cmzq-ledger-feat, #cmzq-qN and #cmzq-summary together. -->
 
 <style>
   /* question-ledger slides (colloquium_2026_cfa_cmzq.html, 2026-10-16) */
@@ -1321,6 +1330,8 @@ across cosmic time.
   .reveal table.cmzq-full tr td { transition:color .4s, opacity .4s, background .4s; }
   #\32 2-cmzq-ledger:has(.cmzq-feat-on.visible) table.cmzq-full tr.other td { opacity:.35; }
   #\32 2-cmzq-ledger:has(.cmzq-feat-on.visible) table.cmzq-full tr.feat td { background:rgba(255,209,102,.13); }
+  .cmzq-ledger-on table.cmzq-full tr.other td { opacity:.35; }
+  .cmzq-ledger-on table.cmzq-full tr.feat td { background:rgba(255,209,102,.13); }
   .cmzq-kicker { font-size:20px; color:#9aa3b5; letter-spacing:.12em; text-transform:uppercase; margin-top:28px; }
   .cmzq-big { font-size:46px; font-weight:700; line-height:1.15; margin:10px 50px 8px; color:#fff; }
   .cmzq-since { font-size:23px; color:#ffd166; }
@@ -1334,6 +1345,8 @@ across cosmic time.
   /* (2026-10-22) Adam: "change the scoreboard results for 'does gas reach the cmz', 'where do the young clusters go'
      to "future" + yellow - not everything is just "progress".  also, remove all the checkmarks." (Q3, Q6) */
   .reveal table.cmzq-mini tr.done td.st.fut { color:#ffd166; }
+  /* (2026-10-23) Adam: "planets should go under the 'future' category, not progress - we haven't found any gc
+     planets yet!" -- Q1 is "future!" + fut on every mini table. */
   .reveal table.cmzq-mini tr.cur td { color:#fff; font-weight:700; background:rgba(255,209,102,.16); }
   .cmzq-col { position:absolute; top:104px; width:314px; text-align:left; }
   .cmzq-col .pic { position:relative; width:314px; height:230px; overflow:hidden; border-radius:6px; background:#05070c; }
@@ -1369,7 +1382,7 @@ across cosmic time.
         <tr class=other><td class=n></td><td>What are the radio filaments, and how strong is the field?</td><td class=y>1984 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1984Natur.310..557Y/abstract">Yusef-Zadeh+ 1984</a></td></tr>
         <tr class=feat><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1991MNRAS.252..210B/abstract">Binney+ 1991</a></td></tr>
         <tr class=feat><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1995PASJ...47..527S/abstract">Sofue 1995</a></td></tr>
-        <tr class=feat><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1996ARA%26A..34..645M/abstract">Morris &amp; Serabyn 1996</a></td></tr>
+        <tr class=feat><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1996ARA%26A..34..645M/abstract">Morris &amp; Serabyn 1996</a></td></tr>
         <tr class=other><td class=n></td><td>Was Sgr&nbsp;A* bright in the recent past?</td><td class=y>1996 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1996PASJ...48..249K/abstract">Koyama+ 1996</a></td></tr>
         <tr class=other><td class=n></td><td>What are the high-velocity compact clouds?</td><td class=y>1998 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1998ApJS..118..455O/abstract">Oka+ 1998</a></td></tr>
         <tr class=feat><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1999ApJ...525..750F/abstract">Figer+ 1999</a></td></tr>
@@ -1386,7 +1399,9 @@ across cosmic time.
         <tr class=other><td class=n></td><td>What accelerates the PeV cosmic rays, and what gas do they light up?</td><td class=y>2016 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2016Natur.531..476H/abstract">H.E.S.S. 2016</a></td></tr>
         <tr class=feat><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...830..150P/abstract">Penny+ 2016</a></td></tr>
     </table>
-    <span class="fragment cmzq-feat-on" data-fragment-index=0></span>
+    <!-- (2026-10-23) Adam: "22-cmzq-ledger was supposed to stay after 21-sn-sf-relation/0 ... and before
+         22-cmzq-ledger/0": the highlight build (was a fragment here) is now its own slide, #23.1-cmzq-ledger-feat,
+         after the surveys. -->
     <aside class=notes>
         Dozens of questions about the Galactic Center have been open for decades; here are 19, each dated
         by the paper that posed it (or made it pressing).  The OB-star one is the obvious one after the local census
@@ -1396,8 +1411,7 @@ across cosmic time.
         Treasury colors (Cano-Gonz&aacute;lez+ 2021-style hot-star selection) are the way at it.  The PeV one: H.E.S.S. 2016
         found the CMZ's diffuse TeV emission traces the gas and needs protons up to ~1 PeV near Sgr A* -- but the photon
         map is gas &times; cosmic rays, and we only know the gas in projection (bonus: #bonus-he-state).  The GeV excess (Goodenough &amp; Hooper 2009, Fermi-LAT): extended ~GeV emission
-        around the GC -- dark-matter annihilation or an unresolved millisecond-pulsar population, still argued.  Click: the eight I will
-        walk through -- each one with what we have learned and what is about to crack it.
+        around the GC -- dark-matter annihilation or an unresolved millisecond-pulsar population, still argued.
     </aside>
 </section>
 
@@ -1468,11 +1482,43 @@ across cosmic time.
         Ginsburg, and 97 co-investigators.  Matt Hosek leads the cluster / tidal-stream work.</aside>
 </section>
 
+<!-- (2026-10-23) #22-cmzq-ledger's highlight build, as its own slide (Adam: "move 22-cmzq-ledger/0 between
+     23-cmzq-datasets/0 and 24-cmzq-q8").  Same table as #22-cmzq-ledger: edit both together.  The highlight is on from
+     arrival (.cmzq-ledger-on), not a fragment. -->
+<section id=23.1-cmzq-ledger-feat class=cmzq-ledger-on>
+    <h4 style="margin-bottom:6px;">The Galactic Center: open questions <span style="font-size:60%; color:#9aa3b5;">(a partial list)</span></h4>
+    <table class="cmzq cmzq-full" style="font-size:21px; width:1000px;">
+        <tr><th></th><th>question</th><th>open since</th></tr>
+        <tr class=other><td class=n></td><td>What are the radio filaments, and how strong is the field?</td><td class=y>1984 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1984Natur.310..557Y/abstract">Yusef-Zadeh+ 1984</a></td></tr>
+        <tr class=feat><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1991MNRAS.252..210B/abstract">Binney+ 1991</a></td></tr>
+        <tr class=feat><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1995PASJ...47..527S/abstract">Sofue 1995</a></td></tr>
+        <tr class=feat><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1996ARA%26A..34..645M/abstract">Morris &amp; Serabyn 1996</a></td></tr>
+        <tr class=other><td class=n></td><td>Was Sgr&nbsp;A* bright in the recent past?</td><td class=y>1996 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1996PASJ...48..249K/abstract">Koyama+ 1996</a></td></tr>
+        <tr class=other><td class=n></td><td>What are the high-velocity compact clouds?</td><td class=y>1998 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1998ApJS..118..455O/abstract">Oka+ 1998</a></td></tr>
+        <tr class=feat><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999 &middot; <a href="https://ui.adsabs.harvard.edu/abs/1999ApJ...525..750F/abstract">Figer+ 1999</a></td></tr>
+        <tr class=feat><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2002ApJ...565..265P/abstract">Portegies Zwart+ 2002</a></td></tr>
+        <tr class=other><td class=n></td><td>How did the nuclear stellar disk form?</td><td class=y>2002 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2002A%26A...384..112L/abstract">Launhardt+ 2002</a></td></tr>
+        <tr class=other><td class=n></td><td>Why is the cosmic-ray ionization rate so high?</td><td class=y>2005 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2005ApJ...632..882O/abstract">Oka+ 2005</a></td></tr>
+        <tr class=feat><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2009ApJ...691.1816N/abstract">Najarro+ 2009</a></td></tr>
+        <tr class=other><td class=n></td><td>What is the extinction law toward the Galactic Center?</td><td class=y>2009 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2009ApJ...696.1407N/abstract">Nishiyama+ 2009</a></td></tr>
+        <tr class=other><td class=n></td><td>Is the GeV gamma-ray excess dark matter, or millisecond pulsars?</td><td class=y>2009 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2009arXiv0910.2998G/abstract">Goodenough &amp; Hooper 2009</a></td></tr>
+        <tr class=other><td class=n></td><td>(Where) are the OB stars, and how many are there?</td><td class=y>2010 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2010MNRAS.402..895W/abstract">Wang+ 2010</a></td></tr>
+        <tr class=other><td class=n></td><td>Where do the isolated massive stars come from?</td><td class=y>2010 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2010ApJ...725..188M/abstract">Mauerhan+ 2010</a></td></tr>
+        <tr class=feat><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2013MNRAS.429..987L/abstract">Longmore+ 2013</a></td></tr>
+        <tr class=other><td class=n></td><td>Is CMZ star formation episodic?</td><td class=y>2015 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2015MNRAS.453..739K/abstract">Krumholz &amp; Kruijssen 2015</a></td></tr>
+        <tr class=other><td class=n></td><td>What accelerates the PeV cosmic rays, and what gas do they light up?</td><td class=y>2016 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2016Natur.531..476H/abstract">H.E.S.S. 2016</a></td></tr>
+        <tr class=feat><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016 &middot; <a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...830..150P/abstract">Penny+ 2016</a></td></tr>
+    </table>
+    <aside class=notes>
+        Back to the list: the eight I will walk through -- each one with what we have learned and what comes next.
+    </aside>
+</section>
+
 <!-- ######################## Q1: what planets form there? ######################## -->
 
 <section id=24-cmzq-q8>
-    <table class="cmzq cmzq-mini"><tr class=cur><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st></td></tr><tr class=todo><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st></td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
-    <aside class=notes>Question 1: What planets form there?  Open since 2016.  Where we are: none known: 95% of known planets are within 3&nbsp;kpc of the Sun.  What cracks it: Roman microlensing toward the bulge.</aside>
+    <table class="cmzq cmzq-mini"><tr class=cur><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st></td></tr><tr class=todo><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st></td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
+    <aside class=notes>Question 1: What planets form there?  Open since 2016.  Where we are: none known: 95% of known planets are within 3&nbsp;kpc of the Sun.  What comes next: Roman microlensing toward the bulge.</aside>
 </section>
 
 
@@ -1604,12 +1650,18 @@ across cosmic time.
      disk inset uses assets_orion/ballering2025_edgeondisk.png; swap in HL Tau if you find it. -->
 <section id=27-cosmic-noon-discs>
     <div style="position:absolute; left:12px; top:8px; width:1000px; height:752px; background:#fff; border-radius:6px;"></div>
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12.0px; top:53.7px; width:790.0px; height:580.6px;" src="colloquium_assets/Madau2014_sfrd_band.svg">
+    <!-- (2026-10-23) Adam: "break this into 4 builds.  Open with the raw Madau plot, bring in B68 + HL Tau, then bring in
+         the question, then all the surrounding items (proplyds ewocs etc)".  Arrival: Madau2014_sfrd.svg (the same
+         figure with no band; same 790 x 580.6 size).  Build 0: the z = 1-3 band (the _band.svg over it, same box), the
+         two thumbnails and their arrows.  Build 1: the "?" and the question.  Build 2: the right column and EWOCS. -->
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12.0px; top:53.7px; width:790.0px; height:580.6px;" src="colloquium_assets/Madau2014_sfrd.svg">
+    <img class=fragment data-fragment-index=0 style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12.0px; top:53.7px; width:790.0px; height:580.6px;" src="colloquium_assets/Madau2014_sfrd_band.svg">
     <!-- (2026-10-22) the remade Madau & Dickinson figure (colloquium_assets/make_madau_plot.py), z = 1-3 band drawn
          in it.  On this slide: frame x 68-788, y 119.7-572.3; band x 289.7-511.4 (center 400.5).  The "?" and the
          question are centered on the band, and the thumbnails and arrows moved left with its edge (same 111 px
          arrows ending 34 px inside it, as before); Madau2014_plot.svg is left alone for the other decks. -->
 
+    <div class=fragment data-fragment-index=0>
     <svg style="position:absolute; left:0; top:0; width:1024px; height:768px; pointer-events:none;" viewBox="0 0 1024 768">
       <defs><marker id="ahmad" markerWidth="10" markerHeight="10" refX="8" refY="3.2" orient="auto"><path d="M0,0 L0,6.4 L9,3.2 z" fill="#111"/></marker></defs>
       <line x1="213" y1="332" x2="324" y2="332" stroke="#111" stroke-width="4" marker-end="url(#ahmad)"/>
@@ -1618,9 +1670,12 @@ across cosmic time.
 
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:87px; top:272px; width:120px; height:120px; object-fit:cover;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Barnard_68.jpg/1920px-Barnard_68.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:87px; top:400px; width:120px; height:120px; object-fit:cover;" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/HL_Tau_protoplanetary_disk.jpg">
+    </div>
 
+    <div class=fragment data-fragment-index=1>
     <div style="position:absolute; left:380px; top:198px; color:#111; font-size:74px; line-height:1;">?</div>
     <div style="position:absolute; left:307.5px; top:382px; width:186px; color:#111; font-size:26px; line-height:1.3; text-align:center;">What happens to<br>proto-stellar disks<br>in these extreme<br>environments?</div>
+    </div>
     <!-- the empty top-right of the Madau plot (high z, low SFR density) is real whitespace, so the
          two "what happens to disks" graphics live there.  There is no Moeckel figure anywhere in
          this repo -- Bally+ 2020's disk-interaction panel is the closest thing we have, so the
@@ -1631,12 +1686,14 @@ across cosmic time.
          observations through Otter, Ginsburg, Ballering, Bally+ 2021 (ApJ 923, 221), whose OMC1
          disks are shielded from the Trapezium and so must be truncated some other way.  The
          earlier version of the same idea is Moeckel & Throop 2009, ApJ 707, 268. -->
+    <div class=fragment data-fragment-index=2>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:812px; top:120px; width:188px; height:141px;" src="assets/orion_proplyds_heic0917aa.webp">
     <div style="position:absolute; left:812px; top:266px; width:188px; text-align:center; color:#111; font-size:15px; line-height:1.2;">Proplyds: disks photoevaporated</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:812px; top:330px; width:188px; height:144px;" src="assets_orion/Bally2020_DiskInteraction.jpeg">
     <div style="position:absolute; left:812px; top:479px; width:188px; text-align:center; color:#111; font-size:15px; line-height:1.2;">Accretion-driven truncation<br><span style="font-size:13px;"><a href="https://ui.adsabs.harvard.edu/abs/2017A%26A...604A..91W/abstract">Wijnen+ 2017</a>; <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...923..221O/abstract">Otter+ 2021</a></span></div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:812px; top:541px; width:188px; height:134.8px;" src="assets/cmz/arches_tails_hosek_inprep.webp">
     <div style="position:absolute; left:812px; top:680px; width:188px; text-align:center; color:#111; font-size:15px; line-height:1.2;">Tails in the Arches<br><span style="font-size:13px;">Hosek+ in prep</span></div>
+    </div>
     <!--<br><span style="font-size:11px; color:#555;">figure: Bally+ 2020</span>-->
     <!-- (2026-10-22) Adam: "put the reference inside the plot bounds ... and make the text a little smaller":
          top-left inside the frame (x 68-788, y 119.7-572.3), was 22 px above the lookback axis -->
@@ -1653,6 +1710,7 @@ across cosmic time.
                                    Vienna deck [check]; EWOCS's Wd2 NIRCam is GO-3523
            monsch_tail.png         Adam's figure for the Monsch shout-out (sent in chat, not saved by me -- drop it in
                                    at this path), shown rotated 90 deg so its head points right, like the Arches tail -->
+    <div class=fragment data-fragment-index=2>
     <div style="position:absolute; left:22px; top:642px; width:168px; height:114px; display:flex; flex-direction:column; justify-content:center; color:#111; font-size:15px; line-height:1.25; text-align:left;">
         <div><b>EWOCS</b>: JWST in Westerlund&nbsp;1&nbsp;&amp;&nbsp;2</div>
         <div style="margin-top:4px;"><b>Monsch</b> et al.,<br>incl. <b>Lovell</b>, <b>Galarza</b></div>
@@ -1664,9 +1722,12 @@ across cosmic time.
     <div style="position:absolute; left:405.4px; top:740px; color:#fff; font-size:12px; line-height:1; text-shadow:0 0 3px #000;">Wd2</div>
     <!-- a 114 x 193 box turned -90 deg shows as 193 x 114, centered on (637.2, 699); a div, not an img, so a missing file shows nothing -->
     <div style="position:absolute; left:580.2px; top:602.5px; width:114px; height:193px; transform:rotate(-90deg); background:url(assets/ewocs/monsch_tail.png) center / contain no-repeat;"></div>
+    </div>
 
     <aside class=notes>
         <ul>
+            <li> Builds: the plot alone.  Click: the z = 1-3 band, B68 and HL Tau.  Click: the question.  Click: proplyds,
+                truncation, the Arches tails and EWOCS.
             <li> Most of the stars in the universe formed at cosmic noon, z ~ 1-3
             <li> Those conditions -- density, UV field, turbulence -- are what the CMZ reproduces locally
             <li> So: what happens to the disks, and to the planets, under those conditions?
@@ -1752,26 +1813,31 @@ across cosmic time.
 <!-- ######################## Q2: how does gas get into the CMZ? ######################## -->
 
 <section id=29-cmzq-q1>
-    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st></td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
-    <aside class=notes>Question 2: How does gas get into the CMZ?  Open since 1991.  Where we are: inflow measured (~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup>); collisions seen (EVFs, G5).  What cracks it: ACES maps every inflow interface at 0.1&nbsp;pc; simulations now match its resolution.</aside>
+    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=cur><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st></td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
+    <aside class=notes>Question 2: How does gas get into the CMZ?  Open since 1991.  Where we are: inflow measured (~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup>); collisions seen (EVFs, G5).  What comes next: ACES maps every inflow interface at 0.1&nbsp;pc; simulations now match its resolution.</aside>
 </section>
 
 <!-- #cmz-dive (cmzq restructure): #cmz-zoomout's last build, moved after the ledger.  Same page and frame,
-     starting on the Galaxy view: data-cmz-start=1 (read by the iframe sync script at the end of this file),
+     (2026-10-23: starts on the Sun's neighborhood, one click zooms out to the Galaxy, then)
      one click dives into the bar and hands off to #bar-inflow, exactly as before. -->
 <section id=30-cmz-dive data-background-color="#000">
     <h4 style="position:relative; z-index:6;">
-        <span class="fragment fade-out zo-late" data-fragment-index=0></span>
-        <span class="fragment zo-late" data-fragment-index=0 style="position:absolute; left:0; right:0; top:0;">The bar feeds the CMZ</span>
+        <span class="fragment fade-out zo-late" data-fragment-index=1></span>
+        <span class="fragment zo-late" data-fragment-index=1 style="position:absolute; left:0; right:0; top:0;">The bar feeds the CMZ</span>
     </h4>
-    <iframe class=cmz-shape data-cmz-start=1 src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown&amp;oviz=gr"
+    <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown&amp;oviz=gr"
             style="position:absolute; left:0px; top:92px; width:1024px; height:672px;
                    max-width:none; max-height:none; margin:0; border:0; background:#000;
                    pointer-events:none;"></iframe>
-    <span class=fragment data-fragment-index=0 data-cmz-phase=2></span>
-    <img class="fragment zo-late" data-fragment-index=0 src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model: the bar's near- and far-side dust lanes feeding the CMZ, overshooting gas, and G1.3, BC2 and G5"
+    <!-- (2026-10-23) Adam: "30-cmz-dive should be immediately preceded by a view that's zoomed into the sun so we
+         animate zooming out to the galactic plane before zooming in to the gc": starts on phase 0 (the Sun's
+         neighborhood, the top-down dust map) instead of data-cmz-start=1; build 0 zooms out to the Galaxy (phase 1),
+         build 1 dives into the bar (phase 2) as before. -->
+    <span class=fragment data-fragment-index=0 data-cmz-phase=1></span>
+    <span class=fragment data-fragment-index=1 data-cmz-phase=2></span>
+    <img class="fragment zo-late" data-fragment-index=1 src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model: the bar's near- and far-side dust lanes feeding the CMZ, overshooting gas, and G1.3, BC2 and G5"
          style="position:absolute; left:259.40px; top:150.93px; width:501.47px; height:540px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none; border-radius:6px; z-index:3;">
-    <aside class=notes>Back to the Galaxy.  Click: dive into the bar -- and here is what it does.</aside>
+    <aside class=notes>Back to the Sun's neighborhood.  Click: pull out to the whole Galaxy.  Click: dive into the bar -- and here is what it does.</aside>
 </section>
 
 
@@ -1944,9 +2010,16 @@ across cosmic time.
          high-velocity features in ACES CS 2-1 -- a velocity bridge and a loop -- like the simulated inflow features.
          It replaces Lipman+ 2026 Fig. 2 here (assets/cmz_papers/lipman2026b_fig2.png, the 200-dpi render from the
          paper's Overleaf PDF; card was left 52, top 92, 920 x 585, img 904 x 564 at 8,6). -->
-    <div class=cmzq-card style="left:8px; top:236px; width:1008px; height:294px;">
-        <img src="assets/cmz_papers/sim_obs_schematic.png" style="left:4px; top:4px; width:1000px; height:285.9px;"></div>
-    <div class=cmzq-text style="left:22px; top:686px; width:980px; font-size:20px; text-align:center;">
+    <!-- (2026-10-23) Adam: "rearrange 33 to better fit the space: splitting the figure along its vertical midpoint and
+         putting one on top, one on the bottom".  Split at the white gap between the two boxes (x = 1651 of 2994):
+         sim_obs_schematic_sim.png (1651 x 856) on top, sim_obs_schematic_obs.png (1343 x 856) below, both at the
+         same scale (306 px tall) so their labels match.  Was one card at left 8, top 236, 1008 x 294 (img 1000 x
+         285.9); refs were at top 686. -->
+    <div class=cmzq-card style="left:213px; top:58px; width:598px; height:314px;">
+        <img src="assets/cmz_papers/sim_obs_schematic_sim.png" style="left:4px; top:4px; width:590.2px; height:306px;"></div>
+    <div class=cmzq-card style="left:268px; top:380px; width:488px; height:314px;">
+        <img src="assets/cmz_papers/sim_obs_schematic_obs.png" style="left:4px; top:4px; width:480.1px; height:306px;"></div>
+    <div class=cmzq-text style="left:22px; top:702px; width:980px; font-size:20px; text-align:center;">
          <span class=ref> <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.4663S/abstract">Sormani+ 2019</a></span>
         <span class=ref>&dash; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2609.10472/abstract">Lipman+ 2026 ACES VIII</a>
         &dash; <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract">Tress+ 2026</a></span></div>
@@ -1962,11 +2035,11 @@ across cosmic time.
         (Tress+ 2026) and Lipman's sub-pc MHD zoom-ins (AAS 247), built for apples-to-apples comparison with ACES.</aside>
 </section>
 
-<!-- ######################## Q3: does gas reach Sgr A*? ######################## -->
+<!-- ######################## Q3: (how) does gas reach Sgr A*? ######################## -->
 
 <section id=34-cmzq-q7>
-    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>progress</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
-    <aside class=notes>Question 3: Does gas reach Sgr&nbsp;A*?  Open since 1996.  Where we are: candidate pipes in ACES; their 3D positions are disputed.  What cracks it: 3D positions (JWST, Roman) + an ACES inflow census + sub-pc simulations.</aside>
+    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
+    <aside class=notes>Question 3: (How) does gas reach Sgr&nbsp;A*?  Open since 1996.  Where we are: candidate pipes in ACES; their 3D positions are disputed.  What comes next: 3D positions (JWST, Roman) + an ACES inflow census + sub-pc simulations.</aside>
 </section>
 
 <section id=35-cmzq-sgra-ladder data-background-color="#000">
@@ -2040,8 +2113,8 @@ across cosmic time.
 <!-- ######################## Q4: what shape is the CMZ? ######################## -->
 
 <section id=37-cmzq-q2>
-    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>progress</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=cur><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
-    <aside class=notes>Question 4: What shape is the CMZ?  Open since 1995.  Where we are: most clouds on the near side; nested x<sub>2</sub> orbits, no single orbit fits.  What cracks it: JWST extinction + Roman proper-motion tomography (~10&nbsp;pc along the line of sight).</aside>
+    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=cur><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
+    <aside class=notes>Question 4: What shape is the CMZ?  Open since 1995.  Where we are: most clouds on the near side; nested x<sub>2</sub> orbits, no single orbit fits.  What comes next: JWST extinction + Roman proper-motion tomography (~10&nbsp;pc along the line of sight).</aside>
 </section>
 
 
@@ -2171,7 +2244,7 @@ across cosmic time.
     </aside>
 </section>
 <section id=40-cmzq-shape-progress>
-    <h4> Progress: the 3D CMZ, 2025&ndash;26 </h4>
+    <h4> Progress: the 3D CMZ (SMA's CMZOOM), 2025&ndash;26 </h4>
     <div class=cmzq-card style="left:20px; top:96px; width:500px; height:510px;">
         <img src="assets/cmz_papers/lipman2026a_fig6.jpg" style="left:6px; top:6px; width:488px; height:498.4px;"></div>
     <div class=smaller3 style="position:absolute; left:20px; top:610px; width:500px; text-align:left;"><a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract">Lipman+ 2026</a>, 3D-CMZ V Fig.&nbsp;6</div>
@@ -2179,7 +2252,8 @@ across cosmic time.
         <ul>
             <li style="margin-bottom:34px;">~3/4 of known clouds are <b>in front</b> of Sgr&nbsp;A*, including the 20 and 50&nbsp;km&nbsp;s<sup>&minus;1</sup> clouds
                 <div class=ref style="margin-top:6px;"><a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...984..158W/abstract">Walker+ 2025</a>; <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract">Lipman+ 2026</a>; <a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...706A..18N/abstract">Nogueras-Lara+ 2026</a>; <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1001..184M/abstract">Mills+ 2026</a></div>
-            <li class=fragment>For most clouds, the best we can say is &ldquo;in front&rdquo;
+            <li class=fragment data-fragment-index="1">For most clouds, the best we can say is "in front"
+            <li class=fragment data-fragment-index="1"> Most gas is unconstrained (not in "clouds")
         </ul>
     </div>
     <aside class=notes>Walker+ 2025 (3D CMZ III): H2CO absorption against the cm continuum places 18 of 23 sources on the
@@ -2304,8 +2378,8 @@ across cosmic time.
 <!-- ######################## Q5: why does the CMZ form so few stars? ######################## -->
 
 <section id=43-cmzq-q3>
-    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>progress</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
-    <aside class=notes>Question 5: Why does the CMZ form so few stars?  Open since 2013.  Where we are: cloud by cloud: 1&ndash;3&nbsp;dex below the local relation.  What cracks it: JWST GC Treasury YSO census of the whole CMZ (complete Sep 2027) + ACES cores.</aside>
+    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
+    <aside class=notes>Question 5: Why does the CMZ form so few stars?  Open since 2013.  Where we are: cloud by cloud, the Brick and Cloud E/F ~1.5&nbsp;dex below the local relation (at t<sub>YSO</sub> = 0.1&nbsp;Myr); Sgr&nbsp;B2 as a whole is within its scatter.  What comes next: JWST GC Treasury YSO census of the whole CMZ (complete Sep 2027) + ACES cores.</aside>
 </section>
 
 <!-- (2026-10-22) Adam: "let's make a variant of cmz_low_sfr.html#/13-budget intended to be included as slide 44, i.e.,
@@ -2925,6 +2999,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         <ul>
             <li> We have a census of where ongoing star formation is in Sgr B2 from ALMA - it is at least as much as the rest of the CMZ 
             <li> It shows a remarkable linear structure, which strongly hints at a dynamical driver, such as stream collision from inflow along the bar
+            <li> The slide's "is compression/collision" is shorthand: say "hints at"
         </ul>
     </aside>
 
@@ -2982,7 +3057,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
 </style>
 
 <section id=54-cmz-wide>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">Sgr B2 is forming stars - is the CMZ?</div>
+    <div style="position:absolute; top:8px; left:12px; z-index:5;">Sgr B2 is forming stars - is the CMZ?</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
@@ -2999,7 +3074,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
      https://starformation.astro.ufl.edu/avm_images/jwst_nir_hips/ (order 14, galactic frame)
      onto the ACES/MUSTANG WCS grid downsampled 4x, so it overlays 1:1 with no transform. -->
 <section id=55-cmz-jwst>
-    <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">JWST has observed much of the Galactic Center</div>
+    <div class=smaller style="position:absolute; top:8px; left:12px; z-index:5;">JWST observed GC clouds before 2026</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:3;" src="assets/cmz/layer_acesmustang_fullbleed.png">
@@ -3136,6 +3211,7 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
      in black/gray and cannot be separated from the axes).  Fit: slope 2.00, intercept -4.11,
      +/-1 and 2 sigma at 0.30 dex, fitted only below 676 Msun/pc^2 -- every CMZ point is an
      extrapolation, which is the point of the slide. -->
+<section>  <!-- vertical stack: #sf-relation-sgrb2, and below it the Brick vs Sgr B2 column PDF (optional) -->
 <section id=60-sf-relation-sgrb2 data-auto-animate data-auto-animate-duration="1.2" data-auto-animate-easing="ease-in-out">
     <div data-id="sfrel-zoom-box" style="position:absolute; left:52px; top:56px; width:920px; height:700px; background:#fff; border-radius:6px;"></div>
     <div style="position:absolute; left:0px; top:10px; width:1024px; text-align:center; color:#fff; font-size:34px;">Star formation in the CMZ does not follow the local relation</div>
@@ -3147,24 +3223,23 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
             <li> <b>Say the caveat out loud:</b> Pokhrel+ fitted this only below 676 Msun/pc^2 (their N(H2) &lt; 3e22 cut), and their own Fig. 3 shows eps_ff <i>declining</i> above ~1000. Every CMZ point here is 1&ndash;2 dex beyond the calibration &mdash; pure extrapolation, exactly as I said about Gutermuth in the 2018 paper
             <li> The bands are cloud-to-cloud scatter: 0.30 dex, so 2 sigma = 0.60 dex
         </ul>
-        <p><b>Where each CMZ point comes from &mdash; all three limits drawn as generously as the data allow, so the gap is not overstated:</b></p>
+        <p><b>Where each CMZ point comes from &mdash; one cloud-averaged point each, all at t_YSO = 0.1&nbsp;Myr, and the two limits drawn as generously as the data allow, so the gap is not overstated:</b></p>
         <ul>
-            <li> <b>Sgr B2 (Ginsburg+ 2018) &mdash; the whole Fig. 17a point cloud, not one point.</b>
-                Fig. 17a plots Sigma_* vs Sigma_gas, so the whole panel is divided by an age to get Sigma_SFR. 556 points digitised straight out of the paper's raster.
-                Age = 0.5 Myr is used: it matches Pokhrel's t_PS so both axes mean the same thing, and it is <i>more</i> conservative than the paper's own 0.74 Myr (a shorter age raises the rate).
-                Median (log Sigma_gas, log Sigma_SFR) = (3.81, 2.08); the relation predicts 3.52, so <b>1.44 dex below</b>.
-                <b>Age sensitivity, all still below:</b> 1 Myr &rarr; 1.74 dex below; 0.5 Myr &rarr; 1.44; 0.1 Myr (the extreme) &rarr; 0.74 dex below, still outside 2 sigma. So the conclusion does not depend on the age.
-                Axis calibration was checked against the figure's own Gutermuth alpha=1 model lines: at Sigma_gas = 1e4 the t = 0.74 and 0.01 Myr curves are predicted at page rows 678 and 989 and found at 677 and 993.
-                Caveats to own: Fig. 17a assumes 95 Msun per source (21.8 Msun mean x 23% IMF sampling), the sample misses Class II sources so the stellar mass may be underestimated by up to 2x, and the right-hand column of saturated-Herschel lower limits is excluded from the cloud drawn here.
-            <li> <b>The Brick (Walker+ 2021), log Sigma_gas = 3.71, limit log Sigma_SFR &lt; 1.03 &mdash; 2.28 dex below the relation, and ~1.3 dex below Sgr B2 at the same gas surface density.</b>
+            <li> <b>Why 0.1 Myr:</b> it is the Stage 0 (youngest protostar) lifetime, and the short age is the generous choice here &mdash; Sigma_SFR = Sigma_* / age, so a shorter age <i>raises</i> every CMZ rate toward the relation. The same age is used for all three points.
+            <li> <b>Sgr B2 (Ginsburg+ 2018), cloud-averaged: (log Sigma_gas, log Sigma_SFR) = (3.82, 3.19) &mdash; ~0.35 dex below the relation (0.23&ndash;0.48 across the paper's Total&ndash;Totalmax range), inside the 2 sigma band.</b>
+                1.5e6 Msun over 15 x 15 pc (225 pc^2) &rarr; 6.7e3 Msun/pc^2; SFR 0.035&ndash;0.062 Msun/yr (Table 2), computed there with a 0.74 Myr age, rescaled by 0.74 / 0.1 to the same 0.1 Myr.
+                So at 0.1 Myr Sgr B2 as a whole is consistent with the local relation; the Brick and Cloud E/F are not.
+                Caveats to own: the YSO masses assume 95 Msun per source (21.8 Msun mean x 23% IMF sampling), and the sample misses Class II sources, so the stellar mass may be underestimated by up to 2x.
+            <li> <b>The Brick (Walker+ 2021), log Sigma_gas = 3.71, limit log Sigma_SFR &lt; 1.72 &mdash; ~1.6 dex below the relation, and ~1.5 dex below Sgr B2 at nearly the same gas surface density.</b>
                 Cloud-scale aperture, to match how Pokhrel measure and so the two limits are comparable: &gt;1e5 Msun within R = 2&ndash;3 pc (Sec 1); R = 2.5 pc &rarr; 19.6 pc^2 &rarr; 5.1e3 Msun/pc^2.
-                Walker+ quote <i>no</i> SFR and no limit, so the ceiling is ours and deliberately generous: every Table 3 core at its 22 K mass, source 1 counted whole (64.2 Msun) not split, = 104 Msun of core <i>gas</i>, times a core-to-star efficiency of <b>1.0</b> &mdash; every gram already a star &mdash; / 0.5 Myr / 19.6 pc^2 &rarr; 10.6.
-                These cores really are protostellar: 9 of 18 drive SiO outflows. Using the 19" ALMA field alone instead (7e3 Msun, 1.75 pc^2) moves it to (4.0e3, 119) &mdash; same cloud, aperture ten times smaller.
-            <li> <b>Cloud E/F (Barnes+ 2019 + Walker+ 2018), log Sigma_gas = 3.78, limit log Sigma_SFR &lt; 0.29 &mdash; 3.16 dex below the relation, ~2 dex below Sgr B2.</b>
+                Walker+ quote <i>no</i> SFR and no limit, so the ceiling is ours and deliberately generous: every Table 3 core at its 22 K mass, source 1 counted whole (64.2 Msun) not split, = 104 Msun of core <i>gas</i>, times a core-to-star efficiency of <b>1.0</b> &mdash; every gram already a star &mdash; / 0.1 Myr / 19.6 pc^2 &rarr; 53 Msun/pc^2/Myr.
+                Cross-check: one 5 Msun star (the measured core) extrapolated over a Kroupa IMF to 150 Msun is 117 Msun, within ~10% of the core sum.
+                These cores really are protostellar: 9 of 18 drive SiO outflows. Using the 19" ALMA field alone instead (7e3 Msun, 1.75 pc^2) moves it to (4.0e3, 594) &mdash; same cloud, aperture ten times smaller, and then only ~0.3 dex below.
+            <li> <b>Cloud E/F (Barnes+ 2019 + Walker+ 2018), log Sigma_gas = 3.78, limit log Sigma_SFR &lt; 1.98 &mdash; ~1.5 dex below the relation, ~1.2 dex below Sgr B2.</b>
                 Sigma_gas from <b>Walker+ 2018 Table 1</b>, which tabulates the dust ridge on a consistent footing: cloud e = 11.2e4 Msun in R = 2.4 pc, cloud f = 7.3e4 Msun in R = 2.0 pc; Barnes treat them as one cloud, so 1.85e5 Msun over 30.7 pc^2 = 6.0e3 Msun/pc^2. The Immer+ 2012 column of the same table gives 2.6e3, so the horizontal position is good to a factor of ~2.
-                The ceiling is set by what is <i>observed</i>: no HII regions, no protostellar source catalog, and the only star formation signature in either cloud is one H2O + Class II CH3OH maser pair in the south. A Class II methanol maser marks a high-mass protostar, so allow one plus companions, &le; 30 Msun &mdash; generous, and bounded above by the Brick's <i>entire</i> counted protostellar content (104 Msun in 18 cores), since E/F shows strictly less. / 0.5 Myr / 30.7 pc^2 &rarr; 2.0.
-            <li> <b>The horizontal bars</b> are the range of column density each cloud actually covers: from the CMZoom threshold N(H2) = 1e23 cm^-2 (Walker+ 2018 Sec 2.1, "designed to target all regions within the CMZ that lie above a column density threshold of ~1e23 cm^-2") = 2.2e3 Msun/pc^2, up to the densest structure in each cloud &mdash; the Brick's maser core, 72 Msun in R = 0.04 pc (Rathborne+ 2015 via Walker+ 2021) = 1.4e4 = 6.4e23 cm^-2; and Cloud E/F's peak column, 3.7e24 cm^-2 (Barnes+ 2019 Sec 3.1) = 8.3e4.
-                The bars are drawn flat, at the cloud-averaged limit. A contour-by-contour treatment would tilt them upward to the right, since the area shrinks at higher contour &mdash; that is why Pokhrel's clouds are curves, not points. So flat is the conservative rendering at the high-column end.
+                The ceiling is set by what is <i>observed</i>: no HII regions, no protostellar source catalog, and the only star formation signature in either cloud is one H2O + Class II CH3OH maser pair in the south. A Class II methanol maser marks a high-mass protostar, so allow one star of &ge; 10 Msun and the full Kroupa IMF that comes with it (to 150 Msun): 295 Msun. / 0.1 Myr / 30.7 pc^2 &rarr; 96 Msun/pc^2/Myr. (This is now above the Brick's ceiling, because of the full-IMF extrapolation.)
+            <li> <b>Not drawn any more (single points since 2026-10-19), in case it comes up:</b> the range of column density each cloud actually covers: from the CMZoom threshold N(H2) = 1e23 cm^-2 (Walker+ 2018 Sec 2.1, "designed to target all regions within the CMZ that lie above a column density threshold of ~1e23 cm^-2") = 2.2e3 Msun/pc^2, up to the densest structure in each cloud &mdash; the Brick's maser core, 72 Msun in R = 0.04 pc (Rathborne+ 2015 via Walker+ 2021) = 1.4e4 = 6.4e23 cm^-2; and Cloud E/F's peak column, 3.7e24 cm^-2 (Barnes+ 2019 Sec 3.1) = 8.3e4.
+                Drawn as flat bars, at the cloud-averaged limit, they would be the conservative rendering: a contour-by-contour treatment tilts them upward to the right, since the area shrinks at higher contour &mdash; that is why Pokhrel's clouds are curves, not points.
             <li> <b>Cross-check on which of the two is denser (Tang+ 2021, MNRAS 505, 2392, Fig. 10):</b>
                 their AzTEC+<i>Herschel</i> dust-SED fit gives one uniform N(H2) map of the whole CMZ at 7", so the Brick and Cloud E/F are measured the <i>same way</i>.
                 Reading that map in matched R = 2.4 pc apertures: mean lg N(H2) = 22.90 for the Brick, 23.03 for cloud e and 23.01 for cloud f. <b>Cloud E/F is the denser of the two, by ~0.13 dex (~40%).</b>
@@ -3173,9 +3248,32 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
                 (i) I first took Sigma_gas from Barnes' intro prose, "~1e5 Msun, radii of ~1 pc". Multiplied together those give 3.2e4 Msun/pc^2, five to thirteen times too high, and put E/F to the <i>right</i> of most of Sgr B2. They are order-of-magnitude statements; Barnes never tabulate a cloud-scale mass or radius. Walker+ 2018 Table 1 is the number to use.
                 (ii) I first set the E/F ceiling from Barnes' "the core region could be up to ~600 Msun ... capable of forming one or several high-mass stars (~25 per cent efficiency)". That 150 Msun is star formation <i>potential</i>, not stars that exist &mdash; those cores are starless &mdash; and treating it as already formed put the limit inside the Sgr B2 cloud.
         </ul>
-        <p>Rebuild: <tt>python3 colloquium_assets/make_sf_relation_figure.py</tt>. Edit CMZ_CLOUDS at the top of that file and rerun; it prints this provenance and the dex-below-relation for every point. Local tracks are digitised from Pokhrel+ Fig. 2a (10 of 12 clouds; Orion-A and Mon R2 are black/gray and cannot be separated from the axes).</p>
+        <p>Rebuild: <tt>python3 colloquium_assets/make_sf_relation_figure.py</tt> (it overwrites sf_relation_cmz*.png, which other decks share). Edit CMZ_CLOUDS at the top of that file and rerun; it prints this provenance and the dex-below-relation for every point. Local tracks are digitised from Pokhrel+ Fig. 2a (10 of 12 clouds; Orion-A and Mon R2 are black/gray and cannot be separated from the axes).</p>
     </aside>
 </section>
+
+<!-- (2026-10-22) Optional, down below #sf-relation-sgrb2.  Adam: "add ...Morelia2019.html#/55 as an
+     optional slide build (i.e., 'down below')".  Same figure as the 2019 deck but from a copy,
+     compare_brick_sgrb2_colPDF_sans.svg: the original asks for "DejaVuSans"/"Bitstream Vera Sans",
+     which browsers don't have, so it fell back to Times; the copy embeds a DejaVu Sans subset
+     (the font it was laid out in).  The original is shared by ~10 decks; leave it alone. -->
+<section id=60.1-brick-sgrb2-colpdf>
+    <div style="position:absolute; left:0px; top:10px; width:1024px; text-align:center; color:#fff; font-size:34px;">A threshold separates Sgr B2 from The Brick</div>
+    <!-- white box at #sf-relation-sgrb2's position and size, so it stays put going down -->
+    <div style="position:absolute; left:52px; top:56px; width:920px; height:700px; background:#fff; border-radius:6px;"></div>
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:62px; top:72px; width:900px; height:623.6px;" src="colloquium_assets/compare_brick_sgrb2_colPDF_sans.svg">
+    <div class=smaller2 style="position:absolute; right:66px; top:708px;"><a style="color:#1a62c4;" href="https://ui.adsabs.harvard.edu/abs/2018ApJ...853..171G">Ginsburg+ 2018a</a></div>
+
+    <aside class=notes>
+        <ul>
+            <li> Gray histogram: the column-density distribution of Sgr B2; blue: The Brick, a CMZ cloud with very little star formation but still very high density by local standards (its few protostars sit at the high end)
+            <li> Dark curve (right axis): the cumulative fraction of Sgr B2's protostellar point sources lying on a background column below N(H<sub>2</sub>). Almost none sit below the dotted line, ~2&times;10<sup>23</sup> cm<sup>&minus;2</sup> (~1 g cm<sup>&minus;2</sup>)
+            <li> Only a small fraction of The Brick's area reaches the columns at which Sgr B2 forms its protostars
+            <li> The difference is consistent with a threshold that The Brick has not crossed and Sgr B2 has
+        </ul>
+    </aside>
+</section>
+</section>  <!-- end of the #sf-relation-sgrb2 stack -->
 
 
 <!-- (2026-10-22) Hidden.  Adam: "skip slide 60" (it was 60 until 44-sfr-obs-vs-pred went in). -->
@@ -3386,8 +3484,8 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
 <!-- ######################## Q6 and Q7: where do the young stars go? is the IMF different? ######################## -->
 
 <section id=65-cmzq-q4>
-    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>progress</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=done><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st>&larr;</td></tr><tr class=cur><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
-    <aside class=notes>Questions 6 and 7, together.  Q6: Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?  Open since 2002.  Where we are: Arches &amp; Quintuplet orbits measured (HST + Gaia); no tidal tails seen yet.  What cracks it: Hosek: tidal-stream search in the Treasury proper motions.  Q7: Is the IMF different here?  Open since 1999.  Where we are: Arches top-heavy, &alpha; = 1.80 (HST proper motions).  What cracks it: Hosek: cleaner membership, deeper into the IMF, more clusters.</aside>
+    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=done><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class=st>&larr;</td></tr><tr class=cur><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
+    <aside class=notes>Questions 6 and 7, together.  Q6: Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?  Open since 2002.  Where we are: Arches &amp; Quintuplet orbits measured (HST + Gaia); no tidal tails seen yet.  What comes next: Hosek: tidal-stream search in the Treasury proper motions.  Q7: Is the IMF different here?  Open since 1999.  Where we are: Arches top-heavy, &alpha; = 1.80 (HST proper motions).  What comes next: Hosek: cleaner membership, deeper into the IMF, more clusters.</aside>
 </section>
 
 <section id=66-cmzq-clusters>
@@ -3419,8 +3517,8 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
      there will be one slide that highlights Q6 and Q7 then shows the arches and quintuplet images and their
      non-tails and then the next slides shows the IMF").  Its table is still the one-question-per-slide version. -->
 <section id=cmzq-q5 data-visibility="hidden">
-    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>progress</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=done><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st>progress</td></tr><tr class=done><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class="st fut">future</td></tr><tr class=cur><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
-    <aside class=notes>Question 7: Is the IMF different here?  Open since 1999.  Where we are: Arches top-heavy, &alpha; = 1.80 (HST proper motions).  What cracks it: Hosek: cleaner membership, deeper into the IMF, more clusters.</aside>
+    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=done><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st>progress</td></tr><tr class=done><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class="st fut">future</td></tr><tr class=cur><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st></td></tr></table>
+    <aside class=notes>Question 7: Is the IMF different here?  Open since 1999.  Where we are: Arches top-heavy, &alpha; = 1.80 (HST proper motions).  What comes next: Hosek: cleaner membership, deeper into the IMF, more clusters.</aside>
 </section>
 
 <section id=67-cmzq-imf>
@@ -3458,8 +3556,8 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
 <!-- ######################## Q8: chemistry and metallicity ######################## -->
 
 <section id=68-cmzq-q6>
-    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>progress</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>Does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=done><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st>progress</td></tr><tr class=done><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class="st fut">future</td></tr><tr class=cur><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st>&larr;</td></tr></table>
-    <aside class=notes>Question 8: Is the chemistry different? What is the metallicity?  Open since 2009.  Where we are: ice-absorption slopes vary: CMZ &harr; bar, and within the CMZ.  What cracks it: NIRSpec spectra behind the Brick (GO 6927, Ashby).</aside>
+    <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the CMZ?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=done><td class=n>Q5</td><td>Why does the CMZ form so few stars?</td><td class=y>2013</td><td class=st>progress</td></tr><tr class=done><td class=n>Q6</td><td>Where do the CMZ&rsquo;s young stars go? Do clusters dissolve?</td><td class=y>2002</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q7</td><td>Is the IMF different here?</td><td class=y>1999</td><td class="st fut">future</td></tr><tr class=cur><td class=n>Q8</td><td>Is the chemistry different? What is the metallicity?</td><td class=y>2009</td><td class=st>&larr;</td></tr></table>
+    <aside class=notes>Question 8: Is the chemistry different? What is the metallicity?  Open since 2009.  Where we are: ice-absorption slopes vary: CMZ &harr; bar, and within the CMZ.  What comes next: NIRSpec spectra behind the Brick (GO 6927, Ashby).</aside>
 </section>
 
 
@@ -3675,6 +3773,9 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
          style="position:absolute; left:440px; top:275px; width:486px;">
     <div class=smaller2 data-id="cite" style="position:absolute; bottom:2px; left:8px; color:#cfcfcf;">Gramze+ (subm 2026)</div>
     <img style="width:80px; position:absolute; bottom:6px; right:6px;" data-id="savannah" src="assets/Savannah/SavannahGramze.jpeg">
+    <aside class=notes>Plots first: x is the ice-absorption slope, y is the foreground A_V.  The points spread in slope at nearly the
+        same foreground A_V, so the slope differences are not from more foreground dust.  Then: they hint at metallicity (or
+        chemistry) differences, CMZ vs. bar and within the CMZ; NIRSpec spectra (GO 6927) will test it.</aside>
 </section>
 <section id=76-cmzq-ices-next>
     <h4> Future: ice abundances </h4>
@@ -3697,12 +3798,30 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
 
 <!-- ######################## Close ######################## -->
 
-<section id=77-cmzq-scoreboard>
+<section id=77-cmzq-summary>
     <!-- (2026-10-16) first pass at de-busying: one short phrase per cell (was full sentences), bigger type, and the
          bottom block cut to three one-line lists.  The long version's details are in the notes. -->
-    <h4 style="margin-bottom:8px;">The scoreboard</h4>
-    <style>#\37 7-cmzq-scoreboard table.cmzq td { padding-top:11px; padding-bottom:11px; }</style>
-    <table class=cmzq style="font-size:26px; width:1010px;">
+    <!-- (2026-10-23) Adam: "shrink the slide as shown below the word "summary" to occupy ~1/2 of the page; above it,
+         put verbatim text": the four bullets below, then the table and the bottom lists at smaller type in the lower
+         half (table from top:384px; was 26px type with 11px padding, bottom lists 18px). -->
+    <!-- (2026-10-23) Adam: "replace the bullets with a snapshot from each of these sections ... I think to get these to
+         fit well, we need to alternate left-right-left-right."  Snapshots: Savannah's G5 PV diagram (labels cropped;
+         #cmzq-q2), the DS9 ALMA + SiO outflow zoom (#sgrb2ds-f3), metal ice (other decks), and frame 31 of Dani
+         Lipman's 3D movie (upsampled x4 from the movie; a sharper one needs the original render). -->
+    <style>
+      #\37 7-cmzq-summary .snap { position:absolute; height:140px; border-radius:6px; }
+      #\37 7-cmzq-summary .snaplab { position:absolute; font-size:46px; line-height:1; transform:translateY(-50%); white-space:nowrap; margin:0; }
+    </style>
+    <img class=snap style="left:20px; top:10px;" src="assets/Savannah/G5_pvdiagram_12CO_nolabels.png">
+    <p class=snaplab style="left:190px; top:80px;">Gas smash</p>
+    <img class=snap style="right:20px; top:84px; width:140px;" src="assets/sgrb2ds/f3_alma_sio.jpg">
+    <p class=snaplab style="right:180px; top:154px; text-align:right;">CMZ SF - yes, still ??</p>
+    <img class=snap style="left:20px; top:158px; width:140px; object-fit:cover; object-position:50% 0;" src="assets/metalice.png">
+    <p class=snaplab style="left:190px; top:228px;">CMZ is icy</p>
+    <img class=snap style="right:20px; top:232px;" src="assets/cmz/lipman3d_ring_f031.png">
+    <p class=snaplab style="right:180px; top:302px; text-align:right;">3D coming!</p>
+    <style>#\37 7-cmzq-summary table.cmzq td { padding-top:4px; padding-bottom:4px; }</style>
+    <table class=cmzq style="font-size:18px; width:1010px; position:absolute; left:7px; top:384px;">
         <tr><th></th><th>question</th><th>now</th><th style="color:#4ade80;">future</th></tr>
         <tr><td class=n>Q1</td><td>What planets form there?</td><td style="color:#c9d1dc;">none known</td><td style="color:#4ade80;">Roman microlensing, ALMA disks</td></tr>
         <tr><td class=n>Q2</td><td>How does gas get into the CMZ?</td><td style="color:#c9d1dc;">inflow measured</td><td style="color:#4ade80;">ACES + matched sims</td></tr>
@@ -3713,19 +3832,19 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
         <tr><td class=n>Q7</td><td>Is the IMF different?</td><td style="color:#c9d1dc;">Arches top-heavy</td><td style="color:#4ade80;">deeper, more clusters</td></tr>
         <tr><td class=n>Q8</td><td>What is the metallicity?</td><td style="color:#c9d1dc;">ices: higher?</td><td style="color:#4ade80;">NIRSpec (GO&nbsp;6927)</td></tr>
     </table>
-    <div style="position:absolute; left:14px; right:14px; bottom:10px; font-size:18px; line-height:1.45; color:#9aa3b5; text-align:left;">
+    <div style="position:absolute; left:14px; right:14px; bottom:10px; font-size:15px; line-height:1.45; color:#9aa3b5; text-align:left;">
         <b style="color:#4ade80;">Answered:</b> Why is the dense gas warm? (<a href="https://ui.adsabs.harvard.edu/abs/2016A%26A...586A..50G/abstract">Ginsburg+ 2016</a>)<br>
         <b style="color:#ffd166;">Partly:</b> the extinction law (<a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...704A.130B/abstract">Bravo Ferres+ 2025</a>)<br>
         <b>Still open:</b> OB-star census &middot; radio filaments &middot; Sgr&nbsp;A*&rsquo;s past &middot; HVCCs &middot; nuclear disk &middot; cosmic rays &middot; isolated massive stars &middot; episodic SF</div>
-    <aside class=notes>Where each question stands, and what is about to crack it.  Most of the "future" column is data
+    <aside class=notes>Where each question stands, and what comes next.  Most of the "future" column is data
         already in hand or scheduled: ACES is complete, the JWST GC Treasury is half observed (the rest in Aug&ndash;Sep
         2027), and Roman is coming.
         Long version of each row: Q1 none known, 95% of known planets are within 3 kpc of the Sun; Roman microlensing toward
         the bulge. Q2 inflow ~1 Msun/yr measured, collisions seen (EVFs, G5); ACES maps every inflow interface at 0.1 pc and
         simulations now match its resolution. Q3 hints of inflow in ACES (Battersby+ 2026), shocked high-velocity-width
         features (Lipman+ 2026); Roman tomography + sub-pc MHD sims. Q4 most clouds on the near side, nested x2 orbits, no
-        single orbit fits; JWST extinction + Roman proper-motion tomography (~10 pc along the line of sight). Q5 cloud by
-        cloud 1-3 dex below the local relation; Treasury YSO census of the whole CMZ (complete Sep 2027) + ACES cores. Q6
+        single orbit fits; JWST extinction + Roman proper-motion tomography (~10 pc along the line of sight). Q5 the Brick and
+        Cloud E/F ~1.5 dex below the local relation at t_YSO = 0.1 Myr (Sgr B2 as a whole within its scatter); Treasury YSO census of the whole CMZ (complete Sep 2027) + ACES cores. Q6
         Arches &amp; Quintuplet orbits measured (HST + Gaia), no tidal tails seen yet; Hosek's tidal-stream search in the
         Treasury proper motions. Q7 Arches top-heavy, alpha = 1.80 (HST proper motions); Hosek: cleaner membership, deeper
         into the IMF, more clusters. Q8 ice-absorption slopes vary (CMZ vs bar, and within the CMZ); NIRSpec spectra behind
@@ -3733,7 +3852,7 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
         Bottom: one old question is answered -- the dense gas is warm because turbulence heats it (Ginsburg+ 2016) -- and
         the extinction law is partly answered: Bravo Ferres+ 2025 measured the JWST NIRCam 1-5 micron curve toward Sgr C
         and found no significant variation across the central regions; the high-opacity regime is what GO 6927 targets.
-        Still open, with what cracks each: radio filaments and field strength (MeerKAT); Sgr A*'s recent past (3D cloud
+        Still open, with what comes next for each: radio filaments and field strength (MeerKAT); Sgr A*'s recent past (3D cloud
         positions); high-velocity compact clouds (ACES); nuclear stellar disk formation (JWST, Roman); the high cosmic-ray
         ionization rate; isolated massive stars (JWST proper motions); episodic star formation (JWST star-formation
         history).</aside>
@@ -3747,10 +3866,23 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
      fetches, with a baked-in fallback).  See assets/cmz/jwst_gc_panner_embed.html for the
      two things that bite: the HiPS has no low-order coverage worth showing outside the
      survey, and with cooFrame:'galactic' Aladin reads the `target` string as l/b.
-     data-src, not src: the script at the end of this file loads it when the slide is entered
-     (restarting the zoom) and unloads it on the way out so Aladin stops animating. -->
-<section id=78-wrapup-jwst-panner data-background-color="#05070c">
-    <div class=smaller2 style="position:absolute; top:8px; left:14px; width:996px; text-align:left; z-index:20;">The GC is the laboratory where cosmologically common conditions are observed at planetary-system forming scales.</div>
+     (2026-10-23) now a reveal BACKGROUND iframe (data-background-iframe), so it fills the whole window
+     edge to edge at any size or aspect ratio, with the slide's text over it (Adam: "the image should fill
+     the _whole_ screen; the text should be superposed on the panning images.  It should be edge-to-edge
+     even if shown on a super gigantic screen").  Reveal loads a background iframe when its slide is
+     entered (restarting the zoom) and unloads it on the way out, as the deck's own data-src script did
+     for the in-slide frame.  The tour is assets/cmz/jwst_gc_panner_tour_arches_sgrb2.json
+     (make_jwst_gc_panner_tour.py): opening view centered on l, b = 0.40, -0.03 and as wide as the band of
+     imagery is tall (fovh0=0.33: ~0.59 deg on a 16:9 screen, from Sgr B2 to the Quintuplet), dive into the south end of the
+     Radio Arc filament, pan north past the Quintuplet and the Sickle to the Arches cluster and into the
+     Arched Filaments, cut to Sgr B2 and loop around it, then cut back and repeat (Adam: "start by panning
+     from the bottom of the arches-filament (the long filament next to the arches that goes through the
+     Sickle) and pan up through the quintuplet through the Arches cluster into the arches ... After that,
+     have it jump over to Sgr B2 and pan around that area").  At 4"/s the cut to Sgr B2 comes ~3.6 min
+     after the slide opens (12 s opening + 3.4 min of pan); the whole loop is ~7 min. -->
+<section id=78-wrapup-jwst-panner data-background-color="#05070c"
+         data-background-iframe="assets/cmz/jwst_gc_panner_embed.html?survey=https://starformation.astro.ufl.edu/avm_images/GCSpitzerLike_vvv_aces_hips/&amp;overlay=https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/&amp;tour=jwst_gc_panner_tour_arches_sgrb2.json&amp;leg=0&amp;ra=266.671553&amp;dec=-28.610131&amp;fov0=1.0&amp;fovh0=0.33&amp;dive=1&amp;full=1&amp;fov1=0.06&amp;hold=3&amp;zoom=9&amp;rate=4">
+    <div class=smaller2 style="position:absolute; top:8px; left:14px; width:996px; text-align:left; z-index:20; text-shadow:0 0 6px #000, 0 0 3px #000, 0 0 1px #000;">The GC is the laboratory where cosmologically common conditions are observed at planetary-system forming scales.</div>
     <!-- (2026-10-15) the ACES-blended composite (F212N+F480M diffuse + ACES 3 mm), order 12.
          (2026-10-16) gentler zoom, closer to the cold open's (3 s hold, 5.6x over 9 s): hold 3 s, then 12x
          over 9 s (0.72 -> 0.06 deg; was 24x in 7.5 s, to 0.03), and the pan rate doubled (4"/s) so it
@@ -3760,11 +3892,6 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
          fallbacks are on starformation.astro.ufl.edu because data.rc.ufl.edu sends no CORS header (Aladin
          cannot draw from it).  The background was not on starformation yet on 2026-10-16 -- until it is
          synced there, a viewer without hips/ sees the JWST layer alone. -->
-    <iframe class="orbit-embed" data-src="assets/cmz/jwst_gc_panner_embed.html?survey=https://starformation.astro.ufl.edu/avm_images/GCSpitzerLike_vvv_aces_hips/&amp;overlay=https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/&amp;fov1=0.06&amp;hold=3&amp;zoom=9&amp;rate=4"
-            frameborder="0" scrolling="no"
-            style="position:absolute; left:0px; top:104px; width:1024px; height:632px;
-                   max-width:none; max-height:none; margin:0; border:0; background:#05070c;
-                   pointer-events:none;"></iframe>
 </section>
 
 <!-- moved here from slide 3 (2026-10-09): the last slide of the talk -->
@@ -4345,7 +4472,7 @@ img.sfrel.small { left: 14px; top: 500px; width: 330px; height: 247.5px; }
         <a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2026MNRAS.552ag377L/abstract">ACES I (Longmore+ 2026)</a></div>
     <aside class=notes>
         What we can hand them.  Left: Lipman+ 2026a's top-down CMZ, individual clouds placed with line-of-sight
-        constraints (blue near side, red far side).  Right: the Roman tomography method (Vasini+ 2026): proper motions give
+        constraints (blue near side, red far side -- the reverse of the 3D movie in Q4, where red is near).  Right: the Roman tomography method (Vasini+ 2026): proper motions give
         each star's distance (near-side and far-side stars move in opposite directions), extinction gives the gas in
         front of it, and the inversion recovers the gas density along the line of sight -- ~10 pc resolution with ~10^4
         stars.  Plus ACES: the whole CMZ in dense-gas tracers at 0.1 pc, so the target mass per cloud no longer rests on

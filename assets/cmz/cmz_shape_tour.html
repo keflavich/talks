@@ -64,6 +64,13 @@
                 Phase 2 here is NOT the GC view: it zooms, rotates and pans onto the bar so that it lands
                 on the bar-model cartoon (assets/Savannah/bar_model_galaxy.jpg) on #bar-inflow, the next
                 slide -- see CARTOON below.  The deck fades the cartoon itself in on top as the zoom ends.
+    &fill=1     (with frame=topdown&oviz=gr; 2026-10-23, Adam: the background on #30-cmz-dive "should fully fill the
+                screen in all dimensions"): the stage grows by FILL_PAD past the 1024 x 672 box -- under the deck's
+                title bar and out to the sides of a screen up to 2:1 -- and everything is drawn in the same box
+                coordinates, shifted by the pad, so nothing inside the box moves.  The deck's iframe must then sit
+                at slide (-FILL_PAD.l, 92 - FILL_PAD.t), (1024 + l + r) x (672 + t + b).  Phase 0 draws
+                ../local/topdown_clusters_zoom_gr_wide.jpg (make_topdown_wide_gr.py: this render, unchanged, inside
+                the box, the unzoomed render of the same camera around it) instead of the box-sized render.
   The deck calls window.cmzGoto(p, true) for a one-step-forward fragment and
   window.cmzGoto(p, false) for anything else (backward, jumps, arriving on the slide).
   ============================================================================================
@@ -102,12 +109,18 @@ if (EMBED) document.body.classList.add('embed');
 // screen-fixed goes through P() or world().  Without it, rot = 0 and (ax, ay) = (AX, AY): unchanged.
 const ROT = q.get('frame') === 'topdown';
 const W = ROT ? 1024 : 1000, H = ROT ? 672 : 670, DPR = 2;
+const FILL = ROT && q.get('oviz') === 'gr' && q.get('fill') === '1';
+const FILL_PAD = FILL ? { l: 256, t: 124, r: 256, b: 36 } : { l: 0, t: 0, r: 0, b: 0 };   // keep in step with make_topdown_wide_gr.py
+const WF = W + FILL_PAD.l + FILL_PAD.r, HF = H + FILL_PAD.t + FILL_PAD.b;               // the whole stage
 const AX = 625, AY = 335;                // screen anchor of the camera center
 const AXR = 512.7, AYR = 338.5;     // Sun; +0.7/+2.5 px from the box center = the oviz render's own Sun offset, measured
 // the oviz render (topdown frame only): 2048 x 1344 px, 0.5 screen px per px in phase 0, top-left at
 // (0, 0) -- so the Sun is at its px (2 AXR, 2 AYR) -- and 1250 pc (the dust map's edge) = 665 of its px
 const OVIZ = { src: q.get('oviz') === 'gr' ? '../local/topdown_clusters_zoom_gr.jpg' : '../local/topdown_clusters_zoom.jpg',
                w: 2048, h: 1344, sun: [2 * AXR, 2 * AYR], rEdge: 665 };
+// &fill=1: the same render with the margins filled, 2 x FILL_PAD px bigger on each side, the box at (2 l, 2 t)
+const OVIZ_WIDE = FILL ? { src: '../local/topdown_clusters_zoom_gr_wide.jpg', w: 3072, h: 1664,
+                           x: 2 * FILL_PAD.l, y: 2 * FILL_PAD.t } : null;
 // phase 2 in this frame: land on the #bar-inflow cartoon, assets/Savannah/bar_model_galaxy.pdf (rendered to
 // bar_model_galaxy.jpg).  Geometry read from the PDF's own vector paths, in pt of its 375.64 x 404.5 page:
 // the bar ellipse (fitted to its 4 Bezier arcs) is centered at (189.22, 190.02) -- the CMZ circle's
@@ -124,11 +137,11 @@ const BAR_VIEW = { cx: 0, cy: 0, s: CARTOON.k * CARTOON.semimajor / 3300, ax: GC
                    rot: (CARTOON.tilt - 28.0) * Math.PI / 180 };
 const cv = document.getElementById('cv');
 if (ROT){
-  cv.width = W * DPR; cv.height = H * DPR;
-  [cv, document.getElementById('stage')].forEach(function(e){ e.style.width = W + 'px'; e.style.height = H + 'px'; });
+  cv.width = WF * DPR; cv.height = HF * DPR;
+  [cv, document.getElementById('stage')].forEach(function(e){ e.style.width = WF + 'px'; e.style.height = HF + 'px'; });
 }
 const ctx = cv.getContext('2d');
-ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+ctx.setTransform(DPR, 0, 0, DPR, DPR * FILL_PAD.l, DPR * FILL_PAD.t);     // box coordinates, as without the pad
 const capEl = document.getElementById('cap');
 
 const R0 = 8150;                         // pc, Sun - GC
@@ -151,6 +164,8 @@ function maskDust(){
   dustMasked = c;
 }
 imgGal.src = ROT ? 'shape_galaxy_gas_gray.jpg' : 'shape_galaxy_gas.jpg';
+const imgWide = OVIZ_WIDE ? new Image() : null;
+if (imgWide) imgWide.src = OVIZ_WIDE.src;
 let ready = false;
 
 // ---------------------------------------------------------------------------------------
@@ -434,7 +449,11 @@ function drawImages(){
     const k = 0.5 * S.s / VIEW.local.s;                     // screen px per render px
     const x0 = -OVIZ.sun[0] * k, y0 = -OVIZ.sun[1] * k, w = OVIZ.w * k, h = OVIZ.h * k;
     ctx.save(); ctx.translate(sx(0), sy(-R0)); ctx.rotate(-Math.PI / 2);
-    if (S.dmask < 0.998){ ctx.globalAlpha = S.dust * (1 - S.dmask); ctx.drawImage(imgDust, x0, y0, w, h); }
+    if (S.dmask < 0.998){
+      ctx.globalAlpha = S.dust * (1 - S.dmask);
+      if (imgWide) ctx.drawImage(imgWide, x0 - OVIZ_WIDE.x * k, y0 - OVIZ_WIDE.y * k, OVIZ_WIDE.w * k, OVIZ_WIDE.h * k);
+      else ctx.drawImage(imgDust, x0, y0, w, h);
+    }
     if (S.dmask > 0.002 && dustMasked){ ctx.globalAlpha = S.dust * S.dmask; ctx.drawImage(dustMasked, x0, y0, w, h); }
     ctx.restore();
   } else if (S.dust > 0.002){
@@ -614,7 +633,7 @@ function draw(){
   ctx.globalAlpha = 1;
   ctx.globalCompositeOperation = 'source-over';
   ctx.fillStyle = '#000';
-  ctx.fillRect(0, 0, W, H);
+  ctx.fillRect(-FILL_PAD.l, -FILL_PAD.t, WF, HF);
   if (!ready) return;
   world(drawImages);
   drawAnnot(S.annot);
@@ -712,7 +731,7 @@ async function tour(){
 }
 if (!EMBED) document.getElementById('stage').addEventListener('click', function(){ tour(); });
 
-Promise.all([imgDust.decode(), imgGal.decode()]).catch(function(){}).then(function(){
+Promise.all([imgDust.decode(), imgGal.decode()].concat(imgWide ? [imgWide.decode()] : [])).catch(function(){}).then(function(){
   if (ROT) maskDust();
   ready = true;
   if (STAGE !== null) goto(STAGE, false);

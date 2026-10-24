@@ -337,15 +337,24 @@
      verbatim from the end of the deck (Act IV leftovers), ids added; "Our Galaxy" headers dropped
      (margin-top:65px on each image stands in for the header, so images and credits sit where they were). -->
 <section id=2-galaxy-gaia>
-    <span class=image style='height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/ESAGaiaSkyColor.png); background-size:997px'></span>
+    <span class=image style='height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/ESAGaiaSkyColor_mollweide.png);'></span>
     <div class=smaller2 style="float:right">Gaia star colors via ESA</div>
-<aside class=notes><div class=said style="color:#1546c9; font-size:15px; line-height:1.35; margin-bottom:.8em; padding-bottom:.4em; border-bottom:1px solid #c9d4ee"><p data-from=0 style="margin:0 0 .4em">The center of our galaxy is invisible in the optical. We see it only as a dark dust lane cutting through the sky.</p></div></aside>
+<aside class=notes><div class=said style="color:#1546c9; font-size:15px; line-height:1.35; margin-bottom:.8em; padding-bottom:.4em; border-bottom:1px solid #c9d4ee"><p data-from=0 style="margin:0 0 .4em">
+        The center of our galaxy is invisible in the optical. We see it only as a dark dust lane cutting through the sky.
+        </p></div></aside>
 </section>
 
+<!-- (2026-10-23) build: the SPHEREx all-sky map over the 2MASS one.  Gaia, 2MASS and SPHEREx are all reprojected to
+     the Planck stack's Mollweide and frame (Gaia and 2MASS were Hammer-Aitoff, so the LMC jumped), and use its CSS:
+     colloquium_assets/make_allsky_mollweide.py -->
 <section id=3-galaxy-2mass>
-    <span class=image style='height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/2MASS_MilkyWayInfrared_IPAC.png); background-size:1000px'></span>
-    <div class=smaller2 style="float:right">2MASS via IPAC</div>
-<aside class=notes><div class=said style="color:#1546c9; font-size:15px; line-height:1.35; margin-bottom:.8em; padding-bottom:.4em; border-bottom:1px solid #c9d4ee"><p data-from=0 style="margin:0 0 .4em">If we look in the infrared, we instead see a thin lane dominated by the stars in our galactic plane, and still quite significantly blocked out by dust.</p></div></aside>
+    <span class=image style='height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/2MASS_MilkyWayInfrared_IPAC_mollweide.png);'></span>
+    <span class="image fragment" data-fragment-index=0 style='position:absolute; left:0; top:0; height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/SPHEREx_AllSky_mollweide.png);'></span>
+    <div class=smaller2 style="float:right; position:relative"><span class="fragment fade-out" data-fragment-index=0>2MASS via IPAC</span><span class=fragment data-fragment-index=0 style="position:absolute; right:0; top:0; white-space:nowrap">SPHEREx via NASA/JPL-Caltech</span></div>
+<aside class=notes><div class=said style="color:#1546c9; font-size:15px; line-height:1.35; margin-bottom:.8em; padding-bottom:.4em; border-bottom:1px solid #c9d4ee"><p data-from=0 style="margin:0 0 .4em">If we look in the infrared, we instead see a thin lane dominated by the stars in our galactic plane, and still quite significantly blocked out by dust.</p></div>
+        Build: SPHEREx all-sky map (2025; 0.75-5 &micro;m in 102 bands).  NASA's caption: stars blue, green
+        and white; hot hydrogen gas blue; dust red.
+    </aside>
 </section>
 
 <section id=4-galaxy-planck>
@@ -1829,12 +1838,16 @@ across cosmic time.
      (2026-10-23: starts on the Sun's neighborhood, one click zooms out to the Galaxy, then)
      one click dives into the bar and hands off to #bar-inflow, exactly as before. -->
 <section id=30-cmz-dive data-background-color="#000">
-    <h4 style="position:relative; z-index:6;">
+    <h4 style="position:relative; z-index:6; text-shadow:0 0 3px #000, 0 0 8px #000, 0 0 16px #000;">
         <span class="fragment fade-out zo-late" data-fragment-index=1></span>
         <span class="fragment zo-late" data-fragment-index=1 style="position:absolute; left:0; right:0; top:0;">The bar feeds the CMZ</span>
     </h4>
-    <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown&amp;oviz=gr"
-            style="position:absolute; left:0px; top:92px; width:1024px; height:672px;
+    <!-- (2026-10-23) Adam: "the background ... is cut off under the title bar and around the edges - it should fully
+         fill the screen in all dimensions": &fill=1 grows the page's stage 256 px left and right, 124 px up (under
+         the title, and 32 px past the slide's top) and 36 px down, so this iframe is (-256, -32), 1536 x 832; the box
+         it used to be, (0, 92) 1024 x 672, draws exactly as before.  #31-bar-inflow's backdrop copy matches. -->
+    <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown&amp;oviz=gr&amp;fill=1"
+            style="position:absolute; left:-256px; top:-32px; width:1536px; height:832px;
                    max-width:none; max-height:none; margin:0; border:0; background:#000;
                    pointer-events:none;"></iframe>
     <!-- (2026-10-23) Adam: "30-cmz-dive should be immediately preceded by a view that's zoomed into the sun so we
@@ -1859,15 +1872,24 @@ across cosmic time.
        Gramze+ 2023 (ApJ 959, 93): G5 at (l,b) = (+5.4, -0.4); velocity bridge between clouds at ~50
          and ~150 km/s = direct evidence of a cloud-cloud collision; ~60 K; X_CO 10-20x below Galactic -->
 <section id=31-bar-inflow>
-    <h4> The bar feeds the CMZ </h4>
+    <h4 class=bar-under style="position:relative; z-index:1; text-shadow:0 0 3px #000, 0 0 8px #000, 0 0 16px #000;"> The bar feeds the CMZ </h4>
+    <!-- (2026-10-23) Adam: "slide 30->31, keep the background": the same cmz_shape_tour copy #30-cmz-dive ends
+         on, parked on that slide's last phase (data-cmz-start=2, no phase fragments here), so the hand-off is the
+         same pixels.  z-index 0 (reveal gives iframes 1) and first in the slide, so everything else draws over it.
+         &fill=1 and the padded box as on #30-cmz-dive (the whole screen, not just under the title). -->
+    <iframe class=cmz-shape data-cmz-start=2 src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown&amp;oviz=gr&amp;fill=1"
+            style="position:absolute; left:-256px; top:-32px; width:1536px; height:832px; z-index:0;
+                   max-width:none; max-height:none; margin:0; border:0; background:#000;
+                   pointer-events:none;"></iframe>
     <!-- the bar-model cartoon (2026-10-15; replaces S. Gramze's CMZCartoon.png): assets/Savannah/bar_model_galaxy.jpg,
          rendered at 240 dpi from bar_model_galaxy.pdf beside it.  540 px tall (1.334981 px per pt of its
          375.64 x 404.5 pt page), top-left at (259.40, 150.93) so its GC -- the CMZ circle's center, PDF
          (189.22, 190.02) pt -- sits at slide (512, 404.6).  #cmz-zoomout's dive lands on exactly this
          image (and the CARTOON constants in assets/cmz/cmz_shape_tour.html) -- move all three together. -->
-    <img src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model: the bar's near- and far-side dust lanes feeding the CMZ, overshooting gas, and G1.3, BC2 and G5, on a barred galaxy, with the l = 0 and +-5 deg sightlines"
+    <img class=bar-under src="assets/Savannah/bar_model_galaxy.jpg" alt="bar model: the bar's near- and far-side dust lanes feeding the CMZ, overshooting gas, and G1.3, BC2 and G5, on a barred galaxy, with the l = 0 and +-5 deg sightlines"
          style="position:absolute; left:259.40px; top:150.93px; width:501.47px; height:540px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none; border-radius:6px;">
-    <div style="position:absolute; left:772px; top:50px; width:244px; text-align:left; font-size:28px; line-height:1.3;">
+    <div class=bar-under style="position:absolute; left:772px; top:50px; width:244px; text-align:left; font-size:28px; line-height:1.3;
+                text-shadow:0 0 3px #000, 0 0 8px #000, 0 0 16px #000;">
         <p style="margin:0 0 26px 0;">Gas falls along bar dust lanes: <span style="color:#ffd166;">~1&nbsp;M<sub>&#9737;</sub>&nbsp;yr<sup>&minus;1</sup></span>
             <span style="display:block; font-size:16px; color:#aaa; margin-top:4px;">
                 <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.484.1213S/abstract">Sormani &amp; Barnes 2019</a>: $2.7^{+1.5}_{-1.7}$
@@ -1877,73 +1899,58 @@ across cosmic time.
         <p  style="margin:0;">...and hits the far side dust lane
         </p>
     </div>
-    <div class=smaller3 style="position:absolute; bottom:6px; left:259px;">cartoon: S. Gramze (<a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Gramze+ 2023</a>)</div>
+    <div class="smaller3 bar-under" style="position:absolute; bottom:6px; left:259px; text-shadow:0 0 3px #000, 0 0 8px #000;">cartoon: S. Gramze (<a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Gramze+ 2023</a>)</div>
 
-    <!-- R. Tress's ProjMosaic_3.mp4 (Rhea-RT), cropped to the total-surface-density panel only: the
-         476x476 px map interior at (78,31) of the 2560x1526 mosaic, same crop as ProjMosaic_5 on
-         #cmz-what-shape; this run's panel is 6 kpc across (+-3 kpc).  t = 232 -> 357 Myr, 10 fps,
-         51 s, looped; reveal's data-autoplay starts it on the slide and pauses it on leaving.
-         Sized to sit under the text (which ends at y = 439).
-         TURNED (2026-10-15) to the cartoon's orientation: the run is in the bar's frame with the bar
-         along x (the lanes' principal axis is 0.9 deg off horizontal, from the time-averaged frames)
-         and, like the cartoon, rotating clockwise (each lane meets the nuclear ring on its leading
-         side), so a pure rotation matches it -- no mirror: -59.84 deg puts the bar 30.16 deg from
-         vertical, as the bar-model cartoon's ellipse (was -70.2 for S. Gramze's, at 19.8 deg).  It turns about the nuclear ring's center (movie px 240.5, 241.4,
-         mean over the run; display px 126.58, 127.05 at 250 px), which the translate then puts at the
-         disc's center, and a circular mask hides the turned square's corners -- r = 122.6 px, inside the
-         122.95 px the shifted video still covers all round, so no black sliver shows at its edge. -->
+    <!-- (2026-10-23) Adam: "on 31, replace the Tress movie with x1_extent_CMZ_movie.mp4" (Dani Lipman's simulation),
+         hosted from Dropbox, not GitHub: the local copy is dropbox_only/ (gitignored), and the Dropbox share link
+         (lipman_x1_extent_CMZ_movie.mp4, same 5902749 bytes; dl=0 -> raw=1) is the second <source>, so the
+         github.io copy (no local file) falls through to it.  2634 x 924 px, 11 fps, 18.4 s, looped; a
+         gray map in matplotlib axes, x -3..3 and y -1..1 (413 px per unit, (0, 0) at px (1364.5, 443)).
+         CROPPED to inside the axes box (spines at px x 124-125 / 2604-2605, y 29-30 / 856-857), 6 px in so the
+         scaled spines don't bleed into the edge: px x 131-2599, y 36-851, 2468 x 815, center (1365, 443.5) -- .bar-turn's
+         overflow does the cropping.
+         TURNED (Adam: "it needs to be") like the Tress disc was: the bar is along x (each lane within ~3-7 deg of
+         horizontal on the time-averaged frame, the x < 0 lane offset to +y, the x > 0 one to -y) and turns
+         clockwise like the cartoon, so -59.84 deg puts it 30.16 deg from vertical, on the cartoon's bar, with
+         the x < 0 lane on the cartoon's near-side lane -- no mirror.
+         Thumbnail: 0.098295 slide px per movie px, the cropped strip 242.59 x 80.11, its turned bounding box
+         191.15 x 250 at (795.43, 475), centered at (891, 600) under the text. -->
     <style>
-      #\33 1-bar-inflow .bar-shape { position:absolute; right:8px; bottom:24px; width:250px; z-index:6;
-          text-align:center; opacity:1;
+      #\33 1-bar-inflow .bar-shape { position:absolute; left:795.43px; top:475px; width:191.15px; height:250px; z-index:6;
           transform-origin:0 0; transition:transform .9s ease-in-out; }
-      /* BUILD (2026-10-11): one click blows the movie up to a full-height 768x768 square (x 128-896)
-         over a black backdrop, then the arrows fade in.  The small video sits at (738, 453), 270 px,
-         so: translate to (128, 0) and scale 768/270. */
-      /* (2026-10-15) the movie is now 250 px at (766, 473), clear of the wider cartoon: translate to (128, 0),
-         scale 768/250 -- the blown-up disc is unchanged, so are the arrows */
-      #\33 1-bar-inflow:has(.bar-blowup.visible) .bar-shape { transform:translate(-638px, -473px) scale(3.072); }
+      #\33 1-bar-inflow .bar-turn { position:absolute; left:-25.72px; top:84.94px; width:242.59px; height:80.11px;
+          overflow:hidden; transform:rotate(-59.84deg); }
+      /* BUILD: one click blows the turned strip up to the full slide height, its bounding box 587.2 x 768
+         centered at (512, 384), over the gray galaxy (Adam: "I want the greyscale galaxy cartoon background to
+         stick around for the movie overlay"), while the .bar-under layers -- title, color cartoon, text, its
+         credit -- fade out, then the movie's credit fades in: scale 768/250, and translate (795.43, 475) to
+         (218.40, 0) */
+      #\33 1-bar-inflow .bar-under { transition:opacity .5s ease-in-out; }
+      #\33 1-bar-inflow:has(.bar-blowup.visible) .bar-under { opacity:0; }
+      #\33 1-bar-inflow:has(.bar-blowup.visible) .bar-shape { transform:translate(-577.03px, -475px) scale(3.072); }
       #\33 1-bar-inflow .bar-shape .bar-cap { transition:opacity .3s; }
       #\33 1-bar-inflow:has(.bar-blowup.visible) .bar-shape .bar-cap { opacity:0; }
       .reveal .slides section .fragment.bar-blowup { transition:opacity .5s ease-in-out, visibility .5s; }
-      .reveal .slides section .fragment.bar-arrows { transition:opacity .5s ease-in-out .9s, visibility .5s .9s; }
+      .reveal .slides section .fragment.bar-credit { transition:opacity .5s ease-in-out .9s, visibility .5s .9s; }
     </style>
     <div class=bar-shape>
-        <div class=bar-disc style="position:relative; width:250px; height:250px; margin:0 auto; overflow:hidden; clip-path:circle(122.6px at 125px 125px);">
-        <video src="assets/cmz/tress_ProjMosaic3_sigma_tot.mp4" data-autoplay muted loop playsinline preload=auto
-               style="display:block; position:absolute; left:0; top:0; margin:0; width:250px; height:250px; max-width:none; max-height:none; border:0;
-                      transform-origin:126.58px 127.05px; transform:translate(-1.58px, -2.05px) rotate(-59.84deg);"></video>
+        <div class=bar-turn>
+        <video data-autoplay muted loop playsinline preload=auto
+               style="display:block; position:absolute; left:-12.877px; top:-3.539px; width:258.909px; height:90.825px;
+                      margin:0; max-width:none; max-height:none; border:0; box-shadow:none;">
+            <source src="dropbox_only/x1_extent_CMZ_movie.mp4" type="video/mp4">
+            <source src="https://www.dropbox.com/scl/fi/lbsc79mdlabdxn1xme90i/lipman_x1_extent_CMZ_movie.mp4?rlkey=cdq23a5ew52x7ebl2kc3f3no0&amp;raw=1" type="video/mp4">
+        </video>
         </div>
-        <div class=bar-cap style="font-size:14px; line-height:1.25; color:#9aa3b5; margin-top:4px; white-space:nowrap;"><a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract">Tress+ 2026</a> (Rhea-RT) &middot; 6&nbsp;kpc box</div>
+        <div class=bar-cap style="position:absolute; left:-30px; right:-30px; top:252px; text-align:center; font-size:14px; line-height:1.25; color:#9aa3b5; white-space:nowrap; text-shadow:0 0 3px #000, 0 0 8px #000;">simulation: D. Lipman</div>
     </div>
-    <!-- the build: backdrop (also the trigger the CSS above keys on), then the arrows.  Arrow tips are
-         where the two bar lanes meet the central ring, chosen on frames across the whole run (the ring
-         shrinks into a compact disk; the tips stay on its edge): movie px (208,224) and (256,250) of
-         the 476 px frame, i.e. slide (464,361) and (541,403) at 768/476 = 1.613 slide px per movie px.
-         The arrows come in from beside the lanes so they don't cover them.
-         (2026-10-15) Arrows turned with the movie: -59.84 deg about the ring center, which moves from
-         slide (516.84, 390.29) unturned to the disc center (512, 384). -->
-    <div class="fragment bar-blowup" data-fragment-index=0
-         style="position:absolute; left:-200px; top:-200px; width:1424px; height:1168px; background:#000; z-index:5;"></div>
-    <svg class="fragment bar-arrows" data-fragment-index=0 viewBox="0 0 1024 768"
+    <!-- the build: an empty trigger the CSS above keys on (2026-10-23: no longer a black backdrop, and the
+         arrow is gone -- Adam: "remove the arrow overlay"), then the credit. -->
+    <div class="fragment bar-blowup" data-fragment-index=0 style="position:absolute; left:0; top:0; width:0; height:0;"></div>
+    <svg class="fragment bar-credit" data-fragment-index=0 viewBox="0 0 1024 768"
          style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:7; overflow:visible; margin:0; pointer-events:none;">
-        <defs>
-            <marker id=bar-ah viewBox="0 0 10 10" refX=8 refY=5 markerWidth=5 markerHeight=5 orient=auto-start-reverse>
-                <path d="M0,0 L10,5 L0,10 Z" fill="#fff" stroke="#fff" stroke-width=1 />
-            </marker>
-        </defs>
-        <g stroke-linecap=round>
-            <line x1=330.9 y1=504.1 x2=413.9 y2=444.8 stroke="#fff" stroke-width=9 />
-            <line x1=330.9 y1=504.1 x2=413.9 y2=444.8 stroke="#fff" stroke-width=5 marker-end="url(#bar-ah)" />
-            <!--<line x1=668.9 y1=280.7 x2=544.0 y2=364.2 stroke="#000" stroke-width=9 />
-            <line x1=668.9 y1=280.7 x2=544.0 y2=364.2 stroke="#fff" stroke-width=5 marker-end="url(#bar-ah)" />-->
-        </g>
-        <g font-family="Lato, Helvetica, Arial, sans-serif" font-weight=700 font-size=26 fill="#fff"
-           style="paint-order:stroke; stroke:#000; stroke-width:5px;">
-            <!--<text x=318.2 y=506.0 text-anchor=end>lane hits the CMZ</text>
-            <!--<text x=695.4 y=286.8 text-anchor=start>lane hits the CMZ</text>-->
-        </g>
-        <text x=890 y=760 text-anchor=end font-size=15 fill="#cfcfcf" font-family="Lato, Helvetica, Arial, sans-serif"
-              style="paint-order:stroke; stroke:#000; stroke-width:3px;">Tress+ 2026 (Rhea-RT), total gas surface density, 6&nbsp;kpc across</text>
+        <text x=1014 y=760 text-anchor=end font-size=15 fill="#cfcfcf" font-family="Lato, Helvetica, Arial, sans-serif"
+              style="paint-order:stroke; stroke:#000; stroke-width:3px;">simulation: D. Lipman</text>
     </svg>
     <aside class=notes><div class=said style="color:#1546c9; font-size:15px; line-height:1.35; margin-bottom:.8em; padding-bottom:.4em; border-bottom:1px solid #c9d4ee"><p data-from=0 style="margin:0 0 .4em">So we have a picture of our Galactic Center that comes largely from looking at other galaxies with similar structures, and we see that there's material that falls in along these dust lanes. And for modeling, we're thinking that some of the gas is hitting the center, and some is overshooting and hitting stuff on the other side. So gas falls in along the dust lanes. Okay, we think that happens at a rate of about a solar mass per year, give or take. One third of that gas is going to land on the Central Molecular Zone, so it's going to end up in the central 100 parsecs. The rest is going to overshoot, and when it overshoots, it hits stuff on the far side. So if we look at that picture here, we're saying about one third lands in this inner ringy thing, and the remaining material is going to land on the opposite-end bar lane.</p><p data-from=1 style="margin:0 0 .4em">And this arrow is pointing you toward these features here, where stuff that has just missed the Galactic Center has swung in and is sometimes smashing into this infalling lane. And it's both preventing it from pulling straight in, and resulting in some high-velocity collisions. So those high-velocity collisions are the things that we've started studying in more detail recently.</p></div>
         Coming out of the zoom: the bar.  Gas on the bar's orbits gets shocked into two dust
@@ -1954,9 +1961,7 @@ across cosmic time.
         Click: most of it overshoots.  Click: and collides with the lane on the other side --
         the bursts on the cartoon.  We can see one of these collisions happening.
         <br><br>
-        Click: the simulation full screen (Tress+ 2026, Rhea-RT, gas surface density, 6 kpc
-        across, ~125 Myr).  The arrows: where the two bar lanes run into the CMZ ring -- the
-        collision points.  Watch the ring settle into a compact disk.
+        Click: Dani Lipman's simulation, blown up over the galaxy and turned to the cartoon's orientation.
     </aside>
 </section>
 

@@ -562,10 +562,6 @@ across cosmic time.
 <section data-id="9e1f37193271406fc72e974be0a8a3fe" id=7-title>
     <div class="sl-block" data-block-type="text" style="width: auto; height: auto;" data-block-id="fa1e26dfdc2f3050895879d1fc1c4f1a">
     <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
-        <!-- TODO: settle the final title with the CfA.  This is a working one that matches the
-             story in the outline comment below; the Granada title is kept here in case you
-             want it back:
-             "What sets star and planet formation in the Galaxy's richest environments across cosmic time" -->
              <h3 class=smaller2 style="font-size:130%; word-break: keep-all; hyphens: none;">The Galactic Center: Star Formation, Gas Flows, and open questions</h3>
             <div class="footer smaller">Adam Ginsburg </div>
             <div class="smaller3 footer">Waldo W. Neikirk Associate Professor <br>Department of Astronomy<br>University of Florida, Gainesville </div>
@@ -2744,8 +2740,8 @@ The future will be 3D tomography, which I'll tell you more about soon.
     <video class="slideautostart" src="assets/cmz/DaniLipman_3DCMZ_150to200pc_tagged.mp4"
            muted loop playsinline
            style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12px; top:78px; width:1000px; height:548px;"></video>
-    <!-- TODO: center this -->
-    <div class=smaller3 style="position:absolute; bottom:6px; left:12px; color:#cfcfcf;">Dani Lipman, Robin Tress, Mattia Sormani, et al  &mdash; inner-Galaxy simulation<br> gas color-tagged by its true 3D position: face-on (top left), as we see it on the sky (bottom left), and in <i>l</i>&ndash;<i>v</i> (right)</div>
+    <!-- (2026-10-26) centered (was "TODO: center this") -->
+    <div class=smaller3 style="position:absolute; bottom:6px; left:0; width:1024px; text-align:center; color:#cfcfcf;">Dani Lipman, Robin Tress, Mattia Sormani, et al  &mdash; inner-Galaxy simulation<br> gas color-tagged by its true 3D position: face-on (top left), as we see it on the sky (bottom left), and in <i>l</i>&ndash;<i>v</i> (right)</div>
 
     <aside class=notes><div class=said style="color:#1546c9; font-size:15px; line-height:1.35; margin-bottom:.8em; padding-bottom:.4em; border-bottom:1px solid #c9d4ee"><p data-from=0 style="margin:0 0 .4em">
         Observationally, we have access to position on the sky and the velocity on the sky.
@@ -3839,6 +3835,7 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
     </p></div></aside>
 </section>
 
+<section id=53-sgrb2-stack>   <!-- (2026-10-26) vertical stack: 53, then the Tress+ 2026 sketch below it -->
 <section id=53-sgrb2-to-cmz>
     <div style='text-align:left; width:80%;' class=smaller>There is asymmetry in the star formation seen in JWST (HII regions, dust excess) and ALMA (embedded YSOs) <div style='text-align:left;'class=smaller> The transition is sharp</div></div>
 
@@ -3887,6 +3884,38 @@ $\sim$50% of CMZ SF occurs in the Sgr B2 cloud.
         </ul>
     </aside>
 
+</section>
+
+<section id=53.1-tress-colliding-flows>
+    <!-- (2026-10-26) Adam: "add 101-tress-colliding-flows below 53-sgrb2-to-cmz".  Copied from
+         cfa_2026_bonus.html (#101-tress-colliding-flows, still there); 53 is now the top of this vertical stack. -->
+    <h4> Gas &amp; young stars can decouple </h4>
+    <div style="position:absolute; left:30px; top:100px; width:592px; height:592px; background:#fff; border-radius:8px;"></div>
+    <img src="assets/cmz/tress2026_fig22_sketch_cmz.png" alt="Tress+ 2026 Fig. 22: schematic of a star-forming region in the CMZ"
+         style="position:absolute; left:46px; top:116px; width:560px; height:560px; margin:0; border:0; box-shadow:none; max-width:none; max-height:none; background:none;">
+    <div class="fragment fade-out" data-fragment-index=0 style="position:absolute; left:329px; top:116px; width:277px; height:297px; background:#fff;"></div>
+    <div class="fragment fade-out" data-fragment-index=1 style="position:absolute; left:46px; top:413px; width:283px; height:263px; background:#fff;"></div>
+    <div class="fragment fade-out" data-fragment-index=2 style="position:absolute; left:329px; top:413px; width:277px; height:263px; background:#fff;"></div>
+    <div style="position:absolute; left:650px; top:118px; width:350px; text-align:left; font-size:21px; line-height:1.3;">
+        <p style="margin:0 0 18px 0;"><b style="color:#ffd166;">(a)</b> A cluster forms, perhaps where the bar hits the CMZ</p>
+        <p class=fragment data-fragment-index=0 style="margin:0 0 18px 0;"><b style="color:#ffd166;">(b)</b> Feedback opens a hole in cloud, doesn't destroy it</p>
+        <p class=fragment data-fragment-index=1 style="margin:0 0 18px 0;"><b style="color:#ffd166;">(c)</b> Gas feels pressure, follows ~circular orbits; stars drift away</p>
+        <p class=fragment data-fragment-index=2 style="margin:0;"><b style="color:#ffd166;">(d)</b> stars <i>may</i> drift back in - feedback from non-birth cloud</p>
+    </div>
+    <div class=smaller3 style="position:absolute; bottom:6px; left:30px;"><a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...711A.103T/abstract">Tress+ 2026</a> (Rhea-RT), Fig. 22</div>
+    <aside class=notes>
+        What the inflow does once it reaches the CMZ, from Robin Tress's Rhea-RT simulations.
+        (a) Gas arrives along the shock lane and hits the ring, where a cloud is forming stars.
+        (b) Click: cloud collisions and the short (5-10 Myr) orbits decouple the stars from the gas,
+        and the cluster is exposed.  (c) Click: gas can only follow nearly closed x2 orbits --
+        otherwise it collides with itself -- but stars are collisionless and follow open rosette
+        orbits, so they drift away from their birth gas on an orbital time.  (d) Click: and they
+        run back into dense gas and are re-embedded.  So in the CMZ, feedback does not get to
+        disperse a cloud from the inside the way it does near the Sun.
+        <br><br>
+        Now let's go into the CMZ.
+    </aside>
+</section>
 </section>
 
 
@@ -4913,6 +4942,25 @@ I'm showing three clouds: cloud C, cloud D, and cloud A, which has been more col
         to 50, to pin down the 1-5 micron extinction curve as a function of A_V in the high-opacity regime -- the regime that
         matters for grain growth and the ice content of dense clouds.  The spectrum shown is one of them.  Co-Is from the CfA
         (in gold): Cargile, Hora, Melnick, Tolls, Zucker.</aside>
+</section>
+
+<section id=chem-to-planets>
+    <!-- (2026-10-26) Adam: "fill out this slide" -- left: ice CO abundance vs. R_gal and vs. metallicity;
+         right: Rivilla's clouds-to-life chain.  No added text. -->
+    <h4 style="font-size:0.8em;">Metallicity matters for star formation, chemistry for planets</h4>
+    <div class=cmzq-card style="left:10px; top:62px; width:360px; height:343.0px;"><img src="ice_assets/abundance_vs_rgal.png" style="left:4px; top:4px; width:352px; height:335.0px;"></div>
+    <div class=cmzq-card style="left:10px; top:413.011px; width:360px; height:344.2px;"><img src="ice_assets/abundance_vs_metallicity.png" style="left:4px; top:4px; width:352px; height:336.2px;"></div>
+    <div class=cmzq-card style="left:384px; top:229px; width:630px; height:362.1px;"><img src="assets/rivilla_cloudstolife.png" style="left:4px; top:4px; width:622px; height:354.1px;"></div>
+    <!-- (2026-10-26) was "todo: add a reference to Victor Rivilla here".  The figure is Fig. 1 of Rivilla+ 2026,
+         arXiv:2610.21849 (ALMA2040 white paper, "From interstellar molecules to biomolecules"); matched by eye. -->
+    <div class=smaller3 style="position:absolute; left:384px; top:597px; width:630px; text-align:left;"><a href="https://arxiv.org/abs/2610.21849">Rivilla+ 2026</a>, Fig.&nbsp;1</div>
+
+    <aside class=notes><div class=said style="color:#1546c9; font-size:15px; line-height:1.35; margin-bottom:.8em; padding-bottom:.4em; border-bottom:1px solid #c9d4ee"><p data-from=0 style="margin:0 0 .4em">
+            Closing the loop: The excess ice may be a tool to measure metallicity.
+            If instead the difference is purely molecular ice chemistry, it determines what ends up on planets and in planetary disk systems.
+        </div>
+    </aside>
+
 </section>
 
 <!-- ######################## Close ######################## -->

@@ -5059,9 +5059,14 @@ I'm showing three clouds: cloud C, cloud D, and cloud A, which has been more col
      from the bottom of the arches-filament (the long filament next to the arches that goes through the
      Sickle) and pan up through the quintuplet through the Arches cluster into the arches ... After that,
      have it jump over to Sgr B2 and pan around that area").  At 4"/s the cut to Sgr B2 comes ~3.6 min
-     after the slide opens (12 s opening + 3.4 min of pan); the whole loop is ~7 min. -->
-<section id=78-wrapup-jwst-panner data-background-color="#05070c"
-         data-background-iframe="assets/cmz/jwst_gc_panner_embed.html?survey=https://starformation.astro.ufl.edu/avm_images/GCSpitzerLike_vvv_aces_hips/&amp;overlay=https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/&amp;tour=jwst_gc_panner_tour_arches_sgrb2.json&amp;leg=0&amp;ra=266.671553&amp;dec=-28.610131&amp;fov0=1.0&amp;fovh0=0.33&amp;dive=1&amp;full=1&amp;fov1=0.06&amp;hold=3&amp;zoom=9&amp;rate=4">
+     after the slide opens (12 s opening + 3.4 min of pan); the whole loop is ~7 min.
+     (2026-10-27) PRELOADED (Adam: "ensure that 78-wrapup-jwst-panner is pre-cached so that when I load the
+     slide, it's already ready"): data-preload makes reveal load the background iframe up to 3 slides
+     early and keep it loaded when the slide is left, and &wait=1 makes the embed draw the opening view
+     but hold its clock until the slide is actually shown (and rewind when it is left), so the zoom
+     still starts on entry.  Without it the first ~1 s on entry was coarse placeholder tiles. -->
+<section id=78-wrapup-jwst-panner data-background-color="#05070c" data-preload
+         data-background-iframe="assets/cmz/jwst_gc_panner_embed.html?survey=https://starformation.astro.ufl.edu/avm_images/GCSpitzerLike_vvv_aces_hips/&amp;overlay=https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/&amp;tour=jwst_gc_panner_tour_arches_sgrb2.json&amp;leg=0&amp;ra=266.671553&amp;dec=-28.610131&amp;fov0=1.0&amp;fovh0=0.33&amp;dive=1&amp;full=1&amp;fov1=0.06&amp;hold=3&amp;zoom=9&amp;rate=4&amp;wait=1">
     <div class=smaller2 style="position:absolute; top:8px; left:14px; width:996px; text-align:left; z-index:20; text-shadow:0 0 6px #000, 0 0 3px #000, 0 0 1px #000;">The GC is the laboratory where cosmologically common conditions are observed at planetary-system forming scales.</div>
     <!-- (2026-10-15) the ACES-blended composite (F212N+F480M diffuse + ACES 3 mm), order 12.
          (2026-10-16) gentler zoom, closer to the cold open's (3 s hold, 5.6x over 9 s): hold 3 s, then 12x

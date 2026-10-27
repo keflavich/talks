@@ -40,6 +40,12 @@
   ?fovh0=<deg> caps the opening field's HEIGHT, so that the band of imagery (VVV/Spitzer covers b ~ -0.20
   to +0.14) fills the window top to bottom whatever its aspect ratio: the opening width becomes
   min(fov0, fovh0 x width/height).
+  ?wait=1 (2026-10-27) is for a PRELOADED reveal background (data-preload on the <section>, so reveal loads the
+  iframe a few slides early and keeps it loaded): Aladin starts and the opening view's tiles load while the
+  slide is still off screen, but the hold/zoom/pan clock does not start until the slide is shown, and the
+  view goes back to the opening one whenever the slide is left.  "Shown" = our <iframe> sits inside reveal's
+  .present background (read through frameElement, same origin); reveal's 'slide:start' / 'slide:stop'
+  messages are the fallback when the deck is on another origin.  Opened on its own, the page starts at once.
 -->
 <style>
 :root { --bg:#05070c; --fg:#e6edf3; --muted:#9fb0c3; }
@@ -89,6 +95,15 @@ var DIVE = Q.get('dive') === '1';  // zoom about the first stop instead of slidi
 if(Q.get('full') === '1'){ document.body.className = 'full'; }
 var FOVH0 = num('fovh0', 0);       // optional: cap on the opening field's height (deg)
 if(FOVH0 > 0){ FOV0 = Math.min(FOV0, FOVH0 * innerWidth / Math.max(1, innerHeight)); }
+var WAIT = Q.get('wait') === '1' && window.parent !== window;   // preloaded: hold until the slide is shown
+var shownMsg = false;
+if(WAIT){ addEventListener('message', function(ev){
+  if(ev.data === 'slide:start'){ shownMsg = true; } else if(ev.data === 'slide:stop'){ shownMsg = false; } }); }
+function onScreen(){
+  if(!WAIT){ return true; }
+  try { if(window.frameElement){ return !!window.frameElement.closest('.present'); } } catch(e){}
+  return shownMsg;
+}
 
 // Fallback tour: the live file is authoritative, this is only so the slide still
 // does something if the fetch fails.  Center of the observed blocks.
@@ -100,7 +115,7 @@ var FALLBACK = {survey:'https://starformation.astro.ufl.edu/avm_images/jwst_gc_t
   {id:'o041',label:'GC_41', ra:266.356137,dec:-29.132322,jump:false}]};
 
 var TOUR=null, aladin=null, last=null, phase='hold', t0=null;
-var leg=0, along=0, startPos=null;
+var leg=0, along=0, startPos=null, leg0=0, wasShown=null;
 
 function unit(ra,dec){var r=ra*Math.PI/180,d=dec*Math.PI/180;
   return [Math.cos(d)*Math.cos(r),Math.cos(d)*Math.sin(r),Math.sin(d)];}
@@ -138,9 +153,20 @@ function say(label, ra, dec){
 
 
 
+// back to the opening view with the clock stopped; it restarts on the next frame the slide is shown
+function rewind(){
+  phase='hold'; last=null; leg=leg0; along=0;
+  aladin.gotoRaDec(startPos[0], startPos[1]);
+  aladin.setFoV(FOV0);
+  say('the whole survey', startPos[0], startPos[1]);
+}
+
 function step(now){
   requestAnimationFrame(step);
   if(!aladin || !TOUR){ return; }
+  var shown=onScreen();
+  if(shown!==wasShown){ if(wasShown!==null){ rewind(); } wasShown=shown; }
+  if(!shown){ return; }
   if(last===null){ last=now; t0=now; }
   var dt=Math.min(0.25,(now-last)/1000); last=now;
 
@@ -188,6 +214,7 @@ function boot(){
   startPos=[START_RA, START_DEC];
   leg = (START_LEG >= 0 && START_LEG < TOUR.stops.length) ? START_LEG : 0;
   while(TOUR.stops[leg].jump){ leg=(leg+1)%TOUR.stops.length; }
+  leg0=leg;
   A.init.then(function(){
     // NOTE: do NOT rely on the `target` option here.  With cooFrame:'galactic'
     // Aladin parses that string as galactic l/b, so an ICRS "ra dec" pair silently

@@ -68,9 +68,13 @@
                 screen in all dimensions"): the stage grows by FILL_PAD past the 1024 x 672 box -- under the deck's
                 title bar and out to the sides of a screen up to 2:1 -- and everything is drawn in the same box
                 coordinates, shifted by the pad, so nothing inside the box moves.  The deck's iframe must then sit
-                at slide (-FILL_PAD.l, 92 - FILL_PAD.t), (1024 + l + r) x (672 + t + b).  Phase 0 draws
+                at slide (-FILL_PAD.l, BOX_TOP - FILL_PAD.t), (1024 + l + r) x (672 + t + b).  Phase 0 draws
                 ../local/topdown_clusters_zoom_gr_wide.jpg (make_topdown_wide_gr.py: this render, unchanged, inside
                 the box, the unzoomed render of the same camera around it) instead of the box-sized render.
+                (2026-10-27, Adam: "30-cmz-dive should have the same centering as topdown-local", whose map moved 36 px
+                up that day.)  In fill mode the box sits at slide top BOX_TOP = 56, not 92: FILL_PAD.t/b went from
+                124/36 to 88/72, so the iframe is still (-256, -32) 1536 x 832 and only the Sun's map moves.  The
+                Galaxy and bar views (GC_SCREEN) keep their slide positions, so the hand-off to #bar-inflow is unchanged.
   The deck calls window.cmzGoto(p, true) for a one-step-forward fragment and
   window.cmzGoto(p, false) for anything else (backward, jumps, arriving on the slide).
   ============================================================================================
@@ -110,7 +114,8 @@ if (EMBED) document.body.classList.add('embed');
 const ROT = q.get('frame') === 'topdown';
 const W = ROT ? 1024 : 1000, H = ROT ? 672 : 670, DPR = 2;
 const FILL = ROT && q.get('oviz') === 'gr' && q.get('fill') === '1';
-const FILL_PAD = FILL ? { l: 256, t: 124, r: 256, b: 36 } : { l: 0, t: 0, r: 0, b: 0 };   // keep in step with make_topdown_wide_gr.py
+const FILL_PAD = FILL ? { l: 256, t: 88, r: 256, b: 72 } : { l: 0, t: 0, r: 0, b: 0 };    // keep in step with make_topdown_wide_gr.py
+const BOX_TOP = FILL ? 56 : 92;          // slide y of the 1024 x 672 box (the deck's #topdown-bg zoom states use the same)
 const WF = W + FILL_PAD.l + FILL_PAD.r, HF = H + FILL_PAD.t + FILL_PAD.b;               // the whole stage
 const AX = 625, AY = 335;                // screen anchor of the camera center
 const AXR = 512.7, AYR = 338.5;     // Sun; +0.7/+2.5 px from the box center = the oviz render's own Sun offset, measured
@@ -132,7 +137,7 @@ const OVIZ_WIDE = FILL ? { src: '../local/topdown_clusters_zoom_gr_wide.jpg', w:
 // drawing's outer x1 orbit (3.3 kpc) to the cartoon's ellipse; the turn is +2.2 deg (cartoon bar 30.16
 // deg vs 28 here).  Keep in step with the deck.
 const CARTOON = { left: 259.40, top: 150.93, k: 1.334981, gc: [189.22, 190.02], semimajor: 297.25, tilt: 30.16 };
-const GC_SCREEN = [CARTOON.left + CARTOON.k * CARTOON.gc[0], CARTOON.top + CARTOON.k * CARTOON.gc[1] - 92];
+const GC_SCREEN = [CARTOON.left + CARTOON.k * CARTOON.gc[0], CARTOON.top + CARTOON.k * CARTOON.gc[1] - BOX_TOP];
 const BAR_VIEW = { cx: 0, cy: 0, s: CARTOON.k * CARTOON.semimajor / 3300, ax: GC_SCREEN[0], ay: GC_SCREEN[1],
                    rot: (CARTOON.tilt - 28.0) * Math.PI / 180 };
 const cv = document.getElementById('cv');

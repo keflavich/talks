@@ -2048,7 +2048,10 @@ across cosmic time.
     <!-- (2026-10-23) Adam: "the background ... is cut off under the title bar and around the edges - it should fully
          fill the screen in all dimensions": &fill=1 grows the page's stage 256 px left and right, 124 px up (under
          the title, and 32 px past the slide's top) and 36 px down, so this iframe is (-256, -32), 1536 x 832; the box
-         it used to be, (0, 92) 1024 x 672, draws exactly as before.  #31-bar-inflow's backdrop copy matches. -->
+         it used to be, (0, 92) 1024 x 672, draws exactly as before.  #31-bar-inflow's backdrop copy matches.
+         (2026-10-27) Adam: "30-cmz-dive should have the same centering as topdown-local": in fill mode the page now puts
+         that box at (0, 56), like #topdown-bg's zoom states (pad 88 up, 72 down; same iframe size and place), so the
+         Sun's map sits exactly where #20-topdown-local's does.  The Galaxy and bar views keep their slide positions. -->
     <iframe class=cmz-shape src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown&amp;oviz=gr&amp;fill=1"
             style="position:absolute; left:-256px; top:-32px; width:1536px; height:832px;
                    max-width:none; max-height:none; margin:0; border:0; background:#000;

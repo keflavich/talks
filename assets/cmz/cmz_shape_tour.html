@@ -351,7 +351,7 @@ const SPRITE = (function(){
   const gr = g.createRadialGradient(n / 2, n / 2, 0, n / 2, n / 2, n / 2);
   for (let k = 0; k <= 12; k++){
     const t = k / 12;                                       // radius / (3 sigma)
-    gr.addColorStop(t, (ROT ? 'rgba(235,235,235,' : 'rgba(255,150,70,') + Math.exp(-0.5 * 9 * t * t).toFixed(4) + ')');
+    gr.addColorStop(t, (ROT ? 'rgba(235,235,235,' : 'rgba(235,230,230,') + Math.exp(-0.5 * 9 * t * t).toFixed(4) + ')');
   }
   g.fillStyle = gr; g.fillRect(0, 0, n, n);
   return c;

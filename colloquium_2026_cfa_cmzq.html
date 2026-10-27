@@ -94,6 +94,10 @@
   #topdown-bg .tdb { position:absolute; left:0; top:0; width:1024px; height:672px; max-width:none;
                      max-height:none; margin:0; border:0; opacity:0; }
   #topdown-bg.xfade .tdb { transition:opacity .35s ease-in-out; }
+  /* (2026-10-27, Adam: the galaxy "isn't vertically centered; the top should be a little higher (closer to title)
+     and the bottom should not be cut off")  The two zoom renders sit 36 px higher than the other states, so the
+     1.25 kpc map spans y = 56-728 on the slide instead of 92-764.  #topdown-local's overlays use top:56px to match. */
+  #topdown-bg .tdb[data-state$="-zoom"] { top:-36px; }
 </style>
 
 
@@ -971,16 +975,16 @@ across cosmic time.
          (< 15 Myr)", blue #2f80ff = "Clusters (< 60 Myr)") are recolored in the background image, see #topdown-bg.  Data: Hunt & Reffert 2023 Gaia DR3 cluster catalog (positions + ages), with
          Ratzenboeck+ 2023 for Sco-Cen -- per Swiggum+ 2024's methods.  Cam Swiggum made the viz. -->
     <div class=fragment data-fragment-index=0 data-topdown-step=clusters-zoom
-         style="position:absolute; top:100px; right:14px; z-index:5; padding:3px 10px; border-radius:6px;
+         style="position:absolute; top:64px; right:14px; z-index:5; padding:3px 10px; border-radius:6px;
                 background:rgba(0,0,0,0.55); font-size:22px; color:#ddd;">
         young clusters: <span style="color:#42e04a; font-weight:bold;">&lt;15 Myr</span>
         &middot; <span style="color:#ff3b3b; font-weight:bold;">&lt;60 Myr</span>
     </div>
     <!-- r = 1.25 kpc around the Sun: the edge of the Edenhofer+ 2024 map.  The background box is
-         1024x672 at top:92 with the Sun at its center, and is +-1.25 kpc tall (render_oviz_static.py
-         --zoom), so the ring is exactly 336 slide px in radius, centered at (512, 428).  If the
+         1024x672 at top:56 (the zoom renders are shifted up 36 px, see #topdown-bg) with the Sun at its center, and is
+         +-1.25 kpc tall (render_oviz_static.py --zoom), so the ring is exactly 336 slide px in radius, centered at (512, 392).  If the
          render's zoom ever changes, change r here to match. -->
-    <svg style="position:absolute; left:0; top:92px; width:1024px; height:672px; z-index:4;
+    <svg style="position:absolute; left:0; top:56px; width:1024px; height:672px; z-index:4;
                 overflow:visible; pointer-events:none; margin:0;" viewBox="0 0 1024 672">
         <circle cx=512 cy=336 r=336 fill=none stroke="#9fe8ff" stroke-width=2
                 stroke-dasharray="10 7" opacity=0.85 />
@@ -1004,7 +1008,7 @@ across cosmic time.
          So cyan rings drawn exactly like the UCHII rings of the last build (r 7, 2.5 px over a 5 px black
          underlay, all underlays first so crowded rings never cut each other). -->
     <div class=fragment data-fragment-index=1 style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:5; pointer-events:none;">
-        <svg style="position:absolute; left:0; top:92px; width:1024px; height:672px; overflow:visible; margin:0;"
+        <svg style="position:absolute; left:0; top:56px; width:1024px; height:672px; overflow:visible; margin:0;"
              viewBox="0 0 1024 672">
             <defs>
                 <circle id=ostar-mk r=7 />
@@ -1066,7 +1070,7 @@ across cosmic time.
             <use href="#ostar-pts" fill=none stroke="#000" stroke-width=5 />
             <use href="#ostar-pts" fill=none stroke="#3fe0ff" stroke-width=2.5 />
         </svg>
-        <div style="position:absolute; top:142px; right:14px; padding:3px 10px; border-radius:6px;
+        <div style="position:absolute; top:106px; right:14px; padding:3px 10px; border-radius:6px;
                     background:rgba(0,0,0,0.55); font-size:22px; color:#ddd;">
             <svg width=18 height=26 viewBox="-9 -10 18 20" style="width:18px; height:26px; vertical-align:-5px; margin:0;"><circle r=6.5 fill=none stroke="#000" stroke-width=4.5 /><circle r=6.5 fill=none stroke="#3fe0ff" stroke-width=2.2 /></svg> O stars (O9 or earlier)
         </div>
@@ -1080,7 +1084,7 @@ across cosmic time.
          lavender), and with the UCHII / MYSO build (index 3) the 8-20 Msun bin fills in yellow like their rings and
          the label swaps to #/12's yellow box (first line), in the same place.  8-20 Msun wedge: M = 8 at
          x 142.1, the curve there at y 95.2, down to the same floor (y 148.1). -->
-    <div class=fragment data-fragment-index=2 style="position:absolute; left:16px; top:72px; width:215px; height:160px; z-index:5;
+    <div class=fragment data-fragment-index=2 style="position:absolute; left:12px; top:50px; width:215px; height:160px; z-index:5;
                                background:#fff; border-radius:6px; pointer-events:none;">
         <svg style="position:absolute; left:0; top:0; width:215px; height:160px; margin:0;" viewBox="0 0 215 160">
             <path d="M164.0,148.1 L164.0,113.3 L206.8,148.6 Z" fill="#c4f3fb" stroke="#1fb8d8" stroke-width=1 />
@@ -1115,7 +1119,7 @@ across cosmic time.
            RCW 36       l 265.14 b  +1.45 d 940 pc (dust wall)       O9V + B1.5, revealed-leaning
          Same projection as the O-star build (x toward l=0, y toward l=90, 268.3 slide px/kpc). -->
     <div class=fragment data-fragment-index=3 style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:5; pointer-events:none;">
-        <svg style="position:absolute; left:0; top:92px; width:1024px; height:672px; overflow:visible; margin:0;"
+        <svg style="position:absolute; left:0; top:56px; width:1024px; height:672px; overflow:visible; margin:0;"
              viewBox="0 0 1024 672">
             <g fill=none stroke="#000" stroke-width=5>
             <circle cx=421.7 cy=387.3 r=7 />  <!-- Orion BN/KL -->
@@ -1141,7 +1145,7 @@ across cosmic time.
                 <text x=436 y=166 text-anchor=end>Cep A HW2</text>
             </g>
         </svg>
-        <div style="position:absolute; top:180px; right:14px; padding:3px 10px; border-radius:6px;
+        <div style="position:absolute; top:144px; right:14px; padding:3px 10px; border-radius:6px;
                     background:rgba(0,0,0,0.55); font-size:22px; color:#ddd;">
             <svg width=18 height=26 viewBox="-9 -10 18 20" style="width:18px; height:26px; vertical-align:-5px; margin:0;"><circle r=6.5 fill=none stroke="#000" stroke-width=4.5 /><circle r=6.5 fill=none stroke="#ffd60a" stroke-width=2.2 /></svg> UCHII / MYSO
         </div>
@@ -1213,12 +1217,12 @@ across cosmic time.
 <section id=20.1-topdown-local-labels data-topdown=clusters-zoom>
     <h4> Top-down: 3D dust and young clusters around the Sun </h4>
     <div
-         style="position:absolute; top:100px; right:14px; z-index:5; padding:3px 10px; border-radius:6px;
+         style="position:absolute; top:64px; right:14px; z-index:5; padding:3px 10px; border-radius:6px;
                 background:rgba(0,0,0,0.55); font-size:22px; color:#ddd;">
         young clusters: <span style="color:#42e04a; font-weight:bold;">&lt;15 Myr</span>
         &middot; <span style="color:#ff3b3b; font-weight:bold;">&lt;60 Myr</span>
     </div>
-    <svg style="position:absolute; left:0; top:92px; width:1024px; height:672px; z-index:4;
+    <svg style="position:absolute; left:0; top:56px; width:1024px; height:672px; z-index:4;
                 overflow:visible; pointer-events:none; margin:0;" viewBox="0 0 1024 672">
         <circle cx=512 cy=336 r=336 fill=none stroke="#9fe8ff" stroke-width=2
                 stroke-dasharray="10 7" opacity=0.85 />
@@ -1228,7 +1232,7 @@ across cosmic time.
               style="paint-order:stroke; stroke:#000; stroke-width:4px;">1.25 kpc</text>
     </svg>
     <div style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:5; pointer-events:none;">
-        <svg style="position:absolute; left:0; top:92px; width:1024px; height:672px; overflow:visible; margin:0;"
+        <svg style="position:absolute; left:0; top:56px; width:1024px; height:672px; overflow:visible; margin:0;"
              viewBox="0 0 1024 672" font-family="Lato, Helvetica, Arial, sans-serif" font-weight=600>
             <defs>
                 <circle id=ostar-mk2 r=7 />
@@ -1316,7 +1320,7 @@ across cosmic time.
             <text x=877 y=314 text-anchor=start font-size=13 fill="#cfcfcf">(1.3 kpc)</text>
             </g>
         </svg>
-        <div style="position:absolute; top:142px; right:14px; padding:3px 10px; border-radius:6px;
+        <div style="position:absolute; top:106px; right:14px; padding:3px 10px; border-radius:6px;
                     background:rgba(0,0,0,0.55); font-size:22px; color:#ddd;">
             <svg width=18 height=26 viewBox="-9 -10 18 20" style="width:18px; height:26px; vertical-align:-5px; margin:0;"><circle r=6.5 fill=none stroke="#000" stroke-width=4.5 /><circle r=6.5 fill=none stroke="#3fe0ff" stroke-width=2.2 /></svg> O stars (O9 or earlier)
         </div>

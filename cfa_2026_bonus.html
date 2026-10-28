@@ -45,8 +45,10 @@
          blank until it times out.  media=print + the onload swap loads it the same way when a
          network is present but never blocks the page from painting when one is not.
          (2026-10-27) now LOCAL: webfonts/webfonts.css has the same Lato + Creepster files, with Google's
-         copies only as each @font-face's second src, so it is an ordinary stylesheet again. -->
-    <link href='webfonts/webfonts.css' rel='stylesheet' type='text/css'>
+         copies only as each @font-face's second src, so it is an ordinary stylesheet again.
+         webfonts/ is not on GitHub, so on the web it 404s and onerror loads Google's two stylesheets instead. -->
+    <link href='webfonts/webfonts.css' rel='stylesheet' type='text/css'
+          onerror="this.onerror=null; ['Lato','Creepster'].forEach(function(f){ var l=document.createElement('link'); l.rel='stylesheet'; l.href='https://fonts.googleapis.com/css?family='+f; document.head.appendChild(l); });">
 
 
 
@@ -3225,9 +3227,11 @@
      hung fetch (dead DNS, a captive wifi portal) stalls parsing of everything after it -- which
      used to include the Reveal.initialize() call itself, i.e. the whole deck. defer lets parsing
      (and thus Reveal.initialize) continue immediately; this script just runs a bit later.
-     (2026-10-27) now a local copy of the same 0.1.4 (js/notes-pointer/), with the CDN only if that is missing. -->
+     (2026-10-27) now a local copy of the same 0.1.4 (js/notes-pointer/), with the CDN only if that is missing
+     (js/notes-pointer/ is not on GitHub).  The failed tag is removed because notes-pointer.js finds its notes.html
+     next to the first script[src$="notes-pointer.js"]. -->
 <script defer src="js/notes-pointer/notes-pointer.js"
-        onerror="var s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js'; document.head.appendChild(s);"></script>
+        onerror="this.parentNode.removeChild(this); var s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js'; document.head.appendChild(s);"></script>
 
 
     <script>
@@ -3258,8 +3262,9 @@
         },
 
         // (2026-10-27) RevealMath.KaTeX reads katex/ (KaTeX 0.19.1, vendored) instead of cdn.jsdelivr.net/npm/katex@latest,
-        // so the math renders with no network and cannot change version under the deck
-        katex: { local: 'katex' },
+        // so the math renders with no network and cannot change version under the deck.  katex/ is not on GitHub, and
+        // the plugin has no fallback of its own, so anywhere but this laptop it loads the same 0.19.1 from jsDelivr.
+        katex: /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(location.hostname) ? { local: 'katex' } : { version: '0.19.1' },
 
 
         plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes],

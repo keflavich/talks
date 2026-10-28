@@ -18,3 +18,11 @@ assets/teams/src/
 # dropbox_only/: media hosted from Dropbox, not GitHub (Adam, 2026-10-23).  The decks play the local copy when
 # served from this folder; for the github.io copy, add a Dropbox share link (?raw=1) as a second <source>.
 dropbox_only/
+
+# Local-only copies of web dependencies (Adam, 2026-10-27: not hosted on GitHub).  colloquium_2026_cfa_cmzq.html and
+# cfa_2026_bonus.html use them when served from this laptop and the CDN / Google / Wikimedia copies on the web.
+katex/
+webfonts/
+js/notes-pointer/
+colloquium_assets/Barnard_68_eso_wikimedia.jpg
+colloquium_assets/HL_Tau_alma_wikimedia.jpg

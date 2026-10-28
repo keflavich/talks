@@ -43,9 +43,10 @@
     <!-- Offline safety: rel=stylesheet here would be render-blocking, so if this link ever
          hangs (dead DNS, a captive airline-wifi portal with no route out) the whole deck can sit
          blank until it times out.  media=print + the onload swap loads it the same way when a
-         network is present but never blocks the page from painting when one is not. -->
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' media='print' onload="this.media='all'">
-    <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet' media='print' onload="this.media='all'">
+         network is present but never blocks the page from painting when one is not.
+         (2026-10-27) now LOCAL: webfonts/webfonts.css has the same Lato + Creepster files, with Google's
+         copies only as each @font-face's second src, so it is an ordinary stylesheet again. -->
+    <link href='webfonts/webfonts.css' rel='stylesheet' type='text/css'>
 
 
 
@@ -1863,8 +1864,8 @@ across cosmic time.
       <line x1="213" y1="460" x2="324" y2="460" stroke="#111" stroke-width="4" marker-end="url(#ahmad)"/>
     </svg>
 
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:87px; top:272px; width:120px; height:120px; object-fit:cover;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Barnard_68.jpg/1920px-Barnard_68.jpg">
-    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:87px; top:400px; width:120px; height:120px; object-fit:cover;" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/HL_Tau_protoplanetary_disk.jpg">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:87px; top:272px; width:120px; height:120px; object-fit:cover;" src="colloquium_assets/Barnard_68_eso_wikimedia.jpg" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Barnard_68.jpg/1920px-Barnard_68.jpg'">
+    <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:87px; top:400px; width:120px; height:120px; object-fit:cover;" src="colloquium_assets/HL_Tau_alma_wikimedia.jpg" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/9/9d/HL_Tau_protoplanetary_disk.jpg'">
     </div>
 
     <div class=fragment data-fragment-index=1>
@@ -5122,8 +5123,10 @@ I'm showing three clouds: cloud C, cloud D, and cloud A, which has been more col
      something the deck needs to render.  Without defer it is a parser-blocking script tag, so a
      hung fetch (dead DNS, a captive wifi portal) stalls parsing of everything after it -- which
      used to include the Reveal.initialize() call itself, i.e. the whole deck. defer lets parsing
-     (and thus Reveal.initialize) continue immediately; this script just runs a bit later. -->
-<script defer src="https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js"></script>
+     (and thus Reveal.initialize) continue immediately; this script just runs a bit later.
+     (2026-10-27) now a local copy of the same 0.1.4 (js/notes-pointer/), with the CDN only if that is missing. -->
+<script defer src="js/notes-pointer/notes-pointer.js"
+        onerror="var s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js'; document.head.appendChild(s);"></script>
 
 
     <script>
@@ -5152,6 +5155,10 @@ I'm showing three clouds: cloud C, cloud D, and cloud A, which has been more col
           mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
           config: 'TeX-AMS_SVG'
         },
+
+        // (2026-10-27) RevealMath.KaTeX reads katex/ (KaTeX 0.19.1, vendored) instead of cdn.jsdelivr.net/npm/katex@latest,
+        // so the math renders with no network and cannot change version under the deck
+        katex: { local: 'katex' },
 
 
         plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes],

@@ -414,7 +414,7 @@
      Images in assets/chiefland/scopes/ (256 px wide).  tl/tr/bl/br = corner; --n = slot (stacks away from the corner);
      .row stacks sideways instead of up/down; --ob = extra bottom offset.  Fragment-tied icons reuse the slide's existing fragment indices.
      Credits: Roman, Chandra, XMM-Newton, GBT, INTEGRAL, SPHEREx: NASA/ESA/NRAO public-domain or agency images (Wikimedia Commons / NASA SVS);
-     MeerKAT: SKAO/SARAO (CC BY 3.0); Keck: Litlok (CC BY-SA 3.0); the rest cropped from AdamGinsburg_AAC_StarFormation.pptx. */
+     MeerKAT: SKAO/SARAO (CC BY 3.0); Keck: Litlok (CC BY-SA 3.0); IceCube: J. Hardin (CC BY 4.0); the rest cropped from AdamGinsburg_AAC_StarFormation.pptx. */
   .reveal img.scope { position:absolute; width:112px; height:auto; margin:0; max-width:none; max-height:none; z-index:6; background:#000;
                       border:1px solid rgba(255,255,255,.45); border-radius:6px; box-shadow:0 1px 6px rgba(0,0,0,.6); pointer-events:none;
                       --n:0; --ob:0px; --pitch:88px; }
@@ -1752,6 +1752,34 @@
     </ul></aside>
     <!-- telescope icons -->
     <img class="scope br" src="assets/chiefland/scopes/integral.jpg" alt="INTEGRAL">
+</section>
+
+<section id=25.6-mystery-icecube data-background-color="#000">
+    <h4 style="color:#fff;">Mystery: neutrinos from the Galactic plane</h4>
+    <div class=cf-text style="left:20px; top:54px; width:860px; font-size:24px;">
+        Neutrinos pass through almost everything, so they point back to where they were made. <span class=k>IceCube</span>, a cubic kilometer of Antarctic ice, sees them from the Galaxy.
+    </div>
+    <img class=cf-img src="assets/gc_he/icecube2023_fig1.jpg" alt="IceCube Collaboration 2023, Fig. 1: the Galactic plane in starlight, gamma rays, predicted neutrinos and observed neutrinos" style="left:32px; top:126px; width:960px; height:460px;">
+    <div class=cf-lbl style="position:absolute; left:32px; top:588px; width:960px; font-size:15px; color:#9aa3b5;">Top to bottom: starlight &middot; gamma rays &middot; predicted neutrinos &middot; prediction as IceCube blurs it &middot; observed neutrinos</div>
+    <div class=cf-text style="left:62px; top:616px; width:900px; font-size:21px;">
+        <ul>
+            <li> <span class=k>4.5&sigma;</span>: 10 years of IceCube data show neutrinos from the plane
+            <li> A smooth glow of cosmic rays hitting gas, or a crowd of sources too faint to resolve?
+            <li> At the center IceCube blurs by up to ~10&deg;; the whole central zone is ~3&deg; long
+        </ul>
+    </div>
+    <div class=cf-cred>IceCube Collaboration 2023, Science 380, 1338 &middot; telescope photo: J. Hardin (CC BY 4.0)</div>
+    <aside class=notes><ul>
+        <li> Neutrinos are neutral and almost never interact, so unlike cosmic-ray protons (bent by magnetic fields) they travel in a straight line from where they were made.
+        <li> They are made when cosmic-ray protons and nuclei hit gas: charged pions decay into neutrinos. The same collisions make the gamma rays from the plane (neutral pions). Electrons make gamma rays without neutrinos, so neutrinos test whether the plane's gamma rays come from protons.
+        <li> IceCube: 5,160 optical sensors in a cubic kilometer of ice at the South Pole. A neutrino interaction makes charged particles that give off Cherenkov light.
+        <li> The figure (IceCube Collaboration 2023, Science 380, 1338): A, starlight; B, Fermi gamma rays; C, the neutrinos predicted from a gamma-ray-based neutral-pion model; D, that prediction blurred by IceCube's typical event uncertainty (dotted circle); E, the observed excess in red. 10 years of cascade events, machine-learning selection, plane model vs. background only: 4.5&sigma;.
+        <li> The paper's own caveat: the signal "is consistent with diffuse emission of neutrinos from the Milky Way but could also arise from a population of unresolved point sources." That is the open question.
+        <li> The center is in IceCube's blind spot. It is in the southern sky, where cosmic-ray muons swamp the track sample, so the analysis uses cascades, which are blurred by up to ~10&deg; (tracks: under ~1&deg;). The whole Central Molecular Zone is only ~3&deg; long, so IceCube sees the plane, not the center as such.
+        <li> ANTARES had hinted at neutrinos from the inner plane (|l| &lt; 30&deg;); the first two years of KM3NeT/ARCA data gave only upper limits.
+    </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/icecube.jpg" alt="IceCube">
 </section>
 
 <section id=43-cmzq-q3>

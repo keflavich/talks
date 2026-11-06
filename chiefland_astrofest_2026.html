@@ -240,6 +240,9 @@
         <li> Two telescopes: ALMA (radio, sees cold dust and gas) and JWST (infrared, sees stars).
         <li> Everything in this talk is somewhere in this picture.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
+    <img class="scope tr" src="assets/chiefland/scopes/alma.jpg" alt="ALMA">
           </section>
 
 <style>
@@ -336,6 +339,13 @@
         <li> Build 8: the same view in millimeter and radio light (Planck + HI4PI): the gas and dust between the stars.
         <li> Build 9: back out to the whole sky (Gaia). Next: what other kinds of light show there.
     </ul></aside>
+    <!-- telescope icons -->
+    <span class="fragment" data-fragment-index=0>
+      <img class="scope br fragment fade-out" data-fragment-index=6 src="assets/chiefland/scopes/gaia.jpg" alt="Gaia" style="--ob:28px">
+    </span>
+    <img class="scope br fragment" data-fragment-index=8 src="assets/chiefland/scopes/gaia.jpg" alt="Gaia" style="--ob:28px">
+    <img class="scope br fragment fade-in-then-out" data-fragment-index=6 src="assets/chiefland/scopes/spherex.jpg" alt="SPHEREx" style="--ob:28px">
+    <img class="scope br fragment fade-in-then-out" data-fragment-index=7 src="assets/chiefland/scopes/planck.jpg" alt="Planck" style="--ob:28px">
 </section>
 
 
@@ -347,6 +357,9 @@
         <li> The same sky in infrared light (2MASS): infrared gets through dust, so the crowded center appears.
         <li> Build: SPHEREx, a new NASA all-sky infrared survey.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tl fragment fade-out" data-fragment-index=0 src="assets/chiefland/scopes/2mass.jpg" alt="2MASS">
+    <img class="scope tl fragment" data-fragment-index=0 src="assets/chiefland/scopes/spherex.jpg" alt="SPHEREx">
 </section>
 
 <section id=4-galaxy-planck>
@@ -358,6 +371,8 @@
         <li> Down arrow: each layer on its own &mdash; atomic hydrogen, dust, molecular gas.
         <li> Stars form from the molecular gas, which hugs the plane and piles up toward the center.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tl" src="assets/chiefland/scopes/planck.jpg" alt="Planck">
 </section>
 
     <section>
@@ -375,6 +390,8 @@
                 <div class=smaller2 style="text-align:right; right:0px">Planck</div>
             </div>
         </div>
+    <!-- telescope icons -->
+    <img class="scope tl" src="assets/chiefland/scopes/planck.jpg" alt="Planck">
     </section>
     <section>
         <span class=image style='height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/HI-CO-Dust_m0.35_CO.png);'></span>
@@ -383,6 +400,8 @@
                 <div class=smaller2 style="text-align:right; right:0px">Planck</div>
             </div>
         </div>
+    <!-- telescope icons -->
+    <img class="scope tl" src="assets/chiefland/scopes/planck.jpg" alt="Planck">
     </section>
 
     <section>
@@ -390,6 +409,25 @@
     </section>
 </section>
 
+<style>
+  /* Telescope icons (Adam 2026-11-06: "for each slide where we mention a telescope, include in a corner a graphic of that telescope").
+     Images in assets/chiefland/scopes/ (256 px wide).  tl/tr/bl/br = corner; --n = slot (stacks away from the corner);
+     .row stacks sideways instead of up/down; --ob = extra bottom offset.  Fragment-tied icons reuse the slide's existing fragment indices.
+     Credits: Roman, Chandra, XMM-Newton, GBT, INTEGRAL, SPHEREx: NASA/ESA/NRAO public-domain or agency images (Wikimedia Commons / NASA SVS);
+     MeerKAT: SKAO/SARAO (CC BY 3.0); Keck: Litlok (CC BY-SA 3.0); the rest cropped from AdamGinsburg_AAC_StarFormation.pptx. */
+  .reveal img.scope { position:absolute; width:112px; height:auto; margin:0; max-width:none; max-height:none; z-index:6; background:#000;
+                      border:1px solid rgba(255,255,255,.45); border-radius:6px; box-shadow:0 1px 6px rgba(0,0,0,.6); pointer-events:none;
+                      --n:0; --ob:0px; --pitch:88px; }
+  .reveal img.scope.row { --pitch:124px; }
+  .reveal img.scope.tl { left:12px; top:calc(12px + var(--n) * var(--pitch)); }
+  .reveal img.scope.tr { right:12px; top:calc(12px + var(--n) * var(--pitch)); }
+  .reveal img.scope.bl { left:12px; bottom:calc(34px + var(--ob) + var(--n) * var(--pitch)); }
+  .reveal img.scope.br { right:12px; bottom:calc(34px + var(--ob) + var(--n) * var(--pitch)); }
+  .reveal img.scope.row.tl, .reveal img.scope.row.bl { left:calc(12px + var(--n) * var(--pitch)); }
+  .reveal img.scope.row.tr, .reveal img.scope.row.br { right:calc(12px + var(--n) * var(--pitch)); }
+  .reveal img.scope.row.tl, .reveal img.scope.row.tr { top:12px; }
+  .reveal img.scope.row.bl, .reveal img.scope.row.br { bottom:calc(34px + var(--ob)); }
+</style>
 <style>
   /* GC-intro and "mysteries" slides (2026-11-01): 4.1-4.6 from GalacticCenterSurveys.key slides 14-20, 5.1/5.2 from its
      slides 29 and 5, 25.1-25.5 the extra mysteries.  Assets in assets/chiefland/. */
@@ -425,6 +463,8 @@
         <li> The Galaxy's disk glows: cosmic rays slamming into gas.
         <li> Build: zoom on the center. After removing every known source, there is extra glow left over (Goodenough &amp; Hooper 2009). Still debated: dark matter or pulsars. We come back to it later.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/fermi.jpg" alt="Fermi Gamma-ray Space Telescope">
 </section>
 
 <section id=4.4-fermi-bubbles data-background-color="#000">
@@ -436,6 +476,8 @@
         <li> Gamma rays show giant bubbles above and below the center, found in Fermi data in 2010 (Su, Slatyer &amp; Finkbeiner). We will see X-ray bubbles around them in a moment.
         <li> Something at the center blew these out: the black hole, or a burst of star formation.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/fermi.jpg" alt="Fermi Gamma-ray Space Telescope">
 </section>
 
 <section id=4.2-xray-sky data-background-color="#000">
@@ -447,6 +489,8 @@
         <li> X-rays, from the German ROSAT satellite in the 1990s: gas heated to millions of degrees.
         <li> There is a hint of something huge rising above the center.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/rosat.jpg" alt="ROSAT">
 </section>
 
 <style>
@@ -512,6 +556,11 @@
         <li> The X-ray excess requires ~1.9&times; solar metallicity (Anastasopoulou+ 2023). Heavy elements are made in stars, so this gas has been through many generations of stars.
         <li> Next: ALMA&rsquo;s view of the center.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br row fragment fade-out" data-fragment-index=3 src="assets/chiefland/scopes/erosita.jpg" alt="eROSITA">
+    <img class="scope br row fragment fade-in-then-out" data-fragment-index=1 src="assets/chiefland/scopes/xmm.jpg" alt="XMM-Newton" style="--n:1">
+    <img class="scope br row fragment fade-in-then-out" data-fragment-index=1 src="assets/chiefland/scopes/chandra.jpg" alt="Chandra X-ray Observatory" style="--n:2">
+    <img class="scope br row fragment" data-fragment-index=3 src="assets/chiefland/scopes/xmm.jpg" alt="XMM-Newton">
 </section>
 
 <section id=5.1-aces-continuum data-background-color="#000">
@@ -531,6 +580,10 @@
         <li> ALMA's survey of the central ring of gas, combined with the Green Bank Telescope's MUSTANG camera to keep the large-scale emission.
         <li> The brightest knots are Sgr B2 (left) and the region around Sgr A* (center). ~1.5&deg; across: ~200 pc.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope bl row fragment fade-out" data-fragment-index=0 src="assets/chiefland/scopes/xmm.jpg" alt="XMM-Newton">
+    <img class="scope bl row fragment" data-fragment-index=0 src="assets/chiefland/scopes/alma.jpg" alt="ALMA">
+    <img class="scope bl row fragment" data-fragment-index=0 src="assets/chiefland/scopes/gbt.jpg" alt="Green Bank Telescope" style="--n:1">
 </section>
 
 <section id=5.2-gc-meerkat data-background-color="#000">
@@ -541,6 +594,9 @@
         <li> Radio (MeerKAT, gray-white) plus infrared (Spitzer, red/orange): bubbles from exploded stars, star-forming clouds, and long thin radio filaments.
         <li> We'll come back to the filaments.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/meerkat.jpg" alt="MeerKAT">
+    <img class="scope br" src="assets/chiefland/scopes/spitzer.jpg" alt="Spitzer Space Telescope" style="--n:1">
 </section>
 
 <section id=9-overview>
@@ -555,6 +611,10 @@
               <aside class=notes><ul>
         <li> We start with stars...
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br row" src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope">
+    <img class="scope br row" src="assets/chiefland/scopes/jwst.jpg" alt="JWST" style="--n:1">
+    <img class="scope br row" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:2">
           </section>
 
 <section id=16-hr-diagrams>
@@ -587,6 +647,8 @@
         <li> The same example stars, on the sky. O: &theta;&sup1; Orionis C, in the Trapezium of the Orion Nebula. B: the Pleiades. A: Vega. F: Procyon. G: the Sun (and &tau; Ceti). K: 61 Cygni. M: Proxima Centauri (too faint for the eye).
         <li> Tonight: Vega and 61 Cygni are high in the west after dark; the Pleiades rise in the east around 6 pm; &tau; Ceti is low in the east-southeast; Orion rises ~9 pm and Procyon ~11 pm.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope bl" src="assets/chiefland/scopes/gaia.jpg" alt="Gaia">
 </section>
 
 <section id=18-m31-uv>
@@ -608,6 +670,8 @@
     <aside class=notes><ul>
         <li> The same galaxy, now showing its dust. Dust traces the cold gas that stars form from.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/herschel.jpg" alt="Herschel Space Observatory">
 </section>
 
 <section id=20-taurus>
@@ -627,6 +691,8 @@
         <li> Most of what we know about how stars form comes from small, nearby clouds like Taurus, ~140 parsecs away.
         <li> Taurus is rising in the east this evening, next to the Pleiades.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/herschel.jpg" alt="Herschel Space Observatory">
 </section>
 
 <section id=21-cartoon>
@@ -661,6 +727,8 @@
         <li> Most stars are not born alone: Westerlund 1, the most massive young cluster in our Galaxy, ~4,000 parsecs away.
         <li> Thousands of stars, many of them massive, born together in a crowd.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
 <section id=23-cosmic-noon-crowded data-background-color="#000">
@@ -813,6 +881,8 @@
         <li> Green: clusters younger than 15 million years; red: younger than 60 million years.
         <li> Our neighborhood is not crowded: a few young clusters within ~1,200 parsecs.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/gaia.jpg" alt="Gaia">
 </section>
 
 <section id=24.1-topdown-local-labels data-topdown=clusters-zoom>
@@ -929,125 +999,16 @@
     <aside class=notes><ul>
         <li> Labels: the familiar nearby star-forming regions, like Orion and Cepheus A.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/gaia.jpg" alt="Gaia">
 </section>
-</section>
-
-<section id=25.1-mystery-filaments data-background-color="#000" data-auto-animate>
-    <img class=cf-img src="assets/chiefland/gcs_meerkat_filaments_crop.jpg" style="left:0; top:0; width:1024px; height:768px;">
-    <!-- (2026-11-03, Adam: "from 25.1 to 25.2, show a matched-position inset of sgr c and then zoom in just like we do on
-         44-cmz-to-sgrb2"): build 0 puts the 25.2 JWST image on Sgr C at its true size and sky orientation, build 1 turns
-         it upright in place (custom.css .fragment.rotated), and auto-animate carries it to its place on 25.2.
-         Registration: the filament crop is 0.75x the Schmidt composite + (520, 150) px (FFT cross-correlation), whose
-         Galactic frame is pinned on Sgr A* and the Mouse (671 px/deg); the JWST image is panel_sgrc.jpg (CfA #clouds-sgrc,
-         rotate -149.92deg; its box_sgrc.png footprint puts the centre at l = -0.543, b = -0.091) at 0.808x + (-10, 18) px.
-         So 715.8 deck px/deg here; the cyan Pa-alpha gas lands on the radio H II region. -->
-    <img class="cf-img fragment rotated" data-fragment-index=0 src="assets/chiefland/sgrc_webb_crowe2025.jpg"
-         style="left:772.63px; top:448.58px; width:71.82px; height:27.18px; --rotation:-149.92deg; --transition-duration:0.8s;
-                outline:1px solid rgba(255,255,255,0.85); z-index:5;">
-    <div class="cf-lbl fragment" data-fragment-index=0 style="position:absolute; left:760px; top:400px; width:100px; text-align:center; font-size:20px; text-shadow:0 0 4px #000, 0 0 2px #000; z-index:6;">Sgr C</div>
-    <span class="fragment" data-fragment-index=1></span>
-    <div class=cf-cap style="background:rgba(0,0,0,.45); width:auto; padding:2px 10px;">Mystery: giant radio filaments</div>
-    <div class=cf-note style="top:600px; background:rgba(0,0,0,.5); width:auto; padding:6px 12px;">
-        ~1,000 thin, straight threads, some ~30 parsecs long<br>
-        Radio glow from electrons spiraling around magnetic fields<br>
-        Found in 1984. <span style="color:#77e345;">What makes them is still unknown.</span>
-    </div>
-    <div class=cf-cred style="color:#ccc;">MeerKAT: Heywood+ 2022, Yusef-Zadeh+ 2022 &middot; image: Judy Schmidt</div>
-    <aside class=notes><ul>
-        <li> These thin, straight threads are seen in radio light at ~20 cm wavelength (MeerKAT). They are not seen anywhere else in the Galaxy like this.
-        <li> First found in 1984 (Yusef-Zadeh, Morris &amp; Chance). MeerKAT now shows nearly a thousand (Yusef-Zadeh+ 2022).
-        <li> They glow because fast electrons spiral around magnetic field lines. Where the electrons come from, and why the fields are organized into threads, is not settled.
-        <li> Build: JWST's view of Sgr C, at its true size and position. Build: turn it upright; next slide zooms in.
-    </ul></aside>
-</section>
-
-<section id=25.2-mystery-magnetic-hii data-background-color="#000" data-auto-animate>
-    <div class=cf-cap>Mystery: star-forming bubbles shaped by magnetic fields?</div>
-    <img class=cf-img src="assets/chiefland/sgrc_webb_crowe2025.jpg" style="left:12px; top:62px; width:1000px; height:378px;">
-    <img class=cf-img src="assets/sgrb2ds/miri_fullfov.jpg" style="left:12px; top:500px; width:320px; height:240px;">
-    <div class=cf-cred>Sgr C: NASA, ESA, CSA, STScI, S. Crowe (UVA), J. Bally (CU), R. Fedriani (IAA-CSIC)</div>
-    <aside class=notes><ul>
-        <li> H II regions are bubbles of hot, ionized gas around newborn massive stars. In the disk of the Galaxy they look smooth and round.
-        <li> In Sgr C, JWST shows the hydrogen gas pulled into strands. Crowe+ 2025 argue the CMZ's strong magnetic fields (~1 mG) confine it.
-        <li> In Sgr B2 Deep South, radio maps show non-thermal (synchrotron) emission mixed with the hot gas: electrons accelerated at the bubble's edge, spiraling in magnetic fields (Meng+ 2019).
-        <li> Whether magnetism changes how stars form here is open.
-    </ul></aside>
-</section>
-
-<section id=25.3-mystery-neutron-stars data-background-color="#000">
-    <!-- backdrop (2026-11-04, Adam: "add a figure showing the Galactic center's known neutron stars as the backdrop"):
-         the MeerKAT + Spitzer composite of 5.2, dimmed, at 800 deck px/deg centred so Sgr A* is at (500, 520) (registration as
-         on 5.1/25.1).  Rings: the magnetar PSR J1745-2900 (gold; 2.4" from Sgr A*) and the five radio pulsars within ~15' of
-         Sgr A* from the ATNF catalogue v2.6.1 (J1745-2910, J1745-2912, J1746-2849, J1746-2850, J1746-2856), baked in by
-         scratchpad code at positions from the catalogue. -->
-    <img class=cf-img src="assets/chiefland/gcs_neutron_stars_backdrop.jpg" style="left:0; top:0; width:1024px; height:768px;">
-    <h4 style="color:#fff; position:relative; z-index:2;">Mystery: where are the neutron stars?</h4>
-    <div style="position:absolute; left:508px; top:540px; width:260px; text-align:left; font-size:19px; line-height:1.2; color:#ffd166; text-shadow:0 0 4px #000, 0 0 2px #000;">&larr; the magnetar,<br>next to Sgr A*</div>
-    <div style="position:absolute; right:20px; top:716px; text-align:right; font-size:19px; color:#6fdcff; text-shadow:0 0 4px #000, 0 0 2px #000;"><span style="display:inline-block; width:18px; height:18px; border:3px solid #50dcff; border-radius:50%; vertical-align:middle; margin-right:8px; box-sizing:border-box;"></span>radio pulsars (5)</div>
-    <div style="position:absolute; left:20px; top:716px; font-size:15px; color:#ccc; text-align:left; text-shadow:0 0 4px #000;"><span style="display:inline-block; width:167px; border-top:3px solid #fff; vertical-align:middle; margin-right:8px;"></span>30 parsecs</div>
-    <div class=cf-text style="left:20px; top:120px; width:984px;">
-        <div class=cf-stat><span class=n>10<sup>8</sup>&ndash;10<sup>9</sup></span><span class=d>neutron stars predicted in the Milky Way: one for each massive star that has died</span></div>
-        <div class=cf-stat><span class=n>thousands</span><span class=d>found, almost all as pulsars</span></div>
-        <div class=cf-stat><span class=n>~6</span><span class=d>known within ~30 parsecs of the center. The closest, a magnetar found in 2013, is 0.1 parsecs from Sgr A*.</span></div>
-        <div style="margin-top:34px; font-size:26px;">Theory expects hundreds or more near the black hole.
-            <span class=q>Hidden behind blurring gas, or really missing?</span></div>
-    </div>
-    <div class=cf-cred>Known pulsars: ATNF Pulsar Catalogue (Manchester+ 2005), Johnston+ 2006, Deneva+ 2009 &middot; magnetar: Mori+ 2013, Eatough+ 2013 &middot; MeerKAT: Heywood+ 2022 &middot; image: Judy Schmidt</div>
-    <aside class=notes><ul>
-        <li> Every massive star that dies leaves a neutron star or black hole. Over the Galaxy's life that adds up to ~10<sup>8</sup>&ndash;10<sup>9</sup> neutron stars (e.g., Sartore+ 2010).
-        <li> We've found only a few thousand, mostly as radio pulsars.
-        <li> Near the center: five radio pulsars within ~15&prime; of Sgr A* (Johnston+ 2006; Deneva+ 2009), plus the magnetar SGR/PSR J1745&minus;2900, 2.4&Prime; from Sgr A* (found by Swift in 2013).
-        <li> Predictions: ~100&ndash;1000 pulsars orbiting close to Sgr A* (Pfahl &amp; Loeb 2004). The usual excuse is that turbulent ionized gas smears out the radio pulses, but the magnetar's pulses are less smeared than expected (Spitler+ 2014), so the &ldquo;missing pulsar problem&rdquo; is still with us (Dexter &amp; O'Leary 2014).
-        <li> Thousands of faint old pulsars might also explain the gamma-ray glow: next slide.
-    </ul></aside>
-</section>
-
-<section id=25.4-mystery-dark-matter data-background-color="#000">
-    <h4 style="color:#fff;">Mystery: is the gamma-ray glow dark matter?</h4>
-    <img class=cf-img src="assets/chiefland/gcs_fermi_gc_excess.jpg" style="left:0; top:52px; width:1024px; height:607px;">
-    <div class=cf-text style="left:20px; top:664px; width:984px; font-size:21px; line-height:1.28;">
-        Dark-matter particles that collide and annihilate would make gamma rays, brightest where dark matter is densest: the center.
-        <div style="margin-top:4px;">Since 2009: an extra glow at about the right brightness and shape.</div>
-    </div>
-    <div class=cf-cred>T. Linden (U. Chicago), NASA &middot; Goodenough &amp; Hooper 2009; Daylan+ 2016</div>
-    <aside class=notes><ul>
-        <li> If dark matter is a particle that can annihilate, the center is the best place to look: two particles must meet, so the signal grows as density squared.
-        <li> Since 2009 Fermi data show an excess of ~1&ndash;3 GeV gamma rays around the center that fits a ~40 GeV particle with the &ldquo;natural&rdquo; annihilation rate (Daylan+ 2016).
-        <li> But the excess only exists after subtracting a model of the whole gamma-ray sky, and it changes with that model.
-        <li> Millisecond pulsars, old recycled neutron stars, have a similar spectrum; thousands too faint to see one by one would add up to a glow. Recent work finds the glow follows the bulge stars more than a round dark-matter halo (Macias+ 2018; Bartels+ 2018), but this is still argued.
-        <li> The dark-matter density profile in the inner Galaxy is unknown, and dwarf galaxies have not shown a matching signal.
-    </ul></aside>
-</section>
-
-<section id=25.5-mystery-511kev data-background-color="#000">
-    <h4 style="color:#fff;">Mystery: antimatter at the center</h4>
-    <div class=cf-text style="left:20px; top:54px; width:984px; font-size:24px;">
-        When an electron meets its antimatter twin, a <span class=k>positron</span>, both vanish into gamma rays of exactly <span class=k>511&nbsp;keV</span>.
-    </div>
-    <img class=cf-img src="assets/gc_he/siegert2016_fig2.jpg" style="left:62px; top:124px; width:900px; height:455px;">
-    <div class=cf-lbl style="position:absolute; left:62px; top:580px; width:900px; font-size:15px; color:#9aa3b5;">511 keV sky model, INTEGRAL/SPI (Siegert+ 2016)</div>
-    <div class=cf-text style="left:62px; top:606px; width:900px; font-size:21px;">
-        <span class=k>Possible sources</span>
-        <ul style="display:grid; grid-template-columns:1fr 1fr; column-gap:30px; list-style-position:inside; margin:4px 0 0 0;">
-            <li> Radioactive atoms from exploding stars
-            <li> Black holes &amp; neutron stars feeding on companions
-            <li> Past outbursts of Sgr A*
-            <li> Dark matter
-        </ul>
-    </div>
-    <div class=cf-cred>Siegert+ 2016 (INTEGRAL/SPI)</div>
-    <aside class=notes><ul>
-        <li> The 511 keV line is the signature of positrons annihilating with electrons. Balloon experiments saw it from the Galactic Center in the 1970s; ESA's INTEGRAL mapped it.
-        <li> INTEGRAL/SPI: 58&sigma; detection; bright bulge, faint thick disk, and an unresolved central source at Sgr A* (Siegert+ 2016). The Galaxy needs a few &times; 10<sup>43</sup> positrons per second.
-        <li> Candidates: radioactive decay from supernovae and other stellar explosions (e.g., <sup>44</sup>Ti from faint thermonuclear supernovae in old stars, Crocker+ 2017), X-ray binaries and microquasars, past Sgr A* activity, pulsars, light dark matter.
-        <li> Why it's hard: positrons can travel far before slowing down and annihilating, the bulge-heavy shape doesn't match where young stars are, and the instruments have ~2.7&deg; resolution. COSI (NASA, 0.2&ndash;5 MeV) should map it better.
-    </ul></aside>
 </section>
 
 <section id=26-cmzq-datasets>
     <h4> Three major surveys change our perspective </h4>
     <div class=cmzq-col style="left:22px;">
         <div class=pic><img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="object-position:50% 50%;"></div>
+        <img class="scope" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="left:188px; top:142px; width:118px">
         <div class=nm>ALMA &middot; ACES</div>
         <div class="team fragment" data-fragment-index=0><b>Steve&nbsp;Longmore</b>&nbsp;&middot; <b>John&nbsp;Bally</b>&nbsp;&middot; <b>Cara&nbsp;Battersby</b>&nbsp;&middot; <b>Adam&nbsp;Ginsburg</b>&nbsp;&middot; <b>Jonathan&nbsp;Henshaw</b>&nbsp;&middot; <b>Paul&nbsp;Ho</b>&nbsp;&middot; <b>Izaskun&nbsp;Jiménez&#8209;Serra</b>&nbsp;&middot; <b>Betsy&nbsp;Mills</b>&nbsp;&middot; <b>Daniel&nbsp;Walker</b>&nbsp;&middot; <b>Ashley&nbsp;Barnes</b>&nbsp;&middot; <b>Mattia&nbsp;Sormani</b>&nbsp;&middot; <b>Robin&nbsp;Tress</b>&nbsp;&middot; <b>Jennifer&nbsp;Wallace</b>&nbsp;&middot; <b>Laura&nbsp;Colzi</b>&nbsp;&middot; <b>Maya&nbsp;Petkova</b>&nbsp;&middot; Danya&nbsp;Alboslani&nbsp;&middot; Emad&nbsp;Alkhuja&nbsp;&middot; Jairo&nbsp;Armijos&#8209;Abendaño&nbsp;&middot; Lucia&nbsp;Armillotta&nbsp;&middot; N.&nbsp;Bijas&nbsp;&middot; Nazar&nbsp;Budaiev&nbsp;&middot; Rojita&nbsp;Buddhacharya&nbsp;&middot; Alyssa&nbsp;Bulatek&nbsp;&middot; Michael&nbsp;Burton&nbsp;&middot; Laura&nbsp;Busch&nbsp;&middot; Natalie&nbsp;Butterfield&nbsp;&middot; Paola&nbsp;Caselli&nbsp;&middot; Mélanie&nbsp;Chevance&nbsp;&middot; Claire&nbsp;Cook&nbsp;&middot; Samuel&nbsp;Crowe&nbsp;&middot; Ana&nbsp;Karla&nbsp;Díaz&#8209;Rodríguez&nbsp;&middot; Simon&nbsp;Dicker&nbsp;&middot; Katarzyna&nbsp;Dutkowska&nbsp;&middot; Adam&nbsp;Fairley&nbsp;&middot; Christoph&nbsp;Federrath&nbsp;&middot; Rubén&nbsp;Fedriani&nbsp;&middot; Zi&#8209;Xuan&nbsp;Feng&nbsp;&middot; Karl&nbsp;Fiteni&nbsp;&middot; Gary&nbsp;Fuller&nbsp;&middot; Pablo&nbsp;García&nbsp;&middot; Philipp&nbsp;Girichidis&nbsp;&middot; Simon&nbsp;Glover&nbsp;&middot; Javier&nbsp;Goicoechea&nbsp;&middot; Mark&nbsp;Gorski&nbsp;&middot; Savannah&nbsp;Gramze&nbsp;&middot; Qi&#8209;Lao&nbsp;Gu&nbsp;&middot; Perry&nbsp;Hatchfield&nbsp;&middot; Christian&nbsp;Henkel&nbsp;&middot; Rebecca&nbsp;Houghton&nbsp;&middot; Pei&#8209;Ying&nbsp;Hsieh&nbsp;&middot; Yue&nbsp;Hu&nbsp;&middot; Katharina&nbsp;Immer&nbsp;&middot; Namitha&nbsp;Issac&nbsp;&middot; Desmond&nbsp;Jeff&nbsp;&middot; Janik&nbsp;Karoly&nbsp;&middot; Jens&nbsp;Kauffmann&nbsp;&middot; Ralf&nbsp;Klessen&nbsp;&middot; Diederik&nbsp;Kruijssen&nbsp;&middot; Mark&nbsp;Krumholz&nbsp;&middot; Cornelia&nbsp;Lang&nbsp;&middot; Alex&nbsp;Lazarian&nbsp;&middot; Rachel&nbsp;Lee&nbsp;&middot; Emily&nbsp;Levesque&nbsp;&middot; Fu&#8209;Heng&nbsp;Liang&nbsp;&middot; Dani&nbsp;Lipman&nbsp;&middot; Xunchuan&nbsp;Liu&nbsp;&middot; Xing&nbsp;Lu&nbsp;&middot; Qiu&#8209;yi&nbsp;Luo&nbsp;&middot; Alessandro&nbsp;Lupi&nbsp;&middot; Sera&nbsp;Markoff&nbsp;&middot; Sergio&nbsp;Martín&nbsp;&middot; Brian&nbsp;Mason&nbsp;&middot; Farideh&nbsp;Mazoochi&nbsp;&middot; Laura&nbsp;McCafferty&nbsp;&middot; Emily&nbsp;Moravec&nbsp;&middot; Mark&nbsp;Morris&nbsp;&middot; Francisco&nbsp;Nogueras&#8209;Lara&nbsp;&middot; Marie&nbsp;Nonhebel&nbsp;&middot; Tomoharu&nbsp;Oka&nbsp;&middot; John&nbsp;Orlowski&#8209;Scherer&nbsp;&middot; Jürgen&nbsp;Ott&nbsp;&middot; Marco&nbsp;Padovani&nbsp;&middot; Xing&nbsp;Pan&nbsp;&middot; Dylan&nbsp;Paré&nbsp;&middot; Thushara&nbsp;Pillai&nbsp;&middot; Jaime&nbsp;Pineda&nbsp;&middot; Marc&nbsp;Pound&nbsp;&middot; Denise&nbsp;Riquelme&#8209;Vásquez&nbsp;&middot; Víctor&nbsp;Rivilla&nbsp;&middot; Charles&nbsp;Romero&nbsp;&middot; Galaxy&nbsp;Salo&nbsp;&middot; Álvaro&nbsp;Sánchez&#8209;Monge&nbsp;&middot; Miriam&nbsp;Santa&#8209;Maria&nbsp;&middot; Anika&nbsp;Schmiedeke&nbsp;&middot; Rainer&nbsp;Schödel&nbsp;&middot; Matthias&nbsp;Schultheis&nbsp;&middot; Howard&nbsp;Smith&nbsp;&middot; Yoshiaki&nbsp;Sofue&nbsp;&middot; Jack&nbsp;Sullivan&nbsp;&middot; Enrico&nbsp;Di&nbsp;Teodoro&nbsp;&middot; Leonardo&nbsp;Testi&nbsp;&middot; Volker&nbsp;Tolls&nbsp;&middot; Miguel&nbsp;Requena&nbsp;Torres&nbsp;&middot; Grant&nbsp;Tremblay&nbsp;&middot; Arianna&nbsp;Vasini&nbsp;&middot; Gijs&nbsp;Vermariën&nbsp;&middot; Alexey&nbsp;Vikhlinin&nbsp;&middot; Serena&nbsp;Viti&nbsp;&middot; Q.&nbsp;Daniel&nbsp;Wang&nbsp;&middot; Gwenllian&nbsp;Williams&nbsp;&middot; Fengwei&nbsp;Xu&nbsp;&middot; Qizhou&nbsp;Zhang&nbsp;&middot; Suinan&nbsp;Zhang</div>
         <div class="st fragment fade-out" data-fragment-index=0>8 papers so far (2025&ndash;26)</div>
@@ -1056,6 +1017,7 @@
     </div>
     <div class=cmzq-col style="left:355px;">
         <div class=pic><img src="assets/cmz/treasury_panel_nircam.png" style="object-fit:fill; left:-1060.87px; top:-85.23px; width:1857.09px; height:565.20px;"></div>
+        <img class="scope" src="assets/chiefland/scopes/jwst.jpg" alt="JWST" style="left:188px; top:142px; width:118px">
         <div class=nm>JWST survey</div>
         <div class="team fragment" data-fragment-index=0><b>Rainer&nbsp;Schödel</b>&nbsp;&middot; <b>Steve&nbsp;Longmore</b>&nbsp;&middot; <b>Adam&nbsp;Ginsburg</b>&nbsp;&middot; Konstantina&nbsp;Anastasopoulou&nbsp;&middot; Jay&nbsp;Anderson&nbsp;&middot; John&nbsp;Bally&nbsp;&middot; Ashley&nbsp;Barnes&nbsp;&middot; Cara&nbsp;Battersby&nbsp;&middot; Alessandra&nbsp;Mastrobuono&nbsp;Battisti&nbsp;&middot; Giuseppe&nbsp;Bono&nbsp;&middot; Aaron&nbsp;Bryant&nbsp;&middot; Santi&nbsp;Cassisi&nbsp;&middot; Mélanie&nbsp;Chevance&nbsp;&middot; Anna&nbsp;Ciurlo&nbsp;&middot; Angela&nbsp;Cotera&nbsp;&middot; Samuel&nbsp;Crowe&nbsp;&middot; Tuan&nbsp;Do&nbsp;&middot; Rubén&nbsp;Fedriani&nbsp;&middot; Anja&nbsp;Feldmeier&#8209;Krause&nbsp;&middot; Sebastiano&nbsp;von&nbsp;Fellenberg&nbsp;&middot; Lucia&nbsp;Bravo&nbsp;Ferres&nbsp;&middot; Dimitri&nbsp;Gadotti&nbsp;&middot; Carme&nbsp;Gallart&nbsp;&middot; Teresa&nbsp;Gallego&#8209;Calvente&nbsp;&middot; Eulalia&nbsp;Gallego&#8209;Cano&nbsp;&middot; Pablo&nbsp;García&nbsp;&middot; Angela&nbsp;Gardini&nbsp;&middot; Abhimat&nbsp;Gautam&nbsp;&middot; Andrea&nbsp;Ghez&nbsp;&middot; Stefan&nbsp;Gillessen&nbsp;&middot; Miguel&nbsp;Cano&nbsp;González&nbsp;&middot; Alessia&nbsp;Gualandris&nbsp;&middot; Robert&nbsp;Gutermuth&nbsp;&middot; Daryl&nbsp;Haggard&nbsp;&middot; Matthew&nbsp;Hankins&nbsp;&middot; Jonathan&nbsp;Henshaw&nbsp;&middot; Matthew&nbsp;Hosek&nbsp;&middot; Rebecca&nbsp;Houghton&nbsp;&middot; Yue&nbsp;Hu&nbsp;&middot; Tracy&nbsp;Huard&nbsp;&middot; Ralf&nbsp;Klessen&nbsp;&middot; Diederik&nbsp;Kruijssen&nbsp;&middot; Ryan&nbsp;Lau&nbsp;&middot; Alex&nbsp;Lazarian&nbsp;&middot; Rebecca&nbsp;Levy&nbsp;&middot; Mattia&nbsp;Libralato&nbsp;&middot; Anan&nbsp;Lu&nbsp;&middot; Jessica&nbsp;Lu&nbsp;&middot; Xing&nbsp;Lu&nbsp;&middot; Nora&nbsp;Luetzgendorf&nbsp;&middot; John&nbsp;Magorrian&nbsp;&middot; Shifra&nbsp;Mandel&nbsp;&middot; Roeland&nbsp;van&nbsp;der&nbsp;Marel&nbsp;&middot; Macarena&nbsp;García&nbsp;Marín&nbsp;&middot; Sera&nbsp;Markoff&nbsp;&middot; Alvaro&nbsp;Martinez&nbsp;&middot; Maria&nbsp;Melamed&nbsp;&middot; Betsy&nbsp;Mills&nbsp;&middot; Kaya&nbsp;Mori&nbsp;&middot; Mark&nbsp;Morris&nbsp;&middot; Elena&nbsp;Murchikova&nbsp;&middot; Paco&nbsp;Najarro&nbsp;&middot; David&nbsp;Nataf&nbsp;&middot; Nadine&nbsp;Neumayer&nbsp;&middot; Shogo&nbsp;Nishiyama&nbsp;&middot; Francisco&nbsp;Nogueras&#8209;Lara&nbsp;&middot; Dylan&nbsp;Paré&nbsp;&middot; Florian&nbsp;Peissker&nbsp;&middot; Maya&nbsp;Petkova&nbsp;&middot; Thushara&nbsp;Pillai&nbsp;&middot; Gabriele&nbsp;Ponti&nbsp;&middot; Rodrigo&nbsp;Contreras&nbsp;Ramos&nbsp;&middot; R.&nbsp;Michael&nbsp;Rich&nbsp;&middot; Carlos&nbsp;Román&#8209;Zúñiga&nbsp;&middot; Michael&nbsp;Rugel&nbsp;&middot; Nils&nbsp;Ryde&nbsp;&middot; Nadeen&nbsp;Sabha&nbsp;&middot; Joel&nbsp;Sánchez&#8209;Bermúdez&nbsp;&middot; Álvaro&nbsp;Sánchez&#8209;Monge&nbsp;&middot; Matthias&nbsp;Schultheis&nbsp;&middot; Stephen&nbsp;Serjeant&nbsp;&middot; Lijing&nbsp;Shao&nbsp;&middot; Janet&nbsp;Simpson&nbsp;&middot; Mattia&nbsp;Sormani&nbsp;&middot; Christopher&nbsp;Sorrell&nbsp;&middot; Jonathan&nbsp;Tan&nbsp;&middot; Enrico&nbsp;Di&nbsp;Teodoro&nbsp;&middot; Brian&nbsp;Thorsbro&nbsp;&middot; Pablo&nbsp;Torne&nbsp;&middot; Robin&nbsp;Tress&nbsp;&middot; Elena&nbsp;Valenti&nbsp;&middot; Sill&nbsp;Verberne&nbsp;&middot; Pierre&nbsp;Vermot&nbsp;&middot; Eduardo&nbsp;Vitral&nbsp;&middot; Gunther&nbsp;Witzel&nbsp;&middot; Siyao&nbsp;Xu&nbsp;&middot; Farhad&nbsp;Yusef&#8209;Zadeh&nbsp;&middot; Michal&nbsp;Zajacek&nbsp;&middot; Qizhou&nbsp;Zhang&nbsp;&middot; Manuela&nbsp;Zoccali</div>
         <div class="st fragment fade-out" data-fragment-index=0>half done (Sep 2026); the rest in 2027</div>
@@ -1064,6 +1026,7 @@
     </div>
     <div class=cmzq-col style="left:688px;">
         <div class=pic><img src="assets/cmz/wide_spitzer.jpg"><img src="assets/cmz/fp_roman_wide.png"></div>
+        <img class="scope" src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope" style="left:188px; top:142px; width:118px">
         <div class=nm>Roman surveys</div>
         <div class="team etal fragment" data-fragment-index=0>et al.</div>
         <div class="st fragment fade-out" data-fragment-index=0>coming</div>
@@ -1138,6 +1101,8 @@
         <li> Roman will find tens of thousands of planets ~8,000 parsecs away, toward the center, using microlensing:
         <li> a foreground star with planets briefly magnifies a background star as they line up.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope" src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope" style="right:8px; top:130px; width:104px">
 </section>
 
 <section id=31-cosmic-noon-discs>
@@ -1187,6 +1152,8 @@
         <li> What happens to planet-forming disks in crowded, extreme places?
         <li> Builds: in Orion, disks are boiled away by nearby massive stars; disks can be trimmed by surrounding gas; in the Arches cluster near the center, disks have tails.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tl" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
 <section id=32-cmzq-disks>
@@ -1298,6 +1265,8 @@
         <li> But toward the center, dust dims visible light by a factor of about a trillion. Gaia can't see the center at all.
         <li> So we have to use other tricks: infrared and radio light get through the dust.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope bl" src="assets/chiefland/scopes/gaia.jpg" alt="Gaia">
 </section>
 
 <section id=13-distance-sgr>
@@ -1338,6 +1307,7 @@
         <p class=fragment data-fragment-index=2 style="font-size:24px; color:#c9d1dc;">We measure velocity through Doppler shift and sky motion by watching the orbit, giving distance.</p>
     </div>
     <div class=smaller3 style="position:absolute; right:14px; bottom:30px;">orbit: GRAVITY Collaboration 2020</div>
+    <img class="scope br" src="assets/chiefland/scopes/vlti.jpg" alt="VLT Interferometer" style="--ob:50px">
     <!-- build 4 (Adam: "merge the youtube movie with the JWST movie and add snapshots from individual papers' data in between ...
          interpolate ... models that match the resolution of images on either side ... end frame should show the orbits of S2 and S301"):
          1995-2026 composite. Observed snapshots (archival Keck/NIRC2, VLT/NACO, JWST/NIRCam; GRAVITY images from the S301 paper) with model
@@ -1349,6 +1319,10 @@
         </video>
         <div style="position:absolute; left:20px; top:8px; width:984px; font-size:28px; text-align:left; color:#fff;">Stars around the black hole, 1995&ndash;2026</div>
         <div style="position:absolute; left:20px; top:692px; width:984px; font-size:16px; line-height:1.25; text-align:left; color:#9aa3b5;">Observed (green label): Keck/NIRC2 (Keck Observatory Archive), VLT/NACO (ESO archive), JWST/NIRCam (MAST) images, aligned for this talk; GRAVITY images from Abd El Dayem et al. 2026. In between: the nearest real image with stars moved along published orbits and motions (Gillessen et al. 2017; GRAVITY Collaboration 2021; Abd El Dayem et al. 2026), blurred as that instrument measured. Before 2002: model at the 1998 Keck speckle resolution.</div>
+        <img class="scope" src="assets/chiefland/scopes/keck.jpg" alt="Keck Observatory" style="left:12px; top:60px">
+        <img class="scope" src="assets/chiefland/scopes/vlt.jpg" alt="Very Large Telescope" style="left:12px; top:154px">
+        <img class="scope" src="assets/chiefland/scopes/jwst.jpg" alt="JWST" style="left:12px; top:248px">
+        <img class="scope" src="assets/chiefland/scopes/vlti.jpg" alt="VLT Interferometer" style="left:12px; top:342px">
     </div>
     <!-- build 5 (Adam: "add another build to this slide that shows that zoom level of those two stars for the full period - i.e., 1995-2030 (yes, including predictions and backtracks)"):
          S2 and S301 in the GRAVITY-scale field, from the published orbits; bright bar = span with observations, dim = extrapolated. Local copy only (dropbox_only/ is gitignored). -->
@@ -1358,6 +1332,7 @@
         </video>
         <div style="position:absolute; left:20px; top:8px; width:984px; font-size:28px; text-align:left; color:#fff;">S2 and S301, 1995&ndash;2030</div>
         <div style="position:absolute; left:20px; top:692px; width:984px; font-size:16px; line-height:1.25; text-align:left; color:#9aa3b5;">Positions from published orbits (Gillessen et al. 2017; GRAVITY Collaboration 2021; Abd El Dayem et al. 2026), drawn at GRAVITY resolution. Bright bar: years with observations; dim bar: orbit extrapolated backward or forward in time.</div>
+        <img class="scope" src="assets/chiefland/scopes/vlti.jpg" alt="VLT Interferometer" style="left:12px; top:60px">
     </div>
     <aside class=notes><ul>
         <li> The best distance to the center comes from a star, S2, that orbits the central black hole every 16 years.
@@ -1396,6 +1371,7 @@
         <a href="https://ui.adsabs.harvard.edu/abs/2025PASJ...77..687S/abstract" target=_blank rel=noopener><img src="assets/cmz/snap_sofue2025.jpg" alt="Sofue+ 2025: Galactic Center arms from ACES"></a>
         <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2025PASJ...77..687S/abstract" target=_blank rel=noopener>Sofue+ 2025</a>: spiral arms in the center, from ALMA</div>
     </div>
+    <div class=cmz-snap data-snap-phase=4 style="left:auto; right:12px; top:auto; bottom:34px; width:84px;"><img src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="width:84px; height:auto; border:1px solid rgba(255,255,255,.45); border-radius:6px; background:#000; box-shadow:0 1px 6px rgba(0,0,0,.6);"></div>
     <div class=cmz-snap data-snap-phase=5>
         <a href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract" target=_blank rel=noopener><img src="assets/cmz_papers/lipman2026a_fig6.jpg" alt="Lipman+ 2026: nested x2 orbits"></a>
         <div class=cap><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2026ApJ..1002...24L/abstract" target=_blank rel=noopener>Lipman+ 2026</a>: nested orbits</div>
@@ -1456,6 +1432,8 @@
     <aside class=notes><ul>
         <li> Roman will track the motions of tens of millions of stars. Stars behind the gas look redder and dimmer, so they map the gas in 3D.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope">
 </section>
 
 <!-- (2026-11-02) Adam: "include the animated cartoon explaining Roman tomography - that was removed but should've been
@@ -1581,8 +1559,8 @@
     <div style="position:absolute; left:510px; top:120px; width:500px; text-align:left; font-size:30px; line-height:1.35;">
         <p style="margin-top:0;">Sgr&nbsp;A*: 4 million Suns</p>
         <p class=fragment>Gas flowing into the center along the bar: ~1 Sun's worth per year</p>
-        <p class=fragment>What the black hole swallows: less than a millionth of that</p>
-        <p class=fragment style="color:#ffe345;">Where does the rest go?</p>
+        <p class=fragment>The black hole swallows less than a millionth of that</p>
+        <p class=fragment style="color:#ffe345;">What happens to the rest?</p>
     </div>
     <div class=smaller3 style="position:absolute; left:20px; top:578px; text-align:left;">EHT Collaboration / ESO, CC BY 4.0</div>
     <aside class=notes><ul>
@@ -1624,6 +1602,8 @@
         <li> Some fast-moving gas features are shocks: gas crashing into gas. There are hints of gas flowing inward.
         <li> Next: Roman's 3D maps and detailed simulations.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tl fragment" data-fragment-index=1 src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope">
 </section>
 
 <section id=25-cmzq-ledger>
@@ -1654,6 +1634,124 @@
         <li> A list of open questions about the Galactic Center, with the year each one was first asked.
         <li> Some are decades old. Today I'll walk through a handful of them.
     </ul></aside>
+</section>
+
+<section id=25.1-mystery-filaments data-background-color="#000" data-auto-animate>
+    <img class=cf-img src="assets/chiefland/gcs_meerkat_filaments_crop.jpg" style="left:0; top:0; width:1024px; height:768px;">
+    <!-- (2026-11-03, Adam: "from 25.1 to 25.2, show a matched-position inset of sgr c and then zoom in just like we do on
+         44-cmz-to-sgrb2"): build 0 puts the 25.2 JWST image on Sgr C at its true size and sky orientation, build 1 turns
+         it upright in place (custom.css .fragment.rotated), and auto-animate carries it to its place on 25.2.
+         Registration: the filament crop is 0.75x the Schmidt composite + (520, 150) px (FFT cross-correlation), whose
+         Galactic frame is pinned on Sgr A* and the Mouse (671 px/deg); the JWST image is panel_sgrc.jpg (CfA #clouds-sgrc,
+         rotate -149.92deg; its box_sgrc.png footprint puts the centre at l = -0.543, b = -0.091) at 0.808x + (-10, 18) px.
+         So 715.8 deck px/deg here; the cyan Pa-alpha gas lands on the radio H II region. -->
+    <img class="cf-img fragment rotated" data-fragment-index=0 src="assets/chiefland/sgrc_webb_crowe2025.jpg"
+         style="left:772.63px; top:448.58px; width:71.82px; height:27.18px; --rotation:-149.92deg; --transition-duration:0.8s;
+                outline:1px solid rgba(255,255,255,0.85); z-index:5;">
+    <div class="cf-lbl fragment" data-fragment-index=0 style="position:absolute; left:760px; top:400px; width:100px; text-align:center; font-size:20px; text-shadow:0 0 4px #000, 0 0 2px #000; z-index:6;">Sgr C</div>
+    <span class="fragment" data-fragment-index=1></span>
+    <div class=cf-cap style="background:rgba(0,0,0,.45); width:auto; padding:2px 10px;">Mystery: giant radio filaments</div>
+    <div class=cf-note style="top:600px; background:rgba(0,0,0,.5); width:auto; padding:6px 12px;">
+        ~1,000 thin, straight threads, some ~30 parsecs long<br>
+        Radio glow from electrons spiraling around magnetic fields<br>
+        Found in 1984. <span style="color:#77e345;">What makes them is still unknown.</span>
+    </div>
+    <div class=cf-cred style="color:#ccc;">MeerKAT: Heywood+ 2022, Yusef-Zadeh+ 2022 &middot; image: Judy Schmidt</div>
+    <aside class=notes><ul>
+        <li> These thin, straight threads are seen in radio light at ~20 cm wavelength (MeerKAT). They are not seen anywhere else in the Galaxy like this.
+        <li> First found in 1984 (Yusef-Zadeh, Morris &amp; Chance). MeerKAT now shows nearly a thousand (Yusef-Zadeh+ 2022).
+        <li> They glow because fast electrons spiral around magnetic field lines. Where the electrons come from, and why the fields are organized into threads, is not settled.
+        <li> Build: JWST's view of Sgr C, at its true size and position. Build: turn it upright; next slide zooms in.
+    </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/meerkat.jpg" alt="MeerKAT">
+</section>
+
+<section id=25.2-mystery-magnetic-hii data-background-color="#000" data-auto-animate>
+    <div class=cf-cap>Mystery: hot gas bubbles shaped by magnetic fields?</div>
+    <img class=cf-img src="assets/chiefland/sgrc_webb_crowe2025.jpg" style="left:12px; top:62px; width:1000px; height:378px;">
+    <img class=cf-img src="assets/sgrb2ds/miri_fullfov.jpg" style="left:12px; top:500px; width:320px; height:240px;">
+    <div class=cf-cred>Sgr C: NASA, ESA, CSA, STScI, S. Crowe (UVA), J. Bally (CU), R. Fedriani (IAA-CSIC)</div>
+    <aside class=notes><ul>
+        <li> H II regions are bubbles of hot, ionized gas around newborn massive stars. In the disk of the Galaxy they look smooth and round.
+        <li> In Sgr C, JWST shows the hydrogen gas pulled into strands. Crowe+ 2025 argue the CMZ's strong magnetic fields (~1 mG) confine it.
+        <li> In Sgr B2 Deep South, radio maps show non-thermal (synchrotron) emission mixed with the hot gas: electrons accelerated at the bubble's edge, spiraling in magnetic fields (Meng+ 2019).
+        <li> Whether magnetism changes how stars form here is open.
+    </ul></aside>
+</section>
+
+<section id=25.3-mystery-neutron-stars data-background-color="#000">
+    <!-- backdrop (2026-11-04, Adam: "add a figure showing the Galactic center's known neutron stars as the backdrop"):
+         the MeerKAT + Spitzer composite of 5.2, dimmed, at 800 deck px/deg centred so Sgr A* is at (500, 520) (registration as
+         on 5.1/25.1).  Rings: the magnetar PSR J1745-2900 (gold; 2.4" from Sgr A*) and the five radio pulsars within ~15' of
+         Sgr A* from the ATNF catalogue v2.6.1 (J1745-2910, J1745-2912, J1746-2849, J1746-2850, J1746-2856), baked in by
+         scratchpad code at positions from the catalogue. -->
+    <img class=cf-img src="assets/chiefland/gcs_neutron_stars_backdrop.jpg" style="left:0; top:0; width:1024px; height:768px;">
+    <h4 style="color:#fff; position:relative; z-index:2;">Mystery: where are the neutron stars?</h4>
+    <div style="position:absolute; left:508px; top:540px; width:260px; text-align:left; font-size:19px; line-height:1.2; color:#ffd166; text-shadow:0 0 4px #000, 0 0 2px #000;">&larr; the magnetar,<br>next to Sgr A*</div>
+    <div style="position:absolute; right:20px; top:716px; text-align:right; font-size:19px; color:#6fdcff; text-shadow:0 0 4px #000, 0 0 2px #000;"><span style="display:inline-block; width:18px; height:18px; border:3px solid #50dcff; border-radius:50%; vertical-align:middle; margin-right:8px; box-sizing:border-box;"></span>radio pulsars (5)</div>
+    <div style="position:absolute; left:20px; top:716px; font-size:15px; color:#ccc; text-align:left; text-shadow:0 0 4px #000;"><span style="display:inline-block; width:167px; border-top:3px solid #fff; vertical-align:middle; margin-right:8px;"></span>30 parsecs</div>
+    <div class=cf-text style="left:20px; top:120px; width:984px;">
+        <div class=cf-stat><span class=n>10<sup>8</sup>&ndash;10<sup>9</sup></span><span class=d>neutron stars predicted in the Milky Way: one for each massive star that has died</span></div>
+        <div class=cf-stat><span class=n>thousands</span><span class=d>found, almost all as pulsars</span></div>
+        <div class=cf-stat><span class=n>~6</span><span class=d>known within ~30 parsecs of the center. The closest, a magnetar found in 2013, is 0.1 parsecs from Sgr A*.</span></div>
+        <div style="margin-top:34px; font-size:26px;">Theory expects hundreds or more near the black hole.
+            <span class=q>Hidden behind blurring gas, or really missing?</span></div>
+    </div>
+    <div class=cf-cred>Known pulsars: ATNF Pulsar Catalogue (Manchester+ 2005), Johnston+ 2006, Deneva+ 2009 &middot; magnetar: Mori+ 2013, Eatough+ 2013 &middot; MeerKAT: Heywood+ 2022 &middot; image: Judy Schmidt</div>
+    <aside class=notes><ul>
+        <li> Every massive star that dies leaves a neutron star or black hole. Over the Galaxy's life that adds up to ~10<sup>8</sup>&ndash;10<sup>9</sup> neutron stars (e.g., Sartore+ 2010).
+        <li> We've found only a few thousand, mostly as radio pulsars.
+        <li> Near the center: five radio pulsars within ~15&prime; of Sgr A* (Johnston+ 2006; Deneva+ 2009), plus the magnetar SGR/PSR J1745&minus;2900, 2.4&Prime; from Sgr A* (found by Swift in 2013).
+        <li> Predictions: ~100&ndash;1000 pulsars orbiting close to Sgr A* (Pfahl &amp; Loeb 2004). The usual excuse is that turbulent ionized gas smears out the radio pulses, but the magnetar's pulses are less smeared than expected (Spitler+ 2014), so the &ldquo;missing pulsar problem&rdquo; is still with us (Dexter &amp; O'Leary 2014).
+        <li> Thousands of faint old pulsars might also explain the gamma-ray glow: next slide.
+    </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/meerkat.jpg" alt="MeerKAT">
+</section>
+
+<section id=25.4-mystery-dark-matter data-background-color="#000">
+    <h4 style="color:#fff;">Mystery: is the gamma-ray glow dark matter?</h4>
+    <img class=cf-img src="assets/chiefland/gcs_fermi_gc_excess.jpg" style="left:0; top:52px; width:1024px; height:607px;">
+    <div class=cf-text style="left:20px; top:664px; width:984px; font-size:21px; line-height:1.28;">
+        Dark-matter particles that collide and annihilate would make gamma rays, brightest where dark matter is densest: the center.
+        <div style="margin-top:4px;">Since 2009: an extra glow at about the right brightness and shape.</div>
+    </div>
+    <div class=cf-cred>T. Linden (U. Chicago), NASA &middot; Goodenough &amp; Hooper 2009; Daylan+ 2016</div>
+    <aside class=notes><ul>
+        <li> If dark matter is a particle that can annihilate, the center is the best place to look: two particles must meet, so the signal grows as density squared.
+        <li> Since 2009 Fermi data show an excess of ~1&ndash;3 GeV gamma rays around the center that fits a ~40 GeV particle with the &ldquo;natural&rdquo; annihilation rate (Daylan+ 2016).
+        <li> But the excess only exists after subtracting a model of the whole gamma-ray sky, and it changes with that model.
+        <li> Millisecond pulsars, old recycled neutron stars, have a similar spectrum; thousands too faint to see one by one would add up to a glow. Recent work finds the glow follows the bulge stars more than a round dark-matter halo (Macias+ 2018; Bartels+ 2018), but this is still argued.
+        <li> The dark-matter density profile in the inner Galaxy is unknown, and dwarf galaxies have not shown a matching signal.
+    </ul></aside>
+</section>
+
+<section id=25.5-mystery-511kev data-background-color="#000">
+    <h4 style="color:#fff;">Mystery: antimatter at the center</h4>
+    <div class=cf-text style="left:20px; top:54px; width:984px; font-size:24px;">
+        When an electron meets its antimatter twin, a <span class=k>positron</span>, both vanish into gamma rays of exactly <span class=k>511&nbsp;keV</span>.
+    </div>
+    <img class=cf-img src="assets/gc_he/siegert2016_fig2.jpg" style="left:62px; top:124px; width:900px; height:455px;">
+    <div class=cf-lbl style="position:absolute; left:62px; top:580px; width:900px; font-size:15px; color:#9aa3b5;">511 keV sky model, INTEGRAL/SPI (Siegert+ 2016)</div>
+    <div class=cf-text style="left:62px; top:606px; width:900px; font-size:21px;">
+        <span class=k>Possible sources</span>
+        <ul style="display:grid; grid-template-columns:1fr 1fr; column-gap:30px; list-style-position:inside; margin:4px 0 0 0;">
+            <li> Radioactive atoms from exploding stars
+            <li> Black holes &amp; neutron stars feeding on companions
+            <li> Past outbursts of Sgr A*
+            <li> Dark matter
+        </ul>
+    </div>
+    <div class=cf-cred>Siegert+ 2016 (INTEGRAL/SPI)</div>
+    <aside class=notes><ul>
+        <li> The 511 keV line is the signature of positrons annihilating with electrons. Balloon experiments saw it from the Galactic Center in the 1970s; ESA's INTEGRAL mapped it.
+        <li> INTEGRAL/SPI: 58&sigma; detection; bright bulge, faint thick disk, and an unresolved central source at Sgr A* (Siegert+ 2016). The Galaxy needs a few &times; 10<sup>43</sup> positrons per second.
+        <li> Candidates: radioactive decay from supernovae and other stellar explosions (e.g., <sup>44</sup>Ti from faint thermonuclear supernovae in old stars, Crocker+ 2017), X-ray binaries and microquasars, past Sgr A* activity, pulsars, light dark matter.
+        <li> Why it's hard: positrons can travel far before slowing down and annihilating, the bulge-heavy shape doesn't match where young stars are, and the instruments have ~2.7&deg; resolution. COSI (NASA, 0.2&ndash;5 MeV) should map it better.
+    </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/integral.jpg" alt="INTEGRAL">
 </section>
 
 <section id=43-cmzq-q3>
@@ -1757,6 +1855,9 @@ About half of its star formation happens in one cloud: Sgr B2
         <li> Builds: the clusters that are forming right now.
     </ul></aside>
 
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/meerkat.jpg" alt="MeerKAT">
+    <img class="scope br" src="assets/chiefland/scopes/jwst.jpg" alt="JWST" style="--n:1">
     </section>
     <section data-auto-animate>
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:500%; max-width:1000%; max-height:1000%;position: absolute;top: -1650px;left: -620px;">
@@ -1802,6 +1903,8 @@ About half of its star formation happens in one cloud: Sgr B2
         <li> A cluster of ~3,000 Suns that is still growing.
     </ul></aside>
 
+    <!-- telescope icons -->
+    <img class="scope tl" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
     </section>
 
 <section id=48-sgrb2-miri-catalogs data-background-color="black">
@@ -1825,6 +1928,9 @@ About half of its star formation happens in one cloud: Sgr B2
         <li> Two kinds of young stars: JWST finds the slightly older ones, spread out; ALMA finds the ones forming right now, still buried.
         <li> The puffy red stuff, seen only at the longest JWST wavelength, is still a mystery.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
+    <img class="scope br" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:1">
 </section>
 
 <section id=49-sgrb2-stack>   
@@ -1859,6 +1965,9 @@ About half of its star formation happens in one cloud: Sgr B2
         <li> Probably because the cloud is being squeezed or hit. Open question: why does a collision here make stars?
     </ul></aside>
 
+    <!-- telescope icons -->
+    <img class="scope bl" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
+    <img class="scope bl" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:1">
 </section>
 
 <section id=49.1-tress-colliding-flows>
@@ -1920,6 +2029,8 @@ About half of its star formation happens in one cloud: Sgr B2
 <aside class=notes><ul>
         <li> Before 2026, JWST had looked at only a few of the center's clouds. Let's tour them.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
 <section id=52-clouds-sgrb2>
@@ -1932,6 +2043,8 @@ About half of its star formation happens in one cloud: Sgr B2
 <aside class=notes><ul>
         <li> Sgr B2: more than 500 young stars forming (ALMA), and ~100 bubbles of glowing gas around new massive stars.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/alma.jpg" alt="ALMA">
 </section>
 
 <section id=53-clouds-cloudef>
@@ -2000,6 +2113,8 @@ About half of its star formation happens in one cloud: Sgr B2
         <li> That's why we're mapping the whole center with JWST: the Galactic Center Treasury Survey. Half of it was observed this September.
         <li> Goals: when did the stars form, where are the dust and gas, and where are the young stars?
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
 <section id=58-soon-miri>
@@ -2075,6 +2190,10 @@ About half of its star formation happens in one cloud: Sgr B2
         <li> Their positions are precise to the width of a dime seen from 3,200 km; comparing with earlier JWST images gives their motions.
         <li> With the stars removed, you see the gas and dust.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope fragment fade-out" data-fragment-index=1 src="assets/chiefland/scopes/jwst.jpg" alt="JWST" style="left:360px; top:14px">
+    <img class="scope tr fragment" data-fragment-index=1 src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
+    <img class="scope tr fragment fade-in-then-out" data-fragment-index=3 src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:1">
 </section>
 
 <section id=60-cmzq-q4>
@@ -2103,6 +2222,9 @@ About half of its star formation happens in one cloud: Sgr B2
         <li> They should dissolve within a few tens of millions of years, and blend into the background even sooner.
         <li> Next: look for trails of stars behind them with JWST and Roman.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
+    <img class="scope br" src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope" style="--n:1">
 </section>
 
 <section id=62-cmzq-imf data-visibility="hidden">
@@ -2157,6 +2279,8 @@ About half of its star formation happens in one cloud: Sgr B2
 <aside class=notes><ul>
         <li> JWST's colors show the ice: the stars behind the cloud are dimmed at the wavelengths ice absorbs.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
 <section id=66-cmzq-ices-next>
@@ -2169,6 +2293,8 @@ About half of its star formation happens in one cloud: Sgr B2
     <aside class=notes><ul>
         <li> Next: measuring the ice directly with JWST spectra, observed in September 2026.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope tr" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
 <section id=67-chem-to-planets>
@@ -2217,6 +2343,10 @@ About half of its star formation happens in one cloud: Sgr B2
         <li> Summary: gas pours in along the bar; stars are forming, but too few; the clouds are icy, with rich chemistry; 3D maps are coming.
         <li> The eight questions, where we are now, and what comes next. Many more are still open.
     </ul></aside>
+    <!-- telescope icons -->
+    <img class="scope br row" src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope" style="width:62px; --pitch:68px">
+    <img class="scope br row" src="assets/chiefland/scopes/jwst.jpg" alt="JWST" style="--n:1; width:62px; --pitch:68px">
+    <img class="scope br row" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:2; width:62px; --pitch:68px">
 </section>
 
 <section id=69-wrapup-jwst-panner data-background-color="#05070c" data-preload

@@ -78,7 +78,7 @@
   #topdown-bg.xfade .tdb { transition:opacity .35s ease-in-out; }
   /* (2026-10-27, Adam: the galaxy "isn't vertically centered; the top should be a little higher (closer to title)
      and the bottom should not be cut off")  The two zoom renders sit 36 px higher than the other states, so the
-     1.25 kpc map spans y = 56-728 on the slide instead of 92-764.  #topdown-local's overlays use top:56px to match. */
+     1.25 kpc map spans y = 56-728 on the slide instead of 92-764.  #\32 0-topdown-local's overlays use top:56px to match. */
   #topdown-bg .tdb[data-state$="-zoom"] { top:-36px; }
 </style>
 
@@ -97,8 +97,8 @@
   .reveal table.cmzq a { color:#7fdbff; }
   .reveal table.cmzq-full tr.other td { color:#b8c0cc; }
   .reveal table.cmzq-full tr td { transition:color .4s, opacity .4s, background .4s; }
-  #\32 5-cmzq-ledger:has(.cmzq-feat-on.visible) table.cmzq-full tr.other td { opacity:.35; }
-  #\32 5-cmzq-ledger:has(.cmzq-feat-on.visible) table.cmzq-full tr.feat td { background:rgba(255,209,102,.13); }
+  #\34 4-cmzq-ledger:has(.cmzq-feat-on.visible) table.cmzq-full tr.other td { opacity:.35; }
+  #\34 4-cmzq-ledger:has(.cmzq-feat-on.visible) table.cmzq-full tr.feat td { background:rgba(255,209,102,.13); }
   .cmzq-ledger-on table.cmzq-full tr.other td { opacity:.35; }
   .cmzq-ledger-on table.cmzq-full tr.feat td { background:rgba(255,209,102,.13); }
   .cmzq-kicker { font-size:20px; color:#9aa3b5; letter-spacing:.12em; text-transform:uppercase; margin-top:28px; }
@@ -147,7 +147,7 @@
 <style>
 /* the excess-source markers stay up for two builds, then hand over to the density contours;
    keyed on .visible (not .current-fragment) so it survives leaving and re-entering the slide. */
-#\34 8-sgrb2-miri-catalogs:has(.f480-to-contour.visible) .f480pts { opacity: 0; visibility: hidden; }
+#\35 6-sgrb2-miri-catalogs:has(.f480-to-contour.visible) .f480pts { opacity: 0; visibility: hidden; }
 </style>
 
 <style>
@@ -162,7 +162,7 @@
 }
 /* keyed on .visible (not .current-fragment): reveal drops .current-fragment when the
    slide is left, which snapped the blowup back to small off-screen and replayed the
-   zoom forward on return.  .visible persists, so coming back from #\36 5-cloudc it is
+   zoom forward on return.  .visible persists, so coming back from #\37 2-cloudc it is
    already zoomed and stepping back plays the shrink in reverse. */
 /* Sgr B2 DS zoom builds: two marker fragments drive extra states via :has(),
    since an element can only carry one data-fragment-index.  :not(.stack) so a vertical-stack
@@ -246,48 +246,48 @@
           </section>
 
 <style>
-  /* #7-night-sky builds 5-8 (2026-10-29, Adam: "add a build after 7-night-sky/4 that zooms in to the teapot and
+  /* #\32 -night-sky builds 5-8 (2026-10-29, Adam: "add a build after 7-night-sky/4 that zooms in to the teapot and
      highlights the stars, then have it zoom out to a realistically-rendered night sky ... then the SPHEREx infrared
      view and then the millimeter-wavelength view").  .ns-moll holds the Mollweide layers of builds 0-4; .ns-real is one
      1024 x 768 layer in the evening-sky projection of colloquium_assets/make_chiefland_skyview.py (its frame px / 4),
      which also prints these matrices.  These rules ARE the finished state of every build, so ?print-pdf, jumps and
-     going back need no script; the "#7-night-sky builds 5-8" script only animates one step forward. */
-  #\37 -night-sky .ns-moll, #\37 -night-sky .ns-real { position:absolute; left:0; top:0; width:1024px; height:768px;
+     going back need no script; the "#\32 -night-sky builds 5-8" script only animates one step forward. */
+  #\32 -night-sky .ns-moll, #\32 -night-sky .ns-real { position:absolute; left:0; top:0; width:1024px; height:768px;
       transform-origin:0 0; }
-  #\37 -night-sky .ns-real { transform:matrix(-0.132044, -0.467987, 0.383701, -0.155397, 318.870, 682.457); }  /* A: on the Mollweide */
-  .reveal #\37 -night-sky .ns-real img { position:absolute; left:0; top:0; width:1024px; height:768px; margin:0; border:0;
+  #\32 -night-sky .ns-real { transform:matrix(-0.132044, -0.467987, 0.383701, -0.155397, 318.870, 682.457); }  /* A: on the Mollweide */
+  .reveal #\32 -night-sky .ns-real img { position:absolute; left:0; top:0; width:1024px; height:768px; margin:0; border:0;
       max-width:none; max-height:none; background:none; box-shadow:none; }
-  .reveal #\37 -night-sky .ns-real img.ns-patch, .reveal #\37 -night-sky .ns-real img.ns-tz {   /* the 3x close-ups */
+  .reveal #\32 -night-sky .ns-real img.ns-patch, .reveal #\32 -night-sky .ns-real img.ns-tz {   /* the 3x close-ups */
       left:225.25px; top:457.25px; width:256px; height:256px; }
-  #\37 -night-sky .ns-patch { -webkit-mask-image:radial-gradient(closest-side, #000 85%, transparent);
+  #\32 -night-sky .ns-patch { -webkit-mask-image:radial-gradient(closest-side, #000 85%, transparent);
       mask-image:radial-gradient(closest-side, #000 85%, transparent); }
-  #\37 -night-sky .ns-wide, #\37 -night-sky .ns-patch, #\37 -night-sky .ns-tz, #\37 -night-sky .ns-ground,
-  #\37 -night-sky .ns-tw { opacity:0; }
-  #\37 -night-sky .ns-real .fragment { transition-duration:.8s; }               /* 7, 8: infrared, millimeter */
+  #\32 -night-sky .ns-wide, #\32 -night-sky .ns-patch, #\32 -night-sky .ns-tz, #\32 -night-sky .ns-ground,
+  #\32 -night-sky .ns-tw { opacity:0; }
+  #\32 -night-sky .ns-real .fragment { transition-duration:.8s; }               /* 7, 8: infrared, millimeter */
   /* 5: the Teapot close-up (Mollweide stack at M5; sky layer at S = M5 A: 6x, turned -108.65 deg) */
-  #\37 -night-sky:has(.ns5.visible) .ns-moll { transform:matrix(14.786822, -0.072351, -0.072351, 12.168100, -6802.660, -4740.145); }
+  #\32 -night-sky:has(.ns5.visible) .ns-moll { transform:matrix(14.786822, -0.072351, -0.072351, 12.168100, -6802.660, -4740.145); }
   /* .ns-dim darkens the Gaia map (to brightness ~0.15) before the close-up fades in, which waits until the close-up
      covers ~2/3 of the screen; together they keep the close-up from opening a dark disk in the map.  A plain black
      layer, not a CSS filter: a filter on the 15x-scaled .ns-moll blanked the whole frame in headless Chrome. */
-  #\37 -night-sky .ns-dim { position:absolute; left:0; top:0; width:1024px; height:768px; background:#000; opacity:0; }
-  #\37 -night-sky:has(.ns5.visible) .ns-dim { opacity:.85; }
-  #\37 -night-sky:has(.ns5.visible) .ns-real { transform:matrix(-1.918652, -5.684960, 5.684960, -1.918652, -2136.961, 3540.988); }
-  #\37 -night-sky:has(.ns5.visible) .ns-space, #\37 -night-sky:has(.ns5.visible) .ns-tz { opacity:1; }
-  #\37 -night-sky:has(.ns5.visible) .ns-ol { opacity:0; transition-duration:.6s; }   /* constellations, Sagittarius */
+  #\32 -night-sky .ns-dim { position:absolute; left:0; top:0; width:1024px; height:768px; background:#000; opacity:0; }
+  #\32 -night-sky:has(.ns5.visible) .ns-dim { opacity:.85; }
+  #\32 -night-sky:has(.ns5.visible) .ns-real { transform:matrix(-1.918652, -5.684960, 5.684960, -1.918652, -2136.961, 3540.988); }
+  #\32 -night-sky:has(.ns5.visible) .ns-space, #\32 -night-sky:has(.ns5.visible) .ns-tz { opacity:1; }
+  #\32 -night-sky:has(.ns5.visible) .ns-ol { opacity:0; transition-duration:.6s; }   /* constellations, Sagittarius */
   /* 6-8: tonight's sky, full frame */
-  #\37 -night-sky:has(.ns6.visible) .ns-moll { opacity:0; visibility:hidden; }
-  #\37 -night-sky:has(.ns6.visible) .ns-real { transform:none; }
-  #\37 -night-sky:has(.ns6.visible) .ns-space, #\37 -night-sky:has(.ns6.visible) .ns-tz { opacity:0; }
-  #\37 -night-sky:has(.ns6.visible) .ns-wide, #\37 -night-sky:has(.ns6.visible) .ns-ground,
-  #\37 -night-sky:has(.ns6.visible) .ns-tw { opacity:1; }
+  #\32 -night-sky:has(.ns6.visible) .ns-moll { opacity:0; visibility:hidden; }
+  #\32 -night-sky:has(.ns6.visible) .ns-real { transform:none; }
+  #\32 -night-sky:has(.ns6.visible) .ns-space, #\32 -night-sky:has(.ns6.visible) .ns-tz { opacity:0; }
+  #\32 -night-sky:has(.ns6.visible) .ns-wide, #\32 -night-sky:has(.ns6.visible) .ns-ground,
+  #\32 -night-sky:has(.ns6.visible) .ns-tw { opacity:1; }
   /* 9 (2026-11-02, Adam: "have the end of that zoom back out to gaia"): tonight's view shrinks back onto its place in
      the Mollweide (A) and fades, leaving the Gaia map; the next slides go through the other wavelengths */
-  #\37 -night-sky:has(.ns9.visible) .ns-moll { opacity:1; visibility:visible; transform:none; }
-  #\37 -night-sky:has(.ns9.visible) .ns-dim { opacity:0; }
-  #\37 -night-sky:has(.ns9.visible) .ns-real { transform:matrix(-0.132044, -0.467987, 0.383701, -0.155397, 318.870, 682.457); opacity:0; }
+  #\32 -night-sky:has(.ns9.visible) .ns-moll { opacity:1; visibility:visible; transform:none; }
+  #\32 -night-sky:has(.ns9.visible) .ns-dim { opacity:0; }
+  #\32 -night-sky:has(.ns9.visible) .ns-real { transform:matrix(-0.132044, -0.467987, 0.383701, -0.155397, 318.870, 682.457); opacity:0; }
 </style>
 
-<section id=7-night-sky>
+<section id=2-night-sky>
     <!-- builds 0-4 on the Mollweide sky (.ns-moll), builds 5-8 in tonight's view from Chiefland (.ns-real); see the
          <style> just above.  The chiefland_sky_*bortle3* and *teapot_space* renders are by the see-stars-from-gc agent
          (nightsky code on HiPerGator): Hipparcos + Gaia DR3 stars, Gaia integrated light for the Milky Way, a
@@ -450,7 +450,7 @@
   .reveal .cf-stat .d { flex:1; font-size:25px; line-height:1.3; color:#ececec; }
 </style>
 
-<section id=4.1-gamma-sky data-background-color="#000">
+<section id=5-gamma-sky data-background-color="#000">
     <img class=cf-img src="assets/chiefland/gcs_fermi_allsky_moll.jpg" style="left:2px; top:130px; width:1020px; height:523px;">
     <div class=cf-cap>Gamma rays: the highest-energy light <span style="color:#9aa3b5; font-size:70%;">(Fermi)</span></div>
     <div class="cf-card fragment" data-fragment-index=0 style="left:600px; top:400px; width:400px; background:#000; border:2px solid #fff;">
@@ -467,7 +467,7 @@
     <img class="scope tr" src="assets/chiefland/scopes/fermi.jpg" alt="Fermi Gamma-ray Space Telescope">
 </section>
 
-<section id=4.4-fermi-bubbles data-background-color="#000">
+<section id=6-fermi-bubbles data-background-color="#000">
     <img class=cf-img src="assets/chiefland/gcs_fermi_bubbles_moll.jpg" style="left:2px; top:130px; width:1020px; height:523px;">
     <div class=cf-cap>Gamma rays again: the &ldquo;Fermi bubbles&rdquo;</div>
     <div class=cf-note style="top:665px;">Two giant gamma-ray bubbles above and below the center (2010), each ~8,000 parsecs tall.</div>
@@ -480,7 +480,7 @@
     <img class="scope tr" src="assets/chiefland/scopes/fermi.jpg" alt="Fermi Gamma-ray Space Telescope">
 </section>
 
-<section id=4.2-xray-sky data-background-color="#000">
+<section id=7-xray-sky data-background-color="#000">
     <img class=cf-img src="assets/chiefland/gcs_rosat_allsky_moll.jpg" style="left:2px; top:130px; width:1020px; height:523px;">
     <div class=cf-cap>X-rays: gas at millions of degrees <span style="color:#9aa3b5; font-size:70%;">(ROSAT, 1990s)</span></div>
     <div class=cf-note style="top:670px;">A faint loop arcs high above the center&hellip;</div>
@@ -500,31 +500,31 @@
      to the ACES+MUSTANG image at its l, b.  Matrices from scratchpad edit_zoomchain.py: Mollweide px/deg at the
      center (2.76 along l, 3.4 along b) vs the flat maps' px/deg, so the zoom is matched at the center.
      The rules are the finished state of each build, so ?print-pdf and jumping need no script. */
-  [id="4.3-erosita-bubbles"] .xz, [id="5.1-aces-continuum"] .az { position:absolute; left:0; top:0; width:1024px; height:768px;
+  [id="8-erosita-bubbles"] .xz, [id="9-aces-continuum"] .az { position:absolute; left:0; top:0; width:1024px; height:768px;
       transform-origin:0 0; transition:transform 2s ease-in-out, opacity .6s ease 1.4s; }
-  [id="4.3-erosita-bubbles"]:has(.xz3.visible) .xz { transform:matrix(36.57, 0, 0, 30.02, -18199.57, -11422.64); opacity:0; }
-  [id="4.3-erosita-bubbles"] .xmet { opacity:0; transition:opacity .9s ease 1.1s; }
-  [id="4.3-erosita-bubbles"]:has(.xz3.visible) .xmet { opacity:1; }
+  [id="8-erosita-bubbles"]:has(.xz3.visible) .xz { transform:matrix(36.57, 0, 0, 30.02, -18199.57, -11422.64); opacity:0; }
+  [id="8-erosita-bubbles"] .xmet { opacity:0; transition:opacity .9s ease 1.1s; }
+  [id="8-erosita-bubbles"]:has(.xz3.visible) .xmet { opacity:1; }
   .reveal .cf-zbox { position:absolute; box-sizing:border-box; border:2px solid #fff; z-index:3; opacity:0;
       transition:left 2s ease-in-out, top 2s ease-in-out, width 2s ease-in-out, height 2s ease-in-out, opacity .5s; }
-  [id="4.3-erosita-bubbles"] .cf-zbox { left:498.55px; top:385.15px; width:26.25px; height:16.38px; }
-  [id="4.3-erosita-bubbles"]:has(.xz2.visible) .cf-zbox { opacity:1; }
-  [id="4.3-erosita-bubbles"]:has(.xz3.visible) .cf-zbox { left:32px; top:140px; width:960px; height:491.89px; opacity:0;
+  [id="8-erosita-bubbles"] .cf-zbox { left:498.55px; top:385.15px; width:26.25px; height:16.38px; }
+  [id="8-erosita-bubbles"]:has(.xz2.visible) .cf-zbox { opacity:1; }
+  [id="8-erosita-bubbles"]:has(.xz3.visible) .cf-zbox { left:32px; top:140px; width:960px; height:491.89px; opacity:0;
       transition:left 2s ease-in-out, top 2s ease-in-out, width 2s ease-in-out, height 2s ease-in-out, opacity .5s ease 2s; }
   /* az1 end state = 5.2's MeerKAT framing (2026-11-03, Adam: "adopting 5.2-gc-meerkat's zoom level and position"):
      335.5 px/deg, Sgr A* at (475.5, 342.5); MeerKAT image registered on Sgr A* and the Mouse (equal l, b scales to 0.5%) */
-  [id="5.1-aces-continuum"]:has(.az1.visible) .az { transform:matrix(3.3276, 0, 0, 3.2860, -1246.27, -734.87); }
-  [id="5.1-aces-continuum"] .amet { transition:opacity .8s ease .8s; }
-  [id="5.1-aces-continuum"]:has(.az1.visible) .amet { opacity:0; }
-  [id="5.1-aces-continuum"] .aaces { opacity:0; transition:opacity .6s; }
-  [id="5.1-aces-continuum"]:has(.az0.visible) .aaces { opacity:1; }
-  [id="5.1-aces-continuum"] .cf-zbox { left:420.17px; top:297.15px; width:155.61px; height:57.86px; }
-  [id="5.1-aces-continuum"]:has(.az0.visible) .cf-zbox { opacity:1; }
-  [id="5.1-aces-continuum"]:has(.az1.visible) .cf-zbox { left:151.91px; top:241.55px; width:517.81px; height:190.13px; opacity:0;
+  [id="9-aces-continuum"]:has(.az1.visible) .az { transform:matrix(3.3276, 0, 0, 3.2860, -1246.27, -734.87); }
+  [id="9-aces-continuum"] .amet { transition:opacity .8s ease .8s; }
+  [id="9-aces-continuum"]:has(.az1.visible) .amet { opacity:0; }
+  [id="9-aces-continuum"] .aaces { opacity:0; transition:opacity .6s; }
+  [id="9-aces-continuum"]:has(.az0.visible) .aaces { opacity:1; }
+  [id="9-aces-continuum"] .cf-zbox { left:420.17px; top:297.15px; width:155.61px; height:57.86px; }
+  [id="9-aces-continuum"]:has(.az0.visible) .cf-zbox { opacity:1; }
+  [id="9-aces-continuum"]:has(.az1.visible) .cf-zbox { left:151.91px; top:241.55px; width:517.81px; height:190.13px; opacity:0;
       transition:left 2s ease-in-out, top 2s ease-in-out, width 2s ease-in-out, height 2s ease-in-out, opacity .5s ease 2s; }
 </style>
 
-<section id=4.3-erosita-bubbles data-background-color="#000">
+<section id=8-erosita-bubbles data-background-color="#000">
     <div class=xz>
     <img class=cf-img src="assets/chiefland/gcs_erosita_bubbles_moll.jpg" style="left:2px; top:130px; width:1020px; height:523px;">
     <img class="cf-img fragment" data-fragment-index=0 src="assets/chiefland/gcs_erosita_bubbles_color_moll.jpg" style="left:2px; top:130px; width:1020px; height:523px; background:#000;">
@@ -563,7 +563,7 @@
     <img class="scope br row fragment" data-fragment-index=3 src="assets/chiefland/scopes/xmm.jpg" alt="XMM-Newton">
 </section>
 
-<section id=5.1-aces-continuum data-background-color="#000">
+<section id=9-aces-continuum data-background-color="#000">
     <div class=az>
     <img class="cf-img amet" src="assets/chiefland/gcs_xray_metallicity_black.jpg" style="left:32px; top:140px; width:960px; height:491.89px;">
     <img class="cf-img aaces" src="assets/chiefland/aces_mustang_cmz.jpg" style="left:420.17px; top:297.15px; width:155.61px; height:57.86px;">
@@ -586,7 +586,7 @@
     <img class="scope bl row fragment" data-fragment-index=0 src="assets/chiefland/scopes/gbt.jpg" alt="Green Bank Telescope" style="--n:1">
 </section>
 
-<section id=5.2-gc-meerkat data-background-color="#000">
+<section id=10-gc-meerkat data-background-color="#000">
     <img class=cf-img src="assets/chiefland/gcs_meerkat_spitzer_schmidt.jpg" style="left:0; top:66px; width:1024px; height:668px;">
     <div class=cf-cap>The Galactic Center has the most <i>stuff</i>, in the Galaxy and on the sky</div>
     <div class=cf-cred>MeerKAT radio: Heywood+ 2022 (SARAO) &middot; combined with Spitzer by Judy Schmidt</div>
@@ -599,7 +599,7 @@
     <img class="scope br" src="assets/chiefland/scopes/spitzer.jpg" alt="Spitzer Space Telescope" style="--n:1">
 </section>
 
-<section id=9-overview>
+<section id=11-overview>
               <h4> More questions, more answers </h4>
               <ul style="font-size:36px; line-height:1.5; margin-top:40px;">
                   <li> How far away is the stuff - what does it look like in 3D?
@@ -617,7 +617,7 @@
     <img class="scope br row" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:2">
           </section>
 
-<section id=16-hr-diagrams>
+<section id=12-hr-diagrams>
     <h4><span style='color:#9cb3ff;'>Massive stars</span>: bright, hot, short-lived<br> <span style='color:#fc6a3e;'>small stars</span>: dim, cool, live practically forever</h4>
     <div style="float:left; width:50%;">
         <img src="colloquium_assets/mass_lifetime_public.svg">
@@ -637,7 +637,7 @@
     </ul></aside>
 </section>
 
-<section id=17-hr-sky>
+<section id=13-hr-sky>
     <span class=image style='height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/ESAGaiaSkyColor_mollweide.png);'></span>
     <span class=image style='position:absolute; left:0; top:0; height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/constellations_lines_galactic_mollweide.svg); opacity:0.4;'></span>
     <span class=image style='position:absolute; left:0; top:0; height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/hr_examples_mollweide.svg);'></span>
@@ -651,7 +651,7 @@
     <img class="scope bl" src="assets/chiefland/scopes/gaia.jpg" alt="Gaia">
 </section>
 
-<section id=18-m31-uv>
+<section id=14-m31-uv>
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_UV_matched_Herschel.jpg);'>
         <h4> Almost all of the <span style='color:blue'>light</span> in star-forming galaxies comes from massive stars</h4>
         <div style="position: relative; bottom: -61%; left:1%; text-align: left;" class="smaller3"><a href="https://en.wikipedia.org/wiki/File:Andromeda_galaxy.jpg">NASA/GALEX via wikipedia</a></div>
@@ -662,7 +662,7 @@
     </ul></aside>
 </section>
 
-<section id=19-m31-dust>
+<section id=15-m31-dust>
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/M31_XMM_HERSCHEL_display.jpg);'>
         <h4> Stars form from <span style="color:maroon"> gas</span> <span class=smaller>(seen here via its <span style="color:brown">dust</span>)</span> </h4>
         <div style="position: relative; bottom: -67%; left:1%; text-align: left;" class="smaller3"><a href="http://herschel.cf.ac.uk/results/andromeda-galaxy">Herschel</a></div>
@@ -674,7 +674,7 @@
     <img class="scope tr" src="assets/chiefland/scopes/herschel.jpg" alt="Herschel Space Observatory">
 </section>
 
-<section id=20-taurus>
+<section id=16-taurus>
     <span class=image style='background-position: center center; background-image: url(colloquium_assets/ESA_Herschel_Taurus_1280w.jpg); max-width:125%'>
     <h4> Most of what we know about how stars form comes from small, nearby clouds </h4>
     <div style="position: relative; bottom: -59%; left:1%; text-align: left;" class="smaller3">FIR: <a class=darkbg href="http://sci.esa.int/herschel/55944-taurus-molecular-cloud/">Herschel/Palmeirim+ 2013</a></div>
@@ -695,7 +695,7 @@
     <img class="scope br" src="assets/chiefland/scopes/herschel.jpg" alt="Herschel Space Observatory">
 </section>
 
-<section id=21-cartoon>
+<section id=17-cartoon>
     <h4> How a star like the Sun forms (a cartoon) </h4>
 
     <img src="colloquium_assets/Purcell_Cartoon_LowMass.svg" style='background: white; top:50%; bottom:50%; margin-top:17%; width:100%'>
@@ -709,7 +709,7 @@
     </ul></aside>
 </section>
 
-<section id=22-wd1>
+<section id=18-wd1>
 
 
     <span class=image style='width:150%; height:150%; margin-left:-25%; margin-top:-22%; background-position: center center; background-image: url(assets/Wd1_nircam_miri_composite.png); background-size:150%; transform: rotate(180deg); '>
@@ -731,7 +731,7 @@
     <img class="scope br" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
-<section id=23-cosmic-noon-crowded data-background-color="#000">
+<section id=19-cosmic-noon-crowded data-background-color="#000">
     <div style="position:absolute; left:8px; top:98px; width:1008px; height:510px; z-index:4; background:#fff; border-radius:8px; box-shadow:0 0 0 2000px rgba(0,0,0,0.72);">
     </div>
     <div style="position:absolute; left:0; top:0; width:1024px; height:768px; z-index:5; pointer-events:none; color:#111;">
@@ -759,7 +759,7 @@
 </section>
 
 <section>  
-<section id=24-topdown-local data-topdown=dust-zoom>
+<section id=20-topdown-local data-topdown=dust-zoom>
     <h4> The solar neighborhood is not crowded </h4>
     <div class=fragment data-fragment-index=0 data-topdown-step=clusters-zoom
          style="position:absolute; top:64px; right:14px; z-index:5; padding:3px 10px; border-radius:6px;
@@ -885,7 +885,7 @@
     <img class="scope br" src="assets/chiefland/scopes/gaia.jpg" alt="Gaia">
 </section>
 
-<section id=24.1-topdown-local-labels data-topdown=clusters-zoom>
+<section id=20.1-topdown-local-labels data-topdown=clusters-zoom>
     <h4> Seen from above: dust and young star clusters near the Sun </h4>
     <div
          style="position:absolute; top:64px; right:14px; z-index:5; padding:3px 10px; border-radius:6px;
@@ -1004,7 +1004,7 @@
 </section>
 </section>
 
-<section id=26-cmzq-datasets>
+<section id=21-cmzq-datasets>
     <h4> Three major surveys change our perspective </h4>
     <div class=cmzq-col style="left:22px;">
         <div class=pic><img src="assets/cmz/MUSTANG_12m_feather_noaxes.png" style="object-position:50% 50%;"></div>
@@ -1038,7 +1038,7 @@
     </ul></aside>
 </section>
 
-<section id=27-cmzq-ledger-feat class=cmzq-ledger-on>
+<section id=22-cmzq-ledger-feat class=cmzq-ledger-on>
     <h4 style="margin-bottom:6px;">The Galactic Center: open questions <span style="font-size:60%; color:#9aa3b5;">(a partial list)</span></h4>
     <table class="cmzq cmzq-full" style="font-size:21px; width:1000px;">
         <tr><th></th><th>question</th><th>open since</th></tr>
@@ -1067,14 +1067,14 @@
     </ul></aside>
 </section>
 
-<section id=28-cmzq-q8>
+<section id=23-cmzq-q8>
     <table class="cmzq cmzq-mini"><tr class=cur><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q2</td><td>How does gas flow into the center?</td><td class=y>1991</td><td class=st></td></tr><tr class=todo><td class=n>Q3</td><td>(How) does gas reach the black hole, Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st></td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the central ring of gas?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the center form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the center&rsquo;s young stars go?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the mix of star masses different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different?</td><td class=y>2009</td><td class=st></td></tr></table>
     <aside class=notes><ul>
         <li> Question 1: what planets form there?
     </ul></aside>
 </section>
 
-<section id=29-sn-exoplanets>
+<section id=24-sn-exoplanets>
     <h4> Almost every planet we know is within ~1,000 parsecs of the Sun </h4>
     <img src="colloquium_assets/exoplanet_distances.png" style="position:absolute; top:112px; left:112px; width:800px; background:white;">
     <div class="smaller3" style="position:absolute; bottom:6px; right:5%;">NASA Exoplanet Archive, Sept 2026</div>
@@ -1083,7 +1083,7 @@
     </ul></aside>
 </section>
 
-<section id=30-sn-exoplanets-roman>
+<section id=25-sn-exoplanets-roman>
     <h4> Roman will find tens of thousands of planets ~8,000 parsecs away </h4>
     <img src="colloquium_assets/roman_exoplanets_0_known.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
     <img class="fragment" data-fragment-index="1" src="colloquium_assets/roman_exoplanets_1_microlensing.png" style="position:absolute; top:108px; left:112px; width:800px; margin:0; background:white;">
@@ -1105,7 +1105,7 @@
     <img class="scope" src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope" style="right:8px; top:130px; width:104px">
 </section>
 
-<section id=31-cosmic-noon-discs>
+<section id=26-cosmic-noon-discs>
     <div style="position:absolute; left:12px; top:8px; width:1000px; height:752px; background:#fff; border-radius:6px;"></div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12.0px; top:53.7px; width:790.0px; height:580.6px;" src="colloquium_assets/Madau2014_sfrd.svg">
     <img class=fragment data-fragment-index=0 style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:12.0px; top:53.7px; width:790.0px; height:580.6px;" src="colloquium_assets/Madau2014_sfrd_band.svg">
@@ -1156,7 +1156,7 @@
     <img class="scope tl" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
-<section id=32-cmzq-disks>
+<section id=27-cmzq-disks>
     <h4> Planet-forming disks exist in the center </h4>
     <div class=cmzq-card style="left:14px; top:76px; width:640px; height:430px;">
         <img src="assets/cmz_disks/lu2022_fig1ab.png" style="left:0; top:0; width:640px; height:429.6px;">
@@ -1192,14 +1192,14 @@
     </ul></aside>
 </section>
 
-<section id=39-cmzq-q2>
+<section id=28-cmzq-q2>
     <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas flow into the center?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach the black hole, Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=cur><td class=n>Q4</td><td>What shape is the central ring of gas?</td><td class=y>1995</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q5</td><td>Why does the center form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the center&rsquo;s young stars go?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the mix of star masses different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different?</td><td class=y>2009</td><td class=st></td></tr></table>
     <aside class=notes><ul>
         <li> Question 4: what shape is the central ring of gas?
     </ul></aside>
 </section>
 
-<section id=10-distance-question>
+<section id=29-distance-question>
     <h4> Distance: astronomy's most fundamental question </h4>
     <img src="colloquium_assets/summer_triangle_chart.svg" style="position:absolute; left:10px; top:100px; width:640px; height:492px; max-width:none; max-height:none; margin:0; border:0; background:none; box-shadow:none;">
     <img class=fragment data-fragment-index=0 src="colloquium_assets/summer_triangle_distances.svg" style="position:absolute; left:10px; top:100px; width:640px; height:492px; max-width:none; max-height:none; margin:0; border:0; background:none; box-shadow:none;">
@@ -1216,7 +1216,7 @@
     </ul></aside>
 </section>
 
-<section id=11-parallax>
+<section id=30-parallax>
     <h4> Measuring distance: parallax </h4>
     <svg viewBox="0 0 620 560" width="620" height="560" style="position:absolute; left:10px; top:96px;" font-family="Helvetica, Arial, sans-serif">
         <g fill="#cfd6e6"><circle cx="40" cy="44" r="3"/><circle cx="96" cy="22" r="2.5"/><circle cx="150" cy="58" r="3"/><circle cx="252" cy="30" r="2.5"/>
@@ -1254,7 +1254,7 @@
     </ul></aside>
 </section>
 
-<section id=12-gaia-distances>
+<section id=31-gaia-distances>
     <span class=image style='height:85%; margin-top:65px; background-position: center center; background-image: url(colloquium_assets/ESAGaiaSkyColor_mollweide.png);'></span>
     <div style="position:absolute; left:0; right:0; top:14px; text-align:center; font-size:40px; font-weight:bold; line-height:1.2;">Gaia (2013&ndash;2025): distances to 1.5 billion stars</div>
     <div style="position:absolute; left:0; right:0; top:68px; text-align:center; font-size:28px; color:#c9d1dc;">best: a dime seen from 160,000 km (4 laps around the earth) away</div>
@@ -1269,7 +1269,7 @@
     <img class="scope bl" src="assets/chiefland/scopes/gaia.jpg" alt="Gaia">
 </section>
 
-<section id=13-distance-sgr>
+<section id=32-distance-sgr>
     <h4> What you can see toward Sagittarius, by distance </h4>
     <img src="colloquium_assets/distance_line_sgr.svg" style="display:block; width:700px; height:540px; margin:10px auto 0; max-width:none; max-height:none; border:0; background:none; box-shadow:none;">
     <aside class=notes><ul>
@@ -1297,7 +1297,7 @@
 </section>
 -->
 
-<section id=15-s2-orbit>
+<section id=33-s2-orbit>
     <h4> The best distance to the center: a star orbiting the black hole </h4>
     <img src="colloquium_assets/s2_orbit_public.svg" style="position:absolute; left:20px; top:92px; width:420px; height:600px; max-width:none; max-height:none; margin:0; border:0; background:none; box-shadow:none;">
     <div style="position:absolute; left:470px; top:120px; width:540px; text-align:left; font-size:28px; line-height:1.35;">
@@ -1343,7 +1343,7 @@
     </ul></aside>
 </section>
 
-<section id=40-cmz-what-shape data-background-color="#000">
+<section id=34-cmz-what-shape data-background-color="#000">
     <h4> We know our neighborhood in 3D, but not the Galactic Center </h4>
     <iframe class=cmz-shape data-cmz-start=2 src="assets/cmz/cmz_shape_tour.html?embed=1"
             style="position:absolute; left:12px; top:92px; width:1000px; height:670px;
@@ -1355,13 +1355,13 @@
     <span class=fragment data-cmz-phase=6></span>
     <span class=fragment data-cmz-phase=7></span>
     <style>
-      #\34 0-cmz-what-shape .cmz-snap { position:absolute; left:16px; top:300px; width:318px; z-index:6;
+      #\33 4-cmz-what-shape .cmz-snap { position:absolute; left:16px; top:300px; width:318px; z-index:6;
           text-align:center; opacity:0; visibility:hidden;
           transition:opacity .4s ease-in-out, visibility .4s; }
-      #\34 0-cmz-what-shape .cmz-snap.on { opacity:1; visibility:visible; }
-      #\34 0-cmz-what-shape .cmz-snap img { display:block; margin:0 auto; max-width:318px; max-height:330px;
+      #\33 4-cmz-what-shape .cmz-snap.on { opacity:1; visibility:visible; }
+      #\33 4-cmz-what-shape .cmz-snap img { display:block; margin:0 auto; max-width:318px; max-height:330px;
           border:0; box-shadow:none; background:#fff; }
-      #\34 0-cmz-what-shape .cmz-snap .cap { font-size:16px; line-height:1.3; color:#9aa3b5; margin-top:6px; }
+      #\33 4-cmz-what-shape .cmz-snap .cap { font-size:16px; line-height:1.3; color:#9aa3b5; margin-top:6px; }
     </style>
     <div class=cmz-snap data-snap-phase=3>
         <a href="https://ui.adsabs.harvard.edu/abs/2011ApJ...735L..33M/abstract" target=_blank rel=noopener><img src="assets/cmz/snap_molinari2011.png" alt="Molinari+ 2011: the 100-pc ring, face-on"></a>
@@ -1387,7 +1387,7 @@
     </ul></aside>
 </section>
 
-<section id=41-cmzq-shape-progress>
+<section id=35-cmzq-shape-progress>
     <h4> Progress: a 3D map of the central ring, 2025&ndash;26 </h4>
     <div class=cmzq-card style="left:20px; top:96px; width:500px; height:510px;">
         <img src="assets/cmz_papers/lipman2026a_fig6.jpg" style="left:6px; top:6px; width:488px; height:498.4px;"></div>
@@ -1406,7 +1406,7 @@
     </ul></aside>
 </section>
 
-<section id=42-soon-roman>
+<section id=36-soon-roman>
 
     <div class="smaller2" data-fragment-index="1" style="position:absolute; top:30px; left:44px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
         <div style="max-width:560px; text-align:left;">Roman will track the motions of tens of millions of stars: a new way to map the gas in 3D</div>
@@ -1439,7 +1439,7 @@
 <!-- (2026-11-02) Adam: "include the animated cartoon explaining Roman tomography - that was removed but should've been
      kept".  The face-on panel of CfAq #42-cmz-orbit-stars (same live page and URL), public-talk text; the Vasini+ Fig. 1
      plot is left out.  data-src: loaded on slide entry, unloaded on exit (live-embed script at the end). -->
-<section id=42.1-roman-tomo-cartoon data-background-color="#0b0e14">
+<section id=37-roman-tomo-cartoon data-background-color="#0b0e14">
     <div style="position:absolute; top:8px; left:14px; width:996px; text-align:left; z-index:20; font-size:34px;">Mapping the gas in 3D with moving stars</div>
     <iframe class="orbit-embed" data-src="assets/cmz/cmz_orbit_stars.html?embed=1&amp;only=face&amp;facesize=560&amp;label=0&amp;title=0&amp;orbits=0&amp;bar=0&amp;animate=1&amp;n=400&amp;tau=0.8&amp;cloudr=26&amp;cloudlos=30&amp;cloudx=-70&amp;cloudy=0.25"
             frameborder="0" scrolling="no"
@@ -1460,14 +1460,14 @@
     </ul></aside>
 </section>
 
-<section id=33-cmzq-q1>
+<section id=38-cmzq-q1>
     <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=cur><td class=n>Q2</td><td>How does gas flow into the center?</td><td class=y>1991</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q3</td><td>(How) does gas reach the black hole, Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st></td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the central ring of gas?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the center form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the center&rsquo;s young stars go?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the mix of star masses different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different?</td><td class=y>2009</td><td class=st></td></tr></table>
     <aside class=notes><ul>
         <li> Question 2: how does gas flow into the center?
     </ul></aside>
 </section>
 
-<section id=34-cmz-dive data-background-color="#000">
+<section id=39-cmz-dive data-background-color="#000">
     <h4 style="position:relative; z-index:6; text-shadow:0 0 3px #000, 0 0 8px #000, 0 0 16px #000;">
         <span class="fragment fade-out zo-late" data-fragment-index=1></span>
         <span class="fragment zo-late" data-fragment-index=1 style="position:absolute; left:0; right:0; top:0;">The bar feeds the center</span>
@@ -1486,7 +1486,7 @@
     </ul></aside>
 </section>
 
-<section id=35-bar-inflow>
+<section id=40-bar-inflow>
     <h4 class=bar-under style="position:relative; z-index:1; text-shadow:0 0 3px #000, 0 0 8px #000, 0 0 16px #000;"> The bar feeds the central ring </h4>
     <iframe class=cmz-shape data-cmz-start=2 src="assets/cmz/cmz_shape_tour.html?embed=1&amp;frame=topdown&amp;oviz=gr&amp;fill=1"
             style="position:absolute; left:-256px; top:-32px; width:1536px; height:832px; z-index:0;
@@ -1505,20 +1505,20 @@
     <div class="smaller3 bar-under" style="position:absolute; bottom:6px; left:259px; text-shadow:0 0 3px #000, 0 0 8px #000;">cartoon: S. Gramze (<a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...93G/abstract">Gramze+ 2023</a>)</div>
 
     <style>
-      #\33 5-bar-inflow .bar-shape { position:absolute; left:795.43px; top:475px; width:191.15px; height:250px; z-index:6;
+      #\34 0-bar-inflow .bar-shape { position:absolute; left:795.43px; top:475px; width:191.15px; height:250px; z-index:6;
           transform-origin:0 0; transition:transform .9s ease-in-out; }
-      #\33 5-bar-inflow .bar-turn { position:absolute; left:-25.72px; top:84.94px; width:242.59px; height:80.11px;
+      #\34 0-bar-inflow .bar-turn { position:absolute; left:-25.72px; top:84.94px; width:242.59px; height:80.11px;
           overflow:hidden; transform:rotate(-59.84deg); }
       /* BUILD: one click blows the turned strip up to the full slide height, its bounding box 587.2 x 768
          centered at (512, 384), over the gray galaxy (Adam: "I want the greyscale galaxy cartoon background to
          stick around for the movie overlay"), while the .bar-under layers -- title, color cartoon, text, its
          credit -- fade out, then the movie's credit fades in: scale 768/250, and translate (795.43, 475) to
          (218.40, 0) */
-      #\33 5-bar-inflow .bar-under { transition:opacity .5s ease-in-out; }
-      #\33 5-bar-inflow:has(.bar-blowup.visible) .bar-under { opacity:0; }
-      #\33 5-bar-inflow:has(.bar-blowup.visible) .bar-shape { transform:translate(-577.03px, -475px) scale(3.072); }
-      #\33 5-bar-inflow .bar-shape .bar-cap { transition:opacity .3s; }
-      #\33 5-bar-inflow:has(.bar-blowup.visible) .bar-shape .bar-cap { opacity:0; }
+      #\34 0-bar-inflow .bar-under { transition:opacity .5s ease-in-out; }
+      #\34 0-bar-inflow:has(.bar-blowup.visible) .bar-under { opacity:0; }
+      #\34 0-bar-inflow:has(.bar-blowup.visible) .bar-shape { transform:translate(-577.03px, -475px) scale(3.072); }
+      #\34 0-bar-inflow .bar-shape .bar-cap { transition:opacity .3s; }
+      #\34 0-bar-inflow:has(.bar-blowup.visible) .bar-shape .bar-cap { opacity:0; }
       .reveal .slides section .fragment.bar-blowup { transition:opacity .5s ease-in-out, visibility .5s; }
       .reveal .slides section .fragment.bar-credit { transition:opacity .5s ease-in-out .9s, visibility .5s .9s; }
     </style>
@@ -1546,14 +1546,14 @@
     </ul></aside>
 </section>
 
-<section id=36-cmzq-q7>
+<section id=41-cmzq-q7>
     <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas flow into the center?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q3</td><td>(How) does gas reach the black hole, Sgr&nbsp;A*?</td><td class=y>1996</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q4</td><td>What shape is the central ring of gas?</td><td class=y>1995</td><td class=st></td></tr><tr class=todo><td class=n>Q5</td><td>Why does the center form so few stars?</td><td class=y>2013</td><td class=st></td></tr><tr class=todo><td class=n>Q6</td><td>Where do the center&rsquo;s young stars go?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the mix of star masses different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different?</td><td class=y>2009</td><td class=st></td></tr></table>
     <aside class=notes><ul>
         <li> Question 3: does gas reach the black hole, and how?
     </ul></aside>
 </section>
 
-<section id=37-black-hole-diet>
+<section id=42-black-hole-diet>
     <h4> The central black hole barely eats </h4>
     <img src="colloquium_assets/eht_sgra_eso2208.jpg" style="position:absolute; left:20px; top:110px; width:460px; height:460px; max-width:none; max-height:none; margin:0; border:0; background:none; box-shadow:none;">
     <div style="position:absolute; left:510px; top:120px; width:500px; text-align:left; font-size:30px; line-height:1.35;">
@@ -1570,7 +1570,7 @@
     </ul></aside>
 </section>
 
-<section id=38-cmzq-sgra-pipes>
+<section id=43-cmzq-sgra-pipes>
     <h4> Is gas flowing in toward the black hole? </h4>
     <div style="position:absolute; left:16px; top:96px; width:372px; height:372px; overflow:hidden; border-radius:6px; background:#000;">
         <video src="assets/cmz/tress_ProjMosaic5_sigma_tot_inner250pc.mp4" data-autoplay muted loop playsinline preload=auto
@@ -1606,7 +1606,7 @@
     <img class="scope tl fragment" data-fragment-index=1 src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope">
 </section>
 
-<section id=25-cmzq-ledger>
+<section id=44-cmzq-ledger>
     <h4 style="margin-bottom:6px;">The Galactic Center: open questions <span style="font-size:60%; color:#9aa3b5;">(a partial list)</span></h4>
     <table class="cmzq cmzq-full" style="font-size:21px; width:1000px;">
         <tr><th></th><th>question</th><th>open since</th></tr>
@@ -1636,7 +1636,7 @@
     </ul></aside>
 </section>
 
-<section id=25.1-mystery-filaments data-background-color="#000" data-auto-animate>
+<section id=45-mystery-filaments data-background-color="#000" data-auto-animate>
     <img class=cf-img src="assets/chiefland/gcs_meerkat_filaments_crop.jpg" style="left:0; top:0; width:1024px; height:768px;">
     <!-- (2026-11-03, Adam: "from 25.1 to 25.2, show a matched-position inset of sgr c and then zoom in just like we do on
          44-cmz-to-sgrb2"): build 0 puts the 25.2 JWST image on Sgr C at its true size and sky orientation, build 1 turns
@@ -1667,7 +1667,7 @@
     <img class="scope tr" src="assets/chiefland/scopes/meerkat.jpg" alt="MeerKAT">
 </section>
 
-<section id=25.2-mystery-magnetic-hii data-background-color="#000" data-auto-animate>
+<section id=46-mystery-magnetic-hii data-background-color="#000" data-auto-animate>
     <div class=cf-cap>Mystery: hot gas bubbles shaped by magnetic fields?</div>
     <img class=cf-img src="assets/chiefland/sgrc_webb_crowe2025.jpg" style="left:12px; top:62px; width:1000px; height:378px;">
     <img class=cf-img src="assets/sgrb2ds/miri_fullfov.jpg" style="left:12px; top:500px; width:320px; height:240px;">
@@ -1680,7 +1680,7 @@
     </ul></aside>
 </section>
 
-<section id=25.3-mystery-neutron-stars data-background-color="#000">
+<section id=47-mystery-neutron-stars data-background-color="#000">
     <!-- backdrop (2026-11-04, Adam: "add a figure showing the Galactic center's known neutron stars as the backdrop"):
          the MeerKAT + Spitzer composite of 5.2, dimmed, at 800 deck px/deg centred so Sgr A* is at (500, 520) (registration as
          on 5.1/25.1).  Rings: the magnetar PSR J1745-2900 (gold; 2.4" from Sgr A*) and the five radio pulsars within ~15' of
@@ -1710,7 +1710,7 @@
     <img class="scope tr" src="assets/chiefland/scopes/meerkat.jpg" alt="MeerKAT">
 </section>
 
-<section id=25.4-mystery-dark-matter data-background-color="#000">
+<section id=48-mystery-dark-matter data-background-color="#000">
     <h4 style="color:#fff;">Mystery: is the gamma-ray glow dark matter?</h4>
     <img class=cf-img src="assets/chiefland/gcs_fermi_gc_excess.jpg" style="left:0; top:52px; width:1024px; height:607px;">
     <div class=cf-text style="left:20px; top:664px; width:984px; font-size:21px; line-height:1.28;">
@@ -1727,7 +1727,7 @@
     </ul></aside>
 </section>
 
-<section id=25.5-mystery-511kev data-background-color="#000">
+<section id=49-mystery-511kev data-background-color="#000">
     <h4 style="color:#fff;">Mystery: antimatter at the center</h4>
     <div class=cf-text style="left:20px; top:54px; width:984px; font-size:24px;">
         When an electron meets its antimatter twin, a <span class=k>positron</span>, both vanish into gamma rays of exactly <span class=k>511&nbsp;keV</span>.
@@ -1754,7 +1754,7 @@
     <img class="scope br" src="assets/chiefland/scopes/integral.jpg" alt="INTEGRAL">
 </section>
 
-<section id=25.6-mystery-icecube data-background-color="#000">
+<section id=50-mystery-icecube data-background-color="#000">
     <h4 style="color:#fff;">Mystery: neutrinos from the Galactic plane</h4>
     <div class=cf-text style="left:20px; top:54px; width:860px; font-size:24px;">
         Neutrinos pass through almost everything, so they point back to where they were made. <span class=k>IceCube</span>, a cubic kilometer of Antarctic ice, sees them from the Galaxy.
@@ -1782,14 +1782,14 @@
     <img class="scope tr" src="assets/chiefland/scopes/icecube.jpg" alt="IceCube">
 </section>
 
-<section id=43-cmzq-q3>
+<section id=51-cmzq-q3>
     <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas flow into the center?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach the black hole, Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the central ring of gas?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q5</td><td>Why does the center form so few stars?</td><td class=y>2013</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q6</td><td>Where do the center&rsquo;s young stars go?</td><td class=y>2002</td><td class=st></td></tr><tr class=todo><td class=n>Q7</td><td>Is the mix of star masses different here?</td><td class=y>1999</td><td class=st></td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different?</td><td class=y>2009</td><td class=st></td></tr></table>
     <aside class=notes><ul>
         <li> Question 5: why does the center form so few stars?
     </ul></aside>
 </section>
 
-<section id=44-cmz-to-sgrb2 data-auto-animate>
+<section id=52-cmz-to-sgrb2 data-auto-animate>
         <span class=image style='background-size: 1024px; background-position: center center; background-image: url(colloquium_assets/gc_fullres_6_small.jpg);'>
         <h4 style='font-size:90%'> The central ring of gas </h4>
         <span class=smaller> Gas: 50 million Suns' worth &middot; new stars: ~1 Sun's worth per decade </span>
@@ -1828,17 +1828,17 @@ About half of its star formation happens in one cloud: Sgr B2
    fragment, which would swing the mosaic 3.36 deg out from under the boxes.
    The LAST step releases it -- and takes the boxes with it, so they stay aligned --
    which is the point: the mosaic has to be unrotated before auto-animate hands over
-   to #\34 6-sgrb2n_miri, whose copy carries no rotation.  Auto-animate interpolates a
+   to #\35 4-sgrb2n_miri, whose copy carries no rotation.  Auto-animate interpolates a
    bbox-derived translate+scale but NOT rotate, so leaving this slide still rotated
    makes that transition a jump instead of a morph.
    NOTE the selector: that marker is written `class=fragment placeholder-for-fadeout-animation`
    (unquoted), so the second token is a boolean ATTRIBUTE, not a class -- it has to be
    matched with [placeholder-for-fadeout-animation], not .placeholder-for-fadeout-animation. */
-#\34 5-sgrb2_nircam_on_meerkat:not(:has([placeholder-for-fadeout-animation].visible)) img.fragment.rotated.visible {
+#\35 3-sgrb2_nircam_on_meerkat:not(:has([placeholder-for-fadeout-animation].visible)) img.fragment.rotated.visible {
     rotate: var(--rotation);
 }
-#\34 5-sgrb2_nircam_on_meerkat img.nms-boxes { transition: rotate 0.5s ease-in-out; }
-#\34 5-sgrb2_nircam_on_meerkat:has([placeholder-for-fadeout-animation].visible) img.nms-boxes { rotate: 0deg !important; }
+#\35 3-sgrb2_nircam_on_meerkat img.nms-boxes { transition: rotate 0.5s ease-in-out; }
+#\35 3-sgrb2_nircam_on_meerkat:has([placeholder-for-fadeout-animation].visible) img.nms-boxes { rotate: 0deg !important; }
 </style>
     <style>
 /* (2026-10-22) 1 pc scale bars on sgrb2_nircam_on_meerkat, sgrb2n_miri and the "massive clusters" state
@@ -1857,7 +1857,7 @@ About half of its star formation happens in one cloud: Sgr B2
 .reveal .pc-scalebar > span { display: block; height: 0; border-top: 3px solid #fff; margin: 0 auto 5px; }
 .reveal .pc-scalebar.fragment.current-fragment { transition-delay: 1.6s; }
 </style>
-<section data-auto-animate class=darkbg data-background-color="black" id=45-sgrb2_nircam_on_meerkat>
+<section data-auto-animate class=darkbg data-background-color="black" id=53-sgrb2_nircam_on_meerkat>
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:5%; margin-left:-51%; ">
         <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position: absolute; top: 35.02102% !important;
   left: 22.15423% !important; height: 100%; max-width: 62%; max-height: 33.30926%; --rotation:-3.3589deg; transform-origin: 0px 0px; --transition-duration: 0.5s;" class="fragment rotated" data-fragment-index="1">
@@ -1900,7 +1900,7 @@ About half of its star formation happens in one cloud: Sgr B2
     </section>
 </section>
 
-<section data-auto-animate data-background-color="black" id=46-sgrb2n_miri>
+<section data-auto-animate data-background-color="black" id=54-sgrb2n_miri>
         <img src="assets/Nazar/NIRCAMSgrB2_on_MEERKAT.png" style="width:150%;  position: absolute; margin-top:10%; margin-left:-50%; opacity:0.0; rotate:0deg; ">
 <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.34375%; left:-71.289%;height: 100.8%;max-width: 200%;max-height: 200%;">
         <div style='position: absolute; bottom:0px; right:100px; ' class="smaller darkbg">
@@ -1915,7 +1915,7 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section data-auto-animate data-background-color="black" id=47-sgrb2n_miri_outflow>
+<section data-auto-animate data-background-color="black" id=55-sgrb2n_miri_outflow>
     <img src="assets/sgrb2/SGR-B2_MIRI_Mosaic.png" style="position:absolute; top:-2.34375%; left:-71.289%;height: 100.8%;max-width: 200%;max-height: 200%; opacity:0.0;">
     <img src="assets/Nazar/SgrB2N_MIRI_with_ALMA.png" style="position:absolute; top:-2%; left:7%;height: 100%;max-width: 200%;max-height: 200%;" data-id="sgrb2nmiriwithalma">
             <div style='position: absolute; bottom:80px; right:100px; color:white; background-color:rgba(0,0,0,0.5); z-index:100' class=smaller>
@@ -1935,7 +1935,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope tl" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
     </section>
 
-<section id=48-sgrb2-miri-catalogs data-background-color="black">
+<section id=56-sgrb2-miri-catalogs data-background-color="black">
     <div class="smaller darkbg fragment fade-out" data-fragment-index="1" style="position:absolute; top:8px; left:14px; width:70%; text-align:left; z-index:20; background-color:rgba(0,0,0,0.5);">The puffy red stuff, only at 25&mu;m, is still a mystery</div>
     <div class="smaller darkbg fragment fade-in" data-fragment-index="1" style="position:absolute; top:8px; left:14px; width:70%; text-align:left; z-index:20; background-color:rgba(0,0,0,0.5);"></div>
     <div class="smaller darkbg fragment" data-fragment-index="2" style="position:absolute; top:42px; left:14px; width:80%; text-align:left; z-index:20; color:cyan;">JWST: slightly older young stars, spread out</div>
@@ -1961,8 +1961,8 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope br" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:1">
 </section>
 
-<section id=49-sgrb2-stack>   
-<section id=49-sgrb2-to-cmz>
+<section id=57-sgrb2-stack>   
+<section id=57-sgrb2-to-cmz>
     <div style='text-align:left; width:80%;' class=smaller>Star formation in Sgr B2 is lopsided: JWST and ALMA see different sides <div style='text-align:left;'class=smaller> The transition is sharp</div></div>
 
     <img src="assets/Nazar/asymmetry.png" style="position: absolute; z-index:101; left: -1%;
@@ -1998,7 +1998,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope bl" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:1">
 </section>
 
-<section id=49.1-tress-colliding-flows>
+<section id=57.1-tress-colliding-flows>
     <h4> Gas and young stars can go separate ways </h4>
     <div style="position:absolute; left:30px; top:100px; width:592px; height:592px; background:#fff; border-radius:8px;"></div>
     <img src="assets/cmz/tress2026_fig22_sketch_cmz.png" alt="Tress+ 2026 Fig. 22: schematic of a star-forming region in the CMZ"
@@ -2020,7 +2020,7 @@ About half of its star formation happens in one cloud: Sgr B2
 </section>
 </section>
 
-<section id=50-cmz-wide>
+<section id=58-cmz-wide>
     <div style="position:absolute; top:8px; left:12px; z-index:5;">Sgr B2 is forming stars &mdash; is the rest of the center?</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
@@ -2048,7 +2048,7 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section id=51-cmz-jwst>
+<section id=59-cmz-jwst>
     <div class=smaller style="position:absolute; top:8px; left:12px; z-index:5;">JWST looked at a few of the center's clouds before 2026</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
@@ -2061,7 +2061,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope tr" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
-<section id=52-clouds-sgrb2>
+<section id=60-clouds-sgrb2>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Sgr B2: &gt;500 young stars forming (ALMA)<br>~100 bubbles of glowing gas around new massive stars
         <div style="font-size:72%; margin-top:2px;">Ginsburg+ 2018, Jeff+ 2024, Budaiev+ 2024, 2025, 2026, Daley+ in prep</div>
     </div>
@@ -2075,7 +2075,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope tr" src="assets/chiefland/scopes/alma.jpg" alt="ALMA">
 </section>
 
-<section id=53-clouds-cloudef>
+<section id=61-clouds-cloudef>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Cloud E/F: 100,000 Suns' worth of gas, maybe 1 young star
         <div style="font-size:72%; margin-top:2px;">Houghton, Esteve, Gutermuth, Longmore, Huard, Kauffmann subm.</div>
     </div>
@@ -2087,7 +2087,7 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section id=54-clouds-cloudcd>
+<section id=62-clouds-cloudcd>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">Clouds C &amp; D: 100,000 Suns' worth of gas, one small cluster
         <div style="font-size:72%; margin-top:2px;">Gramze+ in prep</div>
     </div>
@@ -2099,7 +2099,7 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section id=55-clouds-brick>
+<section id=63-clouds-brick>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; max-width:64%; z-index:20; background:rgba(255,255,255,0.80); padding:3px 10px; border-radius:4px;">The Brick: 100,000 Suns' worth of gas, about 10 young stars
         <div style="font-size:72%; margin-top:2px;">Walker+ 2021</div>
     </div>
@@ -2111,7 +2111,7 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section id=56-cmz-now-summary>
+<section id=64-cmz-now-summary>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">Stars are forming in the center, but we've only checked a small part of it</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-565.41px; top:-118.72px; width:2154.82px; z-index:1;" src="assets/cmz/bg_spitzer_fullbleed.jpg">
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute; left:-424.7px; top:-118.72px; width:2014.11px; z-index:2;" src="assets/cmz/layer_ashrgb_fullbleed.jpg">
@@ -2121,7 +2121,7 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section id=57-soon-nircam>
+<section id=65-soon-nircam>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">The JWST Galactic Center Treasury Survey (GO 10678) &mdash; NIRCam: <b>half observed</b></div>
     <div class=smaller3 style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;"> 
         <a href="https://starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html">starformation.astro.ufl.edu/avm_images/jwst_gc_aladin.html</a>
@@ -2145,7 +2145,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope br" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
-<section id=58-soon-miri>
+<section id=66-soon-miri>
     <div class=smaller2 style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">
         &hellip;and the same survey with MIRI</div>
     <div class=smaller3 style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;"> 
@@ -2167,18 +2167,18 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section id=59-now-nircam data-background-color="#000">
+<section id=67-now-nircam data-background-color="#000">
     <style>
-      #\35 9-now-nircam .nn-text { transition:opacity .6s ease-in-out, visibility .6s; }
-      #\35 9-now-nircam img.nn-land { position:absolute; margin:0; border:0; max-width:none; max-height:none; box-shadow:none;
+      #\36 7-now-nircam .nn-text { transition:opacity .6s ease-in-out, visibility .6s; }
+      #\36 7-now-nircam img.nn-land { position:absolute; margin:0; border:0; max-width:none; max-height:none; box-shadow:none;
           left:92px; top:462px; width:840px; height:255.7px; z-index:12; opacity:1; visibility:visible;
           background:#03050a; outline:2px solid rgba(60,235,60,0.95);
           transition:left 1.4s ease-in-out, top 1.4s ease-in-out, width 1.4s ease-in-out, height 1.4s ease-in-out,
                      background-color .8s ease-in-out .6s, outline-color .5s ease-in-out; }
-      #\35 9-now-nircam img.nn-land.visible { left:0px; top:228.2px; width:1024px; height:311.6px;
+      #\36 7-now-nircam img.nn-land.visible { left:0px; top:228.2px; width:1024px; height:311.6px;
           background-color:rgba(3,5,10,0); outline-color:rgba(60,235,60,0); }
-      #\35 9-now-nircam img.nn-bg { transition:opacity 1.2s ease-in-out, visibility 1.2s; }
-      #\35 9-now-nircam:has(.nn-only.visible) img.nn-land.visible { opacity:0; transition:opacity .5s ease-in-out; }
+      #\36 7-now-nircam img.nn-bg { transition:opacity 1.2s ease-in-out, visibility 1.2s; }
+      #\36 7-now-nircam:has(.nn-only.visible) img.nn-land.visible { opacity:0; transition:opacity .5s ease-in-out; }
     </style>
     <div class="smaller2 fragment fade-out nn-text" data-fragment-index="1" style="position:absolute; top:10px; left:14px; z-index:20; background:rgba(255,255,255,0.72); padding:2px 8px; border-radius:4px;">Progress:</div>
     <div class="smaller3 fragment fade-out nn-text" data-fragment-index="1" style="position:absolute; top:50px; right:4px; z-index:20; background:rgba(55,55,55,0.72); padding:2px 8px; border-radius:4px; text-align:right;">
@@ -2224,14 +2224,14 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope tr fragment fade-in-then-out" data-fragment-index=3 src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:1">
 </section>
 
-<section id=60-cmzq-q4>
+<section id=68-cmzq-q4>
     <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas flow into the center?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach the black hole, Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the central ring of gas?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=done><td class=n>Q5</td><td>Why does the center form so few stars?</td><td class=y>2013</td><td class=st>progress</td></tr><tr class=cur><td class=n>Q6</td><td>Where do the center&rsquo;s young stars go?</td><td class=y>2002</td><td class=st>&larr;</td></tr><tr class=cur><td class=n>Q7</td><td>Is the mix of star masses different here?</td><td class=y>1999</td><td class=st>&larr;</td></tr><tr class=todo><td class=n>Q8</td><td>Is the chemistry different?</td><td class=y>2009</td><td class=st></td></tr></table>
     <aside class=notes><ul>
         <li> Questions 6 and 7: where do the young stars go, and is the mix of star masses different here?
     </ul></aside>
 </section>
 
-<section id=61-cmzq-clusters>
+<section id=69-cmzq-clusters>
     <h4> Where do the center&rsquo;s star clusters go? </h4>
     <img src="colloquium_assets/arches_jwst_module.jpg" alt="Arches cluster, JWST NIRCam + MIRI" style="position:absolute; top:84px; width:456px; height:456px; margin:0; border:0; max-width:none; max-height:none; background:none; box-shadow:none; left:40px;">
     <img src="colloquium_assets/quintuplet_jwst_module.jpg" alt="Quintuplet cluster, JWST NIRCam" style="position:absolute; top:84px; width:456px; height:456px; margin:0; border:0; max-width:none; max-height:none; background:none; box-shadow:none; left:528px;">
@@ -2255,7 +2255,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope br" src="assets/chiefland/scopes/roman.jpg" alt="Roman Space Telescope" style="--n:1">
 </section>
 
-<section id=62-cmzq-imf data-visibility="hidden">
+<section id=cmzq-imf data-visibility="hidden">
     <h4 style="margin-bottom:0;"> Is the mix of star masses different here? </h4>
     <div class=cmzq-card style="left:6px; top:84px; width:1012px; height:645.7px;"></div>
     <img src="colloquium_assets/Hosek2018_fig17.svg" alt="Hosek+ 2019 Fig. 17: IMF slope vs mass range; IMF cartoons"
@@ -2274,14 +2274,14 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section id=63-cmzq-q6>
+<section id=70-cmzq-q6>
     <table class="cmzq cmzq-mini"><tr class=done><td class=n>Q1</td><td>What planets form there?</td><td class=y>2016</td><td class="st fut">future!</td></tr><tr class=done><td class=n>Q2</td><td>How does gas flow into the center?</td><td class=y>1991</td><td class=st>progress</td></tr><tr class=done><td class=n>Q3</td><td>(How) does gas reach the black hole, Sgr&nbsp;A*?</td><td class=y>1996</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q4</td><td>What shape is the central ring of gas?</td><td class=y>1995</td><td class=st>progress</td></tr><tr class=done><td class=n>Q5</td><td>Why does the center form so few stars?</td><td class=y>2013</td><td class=st>progress</td></tr><tr class=done><td class=n>Q6</td><td>Where do the center&rsquo;s young stars go?</td><td class=y>2002</td><td class="st fut">future</td></tr><tr class=done><td class=n>Q7</td><td>Is the mix of star masses different here?</td><td class=y>1999</td><td class="st fut">future</td></tr><tr class=cur><td class=n>Q8</td><td>Is the chemistry different?</td><td class=y>2009</td><td class=st>&larr;</td></tr></table>
     <aside class=notes><ul>
         <li> Question 8: is the chemistry different?
     </ul></aside>
 </section>
 
-<section id=64-cmz-cloudc>
+<section id=71-cmz-cloudc>
     <div class=smaller2 style="position:absolute; top:8px; left:12px; z-index:5;">Ice hints that the center has more heavy elements</div>
     <img style="margin:0; background:none; max-width:none; max-height:none; position:absolute;
                 left:0px; top:168.59px; width:1024px; z-index:1;" src="assets/cmz/MUSTANG_12m_feather_noaxes.png">
@@ -2299,7 +2299,7 @@ About half of its star formation happens in one cloud: Sgr B2
     </ul></aside>
 </section>
 
-<section id=65-cloudc data-auto-animate>
+<section id=72-cloudc data-auto-animate>
     <div class=smaller3 data-id="cloudc-cite" style="position:absolute; bottom:8px; left:12px; z-index:30; color:#cfcfcf;"><a class=darkbg href="https://ui.adsabs.harvard.edu/abs/2026OJAp....965431G/abstract" title="Mapping CO Ice in a Star-Forming Filament in the 3 kpc Arm with JWST">Gramze+ 2026, OJAP</a></div>
     <img style="width:125%; max-width:200%;margin-left: -62%;margin-top: 10%; position:absolute;" src="assets/Savannah/cloudc_tricolor.png">
     <div data-id="cloudc-title" style='position:absolute; left:0; top:0;'> JWST's colors show ice </div>
@@ -2311,7 +2311,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope tr" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
-<section id=66-cmzq-ices-next>
+<section id=73-cmzq-ices-next>
     <h4> Next: measuring the ice with JWST spectra </h4>
     <div class=cmzq-text style="left:0; right:0; top:88px; text-align:center; font-size:24px; color:#4ade80; letter-spacing:.06em;">JWST spectra, observed Sep 2026</div>
     <div class=cmzq-card style="left:209px; top:130px; width:606px; height:508px;">
@@ -2325,7 +2325,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope tr" src="assets/chiefland/scopes/jwst.jpg" alt="JWST">
 </section>
 
-<section id=67-chem-to-planets>
+<section id=74-chem-to-planets>
     <h4 style="font-size:0.8em;">Heavy elements matter for forming stars; chemistry matters for planets</h4>
     <div class=cmzq-card style="left:10px; top:62px; width:360px; height:343.0px;"><img src="ice_assets/abundance_vs_rgal.png" style="left:4px; top:4px; width:352px; height:335.0px;"></div>
     <div class=cmzq-card style="left:10px; top:413.011px; width:360px; height:344.2px;"><img src="ice_assets/abundance_vs_metallicity.png" style="left:4px; top:4px; width:352px; height:336.2px;"></div>
@@ -2338,10 +2338,10 @@ About half of its star formation happens in one cloud: Sgr B2
 
 </section>
 
-<section id=68-cmzq-summary>
+<section id=75-cmzq-summary>
     <style>
-      #\36 8-cmzq-summary .snap { position:absolute; height:140px; border-radius:6px; }
-      #\36 8-cmzq-summary .snaplab { position:absolute; font-size:46px; line-height:1; transform:translateY(-50%); white-space:nowrap; margin:0; }
+      #\37 5-cmzq-summary .snap { position:absolute; height:140px; border-radius:6px; }
+      #\37 5-cmzq-summary .snaplab { position:absolute; font-size:46px; line-height:1; transform:translateY(-50%); white-space:nowrap; margin:0; }
     </style>
     <img class=snap style="left:20px; top:10px;" src="assets/Savannah/bar_model_galaxy.jpg">
     <p class=snaplab style="left:190px; top:80px;">Gas pours in along the bar</p>
@@ -2351,7 +2351,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <p class=snaplab style="left:190px; top:228px;">Icy, with rich chemistry</p>
     <img class=snap style="right:20px; top:232px;" src="assets/cmz/lipman3d_ring_f031.png">
     <p class=snaplab style="right:180px; top:302px; text-align:right;">3D maps coming!</p>
-    <style>#\36 8-cmzq-summary table.cmzq td { padding-top:4px; padding-bottom:4px; }</style>
+    <style>#\37 5-cmzq-summary table.cmzq td { padding-top:4px; padding-bottom:4px; }</style>
     <table class=cmzq style="font-size:18px; width:1010px; position:absolute; left:7px; top:384px;">
         <tr><th></th><th>question</th><th>now</th><th style="color:#4ade80;">future</th></tr>
         <tr><td class=n>Q1</td><td>What planets form there?</td><td style="color:#c9d1dc;">disks seen; no planets yet</td><td style="color:#4ade80;">Roman planet hunt, ALMA disks</td></tr>
@@ -2377,7 +2377,7 @@ About half of its star formation happens in one cloud: Sgr B2
     <img class="scope br row" src="assets/chiefland/scopes/alma.jpg" alt="ALMA" style="--n:2; width:62px; --pitch:68px">
 </section>
 
-<section id=69-wrapup-jwst-panner data-background-color="#05070c" data-preload
+<section id=76-wrapup-jwst-panner data-background-color="#05070c" data-preload
          data-background-iframe="assets/cmz/jwst_gc_panner_embed.html?survey=https://starformation.astro.ufl.edu/avm_images/GCSpitzerLike_vvv_aces_hips/&amp;overlay=https://starformation.astro.ufl.edu/avm_images/GCTreasury_radio_ACES_hips/&amp;tour=jwst_gc_panner_tour_arches_sgrb2.json&amp;leg=0&amp;ra=266.671553&amp;dec=-28.610131&amp;fov0=1.0&amp;fovh0=0.33&amp;dive=1&amp;full=1&amp;fov1=0.06&amp;hold=3&amp;zoom=9&amp;rate=4&amp;wait=1">
     <div class=smaller2 style="position:absolute; top:8px; left:14px; width:996px; text-align:left; z-index:20; text-shadow:0 0 6px #000, 0 0 3px #000, 0 0 1px #000;">Thank you! Questions?</div>
 <aside class=notes><ul>
@@ -2680,13 +2680,13 @@ About half of its star formation happens in one cloud: Sgr B2
     </script>
 
     <script>
-      /* #7-night-sky builds 5-8.  Build 5 zooms the Mollweide stack (.ns-moll) into the Teapot, where the rendered
+      /* #2-night-sky builds 5-8.  Build 5 zooms the Mollweide stack (.ns-moll) into the Teapot, where the rendered
          close-up in .ns-real takes over; build 6 pulls back out to tonight's view, rolling the horizon level by the
          time it is 2x from the end.  Builds 7-8 are plain fragments.  The finished state of every build is static
-         CSS (the #7-night-sky rules above that slide), so ONE fragment forward animates its step and anything else
+         CSS (the #2-night-sky rules above that slide), so ONE fragment forward animates its step and anything else
          snaps, as in the cmz-shape controller.  Matrices from colloquium_assets/make_chiefland_skyview.py. */
       (function(){
-        var sec = document.getElementById('7-night-sky');
+        var sec = document.getElementById('2-night-sky');
         if (!sec || !sec.animate || !window.Reveal || !Reveal.on) return;
         var moll = sec.querySelector('.ns-moll'), real = sec.querySelector('.ns-real'), dim = sec.querySelector('.ns-dim');
         function el(c){ return sec.querySelector('.ns-real .' + c); }
@@ -2774,9 +2774,9 @@ About half of its star formation happens in one cloud: Sgr B2
         // decode the big sky images when the deck opens, not on stage (as for #topdown-bg)
         sec.querySelectorAll('.ns-real img').forEach(function(im){ if (im.decode) im.decode().catch(function(){}); });
       })();
-      /* #15-s2-orbit builds 4 and 5 (movies): play from the start when it appears, rewind when it goes */
+      /* #33-s2-orbit builds 4 and 5 (movies): play from the start when it appears, rewind when it goes */
       (function(){
-        var vs = document.querySelectorAll('#\\31 5-s2-orbit .s2movie video');
+        var vs = document.querySelectorAll('#\\33 3-s2-orbit .s2movie video');
         if (!vs.length) return;
         Reveal.on('fragmentshown', function(e){ vs.forEach(function(v){ if (e.fragment.contains(v)) { vs.forEach(function(o){ if (o !== v) o.pause(); }); v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function(){}); } }); });
         Reveal.on('fragmenthidden', function(e){ vs.forEach(function(v){ if (e.fragment.contains(v)) { v.pause(); v.currentTime = 0; } }); });

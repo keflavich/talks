@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2480 1272" width="2480" height="1272">
+<circle cx="2218.4" cy="795.3" r="22" fill="none" stroke="#b3c5ff" stroke-width="5"/>
+<text x="2186.4" y="811.3" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#fff" paint-order="stroke" stroke="#000" stroke-opacity="0.8" stroke-width="8" stroke-linejoin="round">θ¹ Orionis C <tspan fill="#b3c5ff" font-weight="bold">O</tspan></text>
+<circle cx="177.4" cy="828.2" r="22" fill="none" stroke="#c1d1ff" stroke-width="5"/>
+<text x="209.4" y="844.2" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#fff" paint-order="stroke" stroke="#000" stroke-opacity="0.8" stroke-width="8" stroke-linejoin="round"><tspan fill="#c1d1ff" font-weight="bold">B</tspan> the Pleiades</text>
+<circle cx="802.0" cy="476.9" r="22" fill="none" stroke="#cad8ff" stroke-width="5"/>
+<text x="834.0" y="492.9" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#fff" paint-order="stroke" stroke="#000" stroke-opacity="0.8" stroke-width="8" stroke-linejoin="round"><tspan fill="#cad8ff" font-weight="bold">A</tspan> Vega</text>
+<circle cx="2207.1" cy="527.8" r="22" fill="none" stroke="#f1f1ff" stroke-width="5"/>
+<text x="2175.1" y="543.8" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#fff" paint-order="stroke" stroke="#000" stroke-opacity="0.8" stroke-width="8" stroke-linejoin="round">Procyon <tspan fill="#f1f1ff" font-weight="bold">F</tspan></text>
+<circle cx="715.3" cy="1176.3" r="22" fill="none" stroke="#fff7f0" stroke-width="5"/>
+<text x="747.3" y="1192.3" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#fff" paint-order="stroke" stroke="#000" stroke-opacity="0.8" stroke-width="8" stroke-linejoin="round"><tspan fill="#fff7f0" font-weight="bold">G</tspan> τ Ceti</text>
+<circle cx="688.0" cy="683.8" r="22" fill="none" stroke="#ffdfbe" stroke-width="5"/>
+<text x="720.0" y="699.8" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#fff" paint-order="stroke" stroke="#000" stroke-opacity="0.8" stroke-width="8" stroke-linejoin="round"><tspan fill="#ffdfbe" font-weight="bold">K</tspan> 61 Cygni A</text>
+<circle cx="1549.0" cy="651.5" r="22" fill="none" stroke="#bf6952" stroke-width="5"/>
+<text x="1581.0" y="667.5" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="46" fill="#fff" paint-order="stroke" stroke="#000" stroke-opacity="0.8" stroke-width="8" stroke-linejoin="round"><tspan fill="#bf6952" font-weight="bold">M</tspan> Proxima Centauri</text>
+</svg>

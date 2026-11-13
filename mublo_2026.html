@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>The MUBLO</title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal/lib/reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="reveal/lib/zenburn.css">
+    <link rel="stylesheet" href="custom.css" id="custom-theme">
+    <style id="deck-dark">
+    /* Whole deck on black (same block as colloquium_2026_cfa_cmzq.html): white.css is a light theme,
+       so this flips the ground and the default ink rather than swapping the theme out. */
+    html, body, .reveal-viewport { background: #000 !important; }
+    .reveal { color: #ececec; }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 { color: #fff; }
+    .reveal a { color: rgb(0,200,200); }
+    .reveal a:hover { color: rgb(140,255,255); }
+    .reveal .controls { color: #999; }
+    .reveal .progress { color: rgb(0,200,200); }
+    /* the theme tints every image with 12% white: invisible on white, a gray box on black */
+    .reveal section img { background: none; }
+    /* keep exported PDFs black too (custom.css forces the print background white) */
+    .print-pdf .reveal .slide-background,
+    html.reveal-print .reveal .slide-background { background-color: #000 !important; }
+    html.reveal-print, html.reveal-print body { background: #000 !important; }
+    </style>
+    <style id="mublo-2026">
+    /* Layout vocabulary for mublo_2026.html.  Every slide is absolutely positioned on the 1024x768 canvas:
+       a title (h4.t) at the top, figures on white rounded cards (.card, the CfA .cmzq-card style) sized to
+       each figure's own aspect ratio, and the credit line (.bgcred.mc) bottom right. */
+    .reveal h4.t { position:absolute; left:0; top:10px; width:1024px; margin:0; text-align:center; font-size:38px; line-height:1.15; }
+    .reveal .nc { font-variant:normal; text-transform:none; }
+    .reveal h4 .mublo { font-variant:normal; }
+    .card { position:absolute; background:#fff; border-radius:8px; }
+    /* .reveal prefix: the theme's `.reveal section img` (margin:15px 0, border) otherwise outranks this */
+    .reveal .card img { position:absolute; margin:0; border:0; max-width:none; max-height:none; background:none; box-shadow:none; }
+    /* reveal.css makes links position:relative, which would re-anchor the absolutely placed cards inside them */
+    .reveal a.thumb { position:static; }
+    .reveal .bgcred.mc { font-size:15px !important; left:auto; right:14px; bottom:6px; width:auto; max-width:1000px;
+                         color:#b9c0cc; line-height:1.25; }
+    .reveal .bgcred.mc a { color:#7fdbff; }
+    .cap { position:absolute; line-height:1.25; }
+    .reveal .cap ul { display:block; }
+    /* placeholders for the new-ALMA figures that so far exist only on HiPerGator: the <img> inside
+       removes itself if the file is missing, leaving the dashed box and its label; once the file is
+       copied to mublo_2026_assets/alma/ under that name, the slide shows it with no edit needed */
+    .card.ph { background:#10141c; border:3px dashed #ff9f43; box-sizing:border-box; }
+    .reveal .card.ph:has(> img.phimg) { border-color:transparent; background:#fff; }
+    .phlabel { position:absolute; left:0; top:0; width:100%; height:100%; display:flex; flex-direction:column;
+               justify-content:center; text-align:center; color:#ffb870; font-size:22px; line-height:1.5; }
+    .phlabel code { color:#ffd8a8; font-size:20px; }
+    .reveal .card img.phimg { left:0; top:0; width:100%; height:100%; object-fit:contain; background:#fff; border-radius:8px; }
+    .prelim { position:absolute; z-index:5; font-size:20px; font-weight:800; letter-spacing:.12em; color:#ff9f43;
+              border:3px solid #ff9f43; padding:2px 10px; border-radius:4px; background:rgba(0,0,0,.72); transform:rotate(-6deg); }
+    /* same/different builds on the abundance bar charts (30.x): one box per species column, drawn in the card's
+       frame from the figure's own pixel geometry; .hlkey is the one-line key at the card's top left */
+    .hl { position:absolute; border:3px solid; border-radius:6px; box-sizing:border-box; pointer-events:none; }
+    .hl.same { border-color:#16a34a; background:rgba(22,163,74,0.13); }
+    .hl.diff { border-color:#dc2626; background:rgba(220,38,38,0.11); }
+    .hlkey { position:absolute; left:10px; font-size:16px; font-weight:700; line-height:1.2; white-space:nowrap; }
+    /* section dividers */
+    .div-kicker { position:absolute; left:0; width:1024px; text-align:center; font-size:22px; letter-spacing:.18em;
+                  text-transform:uppercase; color:#9aa3b5; }
+    .div-title { position:absolute; left:0; width:1024px; text-align:center; font-size:66px; font-weight:700;
+                 font-family:'Lato', sans-serif; font-variant:small-caps; color:#fff; line-height:1.1; }
+    .div-sub { position:absolute; left:0; width:1024px; text-align:center; font-size:30px; color:#c9d1dc; }
+    /* molecule chips (the alma-chemistry slide) */
+    .chiphead { font-size:21px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px; }
+    .chip { display:inline-block; font-size:23px; padding:2px 11px; margin:4px 3px; border-radius:15px; line-height:1.3; }
+    .chip.det { color:#c8f7d6; background:rgba(74,222,128,.16); border:1px solid #4ade80; }
+    .chip.non { color:#8a93a3; border:1px dashed #5d6575; }
+    /* two-column lists, comparison table, test boxes */
+    .colhead { font-size:30px; font-weight:700; margin-bottom:16px; }
+    .reveal ul.lst { margin:0; padding-left:26px; font-size:28px; }
+    .reveal ul.lst li { margin-bottom:14px; }
+    .reveal table.cmp { position:absolute; border-collapse:collapse; font-size:26px; margin:0; }
+    .reveal table.cmp th, .reveal table.cmp td { border:0; padding:6px 10px; text-align:center; vertical-align:top; }
+    .reveal table.cmp th { color:#fff; font-size:28px; border-bottom:1px solid #3a4150; }
+    .reveal table.cmp td { border-bottom:1px solid #1f2430; }
+    .reveal table.cmp th:first-child, .reveal table.cmp td.k { width:160px; text-align:right; color:#9aa3b5; }
+    .reveal table.cmp th:not(:first-child) { width:392px; }
+    .dim { color:#9aa3b5; font-size:80%; }
+    /* 23.1: five-column remnant table */
+    .reveal table.cmp.ir { font-size:25px; }
+    .reveal table.cmp.ir th { font-size:22px; color:#c9d1dc; }
+    .reveal table.cmp.ir th:not(:first-child) { width:auto; }
+    .reveal table.cmp.ir th:first-child, .reveal table.cmp.ir td.k { width:230px; text-align:left; color:#fff; }
+    .reveal table.cmp.ir td { padding:9px 10px; }
+    .reveal table.cmp.ir tr.mu td { border-top:2px solid #3a4150; color:#ffd166; }
+    .callout { position:absolute; text-align:center; background:rgba(255,209,102,.12); border-left:5px solid #ffd166;
+               padding:8px 14px; border-radius:4px; font-size:25px; color:#fff; }
+    .testbox { position:absolute; border:2px solid #3a4150; border-radius:10px; background:#0d1118; text-align:center; }
+    .testhead { font-size:31px; font-weight:700; color:#ffd166; margin-top:56px; }
+    .testtxt { font-size:25px; color:#c9d1dc; margin-top:34px; line-height:1.45; }
+    </style>
+    <!-- Offline safety (as in the CfA deck): media=print + the onload swap never blocks painting -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' media='print' onload="this.media='all'">
+    <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet' media='print' onload="this.media='all'">
+  </head>
+
+  <body>
+    <!-- Slides! -->
+
+    <div class="reveal">
+      <div class="slides">
+
+<!-- mublo_2026.html: first version written 2026-10-22 (Claude, from Adam's request: the MUBLO slides of
+     colloquium_Nov2024_UNF.html #/88-#/97, updated with the new ALMA data, plus luminous red novae, RCB stars,
+     Pa 30 and Type Iax SNe).  Figures:
+       mublo_2026_assets/discovery/  verbatim copies of the ACES broadline_sources G0.025-0.073 png_figures (2024 paper era)
+       mublo_2026_assets/alma_crops/ crops of assets/cmz_bonus/mublo/MUBLO_morphology.png
+       mublo_2026_assets/alma/       new ALMA figures still to be copied from HiPerGator (placeholder boxes until then)
+       mublo_2026_assets/lit/        literature figures from the arXiv sources, each credited on its slide
+       assets/cmz_bonus/mublo/       the figures used on the #bonus-mublo slides of colloquium_2026_cfa_cmzq.html
+     All new-ALMA numbers are preliminary.  Slide ids are numbered by colloquium_assets/renumber_slide_ids.py. -->
+
+<section id=0-title>
+    <div style="position:absolute; left:0; top:120px; width:1024px; text-align:center; line-height:1;"><span class=mublo style="font-size:170px; color:#e9f6ff;">MUBLO</span></div>
+    <div class=div-sub style="top:330px; font-size:34px; color:#fff;"><span class=mublo>M</span>illimeter <span class=mublo>U</span>ltra-<span class=mublo>B</span>road-<span class=mublo>L</span>ine <span class=mublo>O</span>bject</div>
+    <div class=div-sub style="top:392px;">in the Galactic center</div>
+    <div class=div-sub style="top:500px; font-size:30px; color:#fff;">Adam Ginsburg</div>
+    <div class=div-sub style="top:542px; font-size:24px;">University of Florida</div>
+    <div style="position:absolute; left:0; bottom:14px; width:1024px; text-align:center; font-size:18px; color:#9aa3b5;">Slides available at <a href="https://keflavich.github.io/talks/mublo_2026.html">https://keflavich.github.io/talks/mublo_2026.html</a></div>
+    <aside class=notes>
+        The MUBLO: a compact source in the Galactic center with ~160 km/s wide molecular lines, cold dust, odd chemistry,
+and no counterpart identified so far.  Plan: (1) the discovery, (2) what the new ALMA data show, (3) how it compares
+with luminous red novae (stellar mergers), and with hydrogen-poor objects -- R CrB stars, Pa 30 / SN 1181, and Type Iax
+supernovae.  Nothing here says what it is; the point is which ideas survive the data.
+    </aside>
+</section>
+<section id=1-mublo-context>
+    <h4 class=t>The <span class="mublo nc">MUBLO</span></h4>
+    <div class=card style="left:87px; top:72px; width:849px; height:650px;"><img src="mublo_2026_assets/discovery/MUSTANG3mmContext.png" alt="ACES 3 mm continuum around the MUBLO, with inset" style="left:5px; top:5px; width:839.3px; height:640.0px;"></div>
+    <div class="bgcred mc">3&nbsp;mm continuum (ACES) &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        Found in the ACES 3 mm survey of the central molecular zone (Ginsburg+ 2024, ApJL 968, L11).  G0.02467-0.0727: the
+faint point source in the inset.  In continuum it is unremarkable -- it was found because of its lines.
+1" = 8200 au at 8.2 kpc.
+    </aside>
+</section>
+<section id=2-mublo-broad>
+    <h4 class=t>Broad: FWHM &asymp; 160&nbsp;<span class=nc>km&nbsp;s<sup>&minus;1</sup></span></h4>
+    <div class=card style="left:277px; top:72px; width:471px; height:650px;"><img src="mublo_2026_assets/discovery/CSandSO_Overlays.png" alt="CS and SO spectra of the MUBLO, FWHM about 160 km/s" style="left:5px; top:5px; width:460.7px; height:640.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        CS, SO, 34SO and SO2 lines, ~160 km/s FWHM and Gaussian-looking, centered at v_LSR ~40-50 km/s, so it is in the
+Galactic center.  Discovery data (ACES, ~1-2" resolution).
+    </aside>
+</section>
+<section id=3-mublo-broad-cmz>
+    <h4 class=t>Broader than the CMZ, but compact</h4>
+    <div class=card style="left:277px; top:72px; width:471px; height:650px;"><img src="mublo_2026_assets/discovery/CSandSO_Overlays_withTP.png" alt="MUBLO spectra overlaid with the surrounding gas" style="left:5px; top:5px; width:460.7px; height:640.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        Same spectra with the surrounding-cloud (total-power / single-dish) spectra overlaid: the CMZ gas around it, famously
+turbulent, is much narrower.  In the discovery data the MUBLO was compact (&lt;~2").  That combination -- very broad, very
+small -- is what makes it unusual.
+    </aside>
+</section>
+<section id=4-mublo-chem-2024>
+    <h4 class=t>Weird chemistry: no SiO</h4>
+    <div class=card style="left:80px; top:72px; width:480px; height:650px;"><img src="mublo_2026_assets/discovery/NonDetection_Overlays.png" alt="non-detections toward the MUBLO; SiO 2-1 highlighted" style="left:5px; top:5px; width:469.7px; height:640.0px;"></div>
+    <div class=fragment><div style="position:absolute; left:85px; top:85px; width:470px; height:119px; background:rgba(255,255,255,0.72);"></div><div style="position:absolute; left:85px; top:253px; width:470px; height:410px; background:rgba(255,255,255,0.72);"></div></div>
+    <div class=cap style="left:630px; top:365px; width:370px; font-size:24px; text-align:center; color:#e8e8e8;">SMA follow-up: H<sub>2</sub>S</div>
+    <div class=card style="left:630px; top:405px; width:370px; height:279px;"><img src="assets/MUBLO_H2S.png" alt="SMA follow-up H2S spectrum" style="left:5px; top:5px; width:360.0px; height:269.2px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a> &middot; SMA follow-up: T. Pillai</div>
+    <aside class=notes>
+        Many lines you would expect from a broad-line source are missing.  Most telling: SiO 2-1 (fragment highlights it), the
+classic shock tracer, so there are no strong (&gt;~10 km/s) shocks despite 160 km/s line widths.  Also not detected:
+H13CN, H13CO+, HC3N, HN13C, the H40alpha recombination line, the SiO v=1 maser.
+Inset: Thushara Pillai's SMA follow-up spectrum with an H2S line near the MUBLO velocity (Gaussian fit shown) -- one reason to say
+"hydrogen-poor", never "hydrogen-free".
+    </aside>
+</section>
+<section id=5-mublo-cold-2024>
+    <h4 class=t>&hellip;and cold</h4>
+    <div class=card style="left:102px; top:72px; width:821px; height:610px;"><img src="mublo_2026_assets/discovery/LTE_rotationdiagram_fit.png" alt="SO rotation diagram, T about 14 K" style="left:5px; top:5px; width:810.8px; height:600.0px;"></div>
+    <div class="bgcred mc">SO, discovery data &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        LTE fit to the SO lines in the discovery data: ~13-14 K.  Low-density, subthermally excited warmer gas is not excluded.
+    </aside>
+</section>
+<!-- (2026-10-26) Adam: "where is the updated SO sled?  there should be one?"  It was on HiPerGator
+     (png_figures/MUBLO_SO_rotation_diagram.png, made 10-23 20:02, after the 10-23 pull) and never copied.  Fit values
+     from joint_imaging/work/cs_analysis/so_rotation.json.  Top-level, right after the CS rotation diagram.
+     (2026-10-28) Adam: "move 16.1-alma-so-sled next to the first (published) SO sled" -- now right after 5-mublo-cold-2024. -->
+<section id=5.1-alma-so-sled>
+    <h4 class=t>SO ladder: <i>T</i><sub class=nc>ex</sub> &asymp; 10&ndash;12&nbsp;K</h4>
+    <div class=card style="left:55px; top:72px; width:915px; height:650px;"><img src="mublo_2026_assets/alma/MUBLO_SO_rotation_diagram.png" alt="SO rotation diagram of the MUBLO from the new ALMA data" style="left:5px; top:5px; width:904.8px; height:640.0px;"></div>
+    <div class="bgcred mc">SO, 0.5&Prime; aperture &middot; ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        SO rotation diagram from the new ALMA data, one 0.5" aperture on the MUBLO, matched-filtered with the MUBLO line profile.
+Detected: 3(2)-2(1) (E_u 9 K) and 2(2)-1(1) (19 K) in Band 3, 8(8)-7(7) (88 K) in Band 7.  Triangles: 3 sigma limits on
+4(5)-4(4) (39 K) and 11(11)-11(10) (149 K, Band 9).
+<br><br>
+Optically thin fit: T_rot = 11.8 +- 0.4 K, N ~ 10^16.3 cm^-2 -- but a poor fit (chi^2 26 for 1 dof).  LTE with optical depth and
+continuum: T_ex = 10.4 +- 0.4 K, N ~ 10^16.6 cm^-2, with SO 3(2)-2(1) optically thick (tau ~ 3).  Purple diamond: 34SO 3(2)-2(1)
+scaled by 32S/34S = 17-24 -- an independent check that the main SO line is optically thick.
+<br><br>
+Compare the discovery-era SO diagram (previous slide, two lines + a limit): 14.1 +- 1.4 K.  Same answer, now with a line at 88 K on the
+same cold slope.  Same caveat: a rotation temperature is not a kinetic temperature; low-density, subthermally excited warmer
+gas is not excluded.  Preliminary.
+    </aside>
+</section>
+<section id=6-mublo-no-nir>
+    <h4 class=t>No counterpart identified in pre-JWST data (HST, VLT)</h4>
+    <div class=card style="left:12px; top:186px; width:1000px; height:373px;"><img src="mublo_2026_assets/discovery/HST_GNS_zoomin.png" alt="GNS K and HST 1.87/1.90 um cutouts: nothing at the position" style="left:5px; top:5px; width:990.0px; height:362.7px;"></div>
+    <div class="bgcred mc">GNS <i>K</i> &middot; HST 1.90 / 1.87&nbsp;&mu;m &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        GNS K band and the HST Paschen-alpha survey (1.87 / 1.90 um): nothing obvious at the position.  The extinction toward
+the CMZ is large, so a faint or embedded source is not excluded.  The line is "no counterpart identified in pre-JWST data (HST, VLT)";
+GNS is VLT/HAWK-I.
+    </aside>
+</section>
+<section id=7-mublo-no-continuum>
+    <h4 class=t>Continuum: only the (sub)millimeter</h4>
+    <div class=card style="left:102px; top:72px; width:821px; height:650px;"><img src="mublo_2026_assets/discovery/continuum_cutouts.png" alt="continuum cutouts from 3.6 um to 20 cm" style="left:5px; top:5px; width:810.9px; height:640.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        Spitzer 3.6-24 um, Herschel 70-250 um, 850 um, 3 mm, 6 cm, 20 cm; green circle = MUBLO position.  It shows up at 850 um and
+3 mm and nowhere else -- no X-ray, infrared or radio counterpart in the discovery paper.
+    </aside>
+</section>
+<section id=8-wtf>
+    <div class=card style="left:187px; top:72px; width:650px; height:650px;"><img src="assets/wtf.png" alt="wtf mate?" style="left:5px; top:5px; width:640.0px; height:640.0px;"></div>
+    <aside class=notes>
+        So: what is it?
+    </aside>
+</section>
+<section id=9-alma>
+    <div class=div-kicker style="top:200px;">new data</div>
+    <div class=div-title style="top:250px;">New ALMA observations</div>
+    <div class=div-sub style="top:360px;">3&nbsp;mm &middot; 850&nbsp;&mu;m &middot; 450&nbsp;&mu;m, down to 0.07&Prime;</div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        New ALMA data (Ginsburg et al., in prep): Band 3, 7 and 9 at 0.07-0.09" in the submm -- 11-14x finer than discovery.
+Everything numerical from here on is from an unreviewed reduction; the continuum numbers are flagged preliminary.
+    </aside>
+</section>
+<section id=10-alma-panels>
+    <h4 class=t>From 3&nbsp;<span class=nc>mm</span> to 2&nbsp;<span class=nc>&mu;m</span></h4>
+    <div class=card style="left:12px; top:95px; width:1000px; height:534px;"><img src="assets/cmz_bonus/mublo/MUBLO_multiwavelength_panels.png" alt="the MUBLO: ALMA 3 mm, 850 um, 450 um, SO; JWST NIRCam 2.12 um, 4.8 um, composite; ALMA CS 2-1" style="left:5px; top:5px; width:990.0px; height:523.8px;"></div>
+    <div class=cap style="left:12px; top:637px; width:1000px; font-size:22px; text-align:center; color:#c9d1dc;"><span style="color:#ff7bff;">&times;</span> = catalog position</div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep &middot; JWST NIRCam 2.12 / 4.8&nbsp;&mu;m &middot; discovery: <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        Top: the new ALMA images -- 3 mm, 850 um and 450 um continuum, and SO 3(2)-2(1).  Bottom: JWST NIRCam 2.12 um and 4.8 um,
+a 4.8/2.12 composite, and CS 2-1.  At 4.8 um the MUBLO region is a dark patch against the diffuse Galactic-center
+background.  There is a 4.8 um point source near the crosshair, but its relation to the MUBLO is not established.
+The magenta crosshair is the catalog position (RA 266.4905821, Dec -28.9529931, ICRS; the discovery position), and the
+center of every cutout -- not a fitted peak and not any near-IR candidate.  There are stars near it; none is identified
+with the MUBLO.  "No counterpart identified so far."  The ALMA/JWST registration is only good to ~0.1".
+    </aside>
+</section>
+<section>
+<!-- (2026-10-23) Adam: "should show, not tell, the 2700 au apart ... needs the f480m source indicated as a cross ...
+     add the left panel of mublo_continuum_so32_spider.jpg as an overlay build".  Overlay geometry (scratchpad arc11/make_slide11.py):
+     panel axes from the PNG tick labels (0,0 = catalog position 266.4905821 -28.9529931, checked against the B3 FITS maxima);
+     arrows join the two maxima as marked on MUBLO_double.png (#11.1); F480M cross = 0.089" at PA 73 deg (centroid, per the
+     JWST Cycle 6 proposal notes).  Spider panel registered on the Band 3 panel via its CARTA RA/Dec tick labels. -->
+<section id=11-alma-core-arc>
+    <h4 class=t>Resolved: a core and an arc</h4>
+    <div class=card style="left:12px; top:200px; width:1000px; height:300px;"><img src="mublo_2026_assets/alma_crops/MUBLO_continuum_B3B7B9.png" alt="ALMA Band 3, 7 and 9 continuum: a compact core and an arc" style="left:5px; top:5px; width:990.0px; height:289.8px;"></div>
+    <svg class=ann11 viewBox="0 0 1024 768" style="position:absolute; left:0; top:0; width:1024px; height:768px; overflow:visible; pointer-events:none;">
+        <style>svg.ann11 .dim{stroke:#fff;stroke-width:2;marker-start:url(#ann11-w);marker-end:url(#ann11-w)} svg.ann11 .dimh{stroke:#000;stroke-width:4.5;stroke-opacity:.75;marker-start:url(#ann11-k);marker-end:url(#ann11-k)} svg.ann11 .f480{stroke:#3cff5a;stroke-width:2.6;fill:none;stroke-linecap:round} svg.ann11 .f480h{stroke:#000;stroke-width:5;stroke-opacity:.75;fill:none;stroke-linecap:round} svg.ann11 .lab{font:700 18px 'Lato',sans-serif;fill:#fff;stroke:#000;stroke-width:3.5px;stroke-opacity:.85;paint-order:stroke;stroke-linejoin:round}</style>
+        <defs><marker id=ann11-w viewBox="0 0 10 10" refX=10 refY=5 markerUnits=userSpaceOnUse markerWidth=8 markerHeight=8 orient=auto-start-reverse><path d="M0,0 L10,5 L0,10 z" fill="#fff"/></marker><marker id=ann11-k viewBox="0 0 10 10" refX=9.2 refY=5 markerUnits=userSpaceOnUse markerWidth=11 markerHeight=11 orient=auto-start-reverse><path d="M0,0 L10,5 L0,10 z" fill="#000" fill-opacity=".75"/></marker></defs>
+        <line x1="130.5" y1="330.0" x2="159.7" y2="345.7" class=dimh /><line x1="130.5" y1="330.0" x2="159.7" y2="345.7" class=dim />
+        <path d="M162.9,349.8 L174.9,349.8 M168.9,343.8 L168.9,355.8" class=f480h /><path d="M162.9,349.8 L174.9,349.8 M168.9,343.8 L168.9,355.8" class=f480 />
+        <line x1="458.6" y1="326.1" x2="491.6" y2="340.8" class=dimh /><line x1="458.6" y1="326.1" x2="491.6" y2="340.8" class=dim />
+        <path d="M490.2,349.7 L502.2,349.7 M496.2,343.7 L496.2,355.7" class=f480h /><path d="M490.2,349.7 L502.2,349.7 M496.2,343.7 L496.2,355.7" class=f480 />
+        <text x="482.5" y="322.5" transform="rotate(24.1 482.5 322.5)" text-anchor="middle" class=lab>2700&nbsp;au</text>
+        <text x="442.9" y="318.4" text-anchor="end" class=lab>arc</text>
+        <text x="510.2" y="350.3" text-anchor="start" class=lab>core</text>
+        <line x1="786.3" y1="324.9" x2="818.0" y2="340.4" class=dimh /><line x1="786.3" y1="324.9" x2="818.0" y2="340.4" class=dim />
+        <path d="M815.6,349.7 L827.6,349.7 M821.6,343.7 L821.6,355.7" class=f480h /><path d="M815.6,349.7 L827.6,349.7 M821.6,343.7 L821.6,355.7" class=f480 />
+    </svg>
+    <div class=cap style="left:12px; top:514px; width:1000px; font-size:22px; text-align:center; color:#e8e8e8;"><svg viewBox="-15 -15 30 30" style="width:20px; height:20px; vertical-align:-3px; margin-right:6px;"><path d="M-12,0 L12,0 M0,-12 L0,12" style="stroke:#3cff5a; stroke-width:5; stroke-linecap:round; fill:none;"/></svg>JWST 4.8&nbsp;<span class=nc>&mu;m</span> point source</div>
+    <div class="card fragment" style="left:5.3px; top:183.4px; width:345.1px; height:346.7px;"><img src="mublo_2026_assets/alma_crops/MUBLO_B3_spider.jpg" alt="the Band 3 continuum, with a spider" style="left:5px; top:5px; width:335.1px; height:336.7px;"></div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep &middot; JWST NIRCam F480M</div>
+    <aside class=notes>
+        3 mm, 850 um and 450 um continuum at native resolution (beams 0.18x0.14", 0.07x0.05", 0.09x0.06").  A compact core plus
+an arc: the arrows run from the brightest point of the arc to the compact core, 0.35" / 0.34" / 0.33" in the three bands
+(~2700 au at 8 kpc, using the two sharper bands), at PA ~60 deg, seen independently in all three; the 850 and 450 um peaks
+agree to 0.03".  Total extent ~0.7" (~5700 au).
+Green cross: the JWST F480M point source, 0.09" from the catalog position at PA 73 deg (centroid).  It sits within ~0.05"
+of the core, which is inside the ~0.1" ALMA/JWST registration uncertainty; its relation to the MUBLO is not established.
+Click: the Band 3 image again, with a spider.  (Down: the two-maxima cut through all three bands.)
+    </aside>
+</section>
+<section id=11.1-alma-double>
+    <h4 class=t>Two maxima in three bands</h4>
+    <div class=card style="left:14px; top:72px; width:997px; height:650px;"><img src="mublo_2026_assets/alma/MUBLO_double.png" alt="the two continuum maxima in three bands" style="left:5px; top:5px; width:986.5px; height:640.0px;"></div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        Optional: profile along the line joining the two maxima, each band normalized to its own peak.  Separation 0.33-0.35",
+PA ~244 deg (the same axis as PA ~60 deg).
+    </aside>
+</section>
+</section>
+<section id=12-alma-lines>
+    <h4 class=t>Line emission</h4>
+    <div class=card style="left:12px; top:200px; width:1000px; height:313px;"><img src="mublo_2026_assets/alma_crops/MUBLO_lines_SO_SO2.png" alt="SO, SO2 and SO 8-7 maps at 0.25 arcsec" style="left:5px; top:5px; width:990.0px; height:303.4px;"></div>
+    <div class=cap style="left:12px; top:544px; width:1000px; font-size:24px; text-align:center; color:#c9d1dc;">SO 3<sub>2</sub>&ndash;2<sub>1</sub> &middot; SO<sub>2</sub> 4<sub>3,1</sub>&ndash;3<sub>2,2</sub> &middot; SO 8<sub>8</sub>&ndash;7<sub>7</sub> &nbsp;(<i>E</i><sub>u</sub> = 9&ndash;87&nbsp;K) at 0.25&Prime;</div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        Line maps at a common 0.25" beam.  The line emission is compact, ~0.7" across, like the continuum.  Line widths:
+sigma_v ~62-67 km/s, i.e. FWHM ~160 km/s, as in the discovery data.  (Don't quote a width for
+SO 8-7: it sits at a spectral-window edge.)  A fuller line-map figure (MUBLO_line_maps.png) exists on HiPerGator.
+    </aside>
+</section>
+<section id=12.1-alma-stack>
+    <h4 class=t>Detected and not detected</h4>
+    <div class=cap style="left:182px; top:54px; width:240px; text-align:center; line-height:1.05;"><div class=chiphead style="color:#4ade80; margin:0;">detected</div></div>
+    <div class=cap style="left:401px; top:54px; width:240px; text-align:center; line-height:1.05;"><div class=chiphead style="color:#9aa3b5; margin:0;">not detected</div><div style="font-size:16px; color:#9aa3b5;">hydrogen-bearing</div></div>
+    <div class=cap style="left:620px; top:54px; width:240px; text-align:center; line-height:1.05;"><div class=chiphead style="color:#9aa3b5; margin:0;">not detected</div><div style="font-size:16px; color:#9aa3b5;">hydrogen-free</div></div>
+    <div class=card style="left:171px; top:96px; width:682px; height:644px;"><img src="mublo_2026_assets/alma/MUBLO_stacked_spectra.png" alt="stacked spectra toward the MUBLO: detected lines, and hydrogen-bearing and hydrogen-free non-detections with 3-sigma limits" style="left:5px; top:5px; width:671.8px; height:634.0px;"></div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        The new-data counterpart of Fig. 2 of Ginsburg+ 2024: mean T_B in a 0.5" aperture on the MUBLO, 10 km/s bins,
+offset vertically (x5 / x10 where marked).  Left, detected: CO and 13CO 3-2, CS 2-1 and 7-6, three SO lines, 34SO, SO2.
+CO 3-2 is cut up by absorption; the yellow band (120-200 km/s) is the red-wing window used for the CO comparison.
+Middle (hydrogen-bearing) and right (hydrogen-free, rare isotopologues): not detected.  Dashed curve = the 3-sigma limit
+for a line with the MUBLO profile (v = 45, sigma = 67 km/s), noise from the scatter among off-source apertures
+(1.1-2.9x the channel noise).  HCN 1-0 is 6.4 sigma against the channel noise but only 2.2 against the field.
+Ticks under a spectrum mark other lines in its window: the bumps in H2CS 10-9 and 33SO 9-8 are CS 7-6.  Preliminary.
+    </aside>
+</section>
+<section id=13-alma-chemistry>
+    <h4 class=t>HCN suppressed &gt;20&times; relative to the surrounding cloud</h4>
+    <div class="card ph" style="left:12px; top:80px; width:600px; height:620px;"><div class=phlabel><b>placeholder</b><br>new ALMA figure, still on HiPerGator:<br><code>mublo_2026_assets/alma/MUBLO_chemistry.png</code><br><span style="font-size:15px;">(this box fills itself once the file is copied there)</span></div><img class=phimg src="mublo_2026_assets/alma/MUBLO_chemistry.png" alt="MUBLO chemistry compared with the surrounding cloud" onerror="this.remove()"></div>
+    <div class=cap style="left:636px; top:96px; width:376px; text-align:left;"><div class=chiphead style="color:#4ade80;">detected</div><span class="chip det">CS</span><span class="chip det">SO</span><span class="chip det"><sup>34</sup>SO</span><span class="chip det">SO<sub>2</sub></span><div class=chiphead style="color:#9aa3b5; margin-top:34px;">not detected</div><span class="chip non">HCN</span><span class="chip non">H<sup>13</sup>CO<sup>+</sup></span><span class="chip non">HN<sup>13</sup>C</span><span class="chip non">CCH</span><span class="chip non">HCS<sup>+</sup></span><span class="chip non">HOCO<sup>+</sup></span><span class="chip non">HNCO</span><span class="chip non">CH<sub>3</sub>OH</span><span class="chip non">HC<sub>3</sub>N</span><span class="chip non">H<sub>2</sub>CS</span><span class="chip non">H<sub>2</sub>CO</span><span class="chip non">SiO</span></div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        Seven transitions of four hydrogen-free sulfur-bearing species are detected (CS 2-1 and 7-6, SO 3(2)-2(1), 2(2)-1(1),
+8(8)-7(7), 34SO 3(2)-2(1), SO2 4(3,1)-3(2,2); E_u = 7-88 K).  Eleven hydrogen-bearing species have only 3-sigma upper
+limits (H13CO+, HN13C, CCH, HCN, HCS+, HOCO+, HNCO, CH3OH, HC3N, H2CS, H2CO); SiO 2-1, OCS 8-7 and CS 13-12 are not
+detected either.  HCN is suppressed by a factor &gt;20 relative to the surrounding cloud.
+Say "hydrogen-poor", not "no hydrogen-bearing molecules": these are limits, and the SMA H2S line is there.
+    </aside>
+</section>
+<section id=14-alma-alpha>
+    <h4 class=t>Dust: <span class=nc>&alpha;</span> &asymp; 2.8 &rarr; 2.0</h4>
+    <div class="card ph" style="left:12px; top:72px; width:1000px; height:560px;"><div class=phlabel><b>placeholder</b><br>new ALMA figure, still on HiPerGator:<br><code>mublo_2026_assets/alma/MUBLO_dust_alpha_beta_maps.png</code><br><span style="font-size:15px;">(this box fills itself once the file is copied there)</span></div><img class=phimg src="mublo_2026_assets/alma/MUBLO_dust_alpha_beta_maps.png" alt="MUBLO dust spectral index and beta maps" onerror="this.remove()"></div>
+    <div class=cap style="left:12px; top:650px; width:1000px; font-size:26px; text-align:center; color:#fff;">&alpha;(3&nbsp;mm&ndash;850&nbsp;&mu;m) &asymp; 2.8 &nbsp;&middot;&nbsp; &alpha;(850&ndash;450&nbsp;&mu;m) &asymp; 2.0 &nbsp;&middot;&nbsp; &beta; &sim; 1</div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        PRELIMINARY (unreviewed reduction).  Spectral index ~2.85 between 93 and 338 GHz, flattening to ~2.0 between 338 and 642
+GHz: dust, with beta ~ 1.  Core-only values are ~2.3 and ~2.4.  Caveat: Band 9 has a small largest recoverable
+scale (~1"), so spatial filtering could flatten the short-wavelength index.  The published discovery value was ~3.3.
+    </aside>
+</section>
+<section id=15-alma-sed>
+    <h4 class=t>Cold dust</h4>
+    <div class=card style="left:12px; top:115px; width:1000px; height:534px;"><img src="assets/cmz_bonus/mublo/SED_observed_only_slide.png" alt="MUBLO SED: ALMA and SMA points, 10-25 K modified blackbodies, IR backgrounds" style="left:5px; top:5px; width:990.0px; height:524.3px;"></div>
+    <div class="bgcred mc">ALMA fluxes: Ginsburg+ in prep &middot; SMA: T. Pillai (priv. comm.) &middot; backgrounds: ISO, Spitzer, NIRCam</div>
+    <aside class=notes>
+        Data only: ALMA 450 um, 850 um and 3 mm (blue; inset zooms on the submm) and SMA (red; Thushara Pillai), with modified
+blackbodies at 10-25 K for scale.  The mm points say the dust is cold; no single dust temperature is claimed -- T_d &gt;~ 15 K
+(the 642 GHz peak brightness temperature, ~15 K, is a floor).  On the left, NOT detections: the diffuse background around it
+(ISO SWS, Spitzer, NIRCam); the MUBLO sits in front of that backlight.  Fluxes PRELIMINARY.  No mass.
+    </aside>
+</section>
+<section id=16-alma-tex>
+    <h4 class=t>Cold gas: <i>T</i><sub class=nc>ex</sub> &asymp; 12&nbsp;K</h4>
+    <div class="card ph" style="left:12px; top:72px; width:1000px; height:600px;"><div class=phlabel><b>placeholder</b><br>new ALMA figure, still on HiPerGator:<br><code>mublo_2026_assets/alma/CS_rotation_diagram_and_dust_SED.png</code><br><span style="font-size:15px;">(this box fills itself once the file is copied there)</span></div><img class=phimg src="mublo_2026_assets/alma/CS_rotation_diagram_and_dust_SED.png" alt="CS/SO rotation diagram and dust SED" onerror="this.remove()"></div>
+    <div class="bgcred mc">ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        CS/SO rotation diagram from the new data: T_ex ~12 K (range ~10-19 K) -- consistent with the discovery-era ~13-14 K.
+Preliminary.
+    </aside>
+</section>
+<section id=17-alma-age>
+    <h4 class=t>Expansion age</h4>
+    <div class=card style="left:40px; top:112px; width:460px; height:436px;"><img src="mublo_2026_assets/alma_crops/MUBLO_continuum_B7.png" alt="ALMA 850 um continuum of the MUBLO" style="left:5px; top:5px; width:450.0px; height:425.9px;"></div>
+    <div class=cap style="left:540px; top:170px; width:460px; text-align:left; font-size:40px; line-height:1.6; color:#fff;"><i>r</i> &asymp; 2900&nbsp;au<br><i>v</i> &asymp; 66&nbsp;<span class=nc>km&nbsp;s<sup>&minus;1</sup></span><br><span style="color:#ffd166;"><i>r</i>/<i>v</i> &asymp; 200&nbsp;yr</span></div>
+    <div class="bgcred mc">850&nbsp;&mu;m &middot; ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        Expansion age: ~66 km/s of expansion (the velocity dispersion) over a radius of ~2900 au is ~200 yr
+(2900 au / 66 km/s = 6.6e9 s ~ 210 yr).
+A 200-yr-old expanding object is testable: at 66 km/s and 8.2 kpc the expansion is ~1.7 mas/yr (last slides).
+    </aside>
+</section>
+<section id=18-hypotheses-2024>
+    <h4 class=t>Hypotheses &amp; data (2024)</h4>
+    <div class=card style="left:12px; top:236px; width:1000px; height:272px;"><img src="assets/mublo_grid.png" alt="hypotheses vs data table from the discovery paper" style="left:5px; top:5px; width:990.0px; height:261.5px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        The discovery paper's table: eight kinds of explanation against the observed properties.  Most are inconsistent with
+the data or do not fully explain them; it called the MUBLO "observationally unique."  The rest of the talk looks harder
+at one row (stellar mergers, i.e. red novae) and at hydrogen-poor objects the table did not include.
+    </aside>
+</section>
+<section id=19-candidates>
+    <h4 class=t>Other things that make cold, fast, dusty gas?</h4>
+    <a class=thumb href="#/20-lrn"><div class=card style="left:22px; top:150px; width:230px; height:230px; overflow:hidden;"><img src="mublo_2026_assets/lit/kaminski2026_v838mon_remnant.png" alt="Luminous red nova" style="left:0; top:0; width:230px; height:230px; object-fit:cover; object-position:center; border-radius:8px;"></div></a>
+    <div class=cap style="left:17px; top:400px; width:240px; font-size:27px; text-align:center; color:#e8e8e8;"><b>Luminous red nova</b><br><span style="color:#9aa3b5; font-size:22px;">stellar merger</span></div>
+    <a class=thumb href="#/33-rcb"><div class=card style="left:272px; top:150px; width:230px; height:230px; overflow:hidden;"><img src="mublo_2026_assets/lit/clayton2012_rcrb_lightcurve.jpg" alt="R CrB star" style="left:0; top:0; width:230px; height:230px; object-fit:cover; object-position:center; border-radius:8px;"></div></a>
+    <div class=cap style="left:267px; top:400px; width:240px; font-size:27px; text-align:center; color:#e8e8e8;"><b>R CrB star</b><br><span style="color:#9aa3b5; font-size:22px;">white-dwarf merger</span></div>
+    <a class=thumb href="#/36-pa30"><div class=card style="left:522px; top:150px; width:230px; height:230px; overflow:hidden;"><img src="mublo_2026_assets/lit/fesen2023_pa30_sii.jpg" alt="Pa 30" style="left:0; top:0; width:230px; height:230px; object-fit:cover; object-position:center; border-radius:8px;"></div></a>
+    <div class=cap style="left:517px; top:400px; width:240px; font-size:27px; text-align:center; color:#e8e8e8;"><b>Pa 30</b><br><span style="color:#9aa3b5; font-size:22px;">remnant of SN 1181</span></div>
+    <a class=thumb href="#/40-iax"><div class=card style="left:772px; top:150px; width:230px; height:230px; overflow:hidden;"><img src="mublo_2026_assets/lit/jha2017_iax_bound_remnant.jpg" alt="Type Iax SN" style="left:0; top:0; width:230px; height:230px; object-fit:cover; object-position:66% 50%; border-radius:8px;"></div></a>
+    <div class=cap style="left:767px; top:400px; width:240px; font-size:27px; text-align:center; color:#e8e8e8;"><b>Type Iax SN</b><br><span style="color:#9aa3b5; font-size:22px;">faint thermonuclear SN</span></div>
+    <div class="bgcred mc">images: <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2605.17005/abstract">Kami&nacute;ski &amp; Blagorodnova 2026</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1206.3448/abstract">Clayton 2012</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2301.04809/abstract">Fesen+ 2023</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1707.01110/abstract">Jha 2017</a></div>
+    <aside class=notes>
+        Four classes of object to compare against: luminous red novae (stellar mergers -- the "stellar merger" row of the table),
+and three hydrogen-poor ones: R CrB stars (thought to be white-dwarf mergers), Pa 30 (the remnant of SN 1181), and Type
+Iax supernovae, the class Pa 30 is thought to belong to.
+    </aside>
+</section>
+<section id=20-lrn>
+    <div class=div-kicker style="top:220px;">hypothesis</div>
+    <div class=div-title style="top:270px;">Luminous red novae</div>
+    <div class=div-sub style="top:370px;">stellar mergers</div>
+    <aside class=notes>
+        Luminous red novae: outbursts between novae and supernovae in luminosity, now understood as stellar mergers
+(common-envelope ejections).  Review: Kaminski &amp; Blagorodnova 2026 (A&amp;ARv 34, 8).
+    </aside>
+</section>
+<section id=21-lrn-v1309>
+    <h4 class=t>V1309 Sco: a contact binary that merged</h4>
+    <div class=card style="left:12px; top:80px; width:1000px; height:624px;"><img src="mublo_2026_assets/lit/kaminski2026_v1309sco_lightcurve.png" alt="V1309 Sco light curve and period decay before the 2008 outburst" style="left:5px; top:5px; width:990.0px; height:613.6px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2605.17005/abstract">Kami&nacute;ski &amp; Blagorodnova 2026</a>, after <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1012.0163/abstract">Tylenda+ 2011</a></div>
+    <aside class=notes>
+        V1309 Sco: OGLE watched a contact binary for years before 2008 -- eclipsing light curve (left panels), period decaying
+(green), slow brightening, then a red-nova outburst.  After it: one star.  The clearest evidence that red novae are
+mergers (Tylenda+ 2011).
+    </aside>
+</section>
+<section id=22-lrn-transients>
+    <h4 class=t>Between novae and supernovae</h4>
+    <div class=card style="left:190px; top:72px; width:644px; height:650px;"><img src="mublo_2026_assets/lit/kaminski2026_transients.png" alt="peak luminosity vs timescale for transients; red novae in red" style="left:5px; top:5px; width:634.0px; height:640.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2605.17005/abstract">Kami&nacute;ski &amp; Blagorodnova 2026</a></div>
+    <aside class=notes>
+        Peak luminosity vs. timescale: red novae (red points) span ~1e38-1e42 erg/s, with plateaus of tens to hundreds of days --
+between classical novae and supernovae.  Galactic examples: V1309 Sco, V4332 Sgr, V838 Mon, CK Vul.
+    </aside>
+</section>
+<section id=23-lrn-remnants>
+    <h4 class=t>What a merger leaves behind</h4>
+    <div class=card style="left:12px; top:110px; width:500px; height:500px;"><img src="mublo_2026_assets/lit/kaminski2026_v838mon_remnant.png" alt="schematic of a V838 Mon-like remnant" style="left:5px; top:5px; width:490.0px; height:490.0px;"></div>
+    <div class=card style="left:541px; top:72px; width:452px; height:560px;"><img src="mublo_2026_assets/lit/kaminski2026_remnant_schematic.jpg" alt="schematic of a low-mass red nova remnant with a disk" style="left:5px; top:5px; width:441.5px; height:550.0px;"></div>
+    <div class=cap style="left:522px; top:640px; width:490px; font-size:22px; text-align:center; color:#c9d1dc;">low-mass (V1309 Sco, V4332 Sgr)</div>
+    <div class=cap style="left:12px; top:640px; width:500px; font-size:22px; text-align:center; color:#c9d1dc;">massive (V838 Mon)</div>
+    <div class="bgcred mc">schematics, not to scale: <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2605.17005/abstract">Kami&nacute;ski &amp; Blagorodnova 2026</a></div>
+    <aside class=notes>
+        The remnant: a merged star inside cold, dusty, molecular ejecta -- outflows (often bipolar), a disk, shocks where they
+collide.  Left: a V838 Mon-like remnant with a companion; right: a low-mass remnant like V1309 Sco or V4332 Sgr.
+Schematics from the review, not to scale.
+    </aside>
+</section>
+<section id=23.1-lrn-remnant-ir>
+    <h4 class=t>Merger remnants in the infrared</h4>
+    <table class="cmp ir" style="left:40px; top:105px; width:944px;"><tr><th></th><th>luminosity</th><th>dust</th><th><i>K</i> at the GC</th><th>mid-IR at 8.2&nbsp;kpc</th></tr><tr><td class=k>V838 Mon <span class=dim>2002</span></td><td>2&times;10<sup>4</sup>&nbsp;L<sub>&#8857;</sub></td><td><span class="fragment highlight-red" data-fragment-index=1>125&ndash;1350&nbsp;K</span></td><td><span class="fragment highlight-red" data-fragment-index=1>~9</span></td><td><span class="fragment highlight-red" data-fragment-index=1>20&nbsp;Jy</span></td></tr><tr><td class=k>V4332 Sgr <span class=dim>1994</span></td><td>~10<sup>3</sup>&nbsp;L<sub>&#8857;</sub> <span class=dim>est.</span></td><td><span class="fragment highlight-red" data-fragment-index=1>200&ndash;950&nbsp;K</span></td><td><span class="fragment highlight-red" data-fragment-index=1>~13</span></td><td>0.9&nbsp;Jy</td></tr><tr><td class=k>V1309 Sco <span class=dim>2008</span></td><td>~10<sup>3</sup>&nbsp;L<sub>&#8857;</sub></td><td>30&ndash;460&nbsp;K</td><td>~19</td><td>0.6&nbsp;Jy</td></tr><tr><td class=k>CK Vul <span class=dim>1670</span></td><td>~20&nbsp;L<sub>&#8857;</sub></td><td><span class="fragment highlight-green" data-fragment-index=1>15&nbsp;K</span></td><td><span class="fragment highlight-green" data-fragment-index=1>not seen</span></td><td><span class="fragment highlight-green" data-fragment-index=1>1.4&nbsp;mJy</span></td></tr><tr class="mu fragment" data-fragment-index=0><td class=k><span class="mublo nc">MUBLO</span></td><td>?</td><td>15&ndash;50&nbsp;K</td><td>&gt;16</td><td>&lt;1.3&nbsp;Jy</td></tr></table>
+    <div class=cap style="left:40px; top:440px; width:944px; font-size:19px; text-align:center; color:#9aa3b5;"><i>K</i>: 8.2&nbsp;kpc + <i>A<sub>K</sub></i>&nbsp;=&nbsp;3 foreground, no local dust &middot; mid-IR: 19.7&ndash;24&nbsp;&micro;m &middot; <span class="mublo nc">MUBLO</span>: GNS <i>K</i>, Spitzer 24&nbsp;&micro;m</div>
+    <div class="callout fragment" data-fragment-index=1 style="left:110px; top:530px; width:804px;">V838 Mon or V4332 Sgr would be seen &mdash; unless buried in its own dust</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1007.0131/abstract">Kami&nacute;ski+ 2010</a>, <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1503.06570/abstract">2015</a>, <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2106.07427/abstract">2021</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2108.08149/abstract">Woodward+ 2021</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1510.05074/abstract">Banerjee+ 2015</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1606.09426/abstract">Tylenda &amp; Kami&nacute;ski 2016</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2605.17005/abstract">Kami&nacute;ski &amp; Blagorodnova 2026</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        The remnants' observables, scaled to the MUBLO's distance (8.2 kpc).  Year = outburst.  K adds A_K = 3 of
+foreground extinction and assumes no local dust; mid-IR is SOFIA 19.7 um (V838 Mon), MIPS 24 um (V4332 Sgr, CK Vul) and
+WISE 22 um (V1309 Sco).  The MUBLO: GNS K &gt; 16 (80% completeness), Spitzer 24 um &lt; 1.3 Jy, dust 15-50 K (the 642 GHz
+brightness floor and the 2024 SED limit).  Build 1: the MUBLO row.  Build 2: red = would be seen or differs; green = matches.
+V838 Mon: 2.3e4 Lsun (Kaminski+ 2021 model at 5.9 kpc), dust 400 + 125 K in 2019 (Woodward+ 2021) and 1350 K at the
+60-au inner hole (ALMA); 19.7 um = 38 Jy at 5.9 kpc.  V4332 Sgr: no modern luminosity is published; ~1e3 is an estimate
+(~120 Lsun apparent at 1.8 kpc, Kaminski+ 2010, at 4.85 kpc), with disk dust at 200-950 K.  V1309 Sco: 575 Lsun at 3 kpc
+(Tylenda &amp; Kaminski 2016), ~900 at 3.8 kpc; the 2015 VVV Ks may not be the remnant (Steinmetz+ 2024 see no K continuum
+in 2016).  CK Vul: 15 K dust, ~20 Lsun at 3.2 kpc (Kaminski+ 2015, rescaled), no near-IR source (Banerjee+ 2020).
+Not shown: OGLE-2002-BLG-360 behaves like V1309 Sco (~2e3 Lsun, Ks ~17 at 8.2 kpc; dust below ~90 K outside 250 au by
+2017-23, Steinmetz+ 2025).
+Caveat: the IR limits alone do not exclude an embedded source.  The MUBLO's own column (A_K ~ 20 through it) could hide one,
+and the 2024 SED models allow an embedded 1e4-1e4.7 Lsun source.  A V1309 Sco-like remnant falls below both limits.  What
+the MUBLO does not share with the decades-old remnants is warm dust: its mm-emitting dust is cold, like CK Vul's.
+    </aside>
+</section>
+<section id=24-lrn-timeline>
+    <h4 class=t>Merger remnants: ages</h4>
+    <div class=card style="left:12px; top:97px; width:1000px; height:567px;"><img src="mublo_2026_assets/lit/kaminski2026_merger_timeline.png" alt="merger remnants placed on a log time-since-merger axis" style="left:5px; top:5px; width:990.0px; height:556.9px;"></div>
+    <div class=fragment><div style="position:absolute; left:170px; top:322px; width:4px; height:151px; background:#e5007e;"></div><div class=cap style="left:72px; top:287px; width:200px; font-size:24px; font-weight:700; color:#e5007e; text-align:center;">MUBLO?</div></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2605.17005/abstract">Kami&nacute;ski &amp; Blagorodnova 2026</a></div>
+    <aside class=notes>
+        Postulated merger remnants on a log time axis: red novae at decades, CK Vul at ~350 yr, older ones up to Myr.  The
+MUBLO's ~200-yr expansion age puts it in the young-remnant range (fragment).  On age and kinematics alone a
+merger remnant is a fair comparison.
+    </aside>
+</section>
+<section id=25-lrn-alma>
+    <h4 class=t>Red-nova remnants in the submillimeter</h4>
+    <div class=card style="left:42px; top:72px; width:621px; height:650px;"><img src="mublo_2026_assets/lit/kaminski2018_rednovae_spectra.png" alt="submm spectra of red novae compared with evolved stars" style="left:5px; top:5px; width:610.7px; height:640.0px;"></div>
+    <div class=cap style="left:702px; top:220px; width:298px; text-align:left; font-size:30px; line-height:1.6; color:#fff;">CO<br>SiO<br>SO<br>SO<sub>2</sub><br>AlO</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1804.01610/abstract">Kami&nacute;ski+ 2018</a></div>
+    <aside class=notes>
+        ALMA, SMA and APEX spectra around 345 GHz of CK Vul, V1309 Sco, V4332 Sgr and V838 Mon, compared with a Mira, a red
+supergiant (VY CMa) and a post-AGB star (OH231.8).  Red-nova remnants show CO, SiO, SO, SO2 and AlO: oxygen-rich,
+circumstellar-like chemistry, with broad lines.
+    </aside>
+</section>
+<!-- (2026-10-23) Adam: "#/25-lrn-alma ... are there any others like this at different frequency ... Bring in the MUBLO
+     spectra slides to put on side-by-side ... we want to also show that H-bearing molecules differ".  CK Vul is the one
+     red-nova remnant with a 3 mm line survey (Kaminski+ 2017, IRAM 30 m; V838 Mon, V4332 Sgr and V1309 Sco were not
+     detected at 3 mm).  Its profile panels (the paper's profiles*_thick figures, cropped: kaminski2017_ckvul_3mm_*.png)
+     sit next to the 2024 MUBLO overlays already used on #mublo-chem-2024.  Each click lays the next CK Vul panel over
+     the last (HCN, then HCO+/N2H+, then HNC/SiO/HC3N); the third swaps both sides to the sulfur lines. -->
+<section id=26-lrn-3mm>
+    <h4 class=t style="left:37px; width:443px;">CK Vul</h4>
+    <h4 class=t style="left:516px; width:472px; top:3px;">the <span class="mublo nc">MUBLO</span></h4>
+    <div class="card" style="left:37px; top:68px; width:443px; height:640px;"><img src="mublo_2026_assets/lit/kaminski2017_ckvul_3mm_hcn.png" alt="CK Vul 3 mm profiles: HCN, H13CN, HC15N" style="left:5px; top:5px; width:433.2px; height:630.0px;"></div>
+    <div class="card fragment" data-fragment-index="1" style="left:37px; top:68px; width:443px; height:640px;"><img src="mublo_2026_assets/lit/kaminski2017_ckvul_3mm_ions.png" alt="CK Vul 3 mm profiles: HCO+, N2H+, H2CO" style="left:5px; top:5px; width:433.2px; height:630.0px;"></div>
+    <div class="card fragment" data-fragment-index="2" style="left:37px; top:68px; width:443px; height:640px;"><img src="mublo_2026_assets/lit/kaminski2017_ckvul_3mm_organic.png" alt="CK Vul 3 mm profiles: HNC, SiO, CH3OH, HC3N" style="left:5px; top:5px; width:433.2px; height:630.0px;"></div>
+    <div class="card fragment" data-fragment-index="3" style="left:37px; top:68px; width:443px; height:640px;"><img src="mublo_2026_assets/lit/kaminski2017_ckvul_3mm_sulfur.png" alt="CK Vul 3 mm profiles: CS, SO, SO2" style="left:5px; top:5px; width:433.2px; height:630.0px;"></div>
+    <div class=card style="left:516px; top:68px; width:472px; height:640px;"><img src="mublo_2026_assets/discovery/NonDetection_Overlays.png" alt="MUBLO non-detections: H13CN, H13CO+, HN13C, HC3N, SiO" style="left:5px; top:5px; width:462.4px; height:630.0px;"></div>
+    <div class="card fragment" data-fragment-index="3" style="left:516px; top:68px; width:472px; height:640px;"><img src="mublo_2026_assets/discovery/CSandSO_Overlays.png" alt="MUBLO CS, SO and SO2 profiles" style="left:9.2px; top:5px; width:453.5px; height:630.0px;"></div>
+    <div class="bgcred mc">CK Vul: <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1708.02261/abstract">Kami&nacute;ski+ 2017</a> &middot; <span class="mublo nc">MUBLO</span>: <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2404.07808/abstract">Ginsburg+ 2024</a></div>
+    <aside class=notes>
+        The same 3 mm lines in both, on nearly the same velocity axis.  Left: CK Vul, IRAM 30 m (T_A*, mK).  Right: the MUBLO,
+ALMA ACES (T_B, K).  Compare ratios within each source, against SO 2(3)-1(2) at 99.3 GHz, which both show (last click).
+CK Vul, peaks read off the figures: HCN 1-0 ~35x SO, H13CN ~20x, HNC ~14x, SiO 2-1 ~10x, HCO+ ~5x, N2H+ ~3x; SO is one of
+its weakest lines (plotted x2).
+The MUBLO: SO 2(3)-1(2) is the brightest line (~1.9 K); H13CN, H13CO+, HN13C, HC3N and SiO are not detected (peaks below
+~1/6 of SO, 3 sigma per channel).  The ratios run the opposite way.
+Both are cold (CK Vul T_ex ~3-12 K, the MUBLO ~14 K), so excitation does not explain it.
+Caveats: CK Vul is the only red-nova remnant surveyed at 3 mm.  The oxygen-rich ones show few H-bearing lines in the
+submm (H2S in V838 Mon, HCO+ in V1309 Sco), and the MUBLO has H2S too, so the hydrogen contrast is with CK Vul.  The new
+B3 data detect HCN 1-0 weakly (preliminary): hydrogen-poor, not hydrogen-free.
+    </aside>
+</section>
+<section id=27-lrn-broad>
+    <h4 class=t>Broad lines, compact remnants</h4>
+    <div class=card style="left:36px; top:72px; width:328px; height:650px;"><img src="mublo_2026_assets/lit/kaminski2018_v4332sgr_profiles.png" alt="V4332 Sgr CO and SiO line profiles" style="left:5px; top:5px; width:318.4px; height:640.0px;"></div>
+    <div class=card style="left:425px; top:90px; width:551px; height:600px;"><img src="mublo_2026_assets/lit/kaminski2021_v838mon_co.png" alt="V838 Mon CO map" style="left:5px; top:5px; width:540.8px; height:590.0px;"></div>
+    <div class="bgcred mc">V4332 Sgr: <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1804.01610/abstract">Kami&nacute;ski+ 2018</a> &middot; V838 Mon: <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2106.07427/abstract">Kami&nacute;ski+ 2021b</a></div>
+    <aside class=notes>
+        Left: V4332 Sgr CO 3-2 and SiO 8-7 spanning roughly +-200 km/s -- red-nova remnants have line widths like the MUBLO's.
+Right: V838 Mon in CO at tens-of-mas resolution: compact molecular ejecta around the merged star.  Kinematically, the MUBLO
+looks like this.
+    </aside>
+</section>
+<section id=28-lrn-abundances>
+    <h4 class=t>SiO, SO and SO<sub>2</sub> together</h4>
+    <div class=card style="left:12px; top:105px; width:1000px; height:442px;"><img src="mublo_2026_assets/lit/kaminski2018_abundances.png" alt="abundances relative to CO in red novae and evolved stars" style="left:5px; top:5px; width:825.0px; height:432.4px;"><img class=fragment src="mublo_2026_assets/alma/MUBLO_k18style_panel.png" alt="the MUBLO in the same style: SO and SO2 bars, an SiO upper limit" style="left:830.0px; top:5px; width:165.0px; height:432.4px;"></div>
+    <div class=cap style="left:12px; top:630px; width:1000px; font-size:30px; text-align:center; color:#ffd166;">the <span class="mublo nc">MUBLO</span>: SO and SO<sub>2</sub>, but no SiO</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1804.01610/abstract">Kami&nacute;ski+ 2018</a> &middot; MUBLO panel: Ginsburg+ in prep</div>
+    <aside class=notes>
+        Molecule numbers relative to CO.  In every object here -- three red novae plus two evolved stars -- SiO (teal) is present at
+~1e-3 of CO, alongside SO and SO2.  In the MUBLO, SO and SO2 are bright and SiO 2-1 is not detected.
+Build: the MUBLO panel, drawn to the same y axis.  SO/CO = 2.3e-3 and SO2/CO = 2.1e-4 sit among the others; SiO/CO
+< 2.5e-5 (3 sigma) is ~60x below the red novae.  MUBLO CO is from 13CO 3-2 in the red wing (120-200 km/s) at an assumed
+12C/13C = 25 (gray bars: 4-89; X/CO scales as 25/R), because 12CO is optically thick there; LTE at T_ex = 11.6 K in a
+0.5" aperture.  The MUBLO values are column ratios over the same pixels, i.e. molecule-number ratios, so they compare
+directly with Kaminski's.  AlO, AlOH and H2S are not measured (n/m): no AlOH line in the bands, AlO N=9-8 overlaps
+SO 8(8)-7(7), and the one H2S line (E_u = 282 K) gives no useful limit at 11.6 K.
+    </aside>
+</section>
+<section id=29-lrn-ckvul>
+    <h4 class=t>CK Vul (1670): a 350-year-old remnant</h4>
+    <div class=card style="left:12px; top:84px; width:470px; height:627px;"><img src="mublo_2026_assets/lit/kaminski2020_ckvul_rgb.png" alt="CK Vul: SiO, N2H+ and dust continuum" style="left:5px; top:5px; width:460.0px; height:616.5px;"></div>
+    <div class=card style="left:500px; top:133px; width:512px; height:528px;"><img src="mublo_2026_assets/lit/kaminski2021_ckvul_co.jpg" alt="CK Vul CO 1-0 map" style="left:5px; top:5px; width:502.0px; height:517.7px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2006.10471/abstract">Kami&nacute;ski+ 2020</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2010.05832/abstract">Kami&nacute;ski+ 2021a</a></div>
+    <aside class=notes>
+        CK Vul, "Nova Vul 1670": a ~350-yr-old remnant thought to be a stellar merger -- the closest red-nova analog in age to a
+200-yr MUBLO.  Left: SiO (green), N2H+ (blue) and dust (red) in a bipolar nebula; right: CO 1-0, more extended.
+    </aside>
+</section>
+<section id=30-lrn-ckvul-chem>
+    <h4 class=t>CK Vul: hydrogen-bearing molecules too</h4>
+    <div class=card style="left:160px; top:128px; width:840px; height:328px;"><img src="mublo_2026_assets/lit/kaminski2020_ckvul_gallery.jpg" alt="CK Vul maps: HCN, HNC, H2CO, CH3OH, N2H+ (top); CO, CS, SO, SO2, SiO (bottom)" style="left:5px; top:5px; width:830.0px; height:317.5px;"></div>
+    <div class=cap style="left:12px; top:194px; width:138px; font-size:26px; text-align:right; color:#7fdbff;">H-bearing</div>
+    <div class=cap style="left:12px; top:358px; width:138px; font-size:26px; text-align:right; color:#c9d1dc;">H-free</div>
+    <div class=cap style="left:12px; top:486px; width:1000px; font-size:30px; text-align:center; color:#ffd166;">the <span class="mublo nc">MUBLO</span>: HCN suppressed &gt;20&times; relative to its surroundings</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2006.10471/abstract">Kami&nacute;ski+ 2020</a></div>
+    <aside class=notes>
+        CK Vul's molecular inventory: HCN, HNC, H2CO, CH3OH, N2H+ (top row) alongside CO, CS, SO, SO2 and SiO (bottom).  It is
+molecule-rich, hydrogen-bearing species included (and CK Vul also shows 26AlF and 13C-rich isotopologues: nuclear
+processing).  The MUBLO goes the other way: only S-bearing species detected and HCN suppressed &gt;20x.
+    </aside>
+</section>
+<section id=30.1-lrn-abund-abs>
+    <h4 class=t>Numbers of molecules</h4>
+    <div class=card style="left:12px; top:100px; width:1000px; height:428px;"><img src="mublo_2026_assets/alma/MUBLO_abundance_comparison_abs.png" alt="MUBLO abundance comparison with red novae, CK Vul and evolved stars: numbers of molecules" style="left:5px; top:5px; width:990.0px; height:418.4px;"><div class=fragment data-fragment-index=0><div class=hlkey style="top:8px; color:#15803d;">&asymp; mergers (within 3&times;)</div><div class="hl same" style="left:248.8px; top:67.2px; width:44.4px; height:313.4px;"></div></div><div class=fragment data-fragment-index=1><div class=hlkey style="top:28px; color:#b91c1c;">&ne; mergers (&gt;10&times;)</div><div class="hl diff" style="left:156.5px; top:67.2px; width:44.4px; height:313.4px;"></div></div></div>
+    <div class=cap style="left:12px; top:545px; width:1000px; font-size:20px; text-align:center; color:#9aa3b5;">Kami&nacute;ski+ 2018 Fig. 13, with the <span class="mublo nc">MUBLO</span>, CK Vul and IK Tau added</div>
+    <div class=cap style="left:12px; top:590px; width:1000px; font-size:30px; text-align:center; color:#ffd166;">the <span class="mublo nc">MUBLO</span>: only limits on hydrogen-bearing species</div>
+    <div class="bgcred mc">MUBLO: Ginsburg+ in prep &middot; after <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1804.01610/abstract">Kami&nacute;ski+ 2018</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1309.7360/abstract">Kami&nacute;ski+ 2013</a>, <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2006.10471/abstract">2020</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1609.01904/abstract">Velilla Prieto+ 2017</a></div>
+    <aside class=notes>
+        Kaminski+ 2018 Fig. 13 -- source-averaged numbers of molecules, N_col Omega d^2, in three red novae, VY CMa and
+OH231.8 -- with the MUBLO, CK Vul (Kaminski+ 2020) and IK Tau (Velilla Prieto+ 2017) added.  Hatched: upper / lower
+limits; shaded: hydrogen-bearing.  CK Vul's absolute numbers assume a 2" radius at 3.2 kpc, so they are uncertain; its
+ratios (next slides) are not.  MUBLO CO comes from 13CO 3-2 at 12C/13C = 25 (gray bar: 4-89).  Every hydrogen-bearing
+species is a 3-sigma limit in the MUBLO; H2S, AlO and AlOH are not measured (n/m).  Preliminary.
+Builds (all four 30.x slides): green = the MUBLO within 3x of a red nova or CK Vul; red = more than 10x from
+every one of them (for anything tied to CO, at every 12C/13C from 4 to 89; a 3-sigma limit 10x below is a >30-sigma
+difference).  Upper limits are never green.  Here: SO2 green; SO red (~20x more SO molecules than V838 Mon, the most of
+the four).  CO (~5x CK Vul) and CS (~5x) fall in between.
+    </aside>
+</section>
+<section id=30.2-lrn-abund-cs>
+    <h4 class=t>Relative to CS</h4>
+    <div class=card style="left:12px; top:100px; width:1000px; height:416px;"><img src="mublo_2026_assets/alma/MUBLO_abundance_comparison_CSnorm.png" alt="MUBLO abundance comparison with red novae, CK Vul and evolved stars: relative to cs" style="left:5px; top:5px; width:990.0px; height:405.7px;"><div class=fragment data-fragment-index=0><div class=hlkey style="top:8px; color:#15803d;">&asymp; mergers (within 3&times;)</div><div class="hl same" style="left:62.9px; top:53.6px; width:46.9px; height:314.2px;"></div><div class="hl same" style="left:208.9px; top:53.6px; width:46.9px; height:314.2px;"></div></div><div class=fragment data-fragment-index=1><div class=hlkey style="top:28px; color:#b91c1c;">&ne; mergers (&gt;10&times;)</div><div class="hl diff" style="left:598.2px; top:53.6px; width:46.9px; height:314.2px;"></div></div></div>
+    <div class=cap style="left:12px; top:545px; width:1000px; font-size:20px; text-align:center; color:#9aa3b5;">no CS measurement in the red novae or OH231.8</div>
+    <div class=cap style="left:12px; top:590px; width:1000px; font-size:30px; text-align:center; color:#ffd166;">the <span class="mublo nc">MUBLO</span>: HCN/CS &gt;40&times; below CK Vul</div>
+    <div class="bgcred mc">MUBLO: Ginsburg+ in prep &middot; after <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1804.01610/abstract">Kami&nacute;ski+ 2018</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1309.7360/abstract">Kami&nacute;ski+ 2013</a>, <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2006.10471/abstract">2020</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1609.01904/abstract">Velilla Prieto+ 2017</a></div>
+    <aside class=notes>
+        CS is the primary normalization: it is measured with an opacity correction, while the MUBLO's CO is not well measured.
+No red nova (nor OH231.8) has a CS measurement, so only CK Vul, VY CMa and IK Tau remain.  Against CK Vul:
+HCN/CS &lt; 0.09 vs 3.7 (&gt;40x lower), SiO/CS &lt; 0.07 vs 0.7 (&gt;9x), HC3N and HNC lower too.  The other
+hydrogen-bearing limits (H2CS, HCO+, HNCO, CH3OH, CCH) sit at or above CK Vul's values and do not constrain.
+SO/CS ~7 vs ~0.7 in CK Vul.  VY CMa's ratios to CS carry a ~0.8 dex systematic (central vs. full-region CS).
+Preliminary.
+Builds: CO and SO2 green; HCN red (~40x).  SO/CS (10x) and SiO/CS (~9x) are borderline and left unmarked.
+    </aside>
+</section>
+<section id=30.3-lrn-abund-so>
+    <h4 class=t>Relative to SO</h4>
+    <div class=card style="left:12px; top:100px; width:1000px; height:429px;"><img src="mublo_2026_assets/alma/MUBLO_abundance_comparison_SOnorm.png" alt="MUBLO abundance comparison with red novae, CK Vul and evolved stars: relative to so" style="left:5px; top:5px; width:990.0px; height:419.0px;"><div class=fragment data-fragment-index=0><div class=hlkey style="top:8px; color:#15803d;">&asymp; mergers (within 3&times;)</div><div class="hl same" style="left:62.9px; top:66.9px; width:46.9px; height:314.2px;"></div></div><div class=fragment data-fragment-index=1><div class=hlkey style="top:28px; color:#b91c1c;">&ne; mergers (&gt;10&times;)</div><div class="hl diff" style="left:209.0px; top:66.9px; width:46.9px; height:314.2px;"></div><div class="hl diff" style="left:306.3px; top:66.9px; width:46.9px; height:314.2px;"></div><div class="hl diff" style="left:598.4px; top:66.9px; width:46.9px; height:314.2px;"></div><div class="hl diff" style="left:695.8px; top:66.9px; width:46.9px; height:314.2px;"></div></div></div>
+    <div class=cap style="left:12px; top:590px; width:1000px; font-size:30px; text-align:center; color:#ffd166;">the <span class="mublo nc">MUBLO</span>: SiO/SO and SO<sub>2</sub>/SO below every other object</div>
+    <div class="bgcred mc">MUBLO: Ginsburg+ in prep &middot; after <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1804.01610/abstract">Kami&nacute;ski+ 2018</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1309.7360/abstract">Kami&nacute;ski+ 2013</a>, <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2006.10471/abstract">2020</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1609.01904/abstract">Velilla Prieto+ 2017</a></div>
+    <aside class=notes>
+        SO is measured in every object, so the red novae come back.  SiO/SO &lt; 0.011 in the MUBLO: below the red novae
+(0.19-1.7), CK Vul (1.0), VY CMa (1.4), IK Tau (&gt;1) and OH231.8 (0.03).  SO2/SO ~0.09, more than 10x below every
+other object (CK Vul 1.2; the rest 1.6-4).  HCN/SO &lt; 0.013 vs 5.2 in CK Vul.  Preliminary.
+Builds: CO green; SO2 (13x below CK Vul), SiO (15x below V1309 Sco), HCN (~350x) and HC3N (~40x) red.
+CS/SO (10x) and HNCO/SO (~9x) are borderline and left unmarked.
+    </aside>
+</section>
+<section id=30.4-lrn-abund-co>
+    <h4 class=t>Relative to CO</h4>
+    <div class=card style="left:12px; top:100px; width:1000px; height:429px;"><img src="mublo_2026_assets/alma/MUBLO_abundance_comparison_COnorm.png" alt="MUBLO abundance comparison with red novae, CK Vul and evolved stars: relative to co" style="left:5px; top:5px; width:990.0px; height:418.8px;"><div class=fragment data-fragment-index=0><div class=hlkey style="top:8px; color:#15803d;">&asymp; mergers (within 3&times;)</div><div class="hl same" style="left:63.3px; top:67.3px; width:46.9px; height:313.7px;"></div><div class="hl same" style="left:112.0px; top:67.3px; width:46.9px; height:313.7px;"></div><div class="hl same" style="left:209.2px; top:67.3px; width:46.9px; height:313.7px;"></div></div></div>
+    <div class=cap style="left:12px; top:545px; width:1000px; font-size:20px; text-align:center; color:#9aa3b5;"><span class="mublo nc">MUBLO</span> CO from <sup>13</sup>CO at <sup>12</sup>C/<sup>13</sup>C = 25 (gray bar: 4&ndash;89)</div>
+    <div class=cap style="left:12px; top:590px; width:1000px; font-size:30px; text-align:center; color:#ffd166;">the <span class="mublo nc">MUBLO</span>: SiO/CO below every other object</div>
+    <div class="bgcred mc">MUBLO: Ginsburg+ in prep &middot; after <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1804.01610/abstract">Kami&nacute;ski+ 2018</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1309.7360/abstract">Kami&nacute;ski+ 2013</a>, <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2006.10471/abstract">2020</a>; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1609.01904/abstract">Velilla Prieto+ 2017</a></div>
+    <aside class=notes>
+        Normalized to CO, as Kaminski+ 2018 do (the "SiO, SO and SO2 together" slide).  The MUBLO's CO is the weak link: 12CO
+3-2 is cut by interferometric negative bowls and optically thick in the wings, so CO comes from 13CO 3-2 in the
+120-200 km/s red wing at 12C/13C = 25; the gray bars span 12C/13C = 4-89, the tick on CO is the optically thin 12CO
+floor.  SiO/CO &lt; 2.5e-5, vs 1.5-2e-3 in the red novae and 2.6e-4 in CK Vul; even at 12C/13C = 4 the limit (1.6e-4)
+stays below every other object.  Preliminary.
+Builds: CS, SO and SO2 green; nothing red.  With 12C/13C free (4-89), no CO ratio clears 10x: SiO/CO is ~10x
+below CK Vul at 12C/13C = 25 and &lt;2x at 4; HCN/CO is ~45x at 25 but ~7x at 4.  The SO and CS slides carry the case.
+    </aside>
+</section>
+<section id=31-lrn-compare>
+    <h4 class=t>A red nova?</h4>
+    <div class=cap style="left:50px; top:210px; width:430px; text-align:left;"><div class=colhead style="color:#4ade80;">like a red nova</div><ul class=lst><li>broad lines, compact</li><li>cold dust</li><li>~centuries old (expansion age)</li></ul></div>
+    <div class=cap style="left:540px; top:210px; width:440px; text-align:left;"><div class=colhead style="color:#ff8a8a;">unlike a red nova</div><ul class=lst><li>no SiO</li><li>hydrogen-poor chemistry</li><li>far more dust than any red-nova ejecta <span style="color:#9aa3b5;">(if ISM-like dust)</span></li><li>no central star seen <span style="color:#9aa3b5;">(extinction?)</span></li></ul></div>
+    <aside class=notes>
+        What fits: line widths, compactness, cold dust, and a ~200-yr expansion age -- the kinematics and age are fine for a
+merger remnant.
+What doesn't: (1) chemistry runs the opposite way -- red-nova remnants are SiO-bright and CK Vul is rich in H-bearing
+molecules, while the MUBLO has no SiO and HCN suppressed &gt;20x; (2) with ISM-like dust properties, the implied mass is far
+above any red-nova ejecta (no number on the slide); (3) no central star -- a weak argument given the extinction: we can
+neither confirm nor exclude one.
+    </aside>
+</section>
+<section id=32-hpoor>
+    <div class=div-kicker style="top:220px;">hypothesis</div>
+    <div class=div-title style="top:270px;">Hydrogen-poor ejecta</div>
+    <div class=div-sub style="top:370px;">R CrB stars &middot; Pa 30 &middot; Type Iax supernovae</div>
+    <aside class=notes>
+        If the chemistry is telling us the gas is hydrogen-poor, what makes hydrogen-poor ejecta?  Three related things, all tied
+to white dwarfs: R CrB stars (white-dwarf mergers), Pa 30 (the remnant of SN 1181, a merger product), and Type Iax
+supernovae (faint thermonuclear explosions, possibly leaving a bound remnant).
+    </aside>
+</section>
+<section id=33-rcb>
+    <h4 class=t>R Coronae Borealis stars: sudden dusty fades</h4>
+    <div class=card style="left:83px; top:72px; width:859px; height:650px;"><img src="mublo_2026_assets/lit/clayton2012_rcrb_lightcurve.jpg" alt="R CrB light curve 1998-2012" style="left:5px; top:5px; width:848.6px; height:640.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1206.3448/abstract">Clayton 2012</a> (AAVSO data)</div>
+    <aside class=notes>
+        R CrB itself, 1998-2012: years at V ~ 6, then drops of many magnitudes in weeks as a carbon-dust cloud forms in our line of
+sight, and slow recoveries.  In 2007 it plunged ~7 mag and stayed down for years.  About a hundred are known in the Galaxy.
+    </aside>
+</section>
+<section id=34-rcb-hpoor>
+    <h4 class=t>Hydrogen-deficient, carbon-rich</h4>
+    <div class=card style="left:12px; top:167px; width:560px; height:386px;"><img src="mublo_2026_assets/lit/clayton2012_rcb_spectra.jpg" alt="spectra of two RCB stars and a carbon star" style="left:5px; top:5px; width:550.0px; height:376.1px;"></div>
+    <div class=card style="left:590px; top:105px; width:422px; height:584px;"><img src="mublo_2026_assets/lit/clayton2007_12c18o.png" alt="12C18O bandheads in RCB and HdC stars" style="left:5px; top:5px; width:412.0px; height:573.5px;"></div>
+    <div class=cap style="left:12px; top:561px; width:560px; font-size:20px; text-align:center; color:#c9d1dc;">top two: RCB stars &middot; bottom: a carbon star</div>
+    <div class=cap style="left:12px; top:603px; width:560px; font-size:26px; text-align:center; color:#ffd166;"><sup>18</sup>O-rich CO &rarr; white-dwarf merger</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1206.3448/abstract">Clayton 2012</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:astro-ph/0703453/abstract">Clayton+ 2007</a></div>
+    <aside class=notes>
+        Left: RCB spectra have weak or absent hydrogen (no Balmer lines, weak CH) compared with an ordinary carbon star (bottom).
+Right: 12C18O bandheads -- 16O/18O near unity, hundreds of times below solar -- which points to a merger of a CO and a He
+white dwarf rather than a single evolved star.  So: hydrogen-poor, carbon-rich, dust-forming merger products.
+Problem for the MUBLO: an RCB star is a luminous supergiant and would be bright in the near/mid-IR even at 8 kpc behind
+heavy extinction -- nothing like that is seen.
+    </aside>
+</section>
+<section id=35-rcb-bulge>
+    <h4 class=t>An old, bulge population</h4>
+    <div class=card style="left:118px; top:72px; width:788px; height:610px;"><img src="mublo_2026_assets/lit/clayton2012_rcb_sky.jpg" alt="RCB stars on the sky, concentrated to the bulge" style="left:5px; top:5px; width:777.7px; height:600.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1206.3448/abstract">Clayton 2012</a></div>
+    <aside class=notes>
+        RCB stars on the sky (Galactic coordinates): concentrated toward the bulge, consistent with an old population.  White-dwarf
+mergers should exist near the Galactic center too.
+    </aside>
+</section>
+<section id=36-pa30>
+    <h4 class=t>SN 1181 &rarr; Pa 30</h4>
+    <div class=card style="left:26px; top:72px; width:971px; height:620px;"><img src="mublo_2026_assets/lit/fesen2023_pa30_sii.jpg" alt="Pa 30 in [S II]: radial filaments" style="left:5px; top:5px; width:961.4px; height:610.0px;"></div>
+    <div class="bgcred mc">[S&thinsp;II] image: <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2301.04809/abstract">Fesen+ 2023</a></div>
+    <aside class=notes>
+        Pa 30: the nebula now identified with the guest star of AD 1181 (~845 yr old, ~2.3 kpc).  In [S II] it is a "firework" of
+radial filaments around a central star.  Proposed as the remnant of a Type Iax supernova from a white-dwarf merger
+(Ritter+ 2021; Oskinova+ 2020; Fesen+ 2023).
+    </aside>
+</section>
+<section id=37-pa30-star>
+    <h4 class=t>An infrared nebula and a hot, hydrogen-free star</h4>
+    <div class=card style="left:12px; top:134px; width:480px; height:453px;"><img src="mublo_2026_assets/lit/gvaramadze2019_pa30_nebula.png" alt="WISE 22 um, 12 um and H-alpha images of Pa 30" style="left:5px; top:5px; width:470.0px; height:443.0px;"></div>
+    <div class=card style="left:505px; top:197px; width:507px; height:325px;"><img src="mublo_2026_assets/lit/gvaramadze2019_pa30_star.png" alt="optical spectrum of the Pa 30 central star" style="left:5px; top:5px; width:497.0px; height:315.4px;"></div>
+    <div class=cap style="left:12px; top:594px; width:480px; font-size:20px; text-align:center; color:#c9d1dc;">WISE 22&nbsp;&mu;m (top) &middot; 12&nbsp;&mu;m &middot; H&alpha;</div>
+    <div class=cap style="left:505px; top:531px; width:507px; font-size:20px; text-align:center; color:#c9d1dc;">O&thinsp;VI, C&thinsp;IV, O&thinsp;V emission; no hydrogen</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1904.00012/abstract">Gvaramadze+ 2019</a></div>
+    <aside class=notes>
+        Gvaramadze+ 2019 (who called it WS35/IRAS 00500+6713): a mid-IR nebula (WISE 22 um) with no H-alpha nebula, around a hot
+star whose spectrum shows only carbon and oxygen lines (O VI, C IV) with a fast wind -- "both the star and the nebula appear to be free of hydrogen and helium."
+They interpreted it as the product of a merger of two white dwarfs.
+    </aside>
+</section>
+<section id=38-pa30-fast>
+    <h4 class=t>Fast: ~1100&nbsp;<span class=nc>km&nbsp;s<sup>&minus;1</sup></span></h4>
+    <div class=card style="left:12px; top:170px; width:560px; height:399px;"><img src="mublo_2026_assets/lit/ritter2021_pa30_pv.png" alt="[S II] position-velocity diagram of Pa 30" style="left:5px; top:5px; width:550.0px; height:389.5px;"></div>
+    <div class=card style="left:585px; top:174px; width:427px; height:392px;"><img src="mublo_2026_assets/lit/cunningham2024_pa30_shells.png" alt="Pa 30 filament velocities: ballistic shells" style="left:5px; top:5px; width:417.0px; height:381.9px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2105.12384/abstract">Ritter+ 2021</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2410.10940/abstract">Cunningham+ 2024</a></div>
+    <aside class=notes>
+        Left: long-slit [S II] position-velocity diagram -- the filaments move at up to ~1100 km/s.  Right: integral-field
+velocities deprojected assuming ejection in 1181: the filaments sit on ballistic shells at ~700-1300 km/s, i.e. essentially
+free expansion for ~840 years.
+    </aside>
+</section>
+<section id=39-pa30-dust>
+    <h4 class=t>Dusty: ~60&nbsp;K</h4>
+    <div class=card style="left:123px; top:72px; width:778px; height:620px;"><img src="mublo_2026_assets/lit/lykou2023_pa30_sed.png" alt="infrared SED of Pa 30 with a 60 K blackbody" style="left:5px; top:5px; width:767.7px; height:610.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2208.03946/abstract">Lykou+ 2023</a></div>
+    <aside class=notes>
+        The Pa 30 shell's infrared SED: a ~60 K dust component peaking near 50-100 um, no IR excess below 10 um.  Pa 30 made (or
+swept up) dust.  The MUBLO's dust is much colder, &gt;~15 K, and there is no comparable mid-IR shell.
+    </aside>
+</section>
+<section id=40-iax>
+    <h4 class=t>Type Iax: faint thermonuclear supernovae</h4>
+    <div class=card style="left:51px; top:72px; width:922px; height:620px;"><img src="mublo_2026_assets/lit/jha2017_iax_luminosity_B.png" alt="absolute magnitude vs decline rate: Type Iax vs Ia" style="left:5px; top:5px; width:911.6px; height:610.0px;"></div>
+    <div class=cap style="left:12px; top:698px; width:1000px; font-size:22px; text-align:center; color:#c9d1dc;">decline rate &Delta;<i>m</i><sub>15</sub>(<i>B</i>) &middot; <span style="color:#7fa8ff;">blue: Type Iax</span> &middot; black: normal Ia</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1707.01110/abstract">Jha 2017</a>, after Stritzinger+ 2015</div>
+    <aside class=notes>
+        Peak B magnitude vs. decline rate: normal SNe Ia (black) follow the Phillips relation; SNe Iax (blue) are fainter, by up
+to ~5 magnitudes, at similar decline rates.  Thermonuclear (white-dwarf) explosions that release far less energy than a
+normal Ia.
+    </aside>
+</section>
+<section id=41-iax-slow>
+    <h4 class=t>&hellip;with slow ejecta</h4>
+    <div class=card style="left:105px; top:72px; width:813px; height:620px;"><img src="mublo_2026_assets/lit/foley2013_iax_velocity.png" alt="Si II velocity vs peak magnitude for Type Iax" style="left:5px; top:5px; width:803.2px; height:610.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1212.2209/abstract">Foley+ 2013</a></div>
+    <aside class=notes>
+        Si II velocities of SNe Iax near peak: ~2000-7000 km/s, versus ~10,000-12,000 km/s for normal SNe Ia -- less energetic
+explosions, less ejected mass.  The fainter ones tend to be slower.
+    </aside>
+</section>
+<section id=42-iax-remnant>
+    <h4 class=t>A bound remnant left behind?</h4>
+    <div class=card style="left:12px; top:78px; width:1000px; height:285px;"><img src="mublo_2026_assets/lit/jha2017_iax_bound_remnant.jpg" alt="partial deflagration of a white dwarf leaving a bound remnant" style="left:5px; top:5px; width:990.0px; height:275.1px;"></div>
+    <div class=card style="left:155px; top:400px; width:714px; height:300px;"><img src="mublo_2026_assets/lit/jha2017_sn2012z_progenitor.jpg" alt="SN 2012Z progenitor before and after" style="left:5px; top:5px; width:703.7px; height:290.0px;"></div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1707.01110/abstract">Jha 2017</a>, after Kromer+ 2013 and McCully+ 2014</div>
+    <aside class=notes>
+        Top: a partial deflagration model of a white dwarf -- the burning fails to unbind the star, leaving a bound remnant plus
+modest ejecta (table at right).  Bottom: SN 2012Z, the one Type Iax with a detected progenitor system (a luminous blue
+source in pre-explosion HST images).  A surviving remnant star is a prediction for Pa 30-like objects.
+    </aside>
+</section>
+<section id=43-iax-pa30>
+    <h4 class=t>Pa 30: a Galactic Type Iax?</h4>
+    <div class=card style="left:200px; top:72px; width:624px; height:620px;"><img src="mublo_2026_assets/lit/lykou2023_iax_mej_ekin.png" alt="ejecta mass vs kinetic energy for Type Iax; Pa 30 in red" style="left:5px; top:5px; width:613.5px; height:610.0px;"></div>
+    <div class=cap style="left:836px; top:568px; width:176px; font-size:22px; text-align:left; color:#ff8a8a;">Pa 30 / SN 1181: red</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2208.03946/abstract">Lykou+ 2023</a></div>
+    <aside class=notes>
+        Ejecta mass vs. kinetic energy: Pa 30 / SN 1181 (red) sits with the low-energy Type Iax supernovae.
+So Pa 30 is our nearby example of a hydrogen-poor thermonuclear transient with a surviving star and ~1000 km/s ejecta.
+    </aside>
+</section>
+<section id=44-pa30-vs-mublo>
+    <h4 class=t>Pa 30 and the <span class="mublo nc">MUBLO</span></h4>
+    <div class=card style="left:212px; top:91px; width:368px; height:237px;"><img src="mublo_2026_assets/lit/fesen2023_pa30_sii.jpg" alt="Pa 30 in [S II]" style="left:5px; top:5px; width:358.0px; height:227.2px;"></div>
+    <div class=card style="left:651px; top:80px; width:274px; height:260px;"><img src="mublo_2026_assets/alma_crops/MUBLO_continuum_B7.png" alt="MUBLO at 850 um" style="left:5px; top:5px; width:264.1px; height:250.0px;"></div>
+    <table class=cmp style="left:40px; top:352px; width:944px;"><tr><th></th><th>Pa 30</th><th><span class="mublo nc">MUBLO</span></th></tr><tr><td class=k>age</td><td>~845&nbsp;yr</td><td>~200&nbsp;yr <span class=dim>(expansion age)</span></td></tr><tr><td class=k>speed</td><td>~1100&nbsp;<span class=nc>km&nbsp;s<sup>&minus;1</sup></span></td><td>~66&nbsp;<span class=nc>km&nbsp;s<sup>&minus;1</sup></span></td></tr><tr><td class=k>hydrogen</td><td>none seen</td><td>poor</td></tr><tr><td class=k>chemistry</td><td>[S&thinsp;II] filaments</td><td>S-bearing molecules</td></tr></table>
+    <div class=callout style="left:110px; top:640px; width:804px;">&asymp;15&times; slower: would need strong deceleration in dense gas &mdash; untested</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:2301.04809/abstract">Fesen+ 2023</a> &middot; ALMA: Ginsburg+ in prep</div>
+    <aside class=notes>
+        Pa 30 is the closest compositional analog: sulfur-rich ejecta with no hydrogen detected (no H-alpha; Fesen+ 2023), a bound remnant, a few centuries to a millennium
+old.  The problem is speed: Pa 30 expands at ~1100 km/s, the MUBLO at ~66 km/s -- a factor ~15.  To
+reconcile them the ejecta would have to have snowplowed into dense gas.  That is not absurd in the CMZ, where dense gas is
+everywhere, but it is untested.  Size: Pa 30 is ~1 pc in radius (1100 km/s x 845 yr); the MUBLO is ~0.03 pc across.
+This is a lead, not an answer.
+    </aside>
+</section>
+<section id=44.1-iax-highenergy>
+    <h4 class=t>A Type Iax here: the 511&nbsp;keV source? the X-ray echo?</h4>
+    <div class=colhead style="position:absolute; left:30px; top:76px; width:470px; text-align:center; color:#ffd166;">511&nbsp;keV positrons?</div>
+    <div class=colhead style="position:absolute; left:524px; top:76px; width:470px; text-align:center; color:#ffd166;">IXPE X-ray echo?</div>
+    <div class=card style="left:35px; top:166px; width:460px; height:237px;"><img src="assets/gc_he/siegert2016_fig2.jpg" alt="INTEGRAL/SPI 511 keV sky model: bulge, disk and a central point-like source" style="left:5px; top:5px; width:450.0px; height:227.3px;"></div>
+    <div class=card style="left:591px; top:128px; width:337px; height:300px;"><img src="mublo_2026_assets/lit/marin2023_fig1a_crop.jpg" alt="Chandra 4-8 keV map of the Sgr A complex with the IXPE extraction circle, Sgr A* and the MUBLO marked" style="left:5px; top:5px; width:327.0px; height:290.0px;">
+        <svg style="position:absolute; left:5px; top:5px; width:327px; height:290px;" viewBox="0 0 750 665"><line x1="573.6" y1="576.8" x2="224.2" y2="263.6" stroke="#fff" stroke-width="4" stroke-dasharray="14 10"/><circle cx="400.8" cy="429.5" r="17" fill="none" stroke="#7fdbff" stroke-width="6"/></svg>
+        <span class="mublo nc" style="position:absolute; left:120px; top:204px; font-size:17px; color:#7fdbff; text-shadow:0 0 4px #000, 0 0 4px #000;">MUBLO</span></div>
+    <div class=cap style="left:30px; top:436px; width:470px; font-size:20px; text-align:center; color:#9aa3b5;">SPI sky model: bulge + disk + central point source</div>
+    <div class=cap style="left:524px; top:436px; width:470px; font-size:20px; text-align:center; color:#9aa3b5;">Chandra 4&ndash;8&nbsp;keV &middot; IXPE region (green)</div>
+    <div class=cap style="left:40px; top:474px; width:450px; text-align:left;"><ul class=lst style="font-size:24px;"><li>at ~200&nbsp;yr, only <sup>44</sup>Ti still makes positrons</li><li>Iax models: &le;0.2% of the central source</li><li>one source can&rsquo;t make the extended bulge</li></ul></div>
+    <div class=cap style="left:534px; top:474px; width:450px; text-align:left;"><ul class=lst style="font-size:24px;"><li>on the Sgr&nbsp;A*&ndash;cloud axis: same polarization angle</li><li>half as far: delay ~100&nbsp;yr, not ~200</li><li>needs ~10<sup>47</sup>&nbsp;erg of hard X-rays: unknown</li></ul></div>
+    <div class=callout style="left:45px; top:668px; width:412px; font-size:23px;">no &mdash; not without &gt;100&times; the Iax <sup>44</sup>Ti</div>
+    <div class=callout style="left:539px; top:668px; width:412px; font-size:23px;">only if ~100&nbsp;yr old: untested</div>
+    <div class="bgcred mc"><a href="https://ui.adsabs.harvard.edu/abs/arXiv:1607.03495/abstract">Crocker+ 2017</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1512.00325/abstract">Siegert+ 2016</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:1308.3257/abstract">Fink+ 2014</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2304.06967/abstract">Marin+ 2023</a> &middot; <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2508.04862/abstract">Khabibullin+ 2026</a></div>
+    <aside class=notes>
+        If the MUBLO were a Type Iax remnant, could it be the Galactic Center positron source (Crocker+ 2017 propose faint
+thermonuclear supernovae for the 511 keV line), or the flare behind the IXPE X-ray echo?
+511 keV: at ~200 yr the only positron source left is 44Ti -> 44Sc (mean life ~85 yr); 56Co and 22Na are long gone.
+Pure-deflagration Iax models eject ~2e-7 to 3e-6 Msun of 44Ti (Fink+ 2014): ~2e38-2e39 positrons/s now, at most 0.2% of the
+point-like central 511 keV source (1.2e42 /s for its measured positronium fraction, 0.94 +- 0.19; Siegert+ 2016) and
+4e-6 to 5e-5 of the Galactic total (5e43 /s).  Matching the
+central source would take ~1e-3 Msun of 44Ti, ~500x the most any Iax model makes.  Crocker's candidate is a different
+subclass -- SN 1991bg-like helium detonations, >~0.01 Msun of 44Ti -- and a 200-yr-old one would overproduce the central
+source ~10-20x unless its positrons escape into low-density gas before annihilating.  One source cannot make the extended
+bulge either.  Direct test: the 44Ti lines (68, 78, 1157 keV).  I know of no published Galactic Center 44Ti limit [check
+NuSTAR]; SPI's limit on G1.9+0.3, 1.9 deg away, is ~1e-5 ph/cm2/s.  Iax yields would give ~3e-7: undetectable.
+IXPE: the polarization of the 4-8 keV reflection from the Sgr A clouds points back to Sgr A* (angle -43 +- 7 deg,
+Khabibullin+ 2026), and the degree of polarization (37 +- 9%) sets the scattering angle: the flare was ~190 yr ago (or ~35).
+The MUBLO sits almost exactly on the line from Sgr A* to those clouds, about halfway (12 pc from Sgr A*, 13 pc from the
+clouds, projected), so the angle cannot tell the two apart: -43 deg either way.  At the same scattering angle the delay
+scales with distance: ~100 yr from the MUBLO (or ~18), not ~200.  The ~18-yr branch would put the flare in the 2000s, when Chandra and
+XMM-Newton would have seen it directly.  So it works only if the MUBLO is ~100 yr old -- younger
+than r/v, i.e. decelerated, which the Pa 30 comparison already needs -- and only if a faint thermonuclear supernova can put
+~1e47 erg into hard X-rays within ~1.6 yr (4x less than Marin+ 2023 need from Sgr A*, since the MUBLO is closer to the
+clouds).  Those X-rays would come mostly from down-scattered 56Co gamma rays; I have not seen that calculated [check].
+Marin+ list white-dwarf accretion-induced collapse among sources with enough fluence, not thermonuclear supernovae.  The
+MUBLO's depth along the line of sight is unknown, and its own dusty envelope, if uniform, would absorb most 3-8 keV
+photons on the way out [check].  Khabibullin+ 2026 also find the brightest compact cloud polarized almost
+perpendicular to the Sgr A* expectation (+30 +- 16 deg) and suggest the Arches or an unknown transient nearer the cloud:
+the MUBLO predicts -50 deg there, so it is not that source; the Arches direction (+41 deg) fits.
+    </aside>
+</section>
+<section id=45-jwst>
+    <h4 class=t>JWST Cycle 6 proposal (submitted)</h4>
+    <div class=card style="left:12px; top:201px; width:630px; height:339px;"><img src="assets/cmz_bonus/mublo/SED_with_observed_B9_and_JWST_wide.png" alt="MUBLO SED with proposed JWST sensitivities" style="left:5px; top:5px; width:620.0px; height:328.8px;"></div>
+    <div class=card style="left:655px; top:195px; width:357px; height:349px;"><img src="assets/cmz_bonus/mublo/MUBLO_ifu_footprints.png" alt="proposed MIRI MRS and NIRSpec IFU footprints" style="left:5px; top:5px; width:347.0px; height:339.1px;"></div>
+    <div class=cap style="left:12px; top:547px; width:630px; font-size:22px; text-align:center; color:#c9d1dc;">proposed sensitivities</div>
+    <div class=cap style="left:655px; top:553px; width:357px; font-size:22px; text-align:center; color:#c9d1dc;">MIRI MRS + NIRSpec IFU</div>
+    <div class="bgcred mc">JWST Cycle 6 proposal (submitted) &middot; ALMA fluxes: Ginsburg+ in prep</div>
+    <aside class=notes>
+        What we asked JWST for (Cycle 6, submitted -- not awarded): NIRSpec + MIRI integral-field spectroscopy over the MUBLO.
+Hydrogen recombination lines (Br-alpha) and any near-IR counterpart would separate a stellar/accretion origin from a
+hydrogen-depleted ejection.  The background image on the right is context only.
+    </aside>
+</section>
+<section id=46-tests>
+    <h4 class=t>What would test it</h4>
+    <div class=testbox style="left:30px; top:200px; width:300px; height:300px;"><div class=testhead>CN vs HCN</div><div class=testtxt>one ALMA tuning:<br>hydrogen-poor, or not?</div></div>
+    <div class=testbox style="left:360px; top:200px; width:300px; height:300px;"><div class=testhead>Proper motions</div><div class=testtxt>66&nbsp;<span class=nc>km&nbsp;s<sup>&minus;1</sup></span> at 8.2&nbsp;kpc<br>&asymp; 1.7&nbsp;mas&nbsp;yr<sup>&minus;1</sup></div></div>
+    <div class=testbox style="left:690px; top:200px; width:300px; height:300px;"><div class=testhead>JWST spectroscopy</div><div class=testtxt>Br&thinsp;&alpha;?<br>a near-IR counterpart?</div></div>
+    <aside class=notes>
+        (1) Chemistry: CN 1-0 and HCN 1-0 fit in one ALMA tuning; in hydrogen-poor gas CN/HCN should be very large.
+(2) Proper motions: 66 km/s of expansion at 8.2 kpc is ~1.7 mas/yr -- ~10 mas over five years,
+measurable with repeat high-resolution ALMA imaging.
+(3) JWST spectroscopy (the submitted Cycle 6 proposal): Br-alpha from any ionized gas, and a near-IR counterpart if there is one.
+    </aside>
+</section>
+<section id=47-summary>
+    <h4 class=t>Summary</h4>
+    <div class=cap style="left:70px; top:150px; width:884px; text-align:left;"><ul class=lst style="font-size:31px; line-height:1.35;"><li>compact, cold, dusty; 160&nbsp;<span class=nc>km&nbsp;s<sup>&minus;1</sup></span> lines</li><li>no counterpart identified so far</li><li>red-nova kinematics, but not red-nova chemistry</li><li>hydrogen-poor ejecta (Pa 30-like): a lead, not an answer</li></ul></div>
+    <div style="position:absolute; left:0; top:560px; width:1024px; text-align:center;"><span class=mublo style="font-size:90px; color:#e9f6ff;">?</span></div>
+    <aside class=notes>
+        The MUBLO is still unexplained.  New ALMA data: resolved core + arc, cold dust, cold gas, hydrogen-poor sulfur chemistry.
+A stellar merger fits the kinematics and the expansion age but not the chemistry or the dust.  Hydrogen-poor
+white-dwarf-related ejecta (Pa 30 / SN 1181 as the nearest example) fit the chemistry better but need the ejecta to have
+slowed by ~15x.  Tests: CN/HCN, proper motions, JWST spectroscopy.
+    </aside>
+</section>
+
+</div>
+</div>
+
+
+    <!-- End of slides. -->
+
+<script src="reveal/dist/reveal.js"> </script>
+<script src="reveal/plugin/highlight/highlight.js"></script>
+<script src="reveal/plugin/math/math.js"></script>
+<script src="reveal/plugin/notes/notes.js"></script>
+<script src="pdfjs/compatibility.js"> </script>
+<script src="pdfjs/pdf.js"> </script>
+<!-- deferred: a nice-to-have (speaker-view pointer sync) that must never block Reveal.initialize -->
+<script defer src="https://cdn.jsdelivr.net/npm/reveal.js-notes-pointer@0.1.4/notes-pointer.js"></script>
+
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        keyboard: true,
+        touch: true,
+        overview: true,
+        mouseWheel: false,
+        width: 1024,
+        height: 768,
+        maxScale: 10,
+        margin: 0.0,
+        pdfMaxPagesPerSlide: 1,
+
+        theme: false, // hardcoded with CSS import in <head>
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'default', // default/fast/slow
+
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'TeX-AMS_SVG'
+        },
+
+
+        plugins: [ RevealHighlight, RevealMath.KaTeX, RevealNotes],
+
+        dependencies: [
+          { src: 'mymath.js', async: true },
+      { src: 'pdfimgs.js', async: true },
+      { src: 'slideautostart.js', async: true },
+        ],
+      });
+    </script>
+
+    <script>
+      /* (2026-10-23) 's' = reveal's own speaker view.  notes-pointer.js (the deferred CDN script above) re-binds 's'
+         to ITS notes.html, fetched from jsDelivr -- and jsDelivr serves .html as text/plain, so the speaker window
+         showed the page source as raw text.  Re-bind 's' to the built-in notes plugin once both have registered
+         (the deferred script has run by DOMContentLoaded; the plugin by 'ready').  Not inside the speaker view's
+         slide previews (?receiver), which never had an 's'.
+         'A' (laser pointer) pressed in the speaker view: that notes.html also passed the pointer from the current-slide
+         preview on to the main window.  The built-in speaker view does not, so the preview does it itself, below. */
+      (function(){
+        var receiver = /receiver/i.test(window.location.search);
+        function useBuiltinSpeakerView(){
+          Reveal.addKeyBinding({ keyCode: 83, key: 'S', description: 'Speaker notes view' },
+                               function(){ Reveal.getPlugin('notes').open(); });
+        }
+        function arm(){ if (Reveal.isReady()) useBuiltinSpeakerView(); else Reveal.on('ready', useBuiltinSpeakerView); }
+        if (!receiver) {
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', arm); else arm();
+        }
+        // In the current-slide preview (the one with postMessageEvents), notes-pointer.js posts
+        // {namespace:'reveal', type:'point', x, y, state} to the speaker window; hand each one to the main deck,
+        // the speaker window's opener.  Same origin when served over http; from file:// there is no relay.
+        if (receiver && /postMessageEvents=true/.test(window.location.search) && window.parent !== window) {
+          try {
+            var sv = window.parent;
+            if (sv.__pointerRelay) sv.removeEventListener('message', sv.__pointerRelay);
+            sv.__pointerRelay = function(ev){
+              if (typeof ev.data !== 'string') return;
+              var d; try { d = JSON.parse(ev.data); } catch (_) { return; }
+              var main = sv.opener;
+              if (d && d.namespace === 'reveal' && d.type === 'point' && main && !main.closed && main.Reveal && main.Reveal.point)
+                main.Reveal.point(d.x, d.y, d.state);
+            };
+            sv.addEventListener('message', sv.__pointerRelay);
+          } catch (_) {}
+        }
+      })();
+    </script>
+
+    <script>
+      /* 'g' with a number uses the same zero-based numbers as the slide ids and the URL (copied from
+         colloquium_2026_cfa_cmzq.html).  Slide ids carry their slide number, written by
+         colloquium_assets/renumber_slide_ids.py -- re-run it after reordering.  Stock reveal reads a typed
+         number as one-based, so a number typed into the jump box ("17", or "12.1" for a vertical slide) is
+         shifted by one before reveal sees it.  Names, ids and text searches go to reveal untouched. */
+      (function(){
+        var NUM = /^\s*(\d+)(?:\.(\d+))?\s*$/, timer;
+        function box(ev){ return ev.target && ev.target.classList && ev.target.classList.contains('jump-to-slide-input'); }
+        window.addEventListener('input', function(ev){
+          if (!box(ev)) return;
+          var m = NUM.exec(ev.target.value);
+          if (!m) return;
+          ev.stopPropagation();
+          clearTimeout(timer);
+          timer = setTimeout(function(){ Reveal.slide(+m[1], m[2] ? +m[2] : 0); }, 200);
+        }, true);
+        window.addEventListener('keydown', function(ev){
+          if (!box(ev) || ev.keyCode !== 13) return;
+          clearTimeout(timer);
+          var m = NUM.exec(ev.target.value);
+          if (m) ev.target.value = (+m[1] + 1) + (m[2] ? '.' + (+m[2] + 1) : '');
+        }, true);
+      })();
+    </script>
+
+  </body>
+</html>
